@@ -1,0 +1,113 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>프린세스~</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<link rel="stylesheet" type="text/css" href="./css/common.css"  media="all" />
+	<link rel="stylesheet" type="text/css" href="./css/jquery.mCustomScrollbar.min.css"  media="all" />
+	<link rel="stylesheet" type="text/css" href="./css/slick.css"  media="all" />
+	<link rel="stylesheet" type="text/css" href="./css/main.css"  media="all" />
+	
+	<link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
+	<link rel="icon" href="./images/favicon.png" type="image/x-icon">
+	
+	<script type="text/javascript" src="./js/jquery-1.11.3.min.js" ></script>
+	<script type="text/javascript" src="./js/ScrollToPlugin.min.js" ></script>
+	<script type="text/javascript" src="./js/TweenMax.min.js" ></script>
+	<script type="text/javascript" src="./js/jquery.mCustomScrollbar.concat.min.js" ></script>
+	<script type="text/javascript" src="./js/slick.min.js"></script>
+	<script type="text/javascript" src="./js/common.js"></script>
+	
+
+	<!--html5 및 css3 미지원 브라우저를 위한 설정-->
+	<!--[if lt IE 9]>
+		<link href="/css/html5Reset.css" rel="stylesheet" />
+		<script src="/js/html5.js"></script>
+		<script src="/js/respond.min.js"></script>
+	<![endif]-->
+	<script>
+		<!--
+		var UserAgent = navigator.userAgent;
+		var UADevice = UserAgent.match(/iPhone|iPod|iPad|Android|Windows CE|BlackBerry|Symbian|Windows Phone|webOS|Opera Mini|Opera Mobi|POLARIS|IEMobile|lgtelecom|nokia|SonyEricsson/i);
+		var UAVendor = UserAgent.match(/LG|SAMSUNG|Samsung/);
+		if (UADevice !== null || UAVendor !== null) {
+			location.href = "./m";
+		}
+		//-->
+	</script>
+</head>
+<body class="enable-scroll onePage">
+	
+<main id="viewport">
+	<header class="gnb">
+		<h1 class="logo"><a href="./"><img src="./images/logo.png" alt="프린세스커넥트 리다이브"></a></h1>
+		<div class="inner">
+			<ul>
+				<li class="no1"><a href="./event.html"><i>이벤트</i></a></li>
+				<li class="no2"><a href="./intro.html"><i>게임소개</i></a></li>
+				<li class="no3"><a href="./character.html"><i>캐릭터</i></a></li>
+				<li class="no4"><a href="./media.html"><i>미디어</i></a></li>
+			</ul>
+			<div class="snsWrap">
+				<a class="no1" href="">커뮤니티</a>
+				<a class="no2" href="">트위터</a>
+				<a class="no3" href="">유튜브</a>
+			</div>
+		</div>
+	</header>
+
+	<div id="wrapper">
+		<div class="cover"></div>
+		<!-- 1. 메인 -->
+		<section id="main" class="main">
+			<div class="background">
+				<video id="bgMain" class="videoBg" muted="" loop="">
+					<source src="./images/visual_main.mp4" type="video/mp4">
+				</video>
+			</div>
+			<div class="floating"><img src="./images/floating.png" alt=""></div>
+			<div class="container">
+				<div class="contents">
+					<h1 class="title">
+						<img src="./images/title.png" alt="프린세스커넥트:리다이브! 당신과 이어지는 소녀들의 이야기">
+						<a class="btnMainMovie" href="javascript:;" onclick="mainPopOpen();"><img class="spacer" src="./images/spacer.png" alt="메인영상보기"></a>
+					</h1>
+					<div><a href="javascript:;" target="_blank"><img src="./images/btnGoReser.png" alt="지금 사전예약!"></a></div>
+					<div class="actorText"><img src="./images/actorText.png" alt="성우리스트"></div>
+				</div>
+			</div>
+		</section>
+		<!-- //1. 메인 -->
+	</div>
+	<footer class="footer">
+		<img class="copyRight" src="./images/footer.png" alt="© Cygames, Inc. © Kakao Games Corp. All rights reserved.">
+		<div class="btnSound">
+			<img class="bgm" src="./images/bgm.png" alt="BGM">
+			<div class="animated playing"></div>
+		</div>     
+	</footer>     
+	<audio autoplay loop id="bgmAudio">
+		<source src="http://www.hubharp.com/web_sound/GraupnerCouranteShort.mp3" type="audio/mp3" />
+	</audio>
+</main>
+
+<!-- 메인영상팝업 -->
+<div class="mainPop popup">
+	<div class="bg" onclick="mainPopClose();"></div>
+	<div class="popIn">
+		<div class="youtubeCont">
+			<div id="youtubeMovie"><iframe id="videoplayer" width="560" height="315" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
+			<div class="closePop">
+				<a href="javascript:;" onclick="mainPopClose();"></a>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- //메인영상팝업 -->
+
+</body>
+</html>
+
+
+

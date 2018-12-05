@@ -1,0 +1,31 @@
+/*GNB*/
+.gnb {position: fixed; top: 0; left: 0; width: 100%; height: 50px; background: rgba(255,255,255,0.7); z-index: 10;}
+.gnb .logo {position: absolute; left: 90px; top: 17px;}
+.gnb .inner {text-align: center; padding-top: 15px; position: absolute; right: 60px; top: 0;}
+.gnb ul {display: inline-block; vertical-align: middle;}
+.gnb ul:after {content:""; display: block; clear: both;}
+.gnb li {float: left;}
+.gnb li.no2 {margin-left: 54px;}
+.gnb li.no3 {margin-left: 54px;}
+.gnb li.no4 {margin-left: 63px;}
+.gnb li a {display: inline-block;}
+.gnb li a i {height: 15px; display: inline-block; background: url(../images/sp-gnb.png) no-repeat; text-indent: -9999px;}
+.gnb li.no1 a i {width: 40px; background-position: 0 0;}
+.gnb li.no2 a i {width: 55px; background-position: -94px 0;}
+.gnb li.no3 a i {width: 40px; background-position: -203px 0;}
+.gnb li.no4 a i {width: 39px; background-position: -306px 0;}
+.gnb li.no1.active a i, .gnb li.no1:hover a i {background-position: 0 -15px;}
+.gnb li.no2.active a i, .gnb li.no2:hover a i {background-position: -94px -15px;}
+.gnb li.no3.active a i, .gnb li.no3:hover a i {background-position: -203px -15px;}
+.gnb li.no4.active a i, .gnb li.no4:hover a i {background-position: -306px -15px;}
+.gnb .snsWrap {display: inline-block; vertical-align: middle; margin-left: 120px;}
+.snsWrap a {height: 17px; display: inline-block; background: url(../images/sp-sns.png) no-repeat; text-indent: -9999px;}
+.snsWrap a.no1 {width: 20px; background-position: 0 0;}
+.snsWrap a.no2 {width: 20px; background-position: -57px 0; margin-left: 37px;}
+.snsWrap a.no3 {width: 21px; background-position: -111px 0; margin-left: 37px;}
+
+/*COMMON*/
+html.popOpen {overflow-y: hidden;}
+html.popOpen body {}
+#wrapper {position: relative;}
+.cover {width: 100%; height: 100%; position: absolute; top: 0; left: 0; background: url(../images/cover.png) repeat; z-index: 5;}
