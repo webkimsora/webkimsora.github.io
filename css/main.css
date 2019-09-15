@@ -443,7 +443,7 @@ background-image: url(../images/graphy.png);
 .timeline-carousel h1 {
   color: white;
   font-size: 46px;
-  line-height: 50pd;
+  line-height: 50px;
   margin-bottom: 40px;
   font-weight: 900;
 }
@@ -972,7 +972,7 @@ figure.effect-sadie:hover .detail {
 /* footer */
 
 .footer {min-height: 200px; margin-top: 100px; background: #333;  color: #fff;}
-
+.footer .contents {padding-bottom: 50px; }
 @font-face {
 	font-family: 'ecoicon';
 	src:url('./font/ecoicons/ecoicon.eot');
@@ -987,14 +987,14 @@ figure.effect-sadie:hover .detail {
 .hi-icon-wrap {
 	text-align: center;
 	margin: 0 auto;
-	padding: 2em 0 3em;
+	padding: 2em 0;
 }
 
 .hi-icon {
 	display: inline-block;
 	font-size: 0px;
 	cursor: pointer;
-	margin: 15px 30px;
+	margin: 0 30px;
 	width: 50px;
 	height: 50px;
 	border-radius: 50%;
@@ -1221,6 +1221,12 @@ body.loaded {overflow-y: scroll;}
 	.who .hero {background-color: #1d1d1e; color: #fff;}
 	#who {background: url(../images/sora.jpg) no-repeat; background-position: center;}
 	.who .shape {bottom: -40px; right: 7%;}
+
+	body.mobilebody .historyWrap {padding-top: 50px;}
+	body.mobilebody .who .contents {padding-bottom: 115px;}
+	body.mobilebody .whoWrap {padding-top: 50px;}
+	body.mobilebody .aboutWrap .line {height: 150px !important;}
+	body.mobilebody .shape {display: none;}
 }
 
 

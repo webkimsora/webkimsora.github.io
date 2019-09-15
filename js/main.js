@@ -1,14 +1,12 @@
-var UserAgent = navigator.userAgent;
-var UADevice = UserAgent.match(/iPhone|iPod|iPad|Android|Windows CE|BlackBerry|Symbian|Windows Phone|webOS|Opera Mini|Opera Mobi|POLARIS|IEMobile|lgtelecom|nokia|SonyEricsson/i);
-var UAVendor = UserAgent.match(/LG|SAMSUNG|Samsung/);
-if ( UADevice !== null || UAVendor!== null){
-    $('body').addClass('mobilebody');
-}
-
-
-$(function(){
-	
+;(function(){
 	$(document).ready(function(){
+		var UserAgent = navigator.userAgent;
+		var UADevice = UserAgent.match(/iPhone|iPod|iPad|Android|Windows CE|BlackBerry|Symbian|Windows Phone|webOS|Opera Mini|Opera Mobi|POLARIS|IEMobile|lgtelecom|nokia|SonyEricsson/i);
+		var UAVendor = UserAgent.match(/LG|SAMSUNG|Samsung/);
+		if (UADevice !== null || UAVendor!== null){
+			$('body').addClass('mobilebody');
+		}
+	
 
 		$('.workList').isotope({
 			itemSelector: '.thumb',
@@ -77,7 +75,7 @@ $(function(){
 	$(window).load(function(){
 		skrollr.init({
 			forceHeight: false
-		});	
+		});
 	
 		setTimeout(function(){
 			$('#loader-wrapper').addClass('fadeout');
@@ -102,4 +100,4 @@ $(function(){
 		console.log(height);
 	});
 	
-});
+}());
