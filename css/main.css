@@ -384,6 +384,7 @@ background-image: url(../images/graphy.png);
   display: block;
   clear: both;
 }
+.work .subTitle {padding: 50px 0;}
 
 .item {
   float: left;
@@ -410,7 +411,7 @@ background-image: url(../images/graphy.png);
 
 
 .timeline-carousel {
-  padding: 0 6.9444% 90PX 6.9444%;
+  padding: 0 6.9444% 60px 6.9444%;
   position: relative;
   overflow: hidden;
 }
@@ -439,13 +440,6 @@ background-image: url(../images/graphy.png);
 }
 .timeline-carousel .slick-dots {
   bottom: -73px;
-}
-.timeline-carousel h1 {
-  color: white;
-  font-size: 46px;
-  line-height: 50px;
-  margin-bottom: 40px;
-  font-weight: 900;
 }
 .timeline-carousel__item {
   cursor: pointer;
@@ -476,7 +470,7 @@ background-image: url(../images/graphy.png);
   -webkit-transition-timing-function: ease-out;
   transition-timing-function: ease-out;
 }
-.timeline-carousel__image:hover:before {
+.timeline-carousel__item:hover .timeline-carousel__image:before {
   right: 0;
 }
 .timeline-carousel__image:after {
@@ -495,18 +489,18 @@ background-image: url(../images/graphy.png);
   -webkit-transition-timing-function: ease-out;
   transition-timing-function: ease-out;
 }
-.timeline-carousel__image:hover:after{
+.timeline-carousel__item:hover .timeline-carousel__image:after{
 	left: 0;
 }
 
 .timeline-carousel__item .media-wrapper {
   opacity: 0.4;
-  padding-bottom: 71.4%;
+  padding-bottom: 60.4%;
   -webkit-transition: all 0.4s cubic-bezier(0.55, 0.085, 0.68, 0.53);
   -o-transition: all 0.4s cubic-bezier(0.55, 0.085, 0.68, 0.53);
   transition: all 0.4s cubic-bezier(0.55, 0.085, 0.68, 0.53);
 }
-.timeline-carousel__item .media-wrapper:hover {
+.timeline-carousel__item:hover .media-wrapper {
 	transform: scale(1.1);
 }
 .timeline-carousel__item:last-child .timeline-carousel__item-inner:after {
@@ -559,7 +553,7 @@ background-image: url(../images/graphy.png);
 .timeline-carousel__item-inner p {
   font-size: 12px;
   line-height: 18px;
-  color: white;
+  color: #000;
   width: 60%;
   font-weight: 400;
   margin-bottom: 15px;
@@ -584,7 +578,7 @@ background-image: url(../images/graphy.png);
   -o-transition: all 0.2s cubic-bezier(0.55, 0.085, 0.68, 0.53);
   transition: all 0.2s cubic-bezier(0.55, 0.085, 0.68, 0.53);
 }
-.timeline-carousel__item-inner .read-more:hover:after {
+.timeline-carousel__item:hover .timeline-carousel__item-inner .read-more:after {
   width: 100%;
 }
 .timeline-carousel__item-inner .pointer {

@@ -54,7 +54,7 @@
 		$.js("timeline-carousel").slick({
 			infinite: false,
 			arrows: false,
-			dots: true,
+			//dots: true,
 			autoplay: false,
 			speed: 1100,
 			slidesToShow: 2,
@@ -73,9 +73,18 @@
 	})
 
 	$(window).load(function(){
-		skrollr.init({
-			forceHeight: false
-		});
+		
+		
+			
+		var s = skrollr.init();
+		if (s.isMobile()) {
+			s.destroy();
+		} else {
+			skrollr.init({
+				forceHeight: false
+			});
+			$('body').height('auto');
+		}
 	
 		setTimeout(function(){
 			$('#loader-wrapper').addClass('fadeout');
