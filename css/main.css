@@ -88,7 +88,7 @@ background-image: url(../images/graphy.png);
 .bgImg {display: none; opacity: 0.6; z-index: -100;}
 body.mobilebody .main #bgMain {display: none;}
 body.mobilebody .main .bgImg {display: block;}
-
+body.mobilebody #viewport {width: 100%; overflow-x: hidden;}
 
 
 .lineWrap{
@@ -1218,7 +1218,7 @@ body.loaded {overflow-y: scroll;}
 	
 	.leftMe .shard {display: none;}
 	.who .hero {background-color: #1d1d1e; color: #fff;}
-	#who {background: url(../images/sora.jpg) no-repeat; background-position: center;}
+	#who {background: url(../images/sora.jpg) #fff no-repeat; background-position: center;}
 	.who .shape {bottom: -40px; right: 7%;}
 
 	body.mobilebody .historyWrap {padding-top: 50px;}
@@ -1226,6 +1226,8 @@ body.loaded {overflow-y: scroll;}
 	body.mobilebody .whoWrap {padding-top: 50px;}
 	body.mobilebody .aboutWrap .line {height: 150px !important;}
 	body.mobilebody .shape {display: none;}
+	body.mobilebody .lineWrap,
+	body.mobilebody .main {height: 90vh;}
 }
 
 
