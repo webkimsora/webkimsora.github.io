@@ -85,10 +85,14 @@ background-image: url(../images/graphy.png);
 	opacity: 0.6;
     z-index: -100;
 }
-.bgImg {display: none; opacity: 0.6; z-index: -100;}
+.bgImg {display: none; opacity: 0.6; z-index: -100; background-image: url(../images/background.jpg); width: 100%; height: 100%; background-size: cover; background-position: center;}
 body.mobilebody .main #bgMain {display: none;}
 body.mobilebody .main .bgImg {display: block;}
 body.mobilebody #viewport {width: 100%; overflow-x: hidden;}
+
+
+body.mobilebody .lineWrap,
+body.mobilebody .main {height: 100%;}
 
 
 .lineWrap{
@@ -1226,8 +1230,6 @@ body.loaded {overflow-y: scroll;}
 	body.mobilebody .whoWrap {padding-top: 50px;}
 	body.mobilebody .aboutWrap .line {height: 150px !important;}
 	body.mobilebody .shape {display: none;}
-	body.mobilebody .lineWrap,
-	body.mobilebody .main {height: 90vh;}
 }
 
 

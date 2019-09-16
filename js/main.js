@@ -6,6 +6,8 @@
 		if (UADevice !== null || UAVendor!== null){
 			$('body').addClass('mobilebody');
 			$('#bgMain').remove();
+			var wh = $(window).height();
+			$('.main').height(wh);
 		}
 	
 
