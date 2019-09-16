@@ -85,6 +85,11 @@ background-image: url(../images/graphy.png);
 	opacity: 0.6;
     z-index: -100;
 }
+.bgImg {display: none; opacity: 0.6; z-index: -100;}
+body.mobilebody .main #bgMain {display: none;}
+body.mobilebody .main .bgImg {display: block;}
+
+
 
 .lineWrap{
 	position:absolute; top:0; left:0; width:100%; height:100vh;
