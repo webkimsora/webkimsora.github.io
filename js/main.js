@@ -5,6 +5,7 @@
 		var UAVendor = UserAgent.match(/LG|SAMSUNG|Samsung/);
 		if (UADevice !== null || UAVendor!== null){
 			$('body').addClass('mobilebody');
+			$('#bgMain').remove();
 		}
 	
 
