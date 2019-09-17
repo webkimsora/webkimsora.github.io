@@ -11,7 +11,7 @@
 		}
 	
 
-		$('.workList').isotope({
+		var $thumb = $('.workList').isotope({
 			itemSelector: '.thumb',
 			masonry: {
 			columnWidth: 300,
@@ -20,6 +20,36 @@
 			}
 		});
 		
+		$thumb.isotope({ filter: '.game, .brand, *' });
+		
+		// filter functions
+		var filterFns = {
+		  // show if number is greater than 50
+		  numberGreaterThan50: function() {
+		    var number = $(this).find('.number').text();
+		    return parseInt( number, 10 ) > 50;
+		  },
+		  // show if name ends with -ium
+		  ium: function() {
+		    var name = $(this).find('.name').text();
+		    return name.match( /ium$/ );
+		  }
+		};
+		// bind filter button click
+		$('.filters-button-group').on( 'click', 'button', function() {
+		  var filterValue = $( this ).attr('data-filter');
+		  // use filterFn if matches value
+		  filterValue = filterFns[ filterValue ] || filterValue;
+		  $thumb.isotope({ filter: filterValue });
+		});
+		// change is-checked class on buttons
+		$('.button-group').each( function( i, buttonGroup ) {
+		  var $buttonGroup = $( buttonGroup );
+		  $buttonGroup.on( 'click', 'button', function() {
+		    $buttonGroup.find('.is-checked').removeClass('is-checked');
+		    $( this ).addClass('is-checked');
+		  });
+		});
 
 		/*resize 반복실행 방지 : smartResize js 해석*/
 		var smartresize = {
@@ -56,7 +86,7 @@
 		function carousel() {
 		$.js("timeline-carousel").slick({
 			infinite: false,
-			arrows: false,
+			arrows: true,
 			//dots: true,
 			autoplay: false,
 			speed: 1100,

@@ -2,9 +2,11 @@
 <html lang="ko" dir="ltr">
 	<head>
 		<meta charset="utf-8">
-		<title>Entry Page</title>
+		<title>웹퍼블리셔 김소라 포트폴리오</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
         <meta name="description" content="">
+		<link rel="shortcut icon" href="./images/favicon.png">
+		<link rel="icon" href="./images/favicon.png">
 		
 		<link rel="stylesheet" href="./css/common.css?v=01">
 		<link rel="stylesheet" href="./css/slick.css">
@@ -18,6 +20,14 @@
 		<script type="text/javascript" src="./js/slick.min.js"></script>
 		<script type="text/javascript" src="./js/main.js?v=01"></script>
 		
+		<meta property="og:type" content="website">
+		<meta name="description" content="웹퍼블리셔 김소라 포트폴리오입니다. IE9 이상부터 지원가능합니다.">
+		<meta property="og:title" content="웹퍼블리셔 김소라 포트폴리오" />
+		<meta property="og:image" content="https://webkimsora.github.io/images/shareImg.jpg" />
+		<meta property="og:url" content="https://webkimsora.github.io/" />
+		<meta property="og:site_name" content="웹퍼블리셔 김소라 포트폴리오입니다. IE9 이상부터 지원가능합니다."/>
+		<meta property="og:description" content="웹퍼블리셔 김소라 포트폴리오입니다. IE9 이상부터 지원가능합니다." />
+
 		<!--[if lte IE 8]>
         <script src="./assets/js/ie8Polyfill.js"></script>
         <![endif]-->
@@ -144,7 +154,12 @@
 				</div>
 			</section>
 			<!-- //2. who -->
-			<!-- 2-1. skill -->
+						
+			<section style="position: relative; text-align: center; margin-top: -150px; padding-bottom: 80px;">
+				<div><img style="max-width: 100%;"src="./images/skill1.jpg" alt=""></div>
+			</section>
+						
+			<!-- 2-1. skill 
 			
 			<section class="skill page" id="work">
 				<div class="parallax"  data-0="background-position:0px 0px;" data-10000="background-position:0px 200px;"></div>
@@ -245,8 +260,14 @@
 					<!--Timeline carousel-->
 					
 					<div class="contents">
+						<div class="button-group filters-button-group">
+							<button class="btnDesign is-checked" data-filter="*"><span>All</span></button>
+							<button class="btnDesign" data-filter=".game"><span>Game</span></button>
+							<button class="btnDesign" data-filter=".brand"><span>Brand</span></button>
+							<button class="btnDesign" data-filter=".study"><span>Study</span></button>
+						</div>
 						<div class="workList">
-							<div class="thumb">
+							<div class="thumb game">
 								<figure class="effect-layla">
 									<img src="./images/work/1703_teram.jpg" alt="테라M"/>
 									<figcaption>
@@ -270,7 +291,7 @@
 									</figcaption>			
 								</figure>
 							</div>
-							<div class="thumb">
+							<div class="thumb game">
 								<figure class="effect-layla">
 									<img src="./images/work/1902_priconne.jpg" alt="프린세스커넥트forkakao"/>
 									<figcaption>
@@ -295,7 +316,7 @@
 								</figure>
 							</div>
 							
-							<div class="thumb">
+							<div class="thumb game">
 								<figure class="effect-layla">
 									<img src="./images/work/1901_nansae.jpg" alt="난세"/>
 									<figcaption>
@@ -319,7 +340,7 @@
 									</figcaption>			
 								</figure>
 							</div>
-							<div class="thumb">
+							<div class="thumb brand">
 								<figure class="effect-layla">
 									<img src="./images/work/1901_taeil.jpg" alt="전태일기념관"/>
 									<figcaption>
@@ -343,7 +364,7 @@
 									</figcaption>			
 								</figure>
 							</div>
-							<div class="thumb">
+							<div class="thumb game">
 								<figure class="effect-layla">
 									<img src="./images/work/1901_newworld.jpg" alt="신세계"/>
 									<figcaption>
@@ -367,7 +388,7 @@
 									</figcaption>			
 								</figure>
 							</div>
-							<div class="thumb">
+							<div class="thumb game">
 								<figure class="effect-layla">
 									<img src="./images/work/1812_hundredsoul.jpg" alt="헌드레드소울"/>
 									<figcaption>
@@ -391,7 +412,7 @@
 									</figcaption>			
 								</figure>
 							</div>
-							<div class="thumb">
+							<div class="thumb game">
 								<figure class="effect-layla">
 									<img src="./images/work/1811_fortnitem.jpg" alt="포트나이트M"/>
 									<figcaption>
@@ -415,7 +436,7 @@
 									</figcaption>			
 								</figure>
 							</div>
-							<div class="thumb">
+							<div class="thumb game">
 								<figure class="effect-layla">
 									<img src="./images/work/1810_samkook.jpg" alt="삼국에볼루션"/>
 									<figcaption>
@@ -439,7 +460,7 @@
 									</figcaption>			
 								</figure>
 							</div>
-							<div class="thumb">
+							<div class="thumb study">
 								<figure class="effect-layla">
 									<img src="./images/work/1806_edutalk.jpg" alt="스터디2"/>
 									<figcaption>
@@ -463,7 +484,7 @@
 									</figcaption>			
 								</figure>
 							</div>
-							<div class="thumb">
+							<div class="thumb study">
 								<figure class="effect-layla">
 									<img src="./images/work/1806_edutalk.jpg" alt="스터디1"/>
 									<figcaption>
@@ -487,7 +508,7 @@
 									</figcaption>			
 								</figure>
 							</div>
-							<div class="thumb award y18">
+							<div class="thumb award y18 brand">
 								<figure class="effect-layla ">
 									<img src="./images/work/1806_edutalk.jpg" alt="모두의대입발언대"/>
 									<figcaption>
@@ -511,7 +532,7 @@
 									</figcaption>			
 								</figure>
 							</div>
-							<div class="thumb">
+							<div class="thumb brand">
 								<figure class="effect-layla">
 									<img src="./images/work/1805_galaxyapps.jpg" alt="갤럭시앱스"/>
 									<figcaption>
@@ -535,7 +556,7 @@
 									</figcaption>			
 								</figure>
 							</div>
-							<div class="thumb">
+							<div class="thumb brand responsive">
 								<figure class="effect-layla">
 									<img src="./images/work/1805_belcube.jpg" alt="벨큐브"/>
 									<figcaption>
@@ -559,7 +580,7 @@
 									</figcaption>			
 								</figure>
 							</div>
-							<div class="thumb">
+							<div class="thumb brand responsive">
 								<figure class="effect-layla">
 									<img src="./images/work/1803_mediform.jpg" alt="메디폼"/>
 									<figcaption>
@@ -583,7 +604,7 @@
 									</figcaption>			
 								</figure>
 							</div>
-							<div class="thumb award y18">
+							<div class="thumb award y18 brand">
 								<figure class="effect-layla">
 									<img src="./images/work/1802_constitution.jpg" alt="국민헌법"/>
 									<figcaption>
@@ -607,7 +628,7 @@
 									</figcaption>			
 								</figure>
 							</div>
-							<div class="thumb award y18">
+							<div class="thumb award y18 game">
 								<figure class="effect-layla">
 									<img src="./images/work/1801_royal.jpg" alt="로열블러드"/>
 									<figcaption>
@@ -631,7 +652,7 @@
 									</figcaption>			
 								</figure>
 							</div>
-							<div class="thumb">
+							<div class="thumb brand">
 								<figure class="effect-layla">
 									<img src="./images/work/1801_better.jpg" alt="저출산고령사회위원회"/>
 									<figcaption>
@@ -655,7 +676,7 @@
 									</figcaption>			
 								</figure>
 							</div>
-							<div class="thumb award y18">
+							<div class="thumb award y18 game">
 								<figure class="effect-layla">
 									<img src="./images/work/1802_marble.jpg" alt="프렌즈마블forkakao"/>
 									<figcaption>
@@ -679,7 +700,7 @@
 									</figcaption>			
 								</figure>
 							</div>
-							<div class="thumb">
+							<div class="thumb game">
 								<figure class="effect-layla">
 									<img src="./images/work/1712_light.jpg" alt="빛의계승자"/>
 									<figcaption>
@@ -703,7 +724,7 @@
 									</figcaption>			
 								</figure>
 							</div>
-							<div class="thumb award y18">
+							<div class="thumb award y18 brand">
 								<figure class="effect-layla">
 									<img src="./images/work/1711_hello.jpg" alt="헬로우평창"/>
 									<figcaption>
@@ -727,7 +748,7 @@
 									</figcaption>			
 								</figure>
 							</div>
-							<div class="thumb award y18">
+							<div class="thumb award y18 brand">
 								<figure class="effect-layla">
 									<img src="./images/work/1710_miraen.jpg" alt="미래엔"/>
 									<figcaption>
@@ -751,7 +772,7 @@
 									</figcaption>			
 								</figure>
 							</div>
-							<div class="thumb">
+							<div class="thumb game">
 								<figure class="effect-layla">
 									<img src="./images/work/1710_lucidsaga.jpg" alt="루시드사가"/>
 									<figcaption>
@@ -775,7 +796,7 @@
 									</figcaption>			
 								</figure>
 							</div>
-							<div class="thumb award y17">
+							<div class="thumb award y17 game">
 								<figure class="effect-layla">
 									<img src="./images/work/1710_kungpu.jpg" alt="쿵푸팬더forkakao"/>
 									<figcaption>
@@ -799,7 +820,7 @@
 									</figcaption>			
 								</figure>
 							</div>
-							<div class="thumb">
+							<div class="thumb game">
 								<figure class="effect-layla">
 									<img src="./images/work/1709_yul.jpg" alt="열혈강호forkakao"/>
 									<figcaption>
@@ -823,7 +844,7 @@
 									</figcaption>			
 								</figure>
 							</div>
-							<div class="thumb award y17">
+							<div class="thumb award y17 brand">
 								<figure class="effect-layla">
 									<img src="./images/work/1709_bmw.jpg" alt="BMW DO MORE"/>
 									<figcaption>
@@ -847,7 +868,7 @@
 									</figcaption>			
 								</figure>
 							</div>
-							<div class="thumb">
+							<div class="thumb brand">
 								<figure class="effect-layla">
 									<img src="./images/work/1708_likenclick.jpg" alt="라이크앤클릭리뉴얼"/>
 									<figcaption>
@@ -871,7 +892,7 @@
 									</figcaption>			
 								</figure>
 							</div>
-							<div class="thumb">
+							<div class="thumb brand">
 								<figure class="effect-layla">
 									<img src="./images/work/1707_ssframe.jpg" alt="삼성프레임"/>
 									<figcaption>
@@ -895,7 +916,7 @@
 									</figcaption>			
 								</figure>
 							</div>
-							<div class="thumb">
+							<div class="thumb game">
 								<figure class="effect-layla">
 									<img src="./images/work/1705_ocean.jpg" alt="오션앤엠파이어공모전"/>
 									<figcaption>
@@ -919,7 +940,7 @@
 									</figcaption>			
 								</figure>
 							</div>
-							<div class="thumb award y17">
+							<div class="thumb award y17 brand">
 								<figure class="effect-layla">
 									<img src="./images/work/1705_gwang1st.jpg" alt="광화문1번가"/>
 									<figcaption>
@@ -943,7 +964,7 @@
 									</figcaption>			
 								</figure>
 							</div>
-							<div class="thumb">
+							<div class="thumb brand">
 								<figure class="effect-layla">
 									<img src="./images/work/1805_mashmellow.jpg" alt="삼성마시멜로우"/>
 									<figcaption>
@@ -967,7 +988,7 @@
 									</figcaption>			
 								</figure>
 							</div>
-							<div class="thumb award y17">
+							<div class="thumb award y17 game">
 								<figure class="effect-layla">
 									<img src="./images/work/1705_soul.jpg" alt="소울게이지"/>
 									<figcaption>
@@ -991,7 +1012,7 @@
 									</figcaption>			
 								</figure>
 							</div>
-							<div class="thumb award y17">
+							<div class="thumb award y17 brand">
 								<figure class="effect-layla">
 									<img src="./images/work/1704_moon1st.jpg" alt="문재인1번가"/>
 									<figcaption>
@@ -1015,7 +1036,7 @@
 									</figcaption>			
 								</figure>
 							</div>
-							<div class="thumb">
+							<div class="thumb brand">
 								<figure class="effect-layla">
 									<img src="./images/work/1704_samsungpay.jpg" alt="삼성페이리워드"/>
 									<figcaption>
@@ -1039,7 +1060,7 @@
 									</figcaption>			
 								</figure>
 							</div>
-							<div class="thumb">
+							<div class="thumb game">
 								<figure class="effect-layla">
 									<img src="./images/work/1703_mu2nd.jpg" alt="뮤오리진2주년"/>
 									<figcaption>
@@ -1063,7 +1084,7 @@
 									</figcaption>			
 								</figure>
 							</div>
-							<div class="thumb award y17">
+							<div class="thumb award y17 game">
 								<figure class="effect-layla">
 									<img src="./images/work/1704_onmyoji.jpg" alt="음양사forkakao"/>
 									<figcaption>
@@ -1087,7 +1108,7 @@
 									</figcaption>			
 								</figure>
 							</div>
-							<div class="thumb">
+							<div class="thumb game">
 								<figure class="effect-layla">
 									<img src="./images/work/1702_aether2.jpg" alt="아이테르천공의심포니"/>
 									<figcaption>
@@ -1111,7 +1132,7 @@
 									</figcaption>			
 								</figure>
 							</div>
-							<div class="thumb">
+							<div class="thumb brand">
 								<figure class="effect-layla">
 									<img src="./images/work/1701_happycall.jpg" alt="해피콜신년이벤트"/>
 									<figcaption>
@@ -1135,7 +1156,7 @@
 									</figcaption>			
 								</figure>
 							</div>
-							<div class="thumb">
+							<div class="thumb game">
 								<figure class="effect-layla">
 									<img src="./images/work/1701_choksan.jpg" alt="촉산forkakao"/>
 									<figcaption>
@@ -1159,7 +1180,7 @@
 									</figcaption>			
 								</figure>
 							</div>
-							<div class="thumb">
+							<div class="thumb brand">
 								<figure class="effect-layla">
 									<img src="./images/work/1612_lgsurbay.jpg" alt="LG U+ 설문조사"/>
 									<figcaption>
@@ -1183,7 +1204,7 @@
 									</figcaption>			
 								</figure>
 							</div>
-							<div class="thumb">
+							<div class="thumb game">
 								<figure class="effect-layla">
 									<img src="./images/work/1612_wing.jpg" alt="윙전장의날개"/>
 									<figcaption>
@@ -1207,7 +1228,7 @@
 									</figcaption>			
 								</figure>
 							</div>
-							<div class="thumb">
+							<div class="thumb brand">
 								<figure class="effect-layla">
 									<img src="./images/work/1611_likenclick.jpg" alt="라이크앤클릭"/>
 									<figcaption>
@@ -1231,7 +1252,7 @@
 									</figcaption>			
 								</figure>
 							</div>
-							<div class="thumb">
+							<div class="thumb game">
 								<figure class="effect-layla">
 									<img src="./images/work/1610_sazo.jpg" alt="사조영웅전"/>
 									<figcaption>
@@ -1255,7 +1276,7 @@
 									</figcaption>			
 								</figure>
 							</div>
-							<div class="thumb">
+							<div class="thumb brand">
 								<figure class="effect-layla">
 									<img src="./images/work/1609_itsskin.jpg" alt="잇츠스킨 세서미스트리트"/>
 									<figcaption>
@@ -1279,7 +1300,7 @@
 									</figcaption>			
 								</figure>
 							</div>
-							<div class="thumb award y16">
+							<div class="thumb award y16 brand">
 								<figure class="effect-layla">
 									<img src="./images/work/1607_lguplus.jpg" alt="LG U+ 패밀리샵 마이크로 사이트"/>
 									<figcaption>
@@ -1303,7 +1324,7 @@
 									</figcaption>			
 								</figure>
 							</div>
-							<div class="thumb award y16">
+							<div class="thumb award y16 game">
 								<figure class="effect-layla">
 									<img src="./images/work/1606_myhome.jpg" alt="놀러와 마이홈 for kakao"/>
 									<figcaption>
@@ -1343,7 +1364,7 @@
 							</div>
 						</section>
 						<div class="infor">
-							010-2101-2529<br>
+							010.2101.2529<br>
 							webkimsora@gmail.com
 						</div>
 						<div class="notice"></div>

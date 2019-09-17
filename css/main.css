@@ -193,8 +193,8 @@ body.mobilebody .main {height: 100%;}
     -webkit-animation: mouseScroll .8s cubic-bezier(.7,0,.3,1) infinite alternate;
     animation: mouseScroll .8s cubic-bezier(.7,0,.3,1) infinite alternate;
         animation-delay: 0s;
-    -webkit-animation-delay: 0.08s;
-    animation-delay: 0.08s;
+    -webkit-animation-delay: 0.05s;
+    animation-delay: 0.05s;
     z-index: 1;
 }
 @-webkit-keyframes mouseScroll {
@@ -395,7 +395,72 @@ body.mobilebody .main {height: 100%;}
   display: block;
   clear: both;
 }
-.work .subTitle {padding: 50px 0;}
+.work .subTitle {/*padding: 50px 0;*/}
+
+.slick-arrow {position: absolute; top: -40px; left: 0; width: 35px; height: 35px; text-indent:-9999px;}
+.slick-arrow.slick-prev {background: url(../images/btnPrev.jpg) no-repeat; background-size: 100%;}
+.slick-arrow.slick-next {left: 38px; background: url(../images/btnNext.jpg) no-repeat; background-size: 100%;}
+.slick-arrow.slick-disabled {opacity: 0.5;}
+
+button {border:none; appearance:none; -webkit-appearance:none; background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;}
+button, button:focus,button:active{padding: 0;}
+
+.button-group {text-align: right;}
+.button-group .btnDesign,
+.button-group .btnDesign::after {
+  -webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.button-group .btnDesign {
+  margin: 0 5px 20px;
+  background: none;
+  border: 2px solid #b38c52;
+  border-radius: 5px;  
+  color: #b38c52;
+  display: inline-block;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 5px 10px;
+  position: relative;
+  text-transform: uppercase;
+}
+
+.button-group .btnDesign::before,
+.button-group .btnDesign::after {
+  background: #b38c52;
+  content: '';
+  position: absolute;
+  z-index: -1;
+}
+
+.button-group .btnDesign:hover,
+.button-group .btnDesign.is-checked {
+  color: #fff;
+}
+
+.btnDesign span{position: relative; z-index: 3; text-transform: none;}
+
+.btnDesign::after {
+  height: 100%;
+  left: 0;
+  top: 0;
+  width: 0;
+}
+
+.btnDesign:hover:after,
+.btnDesign.is-checked:after {
+  width: 100%;
+  z-index: 1;
+}
 
 .item {
   float: left;
@@ -420,9 +485,8 @@ body.mobilebody .main {height: 100%;}
           transition-property:         transform, opacity;
 }
 
-
 .timeline-carousel {
-  padding: 0 6.9444% 60px 6.9444%;
+  padding: 80px 6.9444% 60px 6.9444%;
   position: relative;
   overflow: hidden;
 }
@@ -506,7 +570,7 @@ body.mobilebody .main {height: 100%;}
 
 .timeline-carousel__item .media-wrapper {
   opacity: 0.4;
-  padding-bottom: 54.4%;
+  padding-bottom: 60.4%;
   -webkit-transition: all 0.4s cubic-bezier(0.55, 0.085, 0.68, 0.53);
   -o-transition: all 0.4s cubic-bezier(0.55, 0.085, 0.68, 0.53);
   transition: all 0.4s cubic-bezier(0.55, 0.085, 0.68, 0.53);
