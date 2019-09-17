@@ -193,8 +193,8 @@ body.mobilebody .main {height: 100%;}
     -webkit-animation: mouseScroll .8s cubic-bezier(.7,0,.3,1) infinite alternate;
     animation: mouseScroll .8s cubic-bezier(.7,0,.3,1) infinite alternate;
         animation-delay: 0s;
-    -webkit-animation-delay: 0.05s;
-    animation-delay: 0.05s;
+    -webkit-animation-delay: 0.08s;
+    animation-delay: 0.08s;
     z-index: 1;
 }
 @-webkit-keyframes mouseScroll {
@@ -681,7 +681,7 @@ body.mobilebody .main {height: 100%;}
 	height: 100%;
 	position: absolute;
 	top: -5px;
-	left: -5px;
+	left: -10px;
 	z-index: 5;
 }
 
@@ -939,12 +939,16 @@ body.mobilebody figure.effect-layla .more {
 	transition-delay: 0.15s;
 }
 
+body.mobilebody .thumb figure figcaption {background: rgba(0,0,0,0.6);}
+
 .effect-layla dt,
 .effect-layla dd {display: inline-block;}
 /* footer */
+.btnTop {position: fixed; bottom: 30px; right: 30px; display: none; z-index: 100;}
 
 .footer {min-height: 200px; margin-top: 100px; background: #333;  color: #fff; font-size: 12px;}
 .footer .contents {padding-bottom: 50px; }
+
 @font-face {
 	font-family: 'ecoicon';
 	src:url('./font/ecoicons/ecoicon.eot');
@@ -1122,7 +1126,7 @@ body.mobilebody figure.effect-layla .more {
 	opacity: 1;
 }
 
-.footer .infor {font-size:26px; margin-bottom: 20px;}
+.footer .infor {font-size:26px; margin-bottom: 20px; color: #fff;}
 
 
 
