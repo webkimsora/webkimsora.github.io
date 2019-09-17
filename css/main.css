@@ -506,7 +506,7 @@ body.mobilebody .main {height: 100%;}
 
 .timeline-carousel__item .media-wrapper {
   opacity: 0.4;
-  padding-bottom: 60.4%;
+  padding-bottom: 54.4%;
   -webkit-transition: all 0.4s cubic-bezier(0.55, 0.085, 0.68, 0.53);
   -o-transition: all 0.4s cubic-bezier(0.55, 0.085, 0.68, 0.53);
   transition: all 0.4s cubic-bezier(0.55, 0.085, 0.68, 0.53);
@@ -755,7 +755,6 @@ body.mobilebody .main {height: 100%;}
 }
 
 .thumb figure h3 {
-	word-spacing: -0.15em;
 	font-weight: 300;
 }
 
