@@ -193,8 +193,8 @@ body.mobilebody .main {height: 100%;}
     -webkit-animation: mouseScroll .8s cubic-bezier(.7,0,.3,1) infinite alternate;
     animation: mouseScroll .8s cubic-bezier(.7,0,.3,1) infinite alternate;
         animation-delay: 0s;
-    -webkit-animation-delay: 80ms;
-    animation-delay: 80ms;
+    -webkit-animation-delay: 0.05s;
+    animation-delay: 0.05s;
     z-index: 1;
 }
 @-webkit-keyframes mouseScroll {
@@ -369,7 +369,9 @@ body.mobilebody .main {height: 100%;}
 
 .parallax {
   /* The image used */
-  background-image: url("../images/dog.jpg");
+  background-image: url("../images/sky1.jpg");
+  opacity:0.9!important;
+    filter:alpha(opacity=90);
 
   /* Set a specific height */
   height: 300px;
@@ -667,8 +669,33 @@ body.mobilebody .main {height: 100%;}
   float: left;
   width: 300px;
   height: 300px;
-  border: 1px solid #ebebeb;
+  position: relative;
   margin-bottom: 20px;
+  border: 1px solid #ebebeb;
+}
+
+.thumb.award:before {
+	content:"";
+	display: inline-block;
+	width: 50px;
+	height: 100%;
+	position: absolute;
+	top: -5px;
+	left: -5px;
+	z-index: 5;
+}
+
+.thumb.award.y18:before{
+	background: url(../images/award2018.png) no-repeat;
+	background-size: 100% auto;
+}
+.thumb.award.y17:before{
+	background: url(../images/award2017.png) no-repeat;
+	background-size: 100% auto;
+}
+.thumb.award.y16:before{
+	background: url(../images/award2016.png) no-repeat;
+	background-size: 100% auto;
 }
 
 .thumb figure {
@@ -1179,6 +1206,9 @@ body.loaded {overflow-y: scroll;}
 
 
 @media screen and (max-width: 460px) {
+	.main .title {font-size: 55px;}
+	.mouseWrap p {font-size: 13px;}
+	.main .sideTitle {font-size: 12px;}
 	.main .title:hover {letter-spacing: -5px;}
 	.main .title.no2:hover {letter-spacing: -10px;}
 	.who .contents {transform: scale(1);} 
