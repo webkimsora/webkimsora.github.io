@@ -5,11 +5,14 @@
     src: url('./font/NotoSansKR-Regular-Hestia.eot');
    src: local('NotoSansKR-Regular-Hestia'), url('./font/NotoSansKR-Regular-Hestia.eot#iefix') format('embedded-opentype'), url('./font/NotoSansKR-Regular-Hestia.woff') format('woff'), url('./font/NotoSansKR-Regular-Hestia.ttf') format('truetype');
 }
+
+/*
 @font-face {
     font-family:helve;
     src: url('./font/Helvetica_Compressed.eot');
    src: local('Helvetica_Compressed'), url('./font/Helvetica_Compressed.eot#iefix') format('embedded-opentype'), url('./font/Helvetica_Compressed.woff') format('woff'), url('./font/Helvetica_Compressed.ttf') format('truetype');
 }
+*/
 
 body {background: #fff; overflow-x: hidden;}
 .page {position: relative; background: #fff; width: 100%;}
@@ -252,14 +255,8 @@ body.mobilebody .main {height: 100%;}
 }
 
 /* who am i*/
-.who .contents {padding-bottom: 250px;}
-.rightMe {
-    display: block;
-    width: 50%;
-    height: 100%;
-    float: right;
-	margin-top: 70px;
-}
+.who .contents {padding-bottom: 160px;}
+.rightMe { display: block; width: 50%; height: 100%; float: right; margin-top: 85px;}
 
 @-webkit-keyframes slowlyAppear {
   from {
@@ -353,35 +350,40 @@ body.mobilebody .main {height: 100%;}
 }
 .subTitle {text-align: center;}
 .whoWrap {text-align: left; padding-left: 90px; padding-top: 20px;}
-.mottoWrap {position: relative;}
+.mottoWrap {position: relative; font-family:'Ubuntu', sans-serif;}
 .mottoWrap .motto {font-size: 40px; font-weight: 600; line-height: 1; }
 .mottoWrap .motto em {font-size: 30px; margin-left: 10px;}
-.whoWrap .text {margin-top: 10px; font-size: 15px; font-family: noto,serif;}
-.whoWrap .line {width: 2px; height: 0px; position: absolute; top: 175px; left: 75px; background: #000;}
+.whoWrap .text {font-size: 15px; font-family: noto,serif;}
+.whoWrap .text em {font-style: italic; font-weight: bold;}
+.whoWrap .line {width: 2px; height: 0px; position: absolute; top: 190px; left: 75px; background: #000;}
 
 .historyWrap {padding-top: 130px;}
-.historyWrap h3 {padding-top: 30px; font-size: 20px; font-weight: 600;}
-.historyWrap h3:before {content:"〃"; color: #0709FC; font-weight: bold;}
+.historyWrap h3 {padding-top: 30px; padding-bottom: 5px; font-size: 20px; font-weight: 600;}
+.historyWrap h3:before {content: ""; width: 10px; height: 10px; border: 1px solid #56b4e9; border-radius: 50%; background: #56b4e9; display: inline-block; margin-right: 10px;}
 .historyWrap h3:first-child {padding-top: 0;}
 
 .who .lineRight {width: 2px; height: 0px; position: absolute; top: 500px; right: 10%; background: #000; z-index: 1;}
-.who .shape {font-size: 65px; font-weight: 800; position: absolute; bottom: 30px; right: 9%; font-family: 'Permanent Marker', cursive; z-index: 1;}
+.who .shape {font-size: 65px; font-weight: 800; position: absolute; bottom: -30px; right: 9%; font-family: 'Permanent Marker', cursive; z-index: 1;}
 
-.parallax {
-  /* The image used */
+.skill {padding: 50px 0; background: #333; color: #fff;}
+.skill .contents:after {content:""; clear: both;}
+.skill .category {width: 50%; float: left; font-size: 15px;}
+.skill .category h3 {padding: 15px 0; font-size: 30px; font-family: 'Ubuntu', sans-serif;}
+.skill .category li {line-height: 1.8em;}
+.skill .category li:before {content:""; width: 5px; height: 5px; border-radius: 50%; background: #b38c52; margin-right: 10px; display: inline-block; vertical-align: middle;}
+
+/*
+.skill {
   background-image: url("../images/sky1.jpg");
   opacity:0.9!important;
     filter:alpha(opacity=90);
-
-  /* Set a specific height */
   height: 300px;
-
-  /* Create the parallax scrolling effect */
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
+*/
 	
 /* 3. work */
 
@@ -395,7 +397,7 @@ body.mobilebody .main {height: 100%;}
   display: block;
   clear: both;
 }
-.work .subTitle {/*padding: 50px 0;*/}
+.work .subTitle {padding-top: 60px;}
 
 .slick-arrow {position: absolute; top: -40px; left: 0; width: 35px; height: 35px; text-indent:-9999px;}
 .slick-arrow.slick-prev {background: url(../images/btnPrev.jpg) no-repeat; background-size: 100%;}
@@ -411,16 +413,16 @@ button {border:none; appearance:none; -webkit-appearance:none; background: none;
 	outline: inherit;}
 button, button:focus,button:active{padding: 0;}
 
-.button-group {text-align: right;}
-.button-group .btnDesign,
-.button-group .btnDesign::after {
+.btnWrap {text-align: right; margin-right: 15px;}
+.btnWrap .btnDesign,
+.btnWrap .btnDesign::after {
   -webkit-transition: all 0.3s;
 	-moz-transition: all 0.3s;
   -o-transition: all 0.3s;
 	transition: all 0.3s;
 }
 
-.button-group .btnDesign {
+.btnWrap .btnDesign {
   margin: 0 5px 20px;
   background: none;
   border: 2px solid #b38c52;
@@ -434,16 +436,16 @@ button, button:focus,button:active{padding: 0;}
   text-transform: uppercase;
 }
 
-.button-group .btnDesign::before,
-.button-group .btnDesign::after {
+.btnWrap .btnDesign::before,
+.btnWrap .btnDesign::after {
   background: #b38c52;
   content: '';
   position: absolute;
   z-index: -1;
 }
 
-.button-group .btnDesign:hover,
-.button-group .btnDesign.is-checked {
+.btnWrap .btnDesign:hover,
+.btnWrap .btnDesign.is-checked {
   color: #fff;
 }
 
@@ -633,6 +635,7 @@ button, button:focus,button:active{padding: 0;}
   width: 90%;
   font-weight: 400;
   margin-bottom: 15px;
+  font-size: 15px;
 }
 .timeline-carousel__item-inner .read-more {
 	font-size: 12px;
@@ -930,7 +933,7 @@ figure.effect-layla .detail {
 	padding: 10px;
 	text-transform: none;
 	opacity: 1;
-	font-size: 14px;
+	font-size: 15px;
 	font-weight: 600;
 	-webkit-transform: translate3d(0,-10px,0);
 	transform: translate3d(0,-10px,0);
@@ -1250,7 +1253,7 @@ body.loaded {overflow-y: scroll;}
 	.main .title {font-size: 70px;}
 	.animated-letter {font-size: 4em;}
 	.mottoWrap .motto {font-size: 30px;}
-	.whoWrap .text {font-size: 14px;}
+	.whoWrap .text {font-size: 12px;}
 	
 	.rightMe {width: 100%; float: none; text-align: center; margin-top: 0; padding-top: 20px;}
 	.whoWrap {text-align: center; padding-left: 0;}
@@ -1260,9 +1263,13 @@ body.loaded {overflow-y: scroll;}
 	.leftMe .shard {display: none;}
 	.who .hero {padding: 20px 0; background-color: #1d1d1e; color: #fff;}
 	#who {background: url(../images/sora.jpg) #fff no-repeat; background-position: center;}
-	.who .shape {bottom: -40px; right: 7%;}
+	.who .shape {bottom: -150px; right: 7%;}
+	.btnWrap {text-align: center; margin-right: 0;}
 	
 	.timeline-carousel__item-inner .year {font-size: 24px;}
+	
+	.skill .category {width: 100%; float: none;}
+	.skill .category:first-child {margin-bottom: 30px;}
 
 	body.mobilebody .historyWrap {padding-top: 50px;}
 	body.mobilebody .who .contents {padding-bottom: 115px;}

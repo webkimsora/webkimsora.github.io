@@ -1,9 +1,13 @@
 @charset "utf-8";
 
+@import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Arvo:400,700&display=swap');
+
 /* Reset */
 body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,form,fieldset,p,button{margin:0;padding:0}
-h1,h2,h3,h4{font-family:helve,helvetica,Sans-serif;font-size:12px;}
-body,input,button {font-family: noto,serif;}
+h1,h2{font-family:'Ubuntu', sans-serif; font-size: 12px;}
+h3,h4{ text-transform: none;}
+body,input,button {font-family: noto,serif; font-size: 15px;}
 body{text-align:left; word-break:break-word;}
 img,fieldset,iframe{border:0 none}
 li{list-style:none}
