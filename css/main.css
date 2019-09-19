@@ -350,10 +350,9 @@ body.mobilebody .main {height: 100%;}
 }
 .subTitle {text-align: center;}
 .whoWrap {text-align: left; padding-left: 90px; padding-top: 20px;}
-.mottoWrap {position: relative; font-family:'Ubuntu', sans-serif;}
+.mottoWrap {position: relative;}
 .mottoWrap .motto {font-size: 40px; font-weight: 600; line-height: 1; }
 .mottoWrap .motto em {font-size: 30px; margin-left: 10px;}
-.whoWrap .text {font-size: 15px; font-family: noto,serif;}
 .whoWrap .text em {font-style: italic; font-weight: bold;}
 .whoWrap .line {width: 2px; height: 0px; position: absolute; top: 190px; left: 75px; background: #000;}
 
@@ -363,11 +362,11 @@ body.mobilebody .main {height: 100%;}
 .historyWrap h3:first-child {padding-top: 0;}
 
 .who .lineRight {width: 2px; height: 0px; position: absolute; top: 500px; right: 10%; background: #000; z-index: 1;}
-.who .shape {font-size: 65px; font-weight: 800; position: absolute; bottom: -30px; right: 9%; font-family: 'Permanent Marker', cursive; z-index: 1;}
+.who .shape {font-size: 65px; font-weight: 800; position: absolute; bottom: -45px; right: 9%; font-family: 'Permanent Marker', cursive; z-index: 1;}
 
 .skill {padding: 50px 0; background: #333; color: #fff;}
 .skill .contents:after {content:""; clear: both;}
-.skill .category {width: 50%; float: left; font-size: 15px;}
+.skill .category {width: 50%; float: left;}
 .skill .category h3 {padding: 15px 0; font-size: 30px; font-family: 'Ubuntu', sans-serif;}
 .skill .category li {line-height: 1.8em;}
 .skill .category li:before {content:""; width: 5px; height: 5px; border-radius: 50%; background: #b38c52; margin-right: 10px; display: inline-block; vertical-align: middle;}
@@ -586,7 +585,6 @@ button, button:focus,button:active{padding: 0;}
 .timeline-carousel__item-inner {
   position: relative;
   padding-top: 45px;
-  font-size: 14px;
 }
 .timeline-carousel__item-inner:after {
   position: absolute;
@@ -609,25 +607,13 @@ button, button:focus,button:active{padding: 0;}
   margin: -15px 0 20px;
   font-weight: 900;
 }
-/*
-.timeline-carousel__item-inner .year:after {
-  content: "";
-  position: absolute;
-  display: block;
-  left: -10px;
-  top: 0;
-  height: 100%;
-  width: 10px;
-  background-color: #1d1d1e;
-  z-index: 3;
-}
-*/
 .timeline-carousel__item-inner .month {
   text-transform: uppercase;
   color: #b38c52;
   display: block;
   margin-bottom: 10px;
   font-weight: 900;
+  font-size: 14px;
 }
 .timeline-carousel__item-inner p {
   line-height: 18px;
@@ -635,7 +621,6 @@ button, button:focus,button:active{padding: 0;}
   width: 90%;
   font-weight: 400;
   margin-bottom: 15px;
-  font-size: 15px;
 }
 .timeline-carousel__item-inner .read-more {
 	font-size: 12px;
@@ -1248,12 +1233,13 @@ body.loaded {overflow-y: scroll;}
 }
 
 @media screen and (max-width: 768px) {
+	body,input,button {font-size: 14px;}
 	.whoWrap .line {background: #fff; left: 50%;}
 	.leftMe {margin-left: 0; float: none; width: 100%;}
 	.main .title {font-size: 70px;}
 	.animated-letter {font-size: 4em;}
 	.mottoWrap .motto {font-size: 30px;}
-	.whoWrap .text {font-size: 12px;}
+	.who .contents {padding-bottom: 240px;}
 	
 	.rightMe {width: 100%; float: none; text-align: center; margin-top: 0; padding-top: 20px;}
 	.whoWrap {text-align: center; padding-left: 0;}
@@ -1263,12 +1249,13 @@ body.loaded {overflow-y: scroll;}
 	.leftMe .shard {display: none;}
 	.who .hero {padding: 20px 0; background-color: #1d1d1e; color: #fff;}
 	#who {background: url(../images/sora.jpg) #fff no-repeat; background-position: center;}
-	.who .shape {bottom: -150px; right: 7%;}
+	.who .shape {right: 7%;}
 	.btnWrap {text-align: center; margin-right: 0;}
 	
 	.timeline-carousel__item-inner .year {font-size: 24px;}
 	
 	.skill .category {width: 100%; float: none;}
+	.skill .category h3 {font-size: 25px;}
 	.skill .category:first-child {margin-bottom: 30px;}
 
 	body.mobilebody .historyWrap {padding-top: 50px;}
