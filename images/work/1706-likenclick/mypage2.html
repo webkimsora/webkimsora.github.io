@@ -1,0 +1,594 @@
+<!doctype html>
+<html class="no-js" lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>라이크앤클릭</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no, minimal-ui, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="">
+  <link rel="stylesheet" href="css/main.css">
+  <link href='http://fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet' type='text/css'>
+</head>
+<body>
+
+  <main id="viewport" class="sub">
+    <!-- @ header End -->
+    <header class="header is-sticky">
+      <div class="top">
+        <a class="top-menu" href="javascript:;">
+          <img src="./images/main/gnb-nav.png"  alt="">
+        </a>
+        <a class="top-logo" href="index.html">
+          <img src="./images/main/logo-sticky.png"  alt="라이크앤클릭">
+        </a>
+        <a class="top-fb" href="#">
+          <!--
+          <span>로그인</span>
+          <img class="top-fb-login" src="./images/main/gnb-logout.png"  alt="">      
+          <!-- 로그인시 이름, 이미지 변경. 클래스 login 추가 -->
+          <span>김유정</span>
+          <img class="top-fb-login" src="./images/main/gnb-login.png"  alt="">
+        </a>        
+        <!-- 로그인상태 끝 -->
+      </div>
+      
+      <nav>
+        <ul class="gnb">
+          <li>
+            <a href="campaign.html">
+              캠페인
+            </a>
+          </li>
+          <li>
+            <a href="likentalk.html">              
+              라이크&#38;톡
+            </a>
+          </li>
+          <li>
+            <a href="pointshop.html">
+              포인트샵
+            </a>
+          </li>
+          <li>
+            <a href="event.html">
+              이벤트
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <!-- @ header End -->
+
+     <!-- @ Toggle menu LOGOUT -->
+    <div id="userBg"></div>
+    <div class="userwrap">
+      <!-- @ LOGOUT -->
+      <div class="user">
+        <!-- @@ 유저 정보 -->
+        <div class="user-contents">
+          <!-- LOGOUT : logout class추가, 현재 display:none 상태 -->
+          <div class="user-info logout">
+            <img class="user-info-img" src="./images/menu/customer-logout.png"  alt="">
+            <!--<h3 class="user-info-name">GUEST</h3>-->
+            <a class="user-info-page" href="#">
+              <img src="./images/menu/logout-go-page.png"  alt="페이스북으로 로그인">
+            </a>
+            <div class="user-point">
+              <dl class="">
+                <dt>누적포인트</dt>
+                <dd>-</dd>
+              </dl>
+              <dl class="">
+                <dt>출금가능포인트</dt>
+                <dd>-</dd>
+              </dl>
+            </div>
+          </div>
+          <!-- LOGOUT END -->
+
+          <!-- LOGIN -->
+          <div class="user-info">
+            <img class="user-info-img" src="./images/menu/customer-img.png"  alt="">
+            <p class="user-info-grade">
+              <img src="./images/menu/grade-bronze.png"  alt="">
+            </p>        
+            <h3 class="user-info-name">김유정</h3>
+            <a class="user-info-page" href="mypage.html">
+              <img src="./images/menu/login-go-page.png"  alt="MY PAGE">
+            </a>
+            <div class="user-point">
+              <dl class="">
+                <dt>누적포인트</dt>
+                <dd>146,000P</dd>
+              </dl>
+              <dl class="">
+                <dt>출금가능포인트</dt>
+                <dd>140,000P</dd>
+              </dl>
+            </div>
+          </div>
+          <!-- LOGIN END -->
+          <!-- @@ 유저 정보 END -->
+
+          <!-- @@ NAV -->
+          <nav class="nav-menu">
+            <a href="index.html">
+              <img src="./images/menu/menu1-home.png"  alt="홈">
+              <span>홈</span>
+            </a>        
+            <a href="mypage.html">
+              <img src="./images/menu/menu-account.png"  alt="출금신청">
+              <span>출금신청</span>
+            </a>
+            <a href="campaign.html">
+              <img src="./images/menu/menu2-campaign.png"  alt="캠페인">
+              <span>캠페인</span>
+            </a>        
+            <a href="likentalk.html">
+              <img src="./images/menu/menu3-likentalk.png"  alt="라이크앤톡">
+              <span>라이크&#38;톡</span>
+            </a>
+            <a href="event.html">
+              <img src="./images/menu/menu4-event.png"  alt="이벤트">
+              <span>이벤트</span>
+            </a>
+            <a href="pointshop.html">
+              <img src="./images/menu/menu5-point.png"  alt="포인트샵">
+              <span>포인트샵</span>
+            </a>
+            <a href="service.html">
+              <img src="./images/menu/menu6-service.png"  alt="서비스안내">
+              <span>서비스안내</span>
+            </a>
+            <a href="customer.html">
+              <img src="./images/menu/menu7-customer.png"  alt="고객센터">
+              <span>고객센터</span>
+            </a>
+            <a href="incentive.html">
+              <img src="./images/menu/menu-incentive.png"  alt="인센티브">
+              <span>인센티브</span>
+            </a>
+          </nav>
+          <!-- @@ NAV END -->
+          <!-- @@ 구글다운로드-->
+          <p class="google-download">
+            <a href="customer.html">
+              <img src="./images/menu/menu-notice.png"  alt="공지사항">
+              <span>공지사항</span>
+            </a>
+            <a href="customer.html">
+              <img src="./images/menu/menu-google.png"  alt="구글 다운로드">
+              <span>다운로드</span>
+            </a>
+            <a href="customer.html">
+              <img src="./images/menu/menu-appstore.png"  alt="앱스토어 다운로드">
+              <span>다운로드</span>
+            </a>
+          </p>
+          <!-- @@ 구글다운로드 END -->
+        </div>
+        <a class="user-close" href="javascript:;">
+          <img src="./images/menu/btn-close.png"  alt="창닫기">
+        </a>
+      </div>
+    </div>
+    <!-- @ Toggle menu END -->
+
+    <!-- @ 컨텐츠 -->
+    <div class="contents l-mypage" id="mypage">
+      <section class="section mypage-list" id="mypage-list">      
+        <h2>
+          <img src="./images/pages/title-mypage.png"  alt="라이크앤클릭 마이페이지">
+        </h2>
+
+        <!-- 1702 수정 S 
+        <div class="infoUser">
+          <h3>                  
+            <span class="name">김유정</span>
+            <span class="grade">골드</span>회원님
+          </h3>  
+          <a class="btn-logout" href="">로그아웃</a>
+        </div>        
+        <!-- 1702 수정 E -->
+
+        <!-- 170406 수정 S -->
+        <div class="infoUser">
+          <h3>                 
+             
+            <span class="name">
+            	<a href="https://www.facebook.com/app_scoped_user_id/442862866052889" target="_blank">
+            		<img class="top-fb-login" src="./images/main/gnb-login.png" alt="">
+                    김유정                </a>
+            </span>
+            
+            <img src="./images/grade/grade-bronze.png" alt="Level Image" style="width: 2.0rem;">   
+
+          </h3>
+
+          <a class="btn-logout" href="javascript:mui.modal.open('logout-popup');">로그아웃</a>
+          <br><br><br>
+            <h4> 생일 : 1992-09-28 </h4>                        <h4> 성별 : female </h4>            <h4> 친구수 : 1 </h4>            <h4> 가입일 : 2016-10-06 18:52:54 </h4>        
+          </div>
+        <!-- 170406 수정 E -->
+        
+        <dl class="l-incentive-tab">
+          <dt onclick="location.href='./mypage.html'">출금</dt>
+          <dt class="tab_on" onclick="location.href='./mypage2.html'">1:1문의</dt>
+          <dt onclick="location.href='./mypage3.html'">설정</dt>
+          <dt onclick="location.href='./mypage4.html'">적립내역</dt>
+          <dt onclick="location.href='./mypage5.html'">선물함</dt>
+          <dt onclick="location.href='./mypage6.html'">구매내역</dt>
+        </dl>
+
+        <!-- 170406 수정 S -->
+        <div class="mypage-content stepCounsel">       
+          <!-- @ 탭 -->
+            <ul class="tab">
+              <li class="is-active" rel="counsel-tab1">1:1 문의</li>
+              <li rel="counsel-tab2">나의 문의내역</li>
+            </ul>        
+          <!-- @ 탭 -->
+          <!-- @ 컨텐츠 -->
+          <div class="layWrap">
+            <!-- @@ 스텝1 카테고리 S -->
+            <div class="category couSection">
+              <div class="tab-container counsel">              
+                <ul class="category-list spacer">
+                  <li class="nospa"><a href="#">설치설치설치</a></li>
+                  <li><a href="#">오토 피드</a></li>
+                  <li><a href="#">수익금</a></li>
+                  <li class="nospa"><a href="#">빨대꽂기</a></li>
+                  <li><a href="#">출금</a></li>
+                  <li><a href="#">어뷰징</a></li>
+                  <li class="nospa"><a href="#">탈퇴</a></li>
+                  <li><a href="#">회원등급</a></li>
+                  <li><a href="#">빈계정</a></li>
+                  <li class="nospa"><a href="#">기타</a></li>
+                </ul>
+              </div>
+            </div>
+            <!-- @@ 스텝1 카테고리 E -->
+            
+            <!-- @@ 스텝2 카테고리별 섹션 슬라이드 S -->
+            <div class="sort couSection">
+              <div class="swiper-container swiper-container-h">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <h3 class="sort-title">설치</h3>       
+                    <div class="sort-listWrap" id="wrap0">
+                      <ul class="sort-list">
+                        <li><a href="#"><span class="figure">Q1.</span> <span class="title">설치를 했는데 돈이 안들어옵니다.</span></a></li>
+                        <li><a href="#"><span class="figure">Q2.</span> <span class="title">설치하고 이벤트를 참여하다가 오류가 발생했습니다. 어떻게 할까요?</span></a></li>
+                        <li><a href="#"><span class="figure">Q3.</span> <span class="title">설치하고 싶은데 어디서 설치하나요?</span></a></li>
+                        <li><a href="#"><span class="figure">Q4.</span> <span class="title">설치하면 얼마나 벌 수 있나요?</span></a></li>
+                        <li><a href="#"><span class="figure">Q5.</span> <span class="title">설치하는데 오류가 났어요.</span></a></li>
+                        <li><a href="#"><span class="figure">Q6.</span> <span class="title">설치하고 이벤트를 참여하다가 오류가 발생했습니다. 어떻게 할까요?</span></a></li>
+                        <li><a href="#"><span class="figure">Q7.</span> <span class="title">설치하고 이벤트를 참여하다가 오류가 발생했습니다. 어떻게 할까요?</span></a></li>
+                        <li><a href="#"><span class="figure">Q8.</span> <span class="title">설치하고 이벤트를 참여하다가 오류가 발생했습니다. 어떻게 할까요?</span></a></li>
+                        <li><a href="#"><span class="figure">Q9.</span> <span class="title">설치하고 이벤트를 참여하다가 오류가 발생했습니다. 어떻게 할까요?</span></a></li>
+                        <li><a href="#"><span class="figure">Q10.</span> <span class="title">설치하고 이벤트를 참여하다가 오류가 발생했습니다. 어떻게 할까요?</span></a></li>
+                      </ul>                      
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <h3 class="sort-title">오토 피드</h3>
+                    <div class="sort-listWrap" id="wrap1">
+                      <ul class="sort-list">
+                        <li><a href="#"><span class="figure">Q1.</span> <span class="title">설치를 했는데 돈이 안들어옵니다.</span></a></li>
+                        <li><a href="#"><span class="figure">Q2.</span> <span class="title">설치하고 이벤트를 참여하다가 오류가 발생했습니다. 어떻게 할까요?</span></a></li>
+                        <li><a href="#"><span class="figure">Q3.</span> <span class="title">설치하고 싶은데 어디서 설치하나요?</span></a></li>
+                        <li><a href="#"><span class="figure">Q4.</span> <span class="title">설치하면 얼마나 벌 수 있나요?</span></a></li>
+                        <li><a href="#"><span class="figure">Q5.</span> <span class="title">설치하는데 오류가 났어요.</span></a></li>
+                        <li><a href="#"><span class="figure">Q6.</span> <span class="title">설치하고 이벤트를 참여하다가 오류가 발생했습니다. 어떻게 할까요?</span></a></li>
+                        <li><a href="#"><span class="figure">Q7.</span> <span class="title">설치하고 이벤트를 참여하다가 오류가 발생했습니다. 어떻게 할까요?</span></a></li>
+                        <li><a href="#"><span class="figure">Q8.</span> <span class="title">설치하고 이벤트를 참여하다가 오류가 발생했습니다. 어떻게 할까요?</span></a></li>
+                        <li><a href="#"><span class="figure">Q9.</span> <span class="title">설치하고 이벤트를 참여하다가 오류가 발생했습니다. 어떻게 할까요?</span></a></li>
+                        <li><a href="#"><span class="figure">Q10.</span> <span class="title">설치하고 이벤트를 참여하다가 오류가 발생했습니다. 어떻게 할까요?</span></a></li>
+                      </ul>                      
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <h3 class="sort-title">수익금</h3>
+                    <div class="sort-listWrap" id="wrap2">
+                      <ul class="sort-list">
+                        <li><a href="#"><span class="figure">Q1.</span> <span class="title">설치를 했는데 돈이 안들어옵니다.</span></a></li>
+                        <li><a href="#"><span class="figure">Q2.</span> <span class="title">설치하고 이벤트를 참여하다가 오류가 발생했습니다. 어떻게 할까요?</span></a></li>
+                        <li><a href="#"><span class="figure">Q3.</span> <span class="title">설치하고 싶은데 어디서 설치하나요?</span></a></li>
+                        <li><a href="#"><span class="figure">Q4.</span> <span class="title">설치하면 얼마나 벌 수 있나요?</span></a></li>
+                        <li><a href="#"><span class="figure">Q5.</span> <span class="title">설치하는데 오류가 났어요.</span></a></li>
+                      </ul>
+                    </div>
+                  </div>                  
+                  <div class="swiper-slide">
+                    <h3 class="sort-title">빨대꽂기</h3>
+                    <div class="sort-listWrap" id="wrap3">
+                      <ul class="sort-list">
+                        <li><a href="#"><span class="figure">Q1.</span> <span class="title">설치를 했는데 돈이 안들어옵니다.</span></a></li>
+                        <li><a href="#"><span class="figure">Q2.</span> <span class="title">설치하고 이벤트를 참여하다가 오류가 발생했습니다. 어떻게 할까요?</span></a></li>
+                        <li><a href="#"><span class="figure">Q3.</span> <span class="title">설치하고 싶은데 어디서 설치하나요?</span></a></li>
+                        <li><a href="#"><span class="figure">Q4.</span> <span class="title">설치하면 얼마나 벌 수 있나요?</span></a></li>
+                        <li><a href="#"><span class="figure">Q5.</span> <span class="title">설치하는데 오류가 났어요.</span></a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <h3 class="sort-title">출금</h3>
+                    <div class="sort-listWrap" id="wrap4">
+                      <ul class="sort-list">
+                        <li><a href="#"><span class="figure">Q1.</span> <span class="title">설치를 했는데 돈이 안들어옵니다.</span></a></li>
+                        <li><a href="#"><span class="figure">Q2.</span> <span class="title">설치하고 이벤트를 참여하다가 오류가 발생했습니다. 어떻게 할까요?</span></a></li>
+                        <li><a href="#"><span class="figure">Q3.</span> <span class="title">설치하고 싶은데 어디서 설치하나요?</span></a></li>
+                        <li><a href="#"><span class="figure">Q4.</span> <span class="title">설치하면 얼마나 벌 수 있나요?</span></a></li>
+                        <li><a href="#"><span class="figure">Q5.</span> <span class="title">설치하는데 오류가 났어요.</span></a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <h3 class="sort-title">어뷰징</h3>
+                    <div class="sort-listWrap" id="wrap5">
+                      <ul class="sort-list">
+                        <li><a href="#"><span class="figure">Q1.</span> <span class="title">설치를 했는데 돈이 안들어옵니다.</span></a></li>
+                        <li><a href="#"><span class="figure">Q2.</span> <span class="title">설치하고 이벤트를 참여하다가 오류가 발생했습니다. 어떻게 할까요?</span></a></li>
+                        <li><a href="#"><span class="figure">Q3.</span> <span class="title">설치하고 싶은데 어디서 설치하나요?</span></a></li>
+                        <li><a href="#"><span class="figure">Q4.</span> <span class="title">설치하면 얼마나 벌 수 있나요?</span></a></li>
+                        <li><a href="#"><span class="figure">Q5.</span> <span class="title">설치하는데 오류가 났어요.</span></a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <h3 class="sort-title">탈퇴</h3>
+                    <div class="sort-listWrap" id="wrap6">
+                      <ul class="sort-list">
+                        <li><a href="#"><span class="figure">Q1.</span> <span class="title">설치를 했는데 돈이 안들어옵니다.</span></a></li>
+                        <li><a href="#"><span class="figure">Q2.</span> <span class="title">설치하고 이벤트를 참여하다가 오류가 발생했습니다. 어떻게 할까요?</span></a></li>
+                        <li><a href="#"><span class="figure">Q3.</span> <span class="title">설치하고 싶은데 어디서 설치하나요?</span></a></li>
+                        <li><a href="#"><span class="figure">Q4.</span> <span class="title">설치하면 얼마나 벌 수 있나요?</span></a></li>
+                        <li><a href="#"><span class="figure">Q5.</span> <span class="title">설치하는데 오류가 났어요.</span></a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <h3 class="sort-title">회원등급</h3>
+                    <div class="sort-listWrap" id="wrap7">
+                      <ul class="sort-list">
+                        <li><a href="#"><span class="figure">Q1.</span> <span class="title">설치를 했는데 돈이 안들어옵니다.</span></a></li>
+                        <li><a href="#"><span class="figure">Q2.</span> <span class="title">설치하고 이벤트를 참여하다가 오류가 발생했습니다. 어떻게 할까요?</span></a></li>
+                        <li><a href="#"><span class="figure">Q3.</span> <span class="title">설치하고 싶은데 어디서 설치하나요?</span></a></li>
+                        <li><a href="#"><span class="figure">Q4.</span> <span class="title">설치하면 얼마나 벌 수 있나요?</span></a></li>
+                        <li><a href="#"><span class="figure">Q5.</span> <span class="title">설치하는데 오류가 났어요.</span></a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <h3 class="sort-title">빈계정</h3>
+                    <div class="sort-listWrap" id="wrap8">
+                      <ul class="sort-list">
+                        <li><a href="#"><span class="figure">Q1.</span> <span class="title">설치를 했는데 돈이 안들어옵니다.</span></a></li>
+                        <li><a href="#"><span class="figure">Q2.</span> <span class="title">설치하고 이벤트를 참여하다가 오류가 발생했습니다. 어떻게 할까요?</span></a></li>
+                        <li><a href="#"><span class="figure">Q3.</span> <span class="title">설치하고 싶은데 어디서 설치하나요?</span></a></li>
+                        <li><a href="#"><span class="figure">Q4.</span> <span class="title">설치하면 얼마나 벌 수 있나요?</span></a></li>
+                        <li><a href="#"><span class="figure">Q5.</span> <span class="title">설치하는데 오류가 났어요.</span></a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <h3 class="sort-title">기타</h3>     
+                    <div class="sort-listWrap" id="wrap9">
+                      <ul class="sort-list">
+                        <li><a href="#"><span class="figure">Q1.</span> <span class="title">설치를 했는데 돈이 안들어옵니다.</span></a></li>
+                        <li><a href="#"><span class="figure">Q2.</span> <span class="title">설치하고 이벤트를 참여하다가 오류가 발생했습니다. 어떻게 할까요?</span></a></li>
+                        <li><a href="#"><span class="figure">Q3.</span> <span class="title">설치하고 싶은데 어디서 설치하나요?</span></a></li>
+                        <li><a href="#"><span class="figure">Q4.</span> <span class="title">설치하면 얼마나 벌 수 있나요?</span></a></li>
+                        <li><a href="#"><span class="figure">Q5.</span> <span class="title">설치하는데 오류가 났어요.</span></a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+              </div>
+            </div>            
+            <!-- @@ 스텝2 카테고리별 섹션 슬라이드 E -->
+
+           <!-- @@ 스텝3 E -->
+            <div class="ansCounsel couSection">       
+              <div class="tab-container counsel"> 
+                <div class="">
+                  <h3 class="ansCounsel-title"><span class="figure">Q1.</span> <span class="title">설치를 했는데 돈이 안들어옵니다.</span></h3>
+                  <div class="ansCounsel-answer spacer">
+                    설치 후 한 달 이내에 앱을 삭제하시면 적립금이 적립되지 않습니다. 또한 앱 설치 후 바로 삭제 후 다시 설치해도 적립금이 적립되지 않으니 이 점 유의해주십시오.
+                  </div>                  
+                </div>
+                <div class="ansCounsel-move spacer">
+                  <h4>기타 답변이 필요하신가요?</h4>
+                  <a class="btn-backCounsel" href="#">NO</a>
+                  <a class="btn-oneCounsel" href="#">YES</a>
+                </div>
+              </div>
+            </div>
+           <!-- @@ 스텝3 S -->
+
+            <!-- @@ 스텝4 1:1문의 S-->
+            <div class="oneCounsel couSection">         
+              <div class="tab-container counsel">
+                <div class="tab-content tab_v3 spacer" id="counsel-tab1">
+                  <form id="frm-counsel" method="post" action="">
+                    <div>
+                      <h3 class="frm-counsel-title">위의 답변이 도움이 되지 못해 죄송합니다. 문의하고 싶은 사항을 직접 입력해 주세요.</h3>
+                    </div>
+                    <div class="frm-counsel-write">
+                      <textarea id="frm-counsel-detail" cols="30" rows="10" placeholder="정확한 상담을 위해 자세한 내용을 적어주시기 바랍니다."></textarea>  
+                    </div>             
+                    <p class="notice">* 문의 주신 내용은 최대한 빨리 답변해 드리겠습니다.</p>
+                    <button type="submit">
+                      <img src="./images/pages/customer/btn-counsel.png"  alt="문의하기">
+                    </button>       
+                  </form>
+                </div>
+                <dl class="faq-inner tab-content tab_v3" id="counsel-tab2">
+                  <dt class="faq-inner-question">
+                    <a role="button">
+                      <h3>출금 신청을 잘못 하였습니다.</h3>
+                      <p class="date">2016.08.22 09:37:39</p>
+                      <span class="is-complete badge">
+                        답변<br>완료
+                      </span>
+                    </a>
+                  </dt>
+                  <dd class="faq-inner-answer">
+                    <div class="userWrite">
+                      출금 신청을 잘못했네요~ 취소해 주시고 금주 내에<br>재 신청할 수 있도록 처리해 주시기 바랍니다.<br>아, 그리고 돈을 벌 수 있어서 너무나 좋습니다.<br>번창하세요.                      
+                    </div>
+                    <div class="replyWrite">
+                      <div class="replyWrite-detail">
+                        네~ 그렇게 처리하도록 하겠습니다.
+                      </div>
+                      <div class="replyWrite-sub">
+                        <h4>답변</h4>
+                        <span class="date">2016.08.22 09:37:39</span>
+                      </div>
+                    </div>
+                  </dd>
+
+                  <dt class="faq-inner-question">
+                    <a role="button">
+                      <h3>출금 신청을 잘못 하였습니다.</h3>
+                      <p class="date">2016.08.22 09:37:39</p>
+                      <span class="is-waited badge">
+                        문의중
+                      </span>
+                    </a>
+                  </dt>
+                  <dd class="faq-inner-answer">
+                    <div class="userWrite">
+                      출금 신청을 잘못했네요~ 취소해 주시고 금주 내에 재 신청할 수 있도록 처리해 주시기 바랍니다. 아, 그리고 돈을 벌 수 있어서 너무나 좋습니다. 번창하세요.                      
+                    </div>
+                    <!--div class="replyWrite">
+                      <div class="replyWrite-detail">
+                        네~ 그렇게 처리하도록 하겠습니다.
+                      </div>
+                      <div class="replyWrite-sub">
+                        <h4>답변</h4>
+                        <span class="date">2016.08/22 09:37:39</span>
+                      </div>
+                    </div-->
+                  </dd>
+                </dl>
+              </div>
+            </div>
+            <!-- @@ 스텝4 1:1문의 E-->
+          </div>
+
+        </div>
+        
+      </section>
+    </div>
+    <!-- @ 컨텐츠 END -->
+        <!-- 170406 수정 E -->
+
+    <!-- @ footer -->
+    <footer class="footer">
+      <h2 class="footer-logo">
+        <img src="./images/footer-logo.png"  alt="라이크앤클릭">
+      </h2>
+      <div class="footer-list">
+        <a href="footer-terms.html">이용약관</a>
+        <a href="footer-infor.html">개인정보취급방침</a>
+        <p>Copyright © 라이크앤클릭 Co.,Ltd. All Rights Reserved.</p>
+      </div>         
+    </footer>
+    <!-- @ footer END -->
+
+    <aside class="btn-scroll-top" style="display: none;">
+      <div>
+        <a href="javascript:void(0)" id="btn-scroll-top">
+          <img src="./images/btn-top.png" alt="TOP">
+        </a>
+      </div>
+    </aside>
+  </main>
+
+  <!-- @ 팝업 - 오토피드 시스템이란 -->
+  <div id="mypage-autopeed" class="modal" data-role="modal">
+    <section class="modal-content">
+      <img src="./images/popup/mypage-autopeed.png"  alt="">
+      <div class="popup-text">
+        오토피드는 회원님께서 설정하신 정보를 기반으로<br>
+        다양한 캠페인을 자동으로 공유하여<br>
+        회원님의 수익활동을 돕는 시스템입니다
+      </div>
+      <a href="javascript:void(0)" data-rel="back" class="modal__close">
+        <img src="./images/popup/modal-close.png" alt="닫기">
+      </a>
+      <a href="javascript:void(0)" data-rel="back" class="modal-btn-close">
+        <img src="./images/spacer.png" alt="오토피드 설정">
+      </a>
+    </section>
+  </div>
+
+  <!-- @ 팝업 - 오토삭제 시스템이란 -->
+  <div id="mypage-autodeleted" class="modal" data-role="modal">
+    <section class="modal-content">
+      <img src="./images/popup/mypage-autodeleted.png"  alt="">
+      <div class="popup-text">
+       오토피드를 통해 게시된 게시물 중 캠페인 종료<br>
+       또는 일정시간이 지난 캠페인을 자동으로 삭제하여<br>
+       회원님의 타임라인을 관리하는 시스템입니다
+      </div>
+      <a href="javascript:void(0)" data-rel="back" class="modal__close">
+        <img src="./images/popup/modal-close.png" alt="닫기">
+      </a>
+      <a href="javascript:void(0)" data-rel="back" class="modal-btn-close">
+        <img src="./images/spacer.png" alt="오토삭제 시스템 설정">
+      </a>
+    </section>
+  </div>
+
+  <!-- @ 팝업 - 출금신청 완료 -->
+  <div id="mypage-account-complete" class="modal" data-role="modal">
+    <section class="modal-content">
+      <img src="./images/popup/mypage-account-complete.png"  alt="">
+      <div class="popup-text">
+        <p class="point"><var>90,000</var>P</p>
+        <p>입금일자는 <span class="date">2016년 08월 24일</span> 입니다.</p>
+      </div>
+      <a href="javascript:void(0)" data-rel="back" class="modal__close">
+        <img src="./images/popup/modal-close.png" alt="닫기">
+      </a>
+      <a href="javascript:void(0)" data-rel="back" class="modal-btn-close">
+        <img src="./images/spacer.png" alt="출금 내역 확인">
+      </a>
+    </section>
+  </div>
+
+  <!-- @ 팝업 - 출금신청 불가시 -->
+  <div id="mypage-point" class="modal" data-role="modal">
+    <section class="modal-content">
+      <img src="./images/popup/mypage-point.png"  alt="">
+      <p class="popup-title">
+        <var>9,800</var>P
+      </p>
+      <p class="popup-text">
+        10,000 포인트부터 10,000 포인트 단위로<br>
+        출금 가능합니다
+      </p>
+      <a href="javascript:void(0)" data-rel="back" class="modal__close">
+        <img src="./images/popup/modal-close.png" alt="닫기">
+      </a>
+      <a href="campaign.html" class="btn-go-campaign">
+        <img src="./images/spacer.png" alt="캠페인 공유하기로 이동">
+      </a>      
+      <a href="javascript:;" class="btn-go-point">
+        <img src="./images/spacer.png" alt="포인트샵으로 이동">
+      </a>
+    </section>
+  </div>
+
+
+  <script src="./assets/js/vendor.js"></script>
+  <script src="./assets/js/plugin.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/iscroll.js"></script>
+
+</body>
+</html>

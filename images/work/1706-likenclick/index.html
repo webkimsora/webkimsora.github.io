@@ -1,0 +1,464 @@
+<!doctype html>
+<html class="no-js" lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>라이크앤클릭</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no, minimal-ui, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="">
+  <link rel="stylesheet" href="css/main.css">
+
+  <link href='http://fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet' type='text/css'>
+</head>
+<body>
+
+
+  <main class="home" id="viewport">
+    <!-- @ header End -->
+    <header class="header">
+      <div class="top">
+        <a class="top-menu" href="javascript:;">
+          <img src="./images/main/gnb-nav.png"  alt="">
+        </a>  
+        <a class="top-logo" href="index.html">
+          <img src="./images/main/logo.png"  alt="라이크앤클릭">
+        </a>
+        <!-- 참고사항: 로그아웃시 이름,이미지 변경. 클래스 logout 추가, 현재 숨김처리 -->
+        <a class="top-fb logout" href="#">
+          <span>로그인</span>
+          <img class="top-fb-login" src="./images/main/gnb-logout.png"  alt="">  
+        </a>        
+        <!-- 참고사항: 로그아웃시 이름, 이미지 변경. 클래스 logout 추가 끝 -->
+        <a class="top-fb" href="#">
+          <span>김유정</span>
+          <img class="top-fb-login" src="./images/main/gnb-login.png"  alt="">
+        </a>        
+        <!-- 로그인상태 끝 -->
+      </div>
+      <!-- 161227 수정 S -->
+      <!-- @@ 170718 visual -->
+        <div class="visual">
+            <div class="owl-carousel">
+                <div class="item" style="background:url('./images/main/visual-re1.jpg') no-repeat; background-size: 100% 100%;">
+                    <div class="itemWrap no1">
+                        <img src="./images/main/visual-1.png"  alt="가입즉시 1,000원+꿀알바 최초 적립시 2,000원">
+                    </div>
+                </div>
+                <div class="item" style="background:url('./images/main/visual-re2.jpg') no-repeat; background-size: 100% 100%;">
+                    <div class="itemWrap no2">
+                        <img src="./images/main/visual-2.png"  alt="">
+                        <a class="btn-vis-app" href="http://www.naver.com"><img style="width:100%; height: 100%;" src="./images/spacer.png"  alt="앱스토어"></a>
+                        <a class="btn-vis-google" href="http://www.google.com"><img style="width:100%; height: 100%;" src="./images/spacer.png"  alt="구글플레이"></a>
+                    </div>
+                </div>
+                <div class="item" style="background:url('./images/main/visual-re3.jpg') no-repeat; background-size: 100% 100%;">
+                    <div class="itemWrap no3">
+                        <img src="./images/main/visual-3.png"  alt="">
+                        <a class="btn-vis-money" style="" href="http://www.daum.net"><img style="width:100%; height: 100%;" src="./images/spacer.png"  alt="받으러가기"></a>
+                    </div>
+                </div>
+            </div>        
+        </div>    
+      <!-- @@ 170718 visual End -->
+      <!-- 161227 수정 E -->
+    </header>
+    <!-- @ header End -->
+
+    <!-- @ Toggle menu LOGOUT -->
+    <div id="userBg"></div>
+    <div class="userwrap">
+      <!-- @ LOGOUT -->
+      <div class="user">
+        <!-- @@ 유저 정보 -->
+        <div class="user-contents">
+          <!-- LOGOUT : logout class추가, 현재 display:none 상태 -->
+          <div class="user-info logout">
+            <img class="user-info-img" src="./images/menu/customer-logout.png"  alt="">
+            <!--<h3 class="user-info-name">GUEST</h3>-->
+            <a class="user-info-page" href="#">
+              <img src="./images/menu/logout-go-page.png"  alt="페이스북으로 로그인">
+            </a>
+            <div class="user-point">
+              <dl>
+                <dt>총 누적 포인트</dt>
+                <dd>-</dd>
+              </dl>
+              <dl>
+                <dt>보유 포인트</dt>
+                <dd>-</dd>
+              </dl>
+            </div>
+          </div>
+          <!-- LOGOUT END -->
+
+          <!-- LOGIN -->
+          <div class="user-info">
+            <img class="user-info-img" src="./images/menu/customer-img.png"  alt="">
+            <p class="user-info-grade">
+              <img src="./images/grade/grade-bronze.png"  alt="">
+            </p>        
+            <h3 class="user-info-name">김유정</h3>
+            <a class="user-info-page" href="mypage2.html">
+              <img src="./images/menu/login-go-page.png"  alt="MY PAGE">
+            </a>
+            <div class="user-point">
+              <dl>
+                <dt>총 누적 포인트</dt>
+                <dd>146,000P</dd>
+              </dl>
+              <dl>
+                <dt>보유 포인트</dt>
+                <dd>140,000P</dd>
+              </dl>
+            </div>
+          </div>
+          <!-- LOGIN END -->
+          <!-- @@ 유저 정보 END -->
+          <!-- 1702 수정 S -->
+          <!-- @@ NAV -->
+          <nav class="nav-menu">  
+            <a href="mypage.html">
+              <img src="./images/menu/menu-account.png"  alt="출금신청">
+              <span>출금신청</span>
+            </a> 
+            <a href="mypage4.html">
+              <img src="./images/menu/menu-saving.png"  alt="적립내역">
+              <span>적립내역</span>
+            </a>
+            <a href="campaign.html">
+              <img src="./images/menu/menu-campaign.png"  alt="캠페인">
+              <span>꿀알바</span>
+            </a>        
+            <a href="pointshop.html">
+              <img src="./images/menu/menu5-point.png"  alt="포인트샵">
+              <span>포인트샵</span>
+            </a>
+            <a href="event.html">
+              <img src="./images/menu/menu4-event.png"  alt="이벤트">
+              <span>이벤트</span>
+            </a>
+            <a href="likentalk.html">
+              <img src="./images/menu/menu-community.png"  alt="라이크앤톡">
+              <span>커뮤니티</span>
+            </a>
+            <a href="customer.html">
+              <img src="./images/menu/menu6-service.png"  alt="이용안내">
+              <span>이용안내</span>
+            </a>
+            <a href="javascript:;">
+              <img src="./images/menu/menu-quest.png"  alt="퀘스트">
+              <span>퀘스트</span>
+            </a>
+            <a href="incentive.html">
+              <img src="./images/menu/menu-incentive.png"  alt="인센티브">
+              <span>빨대꽂기</span>
+            </a>
+          </nav>
+          <!-- @@ NAV END -->
+          <!-- @@ 구글다운로드-->
+          <p class="google-download">
+            <a href="customer.html">
+              <img src="./images/menu/menu-notice.png"  alt="공지사항">
+              <span>공지사항</span>
+            </a>
+            <a href="customer.html">
+              <img src="./images/menu/menu-google.png"  alt="구글 다운로드">
+              <span>다운로드</span>
+            </a>
+            <a href="customer.html">
+              <img src="./images/menu/menu-appstore.png"  alt="앱스토어 다운로드">
+              <span>다운로드</span>
+            </a>
+          </p>
+          <!-- @@ 구글다운로드 END -->
+        </div>
+        <a class="user-close" href="javascript:;">
+          <img src="./images/menu/btn-close.png"  alt="창닫기">
+        </a>
+      </div>
+    </div>
+    <!-- @ Toggle menu END -->
+
+    <!-- @ 컨텐츠 -->
+    <div class="contents">
+      <div class="home">    
+        <!-- @@ 보유포인트 참고사항: login때만, logout 클래스 추가시 X -->
+        <ul class="home-ranking cnt-box">
+          <li>
+            <h3>보유 포인트</h3>
+            <var>250,000P</var>
+          </li>
+          <li>
+            <h3>수익금 누적랭킹</h3>
+            <var>225위</var>
+          </li>
+        </ul>
+
+        <!--@@ -->
+        <!--div class="home-check cnt-box">
+          <a href="service.html">
+            <img src="./images/main/logo-text.png"  alt="라이크앤클릭">알아보기
+          </a>
+        </div-->
+
+        <!-- @@ 공지사항 -->
+        <div class="home-notice cnt-box">
+          <h3>공지사항</h3>
+          <!-- Swiper -->
+          <div class="swiper-container">
+              <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <a href="#">라이크앤클릭 리뉴얼 오픈</a>
+                  </div>
+                  <div class="swiper-slide">Slide 2</div>
+                  <div class="swiper-slide">Slide 3</div>
+              </div>
+              <div class="swiper-pagination"></div>
+          </div>
+        </div>
+
+        <!-- nav 아이콘 -->
+        <!-- 170223 수정 S -->
+        <nav>
+          <ul class="home-gnb">
+            <li>
+              <a href="campaign.html">
+                <i class="btn-icon campaign"></i>
+                <p>꿀알바</p>
+              </a>
+            </li>
+            <li class="is-active">
+              <a href="pointshop.html">
+                <i class="btn-icon likentalk"></i>
+                <p>포인트샵</p>
+              </a>
+            </li>
+            <li>
+              <a href="likentalk.html">
+                <i class="btn-icon pointshop"></i>
+                <p>커뮤니티</p>
+              </a>
+            </li>
+            <li>
+              <a href="event.html">
+                <i class="btn-icon event"></i>
+                <p>이벤트</p>
+              </a>
+            </li>
+            <li>
+              <a href="incentive.html">
+                <i class="btn-icon incentive"></i>
+                <p>빨대꽂기</p>
+              </a>
+            </li>
+            <li>
+              <a href="customer.html">
+                <i class="btn-icon customer"></i>
+                <p>이용안내</p>
+              </a>
+            </li>
+          </ul>
+        </nav>        
+        <!-- 170223 수정 E -->
+
+        <ul class="share">
+          <li>
+            <img class="share-img" src="./images/home/dummy1.jpg"  alt="">
+            <div class="share-list">
+              <p class="share-list-gift">좋아요 100P + 클릭 10P</p>
+              <h3 class="share-list-title">코리아나 화장품</h3>
+              <!-- @ 로그인, 로그아웃시 상태 다름 -->
+              <div class="share-list-val logout">
+                <!-- 참고사항 : 로그아웃 -->
+                <a class="share-list-btn" href="#campaign-login" data-toggle="modal">
+                  공유하기
+                </a>
+                <!-- 참고사항 : 로그인-->
+                <div class="progress-info">                  
+                  <div class="progress">
+                    <span style="65%" class="progress-bar progress-bar-success blue-sharp">
+                      <span class="sr-only"></span>
+                    </span>
+                  </div>
+                  <span class="status-title">진행률</span>
+                  <span class="status-number">65%</span>
+                </div>
+              </div>             
+            </div>
+            <p class="share-notice-check">
+              공유가능
+            </p>
+          </li>
+
+          <li>
+            <img class="share-img" src="https://placeholdit.imgix.net/~text?txtsize=38&txt=400%C3%97400&w=400&h=400"  alt="">
+            <div class="share-list">
+              <p class="share-list-gift">좋아요 100P</p>
+              <h3 class="share-list-title">라이크앤클릭 감사 이벤트</h3>
+              <div class="share-list-val">
+                <div class="progress-info">                  
+                  <div class="progress">
+                    <span style="65%" class="progress-bar progress-bar-success blue-sharp">
+                      <span class="sr-only"></span>
+                    </span>
+                  </div>
+                  <span class="status-title">진행률</span>
+                  <span class="status-number">65%</span>
+                </div>
+              </div>             
+            </div>
+            <p class="share-notice-check is-complete">
+              공유완료
+            </p>
+          </li>
+          
+          <li>
+            <img class="share-img" src="https://placeholdit.imgix.net/~text?txtsize=38&txt=400%C3%97400&w=400&h=400"  alt="">
+            <div class="share-list">
+              <p class="share-list-gift">클릭 10P</p>
+              <h3 class="share-list-title">오연서의 꿀광 피부</h3>
+              <div class="share-list-val">
+                <div class="progress-info">                  
+                  <div class="progress">
+                    <span style="65%" class="progress-bar progress-bar-success blue-sharp">
+                      <span class="sr-only"></span>
+                    </span>
+                  </div>
+                  <span class="status-title">진행률</span>
+                  <span class="status-number">65%</span>
+                </div>
+              </div>             
+            </div>
+            <p class="share-notice-check">
+              공유가능
+            </p>
+          </li>
+          
+          <li>
+            <img class="share-img" src="./images/home/dummy4.jpg"  alt="">
+            <div class="share-list">
+              <p class="share-list-gift">설치 3,000P</p>
+              <h3 class="share-list-title">어른들의 RPG 아덴</h3>
+              <div class="share-list-val">
+                <div class="progress-info">                  
+                  <div class="progress">
+                    <span style="65%" class="progress-bar progress-bar-success blue-sharp">
+                      <span class="sr-only"></span>
+                    </span>
+                  </div>
+                  <span class="status-title">진행률</span>
+                  <span class="status-number">65%</span>
+                </div>
+              </div>             
+            </div>
+            <p class="share-notice-check">
+              공유가능
+            </p>
+          </li>
+          
+          <li>
+            <img class="share-img" src="./images/home/dummy5.jpg"  alt="">
+            <div class="share-list">
+              <p class="share-list-gift">설치 3,000P</p>
+              <h3 class="share-list-title">에시스:혼돈의 서막</h3>
+              <div class="share-list-val">
+                <div class="progress-info">                  
+                  <div class="progress">
+                    <span style="65%" class="progress-bar progress-bar-success blue-sharp">
+                      <span class="sr-only"></span>
+                    </span>
+                  </div>
+                  <span class="status-title">진행률</span>
+                  <span class="status-number">65%</span>
+                </div>
+              </div>             
+            </div>
+            <p class="share-notice-check is-ended">
+              캠페인종료
+            </p>
+          </li>
+        </ul>
+        <a class="home-more" href="campaign.html">
+          더보기
+        </a>
+      </div>
+    </div>
+    <!-- @ 컨텐츠 END -->
+
+    <!-- @ footer -->
+    <footer class="footer">
+      <h2 class="footer-logo">
+        <img src="./images/footer-logo.png"  alt="라이크앤클릭">
+      </h2>
+      <div class="footer-list">
+        <a href="footer-terms.html">이용약관</a>
+        <a href="footer-infor.html">개인정보취급방침</a>
+        <p>Copyright © 라이크앤클릭 Co.,Ltd. All Rights Reserved.</p>
+      </div>         
+    </footer>
+    <!-- @ footer END -->
+
+    <aside class="btn-scroll-top" style="display: none;">
+      <div>
+        <a href="javascript:void(0)" id="btn-scroll-top">
+          <img src="./images/btn-top.png" alt="TOP">
+        </a>
+      </div>
+    </aside>
+  </main>
+
+
+  <!-- @ 팝업 - 페이스북 로그인 -->
+  <div id="campaign-login" class="modal" data-role="modal">
+    <section class="modal-content">
+      <img src="./images/popup/campaign-login.png"  alt="">
+      <p class="popup-text">
+        오토피드 로그인시<b>오토피드가 설정되며 2,000 포인트가 적립</b>됩니다
+      </p>
+      <a href="javascript:void(0)" data-rel="back" class="modal__close">
+        <img src="./images/popup/modal-close.png" alt="닫기">
+      </a>
+      <a href="javascript:void(0)" data-rel="back" class="btn-login">
+        <img src="./images/spacer.png" alt="페이스북 로그인">
+      </a>      
+      <a href="javascript:void(0)" data-rel="back" class="btn-login-auto">
+        <img src="./images/spacer.png" alt="2,000포인트 적립 받고 로그인">
+      </a>
+    </section>
+  </div>
+
+  <!-- @ 팝업 - 오토피드 로그인 -->
+  <div id="campaign-autopeed-login" class="modal" data-role="modal">
+    <section class="modal-content">
+      <img src="./images/popup/campaign-autopeed-login.png"  alt="">
+      <p class="popup-text">
+        <b>오토피드</b>는 자동으로 캠페인을 공유하고 적립되는 시스템입니다
+      </p>
+      <a href="javascript:void(0)" data-rel="back" class="modal__close">
+        <img src="./images/popup/modal-close.png" alt="닫기">
+      </a>
+      <a href="javascript:void(0)" data-rel="back" class="btn-login">
+        <img src="./images/spacer.png" alt="페이스북 로그인">
+      </a>      
+      <a href="javascript:void(0)" data-rel="back" class="btn-login-auto">
+        <img src="./images/spacer.png" alt="2,000포인트 적립 받고 로그인">
+      </a>
+    </section>
+  </div>
+
+  <!-- @ 팝업 - 오토피드 팝업 -->
+  <div id="popup-auto-peed" class="modal" data-role="modal">
+    <section class="modal-content">
+      <img src="./images/popup/autopeed_popup.png"  alt="">
+      <ul class="btn-wrap">
+        <li onclick="autoFeedPopup('S');">나중에</li>
+        <li onclick="autoFeedPopup('Y');">확인</li>
+      </ul>     
+    </section>
+  </div>
+
+
+  <script src="./assets/js/vendor.js"></script>
+  <script src="./assets/js/plugin.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

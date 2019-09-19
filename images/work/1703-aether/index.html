@@ -1,0 +1,828 @@
+<!doctype html>
+<html class="no-js" lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>액션의 심포니 아이테르</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <script>
+  <!--
+    var UserAgent = navigator.userAgent;
+    var UADevice = UserAgent.match(/iPhone|iPod|iPad|Android|Windows CE|BlackBerry|Symbian|Windows Phone|webOS|Opera Mini|Opera Mobi|POLARIS|IEMobile|lgtelecom|nokia|SonyEricsson/i);
+    var UAVendor = UserAgent.match(/LG|SAMSUNG|Samsung/);
+    if ( UADevice !== null || UAVendor!== null){
+      location.href = "./m/";
+    }
+    //-->
+  </script>
+  <link rel="stylesheet" href="css/jquery.bxslider.css">
+  <link rel="stylesheet" href="css/main.css">
+  <!--[if lte IE 8]>
+    <script src="./assets/js/ie8Polyfill.js"></script>
+  <![endif]-->
+
+</head>
+<body>
+  <main id="viewport">
+    <!-- @ GNB -->
+    <nav class="gnb" id="gnb">
+      <a href="#main">
+        <i class="sp-nav gnb-elem0">아이테르 천공의 성</i>
+      </a>
+      <a href="#event1">
+        <i class="sp-nav gnb-elem1">제1악장</i>
+      </a>
+      <a href="#event2">
+        <i class="sp-nav gnb-elem2">제2악장</i>
+      </a>
+      <a href="#event3">
+        <i class="sp-nav gnb-elem3">제3악장</i>
+      </a>
+      <a href="#cbtPage">
+        <i class="sp-nav gnb-elem4">CBT 참여하기</i>
+      </a>
+      <ul>
+        <li>        
+          <a href="alert-open" data-toggle="modal">
+            <i class="sp-nav btn-google">구글사전예약</i>
+          </a>
+        </li>
+        <li>            
+          <a href="javascript:;">
+            <i class="sp-nav btn-cafe">카페가기</i>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- @ 커버 -->
+    <div class="cover">          
+      <div style="width:100%; height:100%; background-color: black; opacity:0.3;"></div>
+    </div>
+
+    <!-- @ 메인 -->
+    <div class="section">    
+      <!-- @@ 영상 -->
+      <div class="main-video">
+        <div id="main-video-player" class="main-video-player"></div>
+      </div>    
+      <!-- @@ 컨텐츠 -->
+      <section class="main container" id="main">
+        <img class="main-character" src="./images/@main-character.png"  alt="">
+        <div class="contentsWrap">
+          <span class="line1"><img src="./images/line-deco1.png"  alt=""></span>
+          <span class="line2"><img src="./images/line-deco2.png"  alt=""></span>
+          <span class="line3"><img src="./images/line-deco3.png"  alt=""></span>
+          <span class="line4"><img src="./images/line-deco4.png"  alt=""></span>
+        </div>        
+          <div class="contents">
+            <h1>
+              <img class="main-logo" src="./images/main-logo.png"  alt="">
+            </h1>
+            <a class="main-btn-play" href="#popup-video" data-toggle="modal">
+              <img src="./images/btn-play.png"  alt="">
+            </a>
+          <img class="main-title" src="./images/main-title.png"  alt="">
+          </div>
+      </section>
+    </div>
+
+    <!-- @ 이벤트1 -->
+    <section class="event1 container section" id="event1">    
+      <img class="event1-deco-left" src="./images/@event1-deco1.png"  alt="">
+      <img class="event1-deco-right" src="./images/@event1-deco2.png"  alt="">
+      <div class="contentsWrap">
+        <span class="line1"><img src="./images/line-deco1.png"  alt=""></span>
+        <span class="line2"><img src="./images/line-deco2.png"  alt=""></span>
+        <span class="line3"><img src="./images/line-deco3.png"  alt=""></span>
+        <span class="line4"><img src="./images/line-deco4.png"  alt=""></span>
+      </div>        
+      <div  class="event1-bg">        
+        <img src="./images/@event1-bg.png"  alt="">
+      </div>
+      <div class="contents">
+        <h2 class="event1-title">
+          <img src="./images/event1-title.png"  alt="">        
+        </h2>
+        <img class="event1-gift" src="./images/event1-gift.png"  alt="">
+        <form class="frm-reser" id="frm-reser" method="post" action="">
+          <label for="reser-number"><i class="sp-common lbl-phone">휴대폰번호</i></label>
+          <div class="frm-reserWrap">
+            <div style="margin-bottom:8px;">
+              <input id="reser-number" type="tel" data-input="number" maxlength="11"  placeholder="'-' 없이 숫자만 입력해주세요">
+              <a href="#">
+                <i class="sp-common btn-reser">사전예약신청하기</i>
+              </a>
+            </div>
+            <div class="osWrap" style="margin-bottom:6px;">
+              <div class="os android">              
+                <input id="reser-android" type="radio" class="is-custom" name="reser-os">
+                <label for="reser-android">
+                  <i class="sp-common chkbox"></i>
+                  <i class="sp-common lbl-android">안드로이드</i>
+                </label>
+              </div>
+              <div class="os ios">              
+                <input id="reser-ios" type="radio" class="is-custom" name="reser-os">
+                <label for="reser-ios">
+                  <i class="sp-common chkbox"></i>
+                  <i class="sp-common lbl-ios">iOS</i>
+                </label>
+              </div>
+            </div>
+            <div class="reser-chkWrap">
+              <input id="reser-chkbox" type="checkbox" class="is-custom">
+              <label for="reser-chkbox">
+                <i class="sp-common chkbox"></i>
+                <i class="sp-common lbl-chkbox">개인정보 수집, 이용 및 SMS 수신에 동의합니다</i>
+              </label>
+              <a href="#popup-detail" data-toggle="modal">
+                <i class="sp-common btn-detail">자세히 보기</i>
+              </a>
+            </div>
+          </div>
+        </form>
+        <img class="event1-notice" src="./images/event1-notice.png"  alt="">
+      </div>
+    </section>
+
+    <!-- @ 이벤트2 커밍순
+    <section class="event2 container section" id="event2">    
+      <div class="contentsWrap">
+        <span class="line1"><img src="./images/line-deco1.png"  alt=""></span>
+        <span class="line2"><img src="./images/line-deco2.png"  alt=""></span>
+        <span class="line3"><img src="./images/line-deco3.png"  alt=""></span>
+        <span class="line4"><img src="./images/line-deco4.png"  alt=""></span>
+      </div>        
+      <div class="event2-text">    
+        <h2 class="event2-title">
+          <img src="./images/event2-title.png"  alt="">
+        </h2>
+        <img class="event2-comming" src="./images/event2-comming.png"  alt="">
+      </div>
+     <img class="event2-deco" src="./images/@cu.png"  alt="">
+     <div class="contents"></div>
+       <img class="event2-character" src="./images/@character.png"  alt="">
+    </section-->
+
+    
+    <!-- @ 이벤트2 -->
+    <section class="event2 container section" id="event2">    
+      <img class="event2-deco1" src="./images/@event2-deco1.png"  alt="">
+      <img class="event2-deco2" src="./images/@event2-deco2.png"  alt="">
+      <img class="event2-deco3" src="./images/@event2-deco3.png"  alt="">
+      <img class="event2-deco4" src="./images/@event2-deco4.png"  alt="">
+      <img class="event2-deco5" src="./images/@event2-deco5.png"  alt="">
+      <img class="event2-deco6" src="./images/@event2-deco6.png"  alt="">
+      <div class="contentsWrap">
+        <span class="line1"><img src="./images/line-deco1.png"  alt=""></span>
+        <span class="line2"><img src="./images/line-deco2.png"  alt=""></span>
+        <span class="line3"><img src="./images/line-deco3.png"  alt=""></span>
+        <span class="line4"><img src="./images/line-deco4.png"  alt=""></span>
+      </div>        
+     <div class="contents">      
+        <h2 class="event2-title">
+          <img src="./images/event2-title-ex.png"  alt="">
+        </h2>
+        <div class="event2-tab">
+          <a class="tab1" href="#" >
+            <i class="sp-common event2-tab1">게임소개</i>
+          </a>
+          <a class="tab2" href="#">
+            <i class="sp-common event2-tab2">개발영상</i>
+          </a>
+        </div>
+        <ul class="event2-slide">
+          <li><div id="mainPopframe"></div>
+            <!--a href="#alert-event3" data-toggle="modal">
+              <img src="./images/slide0.jpg"  alt="">
+            </a-->
+          </li>
+          <li><img src="./images/slide1.jpg"  alt=""></li>
+          <li><img src="./images/slide2.jpg"  alt=""></li>
+          <li><img src="./images/slide3.jpg"  alt=""></li>
+          <li><img src="./images/slide4.jpg"  alt=""></li>
+          <li><img src="./images/slide5.jpg"  alt=""></li>
+        </ul>
+        <div class="event2-snsWrap">
+          <a class="btn-share-tw" href="#">
+            <img src="./images/sprites/common/btn-share-tw.png"  alt="트위터 공유하기">
+          </a>
+          <a class="btn-share-fb" href="#">
+            <img src="./images/sprites/common/btn-share-fb.png"  alt="페이스북 공유하기">
+          </a>
+          <a class="btn-share-ks" href="#">
+            <img src="./images/sprites/common/btn-share-ks.png"  alt="카카오스토리 공유하기">
+          </a>
+        </div>
+     </div>
+    </section>
+
+    
+    <!-- @ 이벤트3 -->
+    <section class="event3 container section" id="event3">    
+      <div class="contentsWrap">
+        <span class="line1"><img src="./images/line-deco1.png"  alt=""></span>
+        <span class="line2"><img src="./images/line-deco2.png"  alt=""></span>
+        <span class="line3"><img src="./images/line-deco3.png"  alt=""></span>
+        <span class="line4"><img src="./images/line-deco4.png"  alt=""></span>
+      </div>        
+     <div class="contents">      
+       <h2 class="event3-title">
+         <img src="./images/event3-title.png"  alt="">
+       </h2>
+       <form class="frm-start" id="frm-start" method="post" action="">
+          <h3 class="event3-subtitle">
+            <img src="./images/event3-subtitle.png"  alt="">
+          </h3>
+          <label for="start-number"><img src="./images/lbl-start.png"  alt=""></label>     
+          <div class="start-number-wrap">            
+            <input id="start-number" type="tel" data-input="number" maxlength="11" >
+          </div>
+          <div class="btnWrap">
+            <a class="btn-start-reser" href="#">
+              <img src="./images/btn-start-reser.png"  alt="사전예약하기">
+            </a>
+            <a class="btn-start" href="#">
+              <img src="./images/btn-start.png"  alt="시험시작">
+            </a>
+          </div>
+         <a class="event3-play" href="#alert-event3" data-toggle="modal">
+           <img src="./images/btn-hero-play.png"  alt="영웅소개영상">
+         </a>
+       </form>
+     </div>
+     <img class="event3-character" src="./images/@event3-character.png"  alt="">
+    </section>
+    
+    <!-- @ CBT -->
+    <section class="cbt container section" id="cbtPage">    
+      <div class="contentsWrap">
+        <span class="line1"><img src="./images/line-deco1.png"  alt=""></span>
+        <span class="line2"><img src="./images/line-deco2.png"  alt=""></span>
+        <span class="line3"><img src="./images/line-deco3.png"  alt=""></span>
+        <span class="line4"><img src="./images/line-deco4.png"  alt=""></span>
+      </div>        
+      <div class="contents">
+        <h2 class="cbt-title">
+          <img src="./images/cbt-title.png"  alt="">
+        </h2>
+        <a href="#cbt-ready" data-toggle="modal">
+          <img class="btn-go-cbt" src="./images/btn-go-cbt.png"  alt="CBT 참여하기">
+        </a>
+      </div>
+      <img class="cbt-deco1" src="./images/@cbt-deco1.png"  alt="">
+      <img class="cbt-deco2" src="./images/@cbt-cloud1.png"  alt="">
+      <img class="cbt-deco3" src="./images/@cbt-deco3-1.png"  alt="">
+      <img class="cbt-deco4" src="./images/@cbt-cloud2.png"  alt="">
+      <img class="cbt-deco5" src="./images/@cbt-cloud3.png"  alt="">
+    </section>
+
+    <footer class="footer" id="footer">
+      <img src="./images/copyrights.png"  alt="">
+    </footer>
+  </main>
+
+  <!-- @@ 영상화면 -->
+  <div id="popup-video" class="modal" data-role="modal">
+    <section class="modal-content">
+      <div class="movie-frame">
+        <iframe src="" frameborder="0"></iframe>
+      </div>
+      <a href="javascript:void(0)" data-rel="back" class="modal__close">
+        <img src="./images/popup/btn-close.png" alt="닫기">
+      </a>
+    </section>
+  </div>
+
+  <!-- @@ 영상화면 
+  <div id="popup-video" class="modal" data-role="modal">
+    <section class="modal-content">
+      <div class="movie-frame">
+        <ul>
+          <li><div id="mainPopframe"></div></li>
+          <li><img src="./images/slide1.jpg"  alt=""></li>
+          <li><img src="./images/slide2.jpg"  alt=""></li>
+          <li><img src="./images/slide3.jpg"  alt=""></li>
+          <li><img src="./images/slide4.jpg"  alt=""></li>
+          <li><img src="./images/slide5.jpg"  alt=""></li>
+        </ul>
+      </div>
+      <a href="javascript:void(0)" data-rel="back" class="modal__close">
+        <img src="./images/popup/btn-close.png" alt="닫기">
+      </a>
+    </section>
+  </div-->
+
+  <!-- @ 팝업 - CBT 예약 -->
+  <div id="cbt-ready" class="modal" data-role="modal">
+    <section class="modal-content">
+      <img src="./images/popup/cbt-ready.jpg"  alt="">
+      <a href="javascript:void(0)" data-rel="back" class="modal-btn-close">
+        <img src="./images/popup/btn-ok.png"  alt="">
+      </a>
+      <a href="javascript:void(0)" data-rel="back" class="modal__close">
+        <img src="./images/popup/btn-close.png" alt="닫기">
+      </a>
+    </section>
+  </div>
+
+  <!-- @ 팝업 - 구글사전예약 -->
+  <div id="alert-open" class="modal" data-role="modal">
+    <section class="modal-content">
+      <img src="./images/popup/alert-open.jpg"  alt="">
+      <a href="javascript:void(0)" data-rel="back" class="modal__close">
+        <img src="./images/popup/btn-close.png" alt="닫기">
+      </a>
+    </section>
+  </div>
+
+  <!-- @ 팝업 - 자세히보기 -->
+  <div id="popup-detail" class="modal" data-role="modal">
+    <section class="modal-content">
+      <img src="./images/popup/popup-detail.jpg"  alt="">
+      <a href="javascript:void(0)" data-rel="back" class="modal-btn-close">
+        <img src="./images/popup/btn-ok.png"  alt="">
+      </a>
+      <a href="javascript:void(0)" data-rel="back" class="modal__close">
+        <img src="./images/popup/btn-close.png" alt="닫기">
+      </a>
+    </section>
+  </div>
+
+  <!-- @ 팝업 - 알럿창 -->
+  <div id="alert-modal" class="modal" data-role="modal">
+    <section class="modal-content">
+      <!-- 꽝일때 alertModal(0); -->
+      <div class="content" data-alert-index="0">
+        <img src="./images/popup/alert-number.jpg"  alt="전화번호 미입력">
+      </div>
+      <div class="content" data-alert-index="1">
+        <img src="./images/popup/alert-agree.jpg"  alt="수집동의 미체크">
+      </div>
+      <div class="content" data-alert-index="2">
+        <img src="./images/popup/alert-number-wrong.jpg"  alt="전화번호 오류">
+      </div>
+      <div class="content" data-alert-index="3">
+        <img src="./images/popup/alert-os.jpg"  alt="OS 미체크">
+      </div>
+      <div class="content" data-alert-index="4">
+        <img src="./images/popup/alert-reser.jpg"  alt="사전예약 중복 참여">
+      </div>
+      <div class="content" data-alert-index="5">
+        <img src="./images/popup/complete.jpg"  alt="사전예약 완료">
+      </div>
+      <div class="content" data-alert-index="6">
+        <img src="./images/popup/alert-question.jpg"  alt="문제 풀어주세요">
+      </div>
+      <div class="content" data-alert-index="7">
+        <img src="./images/popup/alert-nickname.jpg"  alt="닉네임 입력해주세요">
+      </div>
+      <div class="content" data-alert-index="8">
+        <img src="./images/popup/alert-overlap.jpg"  alt="닉네임 이미 입력">
+      </div>
+      <div class="content" data-alert-index="9">
+        <img src="./images/popup/test-complete.jpg"  alt="참여감사">
+      </div>
+      <div class="content" data-alert-index="10">
+        <img src="./images/popup/alert-noname.jpg"  alt="닉네임 입력후 확인 클릭">
+      </div>
+      <a href="javascript:void(0)" data-rel="back" class="modal-btn-close">
+        <img src="./images/popup/btn-ok.png"  alt="확인">
+      </a>
+      <a href="javascript:void(0)" data-rel="back" class="modal__close">
+        <img src="./images/popup/btn-close.png" alt="닫기">
+      </a>
+    </section>
+  </div>
+  
+ <!-- @ 팝업 - 이벤트3 영웅소개영상 준비중-->
+   <div id="alert-event3" class="modal" data-role="modal">
+    <section class="modal-content">
+      <img src="./images/popup/event3-play.jpg"  alt="사전예약 등록 안함">
+      <a href="javascript:void(0)" data-rel="back" class="modal-btn-close">
+        <img src="./images/popup/btn-ok.png"  alt="확인">
+      </a>
+      <a href="javascript:void(0)" data-rel="back" class="modal__close">
+        <img src="./images/popup/btn-close.png" alt="닫기">
+      </a>
+    </section>
+  </div>
+
+ <!-- @ 팝업 - 사전예약 등록 안했을경우-->
+   <div id="alert-noreser" class="modal" data-role="modal">
+    <section class="modal-content">
+      <img src="./images/popup/alert-noreser.jpg"  alt="사전예약 등록 안함">
+      <a href="javascript:void(0)" data-rel="back" class="modal-btn-close">
+        <img src="./images/popup/btn-ok.png"  alt="확인">
+      </a>
+      <a href="javascript:void(0)" data-rel="back" class="modal__close">
+        <img src="./images/popup/btn-close.png" alt="닫기">
+      </a>
+    </section>
+  </div>
+
+  <!-- @ 팝업 -  입단테스트 룰렛 -->
+	<div id="test-rullet" class="modal" data-role="modal">
+		<section class="modal-content">
+			<div class="content" >
+			<span class="rullNum"></span>
+				<a href="javascript:void(0)" data-rel="back" class="modal-btn-close btnRullNext">
+				  <img src="./images/popup/btn-next.png"  alt="다음 스테이지">
+        </a>
+			</div>
+		</section>
+	</div>
+
+    <!-- @ 팝업 - 입단테스트 스코어 100점 미만-->
+	<div id="test-score" class="modal" data-role="modal">
+		<section class="modal-content">
+			<div class="content" >
+        <span class="totalNum"></span>
+        <span class="userName"></span>
+        <div class="snsWrap">
+          <a class="btn-share-fb" href="#">
+            <img src="./images/popup/btn-share-fb.png"  alt="페이스북 공유">
+          </a>
+          <a class="btn-share-ks" href="#">
+            <img src="./images/popup/btn-share-ks.png"  alt="카카오스토리 공유">
+          </a>
+        </div>
+        <a href="javascript:;" class="btn-complete">
+          <img src="./images/popup/btn-complete.png" alt="확인">
+        </a>
+      </div>
+		</section>
+	</div>
+
+    <!-- @ 팝업 - 입단테스트 스코어 100점 -->
+	<div id="test-perpect" class="modal" data-role="modal">
+		<section class="modal-content">
+			<div class="content">
+			  <span class="totalNum">10</span>
+        <span class="userName">마에스트로</span>
+        <div class="snsWrap">
+          <a class="btn-share-fb" href="#">
+            <img src="./images/popup/btn-share-fb.png"  alt="페이스북 공유">
+          </a>
+          <a class="btn-share-ks" href="#">
+            <img src="./images/popup/btn-share-ks.png"  alt="카카오스토리 공유">
+          </a>
+        </div>
+        <a href="javascript:;" class="btn-complete">
+          <img src="./images/popup/btn-complete.png" alt="확인">
+        </a>
+			</div>
+		</section>
+	</div>  
+
+  <!-- @ 팝업 - 재도전 1번째-->
+	<div id="test-chance1" class="modal" data-role="modal">
+		<section class="modal-content">
+      <img src="./images/popup/test-chance1.jpg"  alt="재도전 한번 얻음">
+      <a href="javascript:;" class="btn-chance">
+        <img src="./images/popup/btn-chance.png"  alt="재도전하기">
+      </a>
+      <a href="javascript:void(0)" data-rel="back" class="modal__close">
+        <img src="./images/popup/btn-close.png" alt="닫기">
+      </a>
+    </section>
+  </div>
+
+  <!-- @ 팝업 - 재도전 2번째-->
+	<div id="test-chance2" class="modal" data-role="modal">
+		<section class="modal-content">
+      <img src="./images/popup/test-chance2.jpg"  alt="재도전 마지막기회 얻음">
+      <a href="javascript:;" class="btn-chance">
+        <img src="./images/popup/btn-ok.png"  alt="재도전하기">
+      </a>
+      <a href="javascript:void(0)" data-rel="back" class="modal__close">
+        <img src="./images/popup/btn-close.png" alt="닫기">
+      </a>
+    </section>
+  </div>
+
+  <!-- @ 팝업 - 재도전 기회 없을경우-->
+	<div id="test-exhaust" class="modal" data-role="modal">
+		<section class="modal-content">
+      <img src="./images/popup/test-exhaust.jpg"  alt="재도전 기회 모두 사용">
+      <a href="javascript:void(0)" data-rel="back" class="modal-btn-close">
+        <img src="./images/popup/btn-ok.png"  alt="확인">
+      </a>
+      <a href="javascript:void(0)" data-rel="back" class="modal__close">
+        <img src="./images/popup/btn-close.png" alt="닫기">
+      </a>
+    </section>
+  </div>
+
+  <!-- @ 팝업 - 닫기 컨펌창 -->
+	<div id="test-confirm" class="modal" data-role="modal">
+		<section class="modal-content">
+      <img src="./images/popup/test-confirm.jpg"  alt="">
+      <a class="btn-yes" href="#">
+        <img src="./images/spacer.png"  alt="닫을래요">
+      </a>
+      <a class="btn-no" href="javascript:void(0)" data-rel="back">
+        <img src="./images/spacer.png"  alt="공유하러가기">
+      </a>
+    </section>
+  </div>
+
+  <!-- @ 테스트 팝업 -->
+  <div id="test-modal" class="qsWrap modal" data-role="modal">
+    <section class="modal-content">
+    <div class="inQs">    
+			<!-- 점수게이지 -->
+			<div class="gaugeWrap">
+        <img class="lbl-gauge" src="./images/test/lbl-gauge.png"  alt="점수게이지">
+				<div class="bar">
+					<div class="fill">
+						<div class="switch"></div>
+					</div>
+				</div>
+        <img class="mark" src="./images/test/gauge.png"  alt="">
+			</div>
+			<!-- //점수게이지 -->
+
+			<!-- 룰렛 -->
+			<div class="PopSec01 popSection">
+				<div class="title">
+          <i class="sp-test title1">액션 리허설 직감평가</i>
+				</div>
+				<div class="inBox">
+					<div class="left">
+						<div class="rullWrap">
+							<div class="pan"  id="pan"><img src="./images/test/rullet.png" alt="돌림판"></div>
+							<img class="pan-arrow" src="./images/test/rullet-arrow.png" alt="표시">
+						</div>
+					</div>
+					<div class="right">
+            <img class="rullTitle" src="./images/test/rullet-title.png"  alt="당신의 감을 믿어라">
+						<div class="btnStart">
+							<a href="javascript:;" class="rullStart">
+                <i class="sp-test btn-start">시작하기</i>
+              </a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- //룰렛 -->
+
+      <!-- 문제1 -->
+			<div class="PopSec02 popSection">
+				<div class="title">
+          <i class="sp-test title2">액션 본평가 RPG 능력평가</i>
+				</div>
+				<div class="inBox">
+					<div class="left">
+						<p class="tit">
+              <img src="./images/test/sub-title1.png"  alt="문제1">
+            </p> 
+						<div class="btnNext">
+							<a href="javascript:;" class="qsBtn01">
+                <i class="sp-test btn-next">NEXT</i>
+              </a>
+						</div>
+					</div>
+					<div class="right questionWrap">
+            <img class="question" src="./images/test/question1.png"  alt="">
+						<div class="answerBox">
+							<ul>
+								<li>
+									<input type="radio" name="qustion01" id="qu01_01" class="is-custom"  />
+									<label for="qu01_01">
+                    <i class="sp-num num number1">1</i>
+                    <i class="sp-num lbl-que1_1">라인하르트</i>
+                  </label>
+								</li>
+								<li>
+									<input type="radio" name="qustion01" id="qu01_02" class="is-custom"  />
+									<label for="qu01_02">
+                    <i class="sp-num num number2">2</i>
+                    <i class="sp-num lbl-que1_2">오구나</i>
+                  </label>
+								</li>
+								<li>
+									<input type="radio" name="qustion01" id="qu01_03" class="is-custom"  />
+									<label for="qu01_03">                    
+                    <i class="sp-num num number3">3</i>
+                    <i class="sp-num lbl-que1_3">리히터</i>
+                  </label>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- //문제1 -->
+
+			<!-- 문제2 -->
+			<div class="PopSec03 popSection">
+				<div class="title">
+          <i class="sp-test title2">액션 본평가 RPG 능력평가</i>
+				</div>
+				<div class="inBox">
+					<div class="left">
+						<p class="tit">
+              <img src="./images/test/sub-title2.png"  alt="문제2">
+            </p>
+						<div class="btnNext">
+							<a href="javascript:;" class="qsBtn02">
+                <i class="sp-test btn-next">NEXT</i>
+              </a>
+						</div>
+					</div>
+					<div class="right questionWrap">
+            <img class="question" src="./images/test/question2.png"  alt="">
+						<div class="answerBox">
+							<ul>
+								<li>
+									<input type="radio" name="qustion02" id="qu02_01" class="is-custom"  />
+									<label for="qu02_01">                    
+                    <i class="sp-num num number1">1</i>
+                    <i class="sp-num lbl-que2_1">대검</i>
+                  </label>
+								</li>
+								<li>
+									<input type="radio" name="qustion02" id="qu02_02" class="is-custom"  />
+									<label for="qu02_02">                    
+                    <i class="sp-num num number2">2</i>
+                    <i class="sp-num lbl-que2_2">망치</i>
+                  </label>
+								</li>
+								<li>
+									<input type="radio" name="qustion02" id="qu02_03" class="is-custom"  />
+									<label for="qu02_03">                    
+                    <i class="sp-num num number3">3</i>
+                    <i class="sp-num lbl-que2_3">활</i>
+                  </label>
+								</li>
+								<li>
+									<input type="radio" name="qustion02" id="qu02_04" class="is-custom"  />
+									<label for="qu02_04">                    
+                    <i class="sp-num num number4">4</i>
+                    <i class="sp-num lbl-que2_4">곤봉</i>
+                  </label>
+								</li>
+								<li>
+									<input type="radio" name="qustion02" id="qu02_05" class="is-custom"  />
+									<label for="qu02_05">                    
+                    <i class="sp-num num number5">5</i>
+                    <i class="sp-num lbl-que2_5">알파고급 지능</i>
+                  </label>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- //문제2 -->
+
+			<!-- 문제3-->
+			<div class="PopSec04 popSection">
+				<div class="title">
+          <i class="sp-test title2">액션 본평가 RPG 능력평가</i>
+				</div>
+				<div class="inBox">
+					<div class="left">
+						<p class="tit">
+              <img src="./images/test/sub-title3.png"  alt="문제3">
+            </p>
+						<div class="btnNext">
+							<a href="javascript:;" class="qsBtn03">
+                <i class="sp-test btn-next">NEXT</i>
+              </a>
+						</div>
+					</div>
+					<div class="right questionWrap">
+            <img class="question" src="./images/test/question3.png"  alt="">
+						<div class="answerBox">
+							<ul>
+								<li class="first">
+									<input type="radio" name="qustion03" id="qu03_01" class="is-custom"  />
+									<label for="qu03_01">
+                    <i class="sp-num num number1">1</i>
+                    <i class="sp-num lbl-que3_1">경기장 PVP</i>
+                  </label>
+								</li>
+								<li class="second">
+									<input type="radio" name="qustion03" id="qu03_02" class="is-custom"  />
+									<label for="qu03_02">
+                    <i class="sp-num num number2">2</i>
+                    <i class="sp-num lbl-que3_2">트리플 악셀</i>
+                  </label>
+								</li>
+								<li class="third">
+									<input type="radio" name="qustion03" id="qu03_03" class="is-custom"  />
+									<label for="qu03_03">
+                    <i class="sp-num num number3">3</i>
+                    <i class="sp-num lbl-que3_3">UGC</i>
+                  </label>
+								</li>
+								<li class="fourth">
+									<input type="radio" name="qustion03" id="qu03_04" class="is-custom"  />
+									<label for="qu03_04">
+                    <i class="sp-num num number4">4</i>
+                    <i class="sp-num lbl-que3_4">하늘의 탑</i>
+                  </label>
+								</li>
+								<li class="fifth">
+									<input type="radio" name="qustion03" id="qu03_05" class="is-custom"  />
+									<label for="qu03_05">
+                    <i class="sp-num num number5">5</i>
+                    <i class="sp-num lbl-que3_5">보스 레이드</i>
+                  </label>
+								</li>
+							</ul>
+              <a href="http://cafe.naver.com/longtuaether/18" target="_blank">
+                <img class="question3-hint" src="./images/test/question3-hint.png"  alt="힌트">
+              </a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- //문제3 -->
+
+			<!-- 닉네임 -->
+			<div class="PopSec05 popSection bonus">
+				<div class="title">
+          <i class="sp-test title3">액션 피날레 보너스문제</i>
+				</div>
+				<div class="inBox">
+					<div class="nickWrap">          
+            <img class="bonus-title" src="./images/test/bonus-title.png"  alt="">
+            <ul class="bonus-list">
+              <li>
+                <h3 class="bonus-game">
+                  <img src="./images/test/bonus-game1.png"  alt="검과마법">
+                </h3>
+                <input type="text" id="nick01" placeholder="닉네임 입력" />
+                <a href="javascript:;" class="btnNickCheck">
+                  <i class="sp-test btn-ok">확인</i>
+                </a>
+                <a class="downGame" href="#">
+                  <i class="sp-test btn-download">다운로드</i>
+                </a>
+              </li>
+              <li>
+                <h3 class="bonus-game">
+                  <img src="./images/test/bonus-game2.png"  alt="강철소녀">
+                </h3>
+                <input type="text" id="nick02" placeholder="닉네임 입력" />
+                <a href="javascript:;" class="btnNickCheck">
+                  <i class="sp-test btn-ok">확인</i>
+                </a>
+                <a class="downGame" href="#">
+                  <i class="sp-test btn-download">다운로드</i>
+                </a>
+              </li>
+              <li>
+                <h3 class="bonus-game">
+                  <img src="./images/test/bonus-game3.png"  alt="나선의경계">
+                </h3>
+                <input type="text" id="nick03" placeholder="닉네임 입력" />
+                <a href="javascript:;" class="btnNickCheck">
+                  <i class="sp-test btn-ok">확인</i>
+                </a>
+                <a class="downGame" href="#">
+                  <i class="sp-test btn-download">다운로드</i>
+                </a>
+              </li>
+              <li>
+                <h3 class="bonus-game">
+                  <img src="./images/test/bonus-game4.png"  alt="아톰의캐치캐치">
+                </h3>
+                <input type="text" id="nick04" placeholder="닉네임 입력" />
+                <a href="javascript:;" class="btnNickCheck">
+                  <i class="sp-test btn-ok">확인</i>
+                </a>
+                <a class="downGame" href="#">
+                  <i class="sp-test btn-download">다운로드</i>
+                </a>
+              </li>
+            </ul>
+            <img class="bonus-notice" src="./images/test/bonus-notice.png"  alt="게임당 10점 공지">
+						<a href="#">
+              <i class="sp-test btn-enter">응모완료</i>
+            </a>
+					</div>
+				</div>
+			</div>
+      
+      <a href="javascript:void(0)" data-rel="back" class="modal__close">
+        <img src="./images/popup/btn-close.png" alt="닫기">
+      </a>
+    </div>
+    </section>
+  </div>
+
+  <script src="./assets/js/vendor.js"></script>
+  <script src="./assets/js/plugin.js"></script>
+  <script src="js/jquery.bxslider.min.js"></script>
+  <script src="js/jQueryRotate.js"></script>
+  <script src="js/tubular.js"></script>
+  <script src="js/main.js"></script>
+
+
+</body>
+</html>

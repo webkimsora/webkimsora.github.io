@@ -1,0 +1,400 @@
+<!doctype html>
+<html class="no-js" lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>라이크앤클릭</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no, minimal-ui, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/swiper.min.css">
+  <link href='http://fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet' type='text/css'>
+</head>
+<body>
+
+  <main id="viewport" class="sub">
+    <!-- @ header End -->
+    <header class="header is-sticky">
+      <div class="top">
+        <a class="top-menu" href="javascript:;">
+          <img src="./images/main/gnb-nav.png"  alt="">
+        </a>
+        <a class="top-fb" href="#">
+          <!--
+          <span>로그인</span>
+          <img class="top-fb-login" src="./images/main/gnb-logout.png"  alt="">      
+          <!-- 로그인시 이름, 이미지 변경. 클래스 login 추가 -->
+          <span>김유정</span>
+          <img class="top-fb-login" src="./images/main/gnb-login.png"  alt="">
+        </a>        
+        <!-- 로그인상태 끝 -->
+      </div>
+      
+      <nav>
+        <ul class="gnb">
+          <li>
+            <a href="index.html">
+              홈
+            </a>
+          </li>
+          <li class="is-active">
+            <a href="campaign.html">
+              캠페인
+            </a>
+          </li>
+          <li>
+            <a href="likentalk.html">
+              라이크&#38;톡
+            </a>
+          </li>
+          <li>
+            <a href="event.html">
+              이벤트
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <!-- @ header End -->
+
+    <!-- @ Toggle menu LOGOUT -->
+    <div class="userwrap">
+      <!-- @ LOGOUT -->
+      <div class="user">
+        <!-- @@ 유저 정보 -->        
+        <!-- LOGOUT : logout class추가, 현재 display:none 상태 -->
+        <div class="user-info logout">
+          <img class="user-info-img" src="./images/menu/customer-logout.png"  alt="">
+          <h3 class="user-info-name">GUEST</h3>
+          <a class="user-info-page" href="#">
+            <img src="./images/menu/logout-go-page.png"  alt="페이스북으로 로그인">
+          </a>
+          <div class="user-point">
+            <dl class="">
+              <dt>누적포인트</dt>
+              <dd>-</dd>
+            </dl>
+            <dl class="">
+              <dt>출금가능포인트</dt>
+              <dd>-</dd>
+            </dl>
+          </div>
+        </div>
+        <!-- LOGOUT END -->
+
+        <!-- LOGIN -->
+        <div class="user-info">
+          <img class="user-info-img" src="./images/menu/customer-img.png"  alt="">
+          <p class="user-info-grade">
+            <img src="./images/menu/grade.png"  alt="">
+          </p>        
+          <h3 class="user-info-name">김유정</h3>
+          <a class="user-info-page" href="mypage.html">
+            <img src="./images/menu/login-go-page.png"  alt="MY PAGE">
+          </a>
+          <div class="user-point">
+            <dl class="">
+              <dt>누적포인트</dt>
+              <dd>146,000P</dd>
+            </dl>
+            <dl class="">
+              <dt>출금가능포인트</dt>
+              <dd>140,000P</dd>
+            </dl>
+          </div>
+        </div>
+        <!-- LOGIN END -->
+        <!-- @@ 유저 정보 END -->
+
+        <!-- @@ NAV -->
+        <nav class="nav-menu">
+          <a href="index.html">
+            <img src="./images/menu/menu1-home.png"  alt="홈">
+            <span>홈</span>
+          </a>        
+          <a href="campaign.html">
+            <img src="./images/menu/menu2-campaign.png"  alt="캠페인">
+            <span>캠페인</span>
+          </a>        
+          <a href="likentalk.html">
+            <img src="./images/menu/menu3-likentalk.png"  alt="라이크앤톡">
+            <span>라이크&#38;톡</span>
+          </a>
+          <a href="event.html">
+            <img src="./images/menu/menu4-event.png"  alt="이벤트">
+            <span>이벤트</span>
+          </a>
+          <a href="javascript:;">
+            <img src="./images/menu/menu5-point.png"  alt="포인트샵">
+            <span>포인트샵</span>
+          </a>
+          <a href="service.html">
+            <img src="./images/menu/menu6-service.png"  alt="서비스안내">
+            <span>서비스안내</span>
+          </a>
+          <a href="customer.html">
+            <img src="./images/menu/menu7-customer.png"  alt="고객센터">
+            <span>고객센터</span>
+          </a>
+          <a href="javascript:;">
+            <img src="./images/menu/menu8-money.png"  alt="용돈더벌기">
+            <span>용돈더벌기</span>
+          </a>
+          <a href="javascript:;">
+            <img src="./images/menu/menu9-issue.png"  alt="Issue like">
+            <span>Issue like</span>
+          </a>
+        </nav>
+        <!-- @@ NAV END -->
+        <!-- @@ 구글다운로드-->
+        <p class="google-download">
+          <a href="#">
+            <img src="./images/menu/google.png"  alt="구글플레이"> 다운로드
+          </a>
+        </p>
+        <!-- @@ 구글다운로드 END -->
+        <a class="user-close" href="javascript:;">
+          <img src="./images/menu/btn-close.png"  alt="창닫기">
+        </a>
+      </div>
+    </div>
+    <!-- @ Toggle menu END -->
+
+    <!-- @ 컨텐츠 -->
+    <div class="contents l-campaign" id="campaign">
+      <section class="section" id="campaign-list">      
+        <h2>
+          <img src="./images/pages/campaign/title.png"  alt="라이크앤클릭 캠페인">
+          클릭당 10포인트 or 좋아요당 100포인트<br>
+          어떤 캠페인을 공유해도 포인트가 팡팡!!
+        </h2>
+        <div class="notice">
+          <h3 class="notice-title"><img src="./images/pages/campaign/notice-title.png"  alt="공지사항"></h3>
+          <div class="swiper-container notice-text">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">적립금은 만포인트 단위로 출금 받을 수 있습니다 1</div>
+              <div class="swiper-slide">적립금은 만포인트 단위로 길다길다길다 출금 받을 수 있습니다 2</div>
+              <div class="swiper-slide">적립금은 만포인트 단위로 출금 길다길다길다 받을 수 있습니다 3</div>
+              <div class="swiper-slide">적립금은 만포인 길다길다길다트 단위로 출금 받을 수 있습니다 4</div>
+              <div class="swiper-slide">적립금은 만포인트 단위로 출금 받을 수 있습니다 5</div>
+            </div>
+          </div>
+          <a class="notice-more" href="#">
+            <img src="./images/pages/campaign/notice-more.png"  alt="더보기">
+          </a>
+        </div>
+
+        <ul class="tab">
+          <li class="btn-border-gray btn-cylindrical is-active">
+            <a href="javasctipt:;">전체</a>
+          </li>
+          <li class="btn-border-gray btn-cylindrical">
+            <a href="javasctipt:;">공유가능</a>
+          </li>
+          <li class="btn-border-gray btn-cylindrical">
+            <a href="javasctipt:;">공유완료</a>
+          </li>
+          <li class="btn-border-gray btn-cylindrical">
+            <a href="javasctipt:;">캠페인종료</a>
+          </li>
+        </ul>
+        <ul class="share">
+          <li>
+            <ul class="share-notice">
+              <li class="share-notice-check">
+                공유<br>가능
+              </li>
+              <li>
+                클릭당 10P
+              </li>
+            </ul>
+            <div class="share-list">
+              <img src="./images/home/list-img2.png"  alt="중고차 팔아야되는데 견적 좋은 곳 없을까? 굿바이셀카">
+              <div class="share-list-val">
+                <dl class="share-list-share">
+                  <dt>공유하기</dt>
+                  <dd class="share-list-share">6,210</dd>
+                </dl>
+                <dl class="share-list-like">
+                  <dt>좋아요</dt>
+                  <dd class="share-list-share">6,210</dd>
+                </dl>
+                <dl class="share-list-percent">
+                  <dt>공유율</dt>
+                  <dd>6,210</dd>
+                </dl>
+              </div>            
+              <a class="share-list-btn" href="#campaign-login" data-toggle="modal">
+                공유하기
+              </a>
+            </div>            
+          </li>
+          <li>
+            <ul class="share-notice">
+              <li class="share-notice-check is-complete">
+                공유<br>완료
+              </li>
+              <li>
+                클릭당 10P
+              </li>
+            </ul>
+            <div class="share-list">
+              <img src="./images/home/list-img1.png"  alt="포인트가 현금이 되는 하나멤버스!">
+              <div class="share-list-val">
+                <dl class="share-list-share">
+                  <dt>공유하기</dt>
+                  <dd class="share-list-share">6,210</dd>
+                </dl>
+                <dl class="share-list-like">
+                  <dt>좋아요</dt>
+                  <dd class="share-list-share">6,210</dd>
+                </dl>
+                <dl class="share-list-percent">
+                  <dt>공유율</dt>
+                  <dd>6,210</dd>
+                </dl>
+              </div>            
+              <a class="share-list-btn" href="#campaign-complete2" data-toggle="modal">
+                공유하기
+              </a>
+            </div>            
+          </li>
+          <li>
+            <ul class="share-notice">
+              <li class="share-notice-check is-ended">
+                캠페인<br>종료
+              </li>
+              <li>
+                클릭당 10P
+              </li>
+            </ul>
+            <div class="share-list">
+              <img src="./images/home/list-img2.png"  alt="중고차 팔아야되는데 견적 좋은 곳 없을까? 굿바이셀카">
+              <div class="share-list-val">
+                <dl class="share-list-share">
+                  <dt>공유하기</dt>
+                  <dd class="share-list-share">6,210</dd>
+                </dl>
+                <dl class="share-list-like">
+                  <dt>좋아요</dt>
+                  <dd class="share-list-share">6,210</dd>
+                </dl>
+                <dl class="share-list-percent">
+                  <dt>공유율</dt>
+                  <dd>6,210</dd>
+                </dl>
+              </div>            
+              <a class="share-list-btn" href="#campaign-false" data-toggle="modal">
+                공유하기
+              </a>
+            </div>            
+          </li>
+        </ul>
+      </section>
+    </div>
+    <!-- @ 컨텐츠 END -->
+
+    <!-- @ footer -->
+    <footer class="footer">
+      <h2 class="footer-logo">
+        <img src="./images/footer-logo.png"  alt="라이크앤클릭">
+      </h2>
+      <div class="footer-list">
+        <a href="footer-terms.html">이용약관</a>
+        <a href="footer-infor.html">개인정보취급방침</a>
+        <p>Copyright © 라이크앤클릭 Co.,Ltd. All Rights Reserved.</p>
+      </div>         
+    </footer>
+    <!-- @ footer END -->
+
+    <aside class="btn-scroll-top" style="display: none;">
+      <div>
+        <a href="javascript:void(0)" id="btn-scroll-top">
+          <img src="./images/btn-top.png" alt="TOP">
+        </a>
+      </div>
+    </aside>
+  </main>
+
+  <!-- @ 팝업 - 공유완료 1 -->
+  <div id="campaign-complete" class="modal" data-role="modal">
+    <section class="modal-content">
+      <img src="./images/popup/campaign-complete.png"  alt="">
+      <div class="popup-text">
+        공유된 캠페인은 <span class="category">좋아요</span> 발생시<br>
+        <var class="point">100</var>포인트씩 적립됩니다
+      </div>
+      <a href="javascript:void(0)" data-rel="back" class="modal__close">
+        <img src="./images/popup/modal-close.png" alt="닫기">
+      </a>
+      <a href="javascript:void(0)" data-rel="back" class="modal-btn-close">
+        <img src="./images/spacer.png" alt="닫기">
+      </a>
+    </section>
+  </div>
+
+  <!-- @ 팝업 - 공유완료 2 개발후 삭제 필요 -->
+  <div id="campaign-complete2" class="modal" data-role="modal">
+    <section class="modal-content">
+      <img src="./images/popup/campaign-complete.png"  alt="">
+      <div class="popup-text">
+        공유된 캠페인은 <span class="category">클릭이</span> 발생시<br>
+        <var class="point">10</var>포인트씩 적립됩니다
+      </div>
+      <a href="javascript:void(0)" data-rel="back" class="modal__close">
+        <img src="./images/popup/modal-close.png" alt="닫기">
+      </a>
+      <a href="javascript:void(0)" data-rel="back" class="modal-btn-close">
+        <img src="./images/spacer.png" alt="닫기">
+      </a>
+    </section>
+  </div>
+
+  <!-- @ 팝업 - 공유실패 -->
+  <div id="campaign-false" class="modal" data-role="modal">
+    <section class="modal-content">
+      <img src="./images/popup/campaign-false.png"  alt="">
+      <div class="popup-text">
+        라이크앤클릭은 게시에 필요한 권한 동의가 필요합니다<br>
+        자주 묻는 질문의 내용을 참조하시기 바랍니다
+      </div>
+      <a href="javascript:void(0)" data-rel="back" class="modal__close">
+        <img src="./images/popup/modal-close.png" alt="닫기">
+      </a>
+      <a href="javascript:void(0)" data-rel="back" class="modal-btn-close">
+        <img src="./images/spacer.png" alt="닫기">
+      </a>
+    </section>
+  </div>
+
+  <!-- @ 팝업 - 페이스북 로그인 -->
+  <div id="campaign-login" class="modal" data-role="modal">
+    <section class="modal-content">
+      <img src="./images/popup/campaign-login.png"  alt="">
+      <p class="popup-title">
+        라이크앤클릭은 공유한 캠페인에 따라<br>
+        <b>좋아요당 100포인트</b> 또는 <b>클릭당 10포인트</b>를<br>
+        적립해주는 리워드 플랫폼입니다
+      </p>
+      <p class="popup-text">
+        2,000포인트 적립 받고 로그인하시면, 자동으로 캠페인이 공유되고,<br>
+        자동으로 적립이 되는 <b>오토피드시스템</b>입니다
+      </p>
+      <a href="javascript:void(0)" data-rel="back" class="modal__close">
+        <img src="./images/popup/modal-close.png" alt="닫기">
+      </a>
+      <a href="javascript:void(0)" data-rel="back" class="btn-login">
+        <img src="./images/spacer.png" alt="페이스북 로그인">
+      </a>      
+      <a href="javascript:void(0)" data-rel="back" class="btn-login-auto">
+        <img src="./images/spacer.png" alt="2,000포인트 적립 받고 로그인">
+      </a>
+    </section>
+  </div>
+
+
+  <script src="./assets/js/vendor.js"></script>
+  <script src="./assets/js/plugin.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>

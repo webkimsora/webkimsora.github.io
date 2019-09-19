@@ -1,0 +1,543 @@
+<!doctype html>
+<html class="no-js" lang="ko">
+<head>
+    <meta charset="utf-8">
+    <title>라이크앤클릭</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimal-ui, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="">
+
+    <meta property="og:url" content="">
+    <meta property="og:site_name" content=""/>
+    <meta property="og:title" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="">
+    <meta property="og:description" content="">
+
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <!-- 모바일웹일땐 webMobile 클래스 추가 -->
+    <!-- @ 170817 수정 S -->
+    <main id="viewport" class="main webMobile">
+    <!-- @ 170817 수정 E -->
+        <!-- @ header-->
+        <header class="mainHeader">
+            <a class="logo" href="./index.html">
+                <img src="./images/logo.png"  alt="라이크앤클릭">
+            </a>
+            <!-- 참고사항: 로그아웃시 이름,이미지 변경. 클래스 logout 추가, 현재 숨김처리 -->
+            <a class="loginUser logout" href="#">
+              <span>로그인</span>
+              <img class="fbIcon" src="./images/main/gnb-logout.png"  alt="">  
+            </a>        
+            <!-- 참고사항: 로그아웃시 이름, 이미지 변경. 클래스 logout 추가 끝 -->
+            <a class="loginUser" href="#">
+              <img class="userImg" src="./images/main/gnb-login.png"  alt="">
+            </a>        
+            <!-- 로그인상태 끝 -->
+        </header>
+
+        <!-- @ GNB -->
+        <nav class="gnbWrap">
+            <ul class="outGnb">
+                <li>
+                    <a href="./campaign.html">
+                        <i class="sp-nav gnb-elem1"></i>
+                        <p>꿀알바</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="./community.html">
+                        <i class="sp-nav gnb-elem2"></i>
+                        <p>커뮤니티</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="./pointshop.html">
+                        <i class="sp-nav gnb-elem3"></i>
+                        <p>스토어</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="./withdraw.html">
+                        <i class="sp-nav gnb-elem4"></i>
+                        <p>출금</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="./mypage.html">
+                        <i class="sp-nav gnb-elem5"></i>
+                        <p>설정</p>
+                    </a>
+                </li>
+                <li>
+                    <a class="allMenu" href="javascript:;">
+                        <i class="sp-nav gnb-elem6"></i>
+                        <p>전체보기</p>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="inGnb">
+            <div class="userWrap">                    
+                <!-- support 클래스 부여시 서포터즈 표시 -->
+                <a class="userImgWrap support" href="#">
+                    <img class="userImg" src="./images/userImg.png"  alt="">
+                </a>        
+                <div class="userInfor">
+                    <span class="name">김지수</span>
+                    <dl class="">
+                        <dt>등급</dt>
+                        <dd>
+                            <span>브론드</span>
+                            <img class="grade" src="./images/grade/grade_12.png"  alt="">
+                            <a class="gradeGift" href="#">혜택보기</a>
+                        </dd>
+                    </dl>
+                    <dl class="">
+                        <dt>나의 꿀</dt>
+                        <dd class="listPt">2,453,000</dd>
+                    </dl>                                                
+                </div>
+                <a class="btn-menuClose" href="javascript:;">
+                    <img src="./images/btn-close.png"  alt="메뉴닫기">
+                </a>
+            </div>                     
+            <div class="menuWrap swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <ul class="menuList">
+                            <li>
+                                <a href="./campaign.html">
+                                    <i class="sp-menu menu-elem1"></i>
+                                    <p>꿀알바</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./community.html">
+                                    <i class="sp-menu menu-elem2"></i>
+                                    <p>커뮤니티</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./pointshop.html">
+                                    <i class="sp-menu menu-elem3"></i>
+                                    <p>꿀마트</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./customer-detail.html">
+                                    <i class="sp-menu menu-elem4"></i>
+                                    <p>앱소개</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./mypage.html">
+                                    <i class="sp-menu menu-elem5"></i>
+                                    <p>마이페이지</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./campaignLink.html">
+                                    <i class="sp-menu menu-elem6"></i>
+                                    <p>빨대꽂기</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./event.html">
+                                    <i class="sp-menu menu-elem7"></i>
+                                    <p>이벤트</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./withdraw.html">
+                                    <i class="sp-menu menu-elem8"></i>
+                                    <p>출금</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" onclick="alertModal('준비중입니다.');">
+                                    <i class="sp-menu menu-elem9"></i>
+                                    <p>미션</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./userbox.html">
+                                    <i class="sp-menu menu-elem10"></i>
+                                    <p>보관함</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="swiper-slide">
+                        <ul class="menuList">
+                            <li>
+                                <a href="#">
+                                    <i class="sp-menu menu-elem11"></i>
+                                    <p>알림</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="sp-menu menu-elem12"></i>
+                                    <p>공지사항</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="sp-menu menu-elem13"></i>
+                                    <p>고객센터</p>
+                                </a>
+                            </li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </div>
+                </div>                    
+                <div class="swiper-pagination"></div>
+            </div>
+
+        </div>
+        <!-- // GNB -->
+
+        <!-- @ Contents - 메인 -->        
+        <section class="main" id="main">
+            <div class="container">
+                <!-- @@ visual -->
+                <div class="visual">
+                    <div class="owl-carousel">
+                        <div class="item" data-hash="zero">
+                            <a href="#">
+                                <img src="./images/visual/visual1.png"  alt="">
+                            </a>
+                        </div>
+                        <div class="item" data-hash="one">
+                            <div class="itemWrap no2">                                
+                                <a href="#">                                
+                                    <img src="./images/visual/visual2.png"  alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="item" data-hash="two">
+                            <div class="itemWrap no3">                                
+                                <img src="./images/visual/visual3.png"  alt="">
+                                <a class="btn-vis-app" href="http://www.naver.com">
+                                    <img style="width:100%; height: 100%;" src="./images/spacer.png" alt="앱스토어">
+                                </a>
+                                <a class="btn-vis-google" href="http://www.google.com">
+                                    <img style="width:100%; height: 100%;" src="./images/spacer.png" alt="구글플레이">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="item" data-hash="three">
+                            <div class="itemWrap no4">
+                                <img src="./images/visual/visual4.png"  alt="">              
+                                <a class="btn-vis-money" style="" href="http://www.daum.net">
+                                    <img style="width:100%; height: 100%;" src="./images/spacer.png" alt="받으러가기">
+                                </a>                  
+                            </div>
+                        </div>
+                    </div>
+                </div>    
+                <!-- @@ // visual -->
+                <!-- @@ 꿀알바 -->
+                <div class="contents">
+                    <div class="listWrap">
+                        <h2 class="title"><a href="./campaign.html">추천 꿀알바</a></h2>   
+                        <div class="listCommon">
+                            <div class="swiper-container">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <a href="#">
+                                            <img class="picImg" src="./images/list/game1.jpg"  alt="">
+                                            <h3 class="listName">나이츠폴</h3>
+                                            <p class="listPt">1,500</p>
+                                        </a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="#">
+                                            <img class="picImg" src="./images/list/game2.jpg"  alt="">
+                                            <h3 class="listName">나이트 스트라잇</h3>
+                                            <p class="listPt">1,200</p>
+                                        </a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="#">
+                                            <img class="picImg" src="./images/list/game3.jpg"  alt="">
+                                            <h3 class="listName">전사는 전투!</h3>
+                                            <p class="listPt">4,500</p>
+                                        </a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="#">
+                                            <img class="picImg" src="./images/list/game4.jpg"  alt="">
+                                            <h3 class="listName">스페이스 여행</h3>
+                                            <p class="listPt">3,500</p>
+                                        </a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="#">
+                                            <img class="picImg" src="./images/list/game1.jpg"  alt="">
+                                            <h3 class="listName">나이츠폴</h3>
+                                            <p class="listPt">1,500</p>
+                                        </a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="#">
+                                            <img class="picImg" src="./images/list/game2.jpg"  alt="">
+                                            <h3 class="listName">나이트 스트라잇</h3>
+                                            <p class="listPt">1,200</p>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>    
+                    </div>                
+                </div>
+                <!-- @@ // 꿀알바 -->
+                <!-- @@ 배너 -->
+                <div class="contents banner">
+                    <a href="#">
+                        <img src="./images/banner/mainBanner.jpg"  alt="">                    
+                    </a>
+                </div>
+
+                <!-- @@ 이벤트 -->
+                <div class="contents">       
+                    <div class="listWrap event">
+                        <h2 class="title"><a href="#">이벤트</a></h2>     
+                        <div class="listCommon event">               
+                            <div class="swiper-container">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <a href="#">
+                                            <div class="slideList">
+                                                <img class="picImg" src="./images/event/eventBanner1.jpg"  alt="">
+                                                <div class="detail">
+                                                    <div class="left">
+                                                        <h3 class="listName">친구 소환 이벤트</h3>
+                                                        <p class="date">2017.07.01 ~ 2017.07.31</p>  
+                                                    </div>
+                                                    <div class="right">   
+                                                        <span class="onAir badge">진행중</span>
+                                                    </div>
+                                                </div>  
+                                            </div>
+                                        </a>
+                                    </div>                                       
+                                    <div class="swiper-slide">
+                                        <a href="#">
+                                            <div class="slideList">
+                                                <img class="picImg" src="./images/event/eventBanner1.jpg"  alt="">
+                                                <div class="detail">
+                                                    <div class="left">
+                                                        <h3 class="listName">친구 소환 이벤트</h3>
+                                                        <p class="date">2017.07.01 ~ 2017.07.31</p>  
+                                                    </div>
+                                                    <div class="right">   
+                                                        <span class="onAir badge">진행중</span>
+                                                    </div>
+                                                </div>  
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>                
+                </div>
+                <!-- @@ //이벤트 -->
+
+                <!-- @@ 앱소개 -->
+                <div class="contents">               
+                    <div class="listWrap">     
+                        <h2 class="title"><a href="#">앱소개</a></h2>       
+                        <img src="./images/example.jpg"  alt="">
+                    </div>
+                </div>
+                <!-- @@ //앱소개 -->
+
+                <!-- @@ 커뮤니티 -->
+                <div class="contents">               
+                    <div class="listWrap community">
+                        <h2 class="title"><a href="#">커뮤니티</a></h2>       
+                        <!-- @@ 게시판 -->
+                        <ul class="comBoard">
+                            <li>
+                                <a href="./community-look.html">
+                                    <div class="subject">
+                                        <span class="subject-title">게시판 포인트 정책 안내</h3>
+                                        <div class="subject-info">
+                                            <span>
+                                                <img class="grade" src="./images/grade/grade_55.png"  alt="">
+                                            쵸쵸쵸                    
+                                            </span>
+                                            <span>17.06.02</span>
+                                            <span ><img class="com-look" src="./images/com-look.png"  alt="조회"><var>250</var></span>
+                                            <span class="recom"><img class="com-like" src="./images/com-like.png"  alt="추천"><var>25</var></span>
+                                        </div>                  
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./community-look.html">
+                                    <div class="subject">
+                                        <span class="subject-title">게시판 포인트 정책 안내</h3>
+                                        <div class="subject-info">
+                                            <span>
+                                                <img class="grade" src="./images/grade/grade_55.png"  alt="">
+                                            쵸쵸쵸                    
+                                            </span>
+                                            <span>17.06.02</span>
+                                            <span ><img class="com-look" src="./images/com-look.png"  alt="조회"><var>250</var></span>
+                                            <span class="recom"><img class="com-like" src="./images/com-like.png"  alt="추천"><var>25</var></span>
+                                        </div>                  
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./community-look.html">
+                                    <div class="subject">
+                                        <span class="subject-title">게시판 포인트 정책 안내</h3>
+                                        <div class="subject-info">
+                                            <span>
+                                                <img class="grade" src="./images/grade/grade_55.png"  alt="">
+                                            쵸쵸쵸                    
+                                            </span>
+                                            <span>17.06.02</span>
+                                            <span ><img class="com-look" src="./images/com-look.png"  alt="조회"><var>250</var></span>
+                                            <span class="recom"><img class="com-like" src="./images/com-like.png"  alt="추천"><var>25</var></span>
+                                        </div>                  
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- @@ //커뮤니티 -->
+
+
+                <!-- @@ 스토어 -->
+                <div class="contents">        
+                    <div class="listWrap pointShop">
+                        <h2 class="title"><a href="#">스토어</a></h2>           
+                        <div class="listCommon">         
+                            <div class="swiper-container">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <a href="#">
+                                            <img class="picImg" src="./images/list/shop1.jpg"  alt="">
+                                            <h3 class="listName">베라 싱글 레귤러콘</h3>
+                                            <p class="listPt">1,500</p>
+                                        </a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="#">
+                                            <img class="picImg" src="./images/list/shop2.jpg"  alt="">
+                                            <h3 class="listName">마이~쮸~♡</h3>
+                                            <p class="listPt">1,200</p>
+                                        </a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="#">
+                                            <img class="picImg" src="./images/list/shop3.jpg"  alt="">
+                                            <h3 class="listName">사나이 울리는 농심 신라면</h3>
+                                            <p class="listPt">4,500</p>
+                                        </a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="#">
+                                            <img class="picImg" src="./images/list/shop4.jpg"  alt="">
+                                            <h3 class="listName">롯데리아 아이스 커피</h3>
+                                            <p class="listPt">3,500</p>
+                                        </a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="#">
+                                            <img class="picImg" src="./images/list/shop1.jpg"  alt="">
+                                            <h3 class="listName">베라 싱글 레귤러콘</h3>
+                                            <p class="listPt">1,500</p>
+                                        </a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="#">
+                                            <img class="picImg" src="./images/list/shop2.jpg"  alt="">
+                                            <h3 class="listName">마이~쮸~♡</h3>
+                                            <p class="listPt">1,200</p>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>        
+                </div>    
+                <!-- @@ // 스토어 -->
+                
+                <!-- @@ 배너2 -->
+                <div class="contents">                      
+                    <a href="#">
+                        <img src="./images/banner/mainBanner2.jpg"  alt="">                    
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        
+        <!-- @ footer -->
+        <footer class="footer">
+            <h2 class="footer-logo">
+                <img src="./images/footer-logo.png"  alt="라이크앤클릭">
+            </h2>
+            <div class="footer-list">
+                <a href="footer-terms.html">이용약관</a>
+                <a href="footer-infor.html">개인정보취급방침</a>
+                <p>Copyright © 라이크앤클릭 Co.,Ltd. All Rights Reserved.</p>
+            </div>         
+        </footer>
+        <!-- @ //footer -->
+    
+        <div class="topWrap">
+            <a class="btnTop" href="#">
+                <img src="./images/btnTop.png"  alt="">
+            </a>        
+        </div>
+    </main>
+
+    <div id="" class="modal" data-role="modal">
+        <section class="modal-content">
+            <!--내용-->
+            <a href="javascript:void(0)" data-rel="back" class="modal__close">
+                <img src="./images/spacer.png" alt="닫기">
+            </a>
+        </section>
+    </div>
+
+    <script src="./assets/js/vendor.js"></script>
+    <script src="./assets/js/plugin.js"></script>
+    <script src="js/owl.carousel.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+        <!--
+        var UserAgent = navigator.userAgent;
+        var UADevice = UserAgent.match(/iPhone|iPod|iPad|Android|Windows CE|BlackBerry|Symbian|Windows Phone|webOS|Opera Mini|Opera Mobi|POLARIS|IEMobile|lgtelecom|nokia|SonyEricsson/i);
+        var UAVendor = UserAgent.match(/LG|SAMSUNG|Samsung/);
+        if ( UADevice != null || UAVendor != null){
+        } else {
+        // location.href = "../";
+          $('body').css({
+            width : '720px',
+            margin : '0 auto'
+          });
+        }
+        //-->
+    </script>
+</body>
+</html>

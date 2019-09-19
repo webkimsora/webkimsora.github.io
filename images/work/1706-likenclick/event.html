@@ -1,0 +1,401 @@
+<!doctype html>
+<html class="no-js" lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>라이크앤클릭</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no, minimal-ui, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="">
+  <link rel="stylesheet" href="css/main.css">
+  <link href='http://fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet' type='text/css'>
+</head>
+<body>
+  <!-- Load Facebook SDK for JavaScript -->
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v2.6";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+
+  <main class="sub" id="viewport">
+    <!-- @ header End -->
+    <header class="header is-sticky">
+      <div class="top">
+        <a class="top-menu" href="javascript:;">
+          <img src="./images/main/gnb-nav.png"  alt="">
+        </a>
+        <a class="top-logo" href="index.html">
+          <img src="./images/main/logo-sticky.png"  alt="라이크앤클릭">
+        </a>
+        <a class="top-fb" href="#">
+          <!--
+          <span>로그인</span>
+          <img class="top-fb-login" src="./images/main/gnb-logout.png"  alt="">      
+          <!-- 로그인시 이름, 이미지 변경. 클래스 login 추가 -->
+          <span>김유정</span>
+          <img class="top-fb-login" src="./images/main/gnb-login.png"  alt="">
+        </a>        
+        <!-- 로그인상태 끝 -->
+      </div>
+      <nav>
+        <ul class="gnb">
+          <li>
+            <a href="campaign.html">
+              캠페인
+            </a>
+          </li>
+          <li>
+            <a href="likentalk.html">              
+              라이크&#38;톡
+            </a>
+          </li>
+          <li>
+            <a href="pointshop.html">
+              포인트샵
+            </a>
+          </li>
+          <li class="is-active">
+            <a href="event.html">
+              이벤트
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <!-- @ header End -->
+
+     <!-- @ Toggle menu LOGOUT -->
+    <div id="userBg"></div>
+    <div class="userwrap">
+      <!-- @ LOGOUT -->
+      <div class="user">
+        <!-- @@ 유저 정보 -->
+        <div class="user-contents">
+          <!-- LOGOUT : logout class추가, 현재 display:none 상태 -->
+          <div class="user-info logout">
+            <img class="user-info-img" src="./images/menu/customer-logout.png"  alt="">
+            <!--<h3 class="user-info-name">GUEST</h3>-->
+            <a class="user-info-page" href="#">
+              <img src="./images/menu/logout-go-page.png"  alt="페이스북으로 로그인">
+            </a>
+            <div class="user-point">
+              <dl class="">
+                <dt>누적포인트</dt>
+                <dd>-</dd>
+              </dl>
+              <dl class="">
+                <dt>출금가능포인트</dt>
+                <dd>-</dd>
+              </dl>
+            </div>
+          </div>
+          <!-- LOGOUT END -->
+
+          <!-- LOGIN -->
+          <div class="user-info">
+            <img class="user-info-img" src="./images/menu/customer-img.png"  alt="">
+            <p class="user-info-grade">
+              <img src="./images/menu/grade-bronze.png"  alt="">
+            </p>        
+            <h3 class="user-info-name">김유정</h3>
+            <a class="user-info-page" href="mypage.html">
+              <img src="./images/menu/login-go-page.png"  alt="MY PAGE">
+            </a>
+            <div class="user-point">
+              <dl class="">
+                <dt>누적포인트</dt>
+                <dd>146,000P</dd>
+              </dl>
+              <dl class="">
+                <dt>출금가능포인트</dt>
+                <dd>140,000P</dd>
+              </dl>
+            </div>
+          </div>
+          <!-- LOGIN END -->
+          <!-- @@ 유저 정보 END -->
+          <!-- @@ NAV -->
+          <nav class="nav-menu">  
+            <a href="mypage.html">
+              <img src="./images/menu/menu-account.png"  alt="출금신청">
+              <span>출금신청</span>
+            </a> 
+            <a href="mypage4.html">
+              <img src="./images/menu/menu-saving.png"  alt="적립내역">
+              <span>적립내역</span>
+            </a>
+            <a href="campaign.html">
+              <img src="./images/menu/menu-campaign.png"  alt="캠페인">
+              <span>꿀알바</span>
+            </a>        
+            <a href="pointshop.html">
+              <img src="./images/menu/menu5-point.png"  alt="포인트샵">
+              <span>포인트샵</span>
+            </a>
+            <a href="event.html">
+              <img src="./images/menu/menu4-event.png"  alt="이벤트">
+              <span>이벤트</span>
+            </a>
+            <a href="likentalk.html">
+              <img src="./images/menu/menu-community.png"  alt="라이크앤톡">
+              <span>커뮤니티</span>
+            </a>
+            <a href="customer.html">
+              <img src="./images/menu/menu6-service.png"  alt="이용안내">
+              <span>이용안내</span>
+            </a>
+            <a href="javascript:;">
+              <img src="./images/menu/menu-quest.png"  alt="퀘스트">
+              <span>퀘스트</span>
+            </a>
+            <a href="incentive.html">
+              <img src="./images/menu/menu-incentive.png"  alt="인센티브">
+              <span>빨대꽂기</span>
+            </a>
+          </nav>
+          <!-- @@ NAV END -->
+          <!-- @@ 구글다운로드-->
+          <p class="google-download">
+            <a href="customer.html">
+              <img src="./images/menu/menu-notice.png"  alt="공지사항">
+              <span>공지사항</span>
+            </a>
+            <a href="customer.html">
+              <img src="./images/menu/menu-google.png"  alt="구글 다운로드">
+              <span>다운로드</span>
+            </a>
+            <a href="customer.html">
+              <img src="./images/menu/menu-appstore.png"  alt="앱스토어 다운로드">
+              <span>다운로드</span>
+            </a>
+          </p>
+          <!-- @@ 구글다운로드 END -->
+        </div>
+        <a class="user-close" href="javascript:;">
+          <img src="./images/menu/btn-close.png"  alt="창닫기">
+        </a>
+      </div>
+    </div>
+    <!-- @ Toggle menu END -->
+
+    <!-- @ 컨텐츠 -->
+    <div class="contents l-event" id="event">
+      <!-- @@ 목록 -->
+      <section class="section event-list" id="event-list">
+        <h2>
+          <img src="./images/pages/event/tit.png" alt="">
+          당첨 내역은 마이 페이지에서도 확인이 가능합니다.
+        </h2>
+        <ul class="list list-event">
+          <li>
+            <span class="badge">
+              참여가능
+            </span>
+            <img src="./images/pages/event/sample/banner1.png" alt="">
+            <dl class="event-meta">
+              <dt>
+                2016.08.01~08.10
+              </dt>
+              <dd>
+                2,345명 참여
+              </dd>
+            </dl>
+            <h3>
+              제4차 바나나 우유 기프티콘 증정 이벤트
+            </h3>
+            <a class="btn-participate" href="javascript:;">
+              이벤트 참여하기
+            </a>
+          </li>
+          <li class="is-completed">
+            <span class="badge">
+              참여완료
+            </span>
+            <img src="./images/pages/event/sample/banner2.png" alt="">
+            <dl class="event-meta">
+              <dt>
+                2016.08.01~08.10
+              </dt>
+              <dd>
+                2,345명 참여
+              </dd>
+            </dl>
+            <h3>
+              라클 수익왕을 찾아라 삼성노트북, 니콘40d
+            </h3>
+            <a href="#event-winner" data-toggle="modal">
+              이벤트 참여완료
+            </a>
+          </li>
+          <li class="is-ended">
+            <span class="badge">
+              이벤트종료
+            </span>
+            <img src="./images/pages/event/sample/banner3.png" alt="">
+            <dl class="event-meta">
+              <dt>
+                2016.08.01~08.10
+              </dt>
+              <dd>
+                2,345명 참여
+              </dd>
+            </dl>
+            <h3>
+              라클 수익퀸을 위한 입생로랑 립스틱
+            </h3>
+            <a href="#event-false" data-toggle="modal">
+              이벤트 종료
+            </a>
+          </li>
+        </ul>
+      </section>
+      <!-- @@ 상세보기 (기본은 display:none 이며 목록에서 `이벤트 보기` 누를 시 display:block 시켜야 함) -->
+      <section class="section event-view" id="event-view" style="display:none">
+        <dl class="event-meta">
+          <dt>
+            2016.08.01~08.10
+          </dt>
+          <dd>
+            2,345명 참여
+          </dd>
+        </dl>
+        <h3>
+          제4차 바나나 우유 기프티콘 증정 이벤트
+        </h3>
+        <div class="event-view-banner">          
+          <span class="badge">
+            참여가능
+          </span>
+          <img src="./images/pages/event/sample/banner1.png" alt="">
+        </div>
+
+        <dl class="event-view-info">
+          <dt>참여 방법</dt>
+          <dd>추첨 받기 버튼을 통해 당첨 확인</dd>
+          <dt>이벤트 일시</dt>
+          <dd>100개 수량 소진시 </dd>
+          <dt>대 상</dt>
+          <dd>페이스북 로그인 후 당첨 확인</dd>
+          <dt>이벤트 경품</dt>
+          <dd>(선택)GS,CU,세븐일레븐에서 바나나맛우유 교환권 1매</dd>
+          <dt>지급 방법</dt>
+          <dd>기프티콘 SMS문자 발송(매일 당첨자 별 순차 발송)</dd>
+        </dl>
+
+        <a href="#event-false" data-toggle="modal">
+          이벤트 참여하기
+        </a>
+
+        <div class="event-view-winner">
+          <h4>이벤트 참여 시 유의사항 안내</h4>
+          <ul>
+            <li>
+              5만원 이상 경품의 제세공과금(22%)는 당첨자 본인 부담입니다.
+            </li>
+            <li>
+              잘못된 정보 입력 및 미 입력으로 인한 경품 발송 오류, 스팸 설정으로 인한 미수령 및 반송은 당사에서 책임지지 않습니다.(재발송 불가)
+            </li>
+            <li>
+              이벤트로 인해 수집되는 개인 정보(이름, 연락처, 주소 등)는 이벤트 경품 발송을 위해 (주)메큐라이크에 취급위탁되며, 이벤트 응모 시 개인 정보 수집 및 업무 위탁에 동의하는것으로 간주됩니다.
+            </li>
+            <li>
+              이벤트 진행 일정 및 내용, 당첨자 발표일, 배송 일정은 당사 사정에 의해 변경될수 있습니다.
+            </li>
+          </ul>
+        </div>
+
+        <div class="event-view-comment">
+          <div class="fb-comments" data-href="http://likenclick.co.kr" data-numposts="5"></div>
+        </div>
+      </section>
+    </div>
+    <!-- @ 컨텐츠 END -->
+
+    <!-- @ footer -->
+    <footer class="footer">
+      <h2 class="footer-logo">
+        <img src="./images/footer-logo.png"  alt="라이크앤클릭">
+      </h2>
+      <div class="footer-list">
+        <a href="footer-terms.html">이용약관</a>
+        <a href="footer-infor.html">개인정보취급방침</a>
+        <p>Copyright © 라이크앤클릭 Co.,Ltd. All Rights Reserved.</p>
+      </div>         
+    </footer>
+    <!-- @ footer END -->
+
+    <aside class="btn-scroll-top" style="display: none;">
+      <div>
+        <a href="javascript:void(0)" id="btn-scroll-top">
+          <img src="./images/btn-top.png" alt="TOP">
+        </a>
+      </div>
+    </aside>
+
+    <aside class="btn-back" style="display: none;">
+      <a href="javascript:location.reload()">
+        <img src="./images/btn-back.png"  alt="뒤로 가기">
+      </a>
+    </aside>
+  </main>
+
+  <!-- @ 팝업 - 당첨축하 -->
+  <div id="event-winner" class="modal" data-role="modal">
+    <section class="modal-content">
+      <img src="./images/popup/event-winner.jpg"  alt="">
+      <div class="popup-text">
+        당첨수령 방법은 지급방법 참조해주세요
+      </div>
+      <a href="javascript:void(0)" data-rel="back" class="modal__close">
+        <img src="./images/popup/modal-close.png" alt="닫기">
+      </a>
+      <a href="javascript:void(0)" data-rel="back" class="modal-btn-close">
+        <img src="./images/spacer.png" alt="닫기">
+      </a>
+    </section>
+  </div>
+
+  <!-- @ 팝업 - 이벤트 참여하기 -->
+  <div id="event-info" class="modal" data-role="modal">
+    <section class="modal-content">
+      <img src="./images/popup/event-info.jpg"  alt="">
+      <div class="popup-text">
+        - 이벤트에 참여하실 본인의 휴대폰 번호를입력해주세요<br>
+        - 휴대폰 번호로 이벤트 당첨 결과가 안내되므로<br>허위 정보를 입력하지 마세요
+      </div>
+      <form class="popup-frm" method="post" action="">
+        <input type="number" name="" placeholder="휴대폰 번호를 입력해주세요 (숫자만)">
+      </form>
+      <a href="javascript:void(0)" data-rel="back" class="modal__close">
+        <img src="./images/popup/modal-close.png" alt="닫기">
+      </a>
+      <a href="javascript:void(0)" data-rel="back" class="modal-btn-close">
+        <img src="./images/spacer.png" alt="이벤트 참여하기">
+      </a>
+    </section>
+  </div>
+
+  <!-- @ 팝업 - 당첨실패 -->
+  <div id="event-false" class="modal" data-role="modal">
+    <section class="modal-content">
+      <h3>이벤트 참여에 실패하였습니다</h3>
+      <div class="popup-text">
+        Facebook 게재 권한을 승인하셔야<br> 이벤트 참여가 완료됩니다
+      </div>
+      <a href="javascript:void(0)" data-rel="back" class="modal__close">
+        <img src="./images/popup/modal-close.png" alt="닫기">
+      </a>
+      <a href="javascript:void(0)" data-rel="back" class="modal-btn-ok">
+        확인
+      </a>
+    </section>
+  </div>
+
+
+  <script src="./assets/js/vendor.js"></script>
+  <script src="./assets/js/plugin.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

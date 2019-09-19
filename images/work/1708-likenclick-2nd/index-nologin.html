@@ -1,0 +1,1421 @@
+<!doctype html>
+<html class="no-js" lang="ko">
+<head>
+    <meta charset="utf-8">
+    <title>라이크앤클릭</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimal-ui, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="">
+
+    <meta property="og:url" content="">
+    <meta property="og:site_name" content=""/>
+    <meta property="og:title" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="">
+    <meta property="og:description" content="">
+
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <!-- @ 170817 수정 S -->
+    <main id="viewport" class="main">
+    <!-- @ 170817 수정 E -->
+        <!-- @ header-->
+        <header class="mainHeader">
+            <a class="logo" href="./index.html">
+                <img src="./images/logo.png"  alt="라이크앤클릭">
+            </a>
+            <!-- 참고사항: 로그아웃시 이름,이미지 변경. 클래스 logout 추가, 현재 숨김처리 -->
+            <a class="loginUser logout" href="#">
+              <span>로그인</span>
+              <img class="fbIcon" src="./images/gnb-logout.png"  alt="">  
+            </a>        
+            <!-- 참고사항: 로그아웃시 이름, 이미지 변경. 클래스 logout 추가 끝 -->
+            <a class="loginUser" href="#">
+              <img class="userImg" src="./images/gnb-login.png"  alt="">
+            </a>        
+            <!-- 로그인상태 끝 -->
+        </header>
+
+         <!-- 170818-2차 수정 -->
+         <div id="gnbBg"></div>
+         <!-- // 170818-2차 수정 END -->
+        <!-- 170818-2차 수정 : 미로그인 -->        
+        <nav class="gnbWrap noLogin">
+            <ul class="outGnb">
+                <li>
+                    <a href="./campaign.html">
+                        <i class="sp-nav gnb-elem1"></i>
+                        <p>꿀알바</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="./community.html">
+                        <i class="sp-nav gnb-elem4"></i>
+                        <p>이벤트</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="./pointshop.html">
+                        <i class="sp-nav gnb-login3"></i>
+                        <p>공지사항</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="./withdraw.html">
+                        <i class="sp-nav gnb-login4"></i>
+                        <p>고객센터</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="./login-agree.html">
+                        <i class="sp-nav gnb-login5"></i>
+                        <p>로그인</p>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <!-- //170818-2차 수정 : 미로그인 END -->
+
+        <div class="inGnb">
+            <div class="userWrap">                    
+                <!-- support 클래스 부여시 서포터즈 표시 -->
+                <a class="userImgWrap support" href="#">
+                    <img class="userImg" src="./images/userImg.png"  alt="">
+                </a>        
+                <div class="userInfor">
+                    <span class="name">김지수</span>
+                    <dl class="">
+                        <dt>등급</dt>
+                        <dd>
+                            <span>브론드</span>
+                            <img class="grade" src="./images/grade/grade_12.png"  alt="">
+                            <a class="gradeGift" href="#">혜택보기</a>
+                        </dd>
+                    </dl>
+                    <dl class="">
+                        <dt>나의 꿀</dt>
+                        <dd class="listPt">2,453,000</dd>
+                    </dl>                                                
+                </div>
+                <a class="btn-menuClose" href="javascript:;">
+                    <img src="./images/btn-close.png"  alt="메뉴닫기">
+                </a>
+            </div>                     
+            <div class="menuWrap swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <ul class="menuList">
+                            <li>
+                                <a href="./campaign.html">
+                                    <i class="sp-menu menu-elem1"></i>
+                                    <p>꿀알바</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./community.html">
+                                    <i class="sp-menu menu-elem2"></i>
+                                    <p>커뮤니티</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./pointshop.html">
+                                    <i class="sp-menu menu-elem3"></i>
+                                    <p>꿀마트</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./customer-detail.html">
+                                    <i class="sp-menu menu-elem4"></i>
+                                    <p>앱소개</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./mypage.html">
+                                    <i class="sp-menu menu-elem5"></i>
+                                    <p>마이페이지</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./campaignLink.html">
+                                    <i class="sp-menu menu-elem6"></i>
+                                    <p>빨대꽂기</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./event.html">
+                                    <i class="sp-menu menu-elem7"></i>
+                                    <p>이벤트</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./withdraw.html">
+                                    <i class="sp-menu menu-elem8"></i>
+                                    <p>출금</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" onclick="alertModal('준비중입니다.');">
+                                    <i class="sp-menu menu-elem9"></i>
+                                    <p>미션</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./userbox.html">
+                                    <i class="sp-menu menu-elem10"></i>
+                                    <p>보관함</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="swiper-slide">
+                        <ul class="menuList">
+                            <li>
+                                <a href="#">
+                                    <i class="sp-menu menu-elem11"></i>
+                                    <p>알림</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="sp-menu menu-elem12"></i>
+                                    <p>공지사항</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="sp-menu menu-elem13"></i>
+                                    <p>고객센터</p>
+                                </a>
+                            </li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </div>
+                </div>                    
+                <div class="swiper-pagination"></div>
+            </div>
+
+        </div>
+        <!-- // GNB -->
+
+        <!-- @ Contents - 메인 -->        
+        <section class="main" id="main">
+            <div class="container">
+                <!-- @@ visual -->
+                <!-- 170818-2차 수정 : 링크 연결 -->
+                <div class="visual">
+                    <div class="owl-carousel">
+                        <div class="item" data-hash="zero">
+                            <a href="#">
+                                <img src="./images/visual/visual1.png"  alt="">
+                            </a>
+                        </div>
+                        <div class="item" data-hash="one">
+                            <div class="itemWrap no2">                                
+                                <a href="./campaign.html">                                
+                                    <img src="./images/visual/visual2.png"  alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="item" data-hash="two">
+                            <div class="itemWrap no3">                                
+                                <img src="./images/visual/visual3.png"  alt="">
+                                <a class="btn-vis-app" href="https://itunes.apple.com/kr/app/id1179628047?mt=8" target="_blank">
+                                    <img style="width:100%; height: 100%;" src="./images/spacer.png" alt="앱스토어">
+                                </a>
+                                <a class="btn-vis-google" href="https://play.google.com/store/apps/details?id=kr.co.likenclick" target="_blank">
+                                    <img style="width:100%; height: 100%;" src="./images/spacer.png" alt="구글플레이">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="item" data-hash="three">
+                            <div class="itemWrap no4">
+                                <img src="./images/visual/visual4.png"  alt="">              
+                                <a class="btn-vis-money" style="" href="./mypage.html">
+                                    <img style="width:100%; height: 100%;" src="./images/spacer.png" alt="받으러가기">
+                                </a>                  
+                            </div>
+                        </div>
+                    </div>
+                </div>    
+                <!-- //170818-2차 수정 : 링크 연결 END -->
+                <!-- @@ // visual -->
+                <!-- @@ 꿀알바 -->
+                <div class="contents">
+                    <div class="listWrap">
+                        <h2 class="title"><a href="./campaign.html">추천 꿀알바</a></h2>   
+                        <div class="listCommon">
+                            <div class="swiper-container">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <a href="http://www.naver.com" target="_blank">
+                                            <img class="picImg" src="./images/list/game1.jpg"  alt="">
+                                            <h3 class="listName">나이츠폴</h3>
+                                            <p class="listPt">1,500</p>
+                                        </a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="#">
+                                            <img class="picImg" src="./images/list/game2.jpg"  alt="">
+                                            <h3 class="listName">나이트 스트라잇</h3>
+                                            <p class="listPt">1,200</p>
+                                        </a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="#">
+                                            <img class="picImg" src="./images/list/game3.jpg"  alt="">
+                                            <h3 class="listName">전사는 전투!</h3>
+                                            <p class="listPt">4,500</p>
+                                        </a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="#">
+                                            <img class="picImg" src="./images/list/game4.jpg"  alt="">
+                                            <h3 class="listName">스페이스 여행</h3>
+                                            <p class="listPt">3,500</p>
+                                        </a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="#">
+                                            <img class="picImg" src="./images/list/game1.jpg"  alt="">
+                                            <h3 class="listName">나이츠폴</h3>
+                                            <p class="listPt">1,500</p>
+                                        </a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="#">
+                                            <img class="picImg" src="./images/list/game2.jpg"  alt="">
+                                            <h3 class="listName">나이트 스트라잇</h3>
+                                            <p class="listPt">1,200</p>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>    
+                    </div>                
+                </div>
+                <!-- @@ // 꿀알바 -->
+                <!-- @@ 배너 -->
+                <div class="contents banner">
+                    <a href="#">
+                        <img src="./images/banner/mainBanner.jpg"  alt="">                    
+                    </a>
+                </div>
+
+                <!-- @@ 이벤트 -->
+                <div class="contents">       
+                    <div class="listWrap event">
+                        <h2 class="title"><a href="#">이벤트</a></h2>     
+                        <div class="listCommon event">               
+                            <div class="swiper-container">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <a href="#">
+                                            <div class="slideList">
+                                                <img class="picImg" src="./images/event/eventBanner1.jpg"  alt="">
+                                                <div class="detail">
+                                                    <div class="left">
+                                                        <h3 class="listName">친구 소환 이벤트</h3>
+                                                        <p class="date">2017.07.01 ~ 2017.07.31</p>  
+                                                    </div>
+                                                    <div class="right">   
+                                                        <span class="onAir badge">진행중</span>
+                                                    </div>
+                                                </div>  
+                                            </div>
+                                        </a>
+                                    </div>                                       
+                                    <div class="swiper-slide">
+                                        <a href="#">
+                                            <div class="slideList">
+                                                <img class="picImg" src="./images/event/eventBanner1.jpg"  alt="">
+                                                <div class="detail">
+                                                    <div class="left">
+                                                        <h3 class="listName">친구 소환 이벤트</h3>
+                                                        <p class="date">2017.07.01 ~ 2017.07.31</p>  
+                                                    </div>
+                                                    <div class="right">   
+                                                        <span class="onAir badge">진행중</span>
+                                                    </div>
+                                                </div>  
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>                
+                </div>
+                <!-- @@ //이벤트 -->
+
+                <!-- @@ 앱소개 -->
+                <div class="contents">               
+                    <div class="listWrap">     
+                        <h2 class="title"><a href="#">앱소개</a></h2>       
+                        <div class="appIntro">
+                            <!-- @@@ 170818-2차 수정 -->
+                            <section id="container">
+                                <div id="mflick">
+                                    <div id="content" class="flick-container">
+
+
+                                    <!-- START : 스포츠 · 연예 -->
+                                    <div id="index1" class="flick-ct jmc-content" data-section="1" data-controller="VideoController" style="height: 100%; transition-property: -webkit-transform; transition-duration: 0ms; transform: translate3d(100%, 0px, 0px); position: absolute; width: 100%; left: 0px; top: 0px; float: left; z-index: 10;">
+                                        <div class="flick-wrap" id="pn2" style="display: block;">
+                                            <!-- contents -->
+                                            <section id="enlipleGame">
+                                                <div id="enli-brand-section" class="enli_bgBox enli_display_none" style="display: block;">
+                                                    <div class="enli_titleBox">
+                                                        <h2 class="enli_contentTitle">액션 RPG 끝판왕!</h2>
+                                                        <span class="enli_sText">넥슨 '다크어벤저3' 출시!</span>
+                                                    </div>
+                                                    <div class="enli_content">
+                                                        <div class="enli_brand">
+                                                            <div class="enli_brand_timg">
+                                                                <a href="" data-gnb="tv">
+                                                                    <img src="http://img.files-vantage.com/appmoa/brand/images/c9156e1648d1b54e1d2334b134b9a0f7b67c4cb0a52160074bfe56ccd476002e.png" width="100%">
+                                                                </a>
+                                                            </div>
+                                                            <div class="enli_content">
+                                                                <a href="javascript:;" class="imgBox"  data-gnb="tv">
+                                                                    <div class="enli_gamgImg" style="background: url(http://img.files-vantage.com/ad/imgfile/4878d0923d4becaeaae7b5a1e407d76cchoicethumbnail.jpg) 50% 50% / cover no-repeat;">
+                                                                        <div class="enli_dimmed_box">
+                                                                            <div class="enli_article_title">
+                                                                                넥슨 '다크어벤저3' 액션 RPG 새바람 불러올까?                                
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </a>
+                                                                
+                                                                <a href="javascript:;" class="imgBox" data-gnb="tv">
+                                                                    <div class="enli_gamgImg" >
+                                                                        <div class="enli_dimmed_box">
+                                                                            <div class="enli_article_title">
+                                                                                '다크어벤저3' 스킬 향연 &amp; 커스터마이징 어디까지 봤니?                                
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="enli_bgBox enli_display_none" style="margin-bottom: 10px; display: block;" id="enli-sec-banner-9294" data-main="banner" data-sub="slide">
+                                                    <div class="enli_titleBox">
+                                                        <h2 class="enli_contentTitle">MD추천</h2>  
+                                                        <span class="enli_sText">고민하지마라, MD가 추천한다.</span>
+                                                    </div>
+                                                    <div class="enli_content">
+                                                    <div class="enli_typeContent04 ">
+                                                        <!-- 배너 swiper -->
+                                                        <div class="enli_moaWebArea mdswiper">
+                                                            <div class="swiper-container enli_slideWrap02">
+                                                                <div class="swiper-wrapper">
+                                                                    <div class="swiper-slide"><img src="http://img.files-vantage.com/ad/imgfile/d2e7d446ff5b1f3ba226d57f5307746c.jpg"  alt=""></div>
+                                                                    <div class="swiper-slide"><img src="http://img.files-vantage.com/ad/imgfile/95699830ca06703e53f954f6fb45da22.jpg"  alt=""></div>
+                                                                </div>                                                                
+                                                                <div class="swiper-pagination"></div>
+                                                                <div class="enli_controls">
+                                                                    <span class="enli-bx-prev"></span>
+                                                                    <span class="enli-bx-next"></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- //배너 swiper END -->
+
+                                                            <div class="enli_content">
+                                                                <dl>
+                                                                    <a data-gnb="tv">
+                                                                        <dt class="enli_gamgImg">
+                                                                            <a href="javascript:;" data-gnb="tv">
+                                                                                <img src="http://img.files-vantage.com/appmoa/app/icon_img/9b52d5a9a4cd07c75f02acca1caab2f5.png">
+                                                                            </a>
+                                                                        </dt>
+                                                                        <dd class="enli_descBox">
+                                                                            <span class="enli_camp_info">삼국의 운명을 건 마지막 전투가 시작된다!</span>
+                                                                        </dd>
+                                                                    </a>
+                                                                </dl>
+                                                                <dl>
+                                                                    <a data-gnb="tv">
+                                                                        <dt class="enli_gamgImg">
+                                                                            <a href="javascript:;" data-gnb="tv">
+                                                                                <img src="http://img.files-vantage.com/appmoa/app/icon_img/d9bc53187899a45c90da8e8552261545.png">
+                                                                            </a>
+                                                                        </dt>
+                                                                        <dd class="enli_descBox">
+                                                                            <span class="enli_camp_info">세상에 없던 판타지 MMORPG!</span>
+                                                                        </dd>
+                                                                    </a>
+                                                                </dl>
+                                                                <dl>
+                                                                    <a data-gnb="tv">
+                                                                        <dt class="enli_gamgImg">
+                                                                            <a href="javascript:;"  data-gnb="tv">
+                                                                                <img src="http://img.files-vantage.com/appmoa/app/icon_img/28bf6a4317f97c568e8bd2edbc783a14.png">
+                                                                            </a>
+                                                                        </dt>
+                                                                        <dd class="enli_descBox">
+                                                                            <span class="enli_camp_info">떼굴떼굴 RPG 구름과 바람!</span>
+                                                                        </dd>
+                                                                    </a>
+                                                                </dl>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- @ 1:1 선택 -->
+                                                <div class="enli_bgBox">                
+                                                    <div class="enli_moaWebArea ">
+                                                        <div class="enli_slideWrap">                                    
+                                                            <!-- 배너 swiper -->
+                                                            <div class="swiper-container enli_sliderArea rankswiper">
+                                                                <div class="swiper-wrapper">
+                                                                    <!-- 슬라이드1 -->
+                                                                    <div class="swiper-slide">
+                                                                        <div class="enli_app_battle02">
+                                                                            <div class="enli_boxTitle">요새 이 게임 모르면... 간첩~</div>
+                                                                            <span class="enli_result" onclick="enli_versus_result('enli-sec-versus-9289',this)">결과보기</span>
+                                                                            <span class="enli_back" onclick="enli_versus_back('enli-sec-versus-9289',this)">돌아가기</span>
+                                                                            <dl class="enli_left">
+                                                                                <a data-gnb="tv" href="javscript:;">
+                                                                                    <dt class="enli_gamgImg enli_lose">
+                                                                                        <img src="http://img.files-vantage.com/appmoa/app/icon_img/06e12f5e76f718124faa978cd470df52.png">
+                                                                                    </dt>
+                                                                                    <dd class="enli_descBox">
+                                                                                        <span class="enli_title">음양사 for kakao</span>
+                                                                                        <span class="enli_deac">2억명과 함께하는 기묘한 세계!</span>
+                                                                                        <span class="enli_app_result">
+                                                                                            <span class="enli_blue">LOSE</span><span>43</span>
+                                                                                        </span>
+                                                                                    </dd>
+                                                                                </a>
+                                                                            </dl>
+                                                                            <dl class="enli_right">
+                                                                                <a data-gnb="tv" href="javascript:;">
+                                                                                    <dt class="enli_gamgImg"><img src="http://img.files-vantage.com/appmoa/app/icon_img/ff44734e07c782c8b068ed408f0731ad.png"></dt>
+                                                                                    <dd class="enli_descBox">
+                                                                                        <span class="enli_title">다섯왕국이야기</span>
+                                                                                        <span class="enli_deac">하이퀄리티 영웅들의압도적인 비주얼!</span>
+                                                                                        <span class="enli_app_result">
+                                                                                            <span class="enli_red">WIN</span><span>52</span>
+                                                                                        </span>
+                                                                                    </dd>
+                                                                                </a>
+                                                                            </dl>
+                                                                        </div>
+                                                                    </div>
+                                                                    <!-- 슬라이드1 끝 -->
+                                                                    <!-- 슬라이드2 -->
+                                                                    <div class="swiper-slide">
+                                                                        <div class="enli_app_battle02">
+                                                                            <div class="enli_boxTitle">만화같은 액션성 RPG를 원한다면!</div>
+                                                                            <span class="enli_result">결과보기</span>
+                                                                            <span class="enli_back">돌아가기</span>
+                                                                            <dl class="enli_left">
+                                                                                <a data-gnb="tv" href="javascript:;">
+                                                                                    <dt class="enli_gamgImg enli_lose">
+                                                                                        <img src="http://img.files-vantage.com/appmoa/app/icon_img/f75fe15290eea4e44bb7123646618324.png">
+                                                                                     </dt>
+                                                                                    <dd class="enli_descBox">
+                                                                                        <span class="enli_title">다크어벤저3</span>
+                                                                                        <span class="enli_deac">모바일 역사상 가장 강력한 액션 RPG!</span>
+                                                                                        <span class="enli_app_result">
+                                                                                            <span class="enli_blue">LOSE</span><span>13</span>
+                                                                                        </span>
+                                                                                    </dd>
+                                                                                </a>
+                                                                            </dl>
+                                                                            <dl class="enli_right">
+                                                                                <a data-gnb="tv" href="javascript:;">
+                                                                                    <dt class="enli_gamgImg">
+                                                                                        <img src="http://img.files-vantage.com/appmoa/app/icon_img/d6baf65e0b240ce177cf70da146c8dc8.png">
+                                                                                    </dt>
+                                                                                    <dd class="enli_descBox">
+                                                                                        <span class="enli_title">블레이드 for Kakao</span>
+                                                                                        <span class="enli_deac">액션RPG의 결정판!</span>
+                                                                                        <span class="enli_app_result">
+                                                                                            <span class="enli_red">WIN</span>
+                                                                                            <span>38</span>
+                                                                                        </span>
+                                                                                    </dd>
+                                                                                </a>
+                                                                            </dl>
+                                                                        </div>
+                                                                    </div>
+                                                                    <!-- 슬라이드2끝 -->
+                                                                </div>                              
+
+                                                                <div class="swiper-pagination"></div>
+                                                                <div class="enli_controls">
+                                                                    <span class="enli-bx-prev gameBanner"></span>
+                                                                    <span class="enli-bx-next gameBanner"></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- @ //1:1 선택 end -->
+                                                <!-- @ 에디터의 선택 -->
+                                                <div class="enli_bgBox">
+                                                    <div class="enli_titleBox">
+                                                        <h2 class="enli_contentTitle">에디터의 선택</h2>
+                                                        <span class="enli_sText">게임 덕후가 알려준다 따라와봐!</span>
+                                                        <span class="enli_moreBtn">
+                                                            <a href="javascript:;" class="enli-section-more">[더 보기]</a>
+                                                        </span>
+                                                    </div>
+                                                    <div class="enli_content">
+                                                        <div class="enli_typeContent01">
+                                                            <dl>
+                                                                <a href="javascript:;">
+                                                                    <dt class="enli_gamgImg" style="background: url(&quot;http://img.files-vantage.com/ad/imgfile/86af0e1db244307f219eda4c1ef15dd6.jpg&quot;) 50% 50% / cover no-repeat;">
+                                                                    </dt>
+                                                                    <dd class="enli_descBox">
+                                                                        <span class="enli_deac">넥슨 ‘AxE (액스, Alliance x Empire)’ 프리뷰</span>
+                                                                        <span class="enli_companyName">아름다운 그래픽과 화려한 액션, 대규모 RVR</span>
+                                                                    </dd>
+                                                                </a>
+                                                            </dl>
+                                                            <dl>
+                                                                <a data-gnb="tv" href="javascript:;">
+                                                                    <dt class="enli_gamgImg" style="background: url(&quot;http://img.files-vantage.com/ad/imgfile/e12c84cdc867feb8953bd4a83e100a5echoicethumbnail.jpg&quot;) 50% 50% / cover no-repeat;">
+                                                                    </dt>
+                                                                    <dd class="enli_descBox">
+                                                                        <span class="enli_deac">하면 할수록 은근한 고퀄! '아수라 for Kakao'</span>
+                                                                        <span class="enli_companyName">쭉쭉 올라가는 레벨업, 은근한 고퀄 스킬 효과!</span>
+                                                                    </dd>
+                                                                </a>
+                                                            </dl>
+                                                            <dl>
+                                                                <a href="javascript:;">
+                                                                    <dt class="enli_gamgImg" style="background: url(&quot;http://img.files-vantage.com/ad/imgfile/a2c25b021ec136918a2eb4b916f97969.jpg&quot;) 50% 50% / cover no-repeat;">
+                                                                    </dt>
+                                                                    <dd class="enli_descBox">
+                                                                        <span class="enli_deac">삼성TV 속에 들어간 스팀 링크</span>
+                                                                        <span class="enli_companyName">거실 TV로 스팀을 즐긴다면 이런 느낌일까?</span>
+                                                                    </dd>
+                                                                </a>
+                                                            </dl>
+                                                            <dl>
+                                                                <a data-gnb="tv" href="javascript:;">
+                                                                <dt class="enli_gamgImg" style="background: url(&quot;http://img.files-vantage.com/ad/imgfile/4d68a10756916663976be9b51d413726choicethumbnail.jpg&quot;) 50% 50% / cover no-repeat;">
+                                                                    <img src="http://img.files-vantage.com/appmoa/common/images/playIcon02.png" alt="재생버튼" class="enli_playBtn">
+                                                                </dt>
+                                                                <dd class="enli_descBox">
+                                                                    <span class="enli_deac">'구름과바람', 꼭 모바일로 해야 할 고퀄 만화풍 게임!</span>
+                                                                    <span class="enli_companyName">모바일 화면에서 진정한 매력 느낄 수 있어</span>
+                                                                </dd>
+                                                                </a>
+                                                            </dl>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- @ // 에디터의 선택 END -->
+                                                <!-- @ 광고배너 -->
+                                                <div class="enli_bgBox enli_typeImageBanner enli_display_none" id="enli-sec-banner-9291" data-main="banner" data-sub="image" style="display: block;">
+                                                    <a href="javascript:;">
+                                                        <img src="http://img.files-vantage.com/ad/imgfile/1857597a47b07fec1d83c050c5bf38f0.jpg">
+                                                    </a>
+                                                </div>
+                                                <!-- @ // 광고배너 END -->
+                                                <!-- @ 베스트 코스프레 -->
+                                                <div class="enli_bgBox">
+                                                    <div class="enli_titleBox">
+                                                        <h2 class="enli_contentTitle">BEST 코스프레</h2>
+                                                            <span class="enli_sText">게임 캐릭터 실사판</span>
+                                                            <span class="enli_moreBtn">
+                                                                <a href="javascript:;" class="enli-section-more">[더 보기]</a>
+                                                            </span>
+                                                        </div>
+
+                                                        <div class="enli_content">
+                                                            <div class="enli_typeContent01">
+                                                                <dl style="margin-bottom: 0px;">
+                                                                    <a data-gnb="tv" href="javascript:;">
+                                                                        <dt class="enli_gamgImg" style="background: url(&quot;http://img.files-vantage.com/ad/imgfile/6554efb20c56993bf18038519706b92fcosplaythumbnail.jpg&quot;) 50% 50% / cover no-repeat;"></dt>
+                                                                        <dd class="enli_descBox">
+                                                                            <span class="enli_deac">Rz Cos, 극강의 귀여움, 룰루 코스프레! </span>
+                                                                            <span class="enli_companyName">리그오브레전드의 귀염둥이 룰루 코스프레!</span>
+                                                                        </dd>
+                                                                    </a>
+                                                                </dl>
+                                                                <dl style="margin-bottom: 0px;">
+                                                                    <a href="javascript:;">
+                                                                    <dt class="enli_gamgImg" style="background: url(&quot;http://img.files-vantage.com/ad/imgfile/8e55463e852333ef4e0a4b0850b75791cosplaythumbnail.png&quot;) 50% 50% / cover no-repeat;"></dt>
+                                                                    <dd class="enli_descBox">
+                                                                        <span class="enli_deac">그녀와 데이트를♡ 코스프레 심리테스트!(2)</span>
+                                                                        <span class="enli_companyName">커피와 줄 긋기로 확인하는 코스프레!</span>
+                                                                    </dd>
+                                                                    </a>
+                                                                </dl>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                <!-- @ // 베스트 코스프레 End-->
+                                                <!-- @ 테마 -->
+                                                <div class="enli_bgBox"  >
+                                                    <div class="enli_titleBox">
+                                                        <h2 class="enli_contentTitle">테마</h2>
+                                                        <span class="enli_sText">다양한 앱들과 함께 하세요</span>
+                                                        <span class="enli_moreBtn">
+                                                            <a href="javascript;">[더 보기]</a>
+                                                        </span>
+                                                    </div>
+                                                    <div class="enli_typeContentMain">
+                                                        <div class="enli_appListBox">
+                                                            <ul class="enli_listStyle1">
+                                                                <li>
+                                                                    <a data-gnb="tv" href="javascript:;">
+                                                                        <span class="enli_text_area">
+                                                                        <span class="enli_tit">모바일 게임에도 e스포츠 바람 불까?</span>
+                                                                        <span class="enli_desc">e스포츠가 진행되는, 진행이 유력한 게임들을 알려드립니다.</span>
+                                                                        </span>
+                                                                        <span class="enli_img enli_thum_size65"><img src="http://img.files-vantage.com/appmoa/app/icon_img/c8f3d1ce266d0ace52a5c1af30136e8d.png"></span>
+                                                                        <span class="enli_keyword">
+                                                                        <span>#리니지2레볼루션 #펜타스톰</span>
+                                                                        </span>
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a data-gnb="tv" href="javascript:;">
+                                                                        <span class="enli_text_area">
+                                                                        <span class="enli_tit">그래픽 하나는 끝장나는 모바일 게임!</span>
+                                                                        <span class="enli_desc">미려한 느낌의 그래픽 게임을 추천해드립니다</span>
+                                                                        </span>
+                                                                        <span class="enli_img enli_thum_size65"><img src="http://img.files-vantage.com/appmoa/app/icon_img/a676f42a651bf219783d4d9e810ef4eb.png"></span>
+                                                                        <span class="enli_keyword">
+                                                                        <span>#리니지2레볼루션 #뮤오리진 #히트</span>
+                                                                        </span>
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a data-gnb="tv" href="javascript:;">
+                                                                        <span class="enli_text_area">
+                                                                        <span class="enli_tit">분노 조절이 어려울 때~ 이 앱의 도움을!</span>
+                                                                        <span class="enli_desc">감정 조절에 도움이 되는 앱을 소개해 드립니다!</span>
+                                                                        </span>
+                                                                        <span class="enli_img enli_thum_size65"><img src="http://img.files-vantage.com/appmoa/app/icon_img/18b930770b493603526214347554dbdc.png"></span>
+                                                                        <span class="enli_keyword">
+                                                                        <span>#마인드카페 #트로스트 #라이브심리</span>
+                                                                        </span>
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a data-gnb="tv" href="javascript:;">
+                                                                    <span class="enli_text_area">
+                                                                    <span class="enli_tit">대세는 만화풍 + RPG 조합이다!</span>
+                                                                    <span class="enli_desc">만화같은 느낌의 RPG 게임을 추천해드립니다!</span>
+                                                                    </span>
+                                                                    <span class="enli_img enli_thum_size65"><img src="http://img.files-vantage.com/appmoa/app/icon_img/28bf6a4317f97c568e8bd2edbc783a14.png"></span>
+                                                                    <span class="enli_keyword">
+                                                                    <span>#구름과바람 #노블레스 #다섯왕국이야기</span>
+                                                                    </span>
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- @ //테마 end -->
+                                                <!-- @ 카드뉴스-->              
+                                                <div class="enli_bgBox" >
+                                                    <div class="enli_titleBox">
+                                                        <h2 class="enli_contentTitle">카드뉴스</h2>
+                                                        <span class="enli_sText">디스이즈게임 카드뉴스</span>
+                                                        <span class="enli_moreBtn">
+                                                            <a href="javascript:;" class="enli-section-more" >[더 보기]</a>
+                                                        </span>
+                                                    </div>
+                                                    <div class="enli_content">
+                                                        <div class="enli_typeContent01">
+                                                            <dl>
+                                                                <a data-gnb="tv" href="javascript:;">
+                                                                    <dt class="enli_gamgImg" style="background: url(&quot;http://img.files-vantage.com/appmoa/thisisgame/cardnews/thumbnail/44ae24a6f5e3269f1c880e09048e7d34.jpg&quot;) 50% 50% / cover no-repeat;"></dt>
+                                                                    <dd class="enli_descBox">
+                                                                        <span class="enli_deac">‘리니지2 레볼루션’ 거래소 재개! 신규 화폐 그린 다이아 획득 방법 정리</span>
+                                                                    </dd>
+                                                                </a>
+                                                            </dl>
+                                                            <dl>
+                                                                <a data-gnb="tv" href="javascript:;">
+                                                                    <dt class="enli_gamgImg" style="background: url(&quot;http://img.files-vantage.com/appmoa/thisisgame/cardnews/thumbnail/f5276a421974781777bcfa3252500269.jpg&quot;) 50% 50% / cover no-repeat;"></dt>
+                                                                    <dd class="enli_descBox">
+                                                                        <span class="enli_deac">[카드뉴스] 주변에 한 명쯤, 꼭 어려운 게임만 찾아서 하는 사람이 있습니다.</span>
+                                                                    </dd>
+                                                                </a>
+                                                            </dl>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- @ //카드뉴스 end -->
+                                                <!-- @ //전문리뷰 end -->
+                                                <div class="enli_bgBox">
+                                                    <div class="enli_titleBox">
+                                                        <h2 class="enli_contentTitle">전문리뷰</h2>
+                                                        <span class="enli_sText">에디터가 들려주는 게임 이야기</span>
+                                                        <span class="enli_moreBtn"><a href="/game/game_detail.html?ano=11&amp;secno=1&amp;depth=0" class="enli-section-more" data-gnb="tv" o>[더 보기]</a></span>
+                                                    </div>
+                                                    <div class="enli_typeContentMain">
+                                                        <div class="enli_appListBox">
+                                                            <ul class="enli_listStyle1_right">
+                                                                <li>
+                                                                    <a data-gnb="tv" href="javascript:;" >
+                                                                        <span class="enli_text_area">
+                                                                            <span class="enli_tit">'리니지' 형제를 위협하는 센 놈이 온다!</span>
+                                                                            <span class="enli_desc">넥슨 'axe', 넷마블게임즈 '테라M' 각각 3, 4분기 출시 예정</span>
+                                                                        </span>
+                                                                        <span class="enli_img enli_thum_size65_noradius">
+                                                                            <img src="http://img.files-vantage.com/ad/imgfile/0e586c4cc205d0ba4d9eef82bf0cb2d3reviewthumbnail.jpg">
+                                                                        </span>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a data-gnb="tv" href="javascript:;" >
+                                                                        <span class="enli_text_area">
+                                                                            <span class="enli_tit">모바일 게임 잡았는데 영업이익은?! '딜레마'에 빠진 엔씨소프트</span>
+                                                                            <span class="enli_desc">마켓 수수료 30%, 개발비 등 영업이익 하락</span>
+                                                                        </span>
+                                                                        <span class="enli_img enli_thum_size65_noradius">
+                                                                            <img src="http://img.files-vantage.com/ad/imgfile/b10b2b50ef63f6cebf66cebdd6ad6cedreviewthumbnail.jpg">
+                                                                        </span>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a data-gnb="tv" href="javascript:;" >
+                                                                        <span class="enli_text_area">
+                                                                            <span class="enli_tit">'스타크래프트' 리마스터, 옵저버 기능 추가로 더욱 완벽해졌다!</span>
+                                                                            <span class="enli_desc">줌인, 줌아웃 기능으로 전투의 재미 살려</span>
+                                                                        </span>
+                                                                        <span class="enli_img enli_thum_size65_noradius">
+                                                                            <img src="http://img.files-vantage.com/ad/imgfile/4cd3cd82b04a0a232ed4fb819a559391reviewthumbnail.png">
+                                                                        </span>
+                                                                        </a>
+                                                                    </li><li>
+                                                                        <a data-gnb="tv" href="javascript:enli_open_view('/game/game_detail.html?ano=11&amp;secno=1&amp;mode=article_view&amp;category=review&amp;depth=1&amp;bno=96');" >
+                                                                        <span class="enli_text_area">
+                                                                            <span class="enli_tit">뽑기에 지친 이용자들, 착한 게임으로 넘어간다!</span>
+                                                                            <span class="enli_desc">'소녀전선', '킹스레이드' 별다른 홍보없어도 인기 상위권 차지해</span>
+                                                                        </span>
+                                                                        <span class="enli_img enli_thum_size65_noradius">
+                                                                            <img src="http://img.files-vantage.com/ad/imgfile/318120fe73ecfb09f066c1ee3bbeaf2freviewthumbnail.jpg">
+                                                                        </span>
+                                                                        </a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- @ //전문리뷰 end -->
+                                                    <!-- @ 쏠쏠한 팁 -->
+                                                    <div class="enli_bgBox enli_display_none" style="margin-bottom: 10px; display: block;" id="enli-sec-sectionapp-9295" data-main="section_app" data-sub="banner">
+                                                        <div class="enli_titleBox">
+                                                            <h2 class="enli_contentTitle">쏠쏠한 팁!</h2>
+                                                            <span class="enli_sText">생활 필수 앱 모음</span>
+                                                        </div>
+                                                        <div class="enli_content">
+                                                            <div class="enli_typeContent03">
+                                                                <div class="enli_content">
+                                                                    <dl class="enli_click">
+                                                                        <a data-gnb="tv" href="javascript:;">
+                                                                            <dt class="enli_gamgImg" style="background: url(&quot;http://img.files-vantage.com/appmoa/sectionapp/appimg/d7434d31c9cb64b71be29a23b677a421sectionapp.png&quot;) 50% 50% / cover no-repeat;"></dt>
+                                                                            <dd class="enli_descBox">
+                                                                                <span class="enli_camp_info">오늘 하루의 행운이 궁금하신가요?</span>
+                                                                            </dd>
+                                                                        </a>
+                                                                    </dl>
+                                                                    <dl class="enli_click">
+                                                                        <a data-gnb="tv" href="javascript:;">
+                                                                            <dt class="enli_gamgImg" style="background: url(&quot;http://img.files-vantage.com/appmoa/sectionapp/appimg/d7434d31c9cb64b71be29a23b677a421sectionapp.png&quot;) 50% 50% / cover no-repeat;"></dt>
+                                                                            <dd class="enli_descBox">
+                                                                                <span class="enli_camp_info">오늘 하루의 행운이 궁금하신가요?</span>
+                                                                            </dd>
+                                                                        </a>
+                                                                    </dl>
+                                                                    <dl class="enli_click">
+                                                                        <a data-gnb="tv" href="javascript:enli_track_open('', 'https://play.google.com/store/apps/details?id=kr.co.lawcompany.lawtalk');" >
+                                                                        <dt class="enli_gamgImg" style="background: url(&quot;http://img.files-vantage.com/appmoa/sectionapp/appimg/25cda6e61752c81315f91b553a4c771esectionapp.png&quot;) 50% 50% / cover no-repeat;"></dt>
+                                                                        <dd class="enli_descBox">
+                                                                            <span class="enli_camp_info">700명 변호사 중 나에게 맞는 변호사를!</span>
+                                                                        </dd>
+                                                                        </a>
+                                                                    </dl><dl class="enli_click">
+                                                                        <a data-gnb="tv" href="javascript:enli_track_open('', 'https://play.google.com/store/apps/details?id=me.picstar.picstar');" >
+                                                                        <dt class="enli_gamgImg" style="background: url(&quot;http://img.files-vantage.com/appmoa/sectionapp/appimg/cdb7671b7f321545309489bc1e40f1ddsectionapp.png&quot;) 50% 50% / cover no-repeat;"></dt>
+                                                                        <dd class="enli_descBox">
+                                                                            <span class="enli_camp_info">수십만의 회원들과 분석경쟁을 펼치며 수익을 얻어보세요</span>
+                                                                        </dd>
+                                                                        </a>
+                                                                    </dl>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- @ //쏠쏠한 팁 end -->
+                                                    <!-- @ 신규 유저 필수 앱 -->
+                                                    <div class="enli_bgBox enli_display_none" id="enli-sec-sectionapp-9697" data-main="section_app" data-sub="icon" data-cpcyn="N" style="display: block;">
+                                                        <div class="enli_titleBox">
+                                                            <h2 class="enli_contentTitle">신규 유저 필수 앱</h2>
+                                                            <span class="enli_sText">스마트폰 처음 샀으면 깔아야해</span>
+                                                        </div>
+                                                        <div class="enli_bannerTpye03">
+                                                            <dl>
+                                                                <a data-gnb="tv" href="javascript:;">
+                                                                    <dt class="enli_gamgImg">
+                                                                        <img src="http://img.files-vantage.com/appmoa/app/icon_img/a9771e0d0de17f1285837f1d27a0ffb3.png">
+                                                                    </dt>
+                                                                    <dd class="enli_descBox">
+                                                                        <span class="enli_camp_info">생활 속의 필수 멤버십 서비스!</span>
+                                                                    </dd>
+                                                                </a>
+                                                            </dl>
+                                                            <dl>
+                                                                <a data-gnb="tv" href="javascript:;">
+                                                                <dt class="enli_gamgImg"><img src="http://img.files-vantage.com/appmoa/app/icon_img/33ff26f442b948bc501997aaaaf6f30f.png"></dt>
+                                                                <dd class="enli_descBox">
+                                                                    <span class="enli_camp_info">광고가 아닌 진정한 맛집은 어디에?</span>
+                                                                </dd>
+                                                                </a>
+                                                            </dl>
+                                                            <dl>
+                                                                <a data-gnb="tv" href="javascript:enli_track_open('', 'https://play.google.com/store/apps/details?id=com.buzzvil.adhours');">
+                                                                <dt class="enli_gamgImg"><img src="http://img.files-vantage.com/appmoa/app/icon_img/b3fd67ac3104273791c751056b7d7229.png"></dt>
+                                                                <dd class="enli_descBox">
+                                                                    <span class="enli_camp_info">달콤한 스마트폰 첫 화면!</span>
+                                                                </dd>
+                                                                </a>
+                                                            </dl>
+                                                        </div>
+                                                    </div>
+                                                    <!-- @ // 신규 유저 필수 앱 end -->
+
+                                                    <!-- @ 쇼핑하기 좋은 날 -->
+                                                    <div class="enli_bgBox enli_display_none" id="enli-sec-sectionapp-9698" data-main="section_app" data-sub="icon" data-cpcyn="Y" style="display: block;">
+                                                        <div class="enli_titleBox">
+                                                            <h2 class="enli_contentTitle">쇼핑하기 좋은날</h2>
+                                                            <span class="enli_sText">스타일 바꿔보기</span>
+                                                        </div>
+                                                        <div class="enli_bannerTpye03"><dl>
+                                                                <a data-gnb="tv" href="javascript:enli_track_open('', 'https://play.google.com/store/apps/details?id=com.enliple.stylessum');">
+                                                                <dt class="enli_gamgImg"><img src="http://img.files-vantage.com/appmoa/app/icon_img/09e75d4eb902954dcad3a52ba8e9cbf8.png"></dt>
+                                                                <dd class="enli_descBox">
+                                                                    <span class="enli_camp_info">여성을 위한 여성쇼핑몰 모음 스타일썸!</span>
+                                                                </dd>
+                                                                </a>
+                                                            </dl><dl>
+                                                                <a data-gnb="tv" href="javascript:enli_track_open('', 'https://play.google.com/store/apps/details?id=com.ebay.kr.g9');">
+                                                                <dt class="enli_gamgImg"><img src="http://img.files-vantage.com/appmoa/app/icon_img/69d7eb8fb7c074bce269e6c87b794f81.png"></dt>
+                                                                <dd class="enli_descBox">
+                                                                    <span class="enli_camp_info">상술을 버리다. 상식을 채우다. G9!</span>
+                                                                </dd>
+                                                                </a>
+                                                            </dl><dl>
+                                                                <a data-gnb="tv" href="javascript:enli_track_open('', 'https://play.google.com/store/apps/details?id=com.styleshare.android');">
+                                                                <dt class="enli_gamgImg"><img src="http://img.files-vantage.com/appmoa/app/icon_img/7c590f01490190db0ed02a5070e20f01.png"></dt>
+                                                                <dd class="enli_descBox">
+                                                                    <span class="enli_camp_info">120개 나라 백만 사용자의 일상 속 패션,</span>
+                                                                </dd>
+                                                                </a>
+                                                            </dl>
+                                                        </div>
+                                                        <!-- @ 쇼핑하기 좋은 날 end -->
+                                                    <iframe name="mobon8mb" src="http://www.dreamsearch.or.kr/servlet/adbnMobileBanner?from=http%3A//page.uplus.co.kr/%3Fgo%3Dpn0u=2016111700003&amp;us=9847&amp;s=10568&amp;iwh=320_100&amp;cntad=1&amp;cntsr=5&amp;mChk=100&amp;bntype=43" frameborder="0" scrolling="no" style="height:100px; width:100%"></iframe></div><div class="enli_bgBox enli_display_none" id="enli-sec-aboutreview-9287" data-main="article" data-sub="aboutreview" data-view-url="/game/game_detail.html?ano=11&amp;secno=29&amp;mode=article_view&amp;category=aboutreview&amp;depth=1" data-img-dir="/ad/imgfile/" style="display: block;">
+                                                        <div class="enli_titleBox">
+                                                            <h2 class="enli_contentTitle">게임어바웃 리뷰</h2>
+                                                            <span class="enli_sText">퀄리티 극강 게임 리뷰</span>
+                                                            <span class="enli_moreBtn"><a href="/game/game_detail.html?ano=11&amp;secno=29&amp;depth=0" class="enli-section-more" data-gnb="tv" >[더 보기]</a></span>
+                                                        </div>
+                                                        <div class="enli_typeContentMain">
+                                                            <div class="enli_appListBox">
+                                                                <ul class="enli_listStyle1_left"><li>
+                                                                        <a data-gnb="tv" href="javascript:enli_open_view('/game/game_detail.html?ano=11&amp;secno=29&amp;mode=article_view&amp;category=aboutreview&amp;depth=1&amp;bno=78');">
+                                                                        <span class="enli_text_area">
+                                                                            <span class="enli_tit">‘레이튼 미스터리 저니: 일곱 대부호의 음모’를 해부한다!</span>
+                                                                            <span class="enli_desc">소문만큼 잘난 게임 아닙니다</span>
+                                                                        </span>
+                                                                        <span class="enli_img enli_thum_size65_noradius">
+                                                                            <img src="http://img.files-vantage.com/ad/imgfile/4a95b6a2959652606e372f799217aeb3aboutreviewthumbnail.png">
+                                                                        </span>
+                                                                        </a>
+                                                                    </li><li>
+                                                                        <a data-gnb="tv" href="javascript:enli_open_view('/game/game_detail.html?ano=11&amp;secno=29&amp;mode=article_view&amp;category=aboutreview&amp;depth=1&amp;bno=77');">
+                                                                        <span class="enli_text_area">
+                                                                            <span class="enli_tit">대세장르는 갔다! 다양성으로 승부하는 모바일게임들</span>
+                                                                            <span class="enli_desc">FPS, 격투, RPG 장르 가리지 않고 변화 모색</span>
+                                                                        </span>
+                                                                        <span class="enli_img enli_thum_size65_noradius">
+                                                                            <img src="http://img.files-vantage.com/ad/imgfile/8c04cd2bca4060c47ff2841ee035a80eaboutreviewthumbnail.jpg">
+                                                                        </span>
+                                                                        </a>
+                                                                    </li></ul>
+                                                            </div>
+                                                        </div>
+                                                    </div><div class="enli_bgBox enli_display_none" id="enli-sec-gametoon-9290" data-main="battlecomics" data-sub="gametoon" data-max="4" data-view-url="/game/game_detail.html?ano=11&amp;secno=20&amp;depth=2" style="display: block;">
+                                                        <div class="enli_titleBox">
+                                                            <h2 class="enli_contentTitle">배틀코믹스</h2>
+                                                            <span class="enli_sText">게임웹툰</span>
+                                                            <span class="enli_moreBtn"><a href="/game/game_detail.html?ano=11&amp;secno=20&amp;depth=1" class="enli-section-more" data-gnb="tv" ">[더 보기]</a></span>
+                                                        </div>
+                                                        <div class="enli_content">
+                                                            <div class="enli_typeContentBattleComics"><dl>
+                                                                    <a data-gnb="tv" href="javascript:enli_open_view('/game/game_detail.html?ano=11&amp;secno=20&amp;depth=2&amp;ecode=331');">
+                                                                    <dt class="enli_gamgImg" style="background: url(&quot;http://images.battlecomics.co.kr/webtoon/331/thumbnail/thumbnail-webtoonid_331-w_280-h_200-t_20161109093033.jpg&quot;) 50% 50% / cover no-repeat;"></dt>
+                                                                    <dd class="enli_descBox">
+                                                                        <span class="enli_deac">도리도리의 개인취향</span>
+                                                                        <span class="enli_companyName">당신의 취향을 말해보아요!</span>
+                                                                    </dd>
+                                                                    </a>
+                                                                </dl><dl>
+                                                                    <a data-gnb="tv" href="javascript:enli_open_view('/game/game_detail.html?ano=11&amp;secno=20&amp;depth=2&amp;ecode=788');">
+                                                                    <dt class="enli_gamgImg" style="background: url(&quot;http://images.battlecomics.co.kr/webtoon/788/thumbnail/thumbnail-webtoonid_788-w_280-h_200-t_20170413162510.png&quot;) 50% 50% / cover no-repeat;"></dt>
+                                                                    <dd class="enli_descBox">
+                                                                        <span class="enli_deac">스쿨워치</span>
+                                                                        <span class="enli_companyName">오버워치 영웅들이 학교를 다닌다면?!</span>
+                                                                    </dd>
+                                                                    </a>
+                                                                </dl><dl >
+                                                                    <a data-gnb="tv" href="javascript:enli_open_view('/game/game_detail.html?ano=11&amp;secno=20&amp;depth=2&amp;ecode=519');">
+                                                                    <dt class="enli_gamgImg" style="background: url(&quot;http://images.battlecomics.co.kr/webtoon/519/thumbnail/thumbnail-webtoonid_519-w_280-h_200-t_20170306201644.jpg&quot;) 50% 50% / cover no-repeat;"></dt>
+                                                                    <dd class="enli_descBox">
+                                                                        <span class="enli_deac">훌륭한 며느리</span>
+                                                                        <span class="enli_companyName">하필이면 조폭 두목의 남편을 납치했다!?</span>
+                                                                    </dd>
+                                                                    </a>
+                                                                </dl><dl>
+                                                                    <a data-gnb="tv" href="javascript:enli_open_view('/game/game_detail.html?ano=11&amp;secno=20&amp;depth=2&amp;ecode=436');">
+                                                                    <dt class="enli_gamgImg" style="background: url(&quot;http://images.battlecomics.co.kr/webtoon/436/thumbnail/thumbnail-webtoonid_436-w_280-h_200-t_20170630183051.jpg&quot;) 50% 50% / cover no-repeat;"></dt>
+                                                                    <dd class="enli_descBox">
+                                                                        <span class="enli_deac">연옥학원</span>
+                                                                        <span class="enli_companyName">심장을 빼앗긴 죽지않는 좀비의 모험</span>
+                                                                    </dd>
+                                                                    </a>
+                                                                </dl></div>
+                                                        </div>
+                                                    </div><div class="enli_bgBox enli_display_none" id="enli-sec-figure-9695" data-main="battlecomics" data-sub="gametoon" data-view-url="/game/game_detail.html?ano=11&amp;secno=37&amp;depth=1" data-img-dir="/appmoa/figure/images/" style="display: block;">
+                                                        <div class="enli_titleBox">
+                                                            <h2 class="enli_contentTitle">Hot Toys</h2>
+                                                            <span class="enli_sText">어른들의 장난감</span>
+                                                            <span class="enli_moreBtn"><a href="/game/game_detail.html?ano=11&amp;secno=37&amp;depth=0" class="enli-section-more" data-gnb="tv" >[더 보기]</a></span>
+                                                        </div>
+                                                        <div class="enli_content">
+                                                            <div class="enli_toy03">
+                                                                <div class="enli_content"><a class="enli_toyimgBox" data-gnb="tv" href="javascript:enli_open_view('/game/game_detail.html?ano=11&amp;secno=37&amp;depth=1&amp;bno=114');" >
+                                                                        <div class="enli_gamgImg" style="background: url(&quot;http://img.files-vantage.com/appmoa/figure/images/114/thumb_170817092738.jpg&quot;) 50% 50% / cover no-repeat;">
+                                                                            <span class="enli_camp_info">(입고) 엔도스켈레톤(Endoskeleton) / 터미네이터 제니시스</span>
+                                                                        </div>
+                                                                    </a><a class="enli_toyimgBox" data-gnb="tv" href="javascript:enli_open_view('/game/game_detail.html?ano=11&amp;secno=37&amp;depth=1&amp;bno=113');">
+                                                                        <div class="enli_gamgImg" style="background: url(&quot;http://img.files-vantage.com/appmoa/figure/images/113/thumb_170814112322.jpg&quot;) 50% 50% / cover no-repeat;">
+                                                                            <span class="enli_camp_info">(예약) 아쿠마(Akuma) Statue / 스티리트 파이터(Street Fighter) </span>
+                                                                        </div>
+                                                                    </a></div>
+                                                            </div>
+                                                        </div>
+                                                    </div><div class="enli_bgBox enli_display_none" id="enli-sec-banner-9293" data-main="banner" data-sub="ranking" style="display: block;">
+                                                        <div class="enli_titleBox">
+                                                            <h2 class="enli_contentTitle">주간랭킹</h2>
+                                                            <span class="enli_sText">8월 3주차</span>
+                                                        </div>
+                                                        <!--추가[s]-->
+                                                        <div class="enli_tabBox">
+                                                            <ul>
+                                                                            <li class="enli_ranking_tab0 enli_btnOn" onclick="enli_view_tab_banner_ranking('enli-sec-banner-9293', 0);">추천</li>
+                                                                            <li class="enli_ranking_tab1" onclick="enli_view_tab_banner_ranking('enli-sec-banner-9293', 1);">전략·시뮬</li>
+                                                                            <li class="enli_ranking_tab2" onclick="enli_view_tab_banner_ranking('enli-sec-banner-9293', 2);">RPG</li>
+                                                                            <li class="enli_ranking_tab3" onclick="enli_view_tab_banner_ranking('enli-sec-banner-9293', 3);">아케이드</li>
+                                                                        </ul>
+                                                        </div>
+                                                        <!--추가[e]-->
+                                                        <div class="enli_content">
+                                                            <div class="enli_typeContent06">
+                                                                        <div class="enli_rankingBox enli_ranking_cnts0" style="display: block;">
+                                                                    <ul class="enli_appList" id="enli-sec-banner-9293-0"><a data-gnb="tv" href="javascript:enli_track_open('http://dr2.kr/SMC4yMjQ0MTUwMCAxNTAxMTQ1MTYy', 'https://play.google.com/store/apps/details?id=com.ftt.fivekings_aos');">
+                                                                        <li>
+                                                                            <span class="enli_appNum">1</span>
+                                                                            <span class="enli_appIcon"><img src="http://img.files-vantage.com/appmoa/app/icon_img/ff44734e07c782c8b068ed408f0731ad.png"></span>
+                                                                            <span class="enli_appTItle">다섯왕국이야기</span>
+                                                                        </li>
+                                                                        </a><a data-gnb="tv" href="javascript:enli_track_open('http://dr2.kr/SMC42NzI4NzgwMCAxNTAwOTYzMDc0', 'https://play.google.com/store/apps/details?id=com.vespainteractive.KingsRaid');">
+                                                                        <li>
+                                                                            <span class="enli_appNum">2</span>
+                                                                            <span class="enli_appIcon"><img src="http://img.files-vantage.com/appmoa/app/icon_img/3a334348b568c88f3f2b5cfa2b859970.png"></span>
+                                                                            <span class="enli_appTItle">킹스레이드</span>
+                                                                        </li>
+                                                                        </a><a data-gnb="tv" href="javascript:enli_track_open('http://dr2.kr/SMC4yNzQxNTgwMCAxNTAyODc0NDYw', 'https://play.google.com/store/apps/details?id=com.snailgamekr.mlgp');">
+                                                                        <li>
+                                                                            <span class="enli_appNum">3</span>
+                                                                            <span class="enli_appIcon"><img src="http://img.files-vantage.com/appmoa/app/icon_img/a6d451c8829c9b77ee2b08cb58d3934e.png"></span>
+                                                                            <span class="enli_appTItle">드래곤 리볼트</span>
+                                                                        </li>
+                                                                        </a><a data-gnb="tv" href="javascript:enli_track_open('http://dr2.kr/SMC45OTcwMTQwMCAxNTAyODc0MDY5', 'https://play.google.com/store/apps/details?id=com.selvas.fr');">
+                                                                        <li>
+                                                                            <span class="enli_appNum">4</span>
+                                                                            <span class="enli_appIcon"><img src="http://img.files-vantage.com/appmoa/app/icon_img/0d3180d672e08b4c5312dcdafdf6ef36.png"></span>
+                                                                            <span class="enli_appTItle">페이탈레이드 - 모바일FPS</span>
+                                                                        </li>
+                                                                        </a><a data-gnb="tv" href="javascript:enli_track_open('http://dr2.kr/SMC4wMzI5NDcwMCAxNTAyMzU0NDg2', 'https://play.google.com/store/apps/details?id=com.egls.windkr.gp');">
+                                                                        <li>
+                                                                            <span class="enli_appNum">5</span>
+                                                                            <span class="enli_appIcon"><img src="http://img.files-vantage.com/appmoa/app/icon_img/28bf6a4317f97c568e8bd2edbc783a14.png"></span>
+                                                                            <span class="enli_appTItle">구름과바람</span>
+                                                                        </li>
+                                                                        </a><a data-gnb="tv" href="javascript:enli_track_open('http://dr2.kr/SMC4yMTY0NTcwMCAxNTAxMjA0ODM0', 'https://play.google.com/store/apps/details?id=com.nexon.da3');">
+                                                                        <li>
+                                                                            <span class="enli_appNum">6</span>
+                                                                            <span class="enli_appIcon"><img src="http://img.files-vantage.com/appmoa/app/icon_img/f75fe15290eea4e44bb7123646618324.png"></span>
+                                                                            <span class="enli_appTItle">다크어벤저3</span>
+                                                                        </li>
+                                                                        </a></ul>
+                                                                </div>
+                                                                        <div class="enli_rankingBox enli_ranking_cnts1" style="display: none;">
+                                                                    <ul class="enli_appList" id="enli-sec-banner-9293-1"><a data-gnb="tv" href="javascript:enli_track_open('', 'https://play.google.com/store/apps/details?id=com.supercell.clashroyale');">
+                                                                        <li>
+                                                                            <span class="enli_appNum">1</span>
+                                                                            <span class="enli_appIcon"><img src="http://img.files-vantage.com/appmoa/app/icon_img/6bfb3078700560ccfeaddcc83cb4f47d.png"></span>
+                                                                            <span class="enli_appTItle">클래시 로얄</span>
+                                                                        </li>
+                                                                        </a><a data-gnb="tv" href="javascript:enli_track_open('', 'https://play.google.com/store/apps/details?id=com.epicactiononline.ffxv.ane');">
+                                                                        <li>
+                                                                            <span class="enli_appNum">2</span>
+                                                                            <span class="enli_appIcon"><img src="http://img.files-vantage.com/appmoa/app/icon_img/3f1b806421c44aaf9a44d8e2aec5e38f.png"></span>
+                                                                            <span class="enli_appTItle">파이널 판타지 XV: 새로운 제국 (Final Fantasy XV)</span>
+                                                                        </li>
+                                                                        </a><a data-gnb="tv" href="javascript:enli_track_open('', 'https://play.google.com/store/apps/details?id=com.funplus.kingofavalon');">
+                                                                        <li>
+                                                                            <span class="enli_appNum">3</span>
+                                                                            <span class="enli_appIcon"><img src="http://img.files-vantage.com/appmoa/app/icon_img/92c3aee1d4f458ac0e49571335270c0c.png"></span>
+                                                                            <span class="enli_appTItle">킹오브아발론: 드래곤 전쟁</span>
+                                                                        </li>
+                                                                        </a><a data-gnb="tv" href="javascript:enli_track_open('', 'https://play.google.com/store/apps/details?id=com.supercell.clashofclans');">
+                                                                        <li>
+                                                                            <span class="enli_appNum">4</span>
+                                                                            <span class="enli_appIcon"><img src="http://img.files-vantage.com/appmoa/app/icon_img/1b768d8e32e31bce5081be8340eed519.png"></span>
+                                                                            <span class="enli_appTItle">클래시 오브 클랜</span>
+                                                                        </li>
+                                                                        </a><a data-gnb="tv" href="javascript:enli_track_open('', 'https://play.google.com/store/apps/details?id=com.igg.android.lordsmobile');">
+                                                                        <li>
+                                                                            <span class="enli_appNum">5</span>
+                                                                            <span class="enli_appIcon"><img src="http://img.files-vantage.com/appmoa/app/icon_img/353f8fcc6526fcfedb17b6dd7a35e07d.png"></span>
+                                                                            <span class="enli_appTItle">로드 모바일</span>
+                                                                        </li>
+                                                                        </a><a data-gnb="tv" href="javascript:enli_track_open('', 'https://play.google.com/store/apps/details?id=com.sopt.mafia42.client');" >
+                                                                        <li>
+                                                                            <span class="enli_appNum">6</span>
+                                                                            <span class="enli_appIcon"><img src="http://img.files-vantage.com/appmoa/app/icon_img/ede4f64f40da5b09ba0bb6982b3682cd.png"></span>
+                                                                            <span class="enli_appTItle">마피아42</span>
+                                                                        </li>
+                                                                        </a></ul>
+                                                                </div>
+                                                                        <div class="enli_rankingBox enli_ranking_cnts2" style="display: none;">
+                                                                    <ul class="enli_appList" id="enli-sec-banner-9293-2"><a data-gnb="tv" href="javascript:;">
+                                                                        <li>
+                                                                            <span class="enli_appNum">1</span>
+                                                                            <span class="enli_appIcon"><img src="http://img.files-vantage.com/appmoa/app/icon_img/06e12f5e76f718124faa978cd470df52.png"></span>
+                                                                            <span class="enli_appTItle">음양사 for kakao</span>
+                                                                        </li>
+                                                                        </a><a data-gnb="tv" href="javascript:;">
+                                                                        <li>
+                                                                            <span class="enli_appNum">2</span>
+                                                                            <span class="enli_appIcon"><img src="http://img.files-vantage.com/appmoa/app/icon_img/a217888002a107f79460829726c294bf.png"></span>
+                                                                            <span class="enli_appTItle">딜딜딜 : 방치형 RPG게임</span>
+                                                                        </li>
+                                                                        </a><a data-gnb="tv" href="javascript:;">
+                                                                        <li>
+                                                                            <span class="enli_appNum">3</span>
+                                                                            <span class="enli_appIcon"><img src="http://img.files-vantage.com/appmoa/app/icon_img/61d4dd91db401eebd6c31cdd4238e646.png"></span>
+                                                                            <span class="enli_appTItle">형님 모바일</span>
+                                                                        </li>
+                                                                        </a><a data-gnb="tv" href="javascript:enli_track_open('', 'https://play.google.com/store/apps/details?id=com.ENP.therings.kr.googleplay');">
+                                                                        <li>
+                                                                            <span class="enli_appNum">4</span>
+                                                                            <span class="enli_appIcon"><img src="http://img.files-vantage.com/appmoa/app/icon_img/2278926d1621ac214164bb3c913f7768.png"></span>
+                                                                            <span class="enli_appTItle">반지</span>
+                                                                        </li>
+                                                                        </a><a data-gnb="tv" href="javascript:enli_track_open('', 'https://play.google.com/store/apps/details?id=com.noknok.heroesinnKR');" >
+                                                                        <li>
+                                                                            <span class="enli_appNum">5</span>
+                                                                            <span class="enli_appIcon"><img src="http://img.files-vantage.com/appmoa/app/icon_img/7d2288b7bc0c46044e97a693f6406764.png"></span>
+                                                                            <span class="enli_appTItle">용사여관</span>
+                                                                        </li>
+                                                                        </a><a data-gnb="tv" href="javascript:enli_track_open('', 'https://play.google.com/store/apps/details?id=kr.txwy.and.snqx');">
+                                                                        <li>
+                                                                            <span class="enli_appNum">6</span>
+                                                                            <span class="enli_appIcon"><img src="http://img.files-vantage.com/appmoa/app/icon_img/50dec274da2d88ba6833005055b88774.png"></span>
+                                                                            <span class="enli_appTItle">소녀전선</span>
+                                                                        </li>
+                                                                        </a></ul>
+                                                                </div>
+                                                                        <div class="enli_rankingBox enli_ranking_cnts3" style="display: none;">
+                                                                    <ul class="enli_appList" id="enli-sec-banner-9293-3"><a data-gnb="tv" href="javascript:enli_track_open('', 'https://play.google.com/store/apps/details?id=com.nexon.trrevolt');">
+                                                                        <li>
+                                                                            <span class="enli_appNum">1</span>
+                                                                            <span class="enli_appIcon"><img src="http://img.files-vantage.com/appmoa/app/icon_img/08ae10fb49198d45e9f5cc4d0272e490.png"></span>
+                                                                            <span class="enli_appTItle">테일즈런너R</span>
+                                                                        </li>
+                                                                        </a><a data-gnb="tv" href="javascript:enli_track_open('', 'https://play.google.com/store/apps/details?id=com.nflystudio.InfiniteStaircase');">
+                                                                        <li>
+                                                                            <span class="enli_appNum">2</span>
+                                                                            <span class="enli_appIcon"><img src="http://img.files-vantage.com/appmoa/app/icon_img/fa727e4e10ce4d5d90d40882a219932b.png"></span>
+                                                                            <span class="enli_appTItle">무한의 계단</span>
+                                                                        </li>
+                                                                        </a><a data-gnb="tv" href="javascript:enli_track_open('', 'https://play.google.com/store/apps/details?id=com.DoomsdayStudio.LabEscape');">
+                                                                        <li>
+                                                                            <span class="enli_appNum">3</span>
+                                                                            <span class="enli_appIcon"><img src="http://img.files-vantage.com/appmoa/app/icon_img/88070272015be961945b81d010479ac0.png"></span>
+                                                                            <span class="enli_appTItle">실험실 탈출!</span>
+                                                                        </li>
+                                                                        </a><a data-gnb="tv" href="javascript:enli_track_open('', 'https://play.google.com/store/apps/details?id=com.cmplay.dancingline');">
+                                                                        <li>
+                                                                            <span class="enli_appNum">4</span>
+                                                                            <span class="enli_appIcon"><img src="http://img.files-vantage.com/appmoa/app/icon_img/c7dc1822bfd470839fa091fbc68669f1.png"></span>
+                                                                            <span class="enli_appTItle">Dancing Line</span>
+                                                                        </li>
+                                                                        </a><a data-gnb="tv" href="javascript:enli_track_open('', 'https://play.google.com/store/apps/details?id=com.nflystudio.InfiniteTrain');">
+                                                                        <li>
+                                                                            <span class="enli_appNum">5</span>
+                                                                            <span class="enli_appIcon"><img src="http://img.files-vantage.com/appmoa/app/icon_img/2e3f5aa9862eab035d504a6c4ccc99c5.png"></span>
+                                                                            <span class="enli_appTItle">무한의 기차</span>
+                                                                        </li>
+                                                                        </a><a data-gnb="tv" href="javascript:enli_track_open('', 'https://play.google.com/store/apps/details?id=com.ketchapp.spacefrontier');">
+                                                                        <li>
+                                                                            <span class="enli_appNum">6</span>
+                                                                            <span class="enli_appIcon"><img src="http://img.files-vantage.com/appmoa/app/icon_img/19c3d71eb5454d1e7adac15dffd8e521.png"></span>
+                                                                            <span class="enli_appTItle">Space Frontier</span>
+                                                                        </li>
+                                                                        </a></ul>
+                                                                </div>
+                                                                    </div>
+                                                        </div>
+                                                    </div>
+
+
+                                                </section>
+                                                <!-- //contents -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <!-- @@@ // 170818-2차 수정 END -->
+                        </div>
+                    </div>
+                </div>
+                <!-- @@ //앱소개 -->
+
+                <!-- @@ 커뮤니티 -->
+                <div class="contents">               
+                    <div class="listWrap community">
+                        <h2 class="title"><a href="#">커뮤니티</a></h2>       
+                        <!-- @@ 게시판 -->
+                        <ul class="comBoard">
+                            <li>
+                                <a href="./community-look.html">
+                                    <div class="subject">
+                                        <span class="subject-title">게시판 포인트 정책 안내</h3>
+                                        <div class="subject-info">
+                                            <span>
+                                                <img class="grade" src="./images/grade/grade_55.png"  alt="">
+                                            쵸쵸쵸                    
+                                            </span>
+                                            <span>17.06.02</span>
+                                            <span ><img class="com-look" src="./images/com-look.png"  alt="조회"><var>250</var></span>
+                                            <span class="recom"><img class="com-like" src="./images/com-like.png"  alt="추천"><var>25</var></span>
+                                        </div>                  
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./community-look.html">
+                                    <div class="subject">
+                                        <span class="subject-title">게시판 포인트 정책 안내</h3>
+                                        <div class="subject-info">
+                                            <span>
+                                                <img class="grade" src="./images/grade/grade_55.png"  alt="">
+                                            쵸쵸쵸                    
+                                            </span>
+                                            <span>17.06.02</span>
+                                            <span ><img class="com-look" src="./images/com-look.png"  alt="조회"><var>250</var></span>
+                                            <span class="recom"><img class="com-like" src="./images/com-like.png"  alt="추천"><var>25</var></span>
+                                        </div>                  
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./community-look.html">
+                                    <div class="subject">
+                                        <span class="subject-title">게시판 포인트 정책 안내</h3>
+                                        <div class="subject-info">
+                                            <span>
+                                                <img class="grade" src="./images/grade/grade_55.png"  alt="">
+                                            쵸쵸쵸                    
+                                            </span>
+                                            <span>17.06.02</span>
+                                            <span ><img class="com-look" src="./images/com-look.png"  alt="조회"><var>250</var></span>
+                                            <span class="recom"><img class="com-like" src="./images/com-like.png"  alt="추천"><var>25</var></span>
+                                        </div>                  
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- @@ //커뮤니티 -->
+
+
+                <!-- @@ 스토어 -->
+                <div class="contents">        
+                    <div class="listWrap pointShop">
+                        <h2 class="title"><a href="#">스토어</a></h2>           
+                        <div class="listCommon">         
+                            <div class="swiper-container">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <a href="#">
+                                            <img class="picImg" src="./images/list/shop1.jpg"  alt="">
+                                            <h3 class="listName">베라 싱글 레귤러콘</h3>
+                                            <p class="listPt">1,500</p>
+                                        </a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="#">
+                                            <img class="picImg" src="./images/list/shop2.jpg"  alt="">
+                                            <h3 class="listName">마이~쮸~♡</h3>
+                                            <p class="listPt">1,200</p>
+                                        </a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="#">
+                                            <img class="picImg" src="./images/list/shop3.jpg"  alt="">
+                                            <h3 class="listName">사나이 울리는 농심 신라면</h3>
+                                            <p class="listPt">4,500</p>
+                                        </a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="#">
+                                            <img class="picImg" src="./images/list/shop4.jpg"  alt="">
+                                            <h3 class="listName">롯데리아 아이스 커피</h3>
+                                            <p class="listPt">3,500</p>
+                                        </a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="#">
+                                            <img class="picImg" src="./images/list/shop1.jpg"  alt="">
+                                            <h3 class="listName">베라 싱글 레귤러콘</h3>
+                                            <p class="listPt">1,500</p>
+                                        </a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="#">
+                                            <img class="picImg" src="./images/list/shop2.jpg"  alt="">
+                                            <h3 class="listName">마이~쮸~♡</h3>
+                                            <p class="listPt">1,200</p>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>        
+                </div>    
+                <!-- @@ // 스토어 -->
+                
+                <!-- @@ 배너2 -->
+                <div class="contents">                      
+                    <a href="#">
+                        <img src="./images/banner/mainBanner2.jpg"  alt="">                    
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        
+        <!-- @ footer -->
+        <footer class="footer">
+            <h2 class="footer-logo">
+                <img src="./images/footer-logo.png"  alt="라이크앤클릭">
+            </h2>
+            <div class="footer-list">
+                <a href="footer-terms.html">이용약관</a>
+                <a href="footer-infor.html">개인정보취급방침</a>
+                <p>Copyright © 라이크앤클릭 Co.,Ltd. All Rights Reserved.</p>
+            </div>         
+        </footer>
+        <!-- @ //footer -->
+    
+        <div class="topWrap">
+            <a class="btnTop" href="#">
+                <img src="./images/btnTop.png"  alt="">
+            </a>        
+        </div>
+    </main>
+
+
+    <!---------------
+        @ 알럿창 
+        알럿 사용시 필요한 스크립트 소스 안에 
+        alertModal('문구내용적기'); 로 사용 
+    ----------------->
+    <div class="alertWrap" >
+        <div class="bg"></div>
+        <div class="popIn">
+            <div class="content">
+                <div id="atext">알럿문구</div>
+                <div class="btnPopOk" onclick="alertClose();">
+                    확인
+                </div>
+            </div>
+            <div class="btnPopClose" onclick="alertClose();">
+                <img src="./images/btnPopClose.png"  alt="창닫기">
+            </div>
+        </div>
+    </div>
+    <!-- @ // 알럿창 -->
+
+    <script src="./assets/js/vendor.js"></script>
+    <script src="./assets/js/plugin.js"></script>
+    <script src="js/jquery.dotdotdot.min.js"></script>
+    <script src="js/amcharts.js"></script>
+    <script src="js/export.min.js"></script>
+    <script src="js/pie.js"></script>
+    <script src="js/owl.carousel.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+        <!--
+        var UserAgent = navigator.userAgent;
+        var UADevice = UserAgent.match(/iPhone|iPod|iPad|Android|Windows CE|BlackBerry|Symbian|Windows Phone|webOS|Opera Mini|Opera Mobi|POLARIS|IEMobile|lgtelecom|nokia|SonyEricsson/i);
+        var UAVendor = UserAgent.match(/LG|SAMSUNG|Samsung/);
+        if ( UADevice != null || UAVendor != null){
+        } else {
+        // location.href = "../";
+          $('body').css({
+            width : '720px',
+            margin : '0 auto'
+          });
+        }
+        //-->
+    </script>
+
+<script>
+$(function(){
+    $('.enli_result').click(function(){
+        $(this).hide();
+        $(this).siblings('.enli_back').show();
+        $(this).parents('.enli_app_battle02').addClass('enli_on');
+    })
+    $('.enli_back').click(function(){
+        $(this).hide();
+        $(this).siblings('.enli_result').show();
+        $(this).parents('.enli_app_battle02').removeClass('enli_on');
+    })
+    
+})
+</script>
+</body>
+</html>

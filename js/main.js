@@ -1,3 +1,4 @@
+
 ;(function(){
 	$(document).ready(function(){
 		var UserAgent = navigator.userAgent;
@@ -5,10 +6,15 @@
 		var UAVendor = UserAgent.match(/LG|SAMSUNG|Samsung/);
 		if (UADevice !== null || UAVendor!== null){
 			$('body').addClass('mobilebody');
+			$('body.sub .hamburger').addClass('is-active');
 			$('#bgMain').remove();
 			var wh = $(window).height();
 			$('.main').height(wh);
 		}
+	
+		$(".hamburger").on('click', function(){
+		   $(this).toggleClass("is-active");
+	   });
 	
 
 		var $thumb = $('.workList').isotope({
@@ -77,7 +83,19 @@
 		};
 
 		smartresize.init();
-
+		
+		
+		if($('body').hasClass('sub')){
+			$('.detailSlide').slick({
+				draggable: true,
+				dots: true,
+		        infinite: true,
+		        slidesToShow: 1,
+		        slidesToScroll: 1,
+				autoplay: true,
+				autoplaySpeed: 2000
+		  });
+		}
 		/* work 타임라인 */
 		$.js = function(el) {
 		return $("[data-js=" + el + "]");
@@ -151,7 +169,8 @@
 			});
 			$('body').height('auto');
 		}
-	
+		
+		
 		setTimeout(function(){
 			$('#loader-wrapper').addClass('fadeout');
 		},700);
@@ -163,9 +182,24 @@
 		setTimeout(function(){
 			$('#main .lineWrap').addClass('active');
 		},1800);
-		setTimeout(function(){
-			$('body').addClass('on');
-		},2000);
+		
+		
+		if($('body').hasClass('sub')){
+			setTimeout(function(){
+				$('body').addClass('on');
+			},500);
+		} else {
+			if($(document).scrollTop() > 300){
+				setTimeout(function(){
+					$('body').addClass('on');
+				},500);
+			} else {
+				setTimeout(function(){
+					$('body').addClass('on');
+				},2000);
+			}
+		}
+		
 		
 	})
 	
@@ -174,5 +208,4 @@
 		var height = $(document).scrollTop();
 		console.log(height);
 	});
-	
 }());

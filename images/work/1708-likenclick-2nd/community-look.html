@@ -1,0 +1,376 @@
+<!doctype html>
+<html class="no-js" lang="ko">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimal-ui, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="">
+
+    <meta property="og:url" content="">
+    <meta property="og:site_name" content=""/>
+    <meta property="og:title" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="">
+    <meta property="og:description" content="">
+
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <main id="viewport">
+        <!-- @ header-->
+        <header class="header">
+            <a class="btnBack" href="javascript:location.reload();">
+                <img src="./images/btn-back.png"  alt="뒤로 가기">
+            </a>
+            <h1 class="pageName">자유 게시판</h1>
+        </header>
+
+        <!-- @ GNB -->
+        <nav class="gnbWrap">
+            <ul class="outGnb">
+                <li>
+                    <a href="./campaign.html">
+                        <i class="sp-nav gnb-elem1"></i>
+                        <p>꿀알바</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="./community.html">
+                        <i class="sp-nav gnb-elem2"></i>
+                        <p>커뮤니티</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="./pointshop.html">
+                        <i class="sp-nav gnb-elem3"></i>
+                        <p>스토어</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="./withdraw.html">
+                        <i class="sp-nav gnb-elem4"></i>
+                        <p>출금</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="./mypage.html">
+                        <i class="sp-nav gnb-elem5"></i>
+                        <p>설정</p>
+                    </a>
+                </li>
+                <li>
+                    <a class="allMenu" href="javascript:;">
+                        <i class="sp-nav gnb-elem6"></i>
+                        <p>전체보기</p>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="inGnb">
+            <div class="userWrap">                    
+                <!-- support 클래스 부여시 서포터즈 표시 -->
+                <a class="userImgWrap support" href="javascript:;">
+                    <img class="userImg" src="./images/userImg.png"  alt="">
+                </a>        
+                <div class="userInfor">
+                    <span class="name">김지수</span>
+                    <dl class="">
+                        <dt>등급</dt>
+                        <dd>
+                            <span>브론드</span>
+                            <img class="grade" src="./images/grade/grade_12.png"  alt="">
+                            <a class="gradeGift" href="javascript:;">혜택보기</a>
+                        </dd>
+                    </dl>
+                    <dl class="">
+                        <dt>나의 꿀</dt>
+                        <dd class="listPt">2,453,000</dd>
+                    </dl>                                                
+                </div>
+                <a class="btn-menuClose" href="javascript:;">
+                    <img src="./images/btn-close.png"  alt="메뉴닫기">
+                </a>
+            </div>                     
+            <div class="menuWrap swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <ul class="menuList">
+                            <li>
+                                <a href="./campaign.html">
+                                    <i class="sp-menu menu-elem1"></i>
+                                    <p>꿀알바</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./community.html">
+                                    <i class="sp-menu menu-elem2"></i>
+                                    <p>커뮤니티</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./pointshop.html">
+                                    <i class="sp-menu menu-elem3"></i>
+                                    <p>꿀마트</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./customer-detail.html">
+                                    <i class="sp-menu menu-elem4"></i>
+                                    <p>앱소개</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./mypage.html">
+                                    <i class="sp-menu menu-elem5"></i>
+                                    <p>마이페이지</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./campaignLink.html">
+                                    <i class="sp-menu menu-elem6"></i>
+                                    <p>빨대꽂기</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./event.html">
+                                    <i class="sp-menu menu-elem7"></i>
+                                    <p>이벤트</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./withdraw.html">
+                                    <i class="sp-menu menu-elem8"></i>
+                                    <p>출금</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;" onclick="alertModal('준비중입니다.');">
+                                    <i class="sp-menu menu-elem9"></i>
+                                    <p>미션</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./userbox.html">
+                                    <i class="sp-menu menu-elem10"></i>
+                                    <p>보관함</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="swiper-slide">
+                        <ul class="menuList">
+                            <li>
+                                <a href="javascript:;">
+                                    <i class="sp-menu menu-elem11"></i>
+                                    <p>알림</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <i class="sp-menu menu-elem12"></i>
+                                    <p>공지사항</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <i class="sp-menu menu-elem13"></i>
+                                    <p>고객센터</p>
+                                </a>
+                            </li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </div>
+                </div>                    
+                <div class="swiper-pagination"></div>
+            </div>
+
+        </div>
+        <!-- // GNB -->
+
+        <!-- @ Contents - 메인 -->        
+        <section class="community layout" id="community">
+            <div class="container">
+                <!-- @@ -->
+                <div class="contents comBoard">
+                    <!-- @@@ 타이틀 -->
+                    <div class="userTitleWrap">
+                        <img class="userImg" src="./images/userImg.png" alt="">
+                        <div class="userTitle">
+                            <span>
+                                <img class="grade" src="./images/grade/grade_11.png"  alt="">
+                                <span class="name">쵸쵸쵸 <img class="support" src="./images/support.png"  alt="서포터즈"></span>                    
+                            </span>
+                            <div class="userTitle-total">
+                                <div class="paper">
+                                    <span>페이퍼 <var>50</var>개</span>
+                                </div>   
+                                <div class="like">   
+                                    <span>추천 지수 <img src="./images/likeIcon-on.png"  alt=""><var>232</var></span>
+                                </div>         
+                                <!-- 170818-3차 수정 -->
+                                <ul class="myBtnWrap">
+                                    <li ><a class="btn-comRepair" href="#">수정</a></li>
+                                    <li ><a class="btn-comDel" href="#">삭제</a></li>
+                                </ul>
+                                <!-- //170818-3차 수정 end -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- @@@ 타이틀 END -->
+                    <!-- @@@ 본문 -->
+                    <div class="userDetailWrap">
+                        <div class="top">
+                            <ul class="placeWrap">
+                                <li>#자유게시판</li>
+                                <li class="date">2017.08.17 08:05</li>
+                            </ul>
+                            <a class="btn-notify" href="javascript:;">신고하기 <img src="./images/notify-icon.png"  alt=""></a>
+                        </div>
+                        <h3 class="title">나 오늘 운수 대박인듯?</h3>
+                        <div class="userDetail">
+                        만원 범 히히 조아라~ 만원 범 히히 조아라~ 만원 범 히히 조아라~ 만원 범 히히 조아라~ 만원 범 히히 조아라~ 만원 범 히히 조아라~ 만원 범 히히 조아라~ 만원 범 히히 조아라~ 만원 범 히히 조아라~ 만원 범 히히 조아라~ 만원 범 히히 조아라~ 만원 범 히히 조아라~ 만원 범 히히 조아라~ 만원 범 히히 조아라~ 만원 범 히히 조아라~ 만원 범 히히 조아라~ 만원 범 히히 조아라~ 만원 범 히히 조아라~ 만원 범 히히 조아라~ 
+                        </div>       
+                        <div class="likeUser">
+                            <img class="userImg" src="./images/userImg2.jpg" alt="">
+                            <span>님 외<b><var>2,357</var>명</b>이 좋아합니다.</span>
+                            <!-- 170818-3차 수정 -->
+                            <div class="btnLike">
+                                <i class="sp-like"></i>
+                                <i class="sp-like"></i>
+                                <i class="sp-like"></i>
+                                <i class="sp-like"></i>
+                                <i class="sp-like"></i>
+                            </div>
+                            <!-- 170818-3차 수정 -->
+                        </div>
+                    </div>
+                    <!-- 170818-3차 수정 -->
+                    <ul class="listMenu">
+                        <li>
+                            <a href="javascript:;">이전글</a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">다음글</a>
+                        </li>
+                        <li class="active">
+                            <a href="javascript:;">목록보기</a>
+                        </li>
+                    </ul>
+                    <!-- 170818-3차 수정 end -->
+                </div>
+                <!-- @@@ 리플 -->
+                <div class="contents reply">
+                    <div class="reply-write">
+                        <img class="userImg" src="./images/userImg2.jpg"  alt="">
+                        <div class="right">
+                            <textarea placeholder="댓글은 활동 지수에 도움이 됩니다." name=""cols="30" rows="10"></textarea>
+                            <button class=""><img src="./images/btn-replyWrite.jpg"  alt=""></button> 
+                        </div>
+                    </div>
+
+                    <ul class="reply-wrap">
+                        <li>
+                            <!-- 170818-2차 수정 : 삭제 추가-->
+                            <div class="reply-reply">
+                                <img class="userImg" src="./images/userImg2.jpg"  alt="">
+                                <div class="reply-detail">
+                                    <span class="name">
+                                      쵸쵸쵸                  
+                                        <img class="grade" src="./images/grade/grade_54.png" alt="">  
+                                        <p class="date">17.06.09 16:49</p>
+                                    </span>
+                                    <div class="cmt">
+                                        만원벌었다~~~ 계속 벌어야지 헤헤ㅔㅎ헤ㅎㅎㅎㅎㅎ맛난거 먹구싶당
+                                    </div>
+                                    <div class="btnWrap">
+                                        <a  class="btn-reReply" href="javascript:;">답글달기</a>
+                                        <a class="btn-replyDel" href="javascript:;">삭제</a>
+                                    </div>
+                               </div>
+                           </div>
+                            <!-- 170818-2차 수정 end -->
+                           <div class="reply-reReply">
+                                <img class="userImg" src="./images/userImg.png" alt="">
+                                <div class="wrap">
+                                    <textarea placeholder="댓글은 활동 지수에 도움이 됩니다."></textarea>
+                                    <button><img src="./images/btn-reReply.jpg"  alt=""></button>     
+                                </div>
+                           </div>
+                        </li>
+
+                        <li>
+                            <div class="reply-reply">
+                                <img class="userImg" src="./images/userImg2.jpg"  alt="">
+                                <div class="reply-detail">
+                                    <span class="name">
+                                      쵸쵸쵸                  
+                                        <img class="grade" src="./images/grade/grade_54.png" alt="">  
+                                        <p class="date">17.06.09 16:49</p>
+                                    </span>
+                                    <div class="cmt">
+                                        아이오아이가 대세 아닌가요? 트와이스인가요?<br>
+                                        요새 누가 대세인가요??<br>
+                                        잘 생각해 보시고 답변 해주세요.<br>
+                                        소정이가 짱인지 쯔위가 짱인지!!
+                                    </div>
+                                    <div class="btnWrap">
+                                        <a  class="btn-reReply" href="javascript:;">답글달기</a>
+                                        <a class="btn-replyDel" href="javascript:;">삭제</a>
+                                    </div>
+                               </div>
+                           </div>
+                           <div class="reply-reReply" style="display: block;">
+                                <img class="userImg" src="./images/userImg.png" alt="">
+                                <div class="wrap">
+                                    <textarea placeholder="댓글은 활동 지수에 도움이 됩니다."></textarea>
+                                    <button><img src="./images/btn-reReply.jpg"  alt=""></button>     
+                                </div>
+                           </div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- @@@ //리플 END -->
+                <!-- @@ -->
+            </div>            
+        
+        </section>
+
+    
+        <div class="topWrap">
+            <a class="btnTop" href="javascript:;">
+                <img src="./images/btnTop.png"  alt="">
+            </a>        
+        </div>
+    </main>
+
+
+    <script src="./assets/js/vendor.js"></script>
+    <script src="./assets/js/plugin.js"></script>
+    <script src="js/owl.carousel.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+        <!--
+        var UserAgent = navigator.userAgent;
+        var UADevice = UserAgent.match(/iPhone|iPod|iPad|Android|Windows CE|BlackBerry|Symbian|Windows Phone|webOS|Opera Mini|Opera Mobi|POLARIS|IEMobile|lgtelecom|nokia|SonyEricsson/i);
+        var UAVendor = UserAgent.match(/LG|SAMSUNG|Samsung/);
+        if ( UADevice != null || UAVendor != null){
+        } else {
+        // location.href = "../";
+          $('body').css({
+            width : '720px',
+            margin : '0 auto'
+          });
+        }
+        //-->
+    </script>
+</body>
+</html>
