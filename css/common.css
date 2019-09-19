@@ -38,7 +38,7 @@ button, button:focus,button:active{padding: 0;}
 #loader-wrapper{position:fixed;top:0;left:0;width:100%;height:100%;z-index:1000}
 #loader-wrapper .loader-section{position:fixed;top:0;width:51%;height:100%;background:#000;z-index:1000;-webkit-transform:translateX(0);-ms-transform:translateX(0);transform:translateX(0)}
 #loader-wrapper .loader-section.section-left{left:0}
-#loader-wrapper #loader-container,.loader-circle,.loader-line-mask,.loader-svg{top:50%;left:50%;z-index:9999;position:absolute}
+#loader-wrapper #loader-container,.loader-circle,.loader-box,.loader-line-mask,.loader-svg{top:50%;left:50%;z-index:9999;position:absolute}
 #loader-wrapper .loader-section.section-right{right:0}
 .loaded #loader-wrapper .loader-section.section-left{-webkit-transform:translateX(-100%);-ms-transform:translateX(-100%);transform:translateX(-100%);-webkit-transition:all .7s .3s cubic-bezier(.645,.045,.355,1);transition:all .7s .3s cubic-bezier(.645,.045,.355,1)}
 .loaded #loader-wrapper .loader-section.section-right{-webkit-transform:translateX(100%);-ms-transform:translateX(100%);transform:translateX(100%);-webkit-transition:all .7s .3s cubic-bezier(.645,.045,.355,1);transition:all .7s .3s cubic-bezier(.645,.045,.355,1)}
@@ -46,7 +46,7 @@ button, button:focus,button:active{padding: 0;}
 #loader-wrapper.fadeout #loader-container{opacity:0;-webkit-transition:opacity .6s ease-out;transition:opacity .6s ease-out}
 .loaded #loader-wrapper{visibility:hidden;-webkit-transform:translateY(-100%);-ms-transform:translateY(-100%);transform:translateY(-100%);-webkit-transition:all .3s 1s ease-out;transition:all .3s 1s ease-out}
 .no-js #loader-wrapper{display:none}
-/*.loader-circle{margin-top: -70px; margin-left: -70px; width:140px;height:140px;border-radius:50%;box-shadow:inset 0 0 0 1px rgba(255,255,255,.1)}*/
+.loader-circle{margin-top: -70px; margin-left: -70px; width:140px;height:140px;border-radius:50%;box-shadow:inset 0 0 0 1px rgba(255,255,255,.1)}
 .loader-line-mask{margin-top: -70px; margin-left: -70px; width:70px;height:140px;-webkit-transform-origin:70px 70px;-moz-transform-origin:70px 70px;-ms-transform-origin:70px 70px;-o-transform-origin:70px 70px;transform-origin:70px 70px;-webkit-mask-image:-webkit-linear-gradient(top,#000,rgba(0,0,0,0));-webkit-animation:rotate 1.2s infinite linear;-moz-animation:rotate 1.2s infinite linear;-ms-animation:rotate 1.2s infinite linear;-o-animation:rotate 1.2s infinite linear;animation:rotate 1.2s infinite linear;}
 .loaded .loader-line-mask{-webkit-animation:none!important;-moz-animation:none!important;-ms-animation:none!important;-o-animation:none!important;animation:none!important}
 .loader-line-mask .loader-line{width:140px;height:140px;border-radius:50%;box-shadow:inset 0 0 0 1px rgba(255,255,255,.5)}
@@ -69,9 +69,11 @@ button, button:focus,button:active{padding: 0;}
 .scrollable{-webkit-overflow-scrolling:touch}
 body {overflow: hidden;}
 body.loaded {overflow-y: scroll;}
+.mview {display: none; opacity: 0;}
+body.mobilebody .mhidden {display: none; visibility: hidden; opacity: 0;}
+body.mobilebody .mview {display: block; opacity: 1;} 
 
-
-.loader-circle, .loader-circle::before, .loader-circle::after {
+.loader-box, .loader-box::before, .loader-box::after {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -79,7 +81,7 @@ body.loaded {overflow-y: scroll;}
   right: 0;
 }
 
-.loader-circle {
+.loader-box {
   width: 200px;
   height: 200px;
   margin-top: -100px;
@@ -94,7 +96,7 @@ body.loaded {overflow-y: scroll;}
   animation:rotate 6s infinite linear;
   */
 }
-.loader-circle::before, .loader-circle::after {
+.loader-box::before, .loader-box::after {
   content: "";
   z-index: -1;
   margin: -5%;
@@ -105,7 +107,7 @@ body.loaded {overflow-y: scroll;}
   -ms-animation: clipMe 8s linear infinite;
   -o-animation: clipMe 8s linear infinite;
 }
-.loader-circle::before {
+.loader-box::before {
   -webkit-animation-delay: -4s;
   -moz-animation-delay: -4s;
   -ms-animation-delay: -4s;
@@ -113,7 +115,7 @@ body.loaded {overflow-y: scroll;}
   animation-delay: -4s;
   
 }
-.loader-circle::after, .loader-circle::before {
+.loader-box::after, .loader-box::before {
   background-color: rgba(203, 180, 164, 0.3);
 }
 
@@ -130,11 +132,11 @@ body.loaded {overflow-y: scroll;}
 .seperator-wrapper .seperator {
   width: 3000px;
   height: 5px;
-  animation: rotate 3s infinite linear;
-  -webkit-animation: rotate 3s infinite linear;
+  animation: rotateline 3s infinite linear;
+  -webkit-animation: rotateline 3s infinite linear;
 }
 
-@-webkit-keyframes rotate {
+@-webkit-keyframes rotateline {
   from {
     background-position: -3000px;
   }
@@ -142,7 +144,7 @@ body.loaded {overflow-y: scroll;}
     background-position: 0px;
   }
 }
-@keyframes rotate {
+@keyframes rotateline {
   from {
     background-position: -3000px;
   }
