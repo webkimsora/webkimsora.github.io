@@ -1,0 +1,92 @@
+@charset "utf-8";
+@import url(font.css);
+@import url(page_con.css);
+
+/* Reset */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,form,fieldset,p,button{margin:0;padding:0}
+body,h1,h2,h3,h4,input,button,textarea{font-family:ng,'돋움',Dotum,Helvetica,'Apple SD Gothic Neo',Sans-serif;font-size:12px;color:#000}
+body{text-align:left; word-break:break-word;}
+img,fieldset,iframe{border:0 none}
+li{list-style:none}
+input,select,button{vertical-align:middle}
+img{vertical-align:top}
+i,em,address{font-style:normal}
+label,button{cursor:pointer}
+a{color:#000;text-decoration:none}
+a:hover{color:#000;text-decoration:none}
+hr{display:none}
+legend{*width:0}
+table{border-collapse:collapse;border-spacing:0}
+caption{font-size:0; line-height:0; height:0}
+
+/* Mobile Form Default */
+input[type='text'],input[type='password'],input[type='image'],input[type='search']{-webkit-appearance:none;-webkit-border-radius:0}
+
+/* Skip */
+#skipnavigation{z-index:9999;position:absolute;left:0;top:0;width:100%;text-align:center}
+#skipnavigation *{list-style:none;margin:0;padding:0;}
+#skipnavigation a{display:block;width:100%;height:0;overflow:hidden;white-space:nowrap;}
+#skipnavigation a:focus,
+#skipnavigation a:active{display:block;width:100%;height:36px;color:#fff;background:#000;line-height:36px;text-decoration:underline !important;font-size:14px;}
+
+* {box-sizing:border-box;}
+.papagoWrap {width:1000px; margin:0 auto;}
+.h1Wrap {text-align: center; margin-bottom: 100px; padding:50px 0; }
+.h1Wrap h1 {font-size: 30px; padding:0 0 0 215px; display: inline-block; position: relative;}
+.h1Wrap h1:after {content:'';position: absolute; left:0; top:-10px; width: 202px; height: 57px; background:url('../images/naver.png') left center no-repeat; background-position:0 0;;}
+
+.h2Wrap { margin-bottom: 50px; padding-bottom:20px; border-bottom:1px solid #ddd;}
+.h2Wrap h2 {font-size: 25px; padding:0 0 0 10px; display: inline-block;}
+.h2Wrap i {font-size:25px;}
+
+.loading {position:fixed; left:0; top:0; width: 100%; height: 100%; z-index: 999; text-align: center; background:rgba(0,0,0,.1); display: none;}
+.loading i {position: absolute; left:50%; top:50%; margin:-50px 0 0 -50px; color:#00c73c; font-weight:bold; font-size:100px;}
+
+.searchInput  {}
+.searchInput .inner {position: relative; width: 582px; margin:0 auto 50px auto;}
+.searchInput .inner:after {content:''; display:block; clear:both;}
+.searchInput .logo {float:left; width: 119px; height: 25px; background-position:-4px -4px; background:url('../images/naver2.png') no-repeat; margin:5px 15px 0 0;}
+.searchInput .keyword {float:left;  width: 400px; height: 45px; font-size: 20px; padding:10px; border:2px solid #00c73c}
+.searchInput .btnSearch {float:left; position: relative; width:45px; height:45px; background:#00c73c; text-indent:-999em; }
+.searchInput .btnSearch:after {content:''; position: absolute; left:0;  background:url('../images/naver.png') no-repeat; background-position:-201px 11px; width: 45px; height:40px; cursor:pointer;}
+.jenreSel {margin-bottom: 50px; }
+.jenreSel:after {content:''; display:block; clear:both;}
+.jenreSel .tit {float:left; width: 50px; font-size: 15px; text-align: center; padding:5px 0; border:1px solid #ddd; background:#eee;}
+.jenreSel .jenreList {margin-left:60px;}
+.jenreSel .jenreList ul:after {content:''; display:block; clear:both;}
+.jenreSel .jenreList ul li {float:left; margin:0 10px 10px; }
+.jenreSel .jenreList ul li input {position: absolute; visibility:hidden;}
+.jenreSel .jenreList ul li label {font-size: 15px;}
+.jenreSel .jenreList ul li input:checked + label {font-weight: bold; color:#00c;}
+.jenreSel .jenreList ul li label:hover {font-weight: bold; color:#00c;}
+
+.movieList ul {margin-left:-30px;}
+.movieList ul:after {content:''; display:block; clear:both;}
+.movieList ul li{float:left; width:485px; margin-left:30px; border:1px solid #eee; box-shadow:5px 5px 5px #ddd; margin-bottom: 30px; min-height: 210px; padding:20px;}
+.movieList ul li:after {content:''; display:block; clear:both;}
+.movieList ul li .img{float:left; width: 110px; height: 157px; background:url('../images/poster_default.gif') no-repeat; background-size:110px 157px; border:1px solid #ddd;}
+.movieList ul li .img img {width:110px; height:157px; }
+.movieList ul li .info{margin-left:130px; font-size: 15px; color:#666;}
+.movieList ul li .info .title {margin-bottom: 10px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+.movieList ul li .info .title a{color:#00c; font-weight: bold; font-size: 18px; }
+.movieList ul li .info .title a:hover{text-decoration:underline; }
+.movieList ul li .info .enTitle {margin-bottom: 10px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+.movieList ul li .info .pubDate {margin-bottom: 10px;}
+.movieList ul li .info .director {margin-bottom: 10px;  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+.movieList ul li .info .actor {margin-bottom: 10px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+.movieList ul li .info .userRating {margin-bottom: 10px;}
+.movieList ul li.noDataLi {width: 96%; padding:40px 0; text-align: center; font-size: 30px; min-height: 0; }
+
+.btnTop {position: fixed; right:50px; bottom:0; z-index: 100;}
+.btnTop a {position: relative; bottom:0; color:#fff; background:#42b983; text-align: center; display: block; width: 50px; height: 50px; line-height: 50px; transition:all .5s; opacity:0;}
+.btnTop a.active {bottom:50px; opacity:1;}
+[v-cloak] {display: none;}
+
+.paging {margin-bottom: 50px; text-align: center; padding-top: 30px;}
+
+
+#paging  {text-align: center; margin-bottom: 50px;}
+#paging  #prev {background: url('../images/paging02.png') center center no-repeat; text-indent:-999em; margin-right: 15px; }
+#paging  #next { background: url('../images/paging03.png') center center no-repeat; text-indent:-999em; margin-left: 15px;}
+#paging a {display: inline-block; cursor:pointer; text-align: center; vertical-align: top; min-width:30px; height:30px; line-height:28px; text-align: center; background:#fff;border:1px solid #cccccc; font-size: 17px; color:#333333; margin-left:3px;}
+#paging a.on {background: #00c73c; color:#fff; border:none;}

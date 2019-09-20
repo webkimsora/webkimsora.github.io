@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="leaflet.css" />
+    <style>
+        *{margin: 0; padding: 0; border: none; box-sizing: border-box;}
+        html,body,#vr,.pnlm-render-container{height: 100%;}
+    #vr{}
+        .custom-hotspot {
+       height: 50px;
+       width: 50px;
+       line-height: 50px;
+       border-radius: 50%;
+       background: #000;
+       color: #fff;
+   }
+   .custom-hotspot:before{content: '개발팀'}
+        div.custom-tooltip span {
+            left: 50%;
+        box-sizing: border-box;
+        visibility: hidden;
+        position: absolute;
+        border-radius: 3px;
+        background-color: #fff;
+        color: #000;
+        text-align: center;
+        max-width: 200px;
+        padding: 5px 10px;
+        margin-left: -220px;
+        cursor: default;
+    }
+    div.custom-tooltip:hover span{
+        visibility: visible;
+    }
+    div.custom-tooltip:hover span:after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-width: 10px;
+        border-style: solid;
+        border-color: #fff transparent transparent transparent;
+        bottom: -20px;
+        left: -10px;
+        margin: 0 50%;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="vr"></div>
+    <script type="text/javascript" src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="pannellum.js"></script>
+    <script type="text/javascript">
+        var randomNum = Math.floor(Math.random() * (6 - 0)) + 0;
+        var area = ['d1'];
+        var areaRandom = area[0];
+        pannellum.viewer('vr', {
+            "default": {
+                "firstScene": areaRandom,
+                "sceneFadeDuration": 1000,
+                "autoLoad": true,
+                "mouseZoom": true
+            },
+            "scenes": {
+                "d1": {
+                    "title": "개발팀",
+                    "hfov": 100,
+                    "pitch": 10,
+                    "yaw": 50,
+                    "compass": false,
+                    "northOffset": 289,
+                    //"type": "equirectangular",
+                    "panorama": "alma.jpg",
+                },
+            },
+            "hotSpots": [{
+                    "pitch": 15.1,
+                    "yaw": 13.5,
+                    "type": "info",
+                    "cssClass": "custom-hotspot",
+                    "createTooltipFunc": hotspot,
+                    "createTooltipArgs": "커스텀라벨,커스텀함수가 가능합니다"
+                },
+                {
+                    "pitch": -9.4,
+                    "yaw": 222.6,
+                    "type": "info",
+                    "text": "링크가 걸려있는 정보입니다",
+                    "URL": "https://artbma.org/"
+                },
+                {
+                    "pitch": -0.9,
+                    "yaw": 144.4,
+                    "type": "info",
+                    "text": "링크가 안걸려있는 정보입니다"
+                }
+            ]
+        }); // Hot spot creation function
+        function hotspot(hotSpotDiv, args) {
+            hotSpotDiv.classList.add('custom-tooltip');
+            var span = document.createElement('span');
+            span.innerHTML = args;
+            hotSpotDiv.appendChild(span);
+            span.style.width = span.scrollWidth - 20 + 'px';
+            span.style.marginLeft = -(span.scrollWidth) / 2 + 'px';
+            span.style.marginTop = -span.scrollHeight - 12 + 'px';
+            $(span).click(function(){
+                alert(1)
+            });
+        }
+    </script>
+</body>
+
+</html>

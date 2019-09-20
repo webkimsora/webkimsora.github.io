@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" href="./css/common.css">
+		<link rel="stylesheet" href="./css/slick.css">
+		<link rel="stylesheet" href="./css/main.css">
+		
+		<script type="text/javascript" src="./js/jquery-1.11.3.min.js" ></script>
+		<script type="text/javascript" src="./js/slick.min.js" ></script>
+		<script type="text/javascript" src="./js/jquery.mousewheel.min.js" ></script>
+		<script type="text/javascript" src="./js/TweenMax.min.js" ></script>
+		<script type="text/javascript" src="./js/main.js" ></script>
+	</head>
+	<body>
+		<main id="viewport">
+			<section class="character page" id="character">
+				<div class="background">
+					<div class="imgWrap">
+						<div class="img"></div>
+					</div>
+				</div>
+				<div class="deco sun"></div>
+				<div class="chaName">
+					<ul>
+						<li class="no1 on" ontouchstart="this.classList.toggle('hover');">
+							<a href="javascript:;">
+								<div class="filp">
+									<div class="front"></div>
+									<div class="back"></div>
+								</div>
+							</a>
+						</li>
+						<li class="no2" ontouchstart="this.classList.toggle('hover');">
+							<a href="javascript:;">
+								<div class="filp">
+									<div class="front"></div>
+									<div class="back"></div>
+								</div>
+							</a>
+						</li>
+						<li class="no3" ontouchstart="this.classList.toggle('hover');">
+							<a href="javascript:;">
+								<div class="filp">
+									<div class="front"></div>
+									<div class="back"></div>
+								</div>
+							</a>
+						</li>
+						<li class="no4" ontouchstart="this.classList.toggle('hover');">
+							<a href="javascript:;">
+								<div class="filp">
+									<div class="front"></div>
+									<div class="back"></div>
+								</div>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<canvas id="canvas" style="position: absolute; bottom: 0; left: 0;"></canvas>
+				<div class="chaWrap">
+					<div class="item no1">
+						<div class="chaImgWrap">
+							<div class="chaImg">
+								<img src="./images/chaImg01.png" alt="휴먼">
+								<div class="deco">
+									<img class="smoke no1" src="./images/smoke01.png" alt="">
+									<img class="smoke no2" src="./images/smoke01.png" alt="">
+									<img class="wlight no3" src="./images/chaDeco01_1.png" alt="">
+									<img class="wlight no4" src="./images/chaDeco01_2.png" alt="">
+									
+								</div>
+							</div>
+							<div class="chaText">
+								<h3 class="title"><img src="./images/chaTit01_1.png" alt="휴먼-전사"></h3>
+								<div class="detail">
+									<img src="./images/chaTit01_2.png" alt="무거운 갑옷을 입고 위풍당당한 장검을 사용한다.">
+								</div>
+								<div class="movie">
+									<a class="movieBtn" href="">
+										<span>
+											<span>
+												<span><img src="./images/chaTit01_3.png" alt="휴먼영상"></span>
+											</span>
+										</span>
+									</a>
+								</div>
+							</div>
+							
+						</div>
+					</div>
+					<div class="item no2">
+						<div class="chaImgWrap">
+							<div class="chaImg">
+								<img src="./images/chaImg02.png" alt="케스타닉">
+								<div class="deco">
+									<img class="smoke no1" src="./images/smoke01.png" alt="">
+									<img class="smoke no2" src="./images/smoke01.png" alt="">
+									<img class="wlight no3" src="./images/chaDeco02_1.png" alt="">
+								</div>
+							</div>
+							<div class="chaText">
+								<h3 class="title"><img src="./images/chaTit02_1.png" alt="케스타닉-검투사"></h3>
+								<div class="detail">
+									<img src="./images/chaTit02_2.png" alt="마력이 깃든 한">
+								</div>
+								<div class="movie">
+									<a class="movieBtn" href="">
+										<span>
+											<span>
+												<span><img src="./images/chaTit01_3.png" alt="휴먼영상"></span>
+											</span>
+										</span>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="item no3">
+						<div class="chaImgWrap">
+							<div class="chaImg">
+								<img src="./images/chaImg03.png" alt="검사">
+								<div class="deco">
+									<img class="smoke no1" src="./images/smoke01.png" alt="">
+									<img class="smoke no2" src="./images/smoke01.png" alt="">
+									<img class="wlight no3" src="./images/chaDeco03_1.png" alt="">
+									<img class="wlight no4" src="./images/chaDeco03_2.png" alt="">
+									<img class="wlight no5" src="./images/chaDeco03_3.png" alt="">
+								</div>
+							</div>
+							<div class="chaText">
+								<h3 class="title"><img src="./images/chaTit03_1.png" alt="전사"></h3>
+								<div class="detail">
+									<img src="./images/chaTit03_2.png" alt="전사2">
+								</div>
+								<div class="movie">
+									<a class="movieBtn" href="">
+										<span>
+											<span>
+												<span><img src="./images/chaTit01_3.png" alt="휴먼영상"></span>
+											</span>
+										</span>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="item no4">
+						<div class="chaImgWrap">
+							<div class="chaImg">
+								<img src="./images/chaImg04.png" alt="검사">
+								<div class="deco">
+									<img class="smoke no1" src="./images/smoke01.png" alt="">
+									<img class="smoke no2" src="./images/smoke01.png" alt="">
+									<img class="wlight no3" src="./images/chaDeco04_1.png" alt="">
+									<img class="wlight no4" src="./images/chaDeco04_2.png" alt="">
+									<img class="wlight no5" src="./images/chaDeco04_3.png" alt="">
+									<img class="wlight no6" src="./images/chaDeco04_4.png" alt="">
+								</div>
+							</div>
+							<div class="chaText">
+								<h3 class="title"><img src="./images/chaTit04_1.png" alt="전사"></h3>
+								<div class="detail">
+									<img src="./images/chaTit04_2.png" alt="전사2">
+								</div>
+								<div class="movie">
+									<a class="movieBtn" href="">
+										<span>
+											<span>
+												<span><img src="./images/chaTit01_3.png" alt="휴먼영상"></span>
+											</span>
+										</span>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+	</body>
+</html>

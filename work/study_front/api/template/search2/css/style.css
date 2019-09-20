@@ -1,0 +1,34 @@
+@charset 'utf-8';
+@import url(https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css);
+*{box-sizing: border-box; margin: 0; padding: 0; border: none;}
+html,body{height: 100%;}
+body{font-size: 12px; font-family: 'NanumSquare', sans-serif; background: #fafafa;}
+body.scrolllock{overflow: hidden;};
+.header{width: 100%; background: #fff; border-bottom: 1px solid #eee; position: relative; left: 0; top: 0; border-top: 2px solid #00c73c;}
+.search_area{position: relative;}
+.search_area .rdo{width: 300px; padding: 15px; }
+.search_area .rdo .r_w{display: inline-block; vertical-align: top;}
+.search_area .rdo input{position: absolute; left: -999em; width: 0; height: 0px; overflow: hidden;}
+.search_area .rdo label{font-size: 13px; font-weight: bold; color: #000; position: relative; cursor: pointer; z-index: 2; padding: 7px 13px; background: #f0f0f0; display: inline-block; border-radius: 3px; margin: 2px 0;}
+.search_area .rdo label:before{content: '#'; display: inline-block; margin-right: 2px;}
+.search_area .rdo input:checked+label{background: #00c73c; color: #fff; }
+.search_area .rdo input:disabled+label{opacity: .5; cursor: no-drop;}
+.search_area .tn_fe{position: absolute; left: 455px; top: 50%; margin-top: -25px; border: 2px solid #00c73c;}
+.search_area .tn_fe:before{content: ''; width: 118px; height: 26px; position: absolute; left: -140px; top: 7px; background: url(https://ssl.pstatic.net/sstatic/search/pc/img/sp_svg_common_4fca928f.svg) no-repeat left top;}
+.search_area .tn_fe .tn_input{background: #fff; border: none; padding: 12px 0; text-indent: 10px; min-width: 500px; font-size: 18px; font-weight: bold; vertical-align: middle;}
+.search_area .tn_fe .sum_btn{position: absolute; left: 100%; top: -2px; color: #fff; font-size: 20px; text-align: center; line-height: 49px; width: 50px; cursor: pointer; background: #00c73c;}
+.container{background: #fafafa;}
+.contents{}
+.search_tit{font-size: 15px; font-weight: bold; color: #000; margin: 15px 5px;}
+.search_items{font-size: 0;}
+.search_items .im_it{display: inline-block; vertical-align: top; padding: 5px;}
+.search_items .im_it .in{position: relative; overflow: hidden; height: 100%;}
+.search_items .im_it .img{height: 100%;}
+.search_items .im_it img{max-height: 100%; }
+.search_items .im_it .txts{position: absolute; width: 100%; left: 0; bottom: -100%; background: rgba(0,0,0,.8); padding: 10px 5px; padding-right: 70px; color: #fff; font-size: 12px; font-weight: normal;}
+.search_items .im_it .txts .tit{display: block; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; min-height: 13px;}
+.search_items .im_it .txts .size{position: absolute; right: 5px; top: 10px;}
+.search_items .im_it .in:hover .txts{bottom: 0;}
+.searchWrap[data-search-type=imagesapi]{padding: 10px;}
+.searchWrap[data-search-type=localapi]{}
+.searchWrap[data-search-type=localapi] .search_tit{display: none;}

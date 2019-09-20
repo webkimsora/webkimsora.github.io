@@ -1,0 +1,354 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>메큐라이크 - 환율 API</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <script type="text/javascript" src="./js/jquery-1.11.3.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+    <style>
+        body{margin: 0; padding: 0;}
+        .data_tbl_wrap{max-width: 1000px; margin: 30px auto 0;}
+        .data_tbl_wrap .data_tbl,.data_tbl_wrap .data_lst{table-layout: fixed; width: 100%; background: #fff; border-collapse:collapse; border-spacing:0; border-top: 2px solid #1b82cf; border-left: 1px solid #e3e5e4; font-size: 13px; color: #000;}
+        .data_tbl_wrap thead td,.data_tbl_wrap .v_thead .v_td{text-align: center; font-weight: bold; background: #f9fafc;}
+        .data_tbl_wrap .v_thead .v_td{display: inline-block;}
+        .data_tbl_wrap th,.data_tbl_wrap td,.data_tbl_wrap .data_lst .v_thead .v_td,.data_tbl_wrap .data_lst .v_tbody .v_td{border-right: 1px solid #e3e5e4; border-bottom: 1px solid #e3e5e4; padding: 15px 10px; }
+        .data_tbl_wrap .v_tr:nth-child(even) .v_td,
+        .data_tbl_wrap tr:nth-child(even) td,
+        .data_tbl_wrap tr:nth-child(even) th{background: #f9fafc;}
+        .data_tbl_wrap tbody td,.data_tbl_wrap tbody th{text-align: left;}
+        .data_tbl_wrap .data_lst .v_tbody{}
+        .data_tbl_wrap .data_lst .v_tr{display: table; width: 100%; table-layout: fixed; border-collapse:collapse; border-spacing:0; margin: 0; padding: 0;}
+        .data_tbl_wrap .data_lst .v_td{display: table-cell; width: 2%; vertical-align: middle;}
+        .data_tbl_wrap .data_page{display: block; margin: 30px 0; text-align: center;}
+        .data_tbl_wrap .data_page .lst{vertical-align: middle; display: inline-block; list-style: none; padding: 0; margin: 0;}
+        .data_tbl_wrap .data_page .lst .tp{display: inline-block; margin: 3px;}
+        .data_tbl_wrap .data_page .lst .tp .txt{text-decoration: none; color: #000; display: inline-block; font-size: 13px; width: 30px; line-height: 30px; border: 1px solid #e3e5e4; border-radius: 2px; font-weight: bold;}
+        .data_tbl_wrap .data_page .lst .tp.active .txt{border-color: #1b82cf; background: #1b82cf; color: #fff;}
+        .data_tbl_wrap .data_page .lst .tp .txt:active{color: #000;}
+        .data_tbl_wrap .data_page .p_bt{display: inline-block; position: relative; text-decoration: none; vertical-align: middle; width: 30px; line-height: 30px; color: #222; background: #f9fafc; border-radius: 2px; border: 1px solid #e3e5e4; font-size: 11px; margin: 3px;}
+        .data_tbl_wrap .data_page .p_bt:active{color: #222;}
+        .data_tbl_wrap span{vertical-align: middle;}
+        .data_tbl_wrap .ctn{display: inline-block; width: 10px; font-size: 0; margin-left: 2px;}
+        .data_tbl_wrap .ctn .c_t{display: inline-block; text-decoration: none; width: 10px; height: 7px; background: no-repeat center center; background-size: 7px;}
+        .data_tbl_wrap .ctn .c_t.c_tu{background-image: url(./images/sort_up.png);}
+        .data_tbl_wrap .ctn .c_t.c_td{background-image: url(./images/sort_down.png);}
+        .data_tbl_wrap .txt{display: inline-block; vertical-align: middle; margin-left: 5px;}
+        .data_tbl_wrap .y_d{width: 30px; height: 20px; background: no-repeat left top; background-size: 100%; display: inline-block; vertical-align: middle;}
+        .data_tbl_wrap .y_d.AED{background-image: url(./images/AED.jpg)}
+        .data_tbl_wrap .y_d.AUD{background-image: url(./images/AUD.jpg)}
+        .data_tbl_wrap .y_d.BHD{background-image: url(./images/BHD.jpg)}
+        .data_tbl_wrap .y_d.CAD{background-image: url(./images/CAD.jpg)}
+        .data_tbl_wrap .y_d.CHF{background-image: url(./images/CHF.jpg)}
+        .data_tbl_wrap .y_d.CNH{background-image: url(./images/CNH.jpg)}
+        .data_tbl_wrap .y_d.DKK{background-image: url(./images/DKK.jpg)}
+        .data_tbl_wrap .y_d.EUR{background-image: url(./images/EUR.jpg)}
+        .data_tbl_wrap .y_d.GBP{background-image: url(./images/GBP.jpg)}
+        .data_tbl_wrap .y_d.HKD{background-image: url(./images/HKD.jpg)}
+        .data_tbl_wrap .y_d.IDR{background-image: url(./images/IDR.jpg)}
+        .data_tbl_wrap .y_d.JPY{background-image: url(./images/JPY.jpg)}
+        .data_tbl_wrap .y_d.KRW{background-image: url(./images/KRW.jpg)}
+        .data_tbl_wrap .y_d.KWD{background-image: url(./images/KWD.jpg)}
+        .data_tbl_wrap .y_d.MYR{background-image: url(./images/MYR.jpg)}
+        .data_tbl_wrap .y_d.NOK{background-image: url(./images/NOK.jpg)}
+        .data_tbl_wrap .y_d.NZD{background-image: url(./images/NZD.jpg)}
+        .data_tbl_wrap .y_d.SAR{background-image: url(./images/SAR.jpg)}
+        .data_tbl_wrap .y_d.SEK{background-image: url(./images/SEK.jpg)}
+        .data_tbl_wrap .y_d.SGD{background-image: url(./images/SGD.jpg)}
+        .data_tbl_wrap .y_d.THB{background-image: url(./images/THB.jpg)}
+        .data_tbl_wrap .y_d.USD{background-image: url(./images/USD.jpg)}
+        .data_tbl_top{overflow: hidden; margin-bottom: 10px;}
+        .data_tbl_top .txt{float: left; font-size: 13px; font-weight: bold; color: #000; margin-top: 15px;}
+        .data_tbl_top .txt .tt_txt,
+        .data_tbl_top .txt .tt_len{display: inline-block; vertical-align: middle;}
+        .data_tbl_top .txt .tt_len{margin-left: 3px;}
+        .data_tbl_top .btn_wrap{float: right;}
+        .data_tbl_top .btn_wrap .tnc_btn{border: 1px solid #eee; background: #fafafa; color: #000; min-width: 50px; line-height: 25px; text-align: center; font-weight: bold; cursor: pointer;}
+        .data_tbl_top .tncmtnd{float: right; border: 1px solid #eee; background: #ffff; color: #000; min-width: 100px; padding: 8px 5px; font-weight: bold;}
+    </style>
+</head>
+
+<body>
+    <div class="data_tbl_wrap">
+        <div class="data_tbl_top">
+            <span class="txt"><span class="tt_txt">게시글수 :</span><span class="tt_len"></span></span>
+            <select class="tncmtnd">
+                <option value="">출력수</option>
+                <option value="5">5</option>
+                <option value="10">10</option>
+                <option value="15">15</option>
+                <option value="20">20</option>
+            </select>
+        </div>
+        <table class="data_tbl exDataTable">
+            <colgroup>
+                <col width="*">
+            </colgroup>
+        </table>
+        <div class="data_lst exDataList">
+        </div>
+        <div class="data_page exDataPage"></div>
+    </div>
+    <script>
+        var GET_DATA_KEY = [];
+        var GET_DATA_KEY_KO = ['조회결과', '통화코드', '송금받을때', '송금보낼때', '매미기준율', '장부가격', '년환가료율', '10일환가료율', '서울외국환중계 장부가격', '서울외국환중계 매매기준율', '국가/통화명'];
+        var GET_DATA_VAL = [];
+        var exDataTable = {
+            options: {
+                dataurl: '',
+                clsname: '.exDataTable',
+                tabletype: 'table',
+                pageclsname: '.exDataPage',
+                paging: true,
+                pagelength: 10,
+                datakey: [],
+                dataval: [],
+                datakeyko: [],
+                sortbtn: '.fnSortBtn',
+                pagebuttoncls: '.fnPageBtn',
+                pagebutton: ['.fnBtnPrevAll', '.fnBtnPrev', '.fnBtnNext', '.fnBtnNextAll'],
+            },
+            init: function(obj) {
+                this.obj = $.extend(true, this.options, obj);
+                this.opt = {
+                    markup: {
+                        table: ['<thead><tr>', '<td>', '</td>', '</tr></thead>', '<tbody>', '<tr>', '</tr>', '</tbody>'],
+                        list: ['<div class="v_thead"><ul class="v_tr">', '<li class="v_td">', '</li>', '</ul></div>', '<div class="v_tbody">', '<ul class="v_tr">', '</ul>', '</div>'],
+                    },
+                    errormsg: ['테이블용도는 <table>로 넣어야합니다.', '리스트용도는 <div>로 넣어야합니다.', '비영업일의 데이터, 혹은 영업당일 11시 이전에 해당일의 데이터를 요청할 경우 null 값이 반환', '첫페이지입니다.', '마지막페이지입니다.'],
+                    setpageidx: 0,
+                };
+                this.fnGetData();
+            },
+            fnGetData: function() {
+                var _this = this;
+                $.getJSON(this.obj.dataurl, function(data) {
+                    GET_DATA_VAL = data;
+                    for (var i in data[0]) {
+                        GET_DATA_KEY.push(i);
+                    }
+                    console.log(GET_DATA_KEY);
+                    console.log(GET_DATA_KEY_KO);
+                    console.log(GET_DATA_VAL);
+                    _this.obj.datakey = GET_DATA_KEY;
+                    _this.obj.dataval = GET_DATA_VAL;
+                    _this.obj.datakeyko = GET_DATA_KEY_KO;
+                    $('.tt_len').text(_this.obj.dataval.length);
+                    if (!_this.obj.dataval.length) {
+                        _this.errormsg(_this.opt.errormsg[2], 'alert');
+                        return;
+                    }
+                    if (_this.obj.paging) {
+                        _this.set(_this.obj.pagelength);
+                        _this.setPage();
+                        _this.fnPageBind();
+                    } else {
+                        _this.set();
+                    }
+                    _this.fnSortBind();
+                });
+            },
+            set: function(l) {
+                var mark = null;
+                if (this.obj.tabletype == 'table') {
+                    if ($(this.obj.clsname)[0].localName != 'table') {
+                        this.errormsg(this.opt.errormsg[0], 'warn');
+                        return;
+                    }
+                    mark = this.opt.markup.table;
+                } else if (this.obj.tabletype == 'list') {
+                    if ($(this.obj.clsname)[0].localName != 'div') {
+                        this.errormsg(this.opt.errormsg[1], 'warn');
+                        return;
+                    }
+                    mark = this.opt.markup.list;
+                }
+                var html = mark[0];
+                for (var i = 0; i < this.obj.datakeyko.length; i++) {
+                    if (i) {
+                        html += mark[1] + '<span>' + this.obj.datakeyko[i] + '</span>' + '<span class="ctn"><a href="#" class="c_t c_tu ' + this.clsformat(this.obj.sortbtn) +
+                            '" data-sort-dir="true" data-sort-key="' + this.obj.datakey[i] + '" title="오름차순"></a><a href="#" class="c_t c_td ' + this.clsformat(this.obj.sortbtn) + '" data-sort-dir="false" data-sort-key="' + this.obj.datakey[
+                                i] +
+                            '" title="내림차순"></a></span>' + mark[2];
+                    }
+                }
+                html += mark[3];
+                html += mark[4];
+                if (!l) {
+                    for (var i = 0; i < this.obj.dataval.length; i++) {
+                        html += mark[5];
+                        for (var key in this.obj.dataval[i]) {
+                            if (key != this.obj.datakey[0]) {
+                                if (key == this.obj.datakey[1]) {
+                                    var clsnm = this.obj.dataval[i][key];
+                                    var ch = clsnm.indexOf('(') != -1 ? clsnm.split('(') : clsnm;
+                                    if (typeof ch == 'object') {
+                                        ch = ch[0];
+                                    }
+                                    html += mark[1] + '<span class="y_d ' + ch + '"></span><span class="txt">' + this.obj.dataval[i][key] + '</span>' + mark[2];
+                                } else {
+                                    html += mark[1] + this.obj.dataval[i][key] + mark[2];
+                                }
+                            }
+                        }
+                        html += mark[6];
+                    }
+                } else {
+                    var cnt = 0;
+                    for (var i = this.opt.setpageidx * this.obj.pagelength; i <= this.obj.dataval.length; i++) {
+                        cnt++;
+                        if (cnt <= this.obj.pagelength) {
+                            html += mark[5];
+                            for (var key in this.obj.dataval[i]) {
+                                if (key != this.obj.datakey[0]) {
+                                    if (key == this.obj.datakey[1]) {
+                                        var clsnm = this.obj.dataval[i][key];
+                                        var ch = clsnm.indexOf('(') != -1 ? clsnm.split('(') : clsnm;
+                                        if (typeof ch == 'object') {
+                                            ch = ch[0];
+                                        }
+                                        html += mark[1] + '<span class="y_d ' + ch + '"></span><span class="txt">' + this.obj.dataval[i][key] + '</span>' + mark[2];
+                                    } else {
+                                        html += mark[1] + this.obj.dataval[i][key] + mark[2];
+                                    }
+                                }
+                            }
+                            html += mark[6];
+                        }
+                    }
+                }
+                html += mark[7];
+                this.getmarkup(html);
+            },
+            fnSortBind: function() {
+                var _this = this;
+                $(document).off().on('click', this.obj.sortbtn, function() {
+                    var $this = $(this);
+                    var $dir = $this.data('sortDir');
+                    var $key = $this.data('sortKey');
+                    _this.fnSortArry($dir, $key);
+                    return false;
+                });
+            },
+            fnSortArry: function(d, k) {
+                this.obj.dataval.sort(function(a, b) {
+                    var a = a[k].replace(/,/g, '');
+                    var b = b[k].replace(/,/g, '');
+                    if (d) {
+                        if (!isNaN(a)) {
+                            return a - b;
+                        } else {
+                            return a < b ? -1 : a > b ? 1 : 0;
+                        }
+                    } else {
+                        if (!isNaN(a)) {
+                            return b - a;
+                        } else {
+                            return a > b ? -1 : a < b ? 1 : 0;
+                        }
+                    }
+                });
+                this.set(this.obj.pagelength);
+            },
+            setPage: function() {
+                var cnt = 0;
+                var d_cnt = 0;
+                var mark = '';
+                mark += '<a href="#" class="p_bt bt_prev_all fa fa-angle-double-left ' + this.clsformat(this.obj.pagebutton[0]) + ' ' + this.clsformat(this.obj.pagebuttoncls) + '" data-pageidx="0" title="첫페이지"></a>';
+                mark += '<a href="#" class="p_bt bt_prev fa fa-angle-left ' + this.clsformat(this.obj.pagebutton[1]) + ' ' + this.clsformat(this.obj.pagebuttoncls) + '" title="이전페이지"></a>';
+                mark += '<ul class="lst">';
+                for (var i = 0; i < this.obj.dataval.length; i++) {
+                    if (i % this.obj.pagelength == 0) {
+                        cnt++;
+                        mark += '<li class="tp ' + (i == 0 ? 'active' : '') + '"><a href="#" class="txt ' + this.clsformat(this.obj.pagebuttoncls) + '" data-pageidx="' + d_cnt + '">' + cnt + '</a></li>';
+                        this.opt.pagelength = d_cnt;
+                        d_cnt++;
+                    }
+                }
+                mark += '</ul>';
+                mark += '<a href="#" class="p_bt bt_next fa fa-angle-right ' + this.clsformat(this.obj.pagebutton[2]) + ' ' + this.clsformat(this.obj.pagebuttoncls) + '" title="다음페이지"></a>';
+                mark += '<a href="#" class="p_bt bt_next_all fa fa-angle-double-right ' + this.clsformat(this.obj.pagebutton[3]) + ' ' + this.clsformat(this.obj.pagebuttoncls) + '" data-pageidx="' + (d_cnt - 1) + '" title="마지막페이지"></a>';
+                $(this.obj.pageclsname).html(mark);
+            },
+            fnPageBind: function() {
+                var _this = this;
+                $(this.obj.pagebuttoncls).off().on({
+                    'click': function(e) {
+                        var $this = $(this);
+                        var $data = $this.data('pageidx');
+                        if (e.target == $(_this.obj.pagebutton[1])[0]) { //이전페이지가기
+                            _this.opt.setpageidx = _this.opt.setpageidx - 1;
+                        } else if (e.target == $(_this.obj.pagebutton[2])[0]) { //다음페이지가기
+                            _this.opt.setpageidx = _this.opt.setpageidx + 1;
+                        } else {
+                            _this.opt.setpageidx = $data;
+                        }
+                        _this.fnPageBindCallback($this);
+                        return false;
+                    }
+                });
+            },
+            fnPageBindCallback: function($this) {
+                if (this.opt.setpageidx < 0) {
+                    this.errormsg(this.opt.errormsg[3], 'alert');
+                    this.opt.setpageidx = 0;
+                    return;
+                }
+                if (this.opt.setpageidx > this.opt.pagelength) {
+                    this.errormsg(this.opt.errormsg[4], 'alert');
+                    this.opt.setpageidx = this.opt.pagelength;
+                    return;
+                }
+                this.set(this.obj.pagelength);
+                $(this.obj.pagebuttoncls).closest('li').removeClass('active');
+                $(this.obj.pagebuttoncls + '[data-pageidx="' + this.opt.setpageidx + '"]').closest('li').addClass('active');
+                $('html,body').scrollTop(0);
+            },
+            getmarkup: function(h) {
+                $(this.obj.clsname).html(h);
+            },
+            clsformat: function(s) {
+                return s.replace('.', '');
+            },
+            errormsg: function(m, t) {
+                if (typeof m === 'string' || typeof m === 'number') {
+                    switch (t) {
+                        case 'warn':
+                            console.warn(m);
+                            break;
+                        case 'error':
+                            console.error(m);
+                            break;
+                        case 'alert':
+                            alert(m);
+                            break;
+                        case 'layerpop':
+                            alert('아직없음');
+                            break;
+                        default:
+                            console.log(m);
+
+                    }
+                }
+            },
+        };
+
+        var defaults = {
+            dataurl: 'ex.php',
+            clsname: '.exDataList',
+            tabletype: 'list',
+        };
+        exDataTable.init($.extend(defaults, {}));
+        $('.tncmtnd').on('change', function() {
+            var $data = $(this).val();
+            exDataTable.init($.extend(defaults, {
+                pagelength: $data
+            }));
+        });
+    </script>
+
+
+</body>
+
+</html>

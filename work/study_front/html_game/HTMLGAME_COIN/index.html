@@ -1,0 +1,208 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>메큐라이크-게임템플릿</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<!-- <meta name="viewport" content="user-scalable=yes, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0, width=device-width"> -->
+	<link rel="stylesheet" type="text/css" href="./css/common.css"  media="all" />
+	<script type="text/javascript" src="./js/jquery-1.11.3.min.js" ></script>
+	<!-- <script type="text/javascript" src="./js/jquery.easing.1.3.js" ></script> -->
+	<!-- <script type="text/javascript" src="./js/jquery.bxslider.min.js" ></script> -->
+	<!-- <script type="text/javascript" src="./js/swiper.min.js" ></script> -->
+	<script type="text/javascript" src="./js/jQueryRotate.js" ></script>
+	<script type="text/javascript" src="./js/common.js" ></script>
+	<link href="../template/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="../template/css/icons.css" rel="stylesheet" type="text/css">
+	<link href="../template/css/style.css" rel="stylesheet" type="text/css">
+	
+</head>
+<body>
+	<div class="inBox">
+		<div id="coinWrap">
+			<div class="coin-flip">
+				<div class="coin-tails">
+					<img src="./images/back.png">
+				</div>
+				<div class="coin-heads">
+					<img src="./images/front.png">
+				</div>
+			</div>
+		</div>
+		<div class="rulCount">참여기회 : <span>10</span></div>
+		<div class="rulGift">결과내역 : <span> </span></div> 		
+		<div class="text-center m-t-50">
+			<a href="javascript:;" onclick="random()" class="btnSw ">랜덤</a>
+			<a href="javascript:;" onclick="random('front')" class="btnSw ">앞면만</a>
+			<a href="javascript:;" onclick="random('back')" class="btnSw ">뒷면만</a>
+		</div>		
+	</div>
+	
+	
+	
+	
+	<style>
+	.inBox {text-align: center;  margin: 0 auto; position: relative; background:#fff; font-size:30px; height: 700px; padding-top: 20px;}
+	.btnSw { font-weight: 400; vertical-align: middle; font-size:1rem;  border-radius:0.25rem; padding:5px 10px ;display: inline-block; color:#fff; background-color: #117b9e;  border: 1px solid #3ddcf7; border-bottom:2px solid #08aac6 !important}
+	.btnSw:hover { color:#999 !important;}
+	.btnSw:active { color:#fff;}
+	.btnSw:link { color:#fff;}
+	
+	.rulCount {padding:20px 0; color:#000 }
+	.rulCount span {font-weight:bold ;color:#0087ff; display: inline-block; min-width:30px;}
+	.rulGift {color:#000}
+	.rulGift span {font-weight:bold ;color:#dd1120; display: inline-block; min-width:30px;}
+	.rulGift span em {margin-right: 10px;}
+	
+	#coinWrap {
+		height: 400px;
+		position: relative;
+		perspective: 800px;
+	}
+
+	.coin-flip{
+		width: 150px;
+		height: 150px;
+		left: 0;
+		right:0;
+		bottom:0;
+		margin: auto;
+		transform-style: preserve-3d;
+		position: absolute;
+		
+	}
+	.coin-flip img{
+		width: 150px;
+	}
+	
+	.coin-heads, .coin-tails {
+		backface-visibility: hidden;
+		position: absolute;
+		top: 0;
+		left: 0;
+		
+	}
+	
+	/* 앞면 */
+	#coinWrap.onlyFront .coin-flip{
+		animation: fly .3s ease-in-out 2 alternate;
+	}
+	#coinWrap.onlyFront .coin-heads{
+		animation: flip-head .2s linear 3 alternate ;
+	}
+	
+	#coinWrap.onlyFront .coin-tails{
+		animation: flip-tail .2s linear 3 alternate;
+	}
+	
+	/* 뒷편 */	
+	#coinWrap.onlyBack .coin-flip{
+		animation: fly .3s ease-in-out 2 alternate;
+	}
+	#coinWrap.onlyBack .coin-heads{
+		animation: flip-head-back .2s linear 3 alternate ;
+	}
+	
+	#coinWrap.onlyBack .coin-tails{
+		animation: flip-tail-back .2s linear 3 alternate;
+		z-index: 10;
+	}
+		
+	@keyframes fly {
+		0% { bottom: 0%; }
+		100% { bottom:62%; }
+	}
+	
+	@keyframes flip-head {
+		0%, 100% { transform: rotateX(0deg); }
+		50% { transform: rotateX(180deg); }
+	}
+	
+	@keyframes flip-tail {
+		0%, 100% { transform: rotateX(180deg); }
+		50% { transform: rotateX(0deg); }
+	}
+	
+	
+	@keyframes flip-head-back {
+		0%, 100% { transform: rotateX(180deg); }
+		50% { transform: rotateX(0deg); }
+	}
+	
+	@keyframes flip-tail-back {
+		0%, 100% { transform: rotateX(0deg); z-index: 10; }
+		50% { transform: rotateX(180deg); }
+	}
+	
+	
+	
+</style>	
+
+
+
+<script>
+
+//동전 실행여부
+var coinCheck = true;
+
+//동전 이용권 임시로 3
+var count = 10;
+
+var result;
+
+function random(value){
+	
+	if(count == 0){
+		alert('동전이용권을 모두 소진하였습니다.');
+		return false;
+	}
+	
+	if(!coinCheck){
+		return false;
+	}
+	
+	coinCheck = false;
+	
+	var flipResult = Math.random();
+	$('#coinWrap').removeClass();
+	
+	setTimeout(function(){
+		if(value == 'front'){
+			$('#coinWrap').addClass('onlyFront');
+			result = '앞';
+		}else if (value == 'back'){
+			$('#coinWrap').addClass('onlyBack');
+			result = '뒤';
+		}else{
+			if(flipResult <= 0.5){
+				$('#coinWrap').addClass('onlyBack');
+				result = '뒤';
+			}
+			else{
+				$('#coinWrap').addClass('onlyFront');
+				result = '앞';
+			}
+		}
+		count--;
+		$('.rulCount span').text(count);
+	}, 50);
+	
+	
+	setTimeout(function(){
+		$('.rulGift span').append('<em>'+result+'</em>');
+		coinCheck = true;		
+	}, 750);
+}
+
+</script>
+
+
+
+
+
+
+</body>
+</html>
+
+
+

@@ -1,0 +1,199 @@
+@charset "utf-8";
+
+/* Font */
+@font-face { font-family: 'Noto Sans KR'; font-style: normal; font-weight: 400; src:local(※), url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff2) format("woff2"), url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff) format("woff"), url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.otf) format("opentype"); }
+
+/* Reset */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,form,fieldset,p,button{margin:0;padding:0}
+body,h1,h2,h3,h4,input,button,select,textarea{font-family:'Noto Sans KR',"맑은 고딕","Malgun Gothic",Sans-serif; color:#2c3e50; font-size:15px;}
+body{text-align:left; word-break:break-word;}
+img,fieldset,iframe{border:0 none}
+li{list-style:none}
+input,select,button{vertical-align:middle}
+img{vertical-align:top; max-width:100%;}
+i,em,address{font-style:normal}
+label,button{cursor:pointer}
+a{color:#000;text-decoration:none}
+a:hover{text-decoration:none}
+hr{display:none}
+table{border-collapse:collapse;border-spacing:0}
+caption{font-size:0; line-height:0; height:0}
+* {box-sizing:border-box;}
+
+/* Placeholder */
+::-webkit-input-placeholder { color: #999; font-weight: normal; }
+:-moz-placeholder { color: #999; opacity: 1; font-weight: normal; }
+::-moz-placeholder { color: #999; opacity: 1; font-weight: normal; }
+:-ms-input-placeholder { color: #999; font-weight: normal; }
+
+/* Skip */
+#skipnavigation{z-index:9999;position:absolute;left:0;top:0;width:100%;text-align:center}
+#skipnavigation *{list-style:none;margin:0;padding:0;}
+#skipnavigation a{display:block;width:100%;height:0;overflow:hidden;white-space:nowrap;}
+#skipnavigation a:focus,
+#skipnavigation a:active{display:block;width:100%;height:36px;color:#fff;background:#000;line-height:36px;text-decoration:underline !important;font-size:14px;}
+
+
+/* Easy */
+.clear:after {content:''; display:block; celar:both;}
+.hidden { position: absolute; left: -9999px; height: 0; text-indent: -9999px; visibility: hidden; overflow: hidden;}
+
+
+#header {padding:10px 30px; border-bottom:1px solid #ddd; ; position: fixed; left:0; top:0; width: 100%; background: #fff; z-index: 999;}
+#logo {
+    display: inline-block;
+    font-size: 1.5em;
+    line-height: 40px;
+    color: #2c3e50;
+    font-family: "Dosis", "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
+    font-weight: 500;
+}
+#logo img {
+    vertical-align: middle;
+    margin-right: 6px;
+    width: 40px;
+    height: 40px;
+}
+
+.container {  padding: 100px 0 0 300px; overflow:hidden; position: relative;}
+.container:after {content:''; display:block; clear:both;}
+.container iframe {width: 100%; padding-right: 550px;}
+.container .explain {position: absolute; right:0; top:100px; width:450px; margin-right: 20px;  padding:15px; border:2px dashed #999; border-radius:10px; }
+.h1Wrap {padding:20px 0 60px 0; text-align: center;}
+.h1Wrap h1 {font-size: 40px;}
+
+nav {position: fixed; left:0; top:63px; bottom:0; border-right:1px solid #ddd; height: 100%; width: 300px; padding:20px 20px 50px 20px;background: #fff; z-index: 10; overflow:auto;}
+nav > ul > li {padding-bottom: 35px;}
+nav > ul > li a{font-size: 17px;}
+nav > ul > li.active > a{color:#42b983; font-weight:bold;}
+nav .subGnb {padding:20px 0 0 20px;}
+nav .subGnb li {margin-bottom: 10px;}
+nav .subGnb li a {font-size:15px;}
+nav .subGnb li.active > a{color:#000; font-weight:bold;}
+
+.none {text-align: center; font-size: 30px; color:red;}
+
+.h2Wrap {padding-bottom: 15px; margin-bottom: 30px;color:#2c3e50; }
+.h2Wrap h2 {font-size: 27px;}
+
+.cont {margin-bottom:100px;}
+
+.CodeMirror {height: auto !important; border:1px solid #ddd;}
+
+.textInfo li {margin-bottom: 15px; font-size: 17px; position: relative; padding-left: 20px; word-break:break-all;}
+.textInfo li:before {content:'◆'; position: absolute; left:0; top:5px; font-size: 10px;}
+.textInfo li.red {color:red;}
+
+.btnTop {position: fixed; right:50px; bottom:0; z-index: 100;}
+.btnTop a {position: relative; bottom:0; color:#fff; background:#42b983; text-align: center; display: block; width: 50px; height: 50px; line-height: 50px; transition:all .5s; opacity:0;}
+.btnTop a.active {bottom:50px; opacity:1;}
+    
+[v-cloak] {display: none;}
+
+@media all and (max-width:1900px) {
+    #header {position: static;}
+    .h1Wrap h1 {font-size: 20px;}
+    .h2Wrap  {margin-bottom: 20px;}
+    .h2Wrap h2 {font-size: 17px;}
+    nav {position: static; width: 100%;}
+    nav ul:after {content:''; display:block;}
+    nav li {float:left; margin-right: 20px;}
+    .container {width: 100%; padding:20px 10px;}
+    .btnTop {right:10px;}
+    .btnTop a.active {bottom:10px;}
+    
+    .container .explain {position: static; width: 100%; margin-bottom: 50px;}
+     .container iframe {padding-right: 0;}
+}
+
+@media all and (max-width:1600px) {
+   
+}
+
+
+
+/* 1. 일정관리 */
+#app { text-align: left;}
+#app ul  {border:1px solid #42b983; border-radius:5px; overflow:hidden;}
+#app ul li {border-bottom:1px solid #42b983; position: relative; margin-bottom:-1px; padding:10px 0;}
+#app ul li:first-child {border-top:none;}
+#app ul li:after {content:''; display:block; clear:both;}
+#app ul li .num {float:left; width: 60px; text-align: center; font-size:15px; padding-top: 5px;}
+#app ul li .text {padding:0 50px 0 50px; font-size: 20px; font-weight:bold; font-size: 20px;}
+#app ul li .del {position: absolute; right:10px; top:10px; background: #42b983; color:#fff; border:1px solid #42b983; width: 40px; height: 30px; line-height: 30px;}
+#scUpdate {text-align: center; padding-bottom: 50px; position: relative;}
+#scUpdate input {height: 50px; width:100%; margin:0; vertical-align: top; font-size: 20px; padding-left: 20px; border:1px solid #42b983; border-radius:5px;}
+#scUpdate button {height: 50px; vertical-align: top; width: 100px; position: absolute; right:0; top:0; background: #42b983; color:#fff; border:1px solid #42b983; font-size: 20px;}
+
+/* 2. 위로가기 */
+.btnTopContent {text-align: center; position: relative; z-index: 10;}
+.btnTopContent .box {position: absolute;width: 100%; z-index: 5;}
+.btnTopContent a {display:block; position: relative; bottom:0; color:#fff;font-size:40px; background:#42b983; text-align: center; width:100%; max-width:1000px;  height:100px; line-height: 100px; /*transition:all 1s;*/}
+.btnTopContent a.active {background:#609dd3;position: fixed;}
+.scrollHeight {height:300px; text-align: center; padding-top:150px; font-size: 30px;}
+.scrollHeight span {margin-left: 20px;}
+.scrollHeight em {font-weight: 700; color:red;}
+
+/* 트랜지션 */
+.transitionWrap  {margin-bottom: 60px;}
+.transitionWrap .button {margin-bottom: 10px;}
+.transitionWrap .big {font-size: 20px; padding:10px 20px;}
+.transitionWrap .textTran { border:1px solid #666; padding:20px; font-size: 20px;  transition:1s all; background:#333; color:#fff; font-weight: bold;}
+
+/* === 보여질 때 순간 들어가짐  ===*/
+.transitionWrap .tran01-fade-enter {
+    opacity:0;
+}
+
+.transitionWrap .tran01-fade-enter-to {
+    background:skyblue;
+    transition:1s all;
+}
+/* 숨겨질때 즉시 넣었다가 제거 */
+.transitionWrap .tran01-fade-leave-active {
+    opacity: 0;
+    background:yellow;
+    color:#333;
+}
+        
+.tran02-item {
+    transition: all .5s;
+}
+.tran02-enter, .tran02-leave-to {
+    opacity: 0;
+    transform: translateX(-100px);
+    transform-origin:center center;
+}
+
+.tran02-leave-active {
+    position: absolute;
+}
+
+#transition02 { text-align: left;}
+#transition02 ul  {border:1px solid #42b983; border-radius:5px; overflow:hidden; position: relative;}
+#transition02 ul li {border-bottom:1px solid #42b983;width: 100%;  margin-bottom:-1px; padding:10px 0;}
+#transition02 ul li:first-child {border-top:none;}
+#transition02 ul li:after {content:''; display:block; clear:both;}
+#transition02 ul li .num {float:left; width: 60px; text-align: center; font-size:15px; padding-top: 5px;}
+#transition02 ul li .text {float:left; padding:0 0 0 20px; font-size: 20px; font-weight:bold; font-size: 20px;}
+#transition02 ul li .del {float:right; margin:0 10px 0 0; background: #42b983; color:#fff; border:1px solid #42b983; width: 40px; height: 30px; line-height: 30px;}
+
+.jqueryMotion {position:relative; display: inline-block;  border:1px solid red; font-size: 20px; height: 50px; line-height: 50px; width:200px; text-align: center;}
+
+@media all and (max-width:960px) {
+   nav {display: none;}
+   .explain {display: none;}
+   .container iframe {border:1px solid #333; border-radius:5px; box-shadow:0 0 3px 3px rgba(0,0,0,.1)}
+}
+
+
+.desButton {text-align: center; margin-top: 20px;}
+.desButton a {display:inline-block; padding:5px 20px; color:#fff; background:#999; border-radius:3px;}
+
+.btnMenu {position: absolute; right:10px; top:16px;}
+.btnMenu a {display: block; width: 30px;padding:6px 4px;background:#333; border-radius:3px;}
+.btnMenu a span {display: block; height: 2px; background: #fff; margin-bottom:6px;}
+.btnMenu a span:last-child {margin-bottom: 0;}
+
+
+

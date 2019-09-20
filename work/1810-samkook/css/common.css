@@ -1,0 +1,413 @@
+@charset "utf-8";
+/* @import url(font.css); */
+@import url(content.css);
+
+/* Reset */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,form,fieldset,p,button{margin:0;padding:0}
+body,h1,h2,h3,h4,input,button,select,textarea{font-family:'Noto Sans KR',"맑은 고딕","Malgun Gothic",Sans-serif;font-size:12px;color:#000}
+body{text-align:left; word-break:break-word;}
+img,fieldset,iframe{border:0 none}
+li{list-style:none}
+input,select,button{vertical-align:top}
+img{vertical-align:top; max-width:100%;}
+i,em,address{font-style:normal}
+label,button{cursor:pointer}
+a{color:#000;text-decoration:none}
+a:hover{text-decoration:none}
+hr{display:none}
+table{border-collapse:collapse;border-spacing:0}
+caption{font-size:0; line-height:0; height:0}
+* {box-sizing:border-box;}
+
+/* Placeholder */
+::-webkit-input-placeholder { color: #fff; font-weight: normal; font-size: 24px; }
+:-moz-placeholder { color: #fff; opacity: 1; font-weight: normal; font-size: 24px; }
+::-moz-placeholder { color: #fff; opacity: 1; font-weight: normal; font-size: 24px; }
+:-ms-input-placeholder { color: #fff; font-weight: normal; font-size: 24px; }
+
+/* Skip */
+#skipnavigation{z-index:9999;position:absolute;left:0;top:0;width:100%;text-align:center}
+#skipnavigation *{list-style:none;margin:0;padding:0;}
+#skipnavigation a{display:block;width:100%;height:0;overflow:hidden;white-space:nowrap;}
+#skipnavigation a:focus,
+#skipnavigation a:active{display:block;width:100%;height:36px;color:#fff;background:#000;line-height:36px;text-decoration:underline !important;font-size:14px;}
+
+/* Form */
+.hideForm { position: absolute; overflow: hidden; clip: rect(0 0 0 0); height: 1px; width: 1px; margin: -1px; padding: 0; border: 0; }
+
+/* Easy */
+.clear:after {content:''; display:block; clear:both;}
+.hidden { position: absolute; left: -9999px; height: 0; text-indent: -9999px; visibility: hidden; overflow: hidden;}
+
+
+body,html {height: 100%;}
+body {height: 100%; overflow-x:hidden; min-height:955px; min-width:1600px; width: 100%;}
+
+
+#viewport{overflow:hidden; position: relative; z-index:10;}
+#viewport,.container,.sectionWrap {height: 100%;}
+
+
+#section01 {background:url('../images/mainBg.jpg') center center no-repeat; background-size:cover;}
+#section02 {background:url('../images/reservBg.jpg') center center no-repeat; background-size:cover;}
+#section03 {background:url('../images/introBg.jpg') center center no-repeat; background-size:cover;}
+#section04 {background:url('../images/event1Bg.jpg') center center no-repeat; background-size:cover;}
+#section05 {background:url('../images/event2Bg.jpg') center center no-repeat; background-size:cover;}
+
+
+
+.head {position:fixed; left:0; top:0; width:302px; height: 100%; z-index: 100; background:url('../images/bgGnb.jpg') no-repeat; background-size:cover; }
+.head .btnCafe {position: absolute; left:324px; top:22px; }
+.head .btnCafe a {display: block;width: 71px; height: 71px; background:url('../images/btnCafe.png') no-repeat; text-indent:-999em; transition:.3s all;}
+.head .btnCafe a:hover {background:url('../images/btnCafeOn.png') no-repeat;}
+
+.navList {}
+.navList ul li {border-bottom: 1px solid #a7321e;}
+.navList ul li:last-child {border-bottom:none;}
+.navList ul li.btn a {display: block; height:190px; position: relative;  width:302px;  background-size:cover;position:relative; left:-320px; opacity:0; transition:1s all; min-height:160px}
+.navList ul li.btn a:hover{background:url('../images/gnbOn.png') no-repeat; width: 325px; background-size:cover; }
+.navList ul li.btn.active a{background:url('../images/gnbOn.png') no-repeat; width: 325px; background-size:cover; }
+.navList ul li.btn a span{display: block; position: absolute; left:0; top:50%; width: 100%; left:38px; margin-top:-52px; height: 103px; text-indent:-999em; }
+
+.navList ul li.no2 a {transition-delay:200ms}
+.navList ul li.no3 a {transition-delay:400ms}
+.navList ul li.no4 a {transition-delay:600ms}
+.navList ul li.no5 a {transition-delay:800ms}
+
+.navList ul li.no2 a span{background:url('../images/gnb02.png') no-repeat;}
+.navList ul li.no3 a span{background:url('../images/gnb02_1.png') no-repeat;}
+.navList ul li.no4 a span{background:url('../images/gnb03_1.png') no-repeat;}
+.navList ul li.no5 a span{background:url('../images/gnb04.png') no-repeat;}
+
+.navList ul li.btn a:hover span{background-position:0 -130px;}
+.navList ul li.active a span{background-position:0 -130px;}
+
+.bookMain {position: absolute; left:-900px; top:50%; margin-top:-540px; width: 1276px; height: 1080px; background:url('../images/mainBook.png') no-repeat; z-index: 9;  transition:1s all;}
+.bookMain .in{position: absolute; right:76px; top:71px; width:600px; height: 930px; overflow:hidden;}
+.bookMain .in .tit {position: absolute; left:123px; top:331px; transform:scale(6); opacity:0; transform-origin:center center; transition:.3s all; transition-delay:1300ms;  }
+.bookMain .in .swordBox {position: absolute; right:-50px; bottom:-940px;  transition:.5s all; width:501px; height:934px; overflow:hidden; transition-delay:1000ms}
+.bookMain .in .swordBox .img { position:absolute; left:0; top:0; width: 3507px; height: 2801px; max-width:10000%;}
+
+.boochaeBox {position: absolute; left:0; bottom:0; z-index: 10; transform:rotate(-80deg);transform-origin:100% 100%; transition:1.3s all;}
+
+.bookPlay {position: absolute; left:643px;  z-index: 8; top:170%; height: 1080px; margin-top:-540px; transform:rotate(20deg);transform-origin:100% 100%; transition:1s all;}
+.bookPlay a{position: absolute; right:45px; top:375px; width: 170px; height: 170px; background:url('../images/blank.png') repeat; text-indent:-999em;}
+
+.choBox {position: absolute; right:-0; top:-300px; z-index: 5; transform:rotate(-20deg); transform-origin:0 0%; transition:1s all; transition-delay:200ms}
+.choBox span{position: absolute; right:240px; top:32px; transition:1s all;   animation-duration:1s; animation-name: fire; animation-iteration-count: infinite; animation-direction: alternate;}
+@keyframes fire {
+  from {opacity: .5; transform:scale(.8) skew(5deg);}
+  to {opacity: 1; transform:scale(1) skew(0deg);}
+}
+
+
+.lastBook {position: absolute; right:0; bottom:0;  width: 225px; z-index: 0;}
+.lastBook .but {position: absolute; left:55px; bottom:-534px; z-index: 5; transform:rotate(10deg); transform-origin:0 0%; transition:1s all;}
+.lastBook .book {position: absolute; right:100px; bottom:-700px; z-index: 1; transform:rotate(-10deg); transform-origin:0 0%; transition:1s all; width: 847px; height: 659px;}
+.lastBook .book .btnDownWrap {position: absolute; right:130px; top:185px;}
+.lastBook .book .btnDownWrap a { width: 315px; height: 94px; display: block; margin-top: 30px; background:url('../images/blank.png') repeat; text-indent:-999em;}
+.lastBook .book .btnDownWrap a:first-child {margin-top: 0;}
+
+body.active .bookMain {left:0;}
+body.active .bookMain .in .tit { transform:scale(1); opacity:1;}
+body.active .bookMain .in .swordBox { bottom:-0px;}
+body.active .boochaeBox {transform:rotate(0deg); }
+body.active .bookPlay {top:50%; transform:rotate(0deg);}
+body.active .choBox {transform:rotate(0deg); top:0;}
+body.active .lastBook .but {bottom:-170px; transform:rotate(0deg)}
+body.active .lastBook .book {bottom:0; transform:rotate(0deg); right: 47px;}
+
+
+body.load .navList ul li.btn a {left:0; opacity:1;}
+body.load.endMotion .navList ul li.btn a { transition:none;}
+
+body.step2 #introWrap .cha {left:0;}
+
+
+/*body.step3 .movieWrap .movieArea {left: 325px; top: 70px;}*/
+body.step3 .movieWrap .map {transform:rotate(0deg); bottom: 20px;}
+body.step3 .movieWrap .cha {right: 0;}
+
+.mainScroll {position: relative; height: 100%; width: 100%; text-align: center;}
+.mainScroll .section {position:absolute;  top:0%; height: 100%; width: 100%;  overflow:hidden;}
+.mainScroll #section01 {left:0%; }
+.mainScroll #section02 {left:100%; }
+.mainScroll #section03 {left:200%; }
+.mainScroll #section04 {left:300%; }
+.mainScroll #section05 {left:400%; }
+
+
+.copy {position: absolute; left:0; bottom: 17px; width: 100%; text-align: center;}
+
+.reservWrap .sword {position: absolute; left:-450px; bottom:-160px; transition:.5s all; transform:rotate(-10deg)}
+.reservWrap .baseForm {position: absolute; left:513px; margin-top:-400px; text-align: left; top:55%; opacity:0; transition:.5s all;}
+.reservWrap .baseForm .inner {width:540px; margin-left: 44px; }
+.reservWrap .baseForm .reservTit01 {margin-bottom: 65px;}
+.reservWrap .baseForm .deviceWrap {margin-bottom:19px;}
+.reservWrap .baseForm .deviceWrap input {position: absolute; visibility:hidden;}
+.reservWrap .baseForm .deviceWrap label {position: relative; padding-left: 38px; vertical-align: middle;}
+.reservWrap .baseForm .deviceWrap label:after {content:''; position: absolute; left:0; top:2px; width:20px; height: 20px; background:url('../images/bgCheck.png') no-repeat;}
+.reservWrap .baseForm .deviceWrap input:checked + label:after {background:url('../images/bgCheckOn.png') no-repeat;}
+.reservWrap .baseForm .deviceWrap label:last-child {margin-left: 47px;}
+.reservWrap .baseForm .phonWrap {border-top:2px solid #fff; border-bottom:2px solid #fff;; margin-bottom: 24px;}
+.reservWrap .baseForm .phonWrap input {text-align: center; font-size: 24px; color:#fff; height: 70px; border:none; background:none; width: 100%; }
+.reservWrap .baseForm .agreeWrap {margin-bottom: 25px;}
+.reservWrap .baseForm .agreeWrap input {position: absolute; visibility:hidden;}
+.reservWrap .baseForm .agreeWrap label {position: relative; padding-left: 50px;}
+.reservWrap .baseForm .agreeWrap label:after {content:''; position: absolute; left:0; top:0; width:20px; height: 20px; background:url('../images/bgCheck.png') no-repeat;}
+.reservWrap .baseForm .agreeWrap input:checked + label:after {background:url('../images/bgCheckOn.png') no-repeat;}
+.reservWrap .baseForm .agreeWrap a {margin-left: 40px;}
+.reservWrap .baseForm .agreeWrap .agreeText {padding-top: 24px;}
+.reservWrap .baseForm .btnReserv {margin-bottom: 70px;}
+.reservWrap .baseForm .titOne {margin-bottom: 12px; text-align: center;}
+.reservWrap .baseForm .btnOne {margin-bottom: 40px;}
+.reservWrap .lastInfo {text-align: left;}
+.reservWrap .eventProduct {position: absolute; right:-800px; top:0; transition:1s all; }
+.reservWrap .eventProduct .but {position: absolute; right:3px; top:0; z-index: 1;}
+
+#introWrap .bookFirst {position: absolute; left:0; top:0px;}
+#introWrap .cha {position: absolute; left:-1106px; top:0; z-index: 10; transition:1s left;}
+#introWrap .sword {position: absolute; right:-300px; bottom:-300px; z-index: 10;}
+
+
+.introArea {position: absolute; left:885px; top:50%;; top:120px;  width: 1089px; background:url('../images/bgIntro.png') no-repeat; height: 869px;}
+.introArea.no2 {background-position:0 -900px;}
+
+.introArea .gameTab {position: absolute; left:0; top:37px; width: 100%; z-index: 12; }
+.introArea .gameTab ul {padding:0 40px 0 20px}
+.introArea .gameTab ul:after {content:''; display:block; clear:both;}
+.introArea .gameTab ul li {float:left; width: 50%;}
+.introArea .gameTab ul li a {height: 70px; background:url('../images/blank.png') repeat; text-indent:-999em; display: block;}
+
+.introArea .gameIntro {padding-top: 165px;  width: 850px; margin-left:100px;}
+.introArea .gameIntro .tit {margin-bottom:30px; text-align: left;}
+.introArea .gameIntro ul:after {content:''; display:block; clear:both;}
+.introArea .gameIntro ul li {position: relative; float:left; margin-left: 20px; cursor:pointer;}
+.introArea .gameIntro ul li:first-child {margin-left: 0;}
+.introArea .gameIntro ul li a {display: block; position: relative; transition:.8s all; transform:scale(0); transform-origin:right center;}
+.introArea .gameIntro ul li a:after {content:''; position: absolute; left:-14px; top:-5px; width: 260px; height:494px; background:url('../images/gameListBg.png') no-repeat;}
+.introArea .gameIntro ul li:before {content:''; position: absolute; right:5px; top:5px; width:181px; height: 412px; border:3px solid #a20c02; z-index: 10;  transition:.8s all; transform:scale(0); transform-origin:right center;}
+
+.introArea .gameIntro ul li.no2 a {transition-delay:200ms;}
+.introArea .gameIntro ul li.no3 a {transition-delay:300ms;}
+.introArea .gameIntro ul li.no4 a {transition-delay:400ms;}
+
+.introArea .gameIntro ul li.no2:before {transition-delay:350ms;}
+.introArea .gameIntro ul li.no3:before {transition-delay:450ms;}
+.introArea .gameIntro ul li.no4:before {transition-delay:550ms;}
+
+
+.step2 .introArea .gameIntro ul li:before {transform:scale(1);}
+.step2 .introArea .gameIntro ul li a {transform:scale(1);}
+
+
+
+.tabSection {position: relative;z-index:11;}
+.tabSection > div:last-child {opacity:0; visibility:hidden; position: absolute;}
+
+.chaSlide{width:898px;  padding-top: 165px; margin-left: 103px;}
+.chaSlide .tit {margin-bottom:30px; text-align: left;}
+.chaSlide .slider-for {margin-bottom:26px;}
+.chaSlide .slick-arrow {position: absolute;  bottom:-80px;width: 25px; height: 41px; text-indent:-999em; border:none; outline:none; display: none !important;}
+.chaSlide .slick-arrow.slick-prev {left:0; right:auto;  background:url('../images/slideLeft.png') no-repeat;}
+.chaSlide .slick-arrow.slick-next {right:60px;  left:auto; background:url('../images/slideRight.png') no-repeat;}
+.chaSlide .slider-nav {width: 750px; margin-left:54px; }
+.chaSlide .slider-nav .slick-slide { margin-left: 6px;  outline:none; }
+.chaSlide .slider-nav .item {width:69px; height: 69px; background:url('../images/chaThumbAll.png') no-repeat; cursor:pointer;}
+.chaSlide .slider-nav .item.no2 {background-position:-76px 0;}
+.chaSlide .slider-nav .item.no3 {background-position:-151px 0;}
+.chaSlide .slider-nav .item.no4 {background-position:-227px 0;}
+.chaSlide .slider-nav .item.no5 {background-position:-303px 0;}
+.chaSlide .slider-nav .item.no6 {background-position:-378px 0;}
+.chaSlide .slider-nav .item.no7 {background-position:-454px 0;}
+.chaSlide .slider-nav .item.no8 {background-position:-530px 0;}
+.chaSlide .slider-nav .item.no9 {background-position:-605px 0;}
+.chaSlide .slider-nav .item.no10 {background-position:-681px 0;}
+.chaSlide .slider-nav .slick-current.item {background-position-y:-77px;}
+.chaSlide .slider-nav * { outline:none;}
+
+
+.popSlide {position: fixed; left:0; top:0; width: 100%; height: 100%; z-index: 0; opacity:0; visibility:hidden;}
+.popSlide .bg { position: fixed; left:0; top:0; width: 100%; height: 100%; z-index: 1; background:rgba(0,0,0,.53);}
+.popSlide .popIn {position:absolute; left:50%; top:50%;  width: 1034px; height: 769px; margin:-385px 0 0 -517px; background:url('../images/popSlideBg.png') no-repeat;   text-align: center;z-index: 3; }
+.popSlide .popIn .closeBtn {position: absolute; right:90px; top:80px;}
+.popSlide .popIn .closeBtn a {display: block; width:43px; height: 41px; background:url('../images/btnClose.png') no-repeat; text-indent:-999em;  }
+.popSlide .popIn .tabSlideWrap {width: 683px; margin:0 auto; padding-top: 130px;}
+.popSlide .popIn .tabSlideWrap .sliderPop {margin-bottom: 45px;}
+.popSlide .popIn .tabSlideWrap .slider-navPop .slick-track {width: 100% !important; transform:none !important}
+.popSlide .popIn .tabSlideWrap .slider-navPop .slick-slide {margin-left:14px; width: 160px !important; height:90px; ; background:url('../images/mkThumb.png') no-repeat; outline:none; cursor:pointer;}
+.popSlide .popIn .tabSlideWrap .slider-navPop .slick-slide:first-child {margin-left: 0;}
+.popSlide .popIn .tabSlideWrap .slider-navPop .slick-slide.no2 {background-position-x:-174px;}
+.popSlide .popIn .tabSlideWrap .slider-navPop .slick-slide.no3 {background-position-x:-348px;}
+.popSlide .popIn .tabSlideWrap .slider-navPop .slick-slide.no4 {background-position-x:-522px;}
+.popSlide .popIn .tabSlideWrap .slider-navPop .slick-slide.slick-current  {background-position-y:-110px;}
+.popSlide .popIn .tabSlideWrap .box:first-child {opacity:1; visibility:visible; position: relative;}
+.popSlide .popIn .tabSlideWrap .box {position: absolute; width:683px; height: 100%;}
+
+
+.popSlide .slick-arrow {position: absolute; top:0; width: 25px; height: 41px; top:50%; margin-top:-20px; cursor:pointer; border:none; text-indent:-999em;}
+.popSlide .slick-arrow.slick-prev {left:-80px; background:url('../images/slideLeft.png') no-repeat;}
+.popSlide .slick-arrow.slick-next {right:-75px; background:url('../images/slideRight.png') no-repeat;} 
+
+.popSlide .popIn .arrowSlide {position: absolute; left:0; width: 100%; top:310px;}
+.popSlide .popIn .arrowSlide > div {position: absolute; top:0; width: 25px; height: 41px; cursor:pointer;}
+.popSlide .popIn .arrowSlide > div.left {left:100px; background:url('../images/slideLeft.png') no-repeat;}
+.popSlide .popIn .arrowSlide > div.right {right:110px; background:url('../images/slideRight.png') no-repeat;}
+
+.movieWrap {text-align: left;}
+.movieWrap .bookProduct {position: absolute; left:-518px; top:0;  transition:.8s all;}
+.movieWrap .cha {position: absolute; right: -800px; top: 0; transition: 1s all; z-index: 1;}
+.movieWrap .map {position: absolute; right:0; bottom:-220px; transition:.8s all; transform:rotate(20deg);}
+
+.movieArea {position: absolute; /*left: 225px; top:10%;*/ left: 325px; top: 70px;  width: 974px; background:url('../images/bgMovie.png') no-repeat; height: 829px; /*transition: 1s all;*/}
+.movieArea.no2 {background-position:0 -829px;}
+.movieArea.no3 {background-position:0 -1658px;}
+
+.movieArea .movieTab {position: absolute; left:0; top:50px; width: 100%; z-index: 12; }
+.movieArea .movieTab ul {padding:0 40px 0 50px}
+.movieArea .movieTab ul:after {content:''; display:block; clear:both;}
+.movieArea .movieTab ul li {float:left; width: 33.3%;}
+.movieArea .movieTab ul li a {height: 70px; background:url('../images/blank.png') repeat; text-indent:-999em; display: block;}
+
+.movieArea .tit {text-align: center; margin-left: -55px;}
+.movieArea .tit .name {width: 150px; height: 65px; display: inline-block; background: url('../images/movieTab.png')}
+.movieArea.no2 .tit .name {background-position: -150px 0;}
+.movieArea.no3 .tit .name {background-position: -300px 0;}
+
+.movieArea .movieIntro {padding-top: 165px;  width: 850px; margin-left:100px;}
+.movieArea .movieIntro #totalMovie {width: 758px; height: 428px; margin-top: 30px; }
+.movieArea .movieIntro #totalMovie iframe {width:100%; height: 100%;}
+
+.movieTabSection {position: relative;z-index:11;}
+.movieTabSection > div:last-child {position: absolute;}
+
+.step3 .movieWrap .bookProduct {left:118px;}
+.step3 .movieWrap .tong {bottom:0px; transform:rotate(0deg);}
+ 
+ 
+.instarWrap { }
+.instarWrap .map {position: absolute; left:-653px; bottom:-250px; transition:.8s all; transform:rotate(20deg); }
+.instarWrap .muk {position: absolute; left:300px;top:-200px; transition:.8s all; transform:rotate(-20deg);}
+.instarWrap .event2Wrap {position: absolute; right:0; top:20px; width: 1235px; text-align: left; transition:.8s all;}
+.instarWrap .event2Wrap .tit {position: relative; transition:.8s all; opacity:0; top:100px; margin-bottom: 10px;}
+.instarWrap .event2Wrap .tit.no2 {transition-delay:200ms; padding-left: 83px; margin-bottom: 10px;}
+.instarWrap .event2Wrap .tit.no3 {transition-delay:400ms}
+.instarWrap .event2Wrap .tit .btnCafeGo {position: absolute; left:478px; bottom:0;}
+.instarWrap .event2Wrap .last {margin-top: 30px;}
+    
+.step5 .instarWrap .map {left:-353px; bottom:-120px; transform:rotate(0deg);} 
+.step5 .instarWrap .muk {top:0; transform:rotate(0deg);} 
+.step5 .instarWrap .tit {top:0; opacity:1;}
+       
+/* Slide */
+.slideBox {position: relative; text-align: center; font-size: 20px;}
+.slideBox li {height: 100px; line-height: 100px; font-size: 30px;  background:#d4eeaf;}
+.slideBox .bx-controls-direction a{position: absolute; top:15%;  background:#fff; z-index: 100; }
+.slideBox .bx-controls-direction a.bx-prev {left:10px; }
+.slideBox .bx-controls-direction a.bx-next {right:10px;}
+.slideBox .bx-controls-direction a.disabled {opacity:.3; cursor:default;}
+.slideBox .bx-controls-auto div {display: inline-block; margin:0 30px;}
+.slideBox .bx-pager  {padding:10px 0;}
+.slideBox .bx-pager > div {display: inline-block; margin:0 10px;}
+.slideBox .bx-pager > div a {display: inline-block; border-radius:100%; background: #fff; width: 30px; height: 30px; line-height: 30px;}
+.slideBox .bx-pager > div.active a {background:#666; color:#fff;}
+
+/* scroll */
+.scrollBox {position: relative; height: 500px; width: 500px; font-size:20px; }
+.scroller { position: absolute; padding:0; z-index: 1; -webkit-tap-highlight-color: rgba(0,0,0,0); width: 100%;}
+#scroll { position: absolute; z-index: 1; top: 0; bottom: 0; left: 0; width: 100%; overflow: hidden; }
+.iScrollVerticalScrollbar {width:8px !important; background:#999; right:6px !important;  top:0 !important;   bottom:0 !important;  border-radius:7px !important;  }
+.iScrollIndicator {background:#333 !important; border-radius:7px !important; border:none !important;}
+.navScroll {position: absolute; right:-250px; top:0; text-align: center;}
+
+/* Alert */
+#popupAlert {position: fixed; left:0; top:0; width: 100%; height: 100%; z-index: 500; display: none;}
+#popupAlert .bg { position: fixed; left:0; top:0; width: 100%; height: 100%; z-index: 1; background:rgba(0,0,0,.8);}
+#popupAlert .popIn {position:absolute; left:0; top:50%;    min-width:100px; width: 100%;  box-sizing:border-box;  z-index:2;  visibility:hidden; text-align: center; }
+#popupAlert .popIn .closePop {position: absolute; right:-30px; top:-30px;}
+#popupAlert .popIn .closePop a {display: block; width:66px; height: 66px;  line-height: 66px;background:#fff; border:1px solid #000;  }
+#popupAlert .popIn .cell {display: inline-block; background:#2ea0d6;  width:720px; position: relative;}
+#popupAlert .popIn .verCenter {display:table;   height: 250px; width: 100%; text-align: center; }
+#popupAlert .popIn .verCenter .alertText {display:table-cell;  font-size: 38px; vertical-align: middle; color:#ffffff;  padding:0 10px; }
+#popupAlert .popIn .btnWrap {padding-bottom: 20px;}
+#popupAlert .popIn .btnWrap a{display: inline-block; padding:10px 30px; border:1px solid #000; background:#fff; font-size: 20px;}
+.btnNone .btnWrap {display: none;}
+
+/* youtube Popup */
+.youtubePop {position: fixed; left:0; top:0; width: 100%; height: 100%; z-index: 0; display: none; z-index: 500;}
+.youtubePop .bg { position: fixed; left:0; top:0; width: 100%; height: 100%; z-index: 1; background:rgba(0,0,0,.53);}
+.youtubePop .popIn {position:absolute; left:50%; top:50%;  width: 1034px; height: 769px; margin:-385px 0 0 -517px; background:url('../images/popSlideBg.png') no-repeat;   text-align: center;z-index: 3; }
+.youtubePop .popIn .youtubeCont {padding-top: 170px; padding-right: 15px;}
+.youtubePop .popIn .youtubeCont iframe{width: 857px; height: 482px;}
+.youtubePop .popIn .closeBtn {position: absolute; right:90px; top:80px;}
+.youtubePop .popIn .closeBtn a {display: block; width:43px; height: 41px; background:url('../images/btnClose.png') no-repeat; text-indent:-999em;  }
+
+
+/* Alert */
+.contentPop {position: fixed; left:0; top:0; width: 100%; height: 100%; z-index: 500; display: none;}
+.contentPop .bg { position: fixed; left:0; top:0; width: 100%; height: 100%; z-index: 1; background:rgba(0,0,0,.53);}
+.contentPop .popIn {position:absolute; left:0; top:50%;    min-width:100px; width: 100%;  box-sizing:border-box;  z-index:2;  visibility:hidden; text-align: center; }
+.contentPop .popIn .closePop {position: absolute; right:44px; top:40px;}
+.contentPop .popIn .closePop a {display: block; width:43px; height: 41px; background:url('../images/btnClose.png') no-repeat; text-indent:-999em;  }
+.contentPop .popIn .content {display: inline-block; position: relative;}
+.contentPop .popIn .content .bgAlert {background:url('../images/bgPop.png') no-repeat; height: 339px; width: 720px; text-align: center; padding-top: 100px;}
+.contentPop .popIn .btnWrap {position: absolute; left:0; bottom:18px; width: 100%; text-align: center;}
+.contentPop .popIn .btnWrap a{display: inline-block; width: 450px; height: 65px; background:url('../images/btnConfirm.png') no-repeat; text-indent:-999em;}
+
+.contentPop .popIn .content .bgAlert.cont02 {padding-top:57px;}
+.contentPop .popIn .content .bgAlert.cont02 .form {padding-top:20px;}
+.contentPop .popIn .content .bgAlert.cont02 .form input {border:none; width: 608px; text-align: center;background:#a1998e; height: 65px; color:#fff; font-size: 37px; }
+
+
+@media all and (min-width:2300px) {
+    body.active .bookMain  {left:200px;}
+    body.active .bookPlay  {left:834px;}
+    body.active .lastBook  {right:200px;}
+    .reservWrap .baseForm {left:850px;}
+    .instarWrap .event2Wrap {right:500px;}
+    .quizWrap .map {right:-300px}
+	.instarWrap .event2Wrap {top:150px;}
+	.movieArea {left: 570px;}
+}
+/*
+@media all and (max-width:1900px) {
+  body.step2 .reservWrap .eventProduct {right:-300px;}
+}
+*/
+
+@media all and (max-width:1800px) {
+	body.active .bookMain {left: -140px;}
+	body.active .bookPlay {left: 500px;}
+    body.step2 #introWrap .cha {left: -100px; z-index: 0;}
+	body.step3 .movieWrap .cha {right: -260px;}
+   .introArea {left:618px;}
+}
+
+@media all and (max-width:1700px) {
+	body.active .lastBook .book {right: -75px;}
+	body.active .lastBook .but {left: auto; right: -80px;}
+}
+
+@media all and (max-width:1920px) {
+
+.instarWrap .event2Wrap {margin-left:-300px;}
+
+}
+
+@media all and (max-width:1600px) {
+    body {overflow-x:scroll;}
+    /* .head {height:calc(100% - 17px);} */
+
+}
+
+@media all and (max-height:970px) {
+    .navList ul li.btn a {height: 160px;}
+    .introArea {top:90px;}
+	
+}
+
+@media all and (max-height:750px){
+    .youtubePop,.contentPop {overflow-y:scroll}
+    .youtubePop .popIn,.contentPop .popIn {position: relative; top:0; padding:80px 0; margin:0 !important;}
+}
+

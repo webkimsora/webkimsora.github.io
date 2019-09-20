@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>메큐라이크 R&D 아톰툴 가이드</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+        });
+    </script>
+    <style>
+        a[target='_blank'] {
+            color: blue;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body class="sub">
+    <div class="contents">
+        <div class="cont_in plug">
+            <div class="cen_box">
+                <div class="bx_in">
+                    <div class="abu_lf">
+                        <div class="cmm_tit">atom설치</div>
+                        <ul class="cmm_txtlst">
+                            <li class="first last"><a href="https://atom.io/" target="_blank">https://atom.io/</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="bx_in">
+                    <div class="abu_lf">
+                        <div class="cmm_tit">Atom의 특징</div>
+                        <ul class="cmm_txtlst">
+                            <li class="first last">무료이다.<br />많은 사용자들을 보유하고 있는 Sublime Text, Edit Plus 등과는 반대로 무료로 지원한다는 점</li>
+                            <li class="first last">플러그인으로 기능을 확장할 수 있다.</li>
+                            <li class="first last">HTML / CSS /JavaScript와 같은 웹기술들로 구현되었다.</li>
+                            <li class="first last">Windows / MAC / Linux 모두 설치 가능하다.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="bx_in">
+                    <div class="abu_lf">
+                        <div class="cmm_tit">node.js 설치</div>
+                        <ul class="cmm_txtlst">
+                            <li class="first last">아톰에디터가 아니더래도 작업시 항상필요하니 필수적으로 설치 (<a href="https://nodejs.org/ko/" target="_blank">https://nodejs.org/ko/</a>)</li>
+                            <li class="first last">안정화 버전 선호</li>
+                            <li class="first last">경로는 항상 기본으로(설치시 지정되어있음)</li>
+                        </ul>
+                        <div>
+                            <img src="img1.png" alt="" />
+                        </div>
+                    </div>
+                </div>
+                <div class="bx_in">
+                    <div class="abu_lf">
+                        <div class="cmm_tit">Shortcut Key</div>
+                        <div class="cmmm_stit">Editor</div>
+                        <ul class="cmm_txtlst">
+                            <li class="first last">Ctrl + Shift + P: 커맨드 팔레트 열기</li>
+                            <li class="first last">Ctrl + ,: 설정 뷰</li>
+                            <li class="first last">Ctrl + .: 키 바인딩 보기 (단축키 작동 현황 보기)</li>
+                            <li class="first last">Ctrl + \: Treeview 열기/닫기</li>
+                            <li class="first last">Ctrl + Alt + I: 개발자 콘솔 열기</li>
+                        </ul>
+                        <div class="cmmm_stit">Tree View (활성화 상태일 때) </div>
+                        <ul class="cmm_txtlst">
+                            <li class="first last">A: 새로운 파일 생성</li>
+                            <li class="first last">Shift + A: 새로운 폴더 생성 </li>
+                            <li class="first last">M or F2: 파일(폴더) 경로 및 이름 변경</li>
+                            <li class="first last">Delete or Backspace: 파일(폴더) 삭제 </li>
+                            <li class="first last">D: 파일(폴더) 복사</li>
+                        </ul>
+                        <div class="cmmm_stit">Tab</div>
+                        <ul class="cmm_txtlst">
+                            <li class="first last">Ctrl + T: 파일 파인더 열기 (탭 전환) </li>
+                            <li class="first last">Ctrl + Tab: 다음 탭 전환 </li>
+                            <li class="first last">Ctrl + Shift + Tab: 이전 탭 전환 </li>
+                            <li class="first last">Crtl + Shift + T: 최근에 닫은 탭 다시 열기 </li>
+                        </ul>
+                        <div class="cmmm_stit">General Editing </div>
+                        <ul class="cmm_txtlst">
+                            <li class="first last">Ctrl + /: 주석 토글</li>
+                            <li class="first last">Ctrl + F: 찾기/바꾸기 </li>
+                            <li class="first last">Ctrl + Shift + F: 프로젝트 전체에서 찾기 </li>
+                            <li class="first last">Crtl + Shift + T: 최근에 닫은 탭 다시 열기 </li>
+                            <li class="first last">Ctrl + G: 라인 번호로 커서 이동</li>
+                            <li class="first last">Ctrl + R: 키워드로 이동 </li>
+                            <li class="first last">Ctrl + M: 블럭 매칭 </li>
+                            <li class="first last">Ctrl + J: 라인 조인</li>
+                            <li class="first last">Ctrl + L: 라인 선택</li>
+                            <li class="first last">Ctrl + Shift + K: 현재 라인 삭제</li>
+                            <li class="first last">Ctrl + Shift + D: 현재 라인 다음 라인으로 복사</li>
+                            <li class="first last">Ctrl + ↑, ↓: 현재 라인 이동</li>
+                            <li class="first last">Ctrl + Alt + ↑, ↓: 다중 커서 삽입</li>
+                            <li class="first last">Ctrl + Space: 코드 힌트 보기</li>
+                            <li class="first last">Shift + 방향키: 텍스트 선택</li>
+                        </ul>
+                        <div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bx_in">
+                    <div class="abu_lf">
+                        <div class="cmm_tit">setting</div>
+                        <ul class="cmm_txtlst">
+                            <li class="first last">단축키 'Ctrl + ,' -> editor</li>
+                            <li class="first last">'Tab Length' = 4</li>
+                            <li class="first last">탭사이즈 외에는 기본 셋팅값 사용권장</li>
+                        </ul>
+                        <div>
+                            <img src="img2.png" alt="" />
+                        </div>
+                    </div>
+                </div>
+                <div class="bx_in">
+                    <div class="abu_lf">
+                        <div class="cmm_tit">whitespace</div>
+                        <ul class="cmm_txtlst">
+                            <li class="first last">단축키 'Ctrl + ,' -> packages -> Core packages</li>
+                            <li class="first last">whitespace 패키지 자체를 비활성화</li>
+                            <li class="first last">파일 저장시 마지막라인의 공란 단어와 단어사이의 공란 등등<br />작업자가 의도하지 않게 저장되는 경우가 생기기 때문에 비활성화한다.</li>
+                        </ul>
+                        <div>
+                            <img src="img22.png" alt="" />
+                        </div>
+                    </div>
+                </div>
+                <div class="bx_in">
+                    <div class="abu_lf">
+                        <div class="cmm_tit">style.less</div>
+                        <ul class="cmm_txtlst">
+                            <li class="first last">아톰에디터는 사용자에 맞게 에디트자체 커스텀이 가능하다.</li>
+                            <li class="first last">File > stylesheet</li>
+                        </ul>
+                        <div>
+                            <img src="img12.png" alt="" />
+                            <img src="img11.png" alt="" />
+                        </div>
+                    </div>
+                </div>
+                <div class="bx_in">
+                    <div class="abu_lf">
+                        <div class="cmm_tit">Theme Setting </div>
+                        <ul class="cmm_txtlst">
+                            <li class="first last">Ctrl+, > Theme 메뉴에서 테마설정이 가능합니다.</li>
+                            <li class="first last">추가로 검색해보면 수 많은 테마가 있고 마음에 드는 테마를 설치하여 사용할 수 있습니다. </li>
+                        </ul>
+                        <div>
+                            <img src="img13.png" alt="" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bx_in">
+                    <div class="abu_lf">
+                        <div class="cmm_tit">패키지설치</div>
+                        <ul class="cmm_txtlst">
+                            <li class="first last">단축키 'Ctrl + ,' -> install
+                                <div class="ste_inf">
+                                    <div class="tit">Ftp-remote-edit</div>
+                                    <p class="stit">
+                                        - 초반 셋팅시 개인사용자 비밀번호를 설정하여야합니다.<br /> - 이후 ftp-remote-edit 활성화시 비밀번호를 치고 들어가야합니다.<br /> - 관련ftp/sftp 정보를 입력후 save 버튼을 눌러 사용합니다.
+                                    </p>
+                                    <div class="imgs">
+                                        <div class="img"><img src="img3.png" alt="" /></div>
+                                        <div class="img"><img src="img4.png" alt="" /></div>
+                                        <div class="img"><img src="img5.png" alt="" /></div>
+                                    </div>
+                                </div>
+                                <div class="ste_inf">
+                                    <div class="tit">Atom-beautify<small style="color: red; font-size: 15px; margin-left: 10px;">* PHP파일은 정렬불가능</small></div>
+                                    <p class="stit">
+                                        - 코드를 자동정렬 해주는 패키지<br /> - 언어별로 정렬을 지정할수있다. css는 정렬에서 제외<br />
+                                        - php같은 경우 정렬은 <b>auto-indent</b> 를 사용한다.(하단부에 auto-indent 설명)
+                                    </p>
+                                    <div class="imgs">
+                                        <div class="img"><img src="img6.png" alt="" /></div>
+                                        <div class="img"><img src="https://cdn-images-1.medium.com/max/1600/1*Wi2fNT5Lj4mOsmwBkqQR_g.jpeg" alt="" /></div>
+                                    </div>
+                                </div>
+                                <div class="ste_inf">
+                                    <div class="tit">auto-indent</div>
+                                    <p class="stit">
+                                        - 탭 정렬을 자동으로 맞쳐주는 플러그인으로<br />
+                                        - 프로젝트 진행시(특히 버전관리를 할때) auto-indent 후 저장 또는 커밋<br />
+                                        - 단축키 : Ctrl + Shift + i
+                                    </p>
+                                    <div class="imgs">
+                                        <div class="img"><img src="img21.png" alt="" /></div>
+                                    </div>
+                                </div>
+                                <div class="ste_inf">
+                                    <div class="tit">Project-manager</div>
+                                    <p class="stit">
+                                        - 프로젝트를 개별적으로 관리해준다.<br /> - Packages > Project-Manager > Edit Projects<br /> - 추가 및 수정 이 가능하다.<br /> - 프로젝트 추가 후 Alt + Shift + P 단축키로 리스트항목 선택하여 프로젝트 진행
+                                    </p>
+                                    <div class="imgs">
+                                        <div class="img"><img src="img7.png" alt="" /></div>
+                                        <div class="img"><img src="img8.png" alt="" /></div>
+                                        <div class="img"><img src="img9.png" alt="" /></div>
+                                    </div>
+                                </div>
+                                <div class="ste_inf">
+                                    <div class="tit">atom-live-sever</div>
+                                    <p class="stit">
+                                        - 톰캣,레진.. 등등 서버 툴 없이 아톰자체적으로 가상서버연결(livereload기능까지포함됨)<br /> - html파일에서만 사용하는걸 권장<br /> - 프로젝트 매니저 프로젝트 하나를 툴로 돌릴때 사용하는걸 권장<br /> - Packages > atom-live-server > Start sever 클릭시 자동으로 브라우저의 포트를 형성시켜준다.
+                                    </p>
+                                    <div class="imgs">
+                                        <div class="img"><img src="img10.png" alt="" /></div>
+                                    </div>
+                                </div>
+                                <div class="ste_inf">
+                                    <div class="tit">bracket-mathcher</div>
+                                    <p class="stit">
+                                        - html,css,js 선택부분과 닫는 부분을 표시해준다.<br />
+                                    </p>
+                                    <div class="imgs">
+                                        <div class="img"><img src="https://i.gifer.com/MPga.gif" alt="" /></div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="bx_in">
+                    <div class="abu_lf">
+                        <div class="cmm_tit">싱크셋팅</div>
+                        <ul class="cmm_txtlst">
+                            <li>sync-setting 패키지 설치 후 setting(첫 설치시 오류가 발생함 셋팅값이 없기때문)</li>
+                            <li>깃헙 로그인</li>
+                            <li>신규 토큰 발급 https://github.com/settings/tokens/new</li>
+                            <li>리스트항목 gist 만 체크</li>
+                            <li>발급된 token, id 값을 확인 url (gist.github.com/아이디/토큰 = 식으로 넘어옴)</li>
+                            <li>이제 아톰실행때마다 상태메세지가 뜨고, Backup , Restore 버튼이 있는데 backup은 커밋개념 restore 는 업데이트개념임</li>
+                        </ul>
+                        <div>
+                            <img src="img14.png" alt="" />
+                            <img src="img15.png" alt="" />
+                            <img src="img16.png" alt="" />
+                            <ul class="cmm_txtlst" style="margin-top: 30px;">
+                                <li>**주의사항 Token 값은 현재 이 페이지에서만 볼수 있다.<br />나중에 보려고 하면 못보고 Regenrate 하거나 새로운 Token을 생성해야한다. 어딘가에 잘 적어두자!!</li>
+                            </ul>
+                            <img src="img20.png" alt="" />
+                            <img src="img17.png" alt="" />
+                            <img src="img18.png" alt="" />
+                            <ul class="cmm_txtlst" style="margin-top: 30px;">
+                                <li><strong>Backup</strong> : 현재 설정 정보를 Gist에 백업한다.</li>
+                                <li><strong>View backup</strong> : Gist로 간다.</li>
+                                <li><strong>Restore</strong> : Gist의 백업 정보를 불러온다.</li>
+                                <li><strong>Dismiss</strong> : 아무것도 하지 않고 무시한다.</li>
+                            </ul>
+                            <img src="img19.png" alt="" />
+                        </div>
+                    </div>
+                </div>
+                <div class="bx_in">
+                    <div class="abu_lf">
+                        <div class="cmm_tit">패키지관련 정보 url</div>
+                        <ul class="cmm_txtlst">
+                            <li><a href="https://medium.com/@thejasonfile/the-atom-packages-im-currently-using-9d03b44d2330" target="_blank">https://medium.com/@thejasonfile/the-atom-packages-im-currently-using-9d03b44d2330</a></li>
+                            <li><a href="http://kunoo.tistory.com/entry/Atom-설치하기-및-추천-패키지-목록" target="_blank">http://kunoo.tistory.com/entry/Atom-설치하기-및-추천-패키지-목록</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

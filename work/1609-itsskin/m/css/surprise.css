@@ -1,0 +1,183 @@
+@charset "UTF-8";
+/** REM 사용을 위한 Viewport 세팅 @param {Array} $array       Viewport 크기가 저장 된 배열 @param {String} $orientation :             'portrait' landscape 이면 별도 표기 */
+/** %단위의 넓이 설정 @param  {int} $width      %를 구할 px단위의 숫자 @param  {int} $wrap-width :             $design-width %를 구할 px의 기준이 되는 숫자 @return {int}             변환 된 % @include set-width(300px) = [ 300px / design-draft * 100% ]  */
+/** 부모 포지션의 영역을 모두 채움 단, fixed 인 경우에는 브라우저 영역 전체를 채움 @param  {String} $type absolute / fixed */
+.frm-radio input[type="radio"] { position: absolute; overflow: hidden; clip: rect(0 0 0 0); height: 1px; width: 1px; margin: -1px; padding: 0; border: 0; }
+
+* { -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */ -moz-box-sizing: border-box; /* Firefox, other Gecko */ -ms-box-sizing: border-box; /* Firefox, other Gecko */ box-sizing: border-box; /* Opera/IE 8+ */ -webkit-font-smoothing: antialiased; -moz-font-smoothing: antialiased; text-rendering: optimizeLegibility !important; /*-webkit-tap-highlight-color: rgba(0, 0, 0, 0); -webkit-tap-highlight-color: transparent; */ }
+
+html { font-family: sans-serif; /* 1 */ -ms-text-size-adjust: 100%; /* 2 */ -webkit-text-size-adjust: 100%; /* 2 */ }
+
+body { margin: 0; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary { display: block; }
+
+audio, canvas, progress, video { display: inline-block; /* 1 */ vertical-align: baseline; /* 2 */ }
+
+audio:not([controls]) { display: none; height: 0; }
+
+[hidden], template { display: none; }
+
+a { color: inherit; background-color: transparent; text-decoration: none; }
+
+a:active, a:hover { outline: 0; }
+
+abbr[title] { border-bottom: 1px dotted; }
+
+b, strong { font-weight: bold; }
+
+dfn { font-style: italic; }
+
+h1 { font-size: 2em; margin: 0.67em 0; }
+
+mark { background: #ff0; color: #000; }
+
+small { font-size: 80%; }
+
+sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
+
+sup { top: -0.5em; }
+
+sub { bottom: -0.25em; }
+
+img { border: 0; }
+
+svg:not(:root) { overflow: hidden; }
+
+figure { margin: 0; }
+
+hr { -moz-box-sizing: content-box; box-sizing: content-box; height: 0; }
+
+pre { overflow: auto; }
+
+code, kbd, pre, samp { font-family: monospace, monospace; font-size: 1em; }
+
+button, input, optgroup, select, textarea { color: inherit; /* 1 */ font: inherit; /* 2 */ margin: 0; /* 3 */ }
+
+button { overflow: visible; }
+
+button, select { text-transform: none; }
+
+button, html input[type="button"], input[type="reset"], input[type="submit"] { -webkit-appearance: button; /* 2 */ cursor: pointer; /* 3 */ }
+
+button[disabled], html input[disabled] { cursor: default; }
+
+button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
+
+input { line-height: normal; }
+
+input[type="checkbox"], input[type="radio"] { box-sizing: border-box; /* 1 */ padding: 0; /* 2 */ }
+
+input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button { height: auto; }
+
+input[type="search"] { -webkit-appearance: textfield; /* 1 */ -moz-box-sizing: content-box; -webkit-box-sizing: content-box; /* 2 */ box-sizing: content-box; }
+
+input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration { -webkit-appearance: none; }
+
+input::-ms-clear { display: none; }
+
+fieldset { border: 1px solid #c0c0c0; margin: 0 2px; padding: 0.35em 0.625em 0.75em; }
+
+legend { border: 0; /* 1 */ padding: 0; /* 2 */ }
+
+textarea { overflow: auto; }
+
+optgroup { font-weight: bold; }
+
+table { border-collapse: collapse; border-spacing: 0; }
+
+td, th { padding: 0; }
+
+img { max-width: 100%; line-height: 1; vertical-align: top; }
+
+fieldset img, label img { width: 100%; }
+
+h1, h2, h3, h4, h5, h6 { margin: 0; padding: 0; }
+
+a, area, button { outline: 0; }
+
+[class^='uri-'] { display: inline-block; background-size: 100% 100%; text-indent: -9999px; }
+
+.event2-btn-detail { top: 27%; right: 7%; bottom: 65%; left: 67%; position: absolute; }
+
+.frm-radio { padding-top: 1.45833rem; padding-left: 5.5%; padding-right: 5.5%; }
+
+.frm-radio input[type="radio"] ~ label { padding-left: 32px; height: 32px; display: inline-block; background-image: url("../images/popup/radio.png"); background-repeat: no-repeat; background-position: 0 0; cursor: pointer; background-size: 32px; }
+
+.frm-radio input[type="radio"] ~ label.checked, .frm-radio input[type="radio"] ~ label.is-checked { background-position: 0 -32px; }
+
+.frm-radio input[type="radio"] ~ label.disabled { background-position: 0 -64px; }
+
+.frm-radio input[type="radio"] ~ label.is-focused { position: relative; }
+
+.frm-radio input[type="radio"] ~ label.is-focused:before { content: ''; display: block; position: absolute; top: 0; left: 0; width: 32px; height: 32px; outline: 1px dotted; outline: auto -webkit-focus-ring-color; outline-color: blue; }
+
+.frm-radio input[type="radio"] ~ label img { width: auto; }
+
+@media screen and (max-width: 670px) { .frm-radio input[type="radio"] ~ label { padding-left: 29px; height: 29px; background-size: 29px; }
+  .frm-radio input[type="radio"] ~ label.checked, .frm-radio input[type="radio"] ~ label.is-checked { background-position: 0 -29px; }
+  .frm-radio input[type="radio"] ~ label.is-focused:before { width: 29px; height: 29px; }
+  .frm-radio input[type="radio"] ~ label.disabled { background-position: 0 -58px; }
+  .frm-radio input[type="radio"] ~ label img { height: 29px; } }
+
+@media screen and (max-width: 639px) { .frm-radio input[type="radio"] ~ label { padding-left: 28px; height: 28px; background-size: 28px; }
+  .frm-radio input[type="radio"] ~ label.checked, .frm-radio input[type="radio"] ~ label.is-checked { background-position: 0 -28px; }
+  .frm-radio input[type="radio"] ~ label.is-focused:before { width: 28px; height: 28px; }
+  .frm-radio input[type="radio"] ~ label.disabled { background-position: 0 -56px; }
+  .frm-radio input[type="radio"] ~ label img { height: 28px; } }
+
+@media screen and (max-width: 600px) { .frm-radio input[type="radio"] ~ label { padding-left: 26px; height: 26px; background-size: 26px; }
+  .frm-radio input[type="radio"] ~ label.checked, .frm-radio input[type="radio"] ~ label.is-checked { background-position: 0 -26px; }
+  .frm-radio input[type="radio"] ~ label.is-focused:before { width: 26px; height: 26px; }
+  .frm-radio input[type="radio"] ~ label.disabled { background-position: 0 -52px; }
+  .frm-radio input[type="radio"] ~ label img { height: 26px; } }
+
+@media screen and (max-width: 480px) { .frm-radio input[type="radio"] ~ label { padding-left: 21px; height: 21px; background-size: 21px; }
+  .frm-radio input[type="radio"] ~ label.checked, .frm-radio input[type="radio"] ~ label.is-checked { background-position: 0 -21px; }
+  .frm-radio input[type="radio"] ~ label.is-focused:before { width: 21px; height: 21px; }
+  .frm-radio input[type="radio"] ~ label.disabled { background-position: 0 -42px; }
+  .frm-radio input[type="radio"] ~ label img { height: 21px; } }
+
+@media screen and (max-width: 435px) { .frm-radio input[type="radio"] ~ label { padding-left: 19px; height: 19px; background-size: 19px; }
+  .frm-radio input[type="radio"] ~ label.checked, .frm-radio input[type="radio"] ~ label.is-checked { background-position: 0 -19px; }
+  .frm-radio input[type="radio"] ~ label.is-focused:before { width: 19px; height: 19px; }
+  .frm-radio input[type="radio"] ~ label.disabled { background-position: 0 -38px; }
+  .frm-radio input[type="radio"] ~ label img { height: 19px; } }
+
+@media screen and (max-width: 414px) { .frm-radio input[type="radio"] ~ label { padding-left: 18px; height: 18px; background-size: 18px; }
+  .frm-radio input[type="radio"] ~ label.checked, .frm-radio input[type="radio"] ~ label.is-checked { background-position: 0 -18px; }
+  .frm-radio input[type="radio"] ~ label.is-focused:before { width: 18px; height: 18px; }
+  .frm-radio input[type="radio"] ~ label.disabled { background-position: 0 -36px; }
+  .frm-radio input[type="radio"] ~ label img { height: 18px; } }
+
+@media screen and (max-width: 400px) { .frm-radio input[type="radio"] ~ label { padding-left: 17px; height: 17px; background-size: 17px; }
+  .frm-radio input[type="radio"] ~ label.checked, .frm-radio input[type="radio"] ~ label.is-checked { background-position: 0 -17px; }
+  .frm-radio input[type="radio"] ~ label.is-focused:before { width: 17px; height: 17px; }
+  .frm-radio input[type="radio"] ~ label.disabled { background-position: 0 -34px; }
+  .frm-radio input[type="radio"] ~ label img { height: 17px; } }
+
+@media screen and (max-width: 375px) { .frm-radio input[type="radio"] ~ label { padding-left: 16px; height: 16px; background-size: 16px; }
+  .frm-radio input[type="radio"] ~ label.checked, .frm-radio input[type="radio"] ~ label.is-checked { background-position: 0 -16px; }
+  .frm-radio input[type="radio"] ~ label.is-focused:before { width: 16px; height: 16px; }
+  .frm-radio input[type="radio"] ~ label.disabled { background-position: 0 -32px; }
+  .frm-radio input[type="radio"] ~ label img { height: 16px; } }
+
+@media screen and (max-width: 360px) { .frm-radio input[type="radio"] ~ label { padding-left: 16px; height: 16px; background-size: 16px; }
+  .frm-radio input[type="radio"] ~ label.checked, .frm-radio input[type="radio"] ~ label.is-checked { background-position: 0 -16px; }
+  .frm-radio input[type="radio"] ~ label.is-focused:before { width: 16px; height: 16px; }
+  .frm-radio input[type="radio"] ~ label.disabled { background-position: 0 -32px; }
+  .frm-radio input[type="radio"] ~ label img { height: 16px; } }
+
+@media screen and (max-width: 320px) { .frm-radio input[type="radio"] ~ label { padding-left: 14px; height: 14px; background-size: 14px; }
+  .frm-radio input[type="radio"] ~ label.checked, .frm-radio input[type="radio"] ~ label.is-checked { background-position: 0 -14px; }
+  .frm-radio input[type="radio"] ~ label.is-focused:before { width: 14px; height: 14px; }
+  .frm-radio input[type="radio"] ~ label.disabled { background-position: 0 -28px; }
+  .frm-radio input[type="radio"] ~ label img { height: 14px; } }
+
+#event02-event .frm-text { padding-top: 0.875rem; }
+
+#event02-insta .insta-list-tag a {
+	line-height: 2.8em;
+	margin: 0 0.8%;
+	padding: 1.5% 3.8%;
+}

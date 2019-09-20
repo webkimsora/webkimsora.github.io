@@ -1,0 +1,224 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title>TWEENMAX-TWEENLITE</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<!--link rel="stylesheet" href="./css/style.css"-->
+	<link rel="stylesheet" href="./css/common.css?v=01">
+	<link rel="stylesheet" href="./css/main.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:800" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:400" rel="stylesheet">
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/androidstudio.min.css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+	<script>
+		hljs.initHighlightingOnLoad();
+	</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+	<script type="text/javascript" src="./js/jquery-1.11.3.min.js"></script>
+
+	<style>
+		body {
+			background: #eee;
+			font-family: "Noto Sans KR"
+		}
+
+		a {
+			color: #3acd54;
+		}
+
+		.container {
+			width: 1000px;
+			margin: 20px auto;
+			padding: 25px;
+			font-size: 15px;
+			background: #fff;
+			border-radius: 20px;
+		}
+
+		h1 {
+			font-size: 36px;
+			font-weight: 600;
+			padding-bottom: 20px;
+			margin-bottom: 20px;
+			border-bottom: 1px solid #eee;
+			font-family: "Open Sans"
+		}
+
+		h2 {
+			font-size: 28px;
+			padding: 10px 0;
+			color: #fff;
+			background-color: rgb(168, 196, 13);
+			padding: 0 10px;
+			display: inline-block;
+		}
+
+		h3 {
+			font-size: 20px;
+			padding: 10px 0;
+		}
+	</style>
+</head>
+
+<body>
+	<main id="viewport">
+		<section class="container">
+			<h1>TWEENMAX BASIC STUDY</h1>
+			<span><a href="https://greensock.com/" target="_blank">https://greensock.com/</a></span>
+
+			<span>위 사이트에 접속하여 다운을 받거나 cdn을 연결해주면 사용이 가능하다.</span>
+			<pre><code>&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"&gt;&lt;/script&gt;</code></pre>
+			<h2>기본 템플릿</h2>
+			<h3><b><span style="font-size: 14pt;">.to()</span></b></h3>
+			<p><br /></p>
+			<p>트윈맥스에서 가장 기본적으로&nbsp;사용하는 것은&nbsp;TweenMax.to() 이다.</p>
+			<p>.to()는 일반적으로 .animate() 라고 생각하면 된다.</p>
+			<p><br /></p>
+			<p>트윈맥스는 <b><span style="color: rgb(255, 94, 0);">TweenMax.to(target, duration, {vars});</span></b> 의 파라미터를 가지고 있다.</p>
+			<p><br /></p>
+			<p><b>target : 대상(인자)</b></p>
+			<p><b>duration : 지속시간 (몇초동안)</b></p>
+			<p><b>vars : 대상에 부여할 키값</b></p>
+			<p><br /></p>
+			<p>간단한 예시로 CSS 변경 애니메이션에 대해 확인해보자.</p>
+			<script async="" src="//jsfiddle.net/tuc5xa7w/1/embed/result,html,js,css,resources"></script>
+
+			<p>일반적인 CSS 키값은 동일하지만 background-color, border-radius같은 특수문자가 들어가 있는건</p>
+			<p>특수문자를 제외해주고 - 뒤의 첫 알파벳을 대문자로 표시해주면 된다.</p>
+			<p><br /></p>
+			<p>target은 제이쿼리 형태로 사용해도 되고 아니어도 된다. (EX. $(".logo") )</p>
+			<p>트윈맥스가 jQuery 엔진을 의존하지 않기 때문에 유연하게 선택자를 사용해도 된다.</p>
+			<p><br /></p>
+			<p><span style="font-size: 14pt;"><b>.from()</b></span></p>
+			<div>.to()는 트윈맥스 값을 최종 지점에 보여주었다면 .from()은 시작 지점에서 값을 보여준다.</div>
+			<div><br /></div>
+			<div>위와 같은 소스에서 from으로 바꾸어주면 하단처럼 보이게 된다.</div>
+			<div><br /></div>
+			<script async="" src="//jsfiddle.net/y1mjx9ob/1/embed/result,html,js,css,resources"></script>
+			<p><b><span style="font-size: 14pt;">.fromTo()</span></b></p>
+			<div>fromTo는 두가지 애니메이션 값을 주어 from에 지정된 값 -&gt; to에 지정된 값 으로 애니메이션이 보여지게&nbsp;한다.</div>
+			<div><br /></div>
+			<div>
+				<p><span style="font-size: 14pt;"><b>.staggerFrom()</b></span></p>
+				<div><br /></div>
+				<div>staggerFrom은 target(대상)이 배열 속성으로,&nbsp;시작 시간을 지정된 시간만큼 엇갈리게 작동하게 하여</div>
+				<div>균일하게&nbsp; 띄우는 시퀀스를 만드는 파라미터다.</div>
+				<div><br /></div>
+				<div><b><span style="color: rgb(255, 94, 0);">TweenMax.to(target(Array), duration, {vars}, 대상간에 간격시간);</span></b></div>
+				<script async="" src="//jsfiddle.net/unrycv64/28/embed/result,html,js,css,resources"></script>
+				<p><br /></p>
+				<p>
+					상단 소스를 보면 작동 후 완료 메서드가 추가되었다.</p>
+				<p><br /></p>
+				<p><b>- onComplete</b> : Function - 애니메이션이 완료될 때 호출되어야하는 함수</p>
+				<p><br /></p>
+				<p><b>- onCompleteParams</b> : Array - 함수를 전달할 매개 변수의 배열</p>
+				<p style="margin-left: 2em;">ex) onCompleteParams: [element, "param2"]</p>
+				<p style="margin-left: 2em;">매개 변수중 하나에서 트윈맥스 자체 참조하려면 {self}로 쓰면 됨.</p>
+				<p style="margin-left: 2em;"><br /></p>
+				<p><b>- onCompleteAll</b>&nbsp;: Function - 전체 트윈 시퀀스가&nbsp;완료될 때 호출되어야하는 함수</p>
+				<p><br /></p>
+				<p><b>- onCompleteAllParams</b>&nbsp;: Array - 메서드를 전달할 매개 변수의 배열</p>
+				<p><br /></p>
+				<p><span style="font-size: 14pt;"><b>.TimelineMax</b></span></p>
+				<p><span style="font-size: 14pt;"><b><br /></b></span></p>
+				<p><span>하나의 애니메이션이 아닌 ani1 끝난후&nbsp;ani2, ani2 끝난후 ani3 … 식의 타임라인 제작 가능</span></p>
+				<p>
+					<font face="Ubuntu Condensed, Noto Sans Korean"><span style="font-size: 14px;">TweenMax.to()이 연달아 있는 코드와 비슷하다.</span></font>
+				</p>
+				<div>
+					<font face="Ubuntu Condensed, Noto Sans Korean"><span style="font-size: 14px;"><br /></span></font>
+				</div>
+				<pre><code>var timeLine = new TimelineMax();
+    timeLine.to($('.box'), 1, {backgroundColor: '#ccc'})
+            .to($('.box2'), 1, {backgroundColor: '#54c0c7'})
+            .to($('.box'), 1, {backgroundColor: '#000'})
+            .to($('.box3'), 1, {backgroundColor: '#54c0c7'});</code></pre>
+				<script async="" src="//jsfiddle.net/az38u4t6/2/embed/result,html,js,css,resources"></script>
+
+				<p><br /></p>
+				<p><br /></p>
+			</div>
+			<p><br /></p>
+
+			<h2><font color="#ffffff" style="background-color: rgb(0, 153, 153);"><span style="background-color: rgb(168, 196, 13); color: rgb(255, 255, 255);">KEY METHODS</span></font></h2>
+			<h3><span style="color: rgb(47, 157, 39);">- 기본 메서드&nbsp;</span></h3>
+			<p><br /><strong><u>TweenMax.to :</u></strong>&nbsp;this 속성에서 지정한 속성까지</p>
+			<p><br /><strong><u>TweenMax.from :</u></strong>&nbsp; 지정한 속성에서 this 속성까지<br /></p>
+			<p><br /><strong><u>TweenMax.fromTo&nbsp;:</u></strong>&nbsp; from에서 지정한 속성에서 to에서 지정한 속성까지</p>
+			<p style="font-family: &quot;Ubuntu Condensed&quot;, &quot;Noto Sans Korean&quot;; font-size: 14px; margin-left: 2em;">ex) TweenMax.fromTo(target, duration, {from vars}, {to vars});</p>
+			<p><br></p>
+			<p><u><strong>TweenMax.allTo /&nbsp;</strong></u><u><strong>TweenMax.allFrom</strong></u><strong style="text-decoration-line: underline;">&nbsp;:</strong>&nbsp;for문 없이&nbsp;여러 target을 동시에 적용</p>
+			<p><br /></p>
+			<p>기본 구문: TweenMax.allTo(targets:Array, duration:Number, vars:Object):Array&nbsp;</p>
+			<p style="font-family: &quot;Ubuntu Condensed&quot;, &quot;Noto Sans Korean&quot;; font-size: 14px; margin-left: 2em;"><br />ex) TweenMax.allTo([mc1, mc2, mc3, mc4, mc5], 1, {y:"100", alpha:0, delayIncrement:0.2});</p>
+			<p style="margin-left: 2em;">
+			</p>
+			<p style="font-family: &quot;Ubuntu Condensed&quot;, &quot;Noto Sans Korean&quot;; font-size: 14px; margin-left: 2em;">delayIncrement : Number - 각 target들 간에 delay<br />onCompleteAll : Function - onComplete은 각 target이 complete될때마다 각각 호출<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; - onCompleteAll은 tween이 다 끝나고 한번만 호출<br
+				/>onCompleteAllParams : Array</p>
+			<p><br /><strong><u>TweenMax.set</u></strong>() : 요소에 애니메이션 없이 style(css)을 설정한다.&nbsp;</p>
+			<p><br /><strong><u>TweenMax.isTweening</u></strong>(target:Object):Boolean&nbsp;<br /></p>
+			<p><br /></p>
+			<h3><span style="color: rgb(47, 157, 39);">- 여러 대상 실행</span></h3>
+			<div><span><u style="font-weight: bold;">TweenMax.staggerTo() /&nbsp;</u></span><u style="font-family: &quot;Ubuntu Condensed&quot;, &quot;Noto Sans Korean&quot;; font-size: 14px; font-weight: bold;">TweenMax.staggerFrom()</u>
+				<span><u style="font-weight: bold;">&nbsp;:</u> Array, 각 요소에 순차적으로 애니메이션을 실행시킨다</span>
+			</div>
+			<div><span><br /></span></div>
+			<div><span><u style="font-weight: bold;">TimelineMax : </u>하나의 애니메이션이 아닌 ani1 끝난후&nbsp;ani2, ani2 끝난후 ani3 … 식의 타임라인 제작 가능</span></div>
+			<div style="margin-left: 8em;">
+				<font face="Ubuntu Condensed, Noto Sans Korean"><span style="font-size: 14px;">TweenMax.to()이 연달아 있는 코드와 비슷하다.</span></font>
+			</div>
+			<div><span><u style="font-weight: bold;"><br /></u></span></div>
+			<h3><span style="color: rgb(47, 157, 39);">- 모션 제어</span></h3>
+			<p><b><u>repeat(number)</u> </b>: 반복구문이며 number은 1부터 시작이다.</p>
+			<p>-1을 넣으면 무한반복이 된다.</p>
+			<p>delay가 있는 경우 첫번째 재생만 delay가 적용되고 repeat되는 동안은 delay가 적용되지 않는다.</p>
+			<pre><code>TweenMax.to(".box", 1, {backgroundColor: '#54c0c7',repeat: 1});</code></pre>
+			<pre><code>var tween = TweenMax.to(".box", 1, {backgroundColor: '#54c0c7'});
+tween.repeat(1);</code></pre>
+			<p><br /><b style="text-decoration-line: underline;">repeatDelay() :</b> 반복 지연시간을 초 단위로 지정할 수 있다.</p>
+			<p><br /></p>
+			<p><b style="text-decoration-line: underline;">yoyo() :</b>&nbsp;Boolean, 애니메이션을 앞뒤로 반복하여 실행시켜준다.</p>
+			<p>repeat가 (A-&gt;B) * (number) 의 반복이라면 yoyo는 (A-&gt;B~B-&gt;A)*(number)&nbsp;의 반복이다.</p>
+			<pre><code>TweenMax.to(".box", 1, {padding: 20, repeat: 1, yoyo: true});</code></pre>
+			<p><b><u><br /></u></b></p>
+			<p><b style="text-decoration-line: underline;">.reverse() :</b> 애니메이션 재생을 되돌린다.</p>
+			<p><b><u><br /></u></b></p>
+			<p><b style="font-family: &quot;Ubuntu Condensed&quot;, &quot;Noto Sans Korean&quot;; font-size: 14px; text-decoration-line: underline;">.reversed() :</b><span>&nbsp;애니메이션이 역방향으로 재생되어야하는지에 대한 여부 및 설정</span></p>
+			<div>
+				<font face="Ubuntu Condensed, Noto Sans Korean"><span style="font-size: 14px;"><br /></span></font>
+				<p><u style="font-weight: bold;">isActive() :</u> 애니메이션 활성화 여부를 나타낸다</p>
+				<p data-height="265" data-theme-id="0" data-slug-hash="Pwzomo" data-default-tab="js,result" data-user="GreenSock" data-pen-title="check isActive()" class="codepen">See the Pen <a href="https://codepen.io/GreenSock/pen/Pwzomo/">check isActive()</a> by GreenSock (<a href="https://codepen.io/GreenSock">@GreenSock</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+				<script async="" src="https://static.codepen.io/assets/embed/ei.js"></script>
+				<p><strong><u><br /></u></strong></p>
+				<p><strong><u>TweenMax.delayedCall</u></strong>(delay:Number, onComplete:Function, onCompleteParams:Array);&nbsp;<br />&nbsp;-target 없이 함수를 delay : (1.0 ==&gt; 1초) 후에 호출<br />&nbsp;</p>
+				<p><b>● kill관련&nbsp;: 트윈 기능 없애는 메서드</b></p>
+				<p><br /></p>
+				<p><strong><u>TweenMax.killAll()</u></strong></p>
+				<p>- 전체 트윈 기능 없앰</p>
+				<p><br /></p>
+				<p><strong><u>TweenMax.killDelayedCallsTo</u></strong>(function:Function);<br />&nbsp;-해당 delayedCall함수를 kill 함<br />&nbsp;<br /><strong><u>TweenMax.killAllTweens</u></strong>(complete:Boolean):void&nbsp;<br />&nbsp;-false(default) : pause() 처럼 보이면서
+					tween kill
+					<br />&nbsp;-true : complete 화면을 보여주고 tween kill<br />&nbsp;-delayedCall은 kill안됨</p>
+				<p><br /></p>
+				<p><u><strong>pause():&nbsp;</strong></u>void, 현재 위치에서 일시 중지&nbsp;</p>
+				<div><br /></div>
+				<p><u><strong>paused():&nbsp;</strong></u>void, 애니메이션이 현재 일시 중지 되었는지에 대한 여부 및 설정</p>
+				<p><br /><u style="font-weight: bold;">resume()</u> : (suppressEvents : Boolean) 방향을 바꾸지 않고 재생을 계속합니다.</p>
+				<p><br /></p>
+				<p><br>그 외 상세 메서드는 greensock에서 살펴보면 된다.</p>
+				<p><br /></p>
+				<p><a href="https://greensock.com/docs/TimelineMax" target="_blank" class="tx-link">https://greensock.com/docs/TimelineMax</a></p>
+			</div>
+			<p><br /></p>
+
+		</section>
+	</main>
+
+	<script>
+	</script>
+</body>
+
+</html>

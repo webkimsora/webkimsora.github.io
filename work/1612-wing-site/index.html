@@ -1,0 +1,725 @@
+<!doctype html>
+<html class="no-js" lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <script>
+  <!--
+    var UserAgent = navigator.userAgent;
+    var UADevice = UserAgent.match(/iPhone|iPod|iPad|Android|Windows CE|BlackBerry|Symbian|Windows Phone|webOS|Opera Mini|Opera Mobi|POLARIS|IEMobile|lgtelecom|nokia|SonyEricsson/i);
+    var UAVendor = UserAgent.match(/LG|SAMSUNG|Samsung/);
+    if ( UADevice !== null || UAVendor!== null){
+      location.href = "./m/";
+    }
+    //-->
+  </script>
+  <link rel="stylesheet" href="css/main.css">
+  <!--[if lte IE 8]>
+    <script src="./assets/js/ie8Polyfill.js"></script>
+  <![endif]-->
+
+</head>
+<body>
+  <main id="viewport">
+    <!-- @ Toggle menu GNB S -->
+    <nav class="gnb" id="gnb">
+      <div class="gnb-wrap">
+        <a class="gnb-btn" href="javascript:;">
+          <i class="sp-common gnb-arrow"></i>
+        </a>
+        <div class="gnb-wrap-box">          
+          <h1>
+            <i class="sp-common gnb-bi"></i>
+          </h1>
+          <!--
+          <div class="gnb-menu">
+              <a href="#event1" data-toggle="scrollspy">
+                <i class="sp-common gnb01"></i>
+              </a>
+              <a href="#event2" data-toggle="scrollspy">
+                <i class="sp-common gnb02"></i>
+              </a>
+              <a href="#event3" data-toggle="scrollspy">
+                <i class="sp-common gnb03"></i>
+              </a>
+              <a href="#" data-toggle="scrollspy">
+                <i class="sp-common gnb04"></i>
+              </a>
+            </div>
+          -->
+          <ul class="gnb-menu">
+            <li>
+              <a href="#event1" data-toggle="scrollspy">
+                <i class="sp-common gnb01"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#event2" data-toggle="scrollspy">
+                <i class="sp-common gnb02"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#event3" data-toggle="scrollspy">
+                <i class="sp-common gnb03"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#event4" data-toggle="scrollspy">
+                <i class="sp-common gnb04"></i>
+              </a>
+            </li>            
+            <li class="gnb-sub">
+              <a href="#pages-class" data-toggle="scrollspy">
+                <i class="sp-common gnb04-sub01"></i>
+              </a>
+            </li>            
+            <li class="gnb-sub">
+              <a href="#pages-wing" data-toggle="scrollspy">
+                <i class="sp-common gnb04-sub02"></i>
+              </a>
+            </li>
+          </ul>   
+        </div>
+      </div>
+    </nav>
+    <!-- @ Toggle menu GNB E -->
+
+    <nav class="lnb-cafe">
+      <a href="#">
+        <i class="nav-go-cafe"></i>
+      </a>
+    </nav>
+
+  <section class="top-bg">
+    <!-- @ 메인 -->
+    <section class="main" id="main">
+      <div class="main-video">
+        <div id="main-video-player" class="main-video">
+        </div>
+        <div class="main-cover"></div>
+      </div>
+      <div class="main-contents">
+        <p class="main-contents-title">
+          <img src="./images/main-title.png"  alt="">
+          <p class="a11y">2017년 1월 액션의 새로운 날개가 펼쳐진다</p>
+        </p>
+        <a class="main-contents-btn-play" href="#popup-video" data-toggle="modal">
+          <img src="./images/btn-play.png"  alt="">
+        </a>
+        <h1 class="main-contents-logo">
+          <img src="./images/bi-logo.png"  alt="전장의 날개">
+        </h1>
+      </div>
+    </section>
+
+    <!-- @ 이벤트 1 -->
+    <section class="event1" id="event1">
+      <!--opacity S -->
+      <img class="event1-character" src="./images/character-light.png"  alt="">
+      <img class="event1-wing-dark" src="./images/wing-dark.png"  alt="">
+      <!--opacity E -->
+      <img class="event1-wing" src="./images/wing-light.png"  alt="">
+      <div class="reser layout">
+        <h2 class="reser-title">
+          <img src="./images/event1-title.png"  alt="">
+          <div class="a11y">
+            전장의 날개를 달아라!
+            <small>지금 전장의 날개 사전예약하고 푸짐한 아이템 받자!</small>
+            <dl>
+              <dt>이벤트 기간</dt>
+              <dd>2016년 12월 13일 ~ 런칭 전까지</dd>
+            </dl>            
+          </div>
+        </h2>
+        <!--img class="reser-gift" src="./images/event1-gift.png"  alt=""-->
+        <div class="a11y">
+          <p>3등급 무기는 쿠폰으로 지급되며 쿠폰 입력시 본인의 캐릭터에 맞는 무기가 자동으로 지급됩니다</p>
+          <ul>
+            <li>3등급 무기 1개</li>
+            <li>다이아 100개</li>
+            <li>골드 100만</li>
+          </ul>
+        </div>
+        <p class="reser-subtitle">
+          <img src="./images/event1-reser-title.png"  alt="사전예약 신청을 위해 아래 정보를 입력하세요">
+        </p>
+
+        <!-- @@ 사전예약하기 S -->
+        <form id="reserFrm" class="frm" method="post" action="">
+          <fieldset class="frm-os">
+            <label for="frm-os-android">
+              <i class="sp-common lbl-andriod">안드로이드</i>
+              <i class="sp-common radio"></i>
+            </label>      
+            <input id="frm-os-android" class="is-custom" type="radio" name="reser-os">
+            <label for="frm-os-ios">
+              <i class="sp-common lbl-ios">iOS</i>
+              <i class="sp-common radio"></i>
+            </label>
+            <input id="frm-os-ios" class="is-custom" type="radio" name="reser-os">
+
+            <input id="frm-phone" class="frm-phone" type="text" maxlength="11" data-input="tel" placeholder="'-' 없이 전화번호를 입력해주세요">
+          </fieldset>
+          <a class="frm-btn-reser" href="#">
+            <i class="sp-common btn-reser">사전예약 신청하기</i>
+          </a>
+          <fieldset class="frm-chkbox">
+            <label for="frm-chkbox">
+              <i class="sp-common chkbox"></i>
+              <i class="sp-common lbl-chkbox">사전예약 참여를 위한 개인정보수집 및 SMS 수신에 동의합니다.</i>
+            </label>
+            <input id="frm-chkbox" class="is-custom" type="checkbox" name="">
+          </fieldset>
+          <p class="frm-notice">
+            <img src="./images/event1-notice.png"  alt="">
+          </p>
+          <ul class="a11y">
+            <li>수집한 전화번호는 상기 목적 외에는 이용되지 않습니다</li>
+            <li>수집된 정보는 게임 서비스 종료 시 파기됩니다</li>
+            <li>출시 알람 해지를 위해서는 고객센터에 문의주시기 바랍니다</li>
+            <li>퍼펙트월드 고객센터 help@pwrd.co.kr</li>
+          </ul>
+        </form>
+        <!-- @@ 사전예약하기 E -->
+        <!-- @@ 사전예약자 카운트 S -->
+        <div class="count">
+          <h3 class="count-title">
+            <img src="./images/count-title.png"  alt="">
+            <p class="a11y">
+              2만원 상당의 기본 보상 100% 전원 지급! 사전 예약자 누적 보상까지!
+              목표 예약자 수를 달성할 때마다 새롭게 공개되는 이벤트 상품을 확인하라!
+            </p>
+          </h3>        
+          <div class="count-box">
+            <ul class="count-box-figure">
+              <li>
+                <i class="sp-number number0"></i>
+              </li>
+              <li class="mg-long">
+                <i class="sp-number number1"></i>
+              </li>
+              <li>
+                <i class="sp-number number2"></i>
+              </li>
+              <li>
+                <i class="sp-number number3"></i>
+              </li>
+              <li class="mg-long">
+                <i class="sp-number number4"></i>
+              </li>
+              <li>
+                <i class="sp-number number5"></i>
+              </li>
+              <li>
+                <i class="sp-number number6"></i>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- @@ 사전예약자 카운트 E -->
+
+        
+      <!-- @@ 사전예약자 프로게스바 S -->
+      <div class="gage">
+        
+        <div class="progressbar">
+          <span class="progressbar-gage"></span>
+        </div>
+        <ul class="gage-state">
+          <li class="gage-state-pull">
+            <i class="sp-gage gage-count count-first"></i>
+            <i class="sp-gage gem"></i>
+            <i class="sp-gage gage-gift gift1"></i>
+          </li>
+          <li>
+            <i class="sp-gage gage-count count-second"></i>
+            <i class="sp-gage gem"></i>
+            <i class="sp-gage gage-gift gift2"></i>
+          </li>
+          <li>
+            <i class="sp-gage gage-count count-third"></i>
+            <i class="sp-gage gem"></i>
+            <i class="sp-gage gage-gift gift3"></i>
+          </li>
+          <li>
+            <i class="sp-gage gage-count count-fourth"></i>
+            <i class="sp-gage gem"></i>
+            <i class="sp-gage gage-gift gift4"></i>
+          </li>
+          <li>            
+            <i class="sp-gage gage-complete"></i>
+          </li>
+        </ul>
+        <i class="sp-gage gage-deco"></i>
+      </div>
+      <div class="">
+        
+      </div>
+      <!-- @@ 사전예약자 프로게스바 E -->
+      
+      </div>
+
+
+    </section>
+
+    <!-- @ 이벤트 2 -->
+    <section class="event2" id="event2">
+      <div class="layout">        
+        <h2 class="event2-title">
+          <img src="./images/event2-title.png"  alt="">
+          <div class="a11y">
+            꿈의 날개를 달아라!
+            <small>웹드라마 시청 후, 감상평과 WING 전장의 날개에 대한 기대감을 SNS에 공유하면 추첨을 통해 푸짐한 선물을 드립니다</small>
+          </div>
+        </h2>
+        <!-- @@ 영상 재생 S -->
+        <div class="frame-play-contents">
+          <div class="web-video movie-frame">
+            <button class="btn-play-video" type="button">
+              <i class="sp-common btn-play">
+                영상 재생
+              </i>
+            </button>
+            <iframe id="web-video-frame" src="" frameborder="0"></iframe>
+          </div>
+          <ul class="list">
+            <li class="open">
+              <button class="is-active" type="button" data-video="-IYgXwugB88">
+                <!--img src="./images/cnt-play/play-list1.png"  alt="12월 운명적인 만남이 당신을 찾아옵니다"-->
+                <i class="sp-web-video play-list1">12월 운명적인 만남이 당신을 찾아옵니다</i>
+              </button>
+              <img class="list-continue" src="./images/cnt-play/play-continue.png"  alt="">
+            </li>
+            <li>
+              <button type="button" data-video="vga1LJHeZ8E">
+                <!--img src="./images/cnt-play/play-list2.png"  alt="오늘 그녀를 처음 만났습니다"-->
+                <i class="sp-web-video play-list2">오늘 그녀를 처음 만났습니다</i>
+              </button>
+              <img class="list-continue" src="./images/cnt-play/play-continue.png"  alt="">
+            </li>
+            <li>
+              <button type="button" data-video="zRj24lapc4A">
+                <!--img src="./images/cnt-play/play-list3.png"  alt="오늘 그를 처음 만났습니다"-->
+                <i class="sp-web-video play-list3">오늘 그를 처음 만났습니다</i>
+              </button>
+              <img class="list-continue" src="./images/cnt-play/play-continue.png"  alt="">
+            </li>
+            <li>
+              <button type="button" data-video="jEl0Rees0Go">
+                <i class="sp-web-video play-list4">우연이거나 인연이거나</i>
+              </button>
+              <img class="list-continue" src="./images/cnt-play/play-continue.png"  alt="">
+            </li>
+          </ul>            
+        </div>
+        <!-- @@ 영상 재생 E -->
+        <img class="event2-gift" src="./images/event2-gift.png"  alt="">
+        <!-- @@ 페이스북 댓글 S -->
+        <div class="cmt">
+          <h2 class="cmt__total">
+            전체 댓글 수 총 <b>0</b>개
+          </h2>
+          <form class="form form--cmt">
+            <textarea class="form__textarea" id="" placeholder="개인 SNS 계정으로 로그인 후 댓글 작성 시 개인 SNS 에 자동 등록됩니다." readonly="readonly"></textarea>
+            <a class="form__submit" href="#popup-share" data-toggle="modal">
+              <i class="sp-common btn-reply">공유하기</i>
+            </a>
+          </form>
+          <ul class="cmt__list">
+            <li class="cmt__elem">
+              <h3 class="cmt__user">
+                <img src="http://placehold.it/60x55" alt="" class="cmt__user-pic">
+                아무개
+              </h3>
+              <p class="cmt__content">전장의 날개 너무 기대 됩니다!</p>
+              <p class="cmt__meta">
+                <span class="cmt__date">2016.02.01 오후 3:15</span>
+              </p>
+            </li>
+            <li class="cmt__elem">
+              <h3 class="cmt__user">
+                <img src="http://placehold.it/60x55" alt="" class="cmt__user-pic">
+                아무개
+              </h3>
+              <p class="cmt__content">전장의 날개 너무 기대 됩니다!</p>
+              <p class="cmt__meta">
+                <span class="cmt__date">2016.02.01 오후 3:15</span>
+              </p>
+            </li>
+            <li class="cmt__elem">
+              <h3 class="cmt__user">
+                <img src="http://placehold.it/60x55" alt="" class="cmt__user-pic">
+                아무개
+              </h3>
+              <p class="cmt__content">블라블라</p>
+              <p class="cmt__meta">
+                <span class="cmt__date">2016.02.01 오후 3:15</span>
+              </p>
+            </li>
+            <li class="cmt__elem">
+              <h3 class="cmt__user">
+                <img src="http://placehold.it/60x55" alt="" class="cmt__user-pic">
+                아무개
+              </h3>
+              <p class="cmt__content">블라블라</p>
+              <p class="cmt__meta">
+                <span class="cmt__date">2016.02.01 오후 3:15</span>
+              </p>
+            </li>
+          </ul>
+          <a role="button" class="cmt__btn-more">
+          더보기 <small>▼ </small>
+          </a>
+        </div>
+        <!-- @@ 페이스북 댓글 E -->
+        <a class="btn-modal-notice" href="#popup-notice" data-toggle="modal">
+          <img src="./images/event2-btn-notice.png"  alt="이벤트 유의사항 확인">
+        </a>
+      </div>
+    </section>
+
+    <!-- @ 이벤트3 -->
+    <section class="event3" id="event3">
+      <div class="layout">        
+        <h2 class="event3-title">
+          <img src="./images/event3-title.png"  alt="">
+          <div class="a11y">
+            공식 카페에 날개를 달아라!
+            <small>WING 전장의 날개 공식 카페에 가입하면 엄청난 혜택이 쏟아집니다.</small>
+          </div>
+        </h2>
+        <img src="./images/event3-gift.png"  alt="코스튬 1일 골드 10만">
+        <img src="./images/event3-method.png"  alt="">
+        <ol class="a11y">
+          <li>
+            STEP1. 공식카페 방문 후 회원 가입 완료
+          </li>
+          <li>
+            STEP2. 런칭 후 공식카페 내 이벤트 게시판을 통해 쿠폰번호 확인
+          </li>
+          <li>
+            STEP3. 게임 접속 후 쿠폰 번호를 입력하면 게임 아이템 지급
+          </li>
+        </ol>
+        <a href="#" class="btn-cafe">
+          <i class="sp-common btn-go-cafe">공식카페 바로가기</i>
+        </a>
+        <img class="event3-notice" src="./images/event3-notice.png"  alt="">
+        <div class="a11y">
+          <h2>이벤트 유의사항</h2>
+          <ul>
+            <li>
+              쿠폰 입력은 1계정당 18회만 가능합니다.
+            </li>
+            <li>
+              쿠폰 입력 방법: 게임접속->혜택->쿠폰입력
+            </li>
+            <li>
+              코스튬은 쿠폰으로 지급되며 쿠폰 입력시 본인의 캐릭터에 맞는 무기가 자동으로 지급됩니다.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </section>
+
+
+
+    <!-- @ 소개 섹션 -->
+    <section class="pages" id="event4">
+      <!-- @@ 클래스 -->
+      <div class="pages-class" id="pages-class">        
+        <!-- @@@ 탭 --->
+        <ul class="pages-tab">
+          <li class="pages-tab-class is-active">
+            <a href="javascript:;">
+              <i class="sp-common tab-class">클래스</i>
+            </a>
+          </li>
+          <li class="pages-tab-wing">
+            <a href="javascript:;">
+              <i class="sp-common tab-wing">날개</i>
+            </a>
+          </li>
+        </ul>
+        <h3>
+          <img class="pages-title" src="./images/class-title.png"  alt="">
+          <p class="a11y">당신의 액션에 날개를 달아줄 WING의 3가지 클래스를 만나보세요</p>
+        </h3>
+        <div class="pages-layout">
+          <img class="class-text" src="./images/class-text1.png"  alt="">
+          <img class="class-img" src="./images/class-img1.png"  alt="">
+          <ul class="class-tab">
+            <li class="berserker">
+              <a class="is-active" href="javascript:;" role="button">
+                <i class="sp-class class-berserker">버서커</i>
+              </a>
+            </li>
+            <li class="wizard">
+              <a href="javascript:;" role="button">
+                <i class="sp-class class-wizard">위자드</i>
+              </a>
+            </li>
+            <li class="wind">
+              <a href="javascript:;" role="button">
+                <i class="sp-class class-wind">윈드워커</i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- @@ 날개 -->
+      <div class="pages-wing" id="pages-wing">        
+        <!-- @@@ 탭 --->
+        <ul class="pages-tab">
+          <li class="pages-tab-class">
+            <a href="javascript:;">
+              <i class="sp-common tab-class">클래스</i>
+            </a>
+          </li>
+          <li class="pages-tab-wing is-active">
+            <a href="javascript:;">
+              <i class="sp-common tab-wing">날개</i>
+            </a>
+          </li>
+        </ul>
+        <h3>
+          <img class="pages-title" src="./images/wing-title.png"  alt="">
+          <p class="a11y">
+            당신과 함께 전장을 누빌 WING의 날개를 소개합니다 
+            런칭 후, 게임다운로드를 통해 더 많은 날개를 직접 확인해보세요
+          </p>
+        </h3>
+        <div class="pages-layout">
+          <div class="wing-video movie-frame">
+            <button class="btn-play-video" type="button">
+              <i class="sp-common btn-play">
+                영상 재생
+              </i>
+            </button>
+            <iframe id="wing-video-frame" src="" frameborder="0"></iframe>
+          </div>
+          <!--
+          <div id="wing-list" class="owl-carousel">
+            <a class="item link" data-video="rYl2KB5tpw">
+              <i class="sp-wing wing1">분쟁의 날개</i>
+            </a>
+            <a class="item link" data-video="jIVIAgE10VQ">
+              <i class="sp-wing wing2">마광의 날개</i>
+            </a>
+            <a class="item link" data-video="rYl2KB5tpw">
+              <i class="sp-wing wing3">심판의 날개</i>
+            </a>
+            <a class="item link" data-video="0AjlfKXoYJM">
+              <i class="sp-wing wing4">왕자의 날개</i>
+            </a>
+            <a class="item link" data-video="vqv9nR11vdI">
+              <i class="sp-wing wing5">용마의 날개</i>
+            </a>
+            <a class="item link" data-video="4vAI0UNO9zE">
+              <i class="sp-wing wing6">천사의 날개</i>
+            </a>
+            <a class="item link" data-video="I-CFykTQvl4">
+              <i class="sp-wing wing7">은성의 날개</i>
+            </a>
+            <a class="item link" data-video="X6jy9Hmxsys">
+              <i class="sp-wing wing8">천신의 날개</i>
+            </a>
+          </div>
+          -->
+            <ul id="wing-list" class="bxslider wing-list-tab">
+              <li>
+                <a class="item link" data-video="rYl2KB5tpw">
+                  <i class="sp-wing wing1">분쟁의 날개</i>
+                </a>          
+              </li>
+              <li>
+                <a class="item link" data-video="jIVIAgE10VQ">
+                  <i class="sp-wing wing2">마광의 날개</i>
+                </a>          
+              </li>
+              <li>
+                <a class="item link" data-video="rYl2KB5tpw">
+                  <i class="sp-wing wing3">심판의 날개</i>
+                </a>          
+              </li>
+              <li>
+                <a class="item link" data-video="0AjlfKXoYJM">
+                  <i class="sp-wing wing4">왕자의 날개</i>
+                </a>         
+              </li>
+              <li>
+                <a class="item link" data-video="vqv9nR11vdI">
+                  <i class="sp-wing wing5">용마의 날개</i>
+                </a>          
+              </li>
+              <li>
+                <a class="item link" data-video="vqv9nR11vdI">
+                  <i class="sp-wing wing6">천사의 날개</i>
+                </a>          
+              </li>
+              <li>
+                <a class="item link" data-video="I-CFykTQvl4">
+                  <i class="sp-wing wing7">은성의 날개</i>
+                </a>          
+              </li>
+              <li>
+                <a class="item link" data-video="X6jy9Hmxsys">
+                  <i class="sp-wing wing8">천신의 날개</i>
+                </a>         
+              </li>
+            </ul>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer" id="footer">
+      <img src="./images/copyright.png"  alt="">
+    </footer>
+
+    <div class="decoration">
+      <img class="feather1" src="./images/feather/feather1.png"  alt="">
+      <img class="feather2" src="./images/feather/feather2.png"  alt="">
+      <img class="feather3" src="./images/feather/feather3.png"  alt="">
+      <img class="feather4" src="./images/feather/feather4.png"  alt="">
+      <img class="feather5" src="./images/feather/feather5.png"  alt="">
+    </div>
+
+  </main>
+
+  <!-- @레이어팝업 : 영상보기 -->
+  <div id="popup-video" class="modal" data-role="modal">
+    <img class="" src="./images/modal/@bg-modal-play.png"  alt="">
+    <section class="modal-content">
+      <!-- @@ 영상화면 -->
+      <div class="movie-frame">
+        <iframe src="" frameborder="0"></iframe>
+      </div>
+      <a href="javascript:void(0)" data-rel="back" class="modal-btn-close">
+        <img src="./images/modal/modal-btn-close.png"  alt="창닫기">
+      </a>
+    </section>
+  </div>
+  
+  <!--@ 알럿창 -->
+  <div id="popup-alert" class="modal alert" data-role="modal">
+    <section class="modal-content">
+      <div class="content" data-alert-index="0">
+        <img src="./images/modal/alert-reser-os.png"  alt="">
+        <p class="a11y">OS별 마켓을 선택해야만 사전예약 참여가 가능합니다</p>
+      </div>
+      <div class="content" data-alert-index="1">
+        <img src="./images/modal/alert-reser-phone.png"  alt="">
+        <p class="a11y">휴대폰 번호를 입력해야 사전예약 참여가 가능합니다</p>
+      </div> 
+      <div class="content" data-alert-index="2">
+        <img src="./images/modal/alert-reser-agree.png"  alt="">
+        <p class="a11y">개인정보 수집 및 SMS 수신에 동의를 완료해야만 사전예약 참여가 가능합니다</p>
+      </div> 
+      <div class="content" data-alert-index="3">
+        <img src="./images/modal/popup-reser-complete.png"  alt="">
+        <p class="a11y">사전예약에 참여해주셔서 감사합니다! 런칭시 SMS를 통해 사전예약 쿠폰이 발송됩니다</p>
+      </div> 
+      <div class="content" data-alert-index="4">
+        <img src="./images/modal/alert-event-os.png"  alt="">
+        <p class="a11y">OS를 선택해주세요</p>
+      </div> 
+      <div class="content" data-alert-index="5">
+        <img src="./images/modal/alert-event-phone.png"  alt="">
+        <p class="a11y">휴대폰 번호를 입력해주세요</p>
+      </div>
+      <div class="content" data-alert-index="6">
+        <img src="./images/modal/alert-event-agree.png"  alt="">
+        <p class="a11y">개인정보 활용에 동의해 주세요</p>
+      </div>
+      <div class="content" data-alert-index="7">
+        <img src="./images/modal/alert-event-terms.png"  alt="">
+        <p class="a11y">사전예약 참여자만 이벤트 참여가 가능합니다</p>
+      </div>   
+      <div class="content" data-alert-index="8">
+        <img src="./images/modal/alert-event-phone-per.png"  alt="">
+        <p class="a11y">올바른 휴대폰 번호를 입력해주세요</p>
+      </div>   
+      <div class="content" data-alert-index="9">
+        <img src="./images/modal/alert-reser-phone-per.png"  alt="">
+        <p class="a11y">올바른 휴대폰 번호를 입력해야만 사전예약 참여가 가능합니다</p>
+      </div>   
+      <div class="content" data-alert-index="10">
+        <img src="./images/modal/popup-event-complete.png"  alt="">
+        <p class="a11y">이벤트 참여가 완료되었습니다</p>
+      </div> 
+      <div class="content" data-alert-index="11">
+        <img src="./images/modal/alert-event-reply.png"  alt="">
+        <p class="a11y">SNS에 공유할 댓글을 입력해주세요</p>
+      </div> 
+      <a class="btn-alert" href="javascript:void(0)" data-rel="back">
+          <img src="./images/modal/btn-alert.png"  alt="OK">
+      </a>
+    </section>
+  </div>
+
+  
+  <!-- @ 영상 공유 이벤트 응모 주의사항 -->
+  <div id="popup-notice" class="modal alert" data-role="modal">
+    <section class="modal-content">
+      <img src="./images/modal/popup-notice.png"  alt="">      
+      <a class="modal-btn-close" href="javascript:void(0)" data-rel="back">
+          <img src="./images/modal/btn-notice.png"  alt="OK">
+      </a>
+    </section>
+  </div>
+
+  <!-- @ 공유 팝업창 -->
+  <div id="popup-share" class="modal alert" data-role="modal">
+    <section class="modal-content">
+      <div>
+        <h3>
+          <img src="./images/modal/popup-event-title.png"  alt="">
+        </h3>
+        <!-- @@ 공유하기 유저 정보 S -->
+        <form id="eventFrm" class="frm" method="post" action="">
+          <fieldset class="frm-os">
+            <label for="frm-event-os-android">
+              <i class="sp-common lbl-andriod">안드로이드</i>
+              <i class="sp-common radio"></i>
+            </label>      
+            <input id="frm-event-os-android" class="is-custom" type="radio" name="event-os">
+            <label for="frm-event-os-ios">
+              <i class="sp-common lbl-ios">iOS</i>
+              <i class="sp-common radio"></i>
+            </label>
+            <input id="frm-event-os-ios" class="is-custom" type="radio" name="event-os">
+
+            <input id="frm-event-phone" class="frm-phone" type="text" maxlength="11" data-input="tel" placeholder="'-' 없이 전화번호를 입력해주세요">
+          </fieldset>
+          <a class="frm-btn-event" href="#">
+            <img src="./images/modal/btn-notice.png"  alt="확인">
+          </a>
+          <img src="./images/modal/popup-event-notice.png"  alt="">
+          <fieldset class="frm-chkbox">
+            <label for="frm-event-chkbox">
+              <i class="sp-common chkbox"></i>
+              <i class="lbl-event-chkbox">사전예약 참여를 위한 개인정보수집 및 SMS 수신에 동의합니다.</i>
+            </label>
+            <input id="frm-event-chkbox" class="is-custom" type="checkbox" name="">
+          </fieldset>
+        </form>
+        <!-- @@ 공유하기 유저 정보 E -->
+      </div>
+      <a class="modal-btn-close" href="javascript:void(0)" data-rel="back">
+          <img src="./images/modal/modal-btn-close.png"  alt="OK">
+      </a>
+    </section>    
+  </div>
+
+
+  <script src="./assets/js/vendor.js"></script>
+  <script src="./assets/js/plugin.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/tubular.js"></script>
+</body>
+</html>

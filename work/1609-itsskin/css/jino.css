@@ -1,0 +1,26 @@
+
+.photo1 {
+    width: 46px; height: 46px;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 50%;
+}
+.photo2 {
+    width: 31px; height: 31px;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 50%;
+}
+
+.gallery__more {
+    position: relative;
+    display: block;
+    margin-top: 27px;
+    padding: 14px 0 12px;
+    font-size: 15px;
+    color: #1e224b;
+    background-color: #ececec;
+	border:1px solid #acacac;
+	text-align:center;
+	width:100%;
+}

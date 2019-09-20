@@ -1,0 +1,287 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title>TWEENMAX-TWEENLITE</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<!--link rel="stylesheet" href="./css/style.css"-->
+	<link rel="stylesheet" href="../css/common.css?v=01">
+	<link rel="stylesheet" href="../css/main.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:800" rel="stylesheet">
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+	<script type="text/javascript" src="../js/jquery-1.11.3.min.js"></script>
+
+	<style>
+		body {
+			background-color: #333;
+			color: white;
+		}
+
+		#container {
+			background-color: black;
+			width: 1000px;
+			height: 400px;
+			overflow: hidden;
+			position: relative;
+
+		}
+
+		#creature {
+			background: url(https://www.greensock.com/_img/codepen/bezierCreature/creature_red.png);
+			width: 27px;
+			height: 29px;
+			left: -30px;
+			top: -30px;
+			position: absolute;
+		}
+
+		button {
+			padding: 10px;
+			margin: 0 10px 10px 0;
+		}
+
+		h2 {
+			font-family: sans-serif;
+			font-weight: normal;
+		}
+		
+		.example {width: 1000px; margin: 0 auto; font-size: 16px;}
+		button {font-size: 16px;}
+		select {font-size: 16px;}
+		
+		#selType {
+			height: 40px;	
+			margin: 0 10px 10px 0;
+			vertical-align: middle;
+		}
+		
+		.ex1 {margin-top: 30px;}
+		.ex2 {position: relative; height: 350px; margin-top: 30px;}
+
+		#demo,
+		#destination {
+			width: 50px;
+			height: 200px;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-300%, -50%);
+		}
+
+		#destination {
+			transform: translate(200%, -50%);
+			z-index: -1;
+		}
+
+		.box {
+			width: 50px;
+			height: 50px;
+			margin-bottom: 5px;
+			border-radius: 6px;
+			display: inline-block;
+			background-color: white;
+			color: #000;
+		}
+
+		.boxS {
+			background-color: #89c540;
+		}
+
+		.boxPlain {
+			background: rgba(255, 255, 255, 0.3);
+		}
+
+		.box span {
+			display: block;
+			text-align: center;
+			font-size: 26px;
+			padding-top: 12px;
+		}
+	</style>
+</head>
+
+<body>
+	<main id="viewport">
+		<div class="explain">
+		</div>
+
+		<div class="example ex1">
+			<select name="" id="selType">
+				<option value="thru">thru</option>
+				<option value="soft">soft</option>
+			</select>
+			<button id="pause">pause</button>
+			<button id="play">play</button>
+			<div id="container">
+				<div id="creature"></div>
+			</div>
+		</div>
+
+		<div class="example ex2">
+			<button class="replay" style="">Replay</button>
+			<div id="demo">
+				<div id="box01" class="box"><span>A</span></div>
+				<div id="box02" class="box boxS"><span>B</span></div>
+				<div id="box03" class="box boxS"><span>C</span></div>
+			</div>
+			<div id="destination">
+				<div class="box boxPlain"><span>&nbsp;</span></div>
+				<div class="box boxPlain"><span>&nbsp;</span></div>
+				<div class="box boxPlain"><span>&nbsp;</span></div>
+			</div>
+		</div>
+
+	</main>
+
+	<script>
+		// Example 1
+		var selType = 'thru';
+		var playNow = false;
+		$('#selType').change(function() {
+			$("#selType option:selected").each(function() {
+				selType = $(this).val()
+				console.log(selType)
+			});
+			if (playNow == true) {
+				bezierTween.restart();
+				bezExample();
+			} else {
+				bezExample();
+			}
+		});
+
+		var bezierTween,
+			playBtn = document.getElementById("play"),
+			pauseBtn = document.getElementById("pause");
+
+		function bezExample() {
+			playNow = true;
+			bezierTween = new TweenMax("#creature", 6, {
+				bezier: {
+					type: selType,
+					values: [{
+						x: 1050,
+						y: 300
+					}, {
+						x: 300,
+						y: 30
+					}, {
+						x: 500 + Math.random() * 100,
+						y: 320 * Math.random() + 50
+					}, {
+						x: 650,
+						y: 320 * Math.random() + 50
+					}, {
+						x: 900,
+						y: 100
+					}, {
+						x: 990,
+						y: 400
+					}],
+					autoRotate: true
+				},
+				ease: Linear.easeNone,
+				repeat: -1
+			});
+		}
+		//tween the timeScale() of the bezierTween for smooth acceleration and deceleration
+		play.onclick = function() {
+
+			if (playNow == true) {
+				bezierTween.play();
+			} else {
+				bezExample();
+			}
+		};
+
+		pause.onclick = function() {
+			if (playNow == true) {
+				bezierTween.pause();
+			} else {
+				alert('play 버튼을 먼저 클릭해주세요.')
+			}
+		};
+
+
+		// Example 2
+		var $box01 = $('#box01'),
+			$box02 = $('#box02'),
+			$box03 = $('#box03'),
+			path = [{
+				x: 0,
+				y: 0
+			}, {
+				x: 125,
+				y: -80
+			}, {
+				x: 250,
+				y: 0
+			}],
+			path2 = [{
+				x: 0,
+				y: 0
+			}, {
+				x: 125,
+				y: 80
+			}, {
+				x: 250,
+				y: 0
+			}],
+			path3 = [{
+					x: 0,
+					y: 0
+				},
+				{
+					x: 50,
+					y: 50
+				},
+				{
+					x: 120,
+					y: 0
+				},
+				{
+					x: 200,
+					y: 50
+				},
+				{
+					x: 250,
+					y: 0
+				}
+			],
+			tl = new TimelineMax({
+				repeat: 3,
+				yoyo: true
+			});
+
+		
+			tl.to($box01, 1, {
+				bezier: {
+					curviness: 0.3,
+					values: path
+				},
+				ease: Power1.easeInOut
+			})
+			.to($box02, 1, {
+				bezier: {
+					curviness: 0.3,
+					values: path2
+				},
+				ease: Power1.easeInOut
+			})
+			.to($box03, 1, {
+				bezier: {
+					curviness: 0.3,
+					values: path3
+				},
+				ease: Power1.easeInOut
+			});
+		
+		$('.ex2 .replay').click(function(){
+			tl.restart();
+		})
+	</script>
+</body>
+
+</html>

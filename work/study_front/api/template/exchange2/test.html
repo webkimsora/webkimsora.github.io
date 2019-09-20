@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <title> search </title>
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <script src="./js/jquery-1.11.3.min.js"></script>
+</head>
+
+<body>
+    <form id="search">
+        <input type="hidden" name="DISPALY" value="5"/>
+        <input type="hidden" name="START" value="1"/>
+        <div class="rdo">
+            <input type="radio" id="r7" name="TYPE" value="webkr" checked/>
+            <label for="r7">웹문서</label>
+            <input type="radio" id="r1" name="TYPE" value="blog"/>
+            <label for="r1">블로그</label>
+            <input type="radio" id="r2" name="TYPE" value="news"/>
+            <label for="r2">뉴스</label>
+            <input type="radio" id="r3" name="TYPE" value="book"/>
+            <label for="r3">책</label>
+            <input type="radio" id="r4" name="TYPE" value="encyc"/>
+            <label for="r4">백과사전</label>
+            <input type="radio" id="r5" name="TYPE" value="cafearticle"/>
+            <label for="r5">카페글</label>
+            <input type="radio" id="r6" name="TYPE" value="kin"/>
+            <label for="r6">지식인</label>
+            <input type="radio" id="r8" name="TYPE" value="image"/>
+            <label for="r8">이미지</label>
+        </div>
+        <input type="text" name="KEYWORD" />
+        <button type="submit">검색</button>
+    </form>
+    <script>
+        var GET_DATA_ALL = null;
+        var GET_DATA_KEY = null;
+        var GET_DATA_ITEMS = null;
+        $('[type="submit"]').click(function() {
+            $.ajax({
+                url: 'test.php',
+                type: 'POST',
+                data: $("#search").serialize(),
+                success: function(a,b,c) {
+                    var v = JSON.parse(a);
+                    GET_DATA_ALL = v;
+                    GET_DATA_ITEMS = v.items;
+                    console.log(GET_DATA_ALL);
+                },
+                error: function(msg) {
+                    console.log(msg);
+                }
+            });
+            return false;
+        });
+    </script>
+</body>
+
+</html>

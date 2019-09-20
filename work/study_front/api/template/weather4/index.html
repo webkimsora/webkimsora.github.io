@@ -1,0 +1,347 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>메큐라이크 - Weather API</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="stylesheet" href="./css/style.css" />
+    <script type="text/javascript" src="./js/jquery-1.11.3.min.js" ></script>
+    
+    <style>
+        *{margin: 0; padding: 0; border: none; box-sizing: border-box;}
+        html, body{height: 100%;}
+        li {list-style : none;}
+        a { color: inherit; background-color: transparent; text-decoration: none; }
+        a:active, a:hover { outline: 0; }
+        
+        .container {width: 1000px; margin: 0 auto;}
+        .top {background: #38539e;}
+        .top .logo {color: #fff; padding: 10px 0 10px 130px; font-size: 30px; background: url(./images/h1_logo_new_2.gif) left center no-repeat;}
+        
+        .newsWrap {margin-top: 40px;}
+        .newsWrap.on {display: block;}
+        .newsWrap .header {position: relative; padding: 20px; background: #f8f9fa; border-top: 2px solid; border-bottom: 1px solid #333;}
+        .newsWrap .header .title {margin-bottom: 7px; font-size: 27px;}
+        .btnSize {position: absolute; bottom: 15px; right: 20px;}
+        .btnSize .clsButton {display: inline-block; width: 30px; height: 30px; text-align: center; font-size: 18px; line-height: 25px; background: #fff; border: 1px solid grey; border-radius: 50%; cursor: pointer;}
+        
+        .newsWrap .contWrap {padding: 30px 20px 25px; font-size: 15px;}
+        .newsWrap .fileWrap {border-top: 1px solid #bbb; border-bottom: 1px solid #bbb;}
+        .newsWrap .fileWrap > div {display: table-cell; vertical-align: middle; padding: 20px;}
+        .newsWrap .fileWrap .category {background: #f8f9fa; font-weight: bold; padding-right: 20px; }
+        .newsWrap .fileWrap li {margin-top: 7px; padding-left: 25px; color: #0159ae; font-size: 15px; background: url(./images/fileIcon.png) no-repeat; background-size: 22px auto;}
+        .newsWrap .fileWrap li:first-child {margin-top: 0;}
+        .newsWrap .fileWrap li .addFile:hover { text-decoration: underline;}
+        
+        .listWrap {margin-top: 25px; margin-bottom: 50px;}
+        .listWrap h3 {margin-bottom: 20px; font-size: 21px; letter-spacing: -1px; position: relative; padding: 20px; background: #f8f9fa; border-top: 1px solid #000; border-bottom: 1px solid #333;}
+        .listWrap li {margin-top: 13px;}
+        .listWrap li:after {content:""; display: block; clear: both;}
+        .listWrap li:first-child {margin-top: 0;}
+        .listWrap li.active {font-weight: bold; text-decoration: underline;}
+        .listWrap li a:hover {color: #0159ae; text-decoration: underline;}
+        .listWrap .list .date {float: right;}
+        
+        .frontWrap.none {display: none;}
+        .frontList {width: 100%; margin-top: 60px; text-align: center;  border-top: 3px solid #444; border-collapse: collapse;}
+        .frontList th, .frontList td {padding: 11px 8px 13px;}
+        .frontList td {border-left: 1px solid #d9d9d9; border-bottom: 1px solid #d9d9d9;}
+        .frontList tr:hover {background: #f5f5f5;}
+        .frontList td a:hover {color: #2669af;}
+        .frontList .frontTitle {padding-left: 30px; text-align: left;}
+        .frontList thead th {padding: 11px 8px 13px; border-left: 1px solid #d9d9d9; border-bottom: 1px solid #d9d9d9; font-weight: bold; color: #3b3b3b; background: #f5f5f5;}
+        .frontList th:first-child, .frontList td:first-child {border-left: none;}
+        
+        .page {width: 100%; margin-top: 25px; text-align: center;}
+        .page strong {display: inline-block; width: 30px; height: 27px; margin: 0px 1px; line-height: 27px; text-align: center; color: #666; font-size: 14px;}
+        .page strong.active {font-weight: bold; color: #fff; border: 1px solid #2e75ce; background: #5795e3;}
+        .page a {display: inline-block; vertical-align: middle;}
+        
+        .detailWrap {display: none;}
+        .btnList {text-align: right; margin-top: 25px;}
+        .btnList a {background: #575757; color: #fff; padding: 5px 15px 8px; font-size: 15px;}
+    </style>
+</head>
+
+<body>
+    <div class="wrap" data-active="0">
+        <div class="top">
+            <div class="container">
+                <h1 class="logo">NEWS</h1>
+            </div>
+        </div>
+        <div class="container">
+            <!-- 리스트 S -->
+            <div class="frontWrap">
+                <table class="frontList">
+                    <colgroup>
+                        <col style="width: 10%"></col>
+                        <col style="width: 70%"></col>
+                        <col style="width: 20%"></col>
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>번호</th>
+                            <th>제목</th>
+                            <th>등록일</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+                <div class="page">
+                    <a href="javascript:void(0);" class="start"><img src="./images/btn_page_start.gif" alt="처음페이지로 이동"></a>
+                    <a href="javascript:void(0);" class="prev"><img src="./images/btn_page_prev.gif" alt="이전페이지로 이동"></a>
+                    <strong class="active">1</strong>
+                    <a href="javascript:void(0);" class="next"><img src="./images/btn_page_next.gif" alt="다음페이지로 이동"></a>
+                    <a href="javascript:void(0);" class="end"><img src="./images/btn_page_end.gif" alt="마지막페이지로 이동"></a>
+                </div>
+            </div>
+            <!-- 리스트 E -->
+            
+            <!-- 상세보기 S -->
+            <section class="detailWrap">
+                <div class="newsWrap">
+                    <div class="header">
+                        <h3 class="title">제목</h3>
+                        <p class="date">2018-08-17 11:00</p>
+                        <div class="btnSize">
+                            <div class="clsButton" id="fontBig">+</div>
+                            <div class="clsButton" id="fontSmall">-</div>
+                        </div>
+                    </div>
+                    <div class="contWrap">
+                        내용
+                    </div>
+                    <div class="fileWrap">
+                        <div class="category">
+                            첨부파일
+                        </div>
+                        <div>
+                            <ul>
+                                <li>
+                                    <span class="addFile file1">
+                                        <a href="http://www.kma.go.kr/servlet/NeoboardProcess?mode=download&bid=press&num=1193583&fno=1&callback=http://www.kma.go.kr/notify/press/kma_list.jsp&ses=&k=ATC201808161449291_105f86fc-b57a-4b95-afae-69547d41771b.hwp">첨부파일명.hwp</a>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="addFile file2"><a href="javascript:;">첨부파일명.pdf</a></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="btnList">
+                        <a href="javascript:;"> < 목록으로</a>
+                    </div>
+                </div>
+                <div class="listWrap">
+                    <h3>+ 뉴스 목록</h3>
+                    <ul class="list">
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </div>
+    <ul>
+        <li></li>
+    </ul>
+</body>
+
+<script>
+    // 데이터정보 http://www.weather.go.kr/weather/lifenindustry/sevice_rss.jsp
+    $.ajax({
+        url: 'weather.php',
+        dataType: 'xml',
+        success: dataLayer
+    });
+    
+    function dataLayer(data){
+        console.log(data);
+        
+        /*
+        NewsItem = list li느낌
+        ModifyDate = 수정시간
+        ApproveDate = 작성시간
+        Title = 뉴스 제목
+        DataContents = 뉴스 내용
+        FileName = 첨부파일 이름
+        FileUrl = 첨부파일 링크
+        FileName2 = 첨부파일2 이름
+        FileUrl2 = 첨부파일2 링크
+        */
+        
+        var newsList = $(data).find('NewsItem');
+        
+        var getdata = function(a, k) {
+            var keyArr = [];
+            
+            // result = property in object
+            // result 필수 요소.임의의 변수입니다.
+            // property 필수 요소.문자열 식으로 계산되는 식입니다.
+            // object 필수 요소.임의 개체입니다.
+            
+            for (var key in a) {
+                if (typeof a[key] === 'object' && a[key].tagName) {
+                    if(k){
+                        if(keyArr.indexOf(a[key].localName) == -1){
+                            keyArr.push(a[key].localName);
+                        }
+                    } else {
+                        if (keyArr.indexOf(a[key]) == -1) {
+                            keyArr.push(a[key]);
+                        }
+                    }
+                }
+            }
+            return keyArr;
+        }
+        
+        
+        // newsList[0].childNodes;
+        GET_DATA_KEY = getdata(newsList[0].childNodes, true); // key
+        GET_DATA_VAL = []; // value 배열
+        
+        // var date = GET_DATA_KEY[4] // date
+        // var title = GET_DATA_KEY[8] // title
+        // var cont = GET_DATA_KEY[17] // DataContents
+        // var fileName = GET_DATA_KEY[18] // FileName
+        // var fileUrl = GET_DATA_KEY[19] // FileUrl
+        // var fileName2 = GET_DATA_KEY[20] // FileName2
+        // var fileUrl2 = GET_DATA_KEY[21] // FileUrl2
+        
+        newsList.each(function(idx){            
+            var date = $(this).find(GET_DATA_KEY[4]).text(); // date
+            var title = $(this).find(GET_DATA_KEY[8]).text(); // title
+            var cont = $(this).find(GET_DATA_KEY[17]).text(); // DataContents
+            var fileName = $(this).find(GET_DATA_KEY[18]).text() // FileName
+            var fileUrl = $(this).find(GET_DATA_KEY[19]).text() // FileUrl
+            var fileName2 = $(this).find(GET_DATA_KEY[20]).text() // FileName2
+            var fileUrl2 = $(this).find(GET_DATA_KEY[21]).text() // FileUrl2
+            var ob = {}; // 객체로 만듬
+            
+            for (var i=0; i < newsList.length; i++){
+                ob[GET_DATA_KEY[4]] = date;
+                ob[GET_DATA_KEY[8]] = title;
+                ob[GET_DATA_KEY[17]] = cont;
+                ob[GET_DATA_KEY[18]] = fileName;
+                ob[GET_DATA_KEY[19]] = fileUrl;
+                ob[GET_DATA_KEY[20]] = fileName2;
+                ob[GET_DATA_KEY[21]] = fileUrl2;
+            }
+            
+            GET_DATA_VAL.push(ob);
+        })
+        
+        function detailView(i) {
+            var val = GET_DATA_VAL[i];
+            
+            $('.newsWrap .title').html(val[GET_DATA_KEY[8]]);
+            $('.newsWrap .date').html(val[GET_DATA_KEY[4]]);
+            $('.newsWrap .contWrap').html(val[GET_DATA_KEY[17]]);
+            
+            var file1 = '<a href="' + val[GET_DATA_KEY[19]] + '">'
+            file1 += ''+ val[GET_DATA_KEY[18]] +'</a>'
+            
+            var file2 = '<a href="' + val[GET_DATA_KEY[21]] + '">'
+            file2 += ''+ val[GET_DATA_KEY[20]] +'</a>'
+            
+            $('.newsWrap .fileWrap .file1').html(file1);
+            $('.newsWrap .fileWrap .file2').html(file2);
+        }
+        
+        $(document).ready(function(){
+            //$('.wrap').attr("data-active","0");
+            detailView(0);
+        })
+        
+        var currentIdx = $('.wrap').data('active');
+        var listNum = []; // frontList 게시판 번호 
+        
+        for (var k = GET_DATA_VAL.length; 0 <= k; k--){
+            listNum.push(k);
+        }
+        
+        // 하단 리스트 (타이틀 표시)
+        for (var i=0; i < GET_DATA_VAL.length; i++){
+            var val = GET_DATA_VAL[i];
+            
+            //$('.newsWrap .title').html()
+            var listText = '<li>'
+                listText += '<a data-idx="'+ i +'" href="javascript:;">'+ val[GET_DATA_KEY[8]] +'</a>'
+                listText += '<span class="date">'+ val[GET_DATA_KEY[4]] +'</span>'
+                listText += '</li>'
+            
+            var frontList = '<tr>';
+                frontList += '<td>'+ listNum[i] +'</td>'
+                frontList += '<td class="frontTitle"><a data-idx="'+ i +'" href="javascript:;">'+ val[GET_DATA_KEY[8]] +'</a></td>'
+                frontList += '<td>'+ val[GET_DATA_KEY[4]] +'</td>'
+                frontList += '</tr>'
+            
+            $('.frontList tbody').append(frontList);
+                
+            $('.listWrap .list li').removeClass('active').eq(currentIdx).addClass('active');
+            $('.listWrap .list').append(listText);
+            
+            console.log(val[GET_DATA_KEY[8]]);
+        }
+        
+        // 180820 frontList 추가 S
+        $('.frontList td > a').on('click', function(){
+            var $this = $(this);
+            var idx = $this.data('idx');
+            
+            $('.listWrap .list li > a').eq(idx).trigger('click');
+            
+            $('.frontWrap').hide();
+            $('.detailWrap').show();
+        });
+        
+        $('.btnList > a').on('click', function(){
+            $('.frontWrap').show();
+            $('.detailWrap').hide();
+        })
+        // 180820 frontList 추가 E
+        
+        // 리스트 클릭할때 currentIdx 변경
+        $('.listWrap .list li > a').on('click', function(){
+            var $this = $(this);
+            var idx = $this.data('idx');
+            
+            detailView(idx);
+            
+            $('.wrap').attr('data-active',idx);
+            $('.listWrap .list li').removeClass('active');
+            $this.parents('li').addClass('active');
+        });
+        
+        // 글자 크기 조정
+        $('.btnSize .clsButton').click( function(){
+            var $contents = $('.contWrap');
+            var fontSize = $contents.css('fontSize');
+            var num = parseFloat(fontSize, 10); // 숫자만 가져오기
+            var unit = fontSize.slice(-2); //(단위) px 오른쪽에서 2자 가져옴
+
+            // 크게/작게
+            if(this.id == "fontBig") {
+                num *= 1.1;
+                
+                if(num > 23){
+                    return false;
+                }
+            } else {
+                num /= 1.1;
+                
+                if(num < 11) {
+                    return false;
+                }
+            }
+            
+            $contents.css('fontSize', num + unit);
+        });
+        
+    }
+    
+</script>
+
+</html>

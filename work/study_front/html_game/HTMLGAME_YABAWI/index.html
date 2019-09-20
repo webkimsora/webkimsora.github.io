@@ -1,0 +1,373 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>HTMLGAME</title>
+    <script src="./js/jquery-1.9.1.min.js"></script>
+    <script src="./js/jquery.path.js"></script>
+    <script src="./js/jquery.easing.1.3.js"></script>
+    <script src="./js/jquery.transform.js"></script>
+    <style>
+    *{margin: 0; padding: 0; border: none; box-sizing: border-box;}
+    .tn_wrap{height: 100px; position: relative; margin: 0 auto; margin-top: 250px; width: 800px; }
+    .tn{float: left; height: 100px; text-align: center; width: 33.33%; position: relative; top: 0;}
+    .tn.lts:after,.tn.rts:after{content: ''; width: 266px; height: 377px; position: absolute; left: 50%; margin-left: -133px; top: -410px; background: no-repeat center bottom;}
+    .tn.lts:after{background-image: url(./images/lts.png);}
+    .tn.rts:after{background-image: url(./images/rts.png);}
+    .tn .coin{height: 100px; width: 100px; border: 20px solid #aaa; background: #ccc; display: inline-block; position: relative; border-radius: 50%; z-index: 2; }
+    .tit{font-size: 30px; text-align: center; margin-top: 100px; margin-bottom: 30px; min-height: 40px;}
+    .btn_wrap{text-align: center; margin-top: 50px;}
+    .tn .succ{position: absolute; left: 50%; top: 50%; width: 60px; height: 60px; background: yellow; margin-left: -30px; margin-top: -30px; border-radius: 50%; z-index: 1;}
+    .tn .succ:after{content: ''; position: absolute; width: 100%; text-align: center; color: #000; font-weight: bold; font-size: 12px; left: 0;}
+    .tn .succ:before{content: ''; width: 40px; height: 40px; border-radius: 50%; position: absolute; left: 0; top: 0; border: 10px solid #ffde00;}
+    .tn .succ.fail{background: #777;}
+    .tn .succ.fail:before{border-color: #555;}
+    button{padding: 20px 30px;}
+    </style>
+</head>
+
+<body>
+
+    <div class="tn_wrap tnWrap">
+        <div style="width: 33.3333%; position: absolute; left: 267px;" class="tn tn0" data-idx="0"><span class="coin" style="top: 0px;"></span><span class="succ"></span></div>
+        <div style="width: 33.3333%; position: absolute; left: 532px;" class="tn tn1" data-idx="1"><span class="coin" style="top: 0px;"></span></div>
+        <div style="width: 33.3333%; position: absolute; left: 0px;" class="tn tn2" data-idx="2"><span class="coin" style="top: 0px;"></span></div>
+    </div>
+    <div class="tit"></div>
+    <!-- <button onclick="HTML_GAME_TYPE5.restore();">restart</button>
+    <button onclick="HTML_GAME_TYPE5.fnStopGame();">stop</button> -->
+    <div class="btn_wrap">
+        <button class="htmlGameRestore">재시작</button>
+        <button class="htmlGamePackFun" data-type="1">무조건당첨</button>
+        <button class="htmlGamePackFun" data-type="2">무조건실패</button>
+        <button class="htmlGamePackFun" data-type="3">랜덤</button>
+    </div>
+</body>
+<script>
+    ;
+    (function($) {
+        var options = {
+            leng: 3,
+            mode: 3, //1: 당첨, 2:실패, 3: 랜덤
+            level: 4,
+            life: 3,
+            shuffle: true,
+            successIndex: 0,
+            limitTimer: 20000,
+            moveBeforeCallback: null,
+            moveAfterCallback: null,
+            animation: true,
+            title: ['타이머중....', '선택해주세요.'],
+            htmlGameRestore: '.htmlGameRestore'
+        };
+        var Yabawi = function(obj, selector) {
+            this.el = selector;
+            this.obj = $.extend(options, obj);
+            this.o = {
+                items: [],
+                intimer: 1500,
+                coinCountIdx: 0,
+                coinPosition: [],
+                coinMoveArry: [],
+                coinClsName: '.tn',
+                coinInnerClsName: '.coin',
+            };
+            this.anicallobj = {
+                'duration': 300,
+                'easing': 'swing',
+                'step': function(a, z) {},
+                'complete': function() {}
+            };
+            this.moveleng = this.obj.leng - 1;
+            this.initCoinPosition = [];
+            this.timer = this.o.intimer / this.obj.level;
+            this.loop = null;
+            this.RESULT_SUCC = 0;
+            this.RESULT_FAIL = 0;
+            this.successIndex = this.obj.successIndex;
+            this.beforeCallback = function() {};
+            this.afterCallback = function() {};
+            this.init();
+        };
+        Yabawi.prototype = {
+            init: function() {
+                var _this = this;
+                this.set();
+                this.get();
+                $(this.obj.htmlGameRestore).off().on({
+                    'click': function() {
+                        _this.restore();
+                    }
+                });
+                setTimeout(function() {
+                    _this.fnSetInterval();
+                }, 3000);
+            },
+            set: function() {
+                var _this = this;
+                var html = '';
+                var c = this.random(0, this.obj.leng, 0, 'floor');
+                var comp = c < 1 ? 0 : c;
+                var comp = this.successIndex ? this.successIndex : comp;
+                for (var i = 0; i < this.obj.leng; i++) {
+                    _this.o.items.push({
+                        target: $(this),
+                        idx: i
+                    });
+                    _this.o.coinCountIdx++;
+                    html += '<div style="width: ' + 100 / this.obj.leng + '%;" class="' + _this.clsformat(_this.o.coinClsName) + ' ' + _this.clsformat(_this.o.coinClsName) + '' + i + '" data-idx="' + i + '">';
+                    if (comp == i) {
+                        html += '<span class="coin"></span><span class="succ"></span>';
+                    } else {
+                        html += '<span class="coin"></span>';
+                    }
+                    html += '</div>';
+                }
+                $(_this.el).html(html);
+                $(this.el).find(this.o.coinClsName).each(function(idx) {
+                    _this.o.coinPosition.push($(this)[0].offsetLeft);
+                    _this.initCoinPosition.push($(this)[0].offsetLeft);
+                });
+                this.successIndex = comp;
+            },
+            get: function() {
+                var _this = this;
+                var i_cp = 0;
+                var i_ad = 0;
+                $(this.el).find(this.o.coinClsName).each(function(idx) {
+                    $(this).css({
+                        'position': 'absolute',
+                        'left': _this.initCoinPosition[idx]
+                    });
+                    _this.fnGetAnimate($(this));
+                });
+                for (var i = 0; i < this.obj.limitTimer / this.o.intimer; i++) {
+                    i_ad++;
+                    if (i_ad > _this.moveleng) {
+                        i_ad = 0;
+                    }
+                    _this.o.coinMoveArry.push([i_cp, i_ad]);
+                    i_cp++;
+                    if (i_cp > _this.moveleng) {
+                        i_cp = 0;
+                    }
+                }
+                if (this.obj.shuffle) {
+                    this.shuffle(this.o.coinMoveArry);
+                }
+            },
+            fnGetAnimate: function($this) {
+                var _this = this;
+                var timer = 1000;
+                $this.find(this.o.coinInnerClsName).stop().animate({
+                    'top': -$this.height()
+                }, this.anicallb({
+                    duration: timer,
+                    complete: function() {
+                        $(this).delay(timer).queue(function() {
+                            $(this).stop().animate({
+                                'top': 0
+                            }, _this.anicallb({
+                                duration: timer
+                            }));
+                        });
+                    }
+                }));
+            },
+            fnSetInterval: function() {
+                var _this = this;
+                var c = 0;
+                var en = 0;
+                $('.tit').text(this.obj.title[0]);
+                clearInterval(this.loop);
+                _this.loop = setInterval(function() {
+                    if (en >= _this.o.coinMoveArry.length) {
+                        clearInterval(_this.loop);
+                        _this.fnStopGame();
+                        return;
+                    }
+                    _this.fnCoinMove({
+                        idx: en,
+                        remove_num: c,
+                        crtpos: _this.o.coinPosition,
+                        timer: 1000 / _this.obj.level
+                    });
+                    en++;
+                    c = en;
+                }, this.timer);
+            },
+            fnCoinMove: function(o) {
+                var _this = this;
+                var o = o;
+                var ar = [];
+                var mix = _this.minmax(_this.o.coinMoveArry[o.idx]);
+                $(this.o.coinClsName + '[data-idx]').each(function(idx) {
+                    ar.push($(this)[0].offsetLeft);
+                    $(this).removeClass('lts rts');
+                    if (mix.min == idx) {
+                        $(this).addClass('lts');
+                    } else if (mix.max == idx) {
+                        $(this).addClass('rts');
+                    }
+                });
+                $(this.o.coinClsName + '[data-idx="' + _this.o.coinMoveArry[o.idx][0] + '"]').stop().animate({
+                    'left': ar[_this.o.coinMoveArry[o.idx][1]],
+                }, this.anicallb({
+                    duration: this.timer,
+                }));
+                $(this.o.coinClsName + '[data-idx="' + _this.o.coinMoveArry[o.idx][1] + '"]').stop().animate({
+                    'left': ar[_this.o.coinMoveArry[o.idx][0]],
+                }, this.anicallb({
+                    duration: this.timer,
+                }));
+            },
+            fnStopGame: function() {
+                clearInterval(this.loop);
+                this.fnFinishBind();
+                $('.tit').text(this.obj.title[1]);
+                $(this.o.coinClsName).removeClass('lts rts');
+            },
+            fnFinishBind: function() {
+                var _this = this;
+                var nbool = true;
+                $(this.o.coinClsName).off().on('click', function(e) {
+                    var $this = $(this);
+                    var $idx = $this.index();
+                    if (nbool) {
+                        _this.fnFinishGame($idx, $this);
+                    }
+                });
+            },
+            fnFinishGame: function($idx, $this) {
+                var _this = this;
+                if (_this.obj.mode == 1) {
+                    $this.append('<span class="succ"></span>');
+                } else if (_this.obj.mode == 2) {
+                    $this.find('.succ').hide();
+                }
+                $this.find(this.o.coinInnerClsName).stop().animate({
+                    'top': -$this.height()
+                }, this.anicallb({
+                    duration: 1000,
+                    complete: function() {
+                        if (_this.obj.mode == 3) { // 기존방식 그대로 랜덤
+                            if ($idx == _this.successIndex) {
+                                _this.fnMsgCallback('정답');
+                                $(_this.o.coinClsName).off('click');
+                            } else {
+                                _this.obj.life--;
+                                if (_this.obj.life) {
+                                    _this.fnMsgCallback('틀림\n' + _this.obj.life + '번 남았습니다.');
+                                } else {
+                                    var confr = _this.fnMsgCallback('틀림\n게임다시하기?', 'confirm');;
+                                    if (confr) {
+                                        _this.restore();
+                                    } else {
+                                        $(_this.o.coinClsName).off('click');
+                                        _this.fnMsgCallback('게임실패');
+                                    }
+                                }
+                            }
+                        } else if (_this.obj.mode == 2) { //무조건틀림
+                            _this.fnMsgCallback('게임실패');
+                            $(_this.o.coinClsName).off('click');
+                            /*_this.obj.life--;
+                            if (_this.obj.life) {
+                                _this.fnMsgCallback('틀림\n' + _this.obj.life + '번 남았습니다.');
+                            } else {
+                                $(_this.o.coinClsName).off('click');
+                                _this.fnMsgCallback('게임실패');
+                            }*/
+                        } else if (_this.obj.mode == 1) { //무조건정답
+                            _this.fnMsgCallback('정답');
+                            $(_this.o.coinClsName).off('click');
+                        }
+                    }
+                }));
+            },
+            fnMsgCallback: function(m, ca) {
+                if (ca) {
+                    switch (ca) {
+                        case 'confirm':
+                            confirm(ca);
+                            break;
+                    }
+                } else {
+                    alert(m);
+                }
+            },
+            restore: function() {
+                clearInterval(this.loop);
+                this.o.coinPosition = [];
+                this.o.coinMoveArry = [];
+                this.init();
+            },
+            anicallb: function(ob) {
+                return $.extend(false, this.anicallobj, ob);
+            },
+            clsformat: function(str) {
+                return str.replace('.', '');
+            },
+            minmax: function(a) {
+                return {
+                    min: Math.min.apply(null, a),
+                    max: Math.max.apply(null, a)
+                }
+            },
+            shuffle: function(a) {
+                var va = a;
+                var j, x, i;
+                for (i = a.length - 1; i > 0; i--) {
+                    j = Math.floor(Math.random() * (i + 1));
+                    x = va[i];
+                    va[i] = va[j];
+                    va[j] = x;
+                }
+                return va;
+            },
+            random: function(min, max, remove_num, math) {
+                var num = Math.random() * (max - min) + min
+                var rnum = 0;
+                if (math) {
+                    switch (math) {
+                        case 'floor':
+                            rnum = Math.floor(num);
+                            break;
+                        case 'round':
+                            rnum = Math.round(num);
+                            break;
+                        case 'ceil':
+                            rnum = Math.ceil(num);
+                            break;
+                    }
+                }
+                if (remove_num && num == remove_num) {
+                    this.random(min, max, remove_num, math);
+                } else {
+                    return rnum ? rnum : num;
+                }
+            }
+        };
+        var bool = true;
+        $('.htmlGameRestore').css('opacity', .5);
+        $('.htmlGamePackFun').off().on('click', function() {
+            var $this = $(this);
+            $('.htmlGamePackFun').css('opacity', .5);
+            $('.htmlGameRestore').css('opacity', 1);
+            if (!bool) {
+                alert('한번 결정된 모드(무조건당첨,무조건실패,랜덤)는\n변경불가합니다.\n변경을 원할시 새로고침 해주세요.');
+                return false;
+            }
+            window.HTML_GAME_TYPE5 = new Yabawi({
+                mode: $this.data('type')
+            }, '.tnWrap');
+            console.log(HTML_GAME_TYPE5);
+            bool = false;
+            return false;
+        });
+    })(jQuery);
+</script>
+
+</html>

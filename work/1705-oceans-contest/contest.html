@@ -1,0 +1,834 @@
+<!doctype html>
+<html class="no-js" lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <script>
+  <!--
+    var UserAgent = navigator.userAgent;
+    var UADevice = UserAgent.match(/iPhone|iPod|iPad|Android|Windows CE|BlackBerry|Symbian|Windows Phone|webOS|Opera Mini|Opera Mobi|POLARIS|IEMobile|lgtelecom|nokia|SonyEricsson/i);
+    var UAVendor = UserAgent.match(/LG|SAMSUNG|Samsung/);
+    if ( UADevice !== null || UAVendor!== null){
+      location.href = "./m/";
+    }
+    //-->
+  </script>
+  <link rel="stylesheet" href="css/main.css">
+  <!--[if lte IE 8]>
+    <script src="./assets/js/ie8Polyfill.js"></script>
+  <![endif]-->
+
+</head>
+<body>
+  <main id="viewport" class="contest">    
+    <div class="top">
+      <a class="logo" href="http://www.joycity.com">
+        <img src="./images/logo.png"  alt="조이시티">
+      </a>
+      <a class="bi" href="/">
+        <img src="./images/bi.png"  alt="오션앤엠파이어">
+      </a>        
+      <div class="top-wrap">
+        <a class="top-elem1" href="https://www.youtube.com/user/jcenest/" target="_blank">YouTube</a>
+        <a class="top-elem2" href="http://www.facebook.com" target="_blank">facebook</a>
+        <a class="top-elem3" href="http://one.joycity.com/" target="_blank">공식홈페이지</a>
+        <div class="languageSel">
+          <label for="language">KOREAN</label>
+          <select id="language" class="language">
+            <option value="" selected="selected">KOREAN</option>
+            <option value="">ENGLISH</option>
+            <option value="">中國語</option>
+            <option value="">日本語</option>
+            <option value="">France</option>
+          </select>          
+        </div>
+      </div>
+    </div>
+
+    <div class="gnbWrap">
+      <ul class="gnb">
+        <li>
+          <a href="#movie">
+            <i class="sp-nav gnb-elem1">게임영상</i>
+          </a>
+        </li>
+        <li>
+          <a href="#guide">
+            <i class="sp-nav gnb-elem2">모집안내</i>
+          </a>
+        </li>
+        <li>
+          <a href="#method">
+            <i class="sp-nav gnb-elem3">응모방법</i>
+          </a>
+        </li>
+        <li>
+          <a href="#submit">
+            <i class="sp-nav gnb-elem4">영상 출품작</i>
+          </a>
+        </li>
+      </ul>      
+      <a class="gnb-elem5" href="#modal-app" data-toggle="modal">
+        <img class="gnb-elem5-img" src="./images/gnb-elem5.png"  alt="지금 출품하기">
+        <img class="gnb-elem5-txt" src="./images/gnb-elem5-txt.png"  alt="지금 출품하기">
+      </a>
+    </div>
+
+    <div class="allWrap">      
+      <!-- @ 메인 -->
+      <section class="main container page" id="main">
+        <!-- @@ 불꽃 데코 -->
+        <div id="snow"></div>
+        <!-- // 불꽃 데코 -->
+        <div class="main-title">
+          <img src="./images/main-title.png"  alt="" usemap="#mainImg">    
+          <map id="mainImg" name="mainImg">
+            <area shape="rect" alt="공모전 자료 다운로드" title="" coords="16,484,190,523" href="#" target="_blank" />
+            <area shape="rect" alt="오션앤엠파이어 다운로드" title="" coords="198,485,396,524" href="#" target="_blank" />
+            <area shape="rect" alt="게임소개 바로가기" title="" coords="831,485,1002,524" href="#" target="_blank" />
+          </map>
+        </div>
+        <a class="main-buttonWrap" href="#modal-app" data-toggle="modal">
+          <img class="main-button" src="./images/main-button.png"  alt="">
+          <img class="main-buttonTxt" src="./images/main-buttonTxt.png"  alt="지금 출품하기">
+        </a>
+        <div class="glassWrap">
+          <img class="glass1" src="./images/glass1.png"  alt="">
+          <img class="glass2" src="./images/glass2.png"  alt="">
+          <img class="glass3" src="./images/glass3.png"  alt="">
+          <img class="glass4" src="./images/glass4.png"  alt="">
+          <img class="glass5" src="./images/glass5.png"  alt="">
+        </div>
+      </section>
+
+      <!-- @ 게임영상 -->
+      <section class="movie container page" id="movie">
+        <h3 class="movie-title">
+          <img src="./images/movie-title.png"  alt="게임소개">
+        </h3>
+        <!-- @@ 영상 재생 S -->
+        <div class="frame-play-contents">
+          <div class="web-video movie-frame">
+            <!--button class="btn-play-video" type="button">
+              <i class="sp-common btn-play">
+                영상 재생
+              </i>
+            </button-->
+            <iframe id="web-video-frame" src="" frameborder="0"></iframe>
+          </div>
+          <div class="listWrap">
+            <ul class="list">
+              <li class="slide">
+                <button type="button" data-video="MSgl032Vy9s">
+                  <i class="sp-movie play-list1">영상1</i>
+                </button>
+              </li>
+              <li class="slide">
+                <button type="button" data-video="UAh-impl4ts">
+                  <i class="sp-movie play-list2">영상2</i>
+                </button>
+              </li>
+              <li class="slide">
+                <button type="button" data-video="pG_vMiH9RMQ">
+                  <i class="sp-movie play-list3">영상3</i>
+                </button>
+              </li>
+              <li class="slide">
+                <button type="button" data-video="pG_vMiH9RMQ">
+                  <i class="sp-movie play-list4">영상4</i>
+                </button>
+              </li>
+              <li class="slide">
+                <button type="button" data-video="UAh-impl4ts">
+                  <i class="sp-movie play-list5">영상5</i>
+                </button>
+              </li>
+              <li class="slide">
+                <button type="button" data-video="UAh-impl4ts">
+                  <i class="sp-movie play-list6">영상6</i>
+                </button>
+              </li>
+              <li class="slide">
+                <button type="button" data-video="UAh-impl4ts">
+                  <i class="sp-movie play-list7">영상7</i>
+                </button>
+              </li>
+              <li class="slide">
+                <button type="button" data-video="UAh-impl4ts">
+                  <i class="sp-movie play-list8">영상8</i>
+                </button>
+              </li>
+              <li class="slide">
+                <button type="button" data-video="UAh-impl4ts">
+                  <i class="sp-movie play-list9">영상9</i>
+                </button>
+              </li>
+              <li class="slide">
+                <button type="button" data-video="UAh-impl4ts">
+                  <i class="sp-movie play-list10">영상10</i>
+                </button>
+              </li>
+            </ul>                        
+          </div>
+        </div>
+        <!-- @@ 영상 재생 E -->        
+        <!--img class="movie-deco" src="./images/deco-sea.png"  alt=""-->
+      </section>
+
+      <!-- @ 안내-->
+      <section class="guide container page" id="guide">
+        <img src="./images/cnt-guide.png"  alt="">
+      </section>
+
+      <!-- @ 응모 방법 -->
+      <section class="method container page" id="method">
+        <img src="./images/cnt-method.png"  alt="">
+      </section>
+
+      <!-- @ 영상 출품작 -->
+      <section class="submit container page" id="submit"> 
+        <h3 class="submit-title">
+          <img src="./images/submit-title.png"  alt="영상 출품작">
+        </h3>
+        <form id="frm-search" method="post" action="">
+          <div class="search">
+            <div class="searchSel">
+              <label for="search-category">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;제&nbsp;&nbsp;&nbsp;목</label>
+              <select id="search-category" class="search-category" name="" title="">
+                <option value="" selected="selected">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;제&nbsp;&nbsp;&nbsp;목</option>
+                <option value="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;이&nbsp;&nbsp;&nbsp;름</option>
+                <option value="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;번&nbsp;&nbsp;&nbsp;호</option>
+              </select>              
+            </div>
+            <div class="search-wrap">
+              <input class="search-text" type="text" placeholder="검색어를 입력해주세요" name="">
+              <button class="search-btn"><img src="./images/search-icon.png"  alt=""></button>              
+            </div>
+            <!-- @@ 리스트 순서 : 선택시 on클래스 -->
+            <ul class="search-option">
+              <li>
+                <a class="on" href="#">등록순</a>
+              </li>
+              <li>
+                <a href="#">최신순</a>
+              </li>
+              <li>
+                <a href="#">인기순</a>
+              </li>
+            </ul>            
+          </div>
+        </form>
+        <div class="submit-list">
+          <div class="best">
+            <h3 class="best-title">
+              <img src="./images/best-title.png"  alt="BEST 인기 출품작">
+            </h3>
+            <ul class="workListWrap">
+              <li class="grade1">
+                <div class="workList">
+                  <a class="thumb" href="#" data-playData="pR1uGTaTlk8">
+                    <img src="./images/workList.jpg"  alt="영상썸네일">
+                  </a>
+                  <dl class="workName">
+                    <dt>작품명</dt>
+                    <dd>바다를 가르는 오션앤엠파이어 항해</dd>
+                  </dl>
+                  <dl class="userName">
+                    <dt>이　름</dt>
+                    <dd>홍길동</dd>
+                  </dl>
+                  <div class="shareWrap">
+                    <div class="likeFig">
+                      <a class="btn-likeFig" href="javascript:;">
+                        <var>2058903</var>
+                      </a>                      
+                    </div>
+                    <div class="shareFig">
+                      <a class="btn-shareFig" href="#popup-shareTxt" data-toggle="modal">
+                        <var>58032</var>
+                      </a>                      
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="workList">
+                  <a class="thumb" href="#" data-playData="byViZzDFUeE">
+                    <img src="./images/workList.jpg"  alt="영상썸네일">
+                  </a>
+                  <dl class="workName">
+                    <dt>작품명</dt>
+                    <dd>바다를 가르는 항해</dd>
+                  </dl>
+                  <dl class="userName">
+                    <dt>이　름</dt>
+                    <dd>홍길동</dd>
+                  </dl>
+                  <div class="shareWrap">
+                    <div class="likeFig">
+                      <a class="btn-likeFig" href="javascript:;">
+                        <var>2058903</var>
+                      </a>                      
+                    </div>
+                    <div class="shareFig">
+                      <a class="btn-shareFig" href="#popup-shareTxt" data-toggle="modal">
+                        <var>58032</var>
+                      </a>                      
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="workList">
+                  <a class="thumb" href="#" data-playData="9qsVqH5Piig">
+                    <img src="./images/workList.jpg"  alt="영상썸네일">
+                  </a>
+                  <dl class="workName">
+                    <dt>작품명</dt>
+                    <dd>바다를 가르는 오션앤엠파이어 항해 가나다라마바사</dd>
+                  </dl>
+                  <dl class="userName">
+                    <dt>이　름</dt>
+                    <dd>홍길동</dd>
+                  </dl>
+                  <div class="shareWrap">
+                    <div class="likeFig">
+                      <a class="btn-likeFig" href="javascript:;">
+                        <var>2058903</var>
+                      </a>                      
+                    </div>
+                    <div class="shareFig">
+                      <a class="btn-shareFig" href="#popup-shareTxt" data-toggle="modal">
+                        <var>58032</var>
+                      </a>                      
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="entry">
+            <h3 class="entry-title">
+              <img src="./images/entry-title.png"  alt="영상 출품작">
+            </h3>            
+            <ul class="workListWrap">
+              <li>
+                <div class="workListNum">
+                  <span>no.</span>
+                  <var>235</var>
+                </div>
+                <div class="workList">
+                  <a class="thumb" href="#">
+                    <img src="./images/workList.jpg"  alt="영상썸네일">
+                  </a>
+                  <dl class="workName">
+                    <dt>작품명</dt>
+                    <dd>바다를 가르는 오션앤엠파이어 항해</dd>
+                  </dl>
+                  <dl class="userName">
+                    <dt>이　름</dt>
+                    <dd>홍길동</dd>
+                  </dl>
+                  <div class="shareWrap">
+                    <div class="likeFig">
+                      <a class="" href="#">
+                        <var>2058903</var>
+                      </a>                      
+                    </div>
+                    <div class="shareFig">
+                      <a class="" href="#">
+                        <var>58032</var>
+                      </a>                      
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="workListNum">
+                  <span>no.</span>
+                  <var>234</var>
+                </div>
+                <div class="workList">
+                  <a class="thumb" href="#">
+                    <img src="./images/workList.jpg"  alt="영상썸네일">
+                  </a>
+                  <dl class="workName">
+                    <dt>작품명</dt>
+                    <dd>바다를 가르는 오션앤엠파이어 항해</dd>
+                  </dl>
+                  <dl class="userName">
+                    <dt>이　름</dt>
+                    <dd>홍길동</dd>
+                  </dl>
+                  <div class="shareWrap">
+                    <div class="likeFig">
+                      <a class="" href="#">
+                        <var>2058903</var>
+                      </a>                      
+                    </div>
+                    <div class="shareFig">
+                      <a class="" href="#">
+                        <var>58032</var>
+                      </a>                      
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="workListNum">
+                  <span>no.</span>
+                  <var>233</var>
+                </div>
+                <div class="workList">
+                  <a class="thumb" href="#">
+                    <img src="./images/workList.jpg"  alt="영상썸네일">
+                  </a>
+                  <dl class="workName">
+                    <dt>작품명</dt>
+                    <dd>바다를 가르는 항해</dd>
+                  </dl>
+                  <dl class="userName">
+                    <dt>이　름</dt>
+                    <dd>홍길동</dd>
+                  </dl>
+                  <div class="shareWrap">
+                    <div class="likeFig">
+                      <a class="" href="#">
+                        <var>2058903</var>
+                      </a>                      
+                    </div>
+                    <div class="shareFig">
+                      <a class="" href="#">
+                        <var>58032</var>
+                      </a>                      
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="workListNum">
+                  <span>no.</span>
+                  <var>232</var>
+                </div>
+                <div class="workList">
+                  <a class="thumb" href="#">
+                    <img src="./images/workList.jpg"  alt="영상썸네일">
+                  </a>
+                  <dl class="workName">
+                    <dt>작품명</dt>
+                    <dd>바다를 가르는 오션앤엠파이어 항해 가나다라마바사</dd>
+                  </dl>
+                  <dl class="userName">
+                    <dt>이　름</dt>
+                    <dd>홍길동</dd>
+                  </dl>
+                  <div class="shareWrap">
+                    <div class="likeFig">
+                      <a class="" href="#">
+                        <var>2058903</var>
+                      </a>                      
+                    </div>
+                    <div class="shareFig">
+                      <a class="" href="#">
+                        <var>58032</var>
+                      </a>                      
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="workListNum">
+                  <span>no.</span>
+                  <var>231</var>
+                </div>
+                <div class="workList">
+                  <a class="thumb" href="#">
+                    <img src="./images/workList.jpg"  alt="영상썸네일">
+                  </a>
+                  <dl class="workName">
+                    <dt>작품명</dt>
+                    <dd>바다를 가르는 오션앤엠파이어 항해</dd>
+                  </dl>
+                  <dl class="userName">
+                    <dt>이　름</dt>
+                    <dd>홍길동</dd>
+                  </dl>
+                  <div class="shareWrap">
+                    <div class="likeFig">
+                      <a class="" href="#">
+                        <var>2058903</var>
+                      </a>                      
+                    </div>
+                    <div class="shareFig">
+                      <a class="" href="#">
+                        <var>58032</var>
+                      </a>                      
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="workListNum">
+                  <span>no.</span>
+                  <var>230</var>
+                </div>
+                <div class="workList">
+                  <a class="thumb" href="#">
+                    <img src="./images/workList.jpg"  alt="영상썸네일">
+                  </a>
+                  <dl class="workName">
+                    <dt>작품명</dt>
+                    <dd>바다를 가르는 오션앤엠파이어 항해</dd>
+                  </dl>
+                  <dl class="userName">
+                    <dt>이　름</dt>
+                    <dd>홍길동</dd>
+                  </dl>
+                  <div class="shareWrap">
+                    <div class="likeFig">
+                      <a class="" href="#">
+                        <var>2058903</var>
+                      </a>                      
+                    </div>
+                    <div class="shareFig">
+                      <a class="" href="#">
+                        <var>58032</var>
+                      </a>                      
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="workListNum">
+                  <span>no.</span>
+                  <var>229</var>
+                </div>
+                <div class="workList">
+                  <a class="thumb" href="#">
+                    <img src="./images/workList.jpg"  alt="영상썸네일">
+                  </a>
+                  <dl class="workName">
+                    <dt>작품명</dt>
+                    <dd>바다를 가르는 항해</dd>
+                  </dl>
+                  <dl class="userName">
+                    <dt>이　름</dt>
+                    <dd>홍길동</dd>
+                  </dl>
+                  <div class="shareWrap">
+                    <div class="likeFig">
+                      <a class="" href="#">
+                        <var>2058903</var>
+                      </a>                      
+                    </div>
+                    <div class="shareFig">
+                      <a class="" href="#">
+                        <var>58032</var>
+                      </a>                      
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="workListNum">
+                  <span>no.</span>
+                  <var>228</var>
+                </div>
+                <div class="workList">
+                  <a class="thumb" href="#">
+                    <img src="./images/workList.jpg"  alt="영상썸네일">
+                  </a>
+                  <dl class="workName">
+                    <dt>작품명</dt>
+                    <dd>바다를 가르는 오션앤엠파이어 항해 가나다라마바사</dd>
+                  </dl>
+                  <dl class="userName">
+                    <dt>이　름</dt>
+                    <dd>홍길동</dd>
+                  </dl>
+                  <div class="shareWrap">
+                    <div class="likeFig">
+                      <a class="" href="#">
+                        <var>2058903</var>
+                      </a>                      
+                    </div>
+                    <div class="shareFig">
+                      <a class="" href="#">
+                        <var>58032</var>
+                      </a>                      
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>            
+            <div class="pagination">
+              <a href="#">
+                <img src="./images/page-prev-end.png"  alt="첫번째 페이지">
+              </a>
+              <a href="#">
+                <img src="./images/page-prev.png"  alt="이전">
+              </a>
+              <div class="page">
+                <a class="on" href="#">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">4</a>
+                <a href="#">5</a>
+                <a href="#">6</a>
+                <a href="#">7</a>
+                <a href="#">8</a>
+                <a href="#">9</a>                
+              </div>
+              <a href="#">
+                <img src="./images/page-next.png"  alt="다음">
+              </a>
+              <a href="#">
+                <img src="./images/page-next-end.png"  alt="끝 페이지">
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- @ 공모전 영상 클릭 -->
+  <div id="popup-video" class="modal" data-role="modal">
+    <section class="modal-content">
+      <div class="confirm">
+        <form id="frm-video" method="post" action="">
+          <div class="video-movie">
+            <iframe width="1280" height="720" src="https://www.youtube.com/embed/1OPmfUvkBWQ" frameborder="0" allowfullscreen></iframe>
+          </div>
+          <div class="video-content">
+            <div class="lblSpacer">
+              <label for="confirm-title">
+                <i class="sp-confirm empty">영상 제목</i>
+              </label>
+              <input id="video-title" type="text" name="" disabled>
+            </div>
+            <div class="lblSpacer">
+              <label for="video-team">
+                <i class="sp-confirm empty">영상 설명</i>
+              </label>
+              <input id="video-team" type="text" name="" disabled>            
+            </div>
+            <div class="lblSpacer">
+              <label class="lbl-explainWrap" for="video-explain">
+                <i class="sp-confirm empty">작성자</i>
+              </label>
+              <textarea id="video-explain" name="" cols="" rows="" title="" disabled></textarea>
+            </div>
+          </div>
+        </form>
+      </div>
+      <a href="javascript:void(0)" data-rel="back" class="modal__close">
+        <img src="./images/popup/btn-close.png"  alt="창닫기">
+      </a>
+    </section>
+  </div>
+
+  <!-- @ 공모전 제출하기-->
+  <div id="modal-app" class="modal" data-role="modal">
+    <section class="modal-content">
+      <div class="popWrap">
+        <h3 class="app-bigTitle">
+          <img src="./images/popup/app-title.png"  alt="출품신청서">
+        </h3>
+        <form id="frm-app" method="post" action="">
+          <div class="top">
+            <div class="lblSpacer">
+              <label for="app-title">
+                <i class="sp-popup lbl-title">영상 제목</i>
+              </label>
+              <input id="app-title" type="text" name="">
+            </div>
+            <div class="lblSpacer">
+              <label class="lbl-explainWrap" for="app-explain">
+                <i class="sp-popup lbl-explain">영상 설명</i>
+              </label>
+              <textarea id="app-explain" name="" cols="" rows="" title=""></textarea>
+            </div>
+            <div class="lblSpacer">
+              <label for="app-team">
+                <i class="sp-popup lbl-team">개인 혹은 팀명</i>
+              </label>
+              <input id="app-team" type="text" name="">            
+            </div>
+            <div class="lblSpacer">
+              <label for="app-movie">
+                <i class="sp-popup lbl-file">유튜브 URL</i>
+              </label>
+              <input id="app-movie" type="text" name="">      
+              <a class="app-notice" href="javascript:;">
+                <img src="./images/spacer.png"  alt="유튜브 URL 확인 방법">
+              </a>
+              <img class="app-noticeImg" src="./images/popup/app-notice.jpg"  alt="">
+            </div>                 
+          </div>
+          <div class="collect">
+            <div class="">
+              <label for="collect-name">
+                <i class="empty">성명</i>
+              </label>
+              <input id="collect-name" type="text" name="">
+            </div>
+            <div class="">
+              <label for="collect-tel">
+                <i class="empty">휴대폰번호</i>
+              </label>
+              <input id="collect-tel" type="tel" name="" data-input="number" maxlength="11">
+            </div>
+            <div class="">
+              <label for="collect-mail">
+                <i class="empty">이메일</i>
+              </label>
+              <input id="collect-mail" type="text" name="">
+            </div>
+          </div>
+          <div class="chkWrap">
+              <input id="reser-chkbox" type="checkbox" class="is-custom">
+              <label for="reser-chkbox">
+                <i class="sp-popup chkbox"></i>
+                <i class="sp-popup lbl-chkbox">개인정보 수집, 이용 및 SMS 수신에 동의합니다</i>
+              </label>
+              <a href="#popup-detail" data-toggle="modal">
+                <i class="sp-popup btn-detail">자세히 보기</i>
+              </a>
+          </div>
+        </form>        
+      </div>
+      <a class="btn-app" href="#">
+        <img src="./images/popup/btn-app.png"  alt="출품하기">
+      </a>
+      <a href="javascript:void(0)" data-rel="back" class="modal__close">
+        <img src="./images/spacer.png" alt="닫기">
+      </a>
+    </section>
+  </div>
+  
+  <!-- @ 공모전 확인하기-->
+  <div id="modal-confirm" class="modal" data-role="modal">
+    <section class="modal-content">
+      <div class="confirm">
+        <form id="frm-confirm" method="post" action="">
+          <div class="confirm-movie">
+            <iframe width="1280" height="720" src="https://www.youtube.com/embed/1OPmfUvkBWQ" frameborder="0" allowfullscreen></iframe>
+          </div>
+          <div class="confirm-content">
+            <div class="lblSpacer">
+              <label for="confirm-title">
+                <i class="sp-confirm empty">영상 제목</i>
+              </label>
+              <input id="confirm-title" type="text" name="" disabled value="가나다라마바사">
+            </div>
+            <div class="lblSpacer">
+              <label for="confirm-team">
+                <i class="sp-confirm empty">작성자</i>
+              </label>
+              <input id="confirm-team" type="text" name="" disabled value="가나다라마바사">            
+            </div>
+            <div class="lblSpacer">
+              <label class="lbl-explainWrap" for="confirm-explain">
+                <i class="sp-confirm empty">영상 설명</i>
+              </label>
+              <textarea id="confirm-explain" name="" cols="" rows="" title="" disabled>가나다라마바사가나다라마바사가나다라마바사가나다라마바사가나다라마바사가나다라마바사가나다라마바사가나다라마바사가나다라마바사가나다라마바사가나다라마바사가나다라마바사가나다라마바사가나다라마바사가나다라마바사</textarea>
+            </div>
+          </div>
+        </form>
+        <div style="text-align: center;">
+          <img class="confirm-txt" src="./images/popup/confirm-txt.png"  alt="등록된 정보가 맞는지 다시 한번 확인해주세요">
+          <a class="btn-modific" href="#">
+            <img src="./images/popup/btn-modific.png"  alt="수정하기">
+          </a>
+          <a class="btn-complete" href="#">
+            <img src="./images/popup/btn-ok.png"  alt="확인">
+          </a>          
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- @ 공모전 유의사항 -->
+  <div id="popup-detail" class="modal" data-role="modal">
+    <section class="modal-content">
+      <img src="./images/popup/@notice.png"  alt="">
+      <a href="javascript:void(0)" data-rel="back" class="modal__close">
+        <img src="./images/popup/btn-close.png" alt="닫기">
+      </a>
+    </section>
+  </div>
+
+  <!-- @ 출품 완료 -->
+  <div id="popup-complete" class="modal" data-role="modal">
+    <section class="modal-content">
+      <img src="./images/popup/@complete.png"  alt="출품 완료">
+      <a href="javascript:void(0)" data-rel="back" class="modal-btn-close">
+        <img src="./images/spacer.png" alt="닫기">
+      </a>
+    </section>
+  </div>
+
+  <!-- @ 공유 완료 -->
+  <div id="share-complete" class="modal" data-role="modal">
+    <section class="modal-content">
+      <img src="./images/popup/@share-complete.png"  alt="공유 완료">
+      <a href="javascript:void(0)" data-rel="back" class="modal-btn-close">
+        <img src="./images/spacer.png" alt="닫기">
+      </a>
+    </section>
+  </div>
+
+    <!-- @ 공유 팝업 -->
+  <div id="popup-share" class="modal" data-role="modal">
+    <section class="modal-content">
+      <div class="share">
+        <ul class="share-list">
+          <li>
+            <a href="#">
+              <img src="./images/popup/share-fb.png"  alt="페이스북">
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="./images/popup/share-ks.png"  alt="카카오스토리">
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="./images/popup/share-tw.png"  alt="트위터">
+            </a>
+          </li>
+        </ul>
+        <img class="share-txt" src="./images/popup/share-txt.png"  alt="사용하실 SNS를 선택해주세요">
+      </div>
+    </section>
+  </div>
+
+  <!-- @ 공유 문구 -->
+  <div id="popup-shareTxt" class="modal" data-role="modal">
+    <section class="modal-content">
+      <div class="shareTxt">
+        <span>https://youtu.be/yZeoAWaKurI</span> <br>
+        #오션앤엠파이어 #광고영상공모전<br>
+        총 상금 1천만원과 맥북을 쟁취할 금손 영상러들 모여라!!<br>
+        지금 바로 <span>www.one-contest.com</span>에 접속해 공모전에 참가하고, 참가자들의 멋진 영상도 만나보세요! 
+      </div>
+      <a href="javascript:void(0)" data-rel="back" class="btn-shareTxt">
+        <img src="./images/popup/btn-share.png" alt="공유하기">
+      </a>
+    </section>
+  </div>
+
+
+
+  <script src="./assets/js/vendor.js"></script>
+  <script src="./assets/js/plugin.js"></script>
+  <script src="js/jquery.bxslider.min.js"></script>
+  <script src="js/tubular.js"></script>
+  <script src="js/TweenMax.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

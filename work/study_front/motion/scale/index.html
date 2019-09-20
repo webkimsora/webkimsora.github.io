@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html lang="en" class="lt-ie7 no-js"> <![endif]-->
+<!--[if IE 7 ]> <html lang="en" class="lt-ie8 no-js"> <![endif]-->
+<!--[if IE 8 ]> <html lang="en" class="lt-ie9 no-js"> <![endif]-->
+<!--[if IE 9 ]> <html lang="en" class="lt-ie10 no-js"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+
+<!-- Mirrored from www.ohdeergames.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 03 Jan 2019 08:42:54 GMT -->
+<head>
+    <meta charset="utf-8">
+    <title>MAKEULIKE</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimal-ui" />
+    <link type="text/css" rel="stylesheet" href="./css/awwwards.css">
+    <link type="text/css" rel="stylesheet" href="./css/styles.css">
+    <link type="text/css" rel="stylesheet" href="./fonts/icon-font/css/icon-font.css">
+    <script src="./js/libs/jquery-1.11.2.min.js"></script>
+    <script src="./js/libs/modernizr.custom.99885.js"></script>
+    
+    <!-- <link type="text/css" rel="stylesheet" href="plugins/hey-icon/hey-icon.css">
+    <script src="plugins/hey-icon/hey-icon.js"></script> -->
+</head>
+<body>
+    <style>
+    .preloader {background:#333 !important;}
+    </style>
+    <div class="preloader">
+        <div class="preloader__progress">
+            <img src="images/loader.gif" alt="">
+        </div>
+    </div>
+    <div class="wrapper">
+        <div class="alert alert--message">
+            <img src="images/deer.png" alt="" class="alert__image">
+            <span class="alert__content"></span>
+        </div>
+        <header class="header">
+            <a class="header__btn-menu icon icon--menu js-toggle-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+            <a class="header__btn-close icon icon--cancel js-modal-close">
+                <span></span>
+                <span></span>
+            </a>
+        </header>
+        <nav class="menu">
+            <ul>
+                <li><a href="#start">Welcome</a></li>
+                <li><a href="#about" data-modal="about">About</a></li>
+                <li><a href="#team" data-modal="team">Team</a></li>
+                <li><a href="#portfolio" data-modal="portfolio">Portfolio</a></li>
+                <li><a href="#contact" data-modal="contact">Contact</a></li>
+                <li><a href="#end">Explore</a></li>
+            </ul>
+        </nav>
+
+        <canvas id="overlay" class="overlay"></canvas>
+        <div id="about" class="modal">
+            <div class="modal__inner col--10of12-sm col--7of12-l text--center">
+                <h1>MAKEULIKE</h1>
+                <h2>THE INTERACTIVE IDEA COMPANY FOR THE NEW DIGITAL CREATIVE</h2>
+                <p>가상과 현실은 두 개의 나누어진 별개의 세상이 아니라 디지털을 매개로 연결된 세상입니다.<br />디지털로 이어진 세상에서는 새로운 크리에이티브가 필요합니다.<br />메큐라이크는 가상과 현실을 이어주는 디지털 크리에이티브로 여러분들을 즐겁게 해드리겠습니다.</p>
+            </div>
+        </div>
+        <div id="team" class="modal">
+            <div class="modal__inner col--12of12 col--10of12-l">
+                <h1 class="text--center">The team</h1>
+                <div class="flexslider slider--team-thumbs">
+                    <ul class="slides">
+                        <li style="background-image: url('images/team/profile1.jpg');">
+                            <div class="table">
+                                <div class="table__cell slide__inner">
+                                    <h3 class="flat">이창훈 국장</h3>
+                                </div>
+                            </div>
+                        </li>
+                        <li style="background-image: url('images/team/profile2.jpg');">
+                            <div class="table">
+                                <div class="table__cell slide__inner">
+                                    <h3 class="flat">김진호 부장</h3>
+                                </div>
+                            </div>
+                        </li>
+                        <li style="background-image: url('images/team/profile3.jpg');">
+                            <div class="table">
+                                <div class="table__cell slide__inner">
+                                    <h3 class="flat">양정효 부장</h3>
+                                </div>
+                            </div>
+                        </li>
+                        <li style="background-image: url('images/team/profile4.jpg');">
+                            <div class="table">
+                                <div class="table__cell slide__inner">
+                                    <h3 class="flat">양승욱 차장</h3>
+                                </div>
+                            </div>
+                        </li>
+                        <li style="background-image: url('images/team/profile5.jpg');">
+                            <div class="table">
+                                <div class="table__cell slide__inner">
+                                    <h3 class="flat">임희재 대리</h3>
+                                </div>
+                            </div>
+                        </li>
+                        <li style="background-image: url('images/team/profile6.jpg');">
+                            <div class="table">
+                                <div class="table__cell slide__inner">
+                                    <h3 class="flat">김소라 대리</h3>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="flexslider slider--team">
+                    <ul class="slides">
+                        <li>
+                            <h2 class="flat">이창훈</h2>
+                            <h4>Technical Lead</h4>
+                        </li>
+                        <li>
+                            <h2 class="flat">김진호</h2>
+                            <h4>General Manager</h4>
+                        </li>
+                        <li>
+                            <h2 class="flat">양정효</h2>
+                            <h4>General Manager</h4>
+                        </li>
+                        <li>
+                            <h2 class="flat">양승욱</h2>
+                            <h4>Deputy General Manager</h4>
+                        </li>
+                        <li>
+                            <h2 class="flat">임희재</h2>
+                            <h4>Assistant Manager</h4>
+                        </li>
+                        <li>
+                            <h2 class="flat">김소라</h2>
+                            <h4>Assistant Manager</h4>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="portfolio" class="modal">
+            <div class="modal__inner col--10of12-sm">
+                <h1 class="text--center">Our work</h1>
+                <div class="flexslider slider--portfolio">
+                    <ul class="slides">
+                        <li>
+                            <img src="images/portfolio/b46_p1.jpg" width="200" alt="" class="float--left margin-right--med margin-bottom--med">
+                            <h2>헬로우 평창</h2>
+                            <p>국민이 직접 참여하고 만드는 평창 동계올림픽이라는 메시지를 전달하고,<br />누구나 쉽게 참여할 수 있는 다양한 프로모션을 순차적으로 오픈하여<br />평창 동계올림픽에 대한 국민적 관심을 높이고 지속시키기 위한 캠페인 진행
+                        </li>
+                        <li>
+                            <img src="images/portfolio/b47_p1.jpg" width="200" alt="" class="float--left margin-right--med margin-bottom--med">
+                            <h2>저출산고령사회위원회</h2>
+                            <p>저출산·고령화 정책에 대한 관심 제고를 위한 쉽고 친근한 사람 중심 정책플랫폼 구축<br />새 정부의 정책 방향을 확인할 수 있으며 자유롭게 개인 의견을<br />작성할 수 있는 공간을 제공하여 국민들과의 소통의 창구로 운영</p>
+                        </li>
+                        <li>
+                            <img src="images/portfolio/b45_p1.jpg" width="200" alt="" class="float--left margin-right--med margin-bottom--med">
+                            <h2>BMW</h2>
+                            <p>‘DO MORE’이라는 슬로건 아래, BMW만의 색다른 경험과 효과적으로 전달하고<br />이성적인 정보를 제공하는 디지털 브랜딩 플랫폼을 지향,<br />브랜드 경험을 완성하는 것을 목표로 캠페인 진행</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="contact" class="modal">
+            <div class="modal__inner col--8of12-sm col--7of12-l text--center">
+                <h2>신규캠페인 집행, 제휴/제안 및 기타 문의 사항을 남겨 주세요. <br />전문 담당자가 빠르게 답변 드리겠습니다.</h2><br />
+                <a href="mailto:client@makeulike.com" style="display:inline-block; border:1px solid #fff; border-radius:10px; padding:15px 30px"><i class="sp-email no1">광고문의</i></a>
+                
+            </div>
+        </div>
+        <div class="scene">
+            <canvas id="scene-canvas" class="scene__canvas"></canvas>
+        </div>
+    </div>
+    <div class="depth"></div>
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/libs/viewport-units-buggyfill.js"></script>
+    <script src="js/libs/underscore-min.js"></script>
+    <script src="js/libs/pubsub.js"></script>
+    <script src="js/libs/jquery.flexslider.js"></script>
+    <script src="js/libs/jquery.scrollmagic.min.js"></script>
+    <script src="js/libs/jquery.scrollmagic.debug.js"></script>
+    <script src="js/libs/tweenmax.min.js"></script>
+    <script src="js/libs/tweenmax.ScrollToPlugin.min.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/preloader.js"></script>
+    <script src="js/overlay.js"></script>
+    <script src="js/page.js"></script>
+    <script src="js/modals.js"></script>
+    <script src="js/points.js"></script>
+    <script src="js/zoom.js"></script>
+    <script src="js/contact.js"></script>
+</body>

@@ -1,0 +1,118 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title>TWEENMAX-TWEENLITE</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<!--link rel="stylesheet" href="./css/style.css"-->
+	<link rel="stylesheet" href="../css/common.css?v=01">
+	<link rel="stylesheet" href="../css/main.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:800" rel="stylesheet">
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+	<script type="text/javascript" src="../js/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="../js/pluginJS/CSSRulePlugin.js"></script>
+
+	<style>
+		@import url(https://fonts.googleapis.com/css?family=Oswald);
+
+		body,
+		html {
+			width: 100%;
+			height: 100%;
+			margin: 0px;
+			padding: 0px;
+			background-color: #abdcfd;
+			overflow: hidden;
+		}
+
+		body:before,
+		body:after {
+			position: fixed;
+			content: "";
+			width: 100%;
+			height: 50%;
+			background-color: #222;
+			z-index: 9998;
+			transform-origin: center top;
+		}
+
+		body:after {
+			bottom: 0px;
+			transform-origin: center bottom;
+		}
+
+		#text {
+			z-index: 9999;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			color: #fff;
+			font-family: arial;
+			font-size: 20px;
+		}
+
+		#textS {
+			color: #000;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			font-family: 'Oswald', tahoma;
+			font-size: 40vw;
+			text-align: center;
+			white-space: nowrap;
+			color: #222;
+			opacity: 0.1;
+		}
+
+		.logo {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			border-radius: 50%;
+			transform: translate(-50%, -50%);
+		}
+	</style>
+</head>
+
+<body>
+	<main id="viewport">
+		<div id='text'>&lt;Body&gt; Gate & CSS before/after</div>
+		<span id="textS">TEST</span>
+		<img class='logo' src="../images/magic.jpg" height="150" width="150">
+	</main>
+
+	<script>
+		/* a Pen by Diaco m.lotfollahi  : https://diacodesign.com */
+
+		var bodyBefore = CSSRulePlugin.getRule("body:before");
+		var bodyAfter = CSSRulePlugin.getRule("body:after");
+
+		var tl = new TimelineMax({
+				delay: 0.1,
+				repeat: -1,
+				yoyo: true,
+				repeatDelay: 2
+			})
+			.to('#text', 1, {
+				autoAlpha: 0
+			})
+			.to(bodyAfter, 1, {
+				cssRule: {
+					scaleY: 0
+				}
+			}, 'gate')
+			.to(bodyBefore, 1, {
+				cssRule: {
+					scaleY: 0
+				}
+			}, 'gate')
+
+		/* a Pen by Diaco m.lotfollahi  : https://diacodesign.com */
+	</script>
+</body>
+
+</html>

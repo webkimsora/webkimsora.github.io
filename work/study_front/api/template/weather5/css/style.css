@@ -1,0 +1,50 @@
+@charset 'utf-8';
+@import url(https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css);
+*{box-sizing: border-box; margin: 0; padding: 0; border: none;}
+html,body{height: 100%;}
+body{font-size: 12px; font-family: 'NanumSquare', sans-serif; }
+.sort_box{display: block; width: 100%; padding: 30px 0 20px; text-align: center;}
+.select_box{display: inline-block; vertical-align: middle; }
+.select_box select{padding: 10px; border: 1px solid #ddd; vertical-align: top; margin: 0 2px; min-width: 150px; height: 39px; border-radius: 4px;}
+.sort_btn{line-height: 39px; min-width: 100px; border-radius: 4px; cursor: pointer; vertical-align: top; font-weight: bold; background: #1b809e; color: #fff; text-align: center;}
+.weather_wrap{max-width: 1300px; margin: 50px auto 0; }
+.weather_wrap .w_tp{text-align: center; color: #000; min-height: 162px;}
+.weather_wrap .w_tp .w_lab{font-size: 30px; min-height: 35px;}
+.weather_wrap .w_tp .w_slab{font-size: 20px; line-height: 30px; min-height: 30px;}
+.weather_wrap .w_tp .w_stit{font-size: 18px; margin-top: 10px; min-height: 21px;}
+.weather_wrap .w_tp .w_tit{font-size: 83px; position: relative; padding: 0 15px; display: inline-block; min-height: 94px; font-weight: bold; letter-spacing: -3px;}
+.weather_wrap .w_tp .w_tit:after{content: ''; width: 10px; height: 10px; border: 2px solid #000; vertical-align: top; display: inline-block; border-radius: 50%; position: absolute; right: 0; top: 0;}
+.weather_wrap .w_md{border: 1px solid #ddd; border-left: none; border-right: none; margin: 15px 0;}
+.w{display: block; width: 50px; height: 50px; background: no-repeat center center; background-size: 35px; margin: 0 auto 5px;}
+.w.w1{background-image: url(../images/weather/w_1.png)}
+.w.w2{background-image: url(../images/weather/w_2.png)}
+.w.w3{background-image: url(../images/weather/w_3.png)}
+.w.w4{background-image: url(../images/weather/w_4.png)}
+.w.wp1{background-image: url(../images/weather/w_p5.png)}
+.w.wp2{background-image: url(../images/weather/w_p6.png)}
+.w.wp3{background-image: url(../images/weather/w_p7.png)}
+.w.wp4{background-image: url(../images/weather/w_p8.png)}
+.w_md .lst{overflow: hidden; overflow-x: auto; width: 100%; white-space: nowrap; min-height: 88px;}
+.w_md .lst .tp{width: 100px; display: inline-block; position: relative; text-align: center; font-size: 13px; color: #000; font-weight: bold; padding: 30px 0;}
+.w_md .lst .tp:nth-child(odd){background: #f9f9f9;}
+/* .w_md .lst .tp+.tp:after{content: ''; width: 1px; height: 60%; position: absolute; left: 0; top: 20%; border-left: 1px dotted #aaa;} */
+.w_md .lst .tp .w_rain{min-height: 15px; line-height: 15px; color: #28baf4; margin-top: 8px; font-size: 11px; padding: 0 10px; position: relative; display: inline-block;}
+.w_md .lst .tp .w_rain:before{content: ''; width: 6px; height: 8px; position: absolute; right: 0; top: 2px; background: url(../images/weather/ico_rain.png) no-repeat left top; background-size: 100% auto;}
+.w_md .lst .tp .w_rain:after{content: '%';}
+.w_md .lst .tp .w_dc{position: relative; padding: 0 5px; position: relative;}
+.w_md .lst .tp .w_dc:after{content: ''; width: 2px; height: 2px; border: 1px solid #000; vertical-align: top; display: inline-block; border-radius: 50%; position: absolute; right: 0; top: 0;}
+.nullmsg{font-weight: bold; text-align: center; font-size: 15px; color: #000;}
+.tntntntntntntntntnt{display: none;}
+.info{font-size: 20px; color: blue; text-align: center; margin-top: 50px;}
+.weather_wrap .w_tp{color: #fff;}
+.weather_wrap .w_tp .w_tit:after{border-color: #fff;}
+.info button{padding: 10px 30px; min-width: 150px; border-radius: 5px; background: #555; color: #fff; margin-top: 5px;}
+body{background: #ddd no-repeat left top; background-size: 100% 100%;}
+body[data-sky-state="1"]{background-image: url(../images/weather/bg_1.png);}
+body[data-sky-state="2"]{background-image: url(../images/weather/bg_2.png);}
+body[data-sky-state="3"]{background-image: url(../images/weather/bg_3.png);}
+body[data-sky-state="4"]{background-image: url(../images/weather/bg_4.png);}
+body[data-sky-state="5"]{background-image: url(../images/weather/bg_5.png);}
+body[data-sky-state="6"]{background-image: url(../images/weather/bg_8.png);}
+body[data-sky-state="7"]{background-image: url(../images/weather/bg_5.png);}
+body[data-sky-state="8"]{background-image: url(../images/weather/bg_8.png);}

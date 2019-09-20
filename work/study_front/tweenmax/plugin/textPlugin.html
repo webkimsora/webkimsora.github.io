@@ -1,0 +1,157 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title>TWEENMAX-TWEENLITE</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<!--link rel="stylesheet" href="./css/style.css"-->
+	<link rel="stylesheet" href="../css/common.css?v=01">
+	<link rel="stylesheet" href="../css/main.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:800" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One" rel="stylesheet">
+
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/plugins/TextPlugin.min.js"></script>
+	<script type="text/javascript" src="../js/jquery-1.11.3.min.js"></script>
+
+	<style>
+		body {background: #333;}
+		#viewport {width: 1000px; margin: 50px auto 0;}
+		.window {
+			width: 600px;
+			margin: 0 auto;
+			background: GhostWhite;
+			border-radius: 0.3rem;
+			box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+			overflow: hidden;
+		}
+
+		.window .window-header {
+			height: 37px;
+			background: Gainsboro;
+			position: relative;
+		}
+
+		.window .window-header .action-buttons {
+			position: absolute;
+			top: 50%;
+			left: 10px;
+			margin-top: -5px;
+			width: 10px;
+			height: 10px;
+			background: Crimson;
+			border-radius: 50%;
+			box-shadow: 15px 0 0 orange, 30px 0 0 limegreen;
+		}
+
+		.window .window-body {
+			padding: 20px;
+		}
+
+		.window .window-body .code-input {
+			opacity: 0.7;
+			margin: 0;
+			color: #333;
+			resize: none;
+		}
+
+		.textLookWrap {
+			font-size: 20px;
+			font-weight: 500;
+			font-family: 'Open Sans', sans-serif;
+			line-height: 1.5;
+			margin-bottom: 50px;
+		}
+		
+		.text1 {height: 100px;}
+
+		.textChangeWrap {
+			height: 500px;
+			display: table;
+			width: 100%;
+			text-align: center;
+			vertical-align: middle;
+			background: #555;
+		}
+
+		.textChangeWrap h3 {
+			display: table-cell;
+			vertical-align: middle;
+			font-family: 'Alfa Slab One', sans-serif;
+			font-size: 42px;
+			font-weight: 400;
+			color: #fff;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="viewport">
+		
+		<div class="window textLookWrap">
+			<div class="window-header">
+				<div class="action-buttons"></div>
+			</div>
+			<div class="window-body">
+				<div class="code-input">
+					<div class="text1"></div>
+					<div class="text2">It is an existing letter.</div>
+				</div>
+			</div>
+		</div>
+
+		<section class="textChangeWrap">
+			<h3>MQ Department : <span></span><b class="cursor">_</b></h3>
+		</section>
+	</div>
+
+	<script>
+		TweenLite.to(".text1", 4, {
+			text: "한글 출력도 가능합니다.이렇게요.<br>짜라란~~~~~ <br>길게도 쭉쭉 쓰는중입니다.",
+			ease: Linear.easeNone
+		});
+		TweenLite.to(".text2", 2, {
+			text: "I have modified the text now.",
+			ease: Linear.easeNone
+		});
+
+		function writeText(el, txt, userColor, delay, callback) {
+			setTimeout(function() {
+				TweenLite.to(el, 1, {
+					text: txt,
+					color: userColor,
+					ease: Linear.easeNone,
+					onComplete: function() {
+						if (callback && typeof(callback) === 'function') {
+							callback();
+						}
+					}
+				})
+			}, delay)
+		}
+
+		function init() {
+			writeText(".textChangeWrap span", "CREATIVE", "#52c0dc", 0);
+			writeText(".textChangeWrap span", "R&D", "#e7eb43", 2000);
+			writeText(".textChangeWrap span", "Insight Marketing", "#57d78d", 4000);
+			writeText(".textChangeWrap span", "IDEA", "#eb4379", 6000);
+			writeText(".textChangeWrap span", "PERPOMENCE", "#f93a35", 8000, function() {
+				// run again after 3s
+				setTimeout(init, 3000);
+			});
+		}
+
+		var cursorPointer = TweenMax.to(".cursor", 0.5, {
+			opacity: 0,
+			repeat: -1,
+			repeatDelay: 0.5
+		});
+
+		init();
+		//cursorPointer.delay(2);
+	</script>
+</body>
+
+</html>

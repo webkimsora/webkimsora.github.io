@@ -1,0 +1,165 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title>TWEENMAX-TWEENLITE</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<!--link rel="stylesheet" href="./css/style.css"-->
+	<link rel="stylesheet" href="../css/common.css?v=01">
+	<link rel="stylesheet" href="../css/main.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:800" rel="stylesheet">
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+	<script type="text/javascript" src="../js/jquery-1.11.3.min.js"></script>
+
+	<style>
+		body {
+			background-color: #333;
+			color: white;
+			padding-top: 100px;
+		}
+
+		#container {
+			background-color: black;
+			width: 1000px;
+			height: 400px;
+			overflow: hidden;
+			position: relative;
+
+		}
+
+
+		#creature {
+			background: url(https://www.greensock.com/_img/codepen/bezierCreature/creature_red.png);
+			width: 27px;
+			height: 29px;
+			left: -30px;
+			top: -30px;
+			position: absolute;
+		}
+
+		button {
+			padding: 10px;
+			margin: 0 10px 10px 0;
+		}
+
+		h2 {
+			font-family: sans-serif;
+			font-weight: normal;
+		}
+
+		#polygon {
+			fill: none;
+			stroke: yellowgreen;
+			stroke-width: 8;
+			stroke-linejoin: round;
+			fill: black;
+		}
+
+		svg {
+			display: block;
+			height: 280px;
+			width: 320px;
+			margin: auto;
+			overflow: visible;
+		}
+
+		body {
+			background: #333;
+		}
+	</style>
+</head>
+
+<body>
+	<main id="viewport">
+		<div class="example">
+			<svg>
+			  <polygon id="polygon" points="240,220 240,182 240,145 240,70 155,70 112,70 70,70 70,145 70,220 155,220"/>
+			</svg>
+
+			<script>
+				/* 
+																				IMPORTANT: the starting and ending values must have the SAME number (and type) of points. AttrPlugin simply animates the numbers in the string(s) in the order they're found. That's why our square has more points than is necessary - so that they'll match up with the number in the star. Feel free to change the order of the points to get different morphing effects.
+																				*/
+				var tl = new TimelineMax({
+					repeat: -1,
+					delay: 1,
+					repeatDelay: 2
+				});
+				//animate to a star 
+				tl.to("#polygon", 1.5, {
+						attr: {
+							points: "264,115 183,103 150,30 116,103 36,115 93,172 80,249 150,215 219,249 208,171"
+						},
+						ease: Elastic.easeOut
+					})
+					//make purple (could include it in previous tween, but didn't want the elastic ease)
+					.to("#polygon", 0.3, {
+						fill: "purple"
+					}, "-=1.5")
+					//and back to a square
+					.to("#polygon", 0.8, {
+						attr: {
+							points: "240,220 240,182 240,145 240,70 155,70 112,70 70,70 70,145 70,220 155,220"
+						},
+						fill: "black",
+						ease: Power2.easeInOut
+					}, "+=2");
+			</script>
+		</div>
+
+		<div class="example">
+			<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 960 560" enable-background="new 0 0 960 560" xml:space="preserve">
+				<polyline id="hi" fill="transparent" stroke="#fff" stroke-miterlimit="10" points="0,200 200,200, 500,200"/>
+			</svg>
+			<script>
+				var points = [{
+						x: 0,
+						y: 800,
+						endX: 100,
+						endY: 50
+					},
+					{
+						x: 200,
+						y: 200,
+						endX: 400,
+						endY: 0
+					},
+					{
+						x: 900,
+						y: 200,
+						endX: 600,
+						endY: 100
+					}
+				]
+
+				var tl = new TimelineMax({
+					onUpdate: updateLine
+				})
+				tl.staggerTo(points, 1, {
+					cycle: {
+						x: function(index) {
+							return points[index].endX;
+						},
+						y: function(index) {
+							return points[index].endY;
+						}
+					}
+				}, 1)
+
+				function updateLine() {
+					TweenLite.set("#hi", {
+						attr: {
+							points: points[0].x + ", " + points[0].y + " " + points[1].x + ", " + points[1].y + " " + points[2].x + ", " + points[2].y
+						}
+					});
+				}
+			</script>
+		</div>
+	</main>
+
+
+</body>
+
+</html>

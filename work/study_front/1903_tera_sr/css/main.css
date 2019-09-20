@@ -1,0 +1,328 @@
+@charset "utf-8";
+
+body, html, #viewport {width: 100%; height: 100%;}
+html {overflow: hidden;}
+
+.page {position: relative;}
+.character {width: 100%; height: 100%; background: url(../images/@character.jpg) center center no-repeat; background-size: cover;}
+
+/*
+.background {position: absolute;  width:100%; top:-100px; width: 100%; height:calc(100% + 100px); left:0; text-align: center; z-index: 1;}
+.background .inner { width: 0; height: 100%;display: inline-block;   overflow: hidden; transition: .7s all; position: relative;}
+.background .inner i {position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: inline-block; background: url(../images/background.png) center center no-repeat; background-size: auto 100%;}
+*/
+
+.background {position: absolute;  width:100%; top:-100px; width: 100%; height:calc(100% + 100px); left:0; text-align: center; z-index: 1;  }
+.background .imgWrap {display: inline-block; position: relative;  height:100%; overflow:hidden; width:0; transition: .7s all;}
+.background .img {position: absolute; top:0; width: 100%; height:100%; left: 0;background: url(../images/background.png) center center no-repeat; background-size: auto 100%;}
+.background.on .imgWrap {width:1000px;}
+
+	
+.btnChaWrap {position: absolute; top: 456px; left: 1385px; z-index: 10;}
+.btnChaPrev i {width: 46px; height: 46px; display: inline-block; text-indent: -9999em; background: url(../images/btnChaPrev.png) no-repeat;}
+.btnChaNext i {width: 46px; height: 46px; display: inline-block; text-indent: -9999em; background: url(../images/btnChaNext.png) no-repeat;}
+.btnChaPrev.off i {background: url(../images/btnChaPrev_off.png) no-repeat;}
+.btnChaNext.off i {background: url(../images/btnChaNext_off.png) no-repeat;}
+
+.chaName {position: absolute; bottom: 30%; left: 10%; z-index: 10;}
+.chaName ul {position: relative; width: 201px; height: 294px;}
+.chaName ul:after {content:""; display: block; clear: both;}
+.chaName ul li.no1 {position: absolute; top: 3px; left: 48px;}
+.chaName ul li.no2 {position: absolute; top: 90px; left: 0;}
+.chaName ul li.no3 {position: absolute; top: 89px; right: 2px;}
+.chaName ul li.no4 {position: absolute; bottom: 3px; left: 49px;}
+.chaName li {
+  -webkit-perspective: 1000;
+  -moz-perspective: 1000;
+  -o-perspective: 1000;
+  perspective: 1000;
+}
+.chaName li:hover .filp .back,  
+.chaName li.on .filp .back {
+	z-index: 5;
+	backface-visibility: visible !important;
+	-webkit-backface-visibility: visible !important;
+    -moz-backface-visibility: visible !important;
+    -o-backface-visibility: visible !important;
+}
+.chaName li:hover .filp,  
+.chaName li.on .filp {
+	-webkit-transform: rotateY(180deg);
+	-moz-transform: rotateY(180deg);
+	-o-transform: rotateY(180deg);
+	transform: rotateY(180deg);
+}
+.chaName li, .front, .back {
+	width: 99px;
+	height: 115px;
+}
+.chaName li a {display: inline-block; width: 100%; height: 100%;}
+
+.chaName .filp {
+	display: block;
+    height: 100%;
+	-webkit-transition: 0.4s;
+	-webkit-transform-style: preserve-3d;
+	-moz-transition: 0.4s;
+	-moz-transform-style: preserve-3d;
+	-o-transition: 0.4s;
+	-o-transform-style: preserve-3d;
+	transition: 0.4s;
+	transform-style: preserve-3d;
+	position: relative;
+}
+.chaName .front, .chaName .back {
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	-o-backface-visibility: hidden;
+	backface-visibility: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.chaName .front {z-index: 2;}
+.chaName .back {-webkit-transform: rotateY(180deg); -moz-transform: rotateY(180deg); -o-transform: rotateY(180deg); transform: rotateY(180deg);}
+.chaName .no1 .front {background: url(../images/chaName01.png) 0 0 no-repeat;}
+.chaName .no1 .back {background: url(../images/chaName01_on.png) 0 0 no-repeat;}
+.chaName .no2 .front {background: url(../images/chaName02.png) 0 0 no-repeat;}
+.chaName .no2 .back {background: url(../images/chaName02_on.png) 0 0 no-repeat;}
+.chaName .no3 .front {background: url(../images/chaName03.png) 0 0 no-repeat;}
+.chaName .no3 .back {background: url(../images/chaName03_on.png) 0 0 no-repeat;}
+.chaName .no4 .front {background: url(../images/chaName04.png) 0 0 no-repeat;}
+.chaName .no4 .back {background: url(../images/chaName04_on.png) 0 0 no-repeat;}
+
+
+.chaWrap {width: 100%; height: 100%; margin: 0 auto; /*position: relative;*/ z-index:1;opacity: 0; transition: all .5s;}
+.chaWrap {width: 1920px; height: 1080px; position: absolute; top: 50%; margin-top: -540px; left: 50%;  margin-left: -960px;}
+.chaWrap.on {opacity: 1;}
+.chaWrap .slick-list {height: 100%;}
+.chaWrap .slick-track {height: 100%;}
+.chaWrap .slick-slide {height: 100%;}
+.chaWrap .slick-arrow {position: absolute; top: 456px; width: 46px; height:46px !important; opacity:1 !important; border:none; text-indent:-999em; z-index: 30;}
+.chaWrap .slick-arrow.slick-prev {right: 15%; background:url('../images/btnChaPrev.png?v=01') no-repeat;} 
+.chaWrap .slick-arrow.slick-next {right: 12%; background:url('../images/btnChaNext.png?v=01') no-repeat;}
+.chaWrap .slick-arrow.slick-prev.slick-disabled {background: url(../images/btnChaPrev_off.png) no-repeat;}
+.chaWrap .slick-arrow.slick-next.slick-disabled {background: url(../images/btnChaNext_off.png) no-repeat;}
+
+.chaWrap button:focus {outline: 0 !important;}
+.chaWrap .item {outline: 0 !important;}
+
+.chaWrap .chaImgWrap {width: 1920px; height: 1080px; position: absolute; top: 50%; margin-top: -540px; left: 50%; margin-left: -960px;}
+
+.chaWrap .chaImg img {margin: 0 auto;}
+.chaWrap .chaImg {transition: all .5s; transform: translateX(-300px);}
+.chaWrap .item.active .chaImg {transform: translateX(0);}
+.chaWrap .item.no1 .chaImg {position: absolute; bottom: 20px; left: 386px;}
+.chaWrap .item.no2 .chaImg {position: absolute; bottom: 10px; left: 480px;}
+.chaWrap .item.no3 .chaImg {position: absolute; bottom: 58px; left: 475px;}
+.chaWrap .item.no4 .chaImg {position: absolute; bottom: 35px; left: 412px;}
+
+
+.chaWrap .chaText {position: absolute; /*top: 194px; left: 1244px;*/ top: 18%; right: 10%; z-index: 10;}
+.chaWrap .chaText:before {content:""; display: inline-block; width: 8px; height: 0; background: url(../images/chaTitDeco.png) no-repeat; position: absolute; left: 0; top: 97px; transition: 1s all; transition-delay: .5s;}
+.chaWrap .chaText .title {margin-bottom: 25px; transition: .5s all; transform: translateY(150px); opacity: 0;}
+.chaWrap .chaText .detail {margin-left: 20px; margin-bottom: 20px; transition: .5s all; transform: translateY(150px); opacity: 0; transition-delay: .3s;}
+.chaWrap .chaText .movie {display: inline-block; margin-left: 20px; overflow: hidden; transition: .5s all; transform: translateY(150px); opacity: 0; transition-delay: .5s;}
+.chaWrap .chaText .movie:before { position: absolute; top: -15px; left: -75%; transition: all 1s; -webkit-transition: all 1s; z-index: 2; display: block; content: ''; width: 50%; height: 110%; background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 100%); background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 100%); -webkit-transform: skewX(-25deg); transform: skewX(-25deg); }
+.chaWrap .chaText .movie:hover:before {left: 125%; }
+
+.chaWrap .item.active .chaText .title,
+.chaWrap .item.active .chaText .detail,
+.chaWrap .item.active .chaText .movie {transform: translateY(0); opacity: 1;}
+.chaWrap .item.active .chaText:before {height: 210px;}
+
+.movieBtn {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  overflow: hidden;
+}
+.movieBtn:before, .movieBtn:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  height: 1px;
+  width: 100%;
+  background-color: #4b06ca;
+}
+.movieBtn:before {
+  top: 0;
+}
+.movieBtn:after {
+  bottom: 0;
+}
+.movieBtn:hover > * > *:before, .movieBtn:hover > * > *:after {
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
+.movieBtn:hover > * > * > *:before, .movieBtn:hover > * > * > *:after {
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
+.movieBtn > *:before, .movieBtn > *:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 1px;
+  background-color: #4b06ca;
+}
+.movieBtn > *:before {
+  left: 0;
+}
+.movieBtn > *:after {
+  right: 0;
+}
+.movieBtn > * > *:before, .movieBtn > * > *:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  z-index: 9;
+  height: 2px;
+  width: 100%;
+  background-color: #168dff;
+}
+.movieBtn > * > *:before {
+  top: 0;
+  -webkit-transform: translate3d(-105%, 0, 0);
+          transform: translate3d(-105%, 0, 0);
+  transition: -webkit-transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.movieBtn > * > *:after {
+  bottom: 0;
+  -webkit-transform: translate3d(105%, 0, 0);
+          transform: translate3d(105%, 0, 0);
+  transition: -webkit-transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.movieBtn > * > * > *:before, .movieBtn > * > * > *:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  z-index: 9;
+  height: 100%;
+  width: 2px;
+  background-color: #168dff;
+}
+.movieBtn > * > * > *:before {
+  left: 0;
+  -webkit-transform: translate3d(0, 105%, 0);
+          transform: translate3d(0, 105%, 0);
+  transition: -webkit-transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.movieBtn > * > * > *:after {
+  right: 0;
+  -webkit-transform: translate3d(0, -105%, 0);
+          transform: translate3d(0, -105%, 0);
+  transition: -webkit-transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+.deco.sun {position: absolute; width: 592px; height: 592px; display: inline-block; background: url(../images/light.png) no-repeat; top: -165px; left: 50%; margin-left: -296px; animation: sundeco .8s alternate infinite; transform: rotateY(180deg); z-index: 2;}
+
+.deco .smoke.no1 {position: absolute; bottom: -15%; left: -30%; width: 100%; animation: smoke 25s forwards infinite;}
+.deco .smoke.no2 {position: absolute; bottom: 0%; left: 0; width: 100%;  animation: smoke2 18s forwards infinite;}
+.chaWrap li.on .deco .smoke.no1 {transform: translateX(0);}
+.chaWrap li.on .deco .smoke.no2 {transform: translateX(30%);}
+
+@keyframes smoke {
+	from {
+		transform: translateX(-20%);
+		opacity: 0;
+	} 50% {
+		opacity: 0.5;	
+	}to {
+		transform: translateX(80%);
+		opacity: 0;
+	}
+}
+
+@keyframes smoke2 {
+	from {
+		transform: translateX(20%);
+		opacity: 0;
+	} 50% {
+		opacity: 0.4;	
+	}to {
+		transform: translateX(-20%);
+		opacity: 0.2;
+	}
+}
+
+@keyframes sundeco {
+	from {
+		opacity: 0;
+	} to {
+		opacity: 0.6;
+	}
+}
+
+.chaWrap .item.no1 .deco .no3 {position: absolute; top: 179px; left: 216px; z-index: -1;}
+.chaWrap .item.no1 .deco .no4 {position: absolute; top: 0; left: 70px;}
+.chaWrap .item.no2 .deco .wlight {position: absolute; bottom: 210px; left: 225px;}
+.chaWrap .item.no3 .deco .no3 {position: absolute; bottom: 460px; left: 525px;}
+.chaWrap .item.no3 .deco .no4 {position: absolute; bottom: 28px; left: -110px; z-index: -1;}
+.chaWrap .item.no3 .deco .no5 {position: absolute; bottom: 222px; left: 159px;}
+.chaWrap .item.no4 .deco .no3 {position: absolute; top: 75px; left: 534px;}
+.chaWrap .item.no4 .deco .no4 {position: absolute; top: 295px; left: 450px;}
+.chaWrap .item.no4 .deco .no5 {position: absolute; bottom: 60px; left: 526px;}
+.chaWrap .item.no4 .deco .no6 {position: absolute; bottom: 222px; left: 566px;}
+
+.chaWrap .item.no1 .deco .no3 {animation: chaDeco 1s infinite alternate; opacity: 0;}
+.chaWrap .item.no1 .deco .no4 {animation: chaDeco 1s infinite alternate; opacity: 0; animation-delay: .7s;}
+.chaWrap .item.no2 .deco .no3 {animation: chaDeco 1s infinite alternate; opacity: 0;}
+.chaWrap .item.no3 .deco .no3 {animation: chaDeco2 1.5s infinite alternate; opacity: 0;}
+.chaWrap .item.no3 .deco .no4 {animation: chaDeco 1s infinite alternate; animation-delay:1s; opacity: 0;}
+.chaWrap .item.no3 .deco .no5 {animation: chaDeco3 .8s infinite alternate; opacity: 0;}
+.chaWrap .item.no4 .deco .no3 {animation: chaDeco .5s infinite alternate; opacity: 0;}
+.chaWrap .item.no4 .deco .no4 {animation: chaDeco 1s infinite alternate; animation-delay:1s; opacity: 0;}
+.chaWrap .item.no4 .deco .no5 {animation: chaDeco .8s infinite alternate; opacity: 0; animation-delay: 1s;}
+.chaWrap .item.no4 .deco .no6 {animation: chaDeco8 .8s infinite alternate; opacity: 0; animation-delay: 2s;}
+
+
+@keyframes chaDeco { 
+	0% {opacity: 0;}
+	100% {opacity: 1;}
+}
+@keyframes chaDeco2 { 
+	0% {opacity: 0;}
+	100% {opacity: 0.5;} 	
+}
+@keyframes chaDeco3 { 
+	0% {opacity: 0; transform:scale(0.9);}
+	100% {opacity: 1; transform:scale(1.2);} 	
+}
+
+@keyframes chaDeco8 { 
+	0% {
+		bottom: 20px;
+		opacity: 0;
+	}
+  100% {
+		bottom: 0;
+		opacity: 1;
+	} 	
+}
+
+
+@media all and (max-width: 1600px) {
+	.chaWrap .chaText {right: 13%;}
+	.chaWrap .slick-arrow.slick-prev {right: 19%;} 
+	.chaWrap .slick-arrow.slick-next {right: 16%;}
+}
+
+@media all and (max-width: 1280px) {
+	.chaWrap {transform: scale(0.8);}
+}
+
+@media all and (max-height: 900px) {
+	.chaWrap {transform: scale(0.8);}
+}
+

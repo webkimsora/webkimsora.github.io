@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <title>_note</title>
+    <style>
+    .scr_wrap{display: inline-block;}
+    </style>
+</head>
+
+<body style="height: 3000px;">
+    <div class="t1" style="height: 500px; width: 300px; overflow-y: auto; display: inline-block;">
+        <div></div>
+    </div>
+    <div class="t2" style="height: 500px; width: 300px; overflow-y: auto; display: inline-block;">
+        <div></div>
+    </div>
+    <div class="t3" style="height: 500px; width: 300px; overflow-y: auto; display: inline-block;">
+        <div></div>
+    </div>
+    <link rel="stylesheet" href="./css/design.plugin.css" />
+    <script src="./js/lib/jquery-1.9.1.min.js"></script>
+    <script src="./js/lib/jquery-ui-1.9.2.custom.min.js"></script>
+    <script src="./js/lib/jquery.cookie.js"></script>
+    <script src="./js/lib/jquery.easing.1.3.js"></script>
+    <script src="./js/lib/jquery.transform.js"></script>
+    <script src="./js/design.plugin.cmmCustomScrollBar.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('[class^="t"]>div').each(function() {
+                for (var i = 0; i < 500; i++) {
+                    $(this).append('<p>' + i + '</p>');
+                }
+                
+            });
+            $('.t1').customScrollBar();
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,100 @@
+@charset "utf-8";
+@import url(font.css);
+@import url(page_con.css);
+
+/* Reset */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,form,fieldset,p,button{margin:0;padding:0}
+body,h1,h2,h3,h4,input,button,textarea{font-family:ng,'돋움',Dotum,Helvetica,'Apple SD Gothic Neo',Sans-serif;font-size:12px;color:#000}
+body{text-align:left; word-break:break-word;}
+img,fieldset,iframe{border:0 none}
+li{list-style:none}
+input,select,button{vertical-align:middle}
+img{vertical-align:top}
+i,em,address{font-style:normal}
+label,button{cursor:pointer}
+a{color:#000;text-decoration:none}
+a:hover{color:#000;text-decoration:none}
+hr{display:none}
+legend{*width:0}
+table{border-collapse:collapse;border-spacing:0}
+caption{font-size:0; line-height:0; height:0}
+
+/* Mobile Form Default */
+input[type='text'],input[type='password'],input[type='image'],input[type='search']{-webkit-appearance:none;-webkit-border-radius:0}
+
+/* Skip */
+#skipnavigation{z-index:9999;position:absolute;left:0;top:0;width:100%;text-align:center}
+#skipnavigation *{list-style:none;margin:0;padding:0;}
+#skipnavigation a{display:block;width:100%;height:0;overflow:hidden;white-space:nowrap;}
+#skipnavigation a:focus,
+#skipnavigation a:active{display:block;width:100%;height:36px;color:#fff;background:#000;line-height:36px;text-decoration:underline !important;font-size:14px;}
+
+* {box-sizing:border-box;}
+.papagoWrap {width:1000px; margin:0 auto;}
+.h1Wrap {text-align: center; margin-bottom: 100px; }
+
+.h1Wrap h1 {font-size: 30px; padding:50px 0 50px 125px;background:url('../images/logo.png') left center no-repeat; display: inline-block; background-size:100px auto;}
+
+.h2Wrap { margin-bottom: 50px; padding-bottom:20px; border-bottom:1px solid #ddd;}
+.h2Wrap h2 {font-size: 25px; padding:0 0 0 10px; display: inline-block;}
+.h2Wrap i {font-size:25px;}
+
+
+.transWrap {position: relative; margin-bottom: 70px; }
+.transWrap:after {content:''; display:block; clear:both;}
+.transWrap .titleWrap {height:50px;border-bottom:1px solid #ddd; position: relative; }
+
+.transWrap .titleWrap .tit {display: block; height: 50px; line-height: 50px; padding:0 0 0 10px; font-size: 17px; cursor:pointer;}
+.transWrap .titleWrap .tit i {transition:.3s all; margin-left: 10px;}
+.transWrap .titleWrap .tit.on i {transform:rotate(180deg); transform-origin:center center;}
+.transWrap .box {position: relative; width: 490px; border:1px solid #ddd; height: 300px;}
+.transWrap .box.left {float:left;}
+.transWrap .box.right {float:right;}
+
+
+.transWrap textarea {border:none; padding:10px; width: 100%; height:248px; resize:none; outline:none; font-size: 20px;}
+.transWrap textarea:focus {border:1px solid #21dc6d;}
+
+
+.transWrap .text {height:250px;font-size: 20px;}
+
+
+.transWrap .btnPapago {position: absolute; bottom:-60px; cursor:pointer; background:#21dc6d; font-size: 20px; border-radius:2px; color:#fff; text-align: center; height: 50px; line-height: 50px; width: 100px; font-weight: 500;border:none;}
+.transWrap .btnPapago.left {left:0;}
+.transWrap .btnPapago.right {right:0;}
+
+
+
+.langList {position: absolute; left:0; top:50px; background:#fff; padding:10px; width: 100%; border-bottom:1px solid #ddd; display: none;}
+.langList ul li {float:left; width:114px; height: 50px; line-height: 50px; position: relative;}
+.langList ul li.check:after {content:''; position: absolute; left:0; top:0; width: 100%; height: 100%; z-index: 1;}
+.langList ul li.check label {opacity:.2;}
+.langList ul li input {position:absolute; visibility:hidden;}
+.langList ul li label {position: relative; padding-right:20px; font-size: 20px;}
+.langList ul li input:checked + label {color:#21dc6d; font-weight: bold;}
+.langList ul li input:checked + label:after {content:'v'; position: absolute; right:0; top:-2px; width: 10px; height: 23px; line-height: 23px; }
+	
+.testBox {position: fixed; left:0; bottom:0; font-size: 30px;;}
+
+.mqChat {width:460px; margin:0 auto 100px auto;}
+.mqChat .in {border:1px solid #545454; border-radius:5px;overflow:hidden;}
+.mqChat .bgTop {background:#a9bdce; border-bottom: 1px solid #a4b7c8; position: relative;}
+.mqChat .bgTop:after {content:''; position: absolute; left:14px; top:14px; width:45px; height: 45px; background:url('../images/logo.png') no-repeat; background-size:cover; border-radius:100px;}
+.mqChat .chatContet {color:#404040; font-size: 15px; background:#b2c7d9; padding:28px 60px 28px 15px; height: 500px; overflow-y:auto;}
+.mqChat .chatContet ul li {position: relative; margin-bottom: 10px; padding-left: 50px;}
+.mqChat .chatContet ul li:after {content:''; position: absolute; left:0; top:0; width:40px; height: 40px; background:url('../images/logo.png') no-repeat; background-size:cover; border-radius:100px;}
+.mqChat .chatContet ul li .name {padding-bottom: 7px;}
+.mqChat .chatContet ul li .text {display: inline-block; position: relative;}
+.mqChat .chatContet ul li .word {display: inline-block; background: #ffeb33; color:#262626; padding:10px;border-radius:3px; box-shadow:2px 2px 2px #97a9b9;}
+.mqChat .chatContet ul li .time {position: absolute; right:-37px; bottom:5px; font-size: 12px;}
+.mqChat .bgBottom {border-top:1px solid #f4f4f4;background:#ffffff; }
+.mqChat .bgBottom .chLang {border-bottom:1px solid #f4f4f4; padding:10px 10px 15px 10px;}
+.mqChat .bgBottom .chLang .tit {font-size: 13px; color:#7d7d7d; padding-bottom: 15px;}
+.mqChat .bgBottom .chLang ul:after {content:''; display:block; clear:both;}
+.mqChat .bgBottom .chLang ul li {float:left; margin-right: 10px;}
+.mqChat .bgBottom .chLang ul li input {position: absolute; visibility:hidden;}
+.mqChat .bgBottom .chLang ul li label {font-size:13px; color:#333;}
+.mqChat .bgBottom .chLang ul li input:checked + label {font-weight: bold; padding:5px; background: #21dc6d; border:1px solid #999; border-radius:3px; color:#fff;}
+.mqChat .bgBottom .inputZone {padding:15px; position: relative;}
+.mqChat .bgBottom .inputZone textarea {border:none; outline:none; height: 50px;; width:383px; resize:none; font-size: 20px;}
+.mqChat .bgBottom .inputZone a {position: absolute; right:10px; top:25px;}

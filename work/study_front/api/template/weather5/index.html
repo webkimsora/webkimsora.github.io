@@ -1,0 +1,131 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>메큐라이크 - Weather API</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="./js/lib/jquery-1.11.3.min.js"></script>
+    <script src="./js/design.ui.js"></script>
+    <script>
+        var GET_DATA_ORIGN = [];
+        var GET_DATA_KEY = [];
+        var GET_DATA_VAL = [];
+        var GET_DATA_SELECT_ALL = [];
+        var GET_DATA_SKY_STATE = '';
+        var GET_DATA_SELECT = {
+            SORT1: [],
+            SORT2: [],
+            SORT3: [],
+        };
+        $(document).ready(function() {
+            $.getJSON('./data/dongCode2.json', function(data) {
+                var html = '';
+                GET_DATA_SELECT_ALL = data;
+                GET_DATA_SELECT.SORT1 = GET_DATA_SELECT_ALL[0];
+                GET_DATA_SELECT.SORT2 = GET_DATA_SELECT_ALL[1];
+                GET_DATA_SELECT.SORT3 = GET_DATA_SELECT_ALL[2];
+                for (var i = 0; i < GET_DATA_SELECT_ALL.length; i++) {
+                    if (i == GET_DATA_SELECT_ALL.length - 1) {
+                        html += '<select name="codeDong" class="tnc tnc' + i + '" data-idx="' + i + '"></select>';
+                    } else {
+                        html += '<select class="tnc tnc' + i + '" data-idx="' + i + '"></select>';
+                    }
+                    $('.selectBox').append(html);
+                    html = '';
+                }
+                UiAppsPackage.sortSelect.init({
+                    select: '.selectBox',
+                    selectobj: GET_DATA_SELECT,
+                });
+            });
+            $('.fbSortBtn').click(function(e) {
+                if (!$('[data-idx="2"]').val()) {
+                    alert('지역선택해주세요');
+                    return false;
+                }
+                $.ajax({
+                    url: 'weather.php',
+                    type: 'POST',
+                    data: $("#code").serialize(),
+                    success: function(data) {
+                        /*
+                         * PARAMETER INFO
+                         * day = 0: 오늘 , 1: 내일 , 2: 모레
+                         * sky =  하늘상태코드 1 : 맑음, 2 : 구름조금, 3 : 구름많음, 4 : 흐림
+                         * wfKor = 하늘상태 한글로 표시
+                         * pty = 강수상태코드 0: 없음 , 1: 비, 2: 비/눈, 3:눈/비, 4 : 눈
+                         * pop = 강수확률% 
+                         * temp = 현재온도
+                         * tmx = 아침 최고기온 //정보가없을때 -999.0
+                         * tmn = 아침 최저기온 //정보가없을때 -999.0
+                         * 외에 정보는 http://www.weather.go.kr/images/weather/lifenindustry/dongnaeforecast_rss.pdf 확인가능
+                         * ./document/local_weather_api.hwp <-- 에서도 확인가능
+                         */
+                        var a = $(data).find('item body data');
+                        var keyname = $(data).find('item data[seq]:eq(0)');
+                        var keys = [];
+                        var temp = function(t) {
+                            var t = t;
+                            if (t === '-999.0') {
+                                t = '미등록';
+                            } else {
+                                t = Math.round(t);
+                            }
+                            return t;
+                        };
+                        var wg = function() {
+                            var n = 0;
+                            if ($(GET_DATA_VAL[0]).find(GET_DATA_KEY[6]).text() === '0') {
+                                n = $(GET_DATA_VAL[0]).find(GET_DATA_KEY[5]).text();
+                            } else {
+                                n = Number($(GET_DATA_VAL[0]).find(GET_DATA_KEY[6]).text()) + 4;
+                            }
+                            return n;
+                        };
+                        keyname.find('>*').each(function() {
+                            keys.push($(this)[0].nodeName);
+                        });
+                        GET_DATA_ORIGN = data;
+                        GET_DATA_VAL = a;
+                        GET_DATA_KEY = keys;
+                        GET_DATA_SKY_STATE = wg();
+                        $('body').attr('data-sky-state', GET_DATA_SKY_STATE);
+                        $('.fntWtp').html('<div class="w_lab">' + $('[data-idx="2"] option:selected').text() + '</div> <div class="w_slab">' + $(GET_DATA_VAL[0]).find(GET_DATA_KEY[7]).text() +
+                            '</div> <div class="w_stit">' + temp($(GET_DATA_VAL[0]).find(GET_DATA_KEY[4]).text()) + '/' + temp($(GET_DATA_VAL[0]).find(GET_DATA_KEY[3]).text()) + '</div>' + '</div> <div class="w_tit">' +
+                            $(GET_DATA_VAL[0]).find(GET_DATA_KEY[2]).text() + '</div>');
+                    }
+                });
+                return false;
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="sort_box">
+        <form id="code">
+            <div class="select_box selectBox"></div>
+            <button type="submit" class="sort_btn fbSortBtn">검색하기</button>
+        </form>
+    </div>
+    <div class="weather_wrap">
+        <div class="w_tp fntWtp">
+            <div class="nullmsg" style="line-height: 190px;">지역을 선택해주세요</div>
+        </div>
+    </div>
+    <div class="info">
+        지역을 선택하시면 body 엘리먼트에 <br /> 1 : 맑음,<br /> 2 : 구름조금,<br /> 3 : 구름많음,<br /> 4 : 흐림,<br /> 5: 비,<br /> 6: 비/눈,<br /> 7:눈/비,<br /> 8 : 눈<br /> "data-sky-state=1~8" 으로 선언됩니다.<br />
+        <button onclick="$('body').attr('data-sky-state',1)">맑음</button>
+        <button onclick="$('body').attr('data-sky-state',2)">구름조금</button>
+        <button onclick="$('body').attr('data-sky-state',3)">구름많음</button>
+        <button onclick="$('body').attr('data-sky-state',4)">흐림</button><br />
+        <button onclick="$('body').attr('data-sky-state',5)">비</button>
+        <button onclick="$('body').attr('data-sky-state',6)">비/눈</button>
+        <button onclick="$('body').attr('data-sky-state',7)">눈/비</button>
+        <button onclick="$('body').attr('data-sky-state',8)">눈</button>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+@charset "UTF-8";
+/** REM 사용을 위한 Viewport 세팅 @param {Array} $array       Viewport 크기가 저장 된 배열 @param {String} $orientation :             'portrait' landscape 이면 별도 표기 */
+/** %단위의 넓이 설정 @param  {int} $width      %를 구할 px단위의 숫자 @param  {int} $wrap-width :             $design-width %를 구할 px의 기준이 되는 숫자 @return {int}             변환 된 % @include set-width(300px) = [ 300px / design-draft * 100% ]  */
+/** 부모 포지션의 영역을 모두 채움 단, fixed 인 경우에는 브라우저 영역 전체를 채움 @param  {String} $type absolute / fixed */
+#popup-event2-surprise #detail-event2-insta { background-image: url(../images/event2/popup/@bg-right-surprise.png); }
+
+#event2 .insta-list-tag a.all {
+  line-height: 0.85em;
+  padding-bottom: 8px;
+}
+
+.event2-signpost-purchase { width: 23.93617%; }
+
+.event2-signpost-elmo { width: 25.34%; left: 16.4%; }
+
+.insta-list-tag > a { padding: 4px 9px 4px; font-size: 12px; letter-spacing: -0.03em;   display: inline-block;}
+
+
+
+#event2 .insta-list-tag {
+  padding-top: 0px;
+  padding-bottom: 10px;
+  font-size: 12px
+}
+
+#event2 .insta-list-tag a {
+  padding: 5px 15px 5px 15px;
+  margin-left: 2px;
+  color: #333;
+  font-weight: bold;
+  background-color: #fff4e0;
+  border-radius: 20px;
+   display: inline-block;
+}
+
+
+.insta-list-tag a.all { line-height: 0.85em;padding-bottom: 8px; }
+.insta-list-tag a.collabo { line-height: 1.35em; }

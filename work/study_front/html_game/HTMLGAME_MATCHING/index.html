@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="Author" content="">
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+
+    <title>그림맞추기</title>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <style type="text/css">
+        *{margin : 0; padding: 0; border: none; box-sizing: border-box;}
+        .gmt_tnwrap{position: relative; margin-top: 30px;}
+        .gmt_tnwrap .cha{position: absolute; left: -393px; bottom: 0;}
+        .gmt_tnwrap .ltc{position: absolute; right: -200px; bottom: 0;}
+        .gmt_tnwrap .ltc .tp{display: block;}
+        .gmt_tnwrap .ltc .tp.tp0{width: 219px; height: 218px; background: no-repeat url(././images/common/sphd2.png) right top;}
+        .gmt_tnwrap .ltc .tp.tp1{width: 223px; height: 233px; background: no-repeat url(././images/common/sphd3.png) right top;}
+        .gmt_tnwrap .gmt_ar{position: relative; overflow: hidden;}
+        .gmt_tnwrap .gmt_ar .gmt_lt{width: 542px; float: left; height: 541px; position: relative; background: url(./images/puzzle/suc_bg.png) no-repeat center center;}
+        .gmt_tnwrap .gmt_ar .gmt_lt .bg{display: block; width: 100%; height: 100%; position: absolute; left: 0; top: 0;}
+        .gmt_tnwrap .gmt_ar .gmt_lt .itm_a{height: 100%; position: relative;}
+        
+        .gmt_tnwrap .gmt_ar .gmt_lt .itm_a .itm{position: absolute; width: 33.333%; height: 33.333%;}
+        .gmt_tnwrap .gmt_ar .gmt_lt .itm_a .itm.tp0,
+        .gmt_tnwrap .gmt_ar .gmt_lt .itm_a .itm.tp3,
+        .gmt_tnwrap .gmt_ar .gmt_lt .itm_a .itm.tp6{left: 0;}
+        .gmt_tnwrap .gmt_ar .gmt_lt .itm_a .itm.tp1,
+        .gmt_tnwrap .gmt_ar .gmt_lt .itm_a .itm.tp4,
+        .gmt_tnwrap .gmt_ar .gmt_lt .itm_a .itm.tp7{left: 33.333%;}
+        .gmt_tnwrap .gmt_ar .gmt_lt .itm_a .itm.tp2,
+        .gmt_tnwrap .gmt_ar .gmt_lt .itm_a .itm.tp5,
+        .gmt_tnwrap .gmt_ar .gmt_lt .itm_a .itm.tp8{left: 66.666%;}
+        .gmt_tnwrap .gmt_ar .gmt_lt .itm_a .itm.tp0,
+        .gmt_tnwrap .gmt_ar .gmt_lt .itm_a .itm.tp1,
+        .gmt_tnwrap .gmt_ar .gmt_lt .itm_a .itm.tp2{top: 0;}
+        .gmt_tnwrap .gmt_ar .gmt_lt .itm_a .itm.tp3,
+        .gmt_tnwrap .gmt_ar .gmt_lt .itm_a .itm.tp4,
+        .gmt_tnwrap .gmt_ar .gmt_lt .itm_a .itm.tp5{top: 33.333%;}
+        .gmt_tnwrap .gmt_ar .gmt_lt .itm_a .itm.tp6,
+        .gmt_tnwrap .gmt_ar .gmt_lt .itm_a .itm.tp7,
+        .gmt_tnwrap .gmt_ar .gmt_lt .itm_a .itm.tp8{top: 66.666%;}
+        .gmt_tnwrap .gmt_ar .gmt_lt .itm_a .itm.tp0,
+        .gmt_tnwrap .gmt_ar .gmt_lt .itm_a .itm.tp4,
+        .gmt_tnwrap .gmt_ar .gmt_lt .itm_a .itm.tp5,
+        .gmt_tnwrap .gmt_ar .gmt_lt .itm_a .itm.tp6{cursor: pointer;}
+        .gmt_tnwrap .gmt_ar .gmt_lt .itm_a .itm.tp0.active,
+        .gmt_tnwrap .gmt_ar .gmt_lt .itm_a .itm.tp4.active,
+        .gmt_tnwrap .gmt_ar .gmt_lt .itm_a .itm.tp5.active,
+        .gmt_tnwrap .gmt_ar .gmt_lt .itm_a .itm.tp6.active{cursor: default;}
+        .gmt_tnwrap .gmt_ar .gmt_lt .itm_a .itm.tp0.active:after{content: ''; position: absolute; left: 1px; top: 3px; background: url(./images/puzzle/ic0.png);width: 178px; height: 229px; }
+        .gmt_tnwrap .gmt_ar .gmt_lt .itm_a .itm.tp4.active:after{content: ''; position: absolute; left: -52px; top: -48px; background: url(./images/puzzle/ic1.png);width: 285px; height: 277px; }
+        .gmt_tnwrap .gmt_ar .gmt_lt .itm_a .itm.tp5.active:after{content: ''; position: absolute; left: 1px; top: 1px; background: url(./images/puzzle/ic2.png);width: 179px; height: 180px; }
+        .gmt_tnwrap .gmt_ar .gmt_lt .itm_a .itm.tp6.active:after{content: ''; position: absolute; left: 1px; top: -49px; background: url(./images/puzzle/ic3.png);width: 179px; height: 230px; }
+        
+        .gmt_tnwrap .gmt_ar .gmt_rt{width: 298px; float: left; height: 541px; padding: 0 20px; background: url(./images/puzzle/suc_right_bg.png) no-repeat center center; position: relative;}
+        .gmt_tnwrap .gmt_ar .gmt_rt .item_pr{}
+        .gmt_tnwrap .gmt_ar .gmt_rt .item_pr .tit{text-align: center; margin-top: 30px;}
+        .gmt_tnwrap .gmt_ar .gmt_rt .itm_a{height: 279px; position: relative; padding: 15px 0; margin: 20px 0 0; background: url(./images/puzzle/line1.png) no-repeat center center;}
+        .gmt_tnwrap .gmt_ar .gmt_rt .itm_a .itm{}
+        .gmt_tnwrap .gmt_ar .gmt_rt .itm_a .itm:after{content: ''; position: absolute;}
+        
+        .gmt_tnwrap .gmt_ar .gmt_rt .itm_a .itm{position: absolute; width: 87px; height: 89px; top: 36px; cursor: pointer;}
+        .gmt_tnwrap .gmt_ar .gmt_rt .itm_a .itm.tp0{left: 24px;}
+        .gmt_tnwrap .gmt_ar .gmt_rt .itm_a .itm.tp1{left: 140px;}
+        .gmt_tnwrap .gmt_ar .gmt_rt .itm_a .itm.tp2{left: 24px;  top: 158px;}
+        .gmt_tnwrap .gmt_ar .gmt_rt .itm_a .itm.tp3{left: 140px; top: 158px;}
+        .gmt_tnwrap .gmt_ar .gmt_rt .itm_a .itm:after{content: ''; position: absolute; background: no-repeat center center; pointer-events: none;}
+        .gmt_tnwrap .gmt_ar .gmt_rt .itm_a .itm.tp0:after{width: 87px; height: 89px; background-image: url(./images/puzzle/i0.png); left: 0; top: -0;}
+        .gmt_tnwrap .gmt_ar .gmt_rt .itm_a .itm.tp1:after{width: 87px; height: 113px; background-image: url(./images/puzzle/i1.png); left: 0; top: -24px;}
+        .gmt_tnwrap .gmt_ar .gmt_rt .itm_a .itm.tp2:after{width: 140px; height: 136px; background-image: url(./images/puzzle/i2.png); left: -24px; top: -24px;}
+        .gmt_tnwrap .gmt_ar .gmt_rt .itm_a .itm.tp3:after{width: 87px; height: 113px; background-image: url(./images/puzzle/i3.png); left: -0; top: -0;}
+        
+        .gmt_tnwrap .gmt_ar .gmt_rt .itm_a .itm.tp0.active:after{width: 137px; height: 139px; background-image: url(./images/puzzle/i0_active.png); left: -25px; top: -25px;}
+        .gmt_tnwrap .gmt_ar .gmt_rt .itm_a .itm.tp1.active:after{width: 137px; height: 162px; background-image: url(./images/puzzle/i1_active.png); left: -25px; top: -48px;}
+        .gmt_tnwrap .gmt_ar .gmt_rt .itm_a .itm.tp2.active:after{width: 188px; height: 184px; background-image: url(./images/puzzle/i2_active.png); left: -48px; top: -48px;}
+        .gmt_tnwrap .gmt_ar .gmt_rt .itm_a .itm.tp3.active:after{width: 137px; height: 162px; background-image: url(./images/puzzle/i3_active.png); left: -25px; top: -25px;}
+        .gmt_tnwrap .gmt_ar .gmt_rt .itm_a .itm.tp0.disabled.active:after{width: 87px; height: 89px; background-image: url(./images/puzzle/i0.png); left: 0; top: -0;}
+        .gmt_tnwrap .gmt_ar .gmt_rt .itm_a .itm.tp1.disabled.active:after{width: 87px; height: 113px; background-image: url(./images/puzzle/i1.png); left: 0; top: -24px;}
+        .gmt_tnwrap .gmt_ar .gmt_rt .itm_a .itm.tp2.disabled.active:after{width: 140px; height: 136px; background-image: url(./images/puzzle/i2.png); left: -24px; top: -24px;}
+        .gmt_tnwrap .gmt_ar .gmt_rt .itm_a .itm.tp3.disabled.active:after{width: 87px; height: 113px; background-image: url(./images/puzzle/i3.png); left: -0; top: -0;}
+        
+        .gmt_tnwrap .gmt_ar .gmt_rt .itm_a .itm:hover img{}
+        .gmt_tnwrap .gmt_ar .gmt_rt .itm_a .itm.active.disabled{opacity: .4;}
+        .gmt_tnwrap .gmt_ar .gmt_rt .itm_a .itm.disabled{cursor: default;}
+        .gmt_tnwrap .gmt_ar .gmt_rt .itm_a .itm.disabled{opacity: .4; box-shadow: none;}
+        .gmt_tnwrap .gmt_ar .gmt_rt .itm_a .itm.disabled:hover img{box-shadow: none !important;;}
+        .gmt_tnwrap .txt0001{width: 179px; height: 128px; position: absolute; left: 0; width: 100%; height: 128px; background: url(./images/puzzle/txt0001.png) no-repeat center top; bottom: 40px;}
+        .gmt_tnwrap .gmt_ar .gmt_lt .paz_sucs{position: absolute; left: 0; top: 0; width: 100%; height: 100%; background: url(./images/puzzle/suc_scs_bg.png) no-repeat left top; display: none;}
+        .gmt_tnwrap .gmt_ar .gmt_lt .paz_sucs.active{display: block;}
+        .gmt_tnwrap .gmt_ar .gmt_rt .paz_sucs{position: absolute; left: 0; top: 0; width: 100%; height: 377px; background: url(./images/puzzle/txt0002.png) no-repeat center center; display: none;}
+        .gmt_tnwrap .gmt_ar .gmt_rt .paz_sucs .btns_wrap{position: absolute; left: 0; top: 377px; width: 100%; text-align: center;}
+        .gmt_tnwrap .gmt_ar .gmt_rt .paz_sucs .btns_wrap .shb{width: 125px; height: 55px; vertical-align: top; display: inline-block; background: no-repeat left top;}
+        .gmt_tnwrap .gmt_ar .gmt_rt .paz_sucs .btns_wrap .shb.tp0{background-image: url(./images/puzzle/sharfc1.png);}
+        .gmt_tnwrap .gmt_ar .gmt_rt .paz_sucs .btns_wrap .shb.tp1{background-image: url(./images/puzzle/sharurl1.png); margin-left: 5px;}
+        .gmt_tnwrap .gmt_ar .gmt_rt.active .item_pr{display: none;}
+        .gmt_tnwrap .gmt_ar .gmt_rt.active .paz_sucs{display: block;}
+	</style>
+
+</head>
+
+<body>
+    <div class="gmt_tnwrap">
+        <div class="gmt_ar">
+            <div class="gmt_lt">
+                <span class="bg"></span>
+                <div class="itm_a clearfix">
+                    <span class="itm tp0" data-puzzle-bigimg="0"></span>
+                    <span class="itm tp1" data-puzzle-bigimg="1"></span>
+                    <span class="itm tp2" data-puzzle-bigimg="2"></span>
+                    <span class="itm tp3" data-puzzle-bigimg="3"></span>
+                    <span class="itm tp4" data-puzzle-bigimg="4"></span>
+                    <span class="itm tp5" data-puzzle-bigimg="5"></span>
+                    <span class="itm tp6" data-puzzle-bigimg="6"></span>
+                    <span class="itm tp7" data-puzzle-bigimg="7"></span>
+                    <span class="itm tp8" data-puzzle-bigimg="8"></span>
+                    <div class="paz_sucs"></div>
+                </div>
+            </div>
+            <div class="gmt_rt">
+                <div class="item_pr">
+                    <div class="tit"><img src="./images/puzzle/prev_tit.png" alt="" /></div>
+                    <div class="itm_a clearfix">
+                        <span class="itm tp0" data-puzzle-smallimg="5"></span>
+                        <span class="itm tp1" data-puzzle-smallimg="6"></span>
+                        <span class="itm tp2" data-puzzle-smallimg="4"></span>
+                        <span class="itm tp3" data-puzzle-smallimg="0"></span>
+                    </div>
+                    <div class="txt0001"></div>
+                </div>
+                <div class="paz_sucs">
+                    <div class="btns_wrap">
+                        <a href="#;" class="shb tp0" title="페이스북공유"></a>
+                        <a href="#;" class="shb tp1" title="url복사"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            var match = [];
+            var match_length = $('[data-puzzle-smallimg]').length;
+            var success_length = 0;
+            $('[data-puzzle-smallimg]').click(function() {
+                var $this = $(this);
+                var $params = $this.data('puzzleSmallimg');
+                if ($this.is('.disabled')) return false;
+                $('[data-puzzle-smallimg]').removeClass('active');
+                $this.addClass('active');
+                match[0] = $params;
+                return false;
+            });
+            $('[data-puzzle-bigimg]').click(function() {
+                var $this = $(this);
+                var $params = $this.data('puzzleBigimg');
+                if (match[0] === 'undifined') {
+                    return false;
+                }
+                match[1] = $params;
+                if (match[0] == match[1]) {
+                    success_length++;
+                    $('[data-puzzle-smallimg="' + $params + '"]').addClass('disabled');
+                    $this.addClass('active');
+                    if (success_length == match_length) { //퍼즐완성
+                        $('.paz_sucs').addClass('active');
+                        $('.puzzleArea .pa_ft').addClass('active');
+                    }
+                } else {
+                    match = [];
+                    $('[data-puzzle-smallimg]').removeClass('active');
+                }
+                return false;
+            });
+        });
+    </script>
+</body>
+
+</html>

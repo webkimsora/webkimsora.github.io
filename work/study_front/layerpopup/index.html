@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <title>_note</title>
+</head>
+
+<body style="height: 3000px;">
+    <button class="alert">얼럿팝업</button>
+    <button class="confirm">컨펌팝업</button>
+    <button class="open">일반컨텐츠팝업</button>
+    <div class="cmm_layerpop" data-layerpop="tnvhtb">내용내용내용 마크업</div>
+    <link rel="stylesheet" href="./css/design.plugin.css" />
+    <script src="./js/lib/jquery-1.9.1.min.js"></script>
+    <script src="./js/lib/jquery-ui-1.9.2.custom.min.js"></script>
+    <script src="./js/lib/jquery.cookie.js"></script>
+    <script src="./js/lib/jquery.easing.1.3.js"></script>
+    <script src="./js/lib/jquery.transform.js"></script>
+    <script src="./js/design.plugin.cmmLocLaypop.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('.alert').click(function(){
+                $(this).cmmAlert({
+                    title : '타이틀 입력',
+                    msg: '메시지입력'
+                });
+            });
+            $('.confirm').click(function() {
+                $(this).cmmConfirm({
+                    title: 'asdf',
+                    msg: 'asdfasdfasdfasdfassdf',
+                    openAfterScroll: false,
+                    targetBtnsName: ['취소333', '확인112'],
+                    beforeCallback: function() {
+                    },
+                    afterCallback: function() {
+                    },
+                    targetCustomBtnsName: [
+                        ['버튼추가', 'asdf asdfasdf', function($button) {
+                            $(document).on('click' ,'.asdfasdf',function(){
+                                console.log($(this));
+                            })
+                        }]
+                    ]
+                });
+            });
+            $('.open').click(function(){
+                $('[data-layerpop="tnvhtb"]').cmmLocLaypop({
+                    title : '타이틀 입력',
+                    msg: '메시지입력',
+                    targetCustomBtnsName: [
+                        ['버튼1', 'asdf fda', function($button) {
+                            $(document).on('click' ,'.fda',function(){
+                                console.log($(this));
+                            })
+                        }]
+                    ]
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

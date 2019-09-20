@@ -1,0 +1,93 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>메큐라이크 - 환율 API</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <script type="text/javascript" src="./js/jquery-1.11.3.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+    <style>
+        body{margin: 0; padding: 0;}
+        .data_tbl_wrap{max-width: 1000px; margin: 30px auto 0;}
+        .data_tbl_wrap .data_tbl,.data_tbl_wrap .data_lst{table-layout: fixed; width: 100%; background: #fff; border-collapse:collapse; border-spacing:0; border-top: 2px solid #1b82cf; border-left: 1px solid #e3e5e4; font-size: 13px; color: #000;}
+        .data_tbl_wrap thead td,.data_tbl_wrap .v_thead .v_td{text-align: center; font-weight: bold; background: #f9fafc;}
+        .data_tbl_wrap .v_thead .v_td{display: inline-block;}
+        .data_tbl_wrap th,.data_tbl_wrap td,.data_tbl_wrap .data_lst .v_thead .v_td,.data_tbl_wrap .data_lst .v_tbody .v_td{border-right: 1px solid #e3e5e4; border-bottom: 1px solid #e3e5e4; padding: 15px 10px; }
+        .data_tbl_wrap .v_tr:nth-child(even) .v_td,
+        .data_tbl_wrap tr:nth-child(even) td,
+        .data_tbl_wrap tr:nth-child(even) th{background: #f9fafc;}
+        .data_tbl_wrap tbody td,.data_tbl_wrap tbody th{text-align: left;}
+        .data_tbl_wrap .data_lst .v_tbody{}
+        .data_tbl_wrap .data_lst .v_tr{display: table; width: 100%; table-layout: fixed; border-collapse:collapse; border-spacing:0; margin: 0; padding: 0;}
+        .data_tbl_wrap .data_lst .v_td{display: table-cell; width: 2%; vertical-align: middle;}
+        .data_tbl_wrap .data_page{display: block; margin: 30px 0; text-align: center;}
+        .data_tbl_wrap .data_page .lst{vertical-align: middle; display: inline-block; list-style: none; padding: 0; margin: 0;}
+        .data_tbl_wrap .data_page .lst .tp{display: inline-block; margin: 3px;}
+        .data_tbl_wrap .data_page .lst .tp .txt{text-decoration: none; color: #000; display: inline-block; font-size: 13px; width: 30px; line-height: 30px; border: 1px solid #e3e5e4; border-radius: 2px; font-weight: bold;}
+        .data_tbl_wrap .data_page .lst .tp.active .txt{border-color: #1b82cf; background: #1b82cf; color: #fff;}
+        .data_tbl_wrap .data_page .lst .tp .txt:active{color: #000;}
+        .data_tbl_wrap .data_page .p_bt{display: inline-block; position: relative; text-decoration: none; vertical-align: middle; width: 30px; line-height: 30px; color: #222; background: #f9fafc; border-radius: 2px; border: 1px solid #e3e5e4; font-size: 11px; margin: 3px;}
+        .data_tbl_wrap .data_page .p_bt:active{color: #222;}
+        .data_tbl_wrap{border: 1px solid #ddd; border-bottom: none;}
+        .lst{list-style: none; padding: 0; margin: 0; overflow: hidden;}
+        .onc{display: block; text-decoration: none; line-height: 50px; text-align: center; color: #555; font-size: 15px; font-weight: bold; background: #fafafa; border-bottom: 1px solid #ddd; }
+        .onc.active{background: #1b82cf; color: #fff;}
+        .data_tbl_area{display: none; padding: 30px; border-bottom: 1px solid #ddd;}
+    </style>
+</head>
+
+<body>
+    <div class="data_tbl_wrap">
+
+    </div>
+    <script>
+        var GET_DATA_KEY = [];
+        var GET_DATA_KEY_KO = ['조회결과', '통화코드', '송금받을때', '송금보낼때', '매미기준율', '장부가격', '년환가료율', '10일환가료율', '서울외국환중계 장부가격', '서울외국환중계 매매기준율', '국가/통화명'];
+        var GET_DATA_VAL = [];
+        $.getJSON('ex.php', function(data) {
+            GET_DATA_VAL = data;
+            for (var i in data[0]) {
+                GET_DATA_KEY.push(i);
+            }
+            console.log(GET_DATA_KEY);
+            console.log(GET_DATA_KEY_KO);
+            console.log(GET_DATA_VAL);
+            var html = '<ul class="lst">';
+            for (var i = 0; i < GET_DATA_VAL.length; i++) {
+                html += '<li>';
+                html += '<a href="#" class="onc">' + GET_DATA_VAL[i][GET_DATA_KEY[10]] + '</a>';
+                html += '<div class="data_tbl_area">';
+                html += '<table class="data_tbl">';
+                html += '<thead>';
+                html += '<tr>';
+                for (var j = 0; j < GET_DATA_KEY_KO.length; j++) {
+                    html += '<th>' + GET_DATA_KEY_KO[j] + '</th>';
+                }
+                html += '</tr>';
+                html += '</thead>';
+                html += '<tbody>';
+                html += '<tr>';
+                for (var key in GET_DATA_VAL[i]) {
+                    html += '<td>' + GET_DATA_VAL[i][key] + '</td>';
+                }
+                html += '</tr>'
+                html += '</tbody>';
+                html += '</table>';
+                html += '</div>';
+                html += '</li>';
+            }
+            html += '</ul>';
+            $('.data_tbl_wrap').html(html);
+            $('.onc').click(function(){
+                $(this).toggleClass('active');
+                $(this).closest('li').find('.data_tbl_area').stop().slideToggle();
+                return false;
+            });
+        });
+    </script>
+
+
+</body>
+
+</html>

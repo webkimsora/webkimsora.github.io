@@ -1,0 +1,450 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title>TWEENMAX-TWEENLITE</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<!--link rel="stylesheet" href="./css/style.css"-->
+	<link rel="stylesheet" href="../css/common.css?v=01">
+	<link rel="stylesheet" href="../css/main.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:800" rel="stylesheet">
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+	<script type="text/javascript" src="../js/jquery-1.11.3.min.js"></script>
+
+	<style>
+		html,
+		body {
+			width: 100%;
+			overflow: hidden;
+		}
+		
+		.example {width: 1000px; margin: 0 auto;
+		overflow: hidden;}
+		
+		h3 {font-size: 28px; margin: 15px 0;}
+
+		.content {
+			width: 100%;
+			margin-top: 30px;
+			position: relative;
+		}
+
+		.box {
+			width: 50px;
+			height: 50px;
+			position: relative;
+			border-radius: 6px;
+			margin-top: 4px;
+			display: block;
+			line-height: 50px;
+			text-align: center;
+			color: #333;
+
+		}
+
+		.green {
+			background-color: #6fb936;
+		}
+
+		.orange {
+			background-color: #f38630;
+		}
+
+		.loader {
+			height: 300px;
+			text-align: center;
+			z-index: 10;
+			position: relative;
+			background: #333;
+		}
+
+		.loader .score {
+			padding-top: 100px;
+			color: #fff;
+			font-size: 72px;
+			font-weight: bold;
+		}
+
+		/* progCon */
+
+		.progCon {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 300px;
+			background: #020916;
+		}
+
+		.me-con {
+			position: relative;
+		}
+
+		.pos,
+		.me-body,
+		.me-ponytail,
+		.me-head,
+		.me-hair,
+		.me-bangs,
+		.me-face {
+			position: absolute;
+			-moz-transform: translate(-50%, -50%);
+			-ms-transform: translate(-50%, -50%);
+			-webkit-transform: translate(-50%, -50%);
+			transform: translate(-50%, -50%);
+			left: 50%;
+			top: 50%;
+		}
+
+		.me-con {
+			left: 45%;
+			top: 30%;
+			width: 120px;
+			height: 120px;
+			background: #ff5f5f;
+			transition: all 0.2s;
+			-moz-border-radius: 60px;
+			-webkit-border-radius: 60px;
+			border-radius: 60px;
+			-moz-transform: scale(2);
+			-ms-transform: scale(2);
+			-webkit-transform: scale(2);
+			transform: scale(2);
+		}
+
+		.me-con.active {
+			left: 40%;
+		}
+
+		.me-con:hover {
+			-moz-border-radius: 60px 60px 2px;
+			-webkit-border-radius: 60px;
+			border-radius: 60px 60px 2px;
+			cursor: pointer;
+		}
+
+		.me-body {
+			width: 6px;
+			height: 10px;
+			background: #ffd7c5;
+			top: 72%;
+			box-shadow: inset 0px 6px 0px 0px #e1b9a7;
+		}
+
+		.me-body:before,
+		.me-body:after {
+			content: "";
+			position: absolute;
+		}
+
+		.me-body:before {
+			background: #ffd7c5;
+			width: 6px;
+			height: 6px;
+			border-radius: 10px;
+			top: 5px;
+			z-index: 1;
+		}
+
+		.me-body:after {
+			width: 26px;
+			height: 15px;
+			background: #ff9b29;
+			border-radius: 20px 20px 0px 0px;
+			top: 7px;
+			z-index: 0;
+			left: -9px;
+			box-shadow: inset 4px 0px 0px rgba(255, 195, 127, 0.5);
+		}
+
+		.me-ponytail:after {
+			position: absolute;
+			content: "";
+			width: 10px;
+			height: 20px;
+			background: #040f24;
+			top: 20px;
+			left: -20px;
+			-moz-border-radius: 0px 100px 0px 100px;
+			-webkit-border-radius: 0px;
+			border-radius: 0px 100px 0px 100px;
+			-moz-transform: rotate(30deg);
+			-ms-transform: rotate(30deg);
+			-webkit-transform: rotate(30deg);
+			transform: rotate(30deg);
+		}
+
+		.me-head {
+			background: #ffd7c5;
+			border-radius: 100px;
+			height: 50px;
+			width: 40px;
+		}
+
+		.me-head:after,
+		.me-head:before {
+			content: "";
+			top: -5px;
+			left: 0px;
+			width: 16px;
+			height: 26px;
+			background: #040f24;
+			position: absolute;
+			-moz-border-radius: 1px 10px 0px 10px;
+			-webkit-border-radius: 1px;
+			border-radius: 1px 10px 0px 10px;
+			-moz-transform: rotate(53deg);
+			-ms-transform: rotate(53deg);
+			-webkit-transform: rotate(53deg);
+			transform: rotate(53deg);
+		}
+
+		.me-head:after {
+			top: -8px;
+			left: 20px;
+			width: 20px;
+			height: 35px;
+			-moz-border-radius: 10px 10px 10px 0px;
+			-webkit-border-radius: 10px;
+			border-radius: 10px 10px 10px 0px;
+			-moz-transform: rotate(-50deg);
+			-ms-transform: rotate(-50deg);
+			-webkit-transform: rotate(-50deg);
+			transform: rotate(-50deg);
+		}
+
+		.me-hair {
+			width: 55px;
+			height: 50px;
+			background: #040f24;
+			border-radius: 80px;
+			top: 44%;
+		}
+
+		.me-hair:after,
+		.me-hair:before {
+			content: "";
+			left: -2px;
+			top: 28px;
+			width: 10px;
+			height: 13px;
+			background: #ffd7c5;
+			position: absolute;
+			-moz-border-radius: 5px;
+			-webkit-border-radius: 5px;
+			border-radius: 5px;
+		}
+
+		.me-hair:after {
+			left: 46px;
+		}
+
+		.me-bangs:before,
+		.me-bangs:after {
+			content: "";
+			position: absolute;
+			height: 36px;
+			width: 10px;
+			background: #040f24;
+			left: -27px;
+			top: -12px;
+			border-radius: 24px 0px 0px 24px;
+			box-shadow: inset 2px -4px 0px #0a204b;
+		}
+
+		.me-bangs:after {
+			left: 14px;
+			width: 13px;
+			height: 39px;
+			border-radius: 0px 0px 100px 2px;
+			box-shadow: none;
+		}
+
+		.me-face .eyes {
+			-moz-animation: blink 3s infinite;
+			-webkit-animation: blink 3s infinite;
+			animation: blink 3s infinite;
+		}
+
+		.me-face .eyes:after,
+		.me-face .eyes:before {
+			width: 4px;
+			height: 15px;
+			background: #000;
+			position: absolute;
+			content: "";
+			left: -10px;
+			top: -5px;
+			border-radius: 2px;
+		}
+
+		.me-face .eyes:after {
+			left: 5px;
+		}
+
+		.me-face .cheeks:after,
+		.me-face .cheeks:before {
+			width: 8px;
+			height: 8px;
+			background: #fa6363;
+			position: absolute;
+			content: "";
+			left: -15px;
+			top: 10px;
+			border-radius: 4px;
+		}
+
+		.me-face .cheeks:after {
+			left: 6px;
+		}
+
+		@keyframes blink {
+			0% {
+				transform: scaleY(1);
+			}
+			18% {
+				transform: scaleY(1);
+			}
+			20% {
+				transform: scaleY(0);
+			}
+			25% {
+				transform: scaleY(1);
+			}
+			38% {
+				transform: scaleY(1);
+			}
+			40% {
+				transform: scaleY(0);
+			}
+			45% {
+				transform: scaleY(1);
+			}
+			80% {
+				transform: scaleY(1);
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<main id="viewport">
+		<div>
+			<section class="example">
+				<h3>ex1) Progress</h3>
+				<div class="content">
+					<div class="loader">
+						<div class="score">
+							0%
+						</div>
+					</div>
+					<div class="progCon">
+						<div class="me me-con">
+							<div class="me-body"></div>
+							<div class="me-ponytail"></div>
+							<div class="me-hair"></div>
+							<div class="me-head"></div>
+							<div class="me-bangs"></div>
+							<div class="me-face">
+								<div class="eyes"></div>
+								<div class="cheeks"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<script>
+					var count = document.querySelector('.score');
+					var loader = document.querySelector('.loader');
+
+					var countdown = {
+						score: 0
+					}
+
+					var countTimeline = new TimelineMax({
+						onComplete: removeLoader
+					});
+
+					countTimeline
+						.from(count, 1, {
+							y: -30
+						})
+						.to(countdown, 5, {
+							score: "+=100",
+							roundProps: "score",
+							ease: Power3.easeInOut,
+							onUpdate: onUpdateHandler
+						})
+
+
+					function onUpdateHandler() {
+						count.innerHTML = countdown.score + '%';
+					}
+
+					function removeLoader() {
+						var dd = new TimelineMax();
+						
+						dd.to(count, 0.7, {
+							y: 30,
+							opacity: 0
+						})
+						dd.to(loader, 1, {
+							xPercent: 100
+							//display: "none"
+						})
+
+					}
+				</script>
+				<!--h1 class="valueCount"></h1>
+				<script>
+					var obj = {
+						value: 0
+					}
+					var selTag = document.querySelector("h1");
+					
+					TweenLite.to(obj, 5, {value:500,
+						roundProps:{
+							value: 10
+						},
+						onUpdate:function(){
+							selTag.innerHTML = obj.value;
+						}
+					})
+				</script-->
+			</section>
+
+			<section class="example">
+				<h3>ex2) 특정 지정값때마다 실행시키기</h3>
+				<div class="content">
+					<div class="box green"></div>
+					<div class="box orange"></div>
+				</div>
+
+				<script>
+					TweenLite.to(".green", 5, {
+						x: 600,
+						opacity: 0.3,
+						roundProps: {
+							x: 100,
+							opacity: 0.1
+						}
+					})
+					TweenLite.to(".orange", 5, {
+						x: 600,
+						roundProps: {
+							x: 200
+						}
+					})
+				</script>
+			</section>
+			
+		</div>
+	</main>
+
+	<script>
+	</script>
+</body>
+
+</html>

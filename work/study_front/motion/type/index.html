@@ -1,0 +1,223 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>타이핑 효과</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<!-- <meta name="viewport" content="user-scalable=yes, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0, width=device-width"> -->
+	<link rel="stylesheet" type="text/css" href="./css/common.css"  media="all" />
+	<script type="text/javascript" src="./js/jquery-1.11.3.min.js" ></script>
+	<!-- <script type="text/javascript" src="./js/jquery.easing.1.3.js" ></script> -->
+	<!-- <script type="text/javascript" src="./js/jquery.bxslider.min.js" ></script> -->
+	<!-- <script type="text/javascript" src="./js/swiper.min.js" ></script> -->
+	<script type="text/javascript" src="./js/jquery.fullPage.js" ></script>
+	<script type="text/javascript" src="./js/typewriter-bundle.js" ></script>
+	<script type="text/javascript" src="./js/hangul.js" ></script>
+	<script type="text/javascript" src="./js/typed.min.js" ></script>
+	<script type="text/javascript" src="./js/common.js" ></script>
+	<!-- <link href="https://fonts.googleapis.com/css?family=Black+Han+Sans:400" rel="stylesheet"> -->
+	<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic+Coding:700" rel="stylesheet">
+	
+</head>
+<body>
+	
+	<nav id="menu">
+		<ul class="clear gnb">
+			<li data-menuanchor="section01"><a href="#section01">기본 타이핑</a></li>
+			<li data-menuanchor="section02"><a href="#section02">타이핑 반복</a></li>
+			<li data-menuanchor="section03"><a href="#section03">여러문장 타이핑</a></li>
+			<li data-menuanchor="section04"><a href="#section04">문장 랜덤 타이핑</a></li>
+			<li data-menuanchor="section05"><a href="#section05">문장별 타이핑</a></li>
+			<li data-menuanchor="section06"><a href="#section06">한글 자음 모음 분리 타이핑</a></li>
+		</ul>
+	</nav>
+	
+	<div class="bench">
+		<p>벤치마킹</p>
+		<ul>
+			<li><a href="https://envato.com/" target="_blank">https://envato.com/</a></li>
+			<li><a href="https://deuxhuithuit.com/en/" target="_blank">https://deuxhuithuit.com/en/</a></li>
+			<li><a href="https://commando.io/" target="_blank">https://commando.io/</a></li>
+			<li><a href="http://www.stephanemartinw.com/" target="_blank">http://www.stephanemartinw.com/</a></li>
+		</ul>		
+	</div>
+	
+	
+	<!-- sectionWrap -->
+	<div class="sectionWrap">
+		
+		<!-- section01 -->
+		<section class="section sec01">
+			
+			<div class="cont">
+				<div class="inner">
+					
+					<span id="typed2"></span>
+					
+					<div class="btnResetart">
+						<button class="re01">재시작</button>
+					</div>
+					
+				</div>
+			</div>
+			
+		</section>
+		<!-- //section01 -->
+		
+		<!-- section02 -->
+		<section class="section sec02">
+			
+			<div class="cont">
+				<div class="inner">
+					
+					<span id="typed3"></span>
+					
+				</div>
+			</div>
+			
+		</section>
+		<!-- //section02 -->
+		
+		<!-- section03 -->
+		<section class="section sec03">
+			
+			<div class="cont">
+				<div class="inner">
+					<span id="typed4"></span>
+				</div>
+			</div>
+			
+		</section>
+		<!-- //section03 -->
+		
+		<!-- section04 -->
+		<section class="section sec04">
+			
+			<div class="cont">
+				<div class="inner">
+					
+					<span id="typed5"  style="white-space:pre;"></span>
+					
+				</div>
+			</div>
+			
+		</section>
+		<!-- //section04 -->
+
+		<!-- section05 -->
+		<section class="section sec05">
+			
+			<div class="cont">
+				<div class="inner">
+					
+					<span id="typed6"  style="white-space:pre;"></span>
+					
+				</div>
+			</div>
+			
+		</section>
+		<!-- //section05 -->
+
+		<!-- section06 -->
+		<section class="section sec06">
+			
+			<div class="cont">
+				<div class="inner">
+					
+					<div class="typewriter-wrapper" class="centered">
+						<div class="in">
+							<span id="typewriter" class="typewriter"></span>
+							<span id="caret" class="caret">&nbsp;</span>
+						</div>
+					</div>
+					
+					<div class="btnResetart">
+						<div class="inputHan">
+							<input type="text" class="dataHan" placeholder="원하는 문구를 넣어보세요.">
+						</div>
+						<button class="re02">재시작</button>
+					</div>
+					
+				</div>
+			</div>
+			
+		</section>
+		<!-- //section06 -->
+
+	</div>
+	<!-- //sectionWrap -->
+
+	
+</div>
+
+<script>
+
+var typewriter = require('typewriter');
+var twSpan = document.getElementById('typewriter');
+var tw = typewriter(twSpan).withAccuracy(100)
+.withMinimumSpeed(15)
+.withMaximumSpeed(25)
+.build();
+
+var msg = '자음 모음을 분리해서 타이핑 합니다.';
+msg = Hangul.disassemble(msg);
+msg = Hangul.typewrite(msg);
+
+tw.wait(1000)
+.type(msg)
+.wait(500)
+.type('', function () {
+	
+	//document.getElementById("caret").style.display = 'none';
+});
+
+$('.re02').on('click',function(){
+
+	var typewriter = require('typewriter');
+	var twSpan = document.getElementById('typewriter');
+	var tw = typewriter(twSpan).withAccuracy(100)
+	.withMinimumSpeed(15)
+	.withMaximumSpeed(25)
+	.build();
+
+	$('#typewriter').empty();
+	var msg = $('.dataHan').val() || '원하는 문구를 넣어보세요'
+
+	console.log(msg);
+	msg = Hangul.disassemble(msg);
+	msg = Hangul.typewrite(msg);
+
+	tw.wait(1000)
+	.type(msg)
+	.wait(500)
+	.type('', function () {
+		
+		//document.getElementById("caret").style.display = 'none';
+	});
+
+})
+
+</script>
+
+<style>
+.cont {display:table ; position: absolute; left:0; top:0; width: 100%; height: 100%;  padding:0 2%; box-sizing:Border-box;}
+.cont .inner {display:table-cell; vertical-align: middle; text-align: center;  font-size: 100px; font-family: 'Nanum Gothic Coding'; font-weight:700; color:#111;}
+.sec01 {background:rgb(255, 115, 161);}
+.sec02 {background:rgb(75, 191, 195); }
+.sec03 {background:rgb(123, 170, 190);}
+.sec04 {background:#b9f1f0;}
+.sec05 {background:#d7b9f1;}
+.sec06 {background:whitesmoke;}
+
+
+.typewriter-wrapper .in {position: relative; display: inline-block; }
+.typewriter {position: relative;  }
+
+</style>
+
+
+</body>
+</html>
+
+
+

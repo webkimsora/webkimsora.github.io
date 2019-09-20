@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title>MOTION02</title>
+		
+		<link rel="stylesheet" href="./css/common.css">
+		
+		<style>
+			body {overflow: hidden;}
+			.wrapper {
+				-webkit-perspective: 3000px;
+				perspective: 3000px;
+				position: relative;
+				z-index: 1;
+			}
+			.wrapper img {
+				width: 100%;
+				height: 110%;
+				transform-style: preserve-3d;
+    			transform-origin: center center 0px;
+				transition: all 0.1s ease;
+			}
+			
+			.background {
+				width: 100%;
+				height: 100%;
+				background: url(./images/home.jpg) no-repeat;
+				transform-style: preserve-3d;
+			    transform-origin: center center 0px;
+				transition: all 0.1s ease;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+
+		</style>
+		
+		<script type="text/javascript" src="./js/jquery-1.11.3.min.js" ></script>
+		<script>
+			var currentMousePos = { x: -1, y: -1 },
+			wHeight= $(window).height(),
+			wWidth= $(window).width();
+			
+			$(document).mousemove(function(event) {
+				currentMousePos.x = event.pageX;
+				currentMousePos.y = event.pageY;
+
+				var around1 = (currentMousePos.y * 100 / wHeight * 0.1 - 1) + 'deg',
+				  around2 = -1 * (currentMousePos.x * 100 / wWidth * 0.1 - 1) + 'deg',
+				  trans1 = (currentMousePos.x * 100 / wHeight * 0.1 - 1) + 'px',
+				  trans2 = (currentMousePos.y * 100 / wHeight * 0.1 - 1) + 'px'
+
+				$(".wrapper img").css({
+					"-webkit-transform": "translate3d(" + trans1 + ", " + trans2 +", 0) scale(0.6) rotatex(" + around1 + ") rotatey(" + around2 + ")",
+					"transform": "translate3d(" + trans1 + ", " + trans2 +", 0) scale(0.6) rotatex(" + around1 + ") rotatey(" + around2 + ")"
+				});
+				$(".background").css({
+					"-webkit-transform": "translate3d(" + trans1 + ", " + trans2 +", 0) scale(1.03) rotatex(" + around1 + ") rotatey(" + around2 + ")",
+					"transform": "translate3d(" + trans1 + ", " + trans2 +", 0) scale(1.03) rotatex(" + around1 + ") rotatey(" + around2 + ")"
+				});
+			});
+		</script>
+	</head>
+	<body class="">
+		<main class="viewport">
+			<!--div class="wrapper">
+				<img src="https://cdn.dribbble.com/users/621051/screenshots/2653451/website_sneak_peek.png" alt="" />
+			</div-->
+			<div class="background"></div>
+		</main>
+	</body>
+</html>

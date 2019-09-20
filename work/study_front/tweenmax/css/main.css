@@ -1,0 +1,19 @@
+/* css */
+html,body {height: 100%;}
+
+.box {width: 50px; height: 50px; border-radius: 10px; display: inline-block; background: #72b209;}
+
+.sliderWrap {position: relative; width: 100%; height: 100%; overflow: hidden; font-family: 'Open Sans', sans-serif;}
+.sliderContainer {position: relative; height: 100%;}
+.slider {position: absolute; width: 100%; top: 0; height: 100%; display: inline-block; color: #fff; font-size: 80px; font-weight: 600;}
+.slider.no1 {background: #cf624a; left: 0;}
+.slider.no2 {background: #22231d; left: 100%;}
+.slider.no3 {background: #22231d; left: 200%;}
+.slider .contents {display:table; width: 100%; height: 100%;}
+.slider .contents:after {content: ""; display: block; clear: both;}
+.slider .half {width: 50%; display:table-cell; vertical-align:middle; text-align: center;}
+.slider .half.left {}
+
+.btnSliderWrap > div {position: absolute; top: 50%; font-size: 80px; color: #fff; cursor: pointer;}
+.btnSliderWrap .btnPrev {left: 30px;}
+.btnSliderWrap .btnNext {right: 30px;}

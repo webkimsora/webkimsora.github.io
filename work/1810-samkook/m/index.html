@@ -1,0 +1,525 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta id="meta" name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+    <meta name="subject" content="템플릿v1">
+    <meta name="title" content="템플릿v1">
+    <meta name="author" content="템플릿v1">
+    <meta name="keywords" content="템플릿v1">
+    <title>삼국 에볼루션</title>
+	<link rel="shortcut icon" type="image/x-icon" href="./images/favicon.ico?v=01">
+    <link rel="stylesheet" type="text/css" href="./css/jquery-ui.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="./css/slick.css" media="all" />   
+    <link rel="stylesheet" type="text/css" href="./css/common_reser.css?v=04" media="all" />
+    <script type="text/javascript" src="./js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="./js/slick.min.js"></script>
+    <script type="text/javascript" src="./js/jquery.bxslider.min.js"></script>
+    <script type="text/javascript" src="./js/iscroll.js"></script>
+    <script type="text/javascript" src="./js/design.plugin.cmmValidator.js"></script>
+    <script type="text/javascript" src="./js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="./js/common_reser.js?v=01"></script>
+    <script type="text/javascript" src="../js/common_dev.js"></script>
+ 
+    <!--[if lt IE 9]>
+	<script src="./js/html5.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+    <!-- Skip Nav -->
+    <div id="skipnavigation">
+        <a href="#container">본문내용 바로가기</a>
+    </div>
+    <!-- //Skip Nav -->
+    <!-- viewport -->
+    <main id="viewport">
+		<!-- @ header -->
+        <header class="header">
+            <div class="hamburger">
+              <span class="line1"></span>
+              <span class="line2"></span>
+              <span class="line3"></span>
+            </div>
+			<div class="btnCafe"><a href="#;" target="_blank">카페바로가기</a></div>
+            <div class="in">
+                <nav class="navList">
+                    <ul class="clear">
+                        <!--li class="no1"><a href="#main"><img src="./images/h1Logo.png" alt="메인"></a></li-->
+                        <li class="no1 btn"><a href="#section02"><span>사전예약</span></a></li>
+                        <li class="no2 btn"><a href="#section03"><span>게임소개</span></a></li>
+                        <li class="no3 btn"><a href="#section04"><span>이벤트1</span></a></li>
+                        <li class="no4 btn"><a href="#section05"><span>이벤트2</span></a></li>
+                    </ul>
+                </nav>
+            </div>
+            <!--div class="gnb">
+                <a href="#section01" class="no0">HOME</a>
+                <a href="#section02" class="no1">세계관</a>
+                <a href="#section03" class="no2">게임소개</a>
+				<a href="#section04" class="no3">미디어</a>
+                <a href="#section05" class="no4">경품</a>
+            </div-->
+        </header>
+        <!-- //@ header -->
+    
+		<!-- Container -->
+        <div class="container" id="container">
+	        <!-- section01 -->
+	        <section class="section page" id="section01" data-height="0">
+	            <img class="bg" src="./images/@main.jpg"  alt="">
+	            <!-- mainWrap -->
+	            <div class="contents mainWrap">
+	                <div class="bookPlay">
+	                    <a class="spacer" href="javascript:;" onclick="youtubeIframeOpen();">영상재생</a>
+	                </div>
+	            </div>
+	            <!-- //mainWrap -->
+	            
+	        </section>
+	        <!-- //section01 -->
+
+	        <!-- section02 -->
+	        <section class="section page" id="section02" data-height="1308">
+		        <img class="bg" src="./images/@reservation.jpg"  alt="">
+	            <!-- reservWrap -->
+	            <div class="contents reservWrap">
+	             
+	                <!-- baseForm -->
+	                <form id="reserFrm" class="baseForm form">
+	                    <div class="inner">
+	                        <div class="reservTit01"><img src="./images/titReserv01.png" alt="스타일리시 사전예약"></div>
+	                        
+	                        <div class="deviceWrap">
+	                            <input type="radio" id="devie01" data-params='{"required" : true}' checked name="USER_DEVICE" value="device1">
+	                            <label for="devie01" class="form-check-label"><img src="./images/titReserv02.png" alt="안드로이드"></label>
+	                            <input type="radio" id="devie02" data-params='{"required" : true}' name="USER_DEVICE" value="device2">
+	                            <label for="devie02" class="form-check-label"><img src="./images/titReserv03.png" alt="아이폰"></label>
+	                        </div>
+	                        <div class="phonWrap">
+	                            <input type="tel"  name="USER_PHONENUMBER" data-params='{"ime" : "tel", "required" : true}' class="form-control valTest3" maxlength="11" placeholder="휴대폰 번호를 입력해주세요.">
+	                        </div>
+	                        <div class="agreeWrap">
+	                            <input id="agree" type="checkbox" name="USER_CHK1" data-params="{&quot;required&quot; : true}" class="form-check-input" value="chk1" required="required">
+	                            <label for="agree" class="form-check-label"><span style="color: red"><img src="./images/titReserv04.png" alt="개인정보 수집 이용 및 광고 문자 수신 동의"></span></label>
+	                            <a href="javascript:;" onclick="contentOpen('.cont01');"><img src="./images/titReserv05.png" alt="자세히보기"></a>
+	                            <div class="agreeText"><img src="./images/titReserv06.png" alt="개인정보제공 동의 시 이벤트성 SMS가 발송되며 이후 관련 정보는 모두 파기 됩니다."></div>
+	                        </div>
+	                        
+	                        <div class="btnReserv">
+	                            <a href="javascript:;" onclick="reserv()" class="formLogBtn"><img src="./images/btnReserv.png" alt="사전예약 신청"></a>                                    
+	                        </div>
+
+	                        <div class="titOne">
+	                           <img src="./images/titReserv07.png" alt="원스토어 사전예약 시, 푸짐한 추가 혜택을 증정합니다!">                                   
+	                        </div>
+	                        
+	                        <div class="btnOne">
+	                            <a href="https://onesto.re/_j7Cg21" target="_blank"><img src="./images/btnOnestore.png" alt="사전예약 신청"></a>                                    
+	                        </div>
+	                    </div>
+	                    <div class="lastInfo">
+	                        <img src="./images/titReserv08.png" alt="사전예약 인게임 보상은 런칭 후 쿠폰으로 지급되며, 자세한 내용은 사전 예약 시 입력하신 휴대폰 번호로 안내 드릴 예정입니다.">                                    
+	                    </div>
+	                    <!-- <button type="button" class="btn formClearBtn">필드초기화</button> -->
+	                </form>
+	                <!-- //baseForm -->
+	                
+	                <!-- eventProduct -->
+	                <div class="eventProduct">
+	                    <div class="in">
+	                        <div class="item"><img src="./images/reservItem.png?v=01" alt="경품"></div>
+	                    </div>
+	                </div>
+	                <!-- eventProduct -->
+	            </div>
+	            <!-- //reservWrap -->
+	        </section>
+	        <!-- //section02 -->
+	        
+	        <!-- section03 -->
+	        <section class="section page" id="section03" data-height="2460">
+		        <img class="bg" src="./images/@intro.jpg"  alt="">
+				
+	            <!-- introWrap -->
+	            <div class="contents" id="introWrap">
+	                <div class="cha">
+	                    <img src="./images/introCha01.png" alt="책">
+	                </div>
+	                
+	                <!-- introArea -->
+	                <div class="introArea">
+
+	                    <!-- gameTab -->
+	                    <div class="gameTab">
+	                        <ul>
+	                            <li><a href="javascript:;">게임소개</a></li>
+	                            <li><a href="javascript:;">캐릭터소개</a></li>
+	                        </ul>                            
+	                    </div>
+	                   <!-- //gameTab -->
+
+	                    <!-- tabSection -->
+	                    <div class="tabSection">
+	                        
+	                        <!-- gameIntro -->
+	                        <div class="gameIntro">
+	                            <div class="tit"><img src="./images/gameTabTit.png" alt="삼국 에볼루션 스타일리시한 삼국지란 이런것이다."></div>
+	                            <ul>
+	                                <li class="no1"><a href="javascript:;"><img src="./images/blank.png" alt="대규모 국가전"></a></li>
+	                                <li class="no2"><a href="javascript:;"><img src="./images/blank.png" alt="화려한 스킬액션"></a></li>
+	                                <li class="no3"><a href="javascript:;"><img src="./images/blank.png" alt="전략적인 병과조합"></a></li>
+	                                <li class="no4"><a href="javascript:;"><img src="./images/blank.png" alt="파격적인 신분상승"></a></li>
+	                            </ul>                               
+	                        </div>
+	                        <!-- //gameIntro -->
+	                        
+	                        <!-- chaSlide -->
+	                        <div class="chaSlide">
+	                             <div class="tit"><img src="./images/gameTabTit02.png" alt="삼국 에볼루션 스타일리시한 삼국지란 이런것이다."></div>
+	                            <div class="slideWrap">
+	                                <div class="slider-for">
+	                                	<div class="item"><img src="./images/chaSlide01.jpg" alt="캐릭터 상세설명"/></div>
+	                                	<div class="item"><img src="./images/chaSlide02.jpg" alt="캐릭터 상세설명"/></div>
+	                                	<div class="item"><img src="./images/chaSlide03.jpg" alt="캐릭터 상세설명"/></div>
+	                                	<div class="item"><img src="./images/chaSlide04.jpg" alt="캐릭터 상세설명"/></div>
+	                                	<div class="item"><img src="./images/chaSlide05.jpg" alt="캐릭터 상세설명"/></div>
+	                                	<div class="item"><img src="./images/chaSlide06.jpg" alt="캐릭터 상세설명"/></div>
+	                                	<div class="item"><img src="./images/chaSlide07.jpg" alt="캐릭터 상세설명"/></div>
+	                                	<div class="item"><img src="./images/chaSlide08.jpg" alt="캐릭터 상세설명"/></div>
+	                                	<div class="item"><img src="./images/chaSlide09.jpg" alt="캐릭터 상세설명"/></div>
+	                                	<div class="item"><img src="./images/chaSlide10.jpg" alt="캐릭터 상세설명"/></div>
+	                                </div>
+	                                
+	                                <div class="slider-nav">
+	                                	<div class="item no1 top"></div>
+	                                	<div class="item no2 top"></div>
+	                                	<div class="item no3 top"></div>
+	                                	<div class="item no4 top"></div>
+	                                	<div class="item no5 top"></div>
+	                                	<div class="item no6"></div>
+	                                	<div class="item no7"></div>
+	                                	<div class="item no8"></div>
+	                                	<div class="item no9"></div>
+	                                	<div class="item no10"></div>
+	                                </div>
+	                            </div>
+
+	                        </div>
+	                       <!-- //chaSlide -->
+	                        
+	                        
+	                    </div>
+	                    <!-- //tabSection -->
+
+	                </div>
+	                <!-- //introArea -->
+	            </div>
+	           <!-- //introWrap -->
+	           
+	        </section>
+	        <!-- //section03 -->
+	        
+	        <!-- section04 -->
+	        <section class="section page" id="section04" data-height="3952">
+		        <img class="bg" src="./images/@quiz.jpg"  alt="">
+
+	            <!--quizWrap -->
+	            <div class="quizWrap contents">
+					<div class="quizLight">
+	                    <img src="./images/quizLight.png" alt="">
+	                </div>
+	                <!-- gameEvent -->
+	                <div class="gameEvent">
+	                    <div class="infoTit"><img src="./images/titEvent_big.png" alt="삼국에볼루션만의 트랜디한 영웅 맞추기 퀴즈스타일이 살아있는 삼국지 영웅 이름을 맞추면 특별한 인게임 아이템을 드립니다."></div>
+	                    <div class="quizItem"><img src="./images/quizItem.png" alt="경품"></div>
+						<form id="quizFrm">
+							<ul>
+		                        <li class="no1">
+		                            <div class="line">
+		                                <input type="radio" id="pic01" name="picFind01">
+		                                <label for="pic01"><img src="./images/titEvent_lb01.png" alt="감녕"></label>
+		                            </div>
+		                            <div class="line">
+		                                <input type="radio" id="pic02" name="picFind01">
+		                                <label for="pic02"><img src="./images/titEvent_lb02.png" alt="태사자"></label>
+		                            </div>
+		                            <div class="line">
+		                                <input type="radio" id="pic03" name="picFind01">
+		                                <label for="pic03"><img src="./images/titEvent_lb03.png" alt="장합"></label>
+		                            </div>
+		                        </li>
+		                        <li class="no2">
+		                            <div class="line">
+		                                <input type="radio" id="pic04" name="picFind02">
+		                                <label for="pic04"><img src="./images/titEvent_lb04.png" alt="여포"></label>
+		                            </div>
+		                            <div class="line">
+		                                <input type="radio" id="pic05" name="picFind02">
+		                                <label for="pic05"><img src="./images/titEvent_lb05.png" alt="동탁"></label>
+		                            </div>
+		                            <div class="line">
+		                                <input type="radio" id="pic06" name="picFind02">
+		                                <label for="pic06"><img src="./images/titEvent_lb06.png" alt="화웅"></label>
+		                            </div>
+		                        </li>
+		                        <li class="no3">
+		                            <div class="line">
+		                                <input type="radio" id="pic07" name="picFind03">
+		                                <label for="pic07"><img src="./images/titEvent_lb07.png" alt="방통"></label>
+		                            </div>
+		                            <div class="line">
+		                                <input type="radio" id="pic08" name="picFind03">
+		                                <label for="pic08"><img src="./images/titEvent_lb08.png" alt="저수"></label>
+		                            </div>
+		                            <div class="line">
+		                                <input type="radio" id="pic09" name="picFind03">
+		                                <label for="pic09"><img src="./images/titEvent_lb09.png" alt="화타"></label>
+		                            </div>
+		                        </li>
+		                    </ul>
+						</form>
+	                    <div class="btnQuiz">
+	                        <a href="javascript:;" onclick="quiz()"><img src="./images/btnEvent01Go.png" alt="퀴즈 응모하기"></a>
+	                    </div>
+	                    <div class="lastInfo">
+	                        <img src="./images/event01_last.png" alt="퀴즈 이벤트">
+	                    </div>
+	                </div>
+	                <!-- //gameEvent -->
+	                                            
+	            </div>
+	            <!--//quizWrap -->
+
+	        </section>
+	        <!-- //section04 -->
+
+	        <!-- section05 -->
+	        <section class="section page" id="section05" data-height="5704">
+		        <img class="bg" src="./images/@insta.jpg"  alt="">
+	            
+	            <!-- instarWrap -->
+	            <div class="instarWrap contents">
+	                <div class="event2Wrap">
+	                    <div class="tit no1">
+	                        <img src="./images/event02_tit01.png" alt="스타일이 산다!">
+	                    </div>
+						<div class="btnCafeGo">
+                            <a href="#;"><img src="./images/btnCafe2.png" alt="공식카페가기"></a>
+                        </div>
+	                    <div class="tit  no2">
+	                        <img src="./images/event02_tit02.png" alt="인스타 예시">
+	                    </div>
+	                    <div class="tit last  no3">
+	                        <img src="./images/event02_tit03.png" alt="당첨자정보안내">
+	                    </div>
+	                    
+	                </div>
+
+					<div class="copy">
+					   <img src="./images/copy.png" alt="COPYRIGHT ⓒ 2018. THUMB AGE CORP. ALL RIGHTS RESERVED.">                
+					</div>
+	            </div>
+	           <!-- //instarWrap -->
+	        </section>
+	        <!-- //section05 -->
+            
+
+        </div>
+        <!-- //Container -->
+    </main>
+    <!-- //viewport -->
+	
+    <!-- popSlide -->
+    <div class="popSlide">
+        <div class="bg"></div>
+        <div class="popIn">
+		
+            <div class="tabSlideWrap">
+                <div class="box">
+                    <div class="sliderPop slider01">
+                        <div class="item"><img src="./images/mkSlide01.jpg?v=2" alt="슬라이드"/></div>
+                        <div class="item"><img src="./images/mkSlide02.jpg?v=2" alt="슬라이드"/></div>
+                        <div class="item"><img src="./images/mkSlide03.jpg?v=2" alt="슬라이드"/></div>
+                        <div class="item"><img src="./images/mkSlide04.jpg?v=2" alt="슬라이드"/></div>
+                    </div>
+                    <div class="slider-navPop sliderNav01">
+                        <div class="item no1"></div>
+                        <div class="item no2"></div>
+                        <div class="item no3"></div>
+                        <div class="item no4"></div>
+                    </div>
+                </div>
+            </div>
+            <!--
+            <div class="arrowSlide">
+                <div class="left"></div>                
+                <div class="right"></div>                
+            </div>
+			-->
+            <div class="closeBtn"><a href="javascript:;">팝업닫기</a></div>
+        </div>
+
+    </div>
+    <!-- //popSlide -->
+
+
+    <!-- 유투브팝업 -->
+    <div class="youtubePop">
+        <div class="bg"></div>
+        <div class="popIn">
+            <div class="youtubeCont">
+                <div id="youtubeMovie">
+					<iframe id="youtubeIframe" width="560" height="315" src="https://www.youtube.com/embed/o4--epeL2hQ?enablejsapi=1&version=3&playerapiid=ytplayer&cc_load_policy=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+                <div class="closeBtn">
+                    <a href="javascript:;" onclick="youtubeIframeClose()">팝업닫기</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //유투브팝업 -->
+	
+	<script>
+	</script>
+    
+    <!-- 컨텐츠팝업 -->
+    <div class="contentPop">
+        <div class="bg"></div>
+        <div class="popIn">
+            <div class="content">
+                <div class="contentList">
+                    <div class="cont01 ">
+                        <div class="thumb-text">
+                    		<div class="tit"><img src="./images/popReserveAgree.png" alt="개인정보처리방침"></div>
+                    	</div>
+                    </div>
+                    <div class="cont02 bgAlert">
+                        <div class="thumb-text">
+                            <img src="./images/popEvent04.png" alt="사전예약 한 휴대폰 번호를 입력해주세요.">
+                            <div class="form">
+                                <input type="tel"  name="USER_NUMBER_reserve" data-params='{"ime" : "tel", "required" : true}' class="form-control valTest3" maxlength="11">
+                                
+                            </div>
+                            <div class="btnWrap">
+                                <a href="javascript:;" class="btnGoreserv" onclick="checkPhon()">확인</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cont03 bgAlert">
+                        <div class="thumb-text">
+                            <img src="./images/popEvent03.png" alt="사전예약 후 이벤트참여가 가능합니다">
+                            <div class="btnWrap">
+                                <a href="javascript:;" class="btnConfirm" onclick="contentClose(); moveReserv();">사전예약 하러 가기</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cont04 bgAlert">
+                    	<div class="thumb-text">
+                    		<div class="tit"><img src="./images/popReserve01.png" alt="휴대폰 번호를 입력해주세요."></div>
+                    		<div class="btnWrap">
+                    			<a href="javascript:;" class="btnConfirm" onclick="contentClose();">확인</a>
+                    		</div>
+                    	</div>
+                    </div>
+                    <div class="cont05 bgAlert">
+                    	<div class="thumb-text">
+                    		<div class="tit"><img src="./images/popReserve03.png" alt="잘못된 번호입니다. 확인 후 다시 입력해주세요."></div>
+                    		<div class="btnWrap">
+                    			<a href="javascript:;" class="btnConfirm" onclick="contentClose();">확인</a>
+                    		</div>
+                    	</div>
+                    </div>
+                    <div class="cont06 bgAlert">
+                    	<div class="thumb-text">
+                    		<div class="tit"><img src="./images/popReserve02.png" alt="개인정보 수집 및 정보 안내에 동의 하여주세요."></div>
+                    		<div class="btnWrap">
+                    			<a href="javascript:;" class="btnConfirm" onclick="contentClose();">확인</a>
+                    		</div>
+                    	</div>
+                    </div>
+                    <div class="cont07 bgAlert">
+                    	<div class="thumb-text">
+                    		<div class="tit"><img src="./images/popReserve04.png" alt="이미 사전등록을 완료하셨습니다."></div>
+                    		<div class="btnWrap">
+                    			<a href="javascript:;" class="btnConfirm" onclick="contentClose();">확인</a>
+                    		</div>
+                    	</div>
+                    </div>
+                    <div class="cont08 bgAlert">
+                    	<div class="thumb-text">
+                    		<div class="tit"><img src="./images/popReserve05.png" alt="삼국에볼루션<br />사전등록이 완료 되었습니다."></div>
+                    		<div class="btnWrap">
+                    			<a href="javascript:;" class="btnConfirm" onclick="contentClose(); resetFrm('#reserFrm')">확인</a>
+                    		</div>
+                    	</div>
+                    </div>
+                    <div class="cont09 bgAlert">
+                    	<div class="thumb-text">
+                    		<div class="tit"><img src="./images/popEvent01.png" alt="이미 이벤트참여를 완료하셨습니다. "></div>
+                    		<div class="btnWrap">
+                    			<a href="javascript:;" class="btnConfirm" onclick="contentClose();">확인</a>
+                    		</div>
+                    	</div>
+                    </div>
+                    <div class="cont10 bgAlert">
+                    	<div class="thumb-text">
+                    		<div class="tit"><img src="./images/popEvent05.png" alt="캐릭터 3명의 이름을 모두 체크해주세요. "></div>
+                    		<div class="btnWrap">
+                    			<a href="javascript:;" class="btnConfirm" onclick="contentClose();">확인</a>
+                    		</div>
+                    	</div>
+                    </div>
+                    <div class="cont11 bgAlert">
+                    	<div class="thumb-text">
+                    		<div class="tit"><img src="./images/popEvent02.png" alt="퀴즈이벤트에 응모 되었습니다. "></div>
+                    		<div class="btnWrap">
+                    			<a href="javascript:;" class="btnConfirm" onclick="contentClose(); resetFrm('#quizFrm')">확인</a>
+                    		</div>
+                    	</div>
+                    </div>
+                    <div class="cont12 bgAlert">
+                    	<div class="thumb-text">
+                    		<div class="tit"><img src="./images/popReserve03.png" alt="잘못된 번호입니다. 확인 후 다시 입력해주세요."></div>
+                    		<div class="btnWrap">
+                    			<a href="javascript:;" class="btnConfirm" onclick="popVd02()">확인</a>
+                    		</div>
+                    	</div>
+                        <div class="closePop">
+                            <a href="javascript:;" onclick="popVd02()">팝업닫기</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="closePop sideBtn">
+                    <a href="javascript:;" onclick="contentClose()">팝업닫기</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //컨텐츠팝업 -->
+    
+    
+    <!-- 경고팝업 -->
+    <div id="popupAlert">
+        <div class="bg"></div>
+        <div class="popIn">
+            <div class="cell">
+                <div class="verCenter">
+                    <div class="alertText">
+                    </div>
+                </div>
+                <div class="btnWrap">
+                    <a href="javascript:;" onclick="alertClose()">확인</a>
+                </div>
+                <div class="closePop">
+                    <a href="javascript:;" onclick="alertClose()">팝업닫기</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //경고팝업 -->
+</body>
+
+</html>

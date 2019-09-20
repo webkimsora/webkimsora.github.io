@@ -1,0 +1,118 @@
+@charset "utf-8";
+
+/* Reset */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,form,fieldset,p,button{margin:0;padding:0}
+body,h1,h2,h3,h4,input,button{font-family:Helvetica,'Apple SD Gothic Neo',Sans-serif;font-size:12px;color:#000}
+body{text-align:left; word-break:break-word;}
+img,fieldset,iframe{border:0 none}
+li{list-style:none}
+input,select,button{vertical-align:middle}
+img{vertical-align:top}
+i,em,address{font-style:normal}
+label,button{cursor:pointer}
+a{color:#000;text-decoration:none}
+a:hover{color:#000;text-decoration:none}
+hr{display:none}
+legend{*width:0}
+table{border-collapse:collapse;border-spacing:0}
+caption{font-size:0; line-height:0; height:0}
+* {box-sizing:border-box;}
+
+
+body,html,#viewport {height: 100%;}
+html {overflow-x: hidden;}
+html.firstPage {overflow: hidden;}
+.page {position: relative;}
+.container {max-width: 1200px; margin: 0 auto;}
+
+.main {position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 500;}
+.main .background {width: 100%; height: 100%;}
+.main .background:after {content:""; display: block; clear: both;}
+.main .background > div {width: 50%; height: 100%; float: left;}
+.main .background > div.no1 {background: #f26b64;}
+.main .background > div.no2 {background: #7c4b95;}
+
+.main .inner {position: relative; width: 100%; height: 100%;}
+.main .inner h2 {position: absolute; top: -30px; right: -80px; z-index: 1; color: #fff; font-weight: 600; font-size: 48px;}
+.main .inner > div {
+	/*position: absolute; top: 10%; width: 25%; height: 80%; overflow: hidden; left: 12.5%;*/
+	
+	position: absolute;
+	bottom: -100%;
+    height: 85%;
+    max-height: 715px;
+    margin: auto;
+    top: -100%;
+	left: 25%;
+    width: 50%;
+}
+.main .inner > div a {display: inline-block; width: 100%; height: 100%; cursor: pointer;}
+.main .inner > div a:hover img {transform: scale(1.06);}
+.main .inner > div .imgWrap {position: relative; overflow: hidden; height: 100%;}
+.main .inner > div img {position: absolute; left: 50%; margin-left: -800px; transition: all .3s;}
+body.second .main {z-index: -1;}
+
+
+/* subPage */
+.contInner {opacity: 0; transition: .3s all;}
+body.second .contInner {opacity: 1;}
+.visualWrap {padding: 0 3rem; position: relative;}
+.visual {overflow: hidden; max-width: 1200px; position: relative;}
+.visual img {width: 100%;}
+.aniText {animation: animLeftSlideshow2 16s linear infinite; font-size: 90px; color: #e2d4e3; white-space: nowrap; position: absolute; top: 50%; left: 50%; display: inline-block;}
+.aniText span {font-weight: 600; display: inline-block;}
+.visual .text {color: #fff;}
+
+@keyframes animLeftSlideshow2 {
+	0% {
+		-webkit-transform:translate(-50%,-50%);
+		-moz-transform:translate(-50%,-50%);
+		-ms-transform:translate(-50%,-50%);
+		-o-transform:translate(-50%,-50%);
+		transform:translate(-50%,-50%);
+	}
+	100% {
+		-webkit-transform:translate(-83.3333%,-50%);
+		-moz-transform:translate(-83.3333%,-50%);
+		-ms-transform:translate(-83.3333%,-50%);
+		-o-transform:translate(-83.3333%,-50%);
+		transform:translate(-83.3333%,-50%);
+	}
+}
+
+.scrollWrap {margin-top: 500px;}
+.scrollWrap .inner {padding: 0 3rem;}
+/*
+.mask { position: relative; overflow: hidden;}
+.maskColor {position: absolute!important; left: 0; top: 0; width: 101%; height: 100%; background-color: #042275; z-index: 2; opacity: 0; margin-left: -1px; -webkit-transition-timing-function: ease; transition-timing-function: ease; transition: transform 0.45s ease 0s, opacity 0.45s ease 0s;}
+.maskColor[myAttr="1"] {transform-origin: right center; transform: translateX(0) scaleX(0)!important;}
+.maskImg {max-width: 1200px; opacity: 0; transition: 1s all; transform: translateX(-100%);} 
+.maskImg img {max-width: 100%;} 
+.maskImg.is-animated {transform: translateX(0); opacity: 1;}
+*/
+
+.mask {overflow: hidden; position: relative;}
+.mask_anim,
+.mask_anim2 {
+	position: absolute !important;
+	left: 0;
+	top: 0;
+	width: 101%;
+	height: 100%;
+	background-color: #042275;
+	transition-timing-function: ease;
+	z-index: 2;
+	visibility: hidden;
+	margin-left: -1px;
+}
+.mask_anim.is-animated,
+.mask_anim2.is-animated {
+	transform-origin: right center;
+	transform: translateX(0) scaleX(0)!important;
+}
+.mask_anim_inner {visibility: hidden; z-index: 1; max-width: 100%; transition: all 0.25s ease;}
+.mask_anim_inner.is-animated{visibility: visible;}
+
+
+
+

@@ -1,0 +1,97 @@
+<!doctype html>
+<html class="no-js" lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="viewport" content="width=device-width, user-scalable=no, minimal-ui, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="">
+
+  <meta property="og:url" content="">
+  <meta property="og:site_name" content=""/>
+  <meta property="og:title" content="">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="">
+  <meta property="og:description" content="">
+
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <main id="viewport" class="teaser">    
+    <!-- @ 메인 S -->
+    <section class="teaser page" id="teaser">
+      <div class="top">
+        <a class="logo">
+          <img src="./images/logo.png"  alt="조이시티">
+        </a>
+        <a class="bi">
+          <img src="./images/bi.png"  alt="오션앤엠파이어">
+        </a>        
+      </div>
+      <!--img class="bg" src="./images/@bg-teaser.jpg"  alt=""-->
+      <div class="teaser-contents">
+        <p class="teaser-title">
+          <img src="./images/teaser-title.png"  alt="">
+          <div class="a11y">
+            <h3>
+              오션 앤 엠파이어 광고 영상 공모전
+            </h3>
+            <div>신나는 세상을 만드는 JOYCITY에서 크리에이티브한 영상 아이디어를 기다립니다. 전세계 유저들과 함께하는 모바일 전쟁 시뮬레이션 게임 ‘오션 앤 엠파이어’를 알리는 영상을 제작해주세요! 
+            </div>
+          </div>
+        </p>
+        <div class="teaser-btnWrap">
+          <a class="btn-teaser-play" href="#popup-video" data-toggle="modal">
+            <img src="./images/teaser-btn-play.png"  alt="">
+          </a>
+        </div>
+        <a class="btn-enter" href="./contest.html">
+          <img src="./images/btn-enter.png"  alt="">
+        </a>
+      </div>
+    </section>
+    <!-- @ 메인 E -->
+  </main>
+
+
+      <!-- @@ 영상화면 -->
+  <div id="popup-video" class="modal" data-role="modal">
+    <section class="modal-content">
+      <div class="movie-frame">
+        <iframe src="" frameborder="0"></iframe>
+      </div>
+      <a href="javascript:void(0)" data-rel="back" class="modal-btn-close">
+        <img src="./images/popup/btn-close.png" alt="닫기">
+      </a>
+    </section>
+  </div>
+
+  <script src="./assets/js/vendor.js"></script>
+  <script src="./assets/js/plugin.js"></script>
+  <script src="js/main.js"></script>
+
+  <script>
+  <!--
+    var UserAgent = navigator.userAgent;
+    var UADevice = UserAgent.match(/iPhone|iPod|iPad|Android|Windows CE|BlackBerry|Symbian|Windows Phone|webOS|Opera Mini|Opera Mobi|POLARIS|IEMobile|lgtelecom|nokia|SonyEricsson/i);
+    var UAVendor = UserAgent.match(/LG|SAMSUNG|Samsung/);
+    if ( UADevice != null || UAVendor != null){
+      // do    
+      $(window).on('load resize', function(){
+        $('body').css('zoom', ($(window).width() / 720).toFixed(5));    
+        //console.log('로드')
+      });      
+      $("document").ready(function() {
+          $('body').css('zoom', ($(window).width() / 720).toFixed(5));    
+           //console.log('레디')
+      });
+    } else {
+    // location.href = "../";
+      $('body').css({
+        width : '720px',
+        margin : '0 auto'
+      });
+    }
+  //-->
+  </script>
+</body>
+</html>

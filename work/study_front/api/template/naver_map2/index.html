@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <title> api활용 </title>
+    <style>
+    *{margin: 0; padding: 0;}
+    html,body{height: 100%;}
+    iframe{border: none;}
+    </style>
+    <script src="./js/lib/jquery-1.11.3.min.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="https://openapi.map.naver.com/openapi/v3/maps.js?clientId=sNplxDonoN9K_L7U5S7_&submodules=geocoder"></script>
+    <script type="text/javascript" src="./data/accidentdeath.js"></script>
+    <script type="text/javascript" src="./js/MarkerClustering.js"></script>
+    
+    <style>
+    html, body{height: 100%; background: #fafafa;}
+    *{margin: 0; padding: 0; border: none; box-sizing: border-box;}
+    
+    .aside {position: absolute; top: 0; left: 0; width: 20%; height: 100%; background: #fff;}
+    .aside .pannel {margin: 30px 0; border: 1px solid red;}
+    .aside #searchTxt {border: 1px solid #000;}
+    
+    .information {width: 200px; padding: 15px; font-size: 13px; text-align: center;}
+    .information h3 {font-size: 15px; padding-bottom: 7px;}
+    .information .gasImg {width: 25px; display: inline-block; vertical-align: middle;}
+    
+    .searchWrap {position: absolute; top: 20px; left: 20px;}
+    .searchWrap li {margin-top: 10px; padding: 5px; list-style: none; border: 1px solid #000; background: #fff;}
+    .searchWrap li:first-child {margin-top: 0;}
+    .searchWrap li .title {min-width: 100px; display: inline-block; text-align: center;}
+    
+    .searchWrap input {width: 200px; height: 35px; display: inline-block; vertical-align: middle; border: 1px solid #000; padding-left: 10px; line-height: 35px; }
+    .searchWrap button {width: 50px; height: 35px; display: inline-block; vertical-align: middle; border: 1px solid #000; line-height: 35px;}
+    </style>
+</head>
+
+<body>
+    <div class="map-inner" style="position: relative; height: 100%;">
+        <div id="map" style="width:100%;height:100%;"></div>
+        <ul class="searchWrap">
+            <li>
+                <span class="title">지역 검색</span>
+                <input id="addressBox" type="text" placeholder="지역을 입력해주세요">
+                <button id="btnSearch" value="검색">검색</button>
+            </li>
+            <li>
+                <span class="title">휴게소명 검색</span>
+                <input id="restBox" type="text" placeholder="휴게소명을 입력해주세요">
+                <button id="btnRestSearch" value="검색">검색</button>
+            </li>
+        </ul>
+    </div>
+    
+    <script>
+        $.ajax({
+            url: './data/restArea.json',
+            dataType: 'json',
+            success: startDataLayer
+        });
+        
+        var map;
+        var NaM = naver.maps;
+        
+        var map = new naver.maps.Map('map', {
+            scaleControl: false,
+            logoControl: false,
+            mapDataControl: false,
+            minZoom: 1,
+            zoom: 6,
+            zoomControl: true,
+            zoomControlOptions: {
+                position: naver.maps.Position.TOP_RIGHT,
+                style: naver.maps.ZoomControlStyle.LARGE
+            }
+        });
+        
+        var myaddress = '세종대로 110'; // 도로명 주소나 지번 주소만 가능 (건물명 불가!)
+        
+        naver.maps.Service.geocode({address: myaddress}, function(status, response) {
+            if (status !== naver.maps.Service.Status.OK) {
+              return alert(myaddress + '의 검색 결과가 없거나 기타 네트워크 에러');
+            }
+            var result = response.result;
+            // 검색 결과 갯수: result.total
+            // 첫번째 결과 결과 주소: result.items[0].address
+            // 첫번째 검색 결과 좌표: result.items[0].point.y, result.items[0].point.x
+            var myaddr = new naver.maps.Point(result.items[0].point.x, result.items[0].point.y);
+            map.setCenter(myaddr); // 검색된 좌표로 지도 이동
+        });
+          
+          
+        var markers = [],
+            infoWindows = [],
+            latitude = [], // DATA_KEY[5] == 위도
+            longitude = [], // DATA_KEY[6] == 경도
+            titles = []; // DATA_KEY[0] == 휴게소명
+        
+        // @ JSON 데이터값
+        function startDataLayer(geoData) {
+            DATA_KEY = geoData.fields; // data값 카테고리 (key값 모음)
+            DATA_VALUE = geoData.records; // data 값
+            console.log(DATA_KEY)
+            
+            // @@ json 값 바꾸기 (이미지화)
+            function replaceByValue(field, oldvalue, newvalue){
+                for( var k = 0; k < DATA_VALUE.length; ++k ) {
+                    if( oldvalue == DATA_VALUE[k][field] ) {
+                        DATA_VALUE[k][field] = newvalue ;
+                    }
+                }
+                return DATA_VALUE;
+            }
+            
+            replaceByValue('주유소유무','Y','gascenter.png')
+            replaceByValue('주유소유무','N','gascenterNo.png')
+            
+            // @@ 맵 설정
+            for (var i = 0; i < DATA_VALUE.length; i++) {
+                var spot = DATA_VALUE[i]; // data값
+                
+                latitude.push(spot[DATA_KEY[5].id]); //위도
+                longitude.push(spot[DATA_KEY[6].id]); //경도
+                titles.push(spot[DATA_KEY[0].id]); // 휴게소명
+            
+                var latlng = new naver.maps.LatLng(spot[DATA_KEY[5].id], spot[DATA_KEY[6].id]) // 데이터 좌표값
+                
+                var marker = new naver.maps.Marker({
+                    position: latlng,
+                    //title: spot[DATA_KEY[0].id],
+                    draggable: false, //마커 드래그
+                    map: map,
+                    icon: {
+                        url: './images/markerRed.png',
+                        size: new naver.maps.Size(38, 38),
+                        anchor: new naver.maps.Point(19, 19)
+                    }
+                });
+                
+                var cntInner = '<div class="information">';
+                cntInner += '<h3>휴게소 : <b>"'+ spot[DATA_KEY[0].id] +'"</b></h3>';
+                cntInner += '<p>도로명 : <b>'+ spot[DATA_KEY[3].id] +'</b></p>';
+                cntInner += '<p>운영시간 : <b>'+ spot[DATA_KEY[8].id] +' ~ '+ spot[DATA_KEY[9].id] +'</b></p>';
+                cntInner += '<p>주유소 : <img class="gasImg" src="./images/'+ spot[DATA_KEY[13].id] +'" alt="주유소유무"></p>';
+                cntInner += '<p>전화번호 : <b>'+ spot[DATA_KEY[25].id] +'</b></p>';
+                cntInner += '</div>';
+                
+                // 정보창
+                var infoWindow = new naver.maps.InfoWindow({
+                    content : cntInner,
+                    borderColor : '#bbb'
+                    //content: '<div style="width:150px;text-align:center;padding:10px;">휴게소명 : <b>"'+ spot[DATA_KEY[0].id] +'"</b></div>'
+                });
+
+                markers.push(marker); // marker
+                infoWindows.push(infoWindow); // 정보창
+            }
+            
+            map.data.addGeoJson(geoData); // json data 값 넣기
+            
+            
+            
+            // 휴게소명 검색
+            function searchRestName() {
+                
+                var restBox = $('#restBox').val();
+                var marker;
+                var search = 0; // for문 조건 별도 적용
+                for(var i = 0; i < titles.length; i++){ // key : value값으로 들어가서 length로 돌려줌
+                   var result = titles[i].indexOf(restBox); 
+                   
+                   if(restBox.length > 1){   
+                       if(result != '-1'){
+                           search++;
+                           //console.log('있다 번호는 ' + i);
+                           marker = markers[i];
+                           
+                           // i로 인덱스 뽑았으니 해당 키값의 정보 받아옴
+                           var point = new naver.maps.Point( DATA_VALUE[i][DATA_KEY[6].id], DATA_VALUE[i][DATA_KEY[5].id]) // 데이터 좌표값
+                           //point = new naver.maps.Point(item.point.x, item.point.y); // 개별 주소의 좌표값
+                           
+                           map.updateBy(point, 9);
+                           
+                           //infoWindow.open(map, markers[i]);
+                           marker.trigger('click');
+                       }
+                   } else {
+                       return alert('두글자 이상 입력해주세요.');
+                   }
+               } 
+               
+               if(search <= 0){
+                   alert('검색 결과가 없습니다.');
+               }
+            }
+            
+            $('#btnRestSearch').on('click', function(e) {
+                e.preventDefault();
+                //console.log(titles); // 휴게소명 리스트 배열
+                searchRestName();
+            });
+            
+            $('#restBox').on('keydown', function(e) {
+                var keyCode = e.which;
+
+                if (keyCode === 13) { // Enter Key
+                    searchRestName();
+                }
+            });
+            
+            // @@ 마커 클리스터화
+            var htmlMarker1 = {
+                content: '<div style="cursor:pointer;width:40px;height:40px;line-height:42px;font-size:10px;color:white;text-align:center;font-weight:bold;background:url(./images/cluster-marker-1.png);background-size:contain;"></div>',
+                size: N.Size(40, 40),
+                anchor: N.Point(20, 20)
+            },
+            htmlMarker2 = {
+                content: '<div style="cursor:pointer;width:40px;height:40px;line-height:42px;font-size:10px;color:white;text-align:center;font-weight:bold;background:url(./images/cluster-marker-2.png);background-size:contain;"></div>',
+                size: N.Size(40, 40),
+                anchor: N.Point(20, 20)
+            },
+            htmlMarker3 = {
+                content: '<div style="cursor:pointer;width:40px;height:40px;line-height:42px;font-size:10px;color:white;text-align:center;font-weight:bold;background:url(./images/cluster-marker-3.png);background-size:contain;"></div>',
+                size: N.Size(40, 40),
+                anchor: N.Point(20, 20)
+            },
+            htmlMarker4 = {
+                content: '<div style="cursor:pointer;width:40px;height:40px;line-height:42px;font-size:10px;color:white;text-align:center;font-weight:bold;background:url(./images/cluster-marker-4.png);background-size:contain;"></div>',
+                size: N.Size(40, 40),
+                anchor: N.Point(20, 20)
+            },
+            htmlMarker5 = {
+                content: '<div style="cursor:pointer;width:40px;height:40px;line-height:42px;font-size:10px;color:white;text-align:center;font-weight:bold;background:url(./images/cluster-marker-5.png);background-size:contain;"></div>',
+                size: N.Size(40, 40),
+                anchor: N.Point(20, 20)
+            };
+        
+            var markerClustering = new MarkerClustering({
+                minClusterSize: 2,
+                maxZoom: 8,
+                map: map,
+                markers: markers,
+                disableClickZoom: false,
+                gridSize: 120,
+                icons: [htmlMarker1, htmlMarker2, htmlMarker3, htmlMarker4, htmlMarker5],
+                indexGenerator: [10, 100, 200, 500, 1000],
+                stylingFunction: function(clusterMarker, count) {
+                    $(clusterMarker.getElement()).find('div:first-child').text(count);
+                }
+            });
+            
+            // 해당 마커의 인덱스를 seq라는 클로저 변수로 저장하는 이벤트 핸들러를 반환
+            function getClickHandler(seq) {
+                return function(e) {
+                    var marker = markers[seq],
+                        infoWindow = infoWindows[seq];
+    
+                    if (infoWindow.getMap()) {
+                        infoWindow.close();
+                    } else {
+                        infoWindow.open(map, marker);
+                        //console.log(markers[seq])
+                    }
+                }
+            }
+            
+            // infoWindow 닫기
+            function infoWindowHide(seq) {
+                return function(e) {
+                    var marker = markers[seq],
+                        infoWindow = infoWindows[seq];
+                    infoWindow.close();
+                }
+            }
+            
+            for (var i=0, ii= markers.length; i<ii; i++) {
+                naver.maps.Event.addListener(markers[i], 'click', getClickHandler(i));
+                naver.maps.Event.addListener(map, 'click', infoWindowHide(i));
+            }
+            
+            // 주소 검색
+            function searchCoordinateToAddress(latlng) {
+                var tm128 = naver.maps.TransCoord.fromLatLngToTM128(latlng);
+                
+                naver.maps.Service.reverseGeocode({
+                    location: tm128,
+                    coordType: naver.maps.Service.CoordType.TM128
+                }, function(status, response) { //status : 서버 API 호출 객체
+                    if (status === naver.maps.Service.Status.ERROR) {
+                        return alert('정확한 지역명을 입력해주세요.');
+                    }
+
+                    var items = response.result.items, // 검색 결과의 배열
+                        htmlAddresses = [];
+
+                    for (var i=0, ii=items.length, item, addrType; i<ii; i++) {
+                        item = items[i];
+                        addrType = item.isRoadAddress ? '[도로명 주소]' : '[지번 주소]';
+
+                        htmlAddresses.push((i+1) +'. '+ addrType +' '+ item.address);
+                    }
+                    
+                    /*
+                    infoWindow.setContent([
+                            '<div style="padding:10px;min-width:200px;line-height:150%;">',
+                            '<h4 style="margin-top:5px;">검색 좌표</h4><br />',
+                            htmlAddresses.join('<br />'),
+                            '</div>'
+                        ].join('\n'));
+
+                    infoWindow.open(map, latlng);
+                    */
+                });
+            }
+            
+            // result by latlng coordinate
+            function searchAddressToCoordinate(address) {
+                naver.maps.Service.geocode({
+                    address: address
+                }, function(status, response) {
+                    if (status === naver.maps.Service.Status.ERROR) {
+                        return alert('정확한 지역명을 입력해주세요.');
+                    }
+
+                    var item = response.result.items[0],
+                        addrType = item.isRoadAddress ? '[도로명 주소]' : '[지번 주소]',
+                        point = new naver.maps.Point(item.point.x, item.point.y); // 개별 주소의 좌표값
+
+                    //map.setCenter(point);
+                    map.updateBy(point, 7);
+                });
+            }
+            
+            function initGeocoder() {
+                map.addListener('click', function(e) {
+                    searchCoordinateToAddress(e.coord);
+                });
+
+                $('#addressBox').on('keydown', function(e) {
+                    var keyCode = e.which;
+
+                    if (keyCode === 13) { // Enter Key
+                        searchAddressToCoordinate($('#addressBox').val());
+                    }
+                });
+                
+                $('#btnSearch').on('click', function(e) {
+                    e.preventDefault();
+                    searchAddressToCoordinate($('#addressBox').val());
+                });
+            }
+            
+            naver.maps.onJSContentLoaded = initGeocoder;
+            
+            
+        }
+        
+    </script>
+    
+    
+
+</body>
+
+</html>

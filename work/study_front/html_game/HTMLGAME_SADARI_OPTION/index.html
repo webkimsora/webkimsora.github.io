@@ -1,0 +1,397 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>메큐라이크-게임템플릿</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<!-- <meta name="viewport" content="user-scalable=yes, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0, width=device-width"> -->
+	<link rel="stylesheet" type="text/css" href="./css/common.css"  media="all" />
+	<script type="text/javascript" src="./js/jquery-1.11.3.min.js" ></script>
+	<!-- <script type="text/javascript" src="./js/jquery.easing.1.3.js" ></script> -->
+	<!-- <script type="text/javascript" src="./js/jquery.bxslider.min.js" ></script> -->
+	<!-- <script type="text/javascript" src="./js/swiper.min.js" ></script> -->
+	<script type="text/javascript" src="./js/jQueryRotate.js" ></script>
+	<script type="text/javascript" src="./js/common.js" ></script>
+	<link href="../template/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="../template/css/icons.css" rel="stylesheet" type="text/css">
+	<link href="../template/css/style.css" rel="stylesheet" type="text/css">
+	
+</head>
+<body>
+	<div class="inBox">
+		<style>
+		.sadari {position: relative; width: 1000px; margin:0 auto;}
+		.sadari .start {content:''; position: absolute; left:0; top:100px; height: 330px; background:#eccfc9; width: 100%; z-index: 10; transition:.3s all; border-radius:30px; border:2px dashed #333 }
+		.sadari.go .start {transform:scale(0); transform-origin:center center;}
+		.sadari .start span {font-size: 50px; color:#005490;}
+		
+		.topBtn ul:after {content:''; display:block; clear:both;}
+		.topBtn ul li {float:left; width: 25%; text-align: center;}
+		.topBtn ul li button {display: inline-block; font-size: 20px; height: 30px; line-height: 30px; width: 50px; border:none; background:#f9f10b;  color:#000; border:1px solid #333; font-weight: bold; border-radius:5px;}
+		.result  {padding-top: 10px;}
+		.result ul:after {content:''; display:block; clear:both;}
+		.result ul li {float:left; width: 25%; text-align: center; font-size: 20px; height: 30px; line-height: 30px;}
+		.result ul li span {display: inline-block; padding:5px 10px; border-radius:5px; background:#999; color:#fff; font-weight: bold; transition:1s all;}
+		.result ul li span.on {display: inline-block; padding:5px 30px; border-radius:5px; background:#005490; color:#fff; }
+		.result ul li span.win {display: inline-block; padding:5px 30px; border-radius:5px; background:#409f0c; color:#fff; }
+		
+		.lineWrap {position: relative; height:400px;}
+		.baseLine  {position: absolute; left:0; top:0; width: 100%; height: 100%; display: none;}
+		.baseLine ul:after {content:''; display:block; clear:both;}
+		.baseLine ul li {float:left ;width: 25%; text-align: center;}
+		.baseLine ul li span{display: inline-block; width: 1px; height:400px; background: #ddd;}
+		
+		.lineList  {position: absolute; left:0; top:0; width: 100%; height: 100%; }
+		.lineList ul:after {content:''; display:block; clear:both;}
+		.lineList ul li {position: absolute; width: 25%;text-align: left; height: 100px;}
+		.lineList ul li span{display: inline-block; width: 0; height: 0; background:red; vertical-align: top; position: relative; transition:.3s all; transition-timing-function: ease-out; box-shadow:0px 0px 5px rgba(0,0,0,1)}
+		
+		.lineList ul li.on.height span {height: 100%; width: 1px;}
+		.lineList ul li.on.width span {width: 250px; height: 1px;}
+		
+		
+		.lineList.set01 ul li span {background: #f27025;}
+		.lineList.set01 ul li.no1 {left:125px; top:0;   }
+		.lineList.set01 ul li.no2 {left:125px; top:100px; }
+		.lineList.set01 ul li.no3 {left:375px; top:100px;   }
+		.lineList.set01 ul li.no4 {left:375px; top:200px;}
+		.lineList.set01 ul li.no5 {left:625px; top:200px; height:60px; }
+		.lineList.set01 ul li.no6 {left:625px; top:260px; }
+		.lineList.set01 ul li.no7 {left:875px; top:260px; height: 140px; }
+		
+		.lineList.set02 ul li span {background:#d7317d;}
+		.lineList.set02 ul li.no1 {left:375px; top:0; }
+		.lineList.set02 ul li.no2 {left:125px; top:100px; text-align: right;}
+		.lineList.set02 ul li.no3 {left:125px; top:100px; height: 140px;}
+		.lineList.set02 ul li.no4 {left:125px; top:240px;}
+		.lineList.set02 ul li.no5 {left:375px; top:240px; height:60px;}
+		.lineList.set02 ul li.no6 {left:375px; top:300px;}
+		.lineList.set02 ul li.no7 {left:625px; top:300px; }		
+		
+		.lineList.set03 ul li span {background:#5591ad;}
+		.lineList.set03 ul li.no1 {left:625px; top:0; }
+		.lineList.set03 ul li.no2 {left:625px; top:100px;}
+		.lineList.set03 ul li.no3 {left:875px; top:100px; height:160px;}
+		.lineList.set03 ul li.no4 {left:625px; top:260px; text-align: right; }
+		.lineList.set03 ul li.no5 {left:625px; top:260px; height: 40px;}
+		.lineList.set03 ul li.no6 {left:375px; top:300px; text-align: right;}
+		.lineList.set03 ul li.no7 {left:375px; top:300px;}		
+		
+		.lineList.set04 ul li span {background:#a34100;}
+		.lineList.set04 ul li.no1 {left:875px; top:0; }
+		.lineList.set04 ul li.no2 {left:625px; top:100px; text-align: right;}
+		.lineList.set04 ul li.no3 {left:625px; top:100px; }
+		.lineList.set04 ul li.no4 {left:375px; top:200px; text-align: right;}
+		.lineList.set04 ul li.no5 {left:375px; top:200px; height:40px;}
+		.lineList.set04 ul li.no6 {left:125px; top:240px; text-align: right;}
+		.lineList.set04 ul li.no7 {left:125px; top:240px; height: 160px;}		
+		
+		.fakeLine  {position: absolute; left:0; top:0; width: 100%; height: 100%;}
+		.fakeLine ul:after {content:''; display:block; clear:both;}
+		.fakeLine ul li {position: absolute; width: 25%;text-align: left; height: 100px;}
+		.fakeLine ul li span{display: inline-block; width: 0; height: 0; border:1px dashed #ddd; vertical-align: top; position: relative;}
+		
+		.fakeLine ul li.height span {height: 100%; width: 1px;}
+		.fakeLine ul li.width span {width: 250px; height: 1px;}
+		
+		
+		.fakeLine ul li.no1 {left:125px; top:0;}
+		.fakeLine ul li.no2 {left:125px; top:100px; }
+		.fakeLine ul li.no3 {left:375px; top:100px;   }
+		.fakeLine ul li.no4 {left:375px; top:200px;}
+		.fakeLine ul li.no5 {left:625px; top:200px; height:60px; }
+		.fakeLine ul li.no6 {left:625px; top:260px; }
+		.fakeLine ul li.no7 {left:875px; top:260px; height: 140px; }
+						
+		.fakeLine ul li.no8 {left:375px; top:0;}
+		.fakeLine ul li.no9 {left:125px; top:100px; text-align: right;}
+		.fakeLine ul li.no10 {left:125px; top:100px; height: 140px;}
+		.fakeLine ul li.no11 {left:125px; top:240px;}
+		.fakeLine ul li.no12 {left:375px; top:240px; height:60px; }
+		.fakeLine ul li.no13 {left:375px; top:300px;}
+		.fakeLine ul li.no14 {left:625px; top:300px;  }	
+				
+		.fakeLine ul li.no15 {left:625px; top:0; }
+		.fakeLine ul li.no16 {left:625px; top:100px; }
+		.fakeLine ul li.no17 {left:875px; top:100px; height:160px;}
+		.fakeLine ul li.no18 {left:625px; top:260px; text-align: right; }
+		.fakeLine ul li.no19 {left:625px; top:260px; height: 40px; }
+		.fakeLine ul li.no20 {left:375px; top:300px; text-align: right;}
+		.fakeLine ul li.no21 {left:375px; top:300px; }	
+		
+		.fakeLine ul li.no22 {left:875px; top:0;  }
+		.fakeLine ul li.no23 {left:625px; top:100px; text-align: right;}
+		.fakeLine ul li.no24 {left:625px; top:100px;   }
+		.fakeLine ul li.no25 {left:375px; top:200px; text-align: right;}
+		.fakeLine ul li.no26 {left:375px; top:200px; height:40px;}
+		.fakeLine ul li.no27 {left:125px; top:240px; text-align: right;}
+		.fakeLine ul li.no28 {left:125px; top:240px; height: 160px; }
+			
+		.inBox {text-align: center;  margin: 0 auto; position: relative; background:#fff; font-size:30px; height:700px; padding-top: 20px;}
+		.btnSw { font-weight: 400; vertical-align: middle; font-size:1rem;  border-radius:0.25rem; padding:5px 10px ;display: inline-block; color:#fff; background-color: #117b9e;  border: 1px solid #3ddcf7; border-bottom:2px solid #08aac6 !important}
+		.btnSw:hover { color:#999 !important;}
+		.btnSw:active { color:#fff;}
+		.btnSw:link { color:#fff;}
+		
+		.settingWrap {text-emphasis: accent;}
+		.settingWrap .in {padding-top: 30px; display: inline-block;}
+		.settingWrap .setting{padding-bottom: 40px; font-weight: bold; color:#333}
+		.settingWrap input {position: absolute; visibility:hidden;}
+		.settingWrap label {position: relative; margin-right: 20px; padding:20px; border:1px solid #333; border-radius:5px; color:#000;}
+		.settingWrap input:checked + label {color:#ff0000; font-weight: bold; background: #fff;}
+		
+		.reload {padding-top: 50px;}
+		.reload span {display: inline-block; cursor:pointer; text-align: center; padding:10px 20px; border:1px solid #333; border-radius:5px; color:#333; display: none;}
+		
+		</style>
+		
+		<script>
+		//1번 - 4번 
+		//2번 - 3번 
+		//3번 - 2번 
+		//4번 - 1번 
+		$(function(){
+			
+			var winner = 0;
+			var endGame = true;
+			var zIndex = 0;
+			
+			
+			//옵션별 결과
+			function result(idx){
+				
+				if(winner == 0 && endGame){ //무조건꽝
+					winnerResult(idx,'꽝');
+				}else if(winner == 1 && endGame){ //무조건당첨
+					winnerResult(idx,'당첨');
+				}else if (endGame){ // 랜덤
+					ranNum = Math.floor(Math.random() * 2);
+					if(ranNum == 1){
+						winnerResult(idx,'당첨');
+					}else{
+						winnerResult(idx,'꽝');
+					}
+				}
+				
+				endGame = false;
+			
+			}
+			
+			//당첨 위치
+			function motionSwitch(idxOri){
+				switch(idxOri){
+					case 0 : result(3);
+					break;
+					case 1 : result(2);
+					break;
+					case 2 : result(1);
+					break;
+					case 3 : result(0);
+					break;
+				}
+			}
+			
+			
+			//꽝,당첨 지정
+			function winnerResult(idx,option){
+				if(option == '꽝'){
+					$('.result li').eq(idx).find('span').text('꽝').addClass('on');
+					$('.result li').eq(idx).siblings().find('span').text('당첨!').addClass('win');
+				}else{
+					$('.result li').eq(idx).find('span').text('당첨!').addClass('on');
+					$('.result li').eq(idx).siblings().find('span').text('꽝').addClass('win');
+				}
+			}
+			
+			
+			//사다리 시작
+			$('.topBtn ul li button').on('click',function(){
+				$('.sadari').addClass('go');
+				
+				++zIndex;
+				
+				var idxOri = $(this).parent().index();
+				var idx = $(this).parent().index() + 1;
+				var value = $('[name*="sadari"]:checked').val();
+				
+				setTimeout(function(){
+					
+					if(value == '꽝'){
+						motionSwitch(idxOri)
+					}else if(value == '당첨'){
+						winner = 1;
+						motionSwitch(idxOri)
+					}else if(value == '랜덤'){
+						winner = 2;
+						motionSwitch(idxOri)
+					}
+					
+					$('.reload span').show();
+					
+				},2100)
+				
+				
+				$('.lineList').eq(idxOri).css('zIndex',zIndex);
+				
+				for(var i=0; i<7; i++){
+					(function(x) {
+						setTimeout(function(){
+							$('li','.lineList.set0'+idx).eq(x).addClass('on');
+						},x*300)
+					})(i);
+				}
+			});
+			
+			
+			//재시작
+			$('.reload span').on('click',function(){
+				window.location.reload();
+			})
+
+			
+		})
+		
+		
+		</script>
+		
+		
+		<div class="sadari">
+			<div class="start">
+				<div class="text-center m-t-50 settingWrap">
+					<div class="in">
+						<div class="setting">옵션 선택 후 번호를 선택해 주세요</div>
+						<input type="radio" name="sadari" id="check01" checked value="꽝"> <label for="check01">무조건 꽝</label>
+						<input type="radio" name="sadari" id="check02" value="당첨"> <label for="check02">무조건 당첨</label>
+						<input type="radio" name="sadari" id="check03" value="랜덤"> <label for="check03">랜덤</label>
+					</div>
+				</div>	
+			</div>
+			<div class="topBtn">
+				<ul>
+					<li><button>1</button></li>
+					<li><button>2</button></li>
+					<li><button>3</button></li>
+					<li><button>4</button></li>
+				</ul>
+			</div>
+			<div class="lineWrap">
+				<div class="baseLine">
+					<ul>
+						<li><span></span></li>
+						<li><span></span></li>
+						<li><span></span></li>
+						<li><span></span></li>
+					</ul>
+				</div>
+				<div class="fakeLine">
+					<ul>
+						<li class="no1 height"><span></span></li>
+						<li class="no2 width"><span></span></li>
+						<li class="no3 height"><span></span></li>
+						<li class="no4 width"><span></span></li>
+						<li class="no5 height"><span></span></li>
+						<li class="no6 width"><span></span></li>
+						<li class="no7 height"><span></span></li>
+						<li class="no8 height"><span></span></li>
+						<li class="no9 width"><span></span></li>
+						<li class="no10 height"><span></span></li>
+						<li class="no11 width"><span></span></li>
+						<li class="no12 height"><span></span></li>
+						<li class="no13 width"><span></span></li>
+						<li class="no14 height"><span></span></li>
+						<li class="no15 height"><span></span></li>
+						<li class="no16 width"><span></span></li>
+						<li class="no17 height"><span></span></li>
+						<li class="no18 width"><span></span></li>
+						<li class="no19 height"><span></span></li>
+						<li class="no20 width"><span></span></li>
+						<li class="no21 height"><span></span></li>
+						<li class="no22 height"><span></span></li>
+						<li class="no23 width"><span></span></li>
+						<li class="no24 height"><span></span></li>
+						<li class="no25 width"><span></span></li>
+						<li class="no26 height"><span></span></li>
+						<li class="no27 width"><span></span></li>
+						<li class="no28 height"><span></span></li>
+					</ul>
+				</div>
+				<div class="lineList set01">
+					<ul>
+						<li class="no1 height" name="height"><span></span></li>
+						<li class="no2 width" name="width"><span></span></li>
+						<li class="no3 height" name="height"><span></span></li>
+						<li class="no4 width" name="width"><span></span></li>
+						<li class="no5 height" name="height"><span></span></li>
+						<li class="no6 width" name="width"><span></span></li>
+						<li class="no7 height" name="height"><span></span></li>
+					</ul>
+				</div>
+				<div class="lineList set02">
+					<ul>
+						<li class="no1 height" name="height"><span></span></li>
+						<li class="no2 width" name="width"><span></span></li>
+						<li class="no3 height" name="height"><span></span></li>
+						<li class="no4 width" name="width"><span></span></li>
+						<li class="no5 height" name="height"><span></span></li>
+						<li class="no6 width" name="width"><span></span></li>
+						<li class="no7 height" name="height"><span></span></li>
+					</ul>
+				</div>
+				<div class="lineList set03">
+					<ul>
+						<li class="no1 height" name="height"><span></span></li>
+						<li class="no2 width" name="width"><span></span></li>
+						<li class="no3 height" name="height"><span></span></li>
+						<li class="no4 width" name="width"><span></span></li>
+						<li class="no5 height" name="height"><span></span></li>
+						<li class="no6 width" name="width"><span></span></li>
+						<li class="no7 height" name="height"><span></span></li>
+					</ul>
+				</div>
+				<div class="lineList set04">
+					<ul>
+						<li class="no1 height" name="height"><span></span></li>
+						<li class="no2 width" name="width"><span></span></li>
+						<li class="no3 height" name="height"><span></span></li>
+						<li class="no4 width" name="width"><span></span></li>
+						<li class="no5 height" name="height"><span></span></li>
+						<li class="no6 width" name="width"><span></span></li>
+						<li class="no7 height" name="height"><span></span></li>
+					</ul>
+				</div>
+			</div>
+			<div class="result">
+				<ul>
+					<li><span>?</span></li>
+					<li><span>?</span></li>
+					<li><span>?</span></li>
+					<li><span>?</span></li>
+				</ul>
+			</div>
+		</div>
+		
+		<div class="reload"><span>재시작</span></div>
+		
+		
+		
+	
+	</div>
+	
+
+
+
+<script>
+
+
+</script>
+
+
+
+
+
+
+</body>
+</html>
+
+
+

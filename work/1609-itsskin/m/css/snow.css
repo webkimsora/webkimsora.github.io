@@ -1,0 +1,118 @@
+
+    .snow-container {
+  position: absolute;
+  height: 80%;
+  width: 100%;
+  max-width: 100%;
+  top: 0;
+  overflow: hidden;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.snow {
+  display: block;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+  -webkit-transform: translate3d(0, -100%, 0);
+          transform: translate3d(0, -100%, 0);
+  -webkit-animation: snow linear infinite;
+          animation: snow linear infinite;
+}
+.snow.foreground {
+  background-image: url("./images/snow-many.png");
+  -webkit-animation-duration: 7s;
+          animation-duration: 7s;
+}
+.snow.foreground.layered {
+  -webkit-animation-delay:4s;
+          animation-delay: 4s;
+}
+/*
+.snow.middleground {
+  background-image: url("./images/snow-small.png");
+  -webkit-animation-duration: 20s;
+          animation-duration: 20s;
+}
+.snow.middleground.layered {
+  -webkit-animation-delay: 10s;
+          animation-delay: 10s;
+}
+*/
+
+@-webkit-keyframes snow {
+  0% {
+    -webkit-transform: translate3d(0, -50%, 0);
+            transform: translate3d(0, -50%, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(35%, 100%, 0);
+            transform: translate3d(35%, 100%, 0);
+  }
+}
+
+@keyframes snow {
+  0% {
+    -webkit-transform: translate3d(0, -50%, 0);
+            transform: translate3d(0, -50%, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(35%, 100%, 0);
+            transform: translate3d(35%, 100%, 0);
+  }
+}
+
+
+
+
+/**/
+
+.snow2 {
+  display: block;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+  -webkit-transform: translate3d(0, -100%, 0);
+          transform: translate3d(0, -100%, 0);
+  -webkit-animation: snow2 linear infinite;
+          animation: snow2 linear infinite;
+}
+.snow2.middleground {
+  background-image: url("./images/snow-small.png");
+  -webkit-animation-duration: 13s;
+          animation-duration: 13s;
+}
+.snow2.middleground.layered {
+  -webkit-animation-delay: 10s;
+          animation-delay: 10s;
+}
+@-webkit-keyframes snow2 {
+  0% {
+    -webkit-transform: translate3d(0, -50%, 0);
+            transform: translate3d(0, -50%, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(-35%, 100%, 0);
+            transform: translate3d(-35%, 100%, 0);
+  }
+}
+
+@keyframes snow2 {
+  0% {
+    -webkit-transform: translate3d(0, -50%, 0);
+            transform: translate3d(0, -50%, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(-35%, 100%, 0);
+            transform: translate3d(-35%, 100%, 0);
+  }
+}

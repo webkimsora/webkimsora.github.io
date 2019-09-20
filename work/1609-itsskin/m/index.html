@@ -1,0 +1,907 @@
+<!doctype html>
+<html class="no-js" lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <title>잇츠스킨 X 세서미 스트리트</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no, minimal-ui, initial-scale=1, maximum-scale=1">
+
+  <meta name="description" content="잇츠스킨 10th birthday party에 세서미 스트리트와 10센치가 놀러왔어요!">
+
+   <meta property="og:url" content="http://10thparty.itsskin.com/">
+  <meta property="fb:app_id" content="201764516909534" />
+  <meta property="og:site_name" content="잇츠스킨, 10번째 생일파티 중!"/>
+  <meta property="og:title" content="잇츠스킨, 10번째 생일파티 중!">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="http://10thparty.itsskin.com/images/itsskin_sns_img_v1.jpg">
+  <meta property="og:description" content="잇츠스킨 10th birthday party에 세서미 스트리트와 10센치가 놀러왔어요! ">
+
+
+  <script>
+  <!--
+  var UserAgent = navigator.userAgent;
+  var UADevice = UserAgent.match(/iPhone|iPod|iPad|Android|Windows CE|BlackBerry|Symbian|Windows Phone|webOS|Opera Mini|Opera Mobi|POLARIS|IEMobile|lgtelecom|nokia|SonyEricsson/i);
+  var UAVendor = UserAgent.match(/LG|SAMSUNG|Samsung|Apple/);
+  var ISFBINAPP = UserAgent.match(/FB/i);
+  var isAndroidFF = ( UserAgent.match(/Android/i) !== null &&  UserAgent.match(/Firefox/i) !== null );
+ 
+  // PHP에서 시간 체크 후에  2nd = 1 , 3rd = 2, 4th = 3 이런 형태로 수정 해주세요.;
+  // 해당파일 308 번째줄 버튼 관련 부분도 처리 부탁 드립니다.
+
+
+  
+  if (UADevice === null) {
+    location.href = "../";
+  }
+  //-->
+  </script>
+  
+  <link rel="stylesheet" href="css/main_0923.css">
+</head>
+
+<body>
+  <h1 class="bi">
+    <i class="uri-common bi">sesame street</i>
+  </h1>
+  <!-- 스타그램 버튼 추가-->
+  <a class="quick-stagram" href="https://www.instagram.com/itsskin_10thparty/" target="_blank">
+    <img src="./images/home/quick-stagram.png"  alt="">
+  </a>
+  <!-- <a href="http://m.itsskin.com/?pop=1" class="pages-btn-close"> -->
+  <a href="http://m.itsskin.com/?pop=1" class="pages-btn-close"   onclick="_trackga('메인','itsskin.com')">
+    <img src="./images/teaser/btn-close.png" alt="">
+  </a>
+  <div class="pages intro" id="intro" style="display:block">
+    <!-- @@ 문 -->
+    <div class="intro-door">
+      <img src="./images/intro/door.png" alt="" class="intro-img-frame">
+      <!-- @@ 문짝 -->
+      <div class="intro-door-inner">
+        <img src="./images/intro/door-inner.jpg" alt="" class="intro-img-door">
+      </div>
+      <a href="#intro" class="intro-img-balloon" data-toggle="transit"  onclick="_trackga('메인','초인종')">
+        <img src="./images/intro/balloon.png" alt="초인종을 눌러주세요">
+      </a>
+    </div>
+    <!-- //@@ 문 -->
+  </div>
+  <!-- @브라우저 영역 -->
+  <div class="pages" id="viewport" style="display:none;">
+    <nav class="navigation">
+      <div class="inner">
+        <a href="#home" class="is-active" data-toggle="gnb"  onclick="_trackga('gnb','gnb-HOME')">
+          <i class="uri-common nav-home">HOME</i>
+        </a>
+        <a href="#event1" data-toggle="gnb" onclick="_trackga('gnb','gnb-Event1')">
+          <i class="uri-common nav-event1">Event1</i>
+        </a>
+        <a href="#event2" data-toggle="gnb" onclick="_trackga('gnb','gnb-Event2')">
+          <i class="uri-common nav-event2">Event2</i>
+        </a>
+        <a href="#itsskin" data-toggle="gnb" onclick="_trackga('gnb','gnb-세서미 스트리트 X 잇츠스킨')">
+          <i class="uri-common nav-itsskin">세서미 스트리트 X 잇츠스킨</i>
+        </a>
+        <a href="#stagram" data-toggle="gnb" onclick="_trackga('gnb','gnb-세서미 스트리트 스타그램')">
+          <i class="uri-common nav-stagram">세서미 스트리트 & 스타그램</i>
+        </a>
+        <a href="#video" data-toggle="gnb" onclick="_trackga('gnb','gnb-10CM 축하공연')">
+          <i class="uri-common nav-video">10CM 스페셜 영상</i>
+        </a>
+      </div>
+      <div class="inner-shadow"></div>
+    </nav>
+    <main class="container">
+      <section class="section home" id="home">
+        <div class="inner">
+          <img src="./images/home/cont.png" alt="">
+        </div>
+      </section>
+      <section class="section event1" id="event1">
+        <div class="inner">
+          <img src="./images/event1/cont_0923.png" alt="">
+          <a class="event1-btn-detail" href="#popup-event1" data-toggle="modal"  onclick="_trackga('Event1','Event1-자세히보기')">
+            <img src="./images/event1/btn-detail.png" alt="">
+          </a>
+        </div>
+      </section>
+      <section class="section event2" id="event2">
+        <div class="inner">
+          <img src="./images/event2/cont.png" alt="">
+          <a class="event2-btn-detail" href="#popup-event2-detail" data-toggle="modal" onclick="_trackga('Event2','Event2-경품 자세히보기')">  
+            <i>경품 자세히 보기</i>
+          </a>
+    <?if( $kas_inapp !="Y" || $and_app !="Y"){  ?>
+          <a class="event2-btn-event" href="#popup-event2-event" data-toggle="modal" onclick="_trackga('Event2','Event2-이벤트 참여하기')">
+            <img src="./images/event2/btn-event.png" alt="">
+          </a>
+    <?} else {  ?>
+          <a class="event2-btn-event"  href="/goapp/go_insta2.html" target="_blank" onclick="_trackga('Event2','Event2-어플로 참여하기')">
+            <img src="./images/event2/btn-app.png" alt="">
+          </a>
+    <? } ?>
+          <a class="event2-btn-pictures" href="#popup-event2-insta" data-toggle="modal" onclick="_trackga('Event2','Event2-인증샷 보기')">
+            <img src="./images/event2/btn-pictures.png" alt="">
+          </a>
+        </div>
+      </section>
+      <section class="section itsskin" id="itsskin">
+        <div class="inner">
+          <img src="./images/itsskin/cont.png" alt="">
+          <a class="itsskin-btn-detail" href="#popup-itsskin" data-toggle="modal"  onclick="_trackga('잇츠스킨','잇츠스킨-제품 자세히보기')">
+            <img src="./images/itsskin/btn-detail.png" alt="">
+          </a>
+        </div>
+      </section>
+      <section class="section stagram" id="stagram">
+        <div class="inner">
+          <img src="./images/stagram/cont.png" alt="">
+          <a class="stagram-btn-detail" href="#popup-stagram" data-toggle="modal"  onclick="_trackga('스타그램','스타그램 자세히보기')">
+            <img src="./images/stagram/btn-detail.png" alt="">
+          </a>
+        </div>
+      </section>
+      <section class="section video" id="video">
+        <div class="inner">
+          <img src="./images/video/cont.png" alt="">
+          <a href="#popup-video" data-toggle="modal"   onclick="_trackga('10센치','10센치-10CM 스페셜 영상보기')">
+            <img src="./images/spacer.png" alt="">
+          </a>
+          <nav class="video-share">
+    <?if( $kas_inapp == "N"){  ?>
+            <a href="javascript:sendsns('FB');">
+              <i class="uri-video ico-facebook"></i>
+            </a>
+            <a href="javascript:sendsns('KS');">
+              <i class="uri-video ico-kakaostory"></i>
+            </a>
+      <?
+      }
+      ?>
+            <a href="javascript:sendsns('KT');;">
+              <i class="uri-video ico-kakaotalk"></i>
+            </a>
+            <a href="javascript:sendsns('BL');">
+              <i class="uri-video ico-blog"></i>
+            </a>
+            <a href="javascript:sendsns('UR');;">
+              <i class="uri-video ico-url"></i>
+            </a>
+          </nav>
+        </div>
+      </section>
+    </main>
+    <div class="bus">
+      <img src="./images/bus.png" alt="">
+    </div>
+    <a href="#" class="pages-btn-prev" data-toggle="gnb" style="display:none" onclick="_trackga('gnb','gnb-이전')">
+      <i class="uri-common nav-prev"></i>
+    </a>
+    <a href="#" class="pages-btn-next" data-toggle="gnb" onclick="_trackga('gnb','gnb-다음')">
+      <i class="uri-common nav-next"></i>
+    </a>
+  </div>
+  <!-- @레이어팝업:  -->
+  <div id="" class="modal" data-role="modal" data-view="full">
+    <h1>모델 레이어 팝업 (기본 숨김 영역)</h1>
+    <section class="modal-content">
+      <!--내용-->
+      <a href="javascript:void(0)" data-rel="back" class="modal__close">
+        <img src="./images/spacer.png" alt="닫기">
+      </a>
+    </section>
+  </div>
+  <div id="popup-event1" class="modal" data-role="modal" data-view="full">
+    <div id="event01-popup" class="modal-content detail">
+      <header>
+        <a href="#" data-rel="back">
+          <img src="./images/popup/modal-btn-close.png" alt="닫기">
+        </a>
+      </header>
+      <h2 class="event-title">
+        <img src="./images/popup/event01-title.png"  alt="">
+        <p class="a11y">
+          세서미 스트리트 & 스타그램
+          세서미 스트리트와 친구가 된 스타들의 인증샷을 확인해보세요!
+        </p>
+      </h2>
+      <section class="event-content">
+        <img src="./images/popup/event01-01.png" alt="">
+
+        <!-- @@@@@@
+          날짜 : 0920 
+          이름 : 김소라
+          설명 : 이벤트1 탭 2주차 수정
+        @@@@@@@-->
+
+        <section class="instagram">
+          
+          <img src="./images/popup/event01-logo.png" alt="인스타그램">
+
+          <div class="instagram-inner">
+            <img class="list-cont-img" src="./images/popup/event01-insta-1st.png" alt="">
+            <a class="instagram-go-logo" href="https://www.instagram.com/itsskin_10th_party_event_/" target="_blank" onclick="_trackga('Event1','Event1-로고')">
+              <img class="spacer" src="./images/spacer.png" alt="logo">
+            </a>
+            <a class="instagram-go-red_welmo" href="https://www.instagram.com/red_welmo_/" target="_blank" onclick="_trackga('Event1','Event1-오답')">
+              <img class="spacer" src="./images/spacer.png" alt="red_welmo">
+            </a>
+            <a class="instagram-go-power_11" href="https://www.instagram.com/power__11/" target="_blank" onclick="_trackga('Event1','Event1-오답')">
+              <img class="spacer" src="./images/spacer.png" alt="power_11">
+            </a>
+            <a class="instagram-go-10th_birthday_" href="https://www.instagram.com/10th_birthday_/" target="_blank" onclick="_trackga('Event1','Event1-정답')">
+              <img class="spacer" src="./images/spacer.png" alt="10th_birthday_">
+            </a>
+            <a class="instagram-go-sesemestreet_" href="https://www.instagram.com/sesemestreet_/" target="_blank" onclick="_trackga('Event1','Event1-오답')">
+              <img class="spacer" src="./images/spacer.png" alt="sesemestreet_">
+            </a>
+            <a class="instagram-go-thats_skin" href="https://www.instagram.com/thats_skin/" target="_blank" onclick="_trackga('Event1','Event1-오답')">
+              <img class="spacer" src="./images/spacer.png" alt="thats_skin">
+            </a>
+          </div>
+
+          <div class="instagram-inner">
+            <img class="list-cont-img" src="./images/popup/event01-insta-2nd.png" alt="">
+            <a class="instagram-go-logo" href="https://www.instagram.com/itsskin_10th_party_event_/" target="_blank"  onclick="_trackga('Event1','Event1-로고')">
+              <img class="spacer" src="./images/spacer.png" alt="logo">
+            </a>
+            <a class="instagram-go-maca_wrong_" href="https://www.instagram.com/maca_wrong_/" target="_blank" onclick="_trackga('Event1','Event1-오답')">
+              <img class="spacer" src="./images/spacer.png" alt="maca_wrong_">
+            </a>
+            <a class="instagram-go-10th_anniversary" href="https://www.instagram.com/10th_anniversary/" target="_blank" onclick="_trackga('Event1','Event1-정답')">
+              <img class="spacer" src="./images/spacer.png" alt="10th_anniversary">
+            </a>
+            <a class="instagram-go-yellow_bagbird_" href="https://www.instagram.com/yellow_bagbird_/" target="_blank" onclick="_trackga('Event1','Event1-오답')">
+              <img class="spacer" src="./images/spacer.png" alt="yellow_bagbird_">
+            </a>
+            <a class="instagram-go-blue_cakemonster_" href="https://www.instagram.com/blue_cakemonster_/" target="_blank" onclick="_trackga('Event1','Event1-오답')">
+              <img class="spacer" src="./images/spacer.png" alt="blue_cakemonster_">
+            </a>
+            <a class="instagram-go-sesame_streetfighter" href="https://www.instagram.com/sesame_streetfighter/" target="_blank" onclick="_trackga('Event1','Event1-오답')">
+              <img class="spacer" src="./images/spacer.png" alt="sesame_streetfighter">
+            </a>
+          </div>
+
+          <div class="instagram-inner">
+            <img class="list-cont-img" src="./images/popup/event01-insta-3th.png" alt="">
+
+            <a class="instagram-go-logo" href="https://www.instagram.com/itsskin_10th_party_event_/" target="_blank">
+              <img class="spacer" src="./images/spacer.png" alt="logo">
+            </a>
+            <a class="instagram-go-red_welmo" href="https://www.instagram.com/red_welmo_/" target="_blank">
+              <img class="spacer" src="./images/spacer.png" alt="red_welmo">
+            </a>
+            <a class="instagram-go-power_11" href="https://www.instagram.com/power__11/" target="_blank">
+              <img class="spacer" src="./images/spacer.png" alt="power_11">
+            </a>
+            <a class="instagram-go-10th_birthday_" href="https://www.instagram.com/10th_birthday_/" target="_blank">
+              <img class="spacer" src="./images/spacer.png" alt="10th_birthday_">
+            </a>
+            <a class="instagram-go-sesemestreet_" href="https://www.instagram.com/sesemestreet_/" target="_blank">
+              <img class="spacer" src="./images/spacer.png" alt="sesemestreet_">
+            </a>
+            <a class="instagram-go-thats_skin" href="https://www.instagram.com/thats_skin/" target="_blank">
+              <img class="spacer" src="./images/spacer.png" alt="thats_skin">
+            </a>
+          </div>
+
+          <div class="instagram-inner">
+            <img class="list-cont-img" src="./images/popup/event01-insta-4th.png" alt="">
+
+            <a class="instagram-go-logo" href="https://www.instagram.com/itsskin_10th_party_event_/" target="_blank">
+              <img class="spacer" src="./images/spacer.png" alt="logo">
+            </a>
+            <a class="instagram-go-red_welmo" href="https://www.instagram.com/red_welmo_/" target="_blank">
+              <img class="spacer" src="./images/spacer.png" alt="red_welmo">
+            </a>
+            <a class="instagram-go-power_11" href="https://www.instagram.com/power__11/" target="_blank">
+              <img class="spacer" src="./images/spacer.png" alt="power_11">
+            </a>
+            <a class="instagram-go-10th_birthday_" href="https://www.instagram.com/10th_birthday_/" target="_blank">
+              <img class="spacer" src="./images/spacer.png" alt="10th_birthday_">
+            </a>
+            <a class="instagram-go-sesemestreet_" href="https://www.instagram.com/sesemestreet_/" target="_blank">
+              <img class="spacer" src="./images/spacer.png" alt="sesemestreet_">
+            </a>
+            <a class="instagram-go-thats_skin" href="https://www.instagram.com/thats_skin/" target="_blank">
+              <img class="spacer" src="./images/spacer.png" alt="thats_skin">
+            </a>
+          </div>
+          <div class="list list-collapse">
+            <a class="js-closed is-active" href="javascript:;" onclick="_trackga('Event1','Event1-1주차')">
+              <i class=""></i>
+            </a>
+
+            <!--  
+            21일 00시에 반영될 버튼 태그
+            <a href="javascript:;" onclick="_trackga('Event1','Event1-2주차')">
+              <i></i>
+            </a>
+            -->
+			  <?if($checkInsta >= 1){?>
+				<a href="javascript:;" onclick="_trackga('Event1','Event1-2주차')">
+				  <i></i>
+				</a>
+			  <?}else{?>
+				<a href="javascript:;" data-toggle="alert" data-index="0" onclick="_trackga('Event1','Event1-2주차')">
+				  <i></i>
+				</a>
+			  <?}?>
+
+
+            <!-- -->
+
+			  <?if($checkInsta >= 2){?>
+				<a href="javascript:;" onclick="_trackga('Event1','Event1-3주차')">
+				  <i></i>
+				</a>
+			  <?}else{?>
+            <a href="javascript:;" data-toggle="alert" data-index="0" onclick="_trackga('Event1','Event1-3주차')">
+              <i></i>
+            </a>
+			  <?}?>
+
+			  <?if($checkInsta >= 3){?>
+				<a href="javascript:;" onclick="_trackga('Event1','Event1-4주차')">
+				  <i></i>
+				</a>
+			  <?}else{?>
+				<a href="javascript:;" data-toggle="alert" data-index="0" onclick="_trackga('Event1','Event1-4주차')">
+				  <i></i>
+				</a>
+			  <?}?>
+
+
+
+            <!-- <a href="javascript:;" data-toggle="alert" data-index="0" onclick="_trackga('Event1','Event1-4주차')">
+              <i></i>
+            </a> -->
+          </div>
+          <img class="list-date" src="./images/popup/event01-date1.png" alt="">
+		  <a class="list-go" href="http://m.itsskin.com/event/winner_view.asp?IDX=1972" target="_blank">
+            <img src="./images/spacer.png"  alt="">
+          </a>
+        </section>
+      </section>
+      <!-- @@@@@@
+        // 0920 
+        이벤트1 탭 2주차 수정 끝
+      @@@@@@@@-->
+      <section>
+        <img src="./images/popup/event01-02.png" alt="">
+        <div class="a11y">
+        </div>
+      </section>
+      <section>
+        <img src="./images/popup/event01-03.png" alt="">
+        <div class="a11y">
+        </div>
+      </section>
+    </div>
+  </div>
+  <!-- @ event2 팝업 인스타그램 -->
+  <div id="popup-event2-insta" class="modal" data-role="modal" data-view="full" style="display:block;left:-9999px">
+    <div class="modal-content detail" id="event02-insta">
+      <header>
+        <a href="#" data-rel="back">
+          <img src="./images/popup/modal-btn-close.png" alt="닫기">
+        </a>
+      </header>
+      <h2 class="event-title">
+          <img src="./images/popup/event02-title.png"  alt="">
+          <p class="a11y">
+            잇츠 세서미 스트리트 메이트
+          </p>
+        </h2>
+      <div class="event-content insta-list">
+        <h2 class="insta-list-title">
+            <img src="./images/popup/event02-sub-title.png"  alt="">
+          </h2>
+        <div class="insta-list-tag">
+          <a class="all is-active" href="javascript:ss('0');">전체</a>
+          <a class="itsskin" href="javascript:ss('1');">#잇츠스킨_세서미스트리트</a>
+          <a class="sesermi" href="javascript:ss('2');">#세서미스트리트</a>
+          <a class="itssesermi" href="javascript:ss('3');">#잇츠세서미</a>
+          <a class="collabo" href="javascript:ss('4');">#잇츠스킨콜라보</a>
+        </div>
+
+
+  <div class="pages" id="tag0" style="width:100%;">
+    <div class='awesomewall-embed' aw-slug='makeulike' style="width:100%;"  aw-layout='square' aw-feed-type='default' aw-post-count='6' aw-mobile-count='4' aw-infinite-scroll='false'></div>
+  </div>
+  <div class="pages" id="tag1" style="width:100%;">
+    <div class='awesomewall-embed' aw-slug='makeulike' style="width:100%;"  aw-layout='square' aw-filter="잇츠스킨_세서미스트리트" aw-feed-type='default' aw-post-count='6' aw-mobile-count='4' aw-infinite-scroll='false'></div>
+  </div>
+  <div class="pages" id="tag2" style="width:100%;">
+    <div class='awesomewall-embed' aw-slug='makeulike' style="width:100%;"  aw-layout='square' aw-filter="세서미스트리트" aw-feed-type='default' aw-post-count='6' aw-mobile-count='4' aw-infinite-scroll='false'></div>
+  </div>
+  <div class="pages" id="tag3" style="width:100%;">
+    <div class='awesomewall-embed' aw-slug='makeulike' style="width:100%;"  aw-layout='square' aw-filter="잇츠세서미" aw-feed-type='default' aw-post-count='6' aw-mobile-count='4' aw-infinite-scroll='false'></div>
+  </div>
+  <div class="pages" id="tag4" style="width:100%;">
+    <div class='awesomewall-embed' aw-slug='makeulike' style="width:100%;"  aw-layout='square' aw-filter="잇츠스킨콜라보" aw-feed-type='default' aw-post-count='6' aw-mobile-count='4' aw-infinite-scroll='false'></div>
+  </div>
+    
+<script src='https://assets.awesomewallhq.com/javascripts/embed-1.js'></script>
+<!-- 
+        <ul class="insta-list-wrap">
+          <li>
+            <img class="insta-list-photo" src="https://placeholdit.imgix.net/~text?txtsize=38&txt=400%C3%97400&w=400&h=400" alt="인스타그램 사진">
+            <div class="insta-list-profile">
+              <img class="profile" src="./images/popup/insta-profile.png" alt="인스타그램 프로필">
+              <img class="mark" src="./images/popup/insta-mark.png" alt="">
+            </div>
+            <div class="insta-list-detail">
+              <h3 class="detail-name"> 아이디 </h3>
+              <p class="detail-content">#잇츠스킨 #잇츠스킨_세서미스트리트 저 3개 모두 구매했어요!</p>
+              <p class="detail-date">
+                about 2 hours ago
+              </p>
+            </div>
+          </li>
+          <li>
+            <img class="insta-list-photo" src="https://placeholdit.imgix.net/~text?txtsize=38&txt=400%C3%97400&w=400&h=400" alt="인스타그램 사진">
+            <div class="insta-list-profile">
+              <img class="profile" src="./images/popup/insta-profile.png" alt="인스타그램 프로필">
+              <img class="mark" src="./images/popup/insta-mark.png" alt="">
+            </div>
+            <div class="insta-list-detail">
+              <h3 class="detail-name"> 아이디 </h3>
+              <p class="detail-content">#잇츠스킨 #잇츠스킨_세서미스트리트 저 3개 모두 구매했어요!</p>
+              <p class="detail-date">
+                about 2 hours ago
+              </p>
+            </div>
+          </li>
+          <li>
+            <img class="insta-list-photo" src="https://placeholdit.imgix.net/~text?txtsize=38&txt=400%C3%97400&w=400&h=400" alt="인스타그램 사진">
+            <div class="insta-list-profile">
+              <img class="profile" src="./images/popup/insta-profile.png" alt="인스타그램 프로필">
+              <img class="mark" src="./images/popup/insta-mark.png" alt="">
+            </div>
+            <div class="insta-list-detail">
+              <h3 class="detail-name"> 아이디 </h3>
+              <p class="detail-content">#잇츠스킨 #잇츠스킨_세서미스트리트 저 3개 모두 구매했어요!</p>
+              <p class="detail-date">
+                about 2 hours ago
+              </p>
+            </div>
+          </li>
+          <li>
+            <img class="insta-list-photo" src="https://placeholdit.imgix.net/~text?txtsize=38&txt=400%C3%97400&w=400&h=400" alt="인스타그램 사진">
+            <div class="insta-list-profile">
+              <img class="profile" src="./images/popup/insta-profile.png" alt="인스타그램 프로필">
+              <img class="mark" src="./images/popup/insta-mark.png" alt="">
+            </div>
+            <div class="insta-list-detail">
+              <h3 class="detail-name"> 아이디 </h3>
+              <p class="detail-content">#잇츠스킨 #잇츠스킨_세서미스트리트 저 3개 모두 구매했어요!</p>
+              <p class="detail-date">
+                about 2 hours ago
+              </p>
+            </div>
+          </li>
+          <li>
+            <img class="insta-list-photo" src="https://placeholdit.imgix.net/~text?txtsize=38&txt=400%C3%97400&w=400&h=400" alt="인스타그램 사진">
+            <div class="insta-list-profile">
+              <img class="profile" src="./images/popup/insta-profile.png" alt="인스타그램 프로필">
+              <img class="mark" src="./images/popup/insta-mark.png" alt="">
+            </div>
+            <div class="insta-list-detail">
+              <h3 class="detail-name"> 아이디 </h3>
+              <p class="detail-content">#잇츠스킨 #잇츠스킨_세서미스트리트 저 3개 모두 구매했어요!</p>
+              <p class="detail-date">
+                about 2 hours ago
+              </p>
+            </div>
+          </li>
+        </ul> -->
+      </div>
+    </div>
+  </div>
+  <!-- @ event2 팝업 자세히보기 -->
+  <div id="popup-event2-detail" class="modal" data-role="modal" data-view="full">
+    <div id="event02-detail" class="modal-content detail">
+      <header>
+        <a href="#" data-rel="back">
+          <img src="./images/popup/modal-btn-close.png" alt="닫기">
+        </a>
+      </header>
+      <div class="event-content">
+        <img src="./images/popup/event02-detail.jpg"  alt="">
+      </div>
+    </div>
+  </div>
+  <!-- @ event2 팝업 이벤트참여 -->
+  <div id="popup-event2-event" class="modal" data-role="modal" data-view="full">
+    <div id="event02-event" class="modal-content detail">
+      <header>
+        <a href="#" data-rel="back">
+          <img src="./images/popup/modal-btn-close.png" alt="닫기">
+        </a>
+      </header>
+      <div class="event-content">
+        <img src="./images/popup/event02-insta.png" alt="">
+
+      <div style="display:none;">
+        <iframe src="" name="ufile_frm" width="0" hegiht="0" frameborder="0"></iframe>
+      </div>
+          <form id="detail-event2-upload" class="detail-cont" name="form1" method="post" action="/ig/w_ok.php" target="ufile_frm" onSubmit="return form1_check()" enctype="multipart/form-data">
+          <img class="title" src="./images/popup/frm-title.png" alt="인스타그램 계정에 인증샷을 업로드 해주세요">
+          <div class="frm-text">
+            <input class="frm-text-id" type="text"  name="mid" id="mid" placeholder="인스타그램 아이디를 입력하세요">
+            <input class="frm-text-pw" type="password"  name="mpw" id="mpw" placeholder="비밀번호를 입력하세요">
+        <input type="hidden" name="chkfile" id="chkfile">
+              <!-- <input type="file" id="instagram-file" name='myfile'> -->
+            <div class="frm-upload">
+              <input type="file" id="instagram-file" name='myfile'>
+              <input class="frm-text-img" type="text" onfocus="this.blur()" placeholder="이미지를 등록하세요" readonly>
+              <label class="btn-search" for="instagram-file">
+                <img src="./images/popup/frm-search.png" alt="찾기">
+              </label>
+            </div> 
+            <textarea class="frm-text-detail"  name="memo" id="memo" placeholder="글을 등록하세요">#잇츠스킨_세서미스트리트 #세서미스트리트 #잇츠세서미 #잇츠스킨콜라보    </textarea>
+            <h3 class="frm-text-agree-title">
+                <img src="./images/popup/agree-title.png"  alt="개인정보 수집 동의">
+              </h3>
+            <div class="frm-text-agree">
+              1. 수집하는 개인정보 항목:<br>
+              인스타그램 사용자 이름, 비밀번호
+              <br>
+              <br> 
+              2. 개인정보 수집 이용 목적:<br> 
+              이벤트 진행, 경품 당첨 시 본인 확인
+              <br>
+              <br> 
+              3. 개인정보 보유 이용기간 : <br> 
+              이벤트 종료 2개월 후 복구불능 상태로 파기
+              <br>
+              <br> 
+              *귀하께서는 본 동의를 거절하실 수 있습니다. <br>
+              단, 거절하신 경우 이벤트 참여가 제한될 수 있습니다.
+            </div>
+            <span class="frm-text-agree-chkbox">
+                <input class="is-custom" id="event2-chkbox" type="checkbox" name="">
+                <label class="lbl-chkbox" for="event2-chkbox">
+                  <i class="chkbox"></i>
+                  <img src="./images/popup/frm-chkbox-agree.png"  alt="개인정보 수집에 동의합니다">
+                </label>  
+                </span>
+          </div>
+          <div class="btn-wrap">
+            <a class="btn-register" href="#">
+              <img src="./images/popup/btn-register.png" alt="등록" onclick="_trackga('Event2','Event2-등록')">
+            </a>
+            <a class="btn-app" href="/goapp/go_insta.html" target="_blank"  onclick="_trackga('Event2','Event2-어플로 참여하기')">
+              <img src="./images/popup/btn-app.png" alt="">
+            </a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- @ itsskin 제품 자세히보기 -->
+  <div id="popup-itsskin" class="modal" data-role="modal" data-view="full">
+    <div id="event03-popup" class="modal-content detail">
+      <header>
+        <a href="#" data-rel="back">
+          <img src="./images/popup/modal-btn-close.png"  alt="닫기">
+        </a>      
+      </header>     
+      <div class="event-content detail-itsskin">
+        <div class="goods">
+          <img src="./images/popup/@bg-event03.jpg"  alt="">
+          <ul class="goods-list">
+            <li>
+              <a href="#product-list" data-toggle="scrollspy"  onclick="_trackga('잇츠스킨','잇츠스킨-파워10포뮬라')">
+                <img src="./images/popup/product/elem1.png"  alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#product-list" data-toggle="scrollspy"  onclick="_trackga('잇츠스킨','잇츠스킨-마카롱립밤')">
+                <img src="./images/popup/product/elem2.png"  alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#product-list" data-toggle="scrollspy"  onclick="_trackga('잇츠스킨','잇츠스킨-쿠키앤핸드크림')">
+                <img src="./images/popup/product/elem3.png"  alt="">
+              </a>
+            </li>
+            <!--li>
+              <a href="#product-list" data-toggle="scrollspy"  onclick="_trackga('잇츠스킨','잇츠스킨-롤링스틱')">
+                <img src="./images/popup/product/elem4.png"  alt="">
+              </a>
+            </li-->
+            <li>
+              <a href="#product-list" data-toggle="scrollspy"  onclick="_trackga('잇츠스킨','잇츠스킨-핸드풋마스크')">
+                <img src="./images/popup/product/elem5.png"  alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#product-list" data-toggle="scrollspy"  onclick="_trackga('잇츠스킨','잇츠스킨-마카롱슈가파우더팩트')">
+                <img src="./images/popup/product/elem6.png"  alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#product-list" data-toggle="scrollspy"  onclick="_trackga('잇츠스킨','잇츠스킨-마카롱슈가쿠션')">
+                <img src="./images/popup/product/elem7.png"  alt="">
+              </a>
+            </li>
+            <!--li>
+              <a href="#product-list"  onclick="_trackga('잇츠스킨','잇츠스킨-마스크스페셜')">
+                <img src="./images/popup/product/elem8.png"  alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#product-list" onclick="_trackga('잇츠스킨','잇츠스킨-마카롱슈가베이스')">
+                <img src="./images/popup/product/elem9.png"  alt="">
+              </a> 
+            </li-->
+          </ul>
+        </div>
+        <div id="product-list" class="product-list detail-itsskin-products owl-carousel">        
+          <div class="detail-itsskin-item">
+            <ul class="detail-itsskin-type list list-collapse">
+              <li>
+                <a href="#" class="is-active">1</a>
+              </li>
+              <li>
+                <a href="#">2</a>
+              </li>
+              <li>
+                <a href="#">3</a>
+              </li>
+            </ul>
+            <img src="./images/itsskin/products/1/product1.png" alt="">
+            <img src="./images/itsskin/products/1/describe.png" alt="">
+            <a href="http://m.itsskin.com/shop/view.asp?P_IDX=2975" target="_blank" onclick="_trackga('잇츠스킨','잇츠스킨-파워10포뮬라 자세히보기')">
+              <img src="./images/itsskin/popup/btn-landing.png" alt="자세히보기">
+            </a>
+            <a href="#detail-itsskin-special-gift"  onclick="_trackga('잇츠스킨','잇츠스킨-Special Gift')">
+              <img src="./images/itsskin/popup/btn-specialgift.png" alt="Special Gift">
+            </a>
+          </div>
+
+          <div class="detail-itsskin-item">
+            <ul class="detail-itsskin-type list list-collapse">
+              <li>
+                <a href="#" class="is-active">1</a>
+              </li>
+              <li>
+                <a href="#">2</a>
+              </li>
+              <li>
+                <a href="#">3</a>
+              </li>
+              <li>
+                <a href="#">4</a>
+              </li>
+              <li>
+                <a href="#">5</a>
+              </li>
+            </ul>
+            <img src="./images/itsskin/products/2/product1.png" alt="">
+            <img src="./images/itsskin/products/2/describe.png" alt="">
+            <a href="http://m.itsskin.com/shop/view.asp?P_IDX=2970" target="_blank"  onclick="_trackga('잇츠스킨','잇츠스킨-마카롱립밤 자세히보기')">
+              <img src="./images/itsskin/popup/btn-landing.png" alt="자세히보기">
+            </a>
+            <a href="#detail-itsskin-special-gift" onclick="_trackga('잇츠스킨','잇츠스킨-Special Gift')">
+              <img src="./images/itsskin/popup/btn-specialgift.png" alt="Special Gift">
+            </a>
+          </div>
+
+          <div class="detail-itsskin-item">
+            <ul class="detail-itsskin-type list list-collapse">
+              <li>
+                <a href="#" class="is-active">1</a>
+              </li>
+              <li>
+                <a href="#">2</a>
+              </li>
+            </ul>
+            <img src="./images/itsskin/products/3/product1.png" alt="">
+            <img src="./images/itsskin/products/3/describe.png" alt="">
+            <a href="http://m.itsskin.com/shop/view.asp?P_IDX=2985" target="_blank"  onclick="_trackga('잇츠스킨','잇츠스킨-쿠키앤핸드크림 자세히보기')">
+              <img src="./images/itsskin/popup/btn-landing.png" alt="자세히보기">
+            </a>
+            <a href="#detail-itsskin-special-gift" onclick="_trackga('잇츠스킨','잇츠스킨-Special Gift')">
+              <img src="./images/itsskin/popup/btn-specialgift.png" alt="Special Gift">
+            </a>
+          </div>
+
+          <!--div class="detail-itsskin-item">
+            <ul class="detail-itsskin-type list list-collapse">
+              <li>
+                <a href="#" class="is-active">1</a>
+              </li>
+              <li>
+                <a href="#">2</a>
+              </li>
+              <li>
+                <a href="#">3</a>
+              </li>
+            </ul>
+            <img src="./images/itsskin/products/4/product1.png" alt="">
+            <img src="./images/itsskin/products/4/describe.png" alt="">
+            <a href="#" target="_blank"  onclick="_trackga('잇츠스킨','잇츠스킨-롤링스틱 자세히보기')">
+              <img src="./images/itsskin/popup/btn-landing.png" alt="자세히보기">
+            </a>
+            <a href="#detail-itsskin-special-gift" onclick="_trackga('잇츠스킨','잇츠스킨-Special Gift')">
+              <img src="./images/itsskin/popup/btn-specialgift.png" alt="Special Gift">
+            </a>
+          </div-->
+
+          <div class="detail-itsskin-item detail-itsskin-item5">
+            <img src="./images/itsskin/products/5/product1.png" alt="">
+            <img src="./images/itsskin/products/5/describe.png" alt="">
+            <a href="http://m.itsskin.com/shop/view.asp?P_IDX=2984" target="_blank"  onclick="_trackga('잇츠스킨','잇츠스킨-핸드마스크 자세히보기')">
+              <img src="./images/itsskin/popup/btn-landing-hand.png" alt="핸드 자세히보기">
+            </a>
+            <a href="http://m.itsskin.com/shop/view.asp?P_IDX=2983" target="_blank"  onclick="_trackga('잇츠스킨','잇츠스킨-풋마스크 자세히보기')">
+              <img src="./images/itsskin/popup/btn-landing-foot.png" alt="풋 자세히보기">
+            </a>
+          </div>
+
+          <div class="detail-itsskin-item">
+            <img src="./images/itsskin/products/6/product1.png" alt="">
+            <img src="./images/itsskin/products/6/describe.png" alt="">
+            <a href="http://m.itsskin.com/shop/view.asp?P_IDX=2995" target="_blank"  onclick="_trackga('잇츠스킨','잇츠스킨-마카롱슈가파우더팩트 자세히보기')">
+              <img src="./images/itsskin/popup/btn-landing.png" alt="자세히보기">
+            </a>
+            <a href="#detail-itsskin-special-gift" onclick="_trackga('잇츠스킨','잇츠스킨-Special Gift')">
+              <img src="./images/itsskin/popup/btn-specialgift.png" alt="Special Gift">
+            </a>
+          </div>
+
+          <div class="detail-itsskin-item">
+            <img src="./images/itsskin/products/7/product1.png" alt="">
+            <img src="./images/itsskin/products/7/describe.png" alt="">
+            <a href="http://m.itsskin.com/shop/view.asp?P_IDX=2991" target="_blank"  onclick="_trackga('잇츠스킨','잇츠스킨-마카롱슈가쿠션 자세히보기')">
+              <img src="./images/itsskin/popup/btn-landing.png" alt="자세히보기">
+            </a>
+            <a href="#detail-itsskin-special-gift" onclick="_trackga('잇츠스킨','잇츠스킨-Special Gift')">
+              <img src="./images/itsskin/popup/btn-specialgift.png" alt="Special Gift">
+            </a>
+          </div>
+
+          <!--div class="detail-itsskin-item">
+            <ul class="detail-itsskin-type list list-collapse">
+              <li>
+                <a href="#" class="is-active">1</a>
+              </li>
+              <li>
+                <a href="#">2</a>
+              </li>
+            </ul>
+            <img src="./images/itsskin/products/8/product1.png" alt="">
+            <img src="./images/itsskin/products/8/describe.png" alt="">
+            <a href="#"  onclick="_trackga('잇츠스킨','잇츠스킨-마스크스페셜 자세히보기')">
+              <img src="./images/itsskin/popup/btn-landing.png" alt="자세히보기">
+            </a>
+            <a href="#detail-itsskin-special-gift" onclick="_trackga('잇츠스킨','잇츠스킨-Special Gift')">
+              <img src="./images/itsskin/popup/btn-specialgift.png" alt="Special Gift">
+            </a>
+          </div>
+
+          <div class="detail-itsskin-item">
+            <ul class="detail-itsskin-type list list-collapse">
+              <li>
+                <a href="#" class="is-active">1</a>
+              </li>
+              <li>
+                <a href="#">2</a>
+              </li>
+            </ul>
+            <img src="./images/itsskin/products/9/product1.png" alt="">
+            <img src="./images/itsskin/products/9/describe.png" alt="">
+            <a href="#"  onclick="_trackga('잇츠스킨','잇츠스킨-마카롱슈가베이스 자세히보기')">
+              <img src="./images/itsskin/popup/btn-landing.png" alt="자세히보기">
+            </a>
+            <a href="#detail-itsskin-special-gift" onclick="_trackga('잇츠스킨','잇츠스킨-Special Gift')">
+              <img src="./images/itsskin/popup/btn-specialgift.png" alt="Special Gift">
+            </a>
+          </div-->
+  
+        </div>
+        <img id="detail-itsskin-special-gift" src="./images/popup/event03-gift.jpg"  alt="스페셜 기프트">
+      </div>
+    </div>
+  </div>
+  <!-- @ 스타그램 -->
+  <div id="popup-stagram" class="modal" data-role="modal" data-view="full">
+    <div id="event04-popup" class="modal-content detail">
+      <header>
+        <a href="#" data-rel="back">
+          <img src="./images/popup/modal-btn-close.png"  alt="닫기">
+        </a>      
+      </header>     
+      <section>
+        <img class="stagram-header" src="./images/stagram/popup/cont-header.png" alt="">
+        <img class="stagram-bg" src="./images/stagram/popup/@bg.jpg" alt="">
+        <div class="frame">
+          <img src="./images/stagram/popup/cont-frame.png" alt="">
+        </div>
+        <img class="stagram-characters" src="./images/stagram/popup/cont-characters.png" alt="">
+      </section>
+      <div class="walkthrough">
+        <img src="./images/stagram/popup/walkthrough.png" alt="">
+      </div>
+    </div>
+  </div>
+  <!-- @ 10cm 영상보기 -->
+  <div id="popup-video" class="modal" data-role="modal" data-view="full">
+    <div id="event05-popup" class="modal-content detail">
+      <header>
+        <a href="#" data-rel="back">
+          <img src="./images/popup/modal-btn-close.png"  alt="닫기">
+        </a>      
+      </header>
+      <div class="video-container">
+        <iframe width="" height="" src="" frameborder="0" allowfullscreen></iframe>      
+      </div>
+    </div>
+  </div>
+  
+  <!-- @레이어팝업: 준비중입니다. -->
+  <div id="popup-alert" class="modal" data-role="modal">
+    <section class="modal-content">
+      <!--내용-->
+      <img src="./images/popup/alert-ready.png" alt="준비중입니다." data-alert-index="0">
+      <img src="./images/popup/alert-1.png" alt="등록되었습니다." data-alert-index="1">
+      <img src="./images/popup/alert-2.png" alt="등록 진행 중입니다." data-alert-index="2">
+      <img src="./images/popup/alert-3.png" alt="등록 실패했습니다." data-alert-index="3">
+      <img src="./images/popup/alert-4.png" alt="아이디를 입력해주세요." data-alert-index="4">
+      <img src="./images/popup/alert-5.png" alt="비밀번호를 입력해주세요." data-alert-index="5">
+      <img src="./images/popup/alert-6.png" alt="이미지를 등록해주세요." data-alert-index="6">
+      <img src="./images/popup/alert-7.png" alt="글을 등록해주세요." data-alert-index="7">
+      <img src="./images/popup/alert-8.png" alt="업로드 진행 중입니다." data-alert-index="8">
+      <img src="./images/popup/alert-9.png" alt="개인정보 수집에 동의해주세요." data-alert-index="9">
+      <a href="javascript:void(0)" data-rel="back" class="modal-btn-close">
+        <img src="./images/popup/btn-alert-close.png" alt="닫기">
+      </a>
+    </section>
+  </div>
+  <script src="./assets/js/vendor.js"></script>
+  <script src="./assets/js/plugin.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/page.js"></script>
+
+  
+  <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+  <script src="js/dev.js"></script>
+  <script src="../js/common_sns2.js"></script>
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-67806075-9', 'auto');
+  ga('send', 'pageview');
+
+  /* click check */
+    var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-67806075-9']);
+      _gaq.push(['_trackPageview']);
+    
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  /* click check */
+
+
+</script>
+  <script>
+    // 160913 html 폰트 크기가 이상한 브라우저에서는 강제로 15px로 증가
+    var fontsize = parseInt($('html').css('font-size'));
+    if(fontsize < 10){
+      $('html').css('font-size', '15px');        
+    };
+
+  </script>
+</body>
+
+</html>

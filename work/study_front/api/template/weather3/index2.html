@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <script type="text/javascript">
+            function loadDoc() {
+                var req = new XMLHttpRequest();
+                req.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        myFunction(this);
+                    }
+                };
+                req.open("GET", "xml_sample.xml", true);
+                req.send();
+            }
+ 
+            function myFunction(xml) {
+                var i;
+                var xmlDoc = xml.responseXML;
+ 
+                var gname = xmlDoc.getElementsByTagName("name")[0].firstChild.data;
+                document.getElementById("gname").innerHTML = gname;
+ 
+                var members = "";
+                var member = xmlDoc.getElementsByTagName("member");
+                for (i = 0; i < member.length; i++) { 
+                    if (i != 0) { members += ", "; }
+                    members += member[i].firstChild.data;
+                }
+                document.getElementById("members").innerHTML = members;
+ 
+                var albums = "";
+                var album = xmlDoc.getElementsByTagName("album");
+                for (i = 0; i < album.length; i++) { 
+                    albums += "<li>" + album[i].getAttribute('order') + ": " +
+                    album[i].firstChild.data + "</li>\n";
+                }
+                document.getElementById("albums").innerHTML = albums;
+            }
+        </script>
+        <title>AJAX Sample</title>
+    </head>
+ 
+    <body onload="loadDoc();">
+        <h2 id="gname"></h2>
+        <p>멤버 구성: <span id="members"></span></p>
+        <h3>앨범 목록</h3>
+        <ul id="albums"></ul>
+    </body>
+</html>

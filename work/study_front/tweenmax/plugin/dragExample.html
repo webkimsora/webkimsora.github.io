@@ -1,0 +1,360 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title>TWEENMAX-TWEENLITE</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<!--link rel="stylesheet" href="./css/style.css"-->
+	<link rel="stylesheet" href="../css/common.css?v=01">
+	<link rel="stylesheet" href="../css/main.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:800" rel="stylesheet">
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js"></script>
+	<script type="text/javascript" src="../js/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="../js/Draggable.min.js"></script>
+
+	<style>
+		body {
+			font-size: 20px;
+			font-family: "Open Sans";
+			text-align: center;
+			background: #e4e4e4;
+		}
+
+		.spinWrap {
+			width: 1000px;
+			margin: 0 auto;
+			padding-top: 100px;
+			color: #555;
+			font-weight: 600;
+		}
+		
+		.spinWrap a {color: pink;}
+
+		.spin {
+			position: relative;
+			margin: 50px 0;
+		}
+
+		.spin .child {
+			position: absolute;
+			top: 0;
+			left: 50%;
+			margin-left: -205px;
+			cursor: pointer;
+		}
+		
+		.spin .turn {
+			position: absolute;
+			bottom: 20px;
+		}
+
+		.wrap {
+			position: relative;
+			width: 100%;
+			height: 100%;
+			overflow: hidden;
+		}
+
+		@import url("https://fonts.googleapis.com/css?family=Merriweather:400,400i,700");
+		#my-section {
+			/*position: relative;*/
+			position: absolute;
+			top: -50%;
+			right: -100%;
+			opacity: 0;
+			z-index: -1;
+			width: 100%;
+			font-family: Merriweather;
+			font-size: 16px;
+		}
+
+		#wrap-cta {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			-webkit-transform: translate(0, -50%);
+			transform: translate(0, -50%);
+			opacity: 0;
+		}
+
+		#wrap-cta.active {
+			z-index: 2;
+			-webkit-transform: translate(-50%, -50%);
+			transform: translate(-50%, -50%);
+			transition: opacity .6s, -webkit-transform .6s;
+			transition: transform .6s, opacity .6s;
+			transition: transform .6s, opacity .6s, -webkit-transform .6s;
+			opacity: 1;
+		}
+
+		#wrap-cta #cta {
+			padding: 1rem 2rem;
+			text-transform: uppercase;
+			color: #f2f2f2;
+			background: transparent;
+			border: 2px solid;
+			border-radius: 5px;
+			cursor: pointer;
+			outline: none;
+			-webkit-tap-highlight-color: transparent;
+			transition: background .4s;
+		}
+
+		#wrap-cta #cta:hover {
+			background: rgba(242, 242, 242, 0.1);
+		}
+
+		svg {
+			display: block;
+			width: 100%;
+			height: 100vh;
+		}
+
+		svg .polymorph {
+			fill: #B66C8D;
+		}
+
+		.container {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			-webkit-transform: translate(-50%, -50%);
+			transform: translate(-50%, -50%);
+			text-align: center;
+		}
+
+		.container #content {
+			-webkit-transform: translateY(-50px);
+			transform: translateY(-50px);
+			opacity: 0;
+			color: #B66C8D;
+			transition: opacity .6s .2s, -webkit-transform .6s .2s;
+			transition: transform .6s .2s, opacity .6s .2s;
+			transition: transform .6s .2s, opacity .6s .2s, -webkit-transform .6s .2s;
+		}
+
+		.container #content #close {
+			display: inline-block;
+			margin-top: 2rem;
+			padding: .5rem 1rem;
+			text-transform: uppercase;
+			font-size: .9em;
+			color: #B66C8D;
+			background: transparent;
+			border: 2px solid;
+			border-radius: 5px;
+			cursor: pointer;
+			outline: none;
+			-webkit-tap-highlight-color: transparent;
+			transition: background .4s;
+		}
+
+		.container #content #close:hover {
+			background: rgba(182, 108, 141, 0.3);
+		}
+
+		.container #content.active {
+			z-index: 4;
+			-webkit-transform: translateY(0);
+			transform: translateY(0);
+			opacity: 1;
+		}
+	</style>
+</head>
+
+<body>
+	<main class="wrap">
+		<section class="spinWrap">
+			<div>
+				<p>ROTATION : <span class="rotation"></span></p>
+				<p>LOOP: <span class="loop"></span></p>
+			</div>
+
+			<div class="spin">
+				<img class="bg" src="../images/knob_bg.jpg" alt="">
+				<img id="dial" class="child" src="../images/knob.png" alt="">
+				<img class="turn" src="../images/turn.png" alt="">
+			</div>
+			<!--div class="spin">
+				<img id="dial2" class="child" src="./images/knob.png" alt="">
+			</div-->
+			<div>* TweenMax Plugin Draggable 관련 API: <a href="https://greensock.com/docs/Utilities/Draggable">https://greensock.com/docs/Utilities/Draggable</a> </div>
+		</section>
+
+		<section id="my-section">
+			<div class="active" id="wrap-cta">
+				<button id="cta">Click here, please!</button>
+			</div>
+			<svg viewBox="0 0 215 110" preserveAspectRatio="none">
+			    <polygon class="polymorph" points="215,110 0,110 0,0 215,0"></polygon>
+			  </svg>
+			<div class="container">
+				<div id="content">
+					<h1>Lorem ipsum dolor sit amet</h1>
+					<p>Dolor sit amet et consectquo lorem ipsum dolor sit amet</p>
+					<button id="close">Ok, close me</button>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<script>
+		var dial = document.getElementById("dial");
+		var dial2 = document.getElementById("dial2");
+		var turn = document.querySelector('.turn');
+
+		function dialSpin() {
+			Draggable.create(dial, {
+				type: "rotation",
+				throwProps: true
+			});
+		}
+
+		$(document).ready(function() {
+			TweenMax.to(turn, 2, {
+				rotation: 30,
+				y: 80,
+				x: -100,
+				repeat: 2,
+				opacity: 0
+			})
+			
+			Draggable.create(dial, {
+				type: "rotation",
+				//type:"top,left" | "rotation" |"scroll" | "x" | "y" | "top" | "left" | "scrollTop" | "scrollLeft"
+				throwProps: true,
+				//bounds:{minRotation:0, maxRotation:360},
+				bounds: {
+					minRotation: 0,
+					maxRotation: 360
+				},
+				onDrag: function() {
+					$('.rotation').html(this.rotation);
+					$('.loop').html(parseInt(this.rotation / 360));
+				},
+				onDragEnd: function() {
+					TweenMax.to(".spinWrap", 1, {
+						alpha: 0,
+						y: -100,
+						onComplete: function() {
+							$(".spinWrap").hide();
+							TweenMax.to("#my-section", 1, {
+								top: 0,
+								right: 0,
+								alpha: 1,
+								//rotation: 30,
+								//scaleX: 0.8,
+								zIndex: 90
+							})
+						}
+					})
+				}
+			});
+			//liveSnap: function(value){ // spin도중
+			//return Math.round(value/90) * 90;
+			//console.log(value)
+			//}
+			/*
+			- CSS Plugin
+			트윈맥스 반복 구현시 타겟 위치 중심을 기점으로만 구현이 되는데,
+			CSS Plugin을 이용해서 했을 경우 
+			마지막 구현 기점에서 다음 트윈맥스 모션이 구현된다.
+			ex) https://greensock.com/docs/Plugins/CSSPlugin
+		});
+
+			Draggable.create(dial2, {
+				type: "top,left",
+				//type:"top,left" | "rotation" |"scroll" | "x" | "y" | "top" | "left" | "scrollTop" | "scrollLeft"
+				throwProps: true,
+				//bounds:{minX:0, maxX:500, minY:-300, maxY:300},
+
+				liveSnap: {
+					points: function(point) {
+						//if it's within 100px, snap exactly to 500,250
+						var dx = point.x - 500;
+						var dy = point.y - 250;
+						if (Math.sqrt(dx * dx + dy * dy) < 100) {
+							return {
+								x: 500,
+								y: 250
+							};
+						}
+						return point; //otherwise don't change anything.
+					}
+				}
+			});
+		*/
+
+			// anime SVG 사용
+			var _extends = Object.assign || function(target) {
+				for (var i = 1; i < arguments.length; i++) {
+					var source = arguments[i];
+					for (var key in source) {
+						if (Object.prototype.hasOwnProperty.call(source, key)) {
+							target[key] = source[key];
+						}
+					}
+				}
+				return target;
+			}; /** Inspired by coursetro.com **/
+
+			// Refs
+			var wrapCta = document.querySelector('#wrap-cta'),
+				btnCta = document.querySelector('#cta'),
+				content = document.querySelector('#content'),
+				btnClose = document.querySelector('#close');
+
+
+			// Anime.js Commons Values for SVG Morph
+			var common = {
+				targets: '.polymorph',
+				easing: 'easeOutQuad',
+				duration: 600,
+				loop: false
+			};
+
+
+
+			// Show content
+			btnCta.addEventListener('click', function() {
+				// Elements apparence
+				wrapCta.classList.remove('active');
+				content.classList.add('active');
+
+				// Morph SVG
+				anime(_extends({},
+					common, {
+						points: [{
+							value: '215,110 0,110 186,86 215,0'
+						}]
+					}));
+
+
+			});
+
+
+			// Hide content  
+			btnClose.addEventListener('click', function() {
+				// Elements apparence
+				content.classList.remove('active');
+				wrapCta.classList.add('active');
+
+				// Morph SVG
+				anime(_extends({},
+					common, {
+						points: [{
+							value: '215,110 0,110 0,0 215,0'
+						}]
+					}));
+
+
+			});
+
+		})
+	</script>
+</body>
+
+</html>

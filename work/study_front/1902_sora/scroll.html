@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title>ScrollReveal TEST</title>
+		
+		<link rel="stylesheet" href="./css/common.css">
+		<link rel="stylesheet" href="./css/scroll.css">
+		
+		<script type="text/javascript" src="./js/jquery-1.11.3.min.js" ></script>
+		<script type="text/javascript" src="./js/scrollreveal.js"></script>
+		<script type="text/javascript" src="./js/rellax.js"></script>
+		<script type="text/javascript" src="./js/skrollr.min.js"></script>
+		<script type="text/javascript" src="./js/scrollMain.js"></script>
+	</head>
+	
+	<body>
+		<main id="viewport">
+			<header class="header">
+				<h1>
+					<a href="./scroll.html">
+						<img class="front" src="./images/logo_text_long.png" alt="Makeulike">
+						<img class="back" src="./images/logo_text_w.png" alt="Makeulike">
+					</a>
+				</h1>
+				<ul class="gnb">
+					<li class="">
+						<a class="text-hover" href="">
+							<div class="word">
+								<span>H</span>
+								<span>H</span>
+							</div>
+							<div class="word">
+								<span>O</span>
+								<span>O</span>
+							</div>
+							<div class="word">
+								<span>M</span>
+								<span>M</span>
+							</div>
+							<div class="word">
+								<span>E</span>
+								<span>E</span>
+							</div>
+						</a>
+					</li>
+					<li class="">
+						<a class="text-hover" href="">
+							<div class="word">
+								<span>M</span>
+								<span>M</span>
+							</div>
+							<div class="word">
+								<span>E</span>
+								<span>E</span>
+							</div>
+							<div class="word">
+								<span>N</span>
+								<span>N</span>
+							</div>
+							<div class="word">
+								<span>U</span>
+								<span>U</span>
+							</div>
+							<div class="word">
+								<span>1</span>
+								<span>1</span>
+							</div>
+						</a>
+					</li>
+					<li class="">
+						<a class="text-hover" href="">
+							<div class="word">
+								<span>M</span>
+								<span>M</span>
+							</div>
+							<div class="word">
+								<span>E</span>
+								<span>E</span>
+							</div>
+							<div class="word">
+								<span>N</span>
+								<span>N</span>
+							</div>
+							<div class="word">
+								<span>U</span>
+								<span>U</span>
+							</div>
+							<div class="word">
+								<span>2</span>
+								<span>2</span>
+							</div>
+						</a>
+					</li>
+					<li class="">
+						<a class="text-hover" href="">
+							<div class="word">
+								<span>M</span>
+								<span>M</span>
+							</div>
+							<div class="word">
+								<span>E</span>
+								<span>E</span>
+							</div>
+							<div class="word">
+								<span>N</span>
+								<span>N</span>
+							</div>
+							<div class="word">
+								<span>U</span>
+								<span>U</span>
+							</div>
+							<div class="word">
+								<span>3</span>
+								<span>3</span>
+							</div>
+						</a>
+					</li>
+					<li class="">
+						<a class="text-hover" href="">
+							<div class="word">
+								<span>M</span>
+								<span>M</span>
+							</div>
+							<div class="word">
+								<span>E</span>
+								<span>E</span>
+							</div>
+							<div class="word">
+								<span>N</span>
+								<span>N</span>
+							</div>
+							<div class="word">
+								<span>U</span>
+								<span>U</span>
+							</div>
+							<div class="word">
+								<span>4</span>
+								<span>4</span>
+							</div>
+						</a>
+					</li>
+				</ul>
+			</header>
+			<section class="main page" id="main">				
+				<div class="foo backWrap no4">
+					<span class="background"></span>
+					<div class="bgMovie mask_anim_inner">
+						<div class="raster"></div>
+						<video id="bgMain" class="videoBg" muted="" loop="" autoplay>
+							<source src="./images/miyoshi.mp4?v=01" type="video/mp4">
+						</video>
+					</div>
+				</div>
+				<div class="foo logo">
+					<span class="background"></span>
+					<img class="mask_anim_inner" src="./images/dummyLogo.png" alt="">
+				</div>
+			</section>
+			<!--div>
+				<ul class="middleText">
+					<li class="no1" data-start="transform: translateX(0);" data-end="transform: translateX(100%);">The quick, brown fox jumps over a lazy dog.</li>
+					<li class="no2" data-start="transform: translateX(100%);" data-end="transform: translateX(0);">DJs flock by when MTV ax quiz prog.</li>
+				</ul>
+			</div-->
+			<section class="second page" id="second">
+				<div class="foo no6 up">
+					<span class="background"></span>
+					<img class="mask_anim_inner" src="./images/woman01.jpg" alt="">
+				</div>
+				<div class="foo no5">
+					<span class="background"></span>
+					<img class="mask_anim_inner" src="./images/black01.jpg" alt="">
+				</div>
+			</section>
+			<section class="third page" id="third">
+				<div class="visual">
+					<div class="box">
+						BOX
+					</div>
+					<div class="deco no1" data-rellax-speed="1" data-rellax-percentage="0.3" data-scroll="toggle(.fadein, .fadeout) once"><img src="./images/object01.png" alt="데코1"></div>
+					<div class="deco no2" data-rellax-speed="2" data-rellax-percentage="0.3" data-scroll="toggle(.fadein, .fadeout) once"><img src="./images/object02.png" alt="데코2"></div>
+					<div class="deco no3" data-rellax-speed="1" data-rellax-percentage="0.3" data-scroll="toggle(.fadein, .fadeout) once"><img src="./images/object03.png" alt="데코3"></div>
+					<div class="deco no4" data-rellax-speed="3" data-rellax-percentage="0.3" data-scroll="toggle(.fadein, .fadeout) once"><img src="./images/object04.png" alt="데코4"></div>
+					<div class="deco no5" data-rellax-speed="1" data-rellax-percentage="0.3" data-scroll="toggle(.fadein, .fadeout) once"><img src="./images/object05.png" alt="데코5"></div>
+				</div>
+				<div class="boxWrap">
+					<img src="./images/dog.jpg" alt="">
+					<figcaption>
+						<h2>Make U <span> Like</span></h2>
+					</figcaption>
+					<a href="#"></a>
+				</div>
+			</section>
+		</main>
+	</body>
+</html>

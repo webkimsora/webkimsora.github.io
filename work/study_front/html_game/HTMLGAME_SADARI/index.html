@@ -1,0 +1,236 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>HTMLGAME</title>
+    <script src="./js/jquery-1.9.1.min.js"></script>
+    <script src="./js/jquery.easing.1.3.js"></script>
+    <script src="./js/jquery.transform.js"></script>
+    <style>
+        *{margin: 0; padding: 0; border: none;}
+        .sadari_wrap{width: 1000px; margin: 120px auto; text-align: center;}
+        .sadari_wrap .gam_inner{display: inline-block; position: relative;}
+        .sadari_wrap .gamit{display: inline-block; vertical-align: top; padding: 0 5px; box-sizing: border-box;}
+        .sadari_wrap input{border: 1px solid #ddd; height: 30px; text-align: center; width: 100%;}
+        .sadari_wrap .gam_line,.sadari_wrap .gam_tp,.sadari_wrap .gam_bt{text-align: center;}
+        .sadari_wrap .gam_line{margin: 10px 0;}
+        .sadari_wrap .gam_line .gaml_root{height: 350px; display: inline-block; width: 1px; background: #000; position: relative;}
+        .sadari_wrap .sils{position: absolute; left: 0; top: 0; width: 30px; height: 1px; background: #000; left: 85px; top: 110px; width: 178px;}
+        .sadari_wrap .lis{height: 30px; width: 1px; background: red; display: inline-block; vertical-align: top; position: absolute; left: 0;}
+        .sadari_wrap .lis.vertical{height: 30px; width: 1px;}
+        .sadari_wrap .lis.horizental{width: 30px; height: 1px;}
+        .sadari_wrap .gam_sil{position: absolute; left: 0; top: 0; width: 100%;}
+    </style>
+</head>
+
+<body>
+    <input type="text" id="i_f" value="10" />
+    <button id="i_b">BUTTON</button>
+    <div class="sadari_wrap">
+        <div class="gam_inner sadariWrap">
+            <!-- <div class="gam_sil">
+                <span class="sils sils0"><span class="lis horizental"></span></span>
+            </div> -->
+        </div>
+    </div>
+</body>
+<script>
+    ;
+    (function($) {
+        var options = {
+            leng: 20,
+            speed: 3,
+            linesize: 100,
+            linespacing: 5
+        };
+        var Sadari = function(obj, selector) {
+            this.el = selector;
+            this.obj = $.extend(options, obj);
+            this.opt = {
+                clsname: ['.gamit', '.gam_tp', '.gam_line', '.gaml_root', '.lis', '.gam_bt', '.gam_sil']
+            };
+            this.innerwidth = 0;
+            this.innerheight = 0;
+            this.lineDrawPos = {
+                left: [],
+                top: [],
+                all: []
+            };
+            this.beforeCallback = function() {};
+            this.afterCallback = function() {};
+            this.init();
+        };
+        Sadari.prototype = {
+            init: function() {
+                this.set();
+            },
+            set: function() {
+                var html = '';
+                for (var i = 0; i < this.obj.leng; i++) {
+                    html += '<div class="' + this.clsformat(this.opt.clsname[0]) + '" style="width:' + 100 / this.obj.leng + '%;">'; //gamit
+                    html += '<div class="' + this.clsformat(this.opt.clsname[1]) + '">'; //gam_tp
+                    html += '<input type="text" placeholder="입력란"/>';
+                    html += '</div>'; //gam_tp
+                    html += '<div class="' + this.clsformat(this.opt.clsname[2]) + '">'; //gam_line
+                    html += '<div class="' + this.clsformat(this.opt.clsname[3]) + '">'; //gaml_root
+                    html += '<span class="' + this.clsformat(this.opt.clsname[4]) + ' vertical"></span>'; //lis
+                    html += '</div>'; //gaml_root
+                    html += '</div>'; //gam_line
+                    html += '<div class="' + this.clsformat(this.opt.clsname[5]) + '">'; //gam_bt
+                    html += '<input type="text" placeholder="입력란"/>';
+                    html += '</div>'; //gam_line
+                    html += '</div>'; //gamit
+
+                }
+                $(this.el).html(html);
+                this.innerwidth = $(this.el).innerWidth();
+                this.innerheight = $(this.el).innerHeight();
+                this.columwidth = $(this.opt.clsname[0]).outerWidth();
+                this.columheight = $(this.opt.clsname[2])[0].offsetHeight;
+                this.fnLinePositionSet();
+                this.fnLineDrawing(this.opt.clsname[6]);
+            },
+            fnLinePositionSet: function() {
+                for (var i = 0; i < this.obj.leng - 1; i++) {
+                    this.lineDrawPos.left.push(Math.floor(this.columwidth * i));
+                }
+                /*
+                for (var i = 0; i < 2; i++) {
+                    var h = [];
+                    var s = 0;
+                    var spc = this.obj.linespacing;
+                    for (var j = $(this.opt.clsname[2])[0].offsetTop; j < this.columheight; j++) {
+                        if (i % 2 == 0) {
+                            s = spc * 2;
+                        } else {
+                            s = spc;
+                        }
+                        if (j % s == 0) {
+                            h.push(j);
+                        }
+                    }
+                    this.lineDrawPos.top.push(h);
+                }
+                for (var i = 0; i < this.lineDrawPos.top[1].length; i++) {
+                    if (this.lineDrawPos.top[0].indexOf(this.lineDrawPos.top[1][i]) != -1) {
+                        this.lineDrawPos.top[1].splice(i, 1);
+                    }
+                }*/
+            },
+            fnLinePosition: function(l, t) {
+                var left = l;
+                var top = t;
+                return {
+                    left: left,
+                    top: top
+                };
+            },
+            fnLineDrawing: function(selector) {
+                var wrap = '<div class="' + this.clsformat(this.opt.clsname[6]) + '"></div>'; //gam_sil
+                var html = '';
+                var left = 0;
+                var top = 0;
+                var bt = [];
+                var pos = null;
+                var post = 0;
+                var posl = 0;
+
+
+                
+
+
+                for (var i = 0; i < this.obj.linesize; i++) {
+                    var aa = [];
+                    for (var j = 0; j < this.obj.linesize; j++) {
+                        aa.push(this.random(50, this.columheight, this.obj.linespacing, 'floor'));
+                        var test = this.uniq(aa);
+                    }
+                    posl++;
+                    if (!this.lineDrawPos.left[posl]) {
+                        posl = 0;
+                    }
+                    /*for (var j = 0; j < this.obj.linesize / this.obj.leng; j++) {
+                        if (i % 2 == 0) {
+                            post = this.lineDrawPos.top[1][j]
+                        } else {
+                            post = this.lineDrawPos.top[0][j]
+                        }
+                        pos = this.fnLinePosition(this.lineDrawPos.left[posl], post);
+                        if (post) {
+                            html += '<span class="sils sils' + i + '" style="width:' + this.columwidth + 'px; left: ' + pos.left + 'px; top: ' + pos.top + 'px;"><span class="lis horizental"></span></span>';
+                        }
+                    }*/
+                    if (test[i]) {
+                        pos = this.fnLinePosition(this.lineDrawPos.left[posl], test[i]);
+                        html += '<span class="sils sils' + i + '" style="width:' + this.columwidth + 'px; left: ' + pos.left + 'px; top: ' + pos.top + 'px;"><span class="lis horizental"></span></span>';
+                    }
+
+                }
+                $(this.el).append(wrap);
+                $(selector).html(html);
+                $(this.opt.clsname[6]).width(this.innerwidth - this.columwidth).css('margin-left', this.columwidth / 2);
+            },
+            bind: function() {},
+            restore: function() {},
+            anicallb: function(ob) {
+                return $.extend(this.anicallobj, ob);
+            },
+            clsformat: function(str) {
+                return str.replace('.', '');
+            },
+            shuffle: function(a) {
+                var va = a;
+                var j, x, i;
+                for (i = a.length - 1; i > 0; i--) {
+                    j = Math.floor(Math.random() * (i + 1));
+                    x = va[i];
+                    va[i] = va[j];
+                    va[j] = x;
+                }
+                return va;
+            },
+            random: function(min, max, step, math) {
+                var num = Math.random() * (max - min) + min
+                var rnum = 0;
+                var steps = 0;
+                var n_num = 0;
+                if (math) {
+                    switch (math) {
+                        case 'floor':
+                            rnum = Math.floor(num);
+                            break;
+                        case 'round':
+                            rnum = Math.round(num);
+                            break;
+                        case 'ceil':
+                            rnum = Math.ceil(num);
+                            break;
+                    }
+                }
+
+                if (step) {
+                    if (rnum % step == 0) {
+                        n_num = rnum;
+                    } else {
+                        n_num = rnum - (rnum % step);
+                    }
+                } else {
+                    n_num = rnum;
+                }
+                return n_num < min ? min : n_num;
+            },
+            uniq: function(a) {
+                return a.sort().filter(function(item, pos, ary) {
+                    return !pos || item != ary[pos - 1];
+                });
+            }
+        };
+        window.HTML_GAME_TYPE7 = new Sadari({
+            leng: $('#i_f').val()
+        }, '.sadariWrap');
+    })(jQuery);
+</script>
+
+</html>

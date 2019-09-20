@@ -1,0 +1,254 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title>TWEENMAX-TWEENLITE</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<!--link rel="stylesheet" href="./css/style.css"-->
+	<link rel="stylesheet" href="../css/common.css?v=01">
+	<link rel="stylesheet" href="../css/main.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:800" rel="stylesheet">
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/utils/Draggable.min.js"></script>
+	<script type="text/javascript" src="../js/jquery-1.11.3.min.js"></script>
+
+	<style>
+		@import url(https://fonts.googleapis.com/css?family=Lato:300,400,700|PT+Mono);
+		body {
+			background: #333;
+			font-size: 16px;
+			font-family:Lato, sans-serif;
+		}
+
+		.dotWrap {
+			padding-top: 3px;
+			height: 285px;
+			background: url(../images/mobilePhone.png) no-repeat;
+		}
+
+		.dotWrap .bg {
+			width: 410px;
+			height: 177px;
+			z-index: -1;
+			position: Relative;
+			border-radius: 30px;
+			background: #01579b;
+		}
+
+		.dotWrap ul {
+			width: 250px;
+			padding-top: 15px;
+			margin-top: 30px;
+			margin-left: 100px;
+		}
+
+		.dotWrap ul:after {
+			content: "";
+			display: block;
+			clear: both;
+		}
+
+		.dotWrap li {
+			width: 40px;
+			height: 40px;
+			line-height: 40px;
+			margin: 5px 15px;
+			text-align: center;
+			vertical-align: middle;
+			float: left;
+			border-radius: 50%;
+			background: #fff;
+			font-weight: bold;
+			font-size: 24px;
+		}
+
+		.box {
+			width: 50px;
+			height: 50px;
+			position: relative;
+			margin-bottom: 2px;
+		}
+
+		.red {
+			background-color: red;
+		}
+
+		.blue {
+			background-color: blue;
+		}
+
+		.nav {
+			width: 600px;
+			background-color: #ccc;
+			text-align: right;
+		}
+
+		button {
+			padding: 10px;
+			margin: 10px;
+		}
+		
+		.example.ex2 {margin-top: 30px;}
+
+		.wrap {
+			width: 600px;
+			margin: 50px auto 0;
+		}
+
+		.window {
+			width: 600px;
+			background: GhostWhite;
+			border-radius: 0.3rem;
+			box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+			overflow: hidden;
+		}
+
+		.window .window-header {
+			height: 37px;
+			background: Gainsboro;
+			position: relative;
+		}
+
+		.window .window-header .action-buttons {
+			position: absolute;
+			top: 50%;
+			left: 10px;
+			margin-top: -5px;
+			width: 10px;
+			height: 10px;
+			background: Crimson;
+			border-radius: 50%;
+			box-shadow: 15px 0 0 orange, 30px 0 0 limegreen;
+		}
+		
+		.window .window-body {
+			padding: 20px;
+		}
+
+		.window .window-body .code-input {
+			opacity: 0.7;
+			margin: 0;
+			color: #333;
+			resize: none;
+		}
+
+		.club-demo-button {
+			width: 46%;
+			font-weight: 400;
+			text-transform: none;
+			font-size: 18px;
+		}
+
+		code {
+			display: block;
+			color: #ccc;
+			padding: 10px;
+			font-size: 18px;
+		}
+	</style>
+</head>
+
+<body>
+	<main id="viewport">
+		<section class="wrap">
+			<div class="example ex1">
+				<div class="dotWrap">
+					<div class="bg">
+						<ul>
+							<li>1</li>
+							<li>2</li>
+							<li>3</li>
+							<li>4</li>
+							<li>5</li>
+							<li>6</li>
+							<li>7</li>
+							<li>8</li>
+							<li>9</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="example ex2">
+				<button class="dark-grey-button club-demo-button" id="svgOrigin">spin each box around<br>&lt;svg&gt; center</button>
+				<button class="dark-grey-button club-demo-button" id="transformOrigin">spin each box around<br>its own center</button>
+
+
+				<div class="window">
+					<div class="window-header">
+						<div class="action-buttons"></div>
+					</div>
+					<div class="window-body">
+						<div class="code-input">
+							<p>SVG BOX SIZE : 600px 400px</p>
+							<p>SVG Origin(중심) : 300px 200px;</p>
+						</div>
+					</div>
+				</div>
+				<svg version="1.1" id="container" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="600px" height="400px" viewBox="0 0 600 400" style="enable-background:new 0 0 600 400;" xml:space="preserve">
+					<rect style="fill:#000;stroke:#1D1B1C;stroke-miterlimit:10;" width="600" height="600"/>
+					<rect class="box" x="44" y="110" style="fill:#91e600;" width="65" height="65"/>
+					<rect class="box" x="270" y="51" style="fill:#91e600;" width="55" height="55"/>
+					<rect class="box" x="491" y="98.5" style="fill:#91e600;" width="53.5" height="53.5"/>
+					<rect class="box" x="430" y="290" style="fill:#91e600;" width="96.5" height="96.5"/>
+					<rect class="box" class="box" x="302" y="190" style="fill:#91e600;" width="80" height="80"/>
+					<rect class="box" x="140" y="259" style="fill:#91e600;" width="64" height="64"/>
+				</svg>
+			</div>
+
+			<div>
+
+			</div>
+		</section>
+	</main>
+
+	<script>
+		var list = $('.dotWrap li').toArray();
+
+		TweenMax.set(list, {
+			autoAlpha: 0.5
+		})
+		list.sort(function() {
+			return 0.5 - Math.random()
+		})
+		TweenMax.staggerTo(list, 0.5, {
+			repeat: -1,
+			autoAlpha: 1,
+			ease: Quad.easeInOut
+		}, 0.3);
+	</script>
+
+	<script>
+		var svgOriginButton = document.getElementById("svgOrigin"),
+			transformOriginButton = document.getElementById("transformOrigin"),
+			tweenCode = document.getElementById("tweenCode"),
+			boxes = document.querySelectorAll(".box"),
+			tween = TweenLite.to({}, 1, {});
+
+		function svgOriginRotation() {
+			tween.seek(0).kill(); //reset
+			tween = TweenLite.to(boxes, 1, {
+				rotation: 360,
+				svgOrigin: "300 200"
+			});
+			tweenCode.innerHTML = 'TweenLite.to(".box", 1, {rotation:360, svgOrigin:"300 200"});';
+		}
+
+		function transformOriginRotation() {
+			tween.seek(0).kill(); //reset
+			tween = TweenLite.to(boxes, 1, {
+				rotation: 360,
+				transformOrigin: "50% 50%"
+			});
+			tweenCode.innerHTML = 'TweenLite.to(".box", 1, {rotation:360, transformOrigin:"50% 50%"});'
+		}
+
+
+		svgOriginButton.onclick = svgOriginRotation;
+		transformOriginButton.onclick = transformOriginRotation;
+	</script>
+</body>
+
+</html>

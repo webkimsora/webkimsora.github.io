@@ -1,0 +1,287 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>HTMLGAME</title>
+    <script src="./js/jquery-1.9.1.min.js"></script>
+    <script src="./js/jquery.path.js"></script>
+    <script src="./js/jquery.easing.1.3.js"></script>
+    <script src="./js/jquery.transform.js"></script>
+    <style>
+    *{margin: 0; padding: 0; border: none; box-sizing: border-box;}
+    .tn{float: left; height: 100px; text-align: center; width: 33.33%; position: relative;}
+    .tn .coin{height: 100px; width: 100px; border: 20px solid #aaa; background: #ccc; display: inline-block; position: relative; border-radius: 50%;}
+    /* .tn:nth-child(1) .coin{background: blue;}
+    .tn:nth-child(2) .coin{background: black;}
+    .tn:nth-child(3) .coin{background: green;}
+    .tn:nth-child(4) .coin{background: red;} */
+    /* .tn .succ{position: absolute; left: 0; bottom:100%;; width: 100%; height: 100%; background: gold; top: 0; border-radius: 50%;} */
+    .tn .succ:after{content: ''; position: absolute; width: 100%; text-align: center; color: #000; font-weight: bold; font-size: 12px; left: 0;}
+    .tit{font-size: 30px; text-align: center; margin-top: 250px; margin-bottom: 100px;}
+    button{padding: 20px 30px;}
+    </style>
+</head>
+
+<body>
+    <select id="tset">
+        <option value="1">중지 </option>
+        <option value="2" selected>재생 </option>
+    </select>
+    <div class="tit">타이머중....</div>
+    <div class="tn_wrap tnWrap"> </div>
+    <button onclick="HTML_GAME_TYPE5.restore();">restart</button>
+    <button onclick="HTML_GAME_TYPE5.fnStopGame();">stop</button>
+    <div class="text" style="height: 13px; width: 10px; background: red; display: inline-block; position: relative;"></div>
+    <canvas id="canvas"></canvas>
+</body>
+<script>
+    ;
+    (function($) {
+        var options = {
+            leng: 8,
+            level: 2.5,
+            life: 3,
+            successIndex: 0,
+            limitTimer: 6000,
+            moveBeforeCallback: null,
+            moveAfterCallback: null,
+            animation: true,
+            title: ['타이머중....', '선택해주세요.'],
+        };
+        var Yabawi = function(obj, selector) {
+            this.el = selector;
+            this.obj = $.extend(options, obj);
+            this.o = {
+                items: [],
+                coinCountIdx: 0,
+                coinPosition: [],
+                coinClsName: '.tn',
+                loopArry: [],
+                animationOptions: {
+                    dy: 1,
+                    vy: 1,
+                    gravity: 0.01,
+                    maxtop: 150,
+                }
+            };
+            this.anicallobj = {
+                'duration': 300,
+                'easing': 'swing',
+                'step': function(a, z) {},
+                'complete': function() {}
+            };
+            this.initCoinPosition = [];
+            this.timer = 1000 / this.obj.level;
+            this.loop = null;
+            this.RESULT_SUCC = 0;
+            this.RESULT_FAIL = 0;
+            this.successIndex = this.obj.successIndex;
+            this.beforeCallback = function() {};
+            this.afterCallback = function() {};
+            this.init();
+        };
+        Yabawi.prototype = {
+            init: function() {
+                var _this = this;
+                this.set();
+                this.get();
+                this.loop = setInterval(function() {
+                    _this.fnSetInterval();
+                }, 2000);
+                setTimeout(function() {
+                    _this.fnStopGame();
+                }, this.obj.limitTimer);
+            },
+            set: function() {
+                var _this = this;
+                var html = '';
+                var c = this.random(0, this.obj.leng, 0, 'floor');
+                var comp = c < 1 ? 0 : c;
+                var comp = this.successIndex ? this.successIndex : comp;
+                for (var i = 0; i < this.obj.leng; i++) {
+                    _this.o.items.push({
+                        target: $(this),
+                        idx: i
+                    });
+                    _this.o.coinCountIdx++;
+                    html += '<div style="width: ' + 100 / this.obj.leng + '%;" class="' + _this.clsformat(_this.o.coinClsName) + ' ' + _this.clsformat(_this.o.coinClsName) + '' + i + '" >';
+                    if (comp == i) {
+                        html += '<span class="coin"><span class="succ"></span></span>';
+                    } else {
+                        html += '<span class="coin"></span>';
+                    }
+                    html += '</div>';
+                }
+                $(_this.el).html(html);
+                this.successIndex = comp;
+            },
+            get: function() {
+                var _this = this;
+                _this.o.coinPosition = [];
+                _this.initCoinPosition = [];
+                $(this.el).find(this.o.coinClsName).each(function(idx) {
+                    _this.o.coinPosition.push($(this)[0].offsetLeft);
+                    _this.initCoinPosition.push($(this)[0].offsetLeft);
+                });
+            },
+            fnSetInterval: function() {
+                var _this = this;
+                var ary = _this.shuffle(_this.initCoinPosition);
+                var steparry = [];
+                var steparry2 = [];
+                for (var i = 0; i < ary.length; i++) {
+                    steparry2.push(ary[i] - _this.o.coinPosition[i]);
+                    steparry.push(Math.abs(ary[i] - _this.o.coinPosition[i]));
+                }
+                $('.tit').text(_this.obj.title[0]);
+                for (var i = 0; i < ary.length; i++) {
+                    _this.fnCoinMove({
+                        timer: _this.timer,
+                        intervali: i,
+                        fullinitpos: _this.initCoinPosition,
+                        initpos: _this.o.coinPosition[i],
+                        crtpos: ary[i],
+                        loop: null,
+                        left: steparry2[i],
+                        step: (steparry[i] / _this.maxmin(steparry).min) * _this.obj.level,
+                        target: $(_this.o.coinClsName + ':eq(' + i + ')')
+                    });
+                }
+
+            },
+            fnCoinMove: function(o) {
+                var _this = this;
+                var o = o;
+                var lft = o.left; //o.crtpos - o.initpos;
+                var dx = 0;
+                var vx = o.step;
+                var dy = 1;
+                var vy = 1;
+                var gravity = .05;
+                var bool = false;
+                clearInterval(o.loop);
+                o.loop = setInterval(function() {
+                    if (lft < 0) { //뒤로이동
+                        dx -= vx;
+                    } else if (lft > 0) { //앞으로이동
+                        dx += vx;
+                    }
+                    if (bool && Math.abs(dx) >= Math.abs(lft)) {
+                        clearInterval(o.loop);
+                        dx = o.left;
+                    }
+                    if (dy > _this.o.animationOptions.maxtop) {
+                        gravity = gravity * -1;
+                    }
+                    dy = vy * gravity;
+                    console.log(dy);
+                    o.target.css({
+                        'left': dx,
+                        'top': dy
+                    });
+                    vy += dy;
+                    bool = true;
+                }, 10);
+            },
+            fnCoinMoveAntType: function(left, $this) {},
+            fnStopGame: function() {
+                clearInterval(this.loop);
+                this.fnFinishBind();
+                $('.tit').text(this.obj.title[1]);
+                /* 끝난 시점 의 리턴값 선언하기*/
+            },
+            fnFinishBind: function() {
+                var _this = this;
+                var nbool = true;
+                $(this.o.coinClsName).off().on('click', function(e) {
+                    var $this = $(this);
+                    var $idx = $this.index();
+                    if (nbool) {
+                        _this.fnFinishGame($idx);
+                    }
+                });
+            },
+            fnFinishGame: function($idx) {
+                if ($idx == this.successIndex) {
+                    alert('정답');
+                } else {
+                    this.obj.life--;
+                    if (this.obj.life) {
+                        alert('틀림\n' + this.obj.life + '번 남았습니다.');
+                    } else {
+                        var confr = confirm('틀림\n게임다시하기?');
+                        if (confr) {
+                            this.restore();
+                        } else {
+                            nbool = false;
+                        }
+                    }
+                }
+            },
+            restore: function() {
+                var _this = this;
+                this.fnSetInterval();
+                setTimeout(function() {
+                    _this.fnStopGame();
+                }, this.obj.limitTimer);
+            },
+            anicallb: function(ob) {
+                return $.extend(false, this.anicallobj, ob);
+            },
+            clsformat: function(str) {
+                return str.replace('.', '');
+            },
+            shuffle: function(a) {
+                var va = a;
+                var j, x, i;
+                for (i = a.length - 1; i > 0; i--) {
+                    j = Math.floor(Math.random() * (i + 1));
+                    x = va[i];
+                    va[i] = va[j];
+                    va[j] = x;
+                }
+                return va;
+            },
+            maxmin: function(a) {
+                var arry = [];
+                for (var i = 0; i < a.length; i++) {
+                    if (a[i]) {
+                        arry.push(a[i]);
+                    }
+                }
+                return {
+                    min: Math.min.apply(null, arry),
+                    max: Math.max.apply(null, arry)
+                };
+            },
+            random: function(min, max, remove_num, math) {
+                var num = Math.random() * (max - min) + min
+                var rnum = 0;
+                if (math) {
+                    switch (math) {
+                        case 'floor':
+                            rnum = Math.floor(num);
+                            break;
+                        case 'round':
+                            rnum = Math.round(num);
+                            break;
+                        case 'ceil':
+                            rnum = Math.ceil(num);
+                            break;
+                    }
+                }
+                if (remove_num && num == remove_num) {
+                    this.random(min, max, remove_num, math);
+                } else {
+                    return rnum ? rnum : num;
+                }
+            }
+        };
+        window.HTML_GAME_TYPE5 = new Yabawi({}, '.tnWrap');
+        console.log(HTML_GAME_TYPE5);
+    })(jQuery);
+</script>
+
+</html>

@@ -1,0 +1,288 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>메큐라이크 - Weather API</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <script type="text/javascript" src="./js/jquery-1.11.3.min.js" ></script>
+    <style>
+        *{margin: 0; padding: 0; border: none; box-sizing: border-box;}
+        html, body{height: 100%;}
+        li {list-style : none;}
+        #map {position: relative; width: 359px; height: 380px; margin: 0 auto; background: url(./images/korea_map.gif) 0 0 no-repeat;}
+        
+        .wrap {width: 1045px; margin: 30px auto; }
+        .weaList {}
+        .weaList li {position: absolute; padding: 3px; text-align: center; border: 1px solid #000; background: #fff;}
+        .weaList .text {margin-top: -5px; font-size: 11px; letter-spacing: -1px;}
+        .weaList li.city0 {top: 65px; left: 118px;}
+        .weaList li.city1 {top: 80px; left: 60px;}
+        .weaList li.city4 {top: 35px; left: 175px;}
+        .weaList li.city6 {top: 65px; right: 75px;}
+        .weaList li.city7 {top: 148px; left: 135px;}
+        .weaList li.city10 {top: 98px; right: 134px;}
+        .weaList li.city11 {bottom: 135px; left: 100px;}
+        .weaList li.city12 {bottom: 82px; left: 75px;}
+        .weaList li.city13 {bottom: 100px; left: 154px;}
+        .weaList li.city16 {bottom: 112px; right: 90px;}
+        .weaList li.city17 {bottom: 163px; right: 55px;}
+        .weaList li.city19 {top: 163px; right: 114px;}
+        .weaList li.city22 {bottom: 27px; left: 90px;}
+        
+            
+        .sp-weather {width: 24px; height: 24px; display: inline-block; text-indent: -9999px; background: url(./images/ico_weather_s.png) no-repeat;}
+        .sp-weather.cloud {background-position: 0 -120px;}
+        .sp-weather.cloudMany {background-position: 0 -240px;}
+        .sp-weather.cloudRain {background-position: 0 -660px;}
+        .sp-weather.cloudSnow {background-position: 0 -960px;}
+        .sp-weather.cloudRainSnow {background-position: 0 -1200px;}
+        .sp-weather.overcloud {background-position: 0 -360px;}
+        .sp-weather.overcloudRain {background-position: 0 -720px;}
+        .sp-weather.overcloudRainSnow {background-position: 0 -1260px;}
+        .sp-weather.overcloudSnow {background-position: 0 -1020px;}
+            
+        .text .low {font-style: normal; color: #2f899f;}
+        .text .high {font-style: normal; color: #c41d0b;}
+        
+        #date {position: absolute; bottom: 10px; right: 10px; font-size: 12px;}
+        .title {margin: 20px 0; text-align: center;}
+        .weatherAll {margin-top: 30px;}
+        .weatherAll .list {display: block; margin-top: 15px; border-top: 1px solid #000; border-bottom: 1px solid #000;}
+        .weatherAll .list:after {content:""; display: block; clear: both;}
+        .weatherAll .list li{float: left; padding: 15px 10px; text-align: center; border-left: 1px solid #000;}
+        .weatherAll .list li:first-child {border-left: none;}
+    </style>
+</head>
+
+<body>
+
+    <section class="wrap">
+        <h3 class="title">전국 중기 날씨 (3일 후)</h3>
+        <div id="map">
+            <ul class="weaList">
+                <!--li class="city0">
+                    <i class="sp-weather"></i>
+                    <div class="text">
+                        <span class="name">서울</span>
+                        <span class="tem"><i class="low">24</i>/<i class="high">34</i></span>
+                    </div>
+                </li-->
+            </ul>
+            <div id="date"></div>
+        </div>
+            
+        <!-- 3일 후 ~ 6일 후 날씨-->
+        <div class="weatherAll">
+            <h3 class="title">지역별 중기 날씨 (3일 후~10일 후)</h3>
+            <!--ul class="list">
+                <li style="width: 100px; text-align:center;">
+                    <p class="weatherDate">8/19</p>
+                    <i class="sp-weather">구름 조금</i>
+                    <div class="text">
+                        <span class="name">서울</span>
+                        <span class="tem"><i class="low">24</i>/<i class="high">34</i></span>
+                    </div>
+                </li>
+            </ul-->
+        </div>
+            
+    </section>
+        
+    </div>
+    
+    <script>
+        var GET_DATA_ALL = [];
+        var GET_DATA_KEY = []; //["province", "city", "data"]
+        var GET_DATA_KEY_STEP1 = []; //["province", "city", "data"]
+        var GET_DATA_KEY_STEP2 = []; //["mode", "tmEf", "wf", "tmn", "tmx", "reliability"]
+        var GET_DATA_VAL = [];
+        var GET_DATA_VAL2 = [];
+        
+        $.ajax({
+            url: 'weather.php',
+            dataType: 'xml',
+            success: dataLayer 
+        });
+        
+        function dataLayer(data) {
+            var d = $(data).find('body>location');
+            
+            var getdata = function(a, k) {
+                var la = [];
+                
+                for (var key in a) {
+                    // a[key].tagName = text->undifined, 그외 tag 값 나옴
+                    if (typeof a[key] === 'object' && a[key].tagName) {
+                        if (k) {
+                            if (la.indexOf(a[key].localName) == -1) {
+                                la.push(a[key].localName);
+                                //console.log(la) //= ["key1","key2","key3"]
+                            }
+                        } else {
+                            if (la.indexOf(a[key]) == -1) {
+                                la.push(a[key]);
+                            }
+                        }
+                    }
+                }
+                return la;
+            }
+                        
+            var a = $(data).find('body>location:eq(0)')[0].childNodes
+            
+            GET_DATA_ALL = data;
+            GET_DATA_KEY_BIG = getdata($(data).find('body>location')[0].childNodes, true);
+            // [province, city, data] 태그(key) 추출
+            GET_DATA_KEY_DATA = getdata($(data).find('body>location>data')[0].childNodes, true);
+            // data 태그(key) 추출
+            
+            d.each(function(idx){
+                for (var n = 0; n < 13; n++){ // 3일치 0,2,4,6,8,10,12만 추출
+                    if(n % 2 == 0 ){
+                        var t = $(this).find('>data')[n].childNodes;
+                        var pro = $(this).find(GET_DATA_KEY_BIG[0]).text();
+                        var city = $(this).find(GET_DATA_KEY_BIG[1]).text();
+                        var ob = {}; // 객체로 만듬
+                        var fn = getdata(t, false);
+                        console.log(GET_DATA_KEY_BIG[0])
+                        
+                        for (var i = 0; i < fn.length; i++){
+                            ob[GET_DATA_KEY_BIG[0]] = pro; //객체
+                            ob[GET_DATA_KEY_BIG[1]] = city; //객체
+                            ob[GET_DATA_KEY_DATA[i]] = $(fn[i]).text(); //문자이기 때문에 text로 입력
+                            // (GET_DATA_DATA[i] = key값) + ($(fn[i]).text() = value);
+                        }
+                        
+                        if(n == 0) {
+                            GET_DATA_VAL.push(ob);
+                        }
+                        
+                        GET_DATA_VAL2.push(ob);
+                    }
+                }
+            });
+            
+            // key값 추출
+            for (var key in GET_DATA_VAL[0]) { // [0] 현재 날짜 00:00 기준
+                GET_DATA_KEY.push(key); // GET_DATA_VAL 에서 key만 추출
+            }
+            
+            console.warn('* GET_DATA ==================== /////////// : S');
+            console.log(GET_DATA_ALL);
+            console.log(GET_DATA_KEY); // key값
+            console.log(GET_DATA_KEY_BIG);
+            console.log(GET_DATA_KEY_DATA);
+            console.log(GET_DATA_VAL);
+            console.warn('* GET_DATA ==================== /////////// : E');
+            
+            // 현재 날짜
+            var date = new Date();
+            var addDay = date.getDate() + 3;
+            date.setDate(addDay);
+            
+            var localeDate = date.toLocaleDateString();
+            
+            $('#date').html(localeDate + ' 기준');
+            
+            // data 기록
+            var city = [], // 도시명
+                wdate = [], // 날짜
+                wt = [], // 날씨
+                tLow = [], // 최저온도
+                tHigh = []; // 최고온도
+            
+            var removeIdx = [2,3,5,8,9,14,15,18,20,21,23]; // 배열제외번호
+            
+            // 공통 데이터 클로져 생성하기
+            function dataSelect(el, i, format) { 
+               if(format == 'format'){
+                   city = [];
+                   wdate  = [];
+                   wt = [];
+                   tLow = [];
+                   tHigh = [];
+                   
+                   return false;
+               }
+                var val = el[i];
+                var weather = '';
+                var weatherVal = val[GET_DATA_KEY[4]];
+                
+                if(weatherVal.indexOf("구름조금") >= 0) {
+                    weather = 'cloud';
+                } else if(weatherVal.indexOf("구름많음") >= 0){
+                    weather = 'cloudMany';
+                } else if(weatherVal.indexOf("구름많고 비") >= 0){
+                    weather = 'cloudRain';
+                } else if(weatherVal.indexOf("구름많고 눈") >= 0){
+                    weather = 'cloudSnow';
+                } else if(weatherVal.indexOf("구름많고 비/눈") >= 0 || weatherVal.indexOf("구름많고 눈/비") >= 0){
+                    weather = 'cloudRainSnow';
+                } else if(weatherVal.indexOf("흐림") >= 0){
+                    weather = 'overcloud';
+                } else if(weatherVal.indexOf("흐리고 비") >= 0){
+                    weather = 'overcloudRain';
+                } else if(weatherVal.indexOf("흐리고 비/눈") >= 0 || weatherVal.indexOf("흐리고 눈/비") >= 0){
+                    weather = 'overcloudRainSnow';
+                } else if(weatherVal.indexOf("흐리고 눈") >= 0){
+                    weather = 'overcloudSnow';
+                } 
+                
+                city.push(val[GET_DATA_KEY[1]]);
+                wdate.push(val[GET_DATA_KEY[3]]);
+                wt.push(weather); // weatherVal이 아닌 클래스 치환이 들어가야하므로 weather이 들어가야함
+                tLow.push(val[GET_DATA_KEY[5]]);
+                tHigh.push(val[GET_DATA_KEY[6]]);
+            }
+            
+            // 지도에 뿌려주는 3일뒤 날씨
+            for (var i = 0; i < GET_DATA_VAL.length; i++){ // i < 24
+                dataSelect(GET_DATA_VAL, i);
+                                
+                var weaList = '<li class="city'+ i + '" data-idx="'+ i + '">'
+                    weaList += '<i class="sp-weather '+ wt[i] + '"></i>'
+                    weaList += '<div class="text">'
+                    weaList += '<span class="name">'+ city[i] +'</span>'
+                    weaList += '<span class="tem"><i class="low">'+ tLow[i] +'</i>/'
+                    weaList += '<i class="high">'+ tHigh[i] +'</i></span>'
+                    weaList += '</div></li>'
+                
+                if(removeIdx.indexOf(i) < 0 ) {
+                    //console.log('배열제외번호' + i)
+                    $('.weaList').append(weaList);
+                }
+            }
+            
+            dataSelect(0,0,'format'); // dataSelect 배열 초기화
+            
+            // 3일~6일뒤 날씨 리스트
+            var weaList2 = '<ul class="list">'
+            
+            for (var i = 0; i < GET_DATA_VAL2.length; i++){
+                dataSelect(GET_DATA_VAL2, i);
+                
+                if(i > 0 && i % 7 == 0){
+                    weaList2 += '</ul><ul class="list">';
+                    //console.log(i);
+                }
+                
+                weaList2 += '<li class="city'+ i + '" data-idx="'+ i + '">'
+                weaList2 += '<p class="weatherDate">' + wdate[i] + '</p>'
+                weaList2 += '<i class="sp-weather '+ wt[i] + '"></i>'
+                weaList2 += '<div class="text">'
+                weaList2 += '<span class="name">'+ city[i] +'</span>'
+                weaList2 += '<span class="tem"><i class="low">'+ tLow[i] +'</i>/'
+                weaList2 += '<i class="high">'+ tHigh[i] +'</i></span>'
+                weaList2 += '</div></li>'
+            }
+            weaList2 += '</ul>';
+            
+            $('.weatherAll').append(weaList2);
+        }
+        
+    </script>
+    
+</body>
+
+</html>

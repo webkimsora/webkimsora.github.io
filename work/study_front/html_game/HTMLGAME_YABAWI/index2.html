@@ -1,0 +1,281 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>HTMLGAME</title>
+    <script src="./js/jquery-1.9.1.min.js"></script>
+    <script src="./js/jquery.path.js"></script>
+    <script src="./js/jquery.easing.1.3.js"></script>
+    <script src="./js/jquery.transform.js"></script>
+    <style>
+    *{margin: 0; padding: 0; border: none; box-sizing: border-box;}
+    .tn{float: left; height: 100px; text-align: center; width: 33.33%; position: relative;}
+    .tn .coin{height: 100px; width: 100px; border: 20px solid #aaa; background: #ccc; display: inline-block; position: relative; border-radius: 50%;}
+    /* .tn:nth-child(1) .coin{background: blue;}
+    .tn:nth-child(2) .coin{background: black;}
+    .tn:nth-child(3) .coin{background: green;}
+    .tn:nth-child(4) .coin{background: red;} */
+    /* .tn .succ{position: absolute; left: 0; bottom:100%;; width: 100%; height: 100%; background: gold; top: 0; border-radius: 50%;} */
+    .tn .succ:after{content: ''; position: absolute; width: 100%; text-align: center; color: #000; font-weight: bold; font-size: 12px; left: 0;}
+    .tit{font-size: 30px; text-align: center; margin-top: 250px; margin-bottom: 100px;}
+    button{padding: 20px 30px;}
+    </style>
+</head>
+
+<body>
+    <div class="tit">타이머중....</div>
+    <div class="tn_wrap tnWrap"> </div>
+    <button onclick="HTML_GAME_TYPE5.restore();">restart</button>
+    <button onclick="HTML_GAME_TYPE5.fnStopGame();">stop</button>
+    <div class="text" style="height: 13px; width: 10px; background: red; display: inline-block; position: relative;"></div>
+    <canvas id="canvas"></canvas>
+</body>
+<script>
+    (function() {
+        /*var durations = 1000;
+        var y = 1;
+        var dy = 1;
+        var vy = .1;
+        var x = 1;
+        var dx = 1;
+        var vx = .1;
+        var topm = 500;
+        var leftm = 500;
+        var loop = setInterval(function() {
+            if (y > topm || y <= 0) {
+                vy = vy*-1;
+            }
+            dy = y * vy;
+            if(x < leftm){
+                x+=5;
+            }
+            $('.text').css({
+                'left' : x,
+                'top': y
+            });
+            y += dy;
+        }, 10);
+        
+        setTimeout(function() {
+            //clearInterval(loop);
+
+        }, durations);*/
+
+    })();;
+    (function($) {
+        var options = {
+            leng: 3,
+            level: 1.5,
+            life: 3,
+            successIndex: 0,
+            limitTimer: 10000,
+            moveBeforeCallback: null,
+            moveAfterCallback: null,
+            animation: true,
+            title: ['타이머중....', '선택해주세요.'],
+        };
+        var Yabawi = function(obj, selector) {
+            this.el = selector;
+            this.obj = $.extend(options, obj);
+            this.o = {
+                items: [],
+                coinCountIdx: 0,
+                coinPosition: [],
+                coinClsName: '.tn',
+                animationOptions: {
+                    dy: 1,
+                    vy: 1,
+                    gravity: 0.01,
+                    maxtop: 150,
+                }
+            };
+            this.anicallobj = {
+                'duration': 300,
+                'easing': 'swing',
+                'step': function(a, z) {},
+                'complete': function() {}
+            };
+            this.initCoinPosition = [];
+            this.timer = 1000 / this.obj.level;
+            this.loop = null;
+            this.RESULT_SUCC = 0;
+            this.RESULT_FAIL = 0;
+            this.successIndex = this.obj.successIndex;
+            this.beforeCallback = function() {};
+            this.afterCallback = function() {};
+            this.init();
+        };
+        Yabawi.prototype = {
+            init: function() {
+                var _this = this;
+                this.set();
+                this.get();
+                this.fnSetInterval();
+                setTimeout(function() {
+                    _this.fnStopGame();
+                }, this.obj.limitTimer);
+            },
+            set: function() {
+                var _this = this;
+                var html = '';
+                var c = this.random(0, this.obj.leng, 0, 'floor');
+                var comp = c < 1 ? 0 : c;
+                var comp = this.successIndex ? this.successIndex : comp;
+                for (var i = 0; i < this.obj.leng; i++) {
+                    _this.o.items.push({
+                        target: $(this),
+                        idx: i
+                    });
+                    _this.o.coinCountIdx++;
+                    html += '<div style="width: ' + 100 / this.obj.leng + '%;" class="' + _this.clsformat(_this.o.coinClsName) + ' ' + _this.clsformat(_this.o.coinClsName) + '' + i + '" >';
+                    if (comp == i) {
+                        html += '<span class="coin"><span class="succ"></span></span>';
+                    } else {
+                        html += '<span class="coin"></span>';
+                    }
+                    html += '</div>';
+                }
+                $(_this.el).html(html);
+                this.successIndex = comp;
+            },
+            get: function() {
+                var _this = this;
+                $(this.el).find(this.o.coinClsName).each(function(idx) {
+                    _this.o.coinPosition.push($(this)[0].offsetLeft);
+                    _this.initCoinPosition.push($(this)[0].offsetLeft);
+                });
+            },
+            fnSetInterval: function() {
+                var _this = this;
+                var c = 0;
+                var en = 0;
+                $('.tit').text(this.obj.title[0]);
+                clearInterval(_this.loop);
+                _this.loop = setInterval(function() {
+                    en++;
+                    if (en >= _this.o.coinCountIdx) {
+                        en = 0;
+                    }
+                    _this.fnCoinMove({
+                        remove_num: c,
+                        crtpos: _this.o.coinPosition,
+                        timer: 1000 / _this.obj.level
+                    });
+                    c = en;
+                }, this.timer);
+            },
+            fnCoinMove: function(o) {
+                var _this = this;
+                var o = o;
+                var ti = this.random(0, this.o.coinCountIdx, o.remove_num, 'floor');
+                var ary = this.shuffle(o.crtpos);
+                var lft = 0;
+                var tp = 0;
+
+                for (var i = 0; i < ary.length; i++) {
+                    lft = ary[i] - _this.initCoinPosition[i];
+                    abslft = Math.abs(lft);
+                    if (_this.obj.animation) {
+                        $(this.o.coinClsName + ':eq(' + i + ')').stop().animate({
+                            'left': lft,
+                        }, this.anicallb({
+                            duration: this.timer,
+                        }));
+
+                    } else {
+                        $(this.o.coinClsName + ':eq(' + i + ')').stop().animate({
+                            'left': lft
+                        }, this.anicallb());
+                    }
+                }
+            },
+            fnCoinMoveAntType: function(left, $this) {},
+            fnStopGame: function() {
+                clearInterval(this.loop);
+                this.fnFinishBind();
+                $('.tit').text(this.obj.title[1]);
+                /* 끝난 시점 의 리턴값 선언하기*/
+            },
+            fnFinishBind: function() {
+                var _this = this;
+                var nbool = true;
+                $(this.o.coinClsName).off().on('click', function(e) {
+                    var $this = $(this);
+                    var $idx = $this.index();
+                    if (nbool) {
+                        _this.fnFinishGame($idx);
+                    }
+                });
+            },
+            fnFinishGame: function($idx) {
+                if ($idx == this.successIndex) {
+                    alert('정답');
+                } else {
+                    this.obj.life--;
+                    if (this.obj.life) {
+                        alert('틀림\n' + this.obj.life + '번 남았습니다.');
+                    } else {
+                        var confr = confirm('틀림\n게임다시하기?');
+                        if (confr) {
+                            this.restore();
+                        } else {
+                            nbool = false;
+                        }
+                    }
+                }
+            },
+            restore: function() {
+                var _this = this;
+                this.fnSetInterval();
+                setTimeout(function() {
+                    _this.fnStopGame();
+                }, this.obj.limitTimer);
+            },
+            anicallb: function(ob) {
+                return $.extend(false, this.anicallobj, ob);
+            },
+            clsformat: function(str) {
+                return str.replace('.', '');
+            },
+            shuffle: function(a) {
+                var va = a;
+                var j, x, i;
+                for (i = a.length - 1; i > 0; i--) {
+                    j = Math.floor(Math.random() * (i + 1));
+                    x = va[i];
+                    va[i] = va[j];
+                    va[j] = x;
+                }
+                return va;
+            },
+            random: function(min, max, remove_num, math) {
+                var num = Math.random() * (max - min) + min
+                var rnum = 0;
+                if (math) {
+                    switch (math) {
+                        case 'floor':
+                            rnum = Math.floor(num);
+                            break;
+                        case 'round':
+                            rnum = Math.round(num);
+                            break;
+                        case 'ceil':
+                            rnum = Math.ceil(num);
+                            break;
+                    }
+                }
+                if (remove_num && num == remove_num) {
+                    this.random(min, max, remove_num, math);
+                } else {
+                    return rnum ? rnum : num;
+                }
+            }
+        };
+        window.HTML_GAME_TYPE5 = new Yabawi({}, '.tnWrap');
+        console.log(HTML_GAME_TYPE5);
+    })(jQuery);
+</script>
+
+</html>

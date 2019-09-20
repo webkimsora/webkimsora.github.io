@@ -1,0 +1,73 @@
+@charset "utf-8";
+
+/* Font Link Noto */
+
+@font-face { font-family: 'Noto Sans KR'; font-style: normal; font-weight: 300; src:local(※), url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.woff2) format("woff2"), url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.woff) format("woff"), url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.otf) format("opentype"); }
+@font-face { font-family: 'Noto Sans KR'; font-style: normal; font-weight: 400; src:local(※), url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff2) format("woff2"), url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff) format("woff"), url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.otf) format("opentype"); }
+@font-face { font-family: 'Noto Sans KR'; font-style: normal; font-weight: 500; src:local(※), url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff2) format("woff2"), url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff) format("woff"), url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.otf) format("opentype"); }
+@font-face { font-family: 'Noto Sans KR'; font-style: normal; font-weight: 700; src:local(※), url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff2) format("woff2"), url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff) format("woff"), url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.otf) format("opentype"); }
+@font-face { font-family: 'Noto Sans KR'; font-style: normal; font-weight: 900; src:local(※), url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.woff2) format("woff2"), url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.woff) format("woff"), url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.otf) format("opentype"); }
+
+
+/* Font File 
+@font-face {
+    font-family:ng;
+    src: url('./font/NanumGothic.eot');
+   src: local('NanumGothic'), url('./font/NanumGothic.eot#iefix') format('embedded-opentype'), url('./font/NanumGothic.woff') format('woff'), url('./font/NanumGothic.ttf') format('truetype');
+}
+
+@font-face {
+    font-family:ngb;
+    src: url('./font/NanumGothicBold.eot');
+   src: local('NanumGothicBold'), url('./font/NanumGothicBold.eot#iefix') format('embedded-opentype'), url('./font/NanumGothicBold.woff') format('woff'), url('./font/NanumGothicBold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family:nge;
+    src: url('./font/NanumGothicExtraBold.eot');
+   src: local('NanumGothicExtraBold'), url('./font/NanumGothicExtraBold.eot#iefix') format('embedded-opentype'), url('./font/NanumGothicExtraBold.woff') format('woff'), url('./font/NanumGothicExtraBold.ttf') format('truetype');
+}
+
+*/
+
+
+/* Font Link Google
+
+@font-face {
+  font-family: ng;
+  font-style: normal;
+  font-weight: 400;
+  src: url(//themes.googleusercontent.com/static/fonts/earlyaccess/nanumgothic/v3/NanumGothic-Regular.eot);
+  src: url(//themes.googleusercontent.com/static/fonts/earlyaccess/nanumgothic/v3/NanumGothic-Regular.eot?#iefix) format('embedded-opentype'),
+       url(//themes.googleusercontent.com/static/fonts/earlyaccess/nanumgothic/v3/NanumGothic-Regular.woff2) format('x-woff2'),
+       url(//themes.googleusercontent.com/static/fonts/earlyaccess/nanumgothic/v3/NanumGothic-Regular.woff) format('woff'),
+       url(//themes.googleusercontent.com/static/fonts/earlyaccess/nanumgothic/v3/NanumGothic-Regular.ttf) format('truetype');
+}
+
+
+@font-face {
+  font-family: ngb;
+  font-style: normal;
+  font-weight: 700;
+  src: url(//themes.googleusercontent.com/static/fonts/earlyaccess/nanumgothic/v3/NanumGothic-Bold.eot);
+  src: url(//themes.googleusercontent.com/static/fonts/earlyaccess/nanumgothic/v3/NanumGothic-Bold.eot?#iefix) format('embedded-opentype'),
+       url(//themes.googleusercontent.com/static/fonts/earlyaccess/nanumgothic/v3/NanumGothic-Bold.woff2) format('x-woff2'),
+       url(//themes.googleusercontent.com/static/fonts/earlyaccess/nanumgothic/v3/NanumGothic-Bold.woff) format('woff'),
+       url(//themes.googleusercontent.com/static/fonts/earlyaccess/nanumgothic/v3/NanumGothic-Bold.ttf) format('truetype');
+}
+
+
+@font-face {
+  font-family: nge;
+  font-style: normal;
+  font-weight: 400;
+  src: url(//themes.googleusercontent.com/static/fonts/earlyaccess/nanumgothic/v3/NanumGothic-ExtraBold.eot);
+  src: url(//themes.googleusercontent.com/static/fonts/earlyaccess/nanumgothic/v3/NanumGothic-ExtraBold.eot?#iefix) format('embedded-opentype'),
+       url(//themes.googleusercontent.com/static/fonts/earlyaccess/nanumgothic/v3/NanumGothic-ExtraBold.woff2) format('x-woff2'),
+       url(//themes.googleusercontent.com/static/fonts/earlyaccess/nanumgothic/v3/NanumGothic-ExtraBold.woff) format('woff'),
+       url(//themes.googleusercontent.com/static/fonts/earlyaccess/nanumgothic/v3/NanumGothic-ExtraBold.ttf) format('truetype');
+}
+
+
+
+*/

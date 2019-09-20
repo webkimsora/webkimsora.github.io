@@ -1,0 +1,133 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title>TWEENMAX-TWEENLITE</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<!--link rel="stylesheet" href="./css/style.css"-->
+	<link rel="stylesheet" href="../css/common.css?v=01">
+	<link rel="stylesheet" href="../css/main.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:800" rel="stylesheet">
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+	<script type="text/javascript" src="../js/jquery-1.11.3.min.js"></script>
+
+	<style>
+		.demo {
+			background-color: black;
+			width: 600px;
+			height: 250px;
+			overflow: hidden;
+			position: relative;
+
+		}
+
+		.bubble {
+			border-radius: 50%;
+			position: absolute;
+		}
+
+		.smallBubble {
+			width: 20px;
+			height: 20px;
+			background-color: #7ADD20;
+		}
+
+		.mediumBubble {
+			width: 30px;
+			height: 30px;
+			background-color: #7ADD20;
+		}
+
+		.largeBubble {
+			width: 40px;
+			height: 40px;
+			background-color: #7ADD20;
+		}
+	</style>
+</head>
+
+<body>
+	<main id="viewport">
+		<link href='//fonts.googleapis.com/css?family=Signika+Negative:300,400' rel='stylesheet' type='text/css'>
+
+		<div class="wrapper">
+			<!-- <h1>Tween a tween! Huh?</h2> -->
+			<h2>Tween the timeScale() of a timeline</h2>
+
+			<p>By tweening the timeScale() of the particles timeline we can progressively speed up and slow down the entire animation with a single tween.</p>
+
+			<div class="nav">
+				<button id="slow">slow: timeScale(0.1)</button>
+				<button id="normal">normal: timeScale(1)</button>
+				<button id="fast">fast: timeScale(4)</button>
+			</div>
+			<div class="demo" id="bubbleContainer">
+			</div>
+
+		</div>
+	</main>
+
+	<script>
+		var sizes = ["small", "medium", "large"],
+			bubbleContainer = document.getElementById("bubbleContainer"),
+			slowBtn = document.getElementById("slow"),
+			normalBtn = document.getElementById("normal"),
+			fastBtn = document.getElementById("fast"),
+			startY = 250,
+			endY = -50;
+
+		//build the timeline
+
+		var particles = new TimelineMax();
+		
+		function randomNumber(min, max) { // 정수 및 0또는 1만 반환
+			return Math.floor(Math.random() * (1 + max - min) + min);
+		}
+		
+		for (var i = 0; i < 50; i++) {
+			var sizeIndex = randomNumber(0, 2); //get random number between 0 and 2
+			var size = sizes[sizeIndex]; //get random size
+			var speed = (3 - sizeIndex) //larger faster
+			var bubble = $('<div class="bubble ' + size + 'Bubble"/>').appendTo(bubbleContainer); //create a bubble
+			particles.set(bubble, {
+				y: startY,
+				x: 300 // 중간인 300으로 가운데설정
+			}, 0) // place it at the bottom
+
+			//create an animation at a random start time
+			particles.to(bubble, speed, {
+				y: endY,
+				x: randomNumber(0, 600), // x위치 랜덤으로 뿌려줌
+				repeatDelay: Math.random() * 5,
+				repeat: 500
+			}, Math.random() * 2)
+		}
+
+		// control the timeScale() of the timeline
+
+		normal.onclick = function() {
+			TweenLite.to(particles, 2, {
+				timeScale: 1,
+				ease: Linear.easeNone
+			}); // normal speed
+		}
+
+		slow.onclick = function() {
+			TweenLite.to(particles, 2, {
+				timeScale: 0.1,
+				ease: Linear.easeNone
+			}); // 1/10th normal speed
+		}
+
+		fast.onclick = function() {
+			TweenLite.to(particles, 2, {
+				timeScale: 4,
+				ease: Linear.easeNone
+			}); // 4 times as fast
+		}
+	</script>
+</body>
+
+</html>

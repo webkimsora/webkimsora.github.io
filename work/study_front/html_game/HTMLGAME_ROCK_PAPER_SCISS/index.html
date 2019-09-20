@@ -1,0 +1,299 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>HTMLGAME</title>
+    <script src="./js/jquery-1.11.3.min.js"></script>
+    <script src="./js/jquery.easing.1.3.js"></script>
+    <script src="./js/jquery.transform.js"></script>
+    <style>
+        *{margin: 0; padding: 0; border: none;}
+        .wrap{max-width: 700px; margin: 50px auto 0;}
+        .tnWrap{text-align: center; position: relative;}
+        .rps_tit{font-size: 50px; font-weight: bold; text-align: center;}
+        .rpsTit{text-indent: -999em; width: 190px; height: 230px; background: url(./images/sample.png) no-repeat; display: inline-block;}
+        .rpsTit[data-match-target="0"]{background-position: left top;}
+        .rpsTit[data-match-target="1"]{background-position: -268px top;}
+        .rpsTit[data-match-target="2"]{background-position: -528px top;}
+        .tnc1,.tnc2,.tnc3{border: none; width: 200px; height: 200px; border-radius: 50%; border: 10px solid; background: #fff no-repeat center center; background-size: auto 100px; text-indent: -999em; cursor: pointer;}
+        .tnc1{border-color: #f7941d; background-image: url(./images/s1.png);}
+        .tnc2{border-color: #d8df20; background-image: url(./images/s2.png);}
+        .tnc3{border-color: #00adef; background-image: url(./images/s3.png);}
+        .score{position: absolute; right: 0; top: 0;}
+        .score>div{width: 40px; border-radius: 5px; overflow: hidden; text-align: left; font-size: 14px; position: relative; border: 1px solid #ddd; padding-left: 60px; padding-right: 10px;}
+        .score>div+div{margin-top: 2px;}
+        .score i{font-style: normal; width: 50px; line-height: 40px; position: absolute; left: 0; top: 0; background: #eee; color: #000; border-right: 1px solid #ddd; font-weight: bold; text-align: center; display: inline-block; }
+        .score span{display: block; text-align: right; line-height: 40px; font-weight: bold;}
+        .btn_wrap{text-align: center; margin-top: 50px;}
+        .btn_wrap button{padding: 20px 30px; cursor: pointer;}
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="tnWrap">
+            <div style="margin-bottom: 50px;">
+                <div class="rps_tit rpsTit">1</div>
+            </div>
+            <button class="tnc1">가위</button>
+            <button class="tnc2">바위</button>
+            <button class="tnc3">보자기</button>
+
+            <div class="score">
+                <div class="score1"><i>기회</i> <span>0</span></div>
+                <div class="score2"><i>맞춤</i> <span>0</span></div>
+                <div class="score3"><i>비김</i> <span>0</span></div>
+                <div class="score4"><i>졌음</i> <span>0</span></div>
+            </div>
+            <div class="btn_wrap">
+                <button class="htmlGamePackFun" data-type="1">무조건당첨</button>
+                <button class="htmlGamePackFun" data-type="2">무조건실패</button>
+                <button class="htmlGamePackFun" data-type="3">랜덤</button>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    ;
+    (function($) {
+        var options = {
+            leng: 3,
+            level: 5,
+            life: 10,
+            mode: 3,
+            keycode: false, //[65, 83, 68], //가위 a , 바위 s, 보 d
+            button: null, //배열타입으로 전송 ['.button1','.button2']
+            match: false, //가위바위보가 아닌, 단순히 매칭시키게임일때, 
+        };
+        var RockPaperSciss = function(obj, selector) {
+            this.el = selector;
+            this.obj = $.extend(options, obj);
+            this.o = {
+                looparry: [],
+                loopNumber: 0,
+                success: 0,
+                successarry: [],
+                drawarry: [],
+                failarry: [],
+                modetimer: 10,
+            };
+            this.anicallobj = {
+                'duration': 300,
+                'easing': 'swing',
+                'step': function(a, z) {},
+                'complete': function() {}
+            };
+            this.loop = null;
+            this.RESULT_SUCC = 0;
+            this.RESULT_DRAW = 0;
+            this.RESULT_FAIL = 0;
+            this.beforeCallback = function() {};
+            this.afterCallback = function() {};
+            this.init();
+        };
+        RockPaperSciss.prototype = {
+            init: function() {
+                var _this = this;
+                this.set();
+                this.fnSetInterval();
+                this.bind();
+            },
+            set: function() {
+                var c = this.o.loopNumber;
+                for (var i = c; i < this.obj.leng; i++) {
+                    this.o.looparry.push(i);
+                    if (!this.obj.button) {
+                        $(this.el).append('<button data-match-idx="' + i + '">버튼' + i + '</button>');
+                    } else {
+                        if (this.obj.button.length == this.obj.leng) {
+                            $(this.obj.button[i]).attr('data-match-idx', i);
+                        } else {
+                            console.warn('버튼갯수와 구분갯수가 맞지않습니다.');
+                        }
+                    }
+                }
+                this.fnInnerHtml(this.obj.life, this.o.successarry.length, this.o.drawarry.length, this.o.failarry.length);
+            },
+            fnSetInterval: function() {
+                var _this = this;
+                clearInterval(this.loop);
+                this.loop = setInterval(function() {
+                    _this.fnSplit();
+                }, 500 / this.obj.level);
+            },
+            fnSplit: function() {
+                if (this.o.loopNumber >= this.obj.leng) {
+                    this.o.loopNumber = 0;
+                }
+                this.o.success = this.o.loopNumber;
+                $('.rpsTit').attr('data-match-target', this.o.loopNumber).text(this.o.loopNumber);
+                this.o.loopNumber++;
+            },
+            fnClearInterval: function() {
+                clearInterval(this.loop);
+                $('[data-match-idx]').off('click');
+                if (this.obj.keycode) {
+                    $(this.el).off('keydown');
+                }
+            },
+            fnRestore: function() {
+                this.fnSetInterval();
+                this.bind();
+            },
+            bind: function() {
+                var _this = this;
+                if (_this.obj.keycode) {
+                    $(document).off().on('keydown', function(e) {
+                        for (var i = 0; i < _this.obj.keycode.length; i++) {
+                            if (e.keyCode == _this.obj.keycode[i]) {
+                                _this.fnMode(i);
+                                _this.fnSeccGubun(i, _this.o.success);
+                            }
+                        }
+                    });
+                }
+                $('[data-match-idx]').off().on({
+                    'click': function() {
+                        var $this = $(this);
+                        var $data = $this.data('matchIdx');
+                        _this.fnMode($data);
+                        _this.fnSeccGubun($data, _this.o.success);
+                        return false;
+                    }
+                });
+            },
+            fnMode: function($data) {
+                var _this = this;
+                var n = 0;
+                if (_this.obj.mode == 1) { //무조건 성공
+                    switch ($data) {
+                        case 0:
+                            n = 2;
+                            break;
+                        case 1:
+                            n = 0;
+                            break;
+                        case 2:
+                            n = 1;
+                            break;
+                    }
+                } else if (_this.obj.mode == 2) {
+                    switch ($data) {
+                        case 0:
+                            n = 1;
+                            break;
+                        case 1:
+                            n = 2;
+                            break;
+                        case 2:
+                            n = 0;
+                            break;
+                    }
+                }
+                if (_this.obj.mode != 3) {
+                    _this.o.success = n;
+                    _this.o.loopNumber = n;
+                    $('.rpsTit').attr('data-match-target', _this.o.loopNumber).text(_this.o.loopNumber);
+                }
+            },
+            fnSeccCallback: function(bool, msg) {
+                /*
+                 * @parameter bool = 1,2,3
+                 * @parameter true : 정답
+                 * @parameter false : 오답
+                 * @parameter !boolean : 비김
+                 */
+                if (typeof bool !== 'boolean') {
+                    this.fnMsg(true, '비김');
+                    return;
+                }
+                this.obj.life--;
+                if (bool) {
+                    this.fnMsg(true, '맞춤');
+                    if (!this.obj.life) {
+                        this.fnClearInterval();
+                    }
+                    //this.fnRestore();
+                } else {
+                    if (!this.obj.life) {
+                        if (this.o.successarry.length) { //하나라도 맞추고 게임끝
+                            this.fnMsg(true, '하나라도 맞추고 게임끝');
+                        } else { //하나도 못 맞추고 게임끝
+                            this.fnMsg(false, '하나도 못 맞추고 게임끝');
+                        }
+                        this.fnClearInterval();
+                    } else {
+                        this.fnMsg(false, this.obj.life + '번 기회 남음');
+                    }
+                }
+            },
+            fnInnerHtml: function(life, successlength, drawlength, faillength) {
+                $('.score1 span').text(life);
+                $('.score2 span').text(successlength ? successlength : 0);
+                $('.score3 span').text(drawlength ? drawlength : 0);
+                $('.score4 span').text(faillength ? faillength : 0);
+                this.RESULT_SUCC = successlength;
+                this.RESULT_DRAW = drawlength;
+                this.RESULT_FAIL = faillength;
+            },
+            fnSeccGubun: function(i1, i2) {
+                //i1 == 내가 낸거
+                //i2 == 상대방이 낸거
+                if (this.obj.match) {
+                    if (i1 == i2) {
+                        this.fnSeccCallback(true);
+                    } else {
+                        this.fnSeccCallback(false);
+                    }
+                } else {
+                    var i3 = i1 + ',' + i2;
+                    switch (i3) {
+                        case '0,1': //가위 , 바위
+                        case '1,2': //바위 , 보자기
+                        case '2,0': //보자기 , 가위
+                            this.o.failarry.push(i1);
+                            this.fnSeccCallback(false);
+                            break;
+                        case '0,2': //가위 , 보자기
+                        case '1,0': //바위 , 가위
+                        case '2,1': //보자기, 바위
+                            this.o.successarry.push(i1);
+                            this.fnSeccCallback(true);
+                            break;
+                        default:
+                            //비겼을때
+                            this.o.drawarry.push(i1);
+                            this.fnSeccCallback(3);
+                    }
+                }
+            },
+            fnMsg: function(bool, msg) {
+                var _this = this;
+                setTimeout(function() {
+                    if (bool) {
+                        alert(msg);
+                    } else {
+                        alert(msg);
+                    }
+                    _this.fnInnerHtml(_this.obj.life, _this.o.successarry.length, _this.o.drawarry.length, _this.o.failarry.length);
+                }, 0);
+            }
+        };
+        $('.htmlGamePackFun').click(function() {
+            var $this = $(this);
+            window.HTML_GAME_TYPE6 = new RockPaperSciss({
+                level: 3,
+                life: 3,
+                mode: $this.data('type'), //1:무조건 성공 , 2: 무조건 실패, 3: 랜덤
+                button: ['.tnc1', '.tnc2', '.tnc3'],
+            }, '.tnWrap');
+            console.log(HTML_GAME_TYPE6);
+        });
+
+
+    })(jQuery);
+</script>
+
+</html>

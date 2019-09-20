@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <title> search </title>
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <link rel="stylesheet" href="./css/design.plugin.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+    <script src="./js/lib/jquery-1.11.3.min.js"></script>
+    <script src="./js/design.plugin.js"></script>
+    <script src="./js/design.ui.js"></script>
+    <script src="https://openapi.map.naver.com/openapi/v3/maps.js?clientId=sloFZnqv3Hx220NF6JcU&submodules=geocoder"></script>
+    <script src="./js/lib/MarkerClustering.js"></script>
+</head>
+
+<body>
+    <div class="header">
+        <div class="search_area">
+            <form id="search">
+                <input type="hidden" name="DISPALY" value="80" />
+                <input type="hidden" name="START" value="1" />
+                <div class="rdo">
+                    <div class="r_w">
+                        <input type="radio" id="r8" name="TYPE" value="image" checked/>
+                        <label for="r8">이미지</label>
+                    </div>
+                    <div class="r_w">
+                        <input type="radio" id="r9" name="TYPE" value="local" />
+                        <label for="r9">지역</label>
+                    </div>
+                    <div class="r_w">
+                        <input type="radio" id="r7" name="TYPE" value="webkr" disabled/>
+                        <label for="r7">웹문서</label>
+                    </div>
+                    <div class="r_w">
+                        <input type="radio" id="r1" name="TYPE" value="blog" disabled/>
+                        <label for="r1">블로그</label>
+                    </div>
+                    <div class="r_w">
+                        <input type="radio" id="r2" name="TYPE" value="news" disabled/>
+                        <label for="r2">뉴스</label>
+                    </div>
+                    <div class="r_w">
+                        <input type="radio" id="r3" name="TYPE" value="book" disabled/>
+                        <label for="r3">책</label>
+                    </div>
+                    <div class="r_w">
+                        <input type="radio" id="r4" name="TYPE" value="encyc" disabled/>
+                        <label for="r4">백과사전</label>
+                    </div>
+                    <div class="r_w">
+                        <input type="radio" id="r5" name="TYPE" value="cafearticle" disabled/>
+                        <label for="r5">카페글</label>
+                    </div>
+                    <div class="r_w">
+                        <input type="radio" id="r6" name="TYPE" value="kin" disabled/>
+                        <label for="r6">지식인</label>
+                    </div>
+                </div>
+                <div class="tn_fe">
+                    <input type="text" name="KEYWORD" class="tn_input" value="한국" />
+                    <button type="submit" class="sum_btn fa fa-search" title="검색"></button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="container">
+        <div class="contents">
+            <div class="search_wrap searchWrap">
+                <div class="search_tit">총 이미지 : <span class="totalImgLength"></span></div>
+                <div class="search_items schItems"></div>
+                <div id="map"></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var GET_DATA_ALL = null;
+        var GET_DATA_KEY = null;
+        var GET_DATA_ITEMS = null;
+        var GET_DATA_PARSE_ITEMS = [];
+        $(window).scroll(function() {
+            if ($(this).height() + $(this).scrollTop() >= $(document).height()) {
+                var step = Number($('[name="DISPALY"]').val());
+                $('[name="START"]').val(Number($('[name="START"]').val()) + step);
+                ajaxtext();
+            }
+        });
+        $('[name="KEYWORD"]').focus();
+        $('[name="TYPE"]+label').click(function() {
+            if ($(this).closest('.r_w').find('input').is(':disabled') || $(this).closest('.r_w').find('input').val() == 'local') {
+                alert('개발중입니다.');
+                return false;
+            }
+        });
+        $('[type="submit"]').click(function() {
+            $('[name="START"]').val(1);
+            $('.schItems').html('');
+            GET_DATA_PARSE_ITEMS = [];
+            if (!$('[name="KEYWORD"]').val()) {
+                alert('검색어입력해주세요');
+                $('[name="KEYWORD"]').focus();
+                return false;
+            }
+            ajaxtext();
+            return false;
+        }).click();
+
+        function ajaxtext() {
+            $.ajax({
+                url: 'search.php',
+                type: 'POST',
+                data: $("#search").serialize(),
+                success: function(a, b, c) {
+                    var v = JSON.parse(a);
+                    var markup = '';
+                    GET_DATA_ALL = v;
+                    GET_DATA_ITEMS = v.items;
+                    console.warn('/////////////////데이타셋///////////////////');
+                    console.log(GET_DATA_ALL);
+                    console.log(GET_DATA_ITEMS);
+                    console.warn('/////////////////데이타셋///////////////////');
+                    switch ($(this).getParams('TYPE', '', '', '?' + this.data)) {
+                        case 'local':
+                            $('.searchWrap').attr('data-search-type', 'localapi');
+                            UiAppsPackage.localapi.init({
+                                el: '.schItems',
+                                itemclsname: '.imgItem',
+                                maxheight: 200,
+                                data: GET_DATA_ITEMS,
+                                histrotydata: GET_DATA_PARSE_ITEMS,
+                                start: GET_DATA_ALL.start,
+                                layerpop: true,
+                            });
+                            $('body').addClass('scrolllock');
+                            $('#map').css({
+                                'width': '100%',
+                                'height': $(window).height() - $('.header').height()
+                            });
+                            UiAppsPackage.mapAPI.init({
+                                mapid: 'map', //맵들어갈 영역의 ID값
+                                initLatLng: [37.5666805, 126.9784147], //처음 맵로드시 바라보는 위도경도값 현재는 서울로
+                                map: {}, //https://navermaps.github.io/maps.js/ 네이버에서 제공해주는 mapAPI(생성 및 옵션 등등) 선언하는 객체
+                                initMapZoom: 3, //처음 맵로드시 레벨
+                                form: false, //검색영역에 html코드 들어갈 부모요소 클래스명
+                                cluster: true, //맵의 클래서터화 사용 유무 default : false
+                                marker: true, //맵의 마커를 사용 유무 default : false
+                                nullmsg: '미등록', //리스트 혹은 데이타에 값이 없을때 사용할 noresult문구
+                            });
+                            break;
+                        case 'image':
+                            $('body').removeClass('scrolllock');
+                            $('.searchWrap').attr('data-search-type', 'imagesapi');
+                            $('.totalImgLength').text(GET_DATA_ALL.total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ','));
+                            if (Number($('[name="START"]').val()) - Number($('[name="DISPALY"]').val()) < GET_DATA_ALL.total)
+                                for (var i = 0; i < GET_DATA_ITEMS.length; i++) {
+                                    GET_DATA_PARSE_ITEMS.push(GET_DATA_ITEMS[i]);
+                                    markup += '<a href="' + GET_DATA_ITEMS[i].link + '" class="im_it imgItem" data-params-sec="' + (Number($('[name="START"]').val()) + i) + '" data-params-src="' + GET_DATA_ITEMS[i].link +
+                                        '" data-params-height="' +
+                                        GET_DATA_ITEMS[i].sizeheight + '" data-params-width="' + GET_DATA_ITEMS[i].sizewidth + '" data-params-title="' + GET_DATA_ITEMS[i].title + '" style="opacity : 1;">';
+                                    markup += '    <div class="in">';
+                                    markup += '        <div class="img">';
+                                    //markup += '            <img src="' + GET_DATA_ITEMS[i].thumbnail + '" alt="" />';
+                                    markup += '            <img src="' + GET_DATA_ITEMS[i].link + '" onerror="this.src=\'./images/noImg.png\'" alt="" />';
+                                    markup += '        </div>';
+                                    markup += '        <div class="txts">';
+                                    markup += '            <span class="tit">' + GET_DATA_ITEMS[i].title + '</span>';
+                                    markup += '            <span class="size">' + GET_DATA_ITEMS[i].sizewidth + ' X ' + GET_DATA_ITEMS[i].sizeheight + '</span>';
+                                    markup += '        </div>';
+                                    markup += '    </div>';
+                                    markup += '</a>';
+                                }
+                            $('.schItems').append(markup);
+                            /* 마크업 추가 까지만 해주고 그다음 함수호출 */
+                            UiAppsPackage.iamgesapi.init({
+                                el: '.schItems',
+                                itemclsname: '.imgItem',
+                                maxheight: 200,
+                                data: GET_DATA_ITEMS,
+                                histrotydata: GET_DATA_PARSE_ITEMS,
+                                start: GET_DATA_ALL.start,
+                                layerpop: true,
+                            });
+                            break;
+
+                    }
+
+                },
+                error: function(msg) {
+                    console.log(msg);
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>
