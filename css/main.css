@@ -1220,11 +1220,12 @@ body.mobilebody .thumb figure figcaption {background: rgba(0,0,0,0.6);}
 	body.mobilebody .whoWrap {padding-top: 50px;}
 	body.mobilebody .aboutWrap .line {height: 150px !important;}
 	body.mobilebody .shape {display: none;}
+	body.mobilebody .subTitle {font-size: 52px;}
 }
 
 
 @media screen and (max-width: 460px) {
-	.subTitle {font-size: 50px;}
+	.subTitle {font-size: 42px;}
 	.main .title {font-size: 55px;}
 	.mouseWrap p {font-size: 13px;}
 	.main .sideTitle {font-size: 12px;}
@@ -1236,4 +1237,6 @@ body.mobilebody .thumb figure figcaption {background: rgba(0,0,0,0.6);}
 	.hi-icon {margin: 0 10px;}
 	.footer .infor {font-size: 20px;}
 	.gnb .inner .menu-item { font-size: 36px;}
+	
+	body.mobilebody .subTitle {font-size: 45px;}
 }

@@ -107,24 +107,9 @@
 		$(".hamburger").on('click', function(){
 			if($(this).hasClass('is-active')){
 				$(this).removeClass("is-active");
-				$('#menuBg').hide();
 				gnbClose();
-				
-				if($('body').hasClass('mobilebody')){
-	                $('#viewport').css({'top':'',position:'relative'})
-	                $(window).scrollTop(winTop)        
-	            }
 			} else {
 				$(this).addClass("is-active");
-				
-				$('#menuBg').on('touchstart',function(e){
-	                e.preventDefault()
-	            });
-	
-	            if($('body').hasClass('mobilebody')){
-	                winTop = $(window).scrollTop();
-	                $('#viewport').css({'top':-winTop,position:'fixed'})
-	            }
 			}
 		});
 		
