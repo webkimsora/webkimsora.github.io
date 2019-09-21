@@ -1,6 +1,8 @@
 
 ;(function(){
 	$(document).ready(function(){
+		var headerH = $('.header').height();
+		
 		var UserAgent = navigator.userAgent;
 		var UADevice = UserAgent.match(/iPhone|iPod|iPad|Android|Windows CE|BlackBerry|Symbian|Windows Phone|webOS|Opera Mini|Opera Mobi|POLARIS|IEMobile|lgtelecom|nokia|SonyEricsson/i);
 		var UAVendor = UserAgent.match(/LG|SAMSUNG|Samsung/);
@@ -11,10 +13,6 @@
 			var wh = $(window).height();
 			$('.main').height(wh);
 		}
-	
-		$(".hamburger").on('click', function(){
-		   $(this).toggleClass("is-active");
-	   });
 	
 
 		var $thumb = $('.workList').isotope({
@@ -84,18 +82,63 @@
 
 		smartresize.init();
 		
+		// @ gnb
+	   
+		$user = $('.gnbWrap');
+		var winHeight = $(window).height();
+		var userHeight = $('.gnb .inner').height() ;
+		var st = $(this).scrollTop();
+		var winTop = 0;
+
+		$('.hamburger.surface').on('click', function(){
+		$user.addClass('open');
+		winTop = $(window).scrollTop()
+		//$('#viewport').css({'top':winTop,position:'fixed'});
+		});
+	  
+		function gnbClose(){
+			$user.removeClass('open');
+
+			//$('#viewport').css({'top':'',position:'relative'});
+			$(window).scrollTop(winTop);
+			$(".hamburger").removeClass('is-active');
+		};
+	  
+		$(".hamburger").on('click', function(){
+			if($(this).hasClass('is-active')){
+				$(this).removeClass("is-active");
+				$('#menuBg').hide();
+				gnbClose();
+				
+				if($('body').hasClass('mobilebody')){
+	                $('#viewport').css({'top':'',position:'relative'})
+	                $(window).scrollTop(winTop)        
+	            }
+			} else {
+				$(this).addClass("is-active");
+				
+				$('#menuBg').on('touchstart',function(e){
+	                e.preventDefault()
+	            });
+	
+	            if($('body').hasClass('mobilebody')){
+	                winTop = $(window).scrollTop();
+	                $('#viewport').css({'top':-winTop,position:'fixed'})
+	            }
+			}
+		});
 		
-		if($('body').hasClass('sub')){
-			$('.detailSlide').slick({
-				draggable: true,
-				dots: true,
-		        infinite: true,
-		        slidesToShow: 1,
-		        slidesToScroll: 1,
-				autoplay: true,
-				autoplaySpeed: 2000
-		  });
-		}
+		$(".gnbMenu li").click(function() {
+			var scrollPosition = $($(this).attr("data-target")).offset().top;
+			console.log(scrollPosition)
+			gnbClose();
+
+			$('html, body').stop().animate({
+				scrollTop: scrollPosition - headerH
+			}, 500);
+		});
+		
+	  
 		/* work 타임라인 */
 		$.js = function(el) {
 		return $("[data-js=" + el + "]");
@@ -154,6 +197,19 @@
 				$('.btnTop').fadeOut();
 			}
 		});
+		
+		// 서브페이지
+  		if($('body').hasClass('sub')){
+  			$('.detailSlide').slick({
+  				draggable: true,
+  				dots: true,
+  		        infinite: true,
+  		        slidesToShow: 1,
+  		        slidesToScroll: 1,
+  				autoplay: true,
+  				autoplaySpeed: 2000
+  		  });
+  		}
 	})
 
 	$(window).load(function(){
@@ -188,6 +244,9 @@
 			setTimeout(function(){
 				$('body').addClass('on');
 			},500);
+			setTimeout(function(){
+				$('.hamburger.back').addClass('is-active');
+			},2800);
 		} else {
 			if($(document).scrollTop() > 300){
 				setTimeout(function(){
@@ -205,7 +264,27 @@
 	
 	
 	$(window).scroll(function() {
-		var height = $(document).scrollTop();
-		console.log(height);
+		//console.log(winHeight);
+		
+		var winHeight= $(document).scrollTop();
+		
+ 	   $.each($('.page'), function(idx, item) {            
+ 		   var position = ($('.page').eq(idx).offset().top)
+ 		   var positionPar = position;
+ 		   var gnbH = $('.header').height()
+ 		   
+ 		   if(winHeight < ($('.page').eq(0).offset().top) - 300 ) {
+ 			   $('.page').removeClass('active');
+ 		   } else {
+ 			   if(positionPar - 300 <= winHeight) {
+ 					$('.page').removeClass('active');
+ 					$('.page').eq(idx).addClass('active');
+ 			   }
+ 		   }
+ 	   });
+	   
+	   if($('#who').offset().top - 500 <= winHeight) $('#who').addClass('onT');
+	   if($('#work').offset().top - 500 <= winHeight) $('#work').addClass('onT');
+	   
 	});
 }());

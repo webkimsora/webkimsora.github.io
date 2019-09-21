@@ -17,6 +17,35 @@ body {background: #fff; overflow-x: hidden;}
   width: 100px;
 }
 
+/* header */
+.hamburgerWrap .secret{width: 100px; height: 50px; position: absolute; right: 50px; top: 7px; z-index: 1; background: red; display: none;}
+.hamburgerWrap .hamburger.surface.is-active .secret{display: block;}
+	
+#userBg { max-width: 100%; width: 100%; height: 100%; position: fixed; top: 0; z-index: 60; background: rgba(0, 0, 0, 0.7); display: none; }
+
+.gnbWrap { width: 100%; height: 100%; z-index: -1; overflow: hidden; color: #555; }
+
+.gnbWrap.open { z-index: 200; }
+
+.gnbWrap.open .gnb { transform: translate3d(0, 0, 0); -webkit-transform: translate3d(0, 0, 0); -o-transform: translate3d(0, 0, 0); }
+
+.user-close {width: 100px; height: 50px; position: absolute; right: 30px; top: 7px; z-index: 999; display: none;}
+#viewport.gnbOn .user-close {display: block;}
+	
+
+.gnb { height: 100%; overflow-y: auto; -webkit-overflow-scrolling: touch; transform: translate3d(100%, 0, 0); -webkit-transform: translate3d(100%, 0, 0); -o-transform: translate3d(100%, 0, 0); transition-property: all; transition-duration: .5s; background: #000; width: 100%; position: fixed; top: 0; right: 0; }
+.gnb .inner { position: absolute; top: 50%; left: 50%; transform: translate(-55%, -50%); }
+.gnb .inner ul { -webkit-transform: translate3d(0, -20px, 0); transform: translate3d(0, -20px, 0); display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-align: start; -ms-flex-align: start; align-items: flex-start; }
+.gnb .inner .menu-item { -webkit-transition: color 0.45s cubic-bezier(0.475, 0.425, 0, 0.995); transition: color 0.45s cubic-bezier(0.475, 0.425, 0, 0.995); position: relative; -webkit-backface-visibility: hidden; backface-visibility: hidden; font-family: 'Ubuntu', sans-serif; font-weight: 900; font-size: 70px; line-height: 95px; -webkit-transform: scaleX(0.98); transform: scaleX(0.98); -webkit-transform-origin: left; transform-origin: left; letter-spacing: -.01em; }
+.gnb .inner .menu-item .menu-word { display: block; position: relative; z-index: 3; -webkit-transition: all 0.75s cubic-bezier(0.63, 0.03, 0.21, 1); transition: all 0.75s cubic-bezier(0.63, 0.03, 0.21, 1); -webkit-clip-path: inset(0 0 0 0); clip-path: inset(0 0 0 0); clip-path: inset(0 0 0 0); color: #222; }
+.gnb .inner .menu-item .numbering { position: absolute; top: 0; left: 0; pointer-events: none; z-index: 1; opacity: 0; -webkit-transform: translate3d(20px, 0, 0); transform: translate3d(20px, 0, 0); -webkit-transition: all 0.85s cubic-bezier(0.63, 0.03, 0.21, 1); transition: all 0.85s cubic-bezier(0.63, 0.03, 0.21, 1); font-size: 16px; line-height: 95px; letter-spacing: .25em; }
+.gnb .inner .menu-item .numbering::after { content: ''; position: absolute; width: 100%; background-color: #000; display: block; top: 50%; bottom: 0; left: 0; margin-top: 2px; }
+.gnb .inner .menu-item .menu-word { -webkit-clip-path: inset(0 100% 0 0); clip-path: inset(0 100% 0 0); }
+.gnb .inner .grayed { position: absolute; top: 0; left: 0; pointer-events: none; color: #464646; z-index: 1; -webkit-transition: -webkit-transform 0.75s cubic-bezier(0.63, 0.03, 0.21, 1); transition: -webkit-transform 0.75s cubic-bezier(0.63, 0.03, 0.21, 1); transition: transform 0.75s cubic-bezier(0.63, 0.03, 0.21, 1); transition: transform 0.75s cubic-bezier(0.63, 0.03, 0.21, 1), -webkit-transform 0.75s cubic-bezier(0.63, 0.03, 0.21, 1); }
+.gnb .inner .menu-item:hover::before { -webkit-transform: scale(1); transform: scale(1); }
+.gnb .inner .menu-item:hover .menu-word { -webkit-clip-path: inset(0 0 0 0); clip-path: inset(0 0 0 0); color: #fff; }
+.gnb .inner .menu-item:hover .grayed, .gnb .inner .menu-item:hover .menu-word { -webkit-transform: translate3d(70px, 0, 0); transform: translate3d(70px, 0, 0); }
+.gnb .inner .menu-item:hover .numbering { -webkit-transform: translateZ(0); transform: translateZ(0); opacity: 1; }
 /* main */
 	
 .main {height: 100vh; position: relative;}
@@ -238,7 +267,7 @@ body.mobilebody .main {height: 100%;}
 }
 .animated-letter.none {color: transparent;}
 
-.slowly-appear {
+.page.onT .slowly-appear {
   -webkit-animation-name: slowlyAppear;
           animation-name: slowlyAppear;
   -webkit-animation-duration: 1s;
@@ -309,6 +338,16 @@ body.mobilebody .main {height: 100%;}
 .mottoWrap .motto em {font-size: 30px; margin-left: 10px;}
 .whoWrap .text em {font-style: italic; font-weight: bold;}
 .whoWrap .line {width: 2px; height: 0px; position: absolute; top: 190px; left: 75px; background: #000;}
+body.mobilebody .mottoWrap,
+body.mobilebody .historyWrap,
+body.mobilebody .subTitle {transition: transform .6s; transform: translate(0%, 20%);}
+body.mobilebody .mottoWrap {transition-delay: .2s;}
+body.mobilebody .historyWrap {transition-delay: .4s;}
+
+body.mobilebody #who.active .subTitle,
+body.mobilebody #who.active .mottoWrap,
+body.mobilebody #who.active .historyWrap {transform: translate(0%, 0%);}
+
 
 .historyWrap {padding-top: 130px;}
 .historyWrap h3 {padding-top: 30px; padding-bottom: 5px; font-family: 'Ubuntu', sans-serif; font-size: 20px; font-weight: 600;}
@@ -1170,6 +1209,11 @@ body.mobilebody .thumb figure figcaption {background: rgba(0,0,0,0.6);}
 	.skill .category {width: 100%; float: none;}
 	.skill .category h3 {font-size: 25px;}
 	.skill .category:first-child {margin-bottom: 30px;}
+	
+	.gnb .inner .menu-item { line-height: 60px; font-size: 50px; -webkit-transition: none; transition: none; -webkit-transform: none; transform: none; }
+	.gnb .inner .menu-item:hover .grayed, .gnb .inner .menu-item:hover .menu-word { -webkit-transform: none; transform: none; -webkit-clip-path: none; clip-path: none; }
+	.gnb .inner .menu-item .menu-word { -webkit-clip-path: none; clip-path: none; color: #fff; }
+	.gnb .inner .grayed { display: none; }
 
 	body.mobilebody .historyWrap {padding-top: 50px;}
 	body.mobilebody .who .contents {padding-bottom: 115px;}
@@ -1191,4 +1235,5 @@ body.mobilebody .thumb figure figcaption {background: rgba(0,0,0,0.6);}
 	.timeline-carousel__item-inner .year {font-size: 20px; padding: 2px 5px;}
 	.hi-icon {margin: 0 10px;}
 	.footer .infor {font-size: 20px;}
+	.gnb .inner .menu-item { font-size: 36px;}
 }
