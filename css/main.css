@@ -762,7 +762,6 @@ body.mobilebody #who.active .historyWrap {transform: translate(0%, 0%);}
 	padding: 2em;
 	color: #fff;
 	text-transform: uppercase;
-	font-size: 1.25em;
 	background: rgba(0,0,0,0.2);
 	-webkit-backface-visibility: hidden;
 	backface-visibility: hidden;
@@ -806,10 +805,6 @@ body.mobilebody #who.active .historyWrap {transform: translate(0%, 0%);}
 
 .thumb figure .detail {
 	letter-spacing: 1px;
-	font-size: 68.5%;
-}
-.thumb figure .detail {
-	font-size: 12px;
 	padding-top: 10px;
 }
 
@@ -903,7 +898,6 @@ figure.effect-layla .detail {
 	padding: 10px;
 	text-transform: none;
 	opacity: 1;
-	font-size: 15px;
 	font-weight: 600;
 	-webkit-transform: translate3d(0,-10px,0);
 	transform: translate3d(0,-10px,0);
@@ -1237,6 +1231,7 @@ body.mobilebody .thumb figure figcaption {background: rgba(0,0,0,0.6);}
 	.hi-icon {margin: 0 10px;}
 	.footer .infor {font-size: 20px;}
 	.gnb .inner .menu-item { font-size: 36px;}
+	.thumb figure .detail {font-size: 13px;}
 	
 	body.mobilebody .subTitle {font-size: 45px;}
 }
