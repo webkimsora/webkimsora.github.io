@@ -3,35 +3,39 @@
 	<head>
 		<meta charset="utf-8">
 		<title>웹퍼블리셔 김소라 포트폴리오</title>
+		<meta name="description" content="웹퍼블리셔 김소라 포트폴리오입니다. IE10 이상부터 지원가능합니다.">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
-        <meta name="description" content="">
 		<link rel="shortcut icon" href="./images/favicon.png">
 		<link rel="icon" href="./images/favicon.png">
-		
+
 		<link rel="stylesheet" href="./css/common.css?v=04">
 		<link rel="stylesheet" href="./css/slick.css">
+		<link rel="stylesheet" href="./css/font.css?v=04">
+		<link rel="stylesheet" href="./css/header.css?v=04">
 		<link rel="stylesheet" href="./css/main.css?v=04">
 		<link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
-		
+
 		<script type="text/javascript" src="./js/jquery-1.11.3.min.js" ></script>
 		<script type="text/javascript" src="./js/skrollr.min.js"></script>
 		<script type="text/javascript" src="./js/isotope.pkgd.min.js"></script>
 		<script type="text/javascript" src="./js/slick.min.js"></script>
 		<script type="text/javascript" src="./js/main.js?v=04"></script>
-		
+
 		<meta property="og:type" content="website">
-		<meta name="description" content="웹퍼블리셔 김소라 포트폴리오입니다. IE9 이상부터 지원가능합니다.">
 		<meta property="og:title" content="웹퍼블리셔 김소라 포트폴리오" />
 		<meta property="og:image" content="https://webkimsora.github.io/images/shareImg.jpg" />
 		<meta property="og:url" content="https://webkimsora.github.io/" />
-		<meta property="og:site_name" content="웹퍼블리셔 김소라 포트폴리오입니다. IE9 이상부터 지원가능합니다."/>
-		<meta property="og:description" content="웹퍼블리셔 김소라 포트폴리오입니다. IE9 이상부터 지원가능합니다." />
+		<meta property="og:site_name" content="웹퍼블리셔 김소라 포트폴리오입니다. IE10 이상부터 지원가능합니다."/>
+		<meta property="og:description" content="웹퍼블리셔 김소라 포트폴리오입니다. IE10 이상부터 지원가능합니다." />
+		<meta name="keywords" content="퍼블리셔 포트폴리오, 프론트엔드 포트폴리오, 프론트엔드, 퍼블리셔, 포트폴리오">
 
-		<!--[if lte IE 8]>
-        <script src="./assets/js/ie8Polyfill.js"></script>
-        <![endif]-->
+    <!--[if lte IE 9]>
+      <script type="text/javascript">
+          window.location="./error.html";
+      </script>
+    <![endif]-->
 	</head>
-	
+
 	<body>
 		<div id="loader-wrapper" class="">
 			<div id="loader-container">
@@ -56,148 +60,133 @@
 					<a href="/"><i>SORA PORTFOLIO</i></a>
 				</h1>
 				<div class="hamburger surface">
-					  <span class="line"></span>
-			          <span class="line"></span>
-			          <span class="line"></span>
-		        </div>
-				
+				  <span class="line"></span>
+		          <span class="line"></span>
+		          <span class="line"></span>
+	        </div>
+
 			    <div class="gnbWrap">
 					<div class="gnb">
 						<nav class="inner">
 							<ul class="gnbMenu">
-				                <li class="type-h2 menu-item" data-target="#main">
+								<li class="type-h2 menu-item" data-target="#main">
 									<a class="menu-word" href="javascript:;">Home</a>
-				                    <div class="grayed">Home</div>
-				                    <div class="numbering type-comp2">01</div>
-				                </li>
-				                <li class="type-h2 menu-item" data-target="#who">
+									<div class="grayed">Home</div>
+									<div class="numbering type-comp2">01</div>
+								</li>
+				        <li class="type-h2 menu-item" data-target="#who">
 									<a class="menu-word" href="javascript:;">About</a>
-				                    <div class="grayed">About</div>
-				                    <div class="numbering type-comp2">02</div>
-				                </li>
-				                <li class="type-h2 menu-item" data-target="#work">
+				          	<div class="grayed">About</div>
+				            <div class="numbering type-comp2">02</div>
+				        </li>
+				        <li class="type-h2 menu-item" data-target="#work">
 									<a class="menu-word" href="javascript:;">Work</a>
-				                    <div class="grayed">Work</div>
-				                    <div class="numbering type-comp2">03</div>
-				                </li>
-				                <li class="type-h2 menu-item" data-target="#footer">
+									<div class="grayed">Work</div>
+									<div class="numbering type-comp2">03</div>
+								</li>
+								<li class="type-h2 menu-item" data-target="#footer">
 									<a class="menu-word" href="javascript:;">Contact</a>
-				                    <div class="grayed">Contact</div>
-				                    <div class="numbering type-comp2">04</div>
-				                </li>
-				            </ul>
+									<div class="grayed">Contact</div>
+									<div class="numbering type-comp2">04</div>
+								</li>
+							</ul>
 						</nav>
 					</div>
 				</div>
 			    <!-- @ Toggle menu END -->
 			</header>
-			
-			
-			
+
+
+
 			<!-- 1. main -->
 			<section class="main" id="main">
-					<div class="background">
-						<video id="bgMain" class="videoBg" autoplay="" loop="" muted="">
-							<source src="./images/nasa1.mp4" type="video/mp4">
-						</video>
-						<div class="bgImg"><img src="./images/background.jpg" alt=""></div>
+				<div class="background">
+					<video id="bgMain" class="videoBg" autoplay="" loop="" muted="">
+						<source src="./images/nasa1.mp4" type="video/mp4">
+					</video>
+					<div class="bgImg"><img src="./images/background.jpg" alt=""></div>
+				</div>
+				<div class="lineWrap">
+					<span class="line left-line"></span>
+					<span class="line right-line"></span>
+					<span class="line top-line"></span>
+					<span class="line bottom-line"></span>
+				</div>
+				<a class="dribbble"><img src="./images/minilogo.png" alt="kimsora"></a>
+				<div class="contents">
+					<div class="title no0"><em>S</em> O R <em>A</em></div>
+					<div class="title no1">P <em>O</em> <em>R</em> T</div>
+					<div class="title no2">F O L I O</div>
+				</div>
+				<div class="sideTitle">
+					KIM SORA
+				</div>
+				<div class="aboutWrap">
+					<p class="about">about me</p>
+					<div class="line" data-0="height:120px;" data-700="height: 350px;"></div>
+					<div class="shape" data-0="display: none; opacity: 0;" data-550="display: block; opacity: 0;" data-700="opacity: 1;">X</div>
+				</div>
+				<div class="mouseWrap">
+					<div class="mouse">
+						<div class="roll"></div>
+						<div class="rollshadow"></div>
 					</div>
-					<div class="lineWrap">
-						<span class="line left-line"></span>
-						<span class="line right-line"></span>
-						<span class="line top-line"></span>
-						<span class="line bottom-line"></span>
+					<p>Scroll</p>
+				</div>
+		</section>
+		<!-- // 1. main -->
+		<!-- 2. who -->
+		<section class="who page" id="who">
+			<div class="container">
+				<div class="contents">
+					<div class="leftMe">
+						<div class="shard piece1" data-0="top:-100px;" data-900="top:0%;" data-1000="top:0%;" data-1200="top:5%;"></div>
+						<div class="shard piece2" data-0="top:-80px;" data-900="top:0%;" data-1000="top:0%;" data-1200="top: 0%;"></div>
+						<div class="shard piece3" data-0="top:-50px;" data-900="top:0%;" data-1000="top:0%;" data-1200="top:-5%;"></div>
+						<div class="shard piece4" data-0="top:-30px;" data-900="top:0%;" data-1000="top:0%;" data-1200="top:-10%;"></div>
 					</div>
-					<a class="dribbble"><img src="./images/minilogo.png" alt="kimsora"></a>
-					<div class="contents">
-						<div class="title no0"><em>S</em> O R <em>A</em></div>
-						<div class="title no1">P <em>O</em> <em>R</em> T</div>
-						<div class="title no2">F O L I O</div>
-					</div>
-					<div class="sideTitle">
-						KIM SORA
-					</div>
-					<div class="aboutWrap">
-						<p class="about">about me</p>
-						<div class="line" data-0="height:120px;" data-700="height: 350px;"></div>
-						<div class="shape" data-0="display: none; opacity: 0;" data-550="display: block; opacity: 0;" data-700="opacity: 1;">X</div>
-					</div>
-					<div class="mouseWrap">
-						<div class="mouse">
-							<div class="roll"></div>
-							<div class="rollshadow"></div>
-						</div>
-						<p>Scroll</p>
-					</div>
-			</section>
-			<!-- // 1. main -->
-			<!-- 2. who -->
-			<section class="who page" id="who">
-				<div class="container">
-					<div class="contents">
-						<div class="leftMe">
-							<div class="shard piece1" data-0="top:-100px;" data-900="top:0%;" data-1000="top:0%;" data-1200="top:5%;"></div>
-							<div class="shard piece2" data-0="top:-80px;" data-900="top:0%;" data-1000="top:0%;" data-1200="top: 0%;"></div>
-							<div class="shard piece3" data-0="top:-50px;" data-900="top:0%;" data-1000="top:0%;" data-1200="top:-5%;"></div>
-							<div class="shard piece4" data-0="top:-30px;" data-900="top:0%;" data-1000="top:0%;" data-1200="top:-10%;"></div>
-						</div>
-						<div class="rightMe" data-0="transform:translate(0%,25%)" data-1200="transform: translate(0%, 0%)">
-							<h2 class="subTitle">
-								<div class="hero">
-									<div class="hero__content">
-										<span class="animated-letter slowly-appear">W</span>
-										<span class="animated-letter slowly-appear">H</span>
-										<span class="animated-letter slowly-appear">O</span>
-										<span class="animated-letter slowly-appear none">,</span>
-										<span class="animated-letter slowly-appear">A</span>
-										<span class="animated-letter slowly-appear">M</span>
-										<span class="animated-letter slowly-appear none">,</span>
-										<span class="animated-letter slowly-appear">I</span>
-										<span class="animated-letter slowly-appear none"></span>
-										<span class="animated-letter slowly-appear">?</span>
-									</div>
+					<div class="rightMe" data-0="transform:translate(0%,25%)" data-1200="transform: translate(0%, 0%)">
+						<h2 class="subTitle">WHO AM I?</h2>
+						<div class="whoWrap">
+							<div class="mottoWrap">
+								<!--div class="motto no1">CURIOUS</div>
+								<div class="motto no2"><em>&</em> HUNGRY</div-->
+								<div class="text">
+									열정과 성실함을 기본으로 하는건 바로 정신력입니다.<br>
+									하지만 삶과 일엔 변화무쌍한 일들이 생길 수 밖에 없습니다.<br>
+									그럴 때마다 이 속담을 되새기며 굳건한 마음을 가집니다.<br>
+									<br>
+									<em>"인생사 새옹지마"</em><br>
+									<br>
+									스스로에게뿐만 아닌 주변인들에게도<br>
+									힘을 내게 하는 긍정의 아이콘 입니다.
 								</div>
-							</h2>
-							<div class="whoWrap">
-								<div class="mottoWrap">
-									<!--div class="motto no1">CURIOUS</div>
-									<div class="motto no2"><em>&</em> HUNGRY</div-->
-									<div class="text">
-										열정과 성실함을 기본으로 하는건 바로 정신력입니다.<br>
-										하지만 삶과 일엔 변화무쌍한 일들이 생길 수 밖에 없습니다.<br>
-										그럴 때마다 무너지지 않고 이 속담을 되새깁니다.<br>
-										<br>
-										<em>"인생사 새옹지마"</em><br>
-										<br>
-										나뿐만 아닌 함께하는 사람들에게도<br>
-										희망을 불어 넣을 수 있는 긍정의 아이콘 입니다.
-									</div>
-									<div class="line" data-500="height:0px;" data-900="height: 80px;"></div>
-								</div>
-								<div class="historyWrap">
-									<h3>PERSONAL</h3>
-									<ul class="text">
-										<li>NAME : 김소라</li>
-										<li>BIRTH : 1992.09.28(+)</li>
-									</ul>
-									<h3>HISTORY</h3>
-									<ul class="text">
-										<li>2015-2016 더조은컴퓨터학원 수료</li>
-										<li>2016-2016 성형외과 홍보팀 퍼블리셔</li>
-										<li>2017-2019 (주)메큐라이크 R&D 프론트팀</li>
-									</ul>
-								</div>
+								<div class="line" data-500="height:0px;" data-900="height: 80px;"></div>
+							</div>
+							<div class="historyWrap">
+								<h3>PERSONAL</h3>
+								<ul class="text">
+									<li>NAME : 김소라</li>
+									<li>BIRTH : 1992.09.28(+)</li>
+								</ul>
+								<h3>HISTORY</h3>
+								<ul class="text">
+									<li>2015-2016 더조은컴퓨터학원 수료</li>
+									<li>2016-2016 성형외과 홍보팀 퍼블리셔</li>
+									<li>2017-2019 (주)메큐라이크 R&D 프론트팀</li>
+								</ul>
 							</div>
 						</div>
-						<div class="lineRight" data-700="height:0px;" data-1100="height: 320px;"></div>
-						<div class="shape" data-700="display: none; opacity: 0;" data-1100="display: block; opacity: 0;" data-1250="opacity: 1;">X</div>
 					</div>
+					<div class="lineRight" data-700="height:0px;" data-1100="height: 320px;"></div>
+					<div class="shape" data-700="display: none; opacity: 0;" data-1100="display: block; opacity: 0;" data-1250="opacity: 1;">X</div>
 				</div>
-			</section>
-			<!-- //2. who -->
-						
+			</div>
+		</section>
+		<!-- //2. who -->
+
 			<!-- 2-1. skill -->
-			
+
 			<section class="skill page" id="skill">
 				<!--div class="parallax"  data-0="background-position:0px 0px;" data-10000="background-position:0px 200px;"></div-->
 				<div class="container">
@@ -208,15 +197,15 @@
 							<ul>
 								<li>HTML5, CSS3, JAVASCRIPT, JQUERY, SASS</li>
 								<li>웹 접근성·웹표준 준수한 시멘틱한 마크업</li>
-								<li>다양한 플러그인과 API 실무 사용 다수 경험</li>
+								<li>다양한 Javascript 플러그인과 API 실무 사용 다수 경험</li>
 								<li>형상 관리 툴 사용경험(SVN, GIT, BITBUCKIT)</li>
 								<li>메이저 크로스브라우징을 통한 호환성 대처</li>
-								<li>모바일웹앱·반응형사이트 제작</li>
+								<li>모바일 웹앱·반응형사이트 제작</li>
 							</ul>
 						</div>
 						<div class="category" data-900="transform:translate(0%,25%);" data-1400="transform: translate(0%, 0%);">
 							<div class=""><img src="./images/icon2.png" alt=""></div>
-							
+
 							<h3>Advantage</h3>
 							<ul>
 								<li>목표 완수를 위한 <b>열정과 끈기</b></li>
@@ -228,39 +217,25 @@
 							</ul>
 						</div>
 					</div>
-					
+
 				</div>
 			</section>
 			<!-- //2-1. skill -->
 			<!-- 3. work -->
 			<section class="work page" id="work">
 				<div class="container">
-					<h2 class="subTitle">
-						<div class="hero">
-							<div class="hero__content">
-								<span class="animated-letter slowly-appear">S</span>
-								<span class="animated-letter slowly-appear">O</span>
-								<span class="animated-letter slowly-appear">M</span>
-								<span class="animated-letter slowly-appear">E</span>
-								<span class="animated-letter slowly-appear none">,</span>
-								<span class="animated-letter slowly-appear">W</span>
-								<span class="animated-letter slowly-appear">O</span>
-								<span class="animated-letter slowly-appear">R</span>
-								<span class="animated-letter slowly-appear">K</span>
-							</div>
-						</div>
-					</h2>
-					<!--Timeline carousel-->
-					<section class="timeline-carousel">
-						<div class="timeline-carousel__item-wrapper" data-js="timeline-carousel">
+					<h2 class="subTitle">SOME WORK</h2>
 
+					<!--Timeline carousel-->
+					<section class="timelineWrap">
+						<div class="timeline" data-js="timeline-carousel">
 							<!--Timeline item-->
-							<div class="timeline-carousel__item">
+							<div class="timeItem">
 								<a href="./submoon.html">
-									<div class="timeline-carousel__image">
+									<div class="timeImg">
 										<div class="media-wrapper media-wrapper--overlay" style="background: url('./images/bigwork/moon1st.jpg') center center; background-size:cover;"></div>
 									</div>
-									<div class="timeline-carousel__item-inner">
+									<div class="inner">
 										<h3 class="year">문재인1번가</h3>
 										<span class="month">2017 APR</span>
 										<p>2017 웹어워드 최우수상<br>퍼블리싱 50%<br>네이버 실시간 검색어 2위 진입<br>서브담당·유지보수</p>
@@ -271,12 +246,12 @@
 							<!--/Timeline item-->
 
 							<!--Timeline item-->
-							<div class="timeline-carousel__item">
+							<div class="timeItem">
 								<a href="./subedutalk.html">
-									<div class="timeline-carousel__image">
+									<div class="timeImg">
 										<div class="media-wrapper media-wrapper--overlay" style="background: url('./images/bigwork/edutalk.jpg') center center; background-size:cover;"></div>
 									</div>
-									<div class="timeline-carousel__item-inner">
+									<div class="inner">
 										<h3 class="year">모두의 대입발언대</h3>
 										<span class="month">2018 June</span>
 										<p>2018 웹어워드 대상<br>퍼블리싱 70%<br>정부 온라인플랫폼<br>이러닝 제작</p>
@@ -285,14 +260,14 @@
 								</a>
 							</div>
 							<!--/Timeline item-->
-							
+
 							<!--Timeline item-->
-							<div class="timeline-carousel__item">
+							<div class="timeItem">
 								<a href="./subconstitution.html">
-									<div class="timeline-carousel__image">
+									<div class="timeImg">
 										<div class="media-wrapper media-wrapper--overlay" style="background: url('./images/bigwork/constitution.jpg') center center; background-size:cover;"></div>
 									</div>
-									<div class="timeline-carousel__item-inner">
+									<div class="inner">
 										<!--div class="pointer"></div-->
 										<h3 class="year">국민헌법</h3>
 										<span class="month">2018 Feb</span>
@@ -302,14 +277,14 @@
 								</a>
 							</div>
 							<!--/Timeline item-->
-							
+
 							<!--Timeline item-->
-							<div class="timeline-carousel__item">
+							<div class="timeItem">
 								<a href="./submarble.html">
-									<div class="timeline-carousel__image">
+									<div class="timeImg">
 										<div class="media-wrapper media-wrapper--overlay" style="background: url('./images/bigwork/friendsmarble.jpg') center center; background-size:cover;"></div>
 									</div>
-									<div class="timeline-carousel__item-inner">
+									<div class="inner">
 										<h3 class="year">프렌즈마블 for kakao</h3>
 										<span class="month">2018 Feb</span>
 										<p>2018 웹어워드 대상<br>퍼블리싱 100%<br>사전예약/런칭페이지 제작</p>
@@ -318,14 +293,14 @@
 								</a>
 							</div>
 							<!--/Timeline item-->
-							
+
 							<!--Timeline item-->
-							<div class="timeline-carousel__item">
+							<div class="timeItem">
 								<a onclick="alert('준비중입니다.')">
-									<div class="timeline-carousel__image">
+									<div class="timeImg">
 										<div class="media-wrapper media-wrapper--overlay" style="background: url('./images/bigwork/likenclick.jpg') center center; background-size:cover;"></div>
 									</div>
-									<div class="timeline-carousel__item-inner">
+									<div class="inner">
 										<h3 class="year">라이크앤클릭</h3>
 										<span class="month">2016 Nov ~ 2017 June</span>
 										<p>모바일웹앱 제작<br>퍼블리싱 100%<br>REM을 이용해 디바이스 최적화<br>런칭/리뉴얼 제작</p>
@@ -337,7 +312,9 @@
 						</div>
 					</section>
 					<!--Timeline carousel-->
-					
+
+
+
 					<div class="contents">
 						<div class="btnWrap filterWrap">
 							<button class="btnDesign is-checked" data-filter="*"><span>All</span></button>
@@ -368,7 +345,7 @@
 											<p class="hash">#WEB #MOBILE #서브담당 #마우스휠모션 #티저 #사전예약</p>
 										</div>
 										<a href="https://teraclassic.kakaogame.com" target="_blank">View more</a>
-									</figcaption>			
+									</figcaption>
 								</figure>
 							</div>
 							<div class="thumb game">
@@ -392,10 +369,10 @@
 											<p class="hash">#마우스휠모션 #티저 #런칭페이지 #WEB #MOBILE</p>
 										</div>
 										<a href="http://priconne.kakaogame.com/" target="_blank">View more</a>
-									</figcaption>			
+									</figcaption>
 								</figure>
 							</div>
-							
+
 							<div class="thumb game">
 								<figure class="effect-layla">
 									<img src="./images/work/1901_nansae.jpg" alt="난세"/>
@@ -417,7 +394,7 @@
 											<p class="hash">#MOBILE #WEB #서브담당 #티저 #런칭</p>
 										</div>
 										<a href="javascript:;" onclick="alert('페이지 운영이 종료되었습니다.')">View more</a>
-									</figcaption>			
+									</figcaption>
 								</figure>
 							</div>
 							<div class="thumb brand">
@@ -441,7 +418,7 @@
 											<p class="hash">#WEB #MOBILE #서브담당 #브랜드페이지 #아카이브페이지</p>
 										</div>
 										<a href="http://www.taeil.org" target="_blank">View more</a>
-									</figcaption>			
+									</figcaption>
 								</figure>
 							</div>
 							<div class="thumb game">
@@ -465,7 +442,7 @@
 											<p class="hash">#MOBILE #WEB #티저 #런칭페이지</p>
 										</div>
 										<a href="javascript:;" onclick="alert('페이지 운영이 종료되었습니다.')">View more</a>
-									</figcaption>			
+									</figcaption>
 								</figure>
 							</div>
 							<div class="thumb game">
@@ -489,7 +466,7 @@
 											<p class="hash">#MOBILE #WEB #티저 #런칭페이지</p>
 										</div>
 										<a href="https://www.hundredsoul.com" target="_blank">View more</a>
-									</figcaption>			
+									</figcaption>
 								</figure>
 							</div>
 							<div class="thumb game">
@@ -513,7 +490,7 @@
 											<p class="hash">#MOBILE #WEB #티저 #PC방이벤트 #런칭페이지 #대호황</p>
 										</div>
 										<a href="./work/1801-fortnite/index.html" target="_blank">View more</a>
-									</figcaption>			
+									</figcaption>
 								</figure>
 							</div>
 							<div class="thumb game">
@@ -537,7 +514,7 @@
 											<p class="hash">#MOBILE #WEB #사전예약 #런칭페이지 #유지보수</p>
 										</div>
 										<a href="./work/1810-samkook/index.html" target="_blank">View more</a>
-									</figcaption>			
+									</figcaption>
 								</figure>
 							</div>
 							<!--div class="thumb study">
@@ -561,7 +538,7 @@
 											<p class="hash">#TWEENMAX #TWEENLITE</p>
 										</div>
 										<a href="http://edutalk.makeulike-campaign.co.kr" target="_blank">View more</a>
-									</figcaption>			
+									</figcaption>
 								</figure>
 							</div>
 							<div class="thumb study">
@@ -585,7 +562,7 @@
 											<p class="hash">#TWEENMAX #TWEENLITE</p>
 										</div>
 										<a href="http://edutalk.makeulike-campaign.co.kr" target="_blank">View more</a>
-									</figcaption>			
+									</figcaption>
 								</figure>
 							</div-->
 							<div class="thumb award y18 brand">
@@ -606,11 +583,11 @@
 												<dt>비고:&nbsp;</dt>
 												<dd>2019 웹어워드 대상</dd>
 											</dl>
-											
+
 											<p class="hash">#MOBILE #WEB #서브담당 #개발호환</p>
 										</div>
 										<a href="https://www.edutalk.go.kr/" target="_blank">View more</a>
-									</figcaption>			
+									</figcaption>
 								</figure>
 							</div>
 							<div class="thumb brand">
@@ -634,7 +611,7 @@
 											<p class="hash">#MOBILE #WEB #앱인페이지 #앱이벤트</p>
 										</div>
 										<a href="http://www.medifoam.co.kr" target="_blank">View more</a>
-									</figcaption>			
+									</figcaption>
 								</figure>
 							</div>
 							<div class="thumb brand responsive">
@@ -658,7 +635,7 @@
 											<p class="hash">#반응형 #유지보수 #이벤트페이지추가진행</p>
 										</div>
 										<a href="https://www.belcube.co.kr/" target="_blank">View more</a>
-									</figcaption>			
+									</figcaption>
 								</figure>
 							</div>
 							<div class="thumb brand responsive">
@@ -682,7 +659,7 @@
 											<p class="hash">#리뉴얼 #유지보수 #프로모션페이지 #브랜드페이지</p>
 										</div>
 										<a href="http://www.medifoam.co.kr" target="_blank">View more</a>
-									</figcaption>			
+									</figcaption>
 								</figure>
 							</div>
 							<div class="thumb award y18 brand">
@@ -706,7 +683,7 @@
 											<p class="hash">#WEB #MOBILE #정부온라인플랫폼</p>
 										</div>
 										<a href="http://constitution.makeulike-campaign.co.kr/" target="_blank">View more</a>
-									</figcaption>			
+									</figcaption>
 								</figure>
 							</div>
 							<div class="thumb award y18 game">
@@ -730,7 +707,7 @@
 											<p class="hash">#WEB #MOBILE #서브담당 #5개국어페이지제작 #티저 #런칭</p>
 										</div>
 										<a href="http://royalblood.gamevil.com/ko/" target="_blank">View more</a>
-									</figcaption>			
+									</figcaption>
 								</figure>
 							</div>
 							<div class="thumb brand">
@@ -754,7 +731,7 @@
 											<p class="hash">#WEB #MOBILE #외주작업</p>
 										</div>
 										<a href="http://hellopyeongchang.makeulike-campaign.co.kr/" target="_blank">View more</a>
-									</figcaption>			
+									</figcaption>
 								</figure>
 							</div>
 							<div class="thumb award y18 game">
@@ -778,7 +755,7 @@
 											<p class="hash">#WEB #MOBILE #사전예약 #런칭 #fullpage사용 #영상이벤트</p>
 										</div>
 										<a href="http://friends-marble.makeulike-campaign.co.kr/" target="_blank">View more</a>
-									</figcaption>			
+									</figcaption>
 								</figure>
 							</div>
 							<div class="thumb game">
@@ -802,7 +779,7 @@
 											<p class="hash">#WEB #MOBILE #영문페이지제작</p>
 										</div>
 										<a href="./work/1712-light/index.html" target="_blank">View more</a>
-									</figcaption>			
+									</figcaption>
 								</figure>
 							</div>
 							<div class="thumb award y18 brand">
@@ -826,7 +803,7 @@
 											<p class="hash">#WEB #MOBILE #서브담당 #사진합성이벤트 #평창동계올림픽</p>
 										</div>
 										<a href="http://hellopyeongchang.makeulike-campaign.co.kr/" target="_blank">View more</a>
-									</figcaption>			
+									</figcaption>
 								</figure>
 							</div>
 							<div class="thumb award y18 brand">
@@ -850,7 +827,7 @@
 											<p class="hash">#WEB #MOBILE #영상이벤트 #SNS공유이벤트 #확률이벤트</p>
 										</div>
 										<a href="	https://mirae-n.makeulike-campaign.co.kr" target="_blank">View more</a>
-									</figcaption>			
+									</figcaption>
 								</figure>
 							</div>
 							<div class="thumb game">
@@ -874,7 +851,7 @@
 											<p class="hash">#WEB #MOBILE #fullpage사용</p>
 										</div>
 										<a href="javascript:;" target="_blank">View more</a>
-									</figcaption>			
+									</figcaption>
 								</figure>
 							</div>
 							<div class="thumb award y17 game">
@@ -898,7 +875,7 @@
 											<p class="hash">#WEB #MOBILE #유지보수 #마우스휠모션</p>
 										</div>
 										<a href="./work/1710-kungpu/index.html" target="_blank">View more</a>
-									</figcaption>			
+									</figcaption>
 								</figure>
 							</div>
 							<div class="thumb game">
@@ -922,7 +899,7 @@
 											<p class="hash">#WEB #MOBILE #사전예약페이지</p>
 										</div>
 										<a href="javascript:;" onclick="alert('페이지 운영이 종료되었습니다.')">View more</a>
-									</figcaption>			
+									</figcaption>
 								</figure>
 							</div>
 							<div class="thumb award y17 brand">
@@ -946,7 +923,7 @@
 											<p class="hash">#서브담당 #인스타그램API #개발호환 #마우스휠모션 #SVG #연간대행</p>
 										</div>
 										<a href="http://domore.co.kr/" target="_blank">View more</a>
-									</figcaption>			
+									</figcaption>
 								</figure>
 							</div>
 							<div class="thumb brand">
@@ -970,7 +947,7 @@
 											<p class="hash">#rem제작 #MOBILE #amcharts #개발호환</p>
 										</div>
 										<a href="./work/1708-likenclick-2nd/index.html" target="_blank">View more</a>
-									</figcaption>			
+									</figcaption>
 								</figure>
 							</div>
 							<div class="thumb brand">
@@ -994,7 +971,7 @@
 											<p class="hash">#WEB #MOBILE #파견 #영상공유이벤트</p>
 										</div>
 										<a href="./work/1707-ssframe/index.html" target="_blank">View more</a>
-									</figcaption>			
+									</figcaption>
 								</figure>
 							</div>
 							<div class="thumb game">
@@ -1018,7 +995,7 @@
 											<p class="hash">#WEB #MOBILE #영상공모전 #개발호환</p>
 										</div>
 										<a href="./work/1705-oceans-contest/index.html" target="_blank">View more</a>
-									</figcaption>			
+									</figcaption>
 								</figure>
 							</div>
 							<div class="thumb award y17 brand">
@@ -1042,7 +1019,7 @@
 											<p class="hash">#WEB #MOBILE #서브담당</p>
 										</div>
 										<a href="https://www.gwanghwamoon1st.go.kr/" target="_blank">View more</a>
-									</figcaption>			
+									</figcaption>
 								</figure>
 							</div>
 							<div class="thumb brand">
@@ -1066,7 +1043,7 @@
 											<p class="hash">#MOBILE #인앱이벤트</p>
 										</div>
 										<a href="javascript:;" onclick="alert('페이지 운영이 종료되었습니다.')">View more</a>
-									</figcaption>			
+									</figcaption>
 								</figure>
 							</div>
 							<div class="thumb award y17 game">
@@ -1090,7 +1067,7 @@
 											<p class="hash">#WEB #MOBILE #유지보수</p>
 										</div>
 										<a href="http://soulgauge.makeulike.co.kr/" target="_blank">View more</a>
-									</figcaption>			
+									</figcaption>
 								</figure>
 							</div>
 							<div class="thumb award y17 brand">
@@ -1114,7 +1091,7 @@
 											<p class="hash">#WEB #MOBILE #서브담당 #유지보수 #실시간검색어순위진입</p>
 										</div>
 										<a href="javascript:;" onclick="alert('페이지 운영이 종료되었습니다.')">View more</a>
-									</figcaption>			
+									</figcaption>
 								</figure>
 							</div>
 							<div class="thumb brand">
@@ -1138,7 +1115,7 @@
 											<p class="hash">#WEB #MOBILE</p>
 										</div>
 										<a href="javascript:;" target="_blank">View more</a>
-									</figcaption>			
+									</figcaption>
 								</figure>
 							</div>
 							<div class="thumb game">
@@ -1162,7 +1139,7 @@
 											<p class="hash">#WEB #MOBILE</p>
 										</div>
 										<a href="./work/1703-mu2nd/index.html" target="_blank">View more</a>
-									</figcaption>			
+									</figcaption>
 								</figure>
 							</div>
 							<div class="thumb award y17 game">
@@ -1186,7 +1163,7 @@
 											<p class="hash">#WEB #MOBILE #모바일소켓연동 #2017웹어워드최우수상</p>
 										</div>
 										<a href="javascript:;" onclick="alert('페이지 운영이 종료되었습니다.')">View more</a>
-									</figcaption>			
+									</figcaption>
 								</figure>
 							</div>
 							<div class="thumb game">
@@ -1210,7 +1187,7 @@
 											<p class="hash">#WEB #MOBILE #룰렛이벤트 #게임요소추가 #티저 #런칭</p>
 										</div>
 										<a href="./work/1702-aether/index.html" target="_blank">View more</a>
-									</figcaption>			
+									</figcaption>
 								</figure>
 							</div>
 							<div class="thumb brand">
@@ -1234,7 +1211,7 @@
 											<p class="hash">#WEB #MOBILE #공유이벤트 #사주API개발호환</p>
 										</div>
 										<a href="javascript:;" onclick="alert('페이지 운영이 종료되었습니다.')">View more</a>
-									</figcaption>			
+									</figcaption>
 								</figure>
 							</div>
 							<div class="thumb game">
@@ -1258,7 +1235,7 @@
 											<p class="hash">#WEB #MOBILE #리뉴얼 #유지보수 #FULLPAGE사용</p>
 										</div>
 										<a href="http://los.linekong.co.kr/" target="_blank">View more</a>
-									</figcaption>			
+									</figcaption>
 								</figure>
 							</div>
 							<div class="thumb brand">
@@ -1282,7 +1259,7 @@
 											<p class="hash">#MOBILE #프로게스바<br>#개발호환</p>
 										</div>
 										<a href="javascript:;">View more</a>
-									</figcaption>			
+									</figcaption>
 								</figure>
 							</div>
 							<div class="thumb game">
@@ -1306,7 +1283,7 @@
 											<p class="hash">#프로게스바 #페이스북댓글API #사전예약페이지 #WEB #MOBILE</p>
 										</div>
 										<a href="./work/1612-wing-site/index.html" target="_blank">View more</a>
-									</figcaption>			
+									</figcaption>
 								</figure>
 							</div>
 							<div class="thumb brand">
@@ -1330,7 +1307,7 @@
 											<p class="hash">#REM제작 #개발호환 #APPMOBILE #내부프로젝트</p>
 										</div>
 										<a href="./work/1611-likenclick/index.html" target="_blank">View more</a>
-									</figcaption>			
+									</figcaption>
 								</figure>
 							</div>
 							<div class="thumb game">
@@ -1354,7 +1331,7 @@
 											<p class="hash">#마우스휠모션 #사전예약 #런칭 #프로모션페이지 #GASP사용 #WEB #MOBILE</p>
 										</div>
 										<a href="./work/1712-light/index.html" target="_blank">View more</a>
-									</figcaption>			
+									</figcaption>
 								</figure>
 							</div>
 							<div class="thumb brand">
@@ -1378,7 +1355,7 @@
 											<p class="hash">#GSAP사용 #인스타그램API사용 #유지보수</p>
 										</div>
 										<a href="./work/1609-itsskin/index.html" target="_blank">View more</a>
-									</figcaption>			
+									</figcaption>
 								</figure>
 							</div>
 							<div class="thumb award y16 brand">
@@ -1402,7 +1379,7 @@
 											<p class="hash">#MOBILE</p>
 										</div>
 										<a href="javascript:;" onclick="alert('페이지 운영이 종료되었습니다.')">View more</a>
-									</figcaption>			
+									</figcaption>
 								</figure>
 							</div>
 							<div class="thumb award y16 game">
@@ -1426,12 +1403,12 @@
 											<p class="hash">#WEB플래시제작 #MOBILE</p>
 										</div>
 										<a href="javascript:;" onclick="alert('페이지 운영이 종료되었습니다.')">View more</a>
-									</figcaption>			
+									</figcaption>
 								</figure>
 							</div>
 						</div>
 					</div>
-				</div>				
+				</div>
 			</section>
 			<!-- // 3. work -->
 			<footer id="footer" class="footer">
@@ -1455,7 +1432,7 @@
 				</div>
 			</footer>
 			<a class="btnTop" href="javascript:;"><img src="./images/btnTop.png" alt="상단으로"></a>
-			
+
 		</main>
 	</body>
 </html>
