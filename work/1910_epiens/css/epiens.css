@@ -1,0 +1,16 @@
+/*POPUP*/
+.popup {position: fixed; left:0; top:0; bottom:0; width: 100%; height: 100%; z-index:200; text-align: center; display: none; overflow-y:auto;}
+.popup .bg { position: fixed; left:0; top:0; width: 100%; height: 100%; z-index: 1; background:rgba(0,0,0,.7);}
+.popup .popIn {position:relative; margin: 0 auto; left:0; top:50%; max-width: 1200px;  width: 100%; box-sizing:border-box;  z-index:2; text-align: center;}
+.popup .popIn .closePop {position:absolute; right:5px; top:-40px; z-index: 40; display: inline-block;}
+.popup .popIn .closePop a {transition: transform 0.8s; display: inline-block; width:27px; height:27px;  background:url('../images/btnPopClose.png') no-repeat;}
+.popup .popIn .closePop a:hover {-ms-transform: rotate(360deg); transform: rotate(360deg);}
+
+.popup.mainPop .popIn .youtubeCont {position: relative; max-width: 1200px; /*height:669px;*/ margin:0 auto; background: #000; border: 3px solid #fff;}
+.popup.mainPop .popIn .youtubeCont #youtubeMovie {position: relative; padding-bottom: 56.25%; width: 100%;}
+.popup.mainPop .popIn .youtubeCont iframe {height: 100%; width: 100%; position: absolute; left: 0;}
+.popup.mainPop .popIn .youtubeCont .illustWrap {visibility: hidden; width: 100%; height: 100%;}
+.popup.mainPop .popIn .youtubeCont .illustWrap img {width: 100%; height: 671px;}
+.popup.mainPop .popIn.illust .youtubeCont {height: auto; }
+.popup.mainPop .popIn.illust #youtubeMovie {visibility: hidden; padding: 0;}
+.popup.mainPop .popIn.illust .illustWrap {visibility: visible; height: 100%;}

@@ -1,0 +1,125 @@
+@charset "UTF-8";
+
+/* @ base */
+body, html {cursor: url(../images/reference/cursor.png),url(../images/reference/cursor.cur),auto;}
+a {cursor: url(../images/reference/cursor.png),url(../images/reference/cursor.cur),auto;}
+a:hover, span:hover {cursor: url(../images/reference/cursor_hover.png),url(../images/reference/cursor_hover.cur), pointer !important;}
+
+
+.container {max-width: 1200px; margin: 0 auto;}
+.btnTop {position: fixed; bottom: 30px; right: 30px; display: none; z-index: 100;}
+
+
+
+/* header */
+.header {position: fixed; top: 0; left: 0; width: 100%; height: 60px; line-height: 60px; transition: background .8s; z-index: 100;}
+.header .inner {max-width: 1200px; margin: 0 auto; padding: 0 50px; color: #fff;}
+.header .inner:after {content:""; display: block; clear: both;}
+.header .inner h1 {float: left;}
+.header .inner h1 img {max-width: 120px; vertical-align: middle;}
+.header .menuWrap {float: right; font-size: 15px; font-weight: 600;}
+.header .menuWrap::after {content:""; display: block; clear: both;}
+.header .menuWrap > li {float: left; margin-left: 20px; position: relative;}
+.header .menuWrap > li:first-child {margin-left: 0;}
+.header .menuWrap > li a .line {position: absolute; bottom: 0; left: 50%; width: 0; height: 3px; background: #007aff; transition: all .5s;}
+.header .menuWrap > li:hover a,
+.header .menuWrap > li.on a {color: #007aff;}
+.header .menuWrap > li:hover a .line,
+.header .menuWrap > li.on a .line {width: 100%; left: 0;}
+.header .logo {max-width: 120px; height: 60px; display: inline-block; vertical-align: middle;}
+.header .logo path.emp {fill : rgb(224,23,15) !important;}
+.header.didScroll .logo path {fill: rgb(255,255,255);}
+
+
+
+.header.didScroll {background: rgba(0,0,0,.8);}
+
+/* text motion & main */
+.textLine {display:block;overflow:hidden;}
+.textLine > em {font-size: 40px; font-weight: bold;}
+.textLine > span,
+.textLine > em {display:inline-block;transform:translate(0, 100%);-webkit-transform:translate(0, 100%);transition:transform .85s cubic-bezier(0.25, 0.46, 0.45, 0.94);-webkit-transition:transform .85s cubic-bezier(0.25, 0.46, 0.45, 0.94);}
+
+body.loadEnd .swiper-slide-active .textLine > span,
+body.loadEnd .swiper-slide-active .textLine > em {opacity: 1; transform: translate(0, 0); -webkit-transform: translate(0, 0);}
+
+#main {width: 100%; position: fixed; top: 0; left: 0;}
+
+.main .swiper-container {width: 100%; height: 100%;}
+.main .swiper-slide {
+  width: 100% !important;
+  height: 100vh !important;
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.main .swiper-pagination {position: fixed; top: 50%; right: 50px;}
+.main .swiper-pagination-bullet {width: 15px; height: 15px; display: block; margin-top: 10px; opacity: 0.7;}
+.swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {margin-top: 10px !important;}
+.swiper-pagination-fraction, .swiper-pagination-custom, .swiper-container-horizontal > .swiper-pagination-bullets {left: auto !important; bottom: auto !important; width: auto !important;}
+
+
+.secPage {display: table; height: 100%;}
+.secPage .inner {display: table-cell; text-align: center; vertical-align: middle; position: relative; z-index: 1;}
+
+.sec01 {width: 100%; color: #fff; background: url(../images/reference/main_visual_pc.png) center no-repeat;}
+.sec01:after {content:""; display: inline-block; width: 100%; height: 100%; position: absolute; top: 0; left: 0; background: #000; opacity: 0; transition: opacity 1s;}
+
+body.loadEnd .sec01:after {opacity: 0.5}
+
+
+/* mainCont - cont01 */
+#mainCont {margin-top: 100vh; position: relative; z-index: 10; background: #fff;}
+.cont01 {}
+.cont01 .container {width: 1400px;}
+.cont01 .contList {margin-top: 50px;}
+.cont01 .contList:first-child {margin-top: 0;}
+.cont01 .contList:after {content:""; display: block; clear: both;}
+.cont01 .contList.active .listText h2,
+.cont01 .contList.active .listText .detail,
+.cont01 .contList.active .listText .more,
+.cont01 .contList.active .listImg {transform: translate(0,0); opacity: 1;}
+.cont01 .contList .listText h2,
+.cont01 .contList .listText .detail,
+.cont01 .contList .listText .more,
+.cont01 .contList .listImg {transform: translate(0,100px); opacity: 0;}
+
+.cont01 .listText {width: 50%; float: left; padding: 50px 20px 20px 130px;}
+.cont01 .listText h2 {transition: all 1s; font-size: 50px;}
+.cont01 .listText .detail {padding-top: 30px; transition: all 1s 200ms;}
+.cont01 .listText .more {margin-top: 30px; width: 80px; height: 50px; line-height: 50px; border: 1px solid #333; transition: all 1s 400ms; text-align: center; vertical-align: middle;}
+.cont01 .listText .more > a {width: 100%; height: 100%; display: inline-block;}
+.cont01 .listImg {width: 50%; max-width: 650px; max-height: 500px; margin-top: -30px; box-shadow: 0 1px 2px rgba(0,0,0,0.15); transition: all 1s; float: left; overflow: hidden;}
+.cont01 .listImg img {max-width: 100%; transition: all .6s;}
+.cont01 .list li:hover .listImg {box-shadow: 0px 10px 48px -4px rgba(0,0,0,0.75);}
+.cont01 .list li:hover .listImg img {transform: scale(1.05);}
+
+/* mainCont - cont02 */
+.cont02 {padding: 100px 0; transition: all 1s; opacity: 0; transform: translate(0, 100px);}
+.cont02.active {opacity: 1; transform: translate(0,0);}
+
+.cont02 h2 {text-align: center; font-size: 30px;}
+.cont02 .textCounterWrap {padding: 30px 0; justify-content: center; align-items: center; display: flex;}
+.cont02 .textCounterWrap .text {font-weight: 100; font-size: 28px; color: #333;}
+.cont02 .textCounterWrap .dud {color: #a3a3a3;}
+.cont02 .counterWrap {font-size: 24px; font-weight: 600; text-align: center;}
+.cont02 .counter {display: inline-block;}
+
+/* mainCont - cont03 */
+.cont03 {padding-bottom: 100px;}
+
+/* footer */
+.footer {width: 100%; height: 200px; position: relative; background: #222935; z-index: 10;}
+.footer .in {padding: 20px 100px; color: #ebebeb;}

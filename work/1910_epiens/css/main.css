@@ -1,0 +1,687 @@
+@charset "UTF-8";
+
+/* @ common */
+body, html {min-width: 302px;}
+body {overflow-x: hidden;}
+
+.eng {font-family: 'Quicksand',sans-serif !important;}
+
+.page {position: relative;}
+.container {max-width: 1080px; margin: 0 auto; padding: 0 84px; position: relative;}
+.clear:after {content:""; display: block; clear: both;}
+.btnTop {position: fixed; bottom: 30px; right: 30px; display: none; z-index: 100;}
+.btnTop img {width: 56px; height: 56px; border-radius: 32px; box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.16);}
+
+.logo img {max-width: 56px; vertical-align: middle; display: inline-block;}
+.logo span {padding-left: 10px; vertical-align: middle; font-family: 'Quicksand',sans-serif !important; font-size: 14px; font-weight: 500; color: #000;}
+
+.desList {padding-top: 60px; display: table;}
+.desList li {white-space: nowrap; display: table-cell; vertical-align: middle; padding-left: 130px; position: relative; font-size: 20px; font-weight: 300; background: url(../images/swsPlus.png) 26% center no-repeat;}
+.desList li:first-child {padding-left: 0; background: none;}
+
+.swsLogo {width: 48px; display: inline-block; vertical-align: middle; text-indent:-9999px; background: url(../images/logo.png) no-repeat; background-size: 90% auto; margin-top: -5px;}
+
+/* @ header */
+.header {position: fixed; top: 0; left: 0; height: 64px; width: 100%; z-index: 900; transition: all 0.3s; -webkit-transition: all 0.3s; -moz-transition: all 0.3s; -ms-transition: all 0.3s; -o-transition: all 0.3s;}
+.header .logo {display: inline-block; padding-top: 20px;}
+.header .logo i {width: 56px; max-width: 100%; height: 21px; display: inline-block; vertical-align: middle; background: url(../images/logo.png) no-repeat; background-size: 100% auto; text-indent: -9999px;}
+.header.didScroll { color: #333 !important; background: #fff; box-shadow: inset 0 -1px 0 0 #e1e1e1;}
+.gnbWrap {float: right; font-size: 14px; line-height: 64px;}
+.gnb li {float:left; margin-left: 35px;}
+.gnb li:first-child {margin-left: 0;}
+.gnb li > a {transition: all 0.2s; -webkit-transition: all 0.2s; -moz-transition: all 0.2s; -ms-transition: all 0.2s; -o-transition: all 0.2s; }
+.gnb li.on > a,
+.gnb li:hover > a {color: #ff2a69; font-weight: 600;}
+
+.header.white {color: #fff;}
+.header.white .logo i {background: url(../images/logo_white.png) no-repeat; background-size: 100% auto;}
+.header.white.didScroll .logo i {background: url(../images/logo.png) no-repeat; background-size: 100% auto;}
+.header.white .logo span {color: #fff;}
+.header.white.didScroll .logo span {color: #333;}
+
+
+
+/* @ main */
+#main {width: 100%; position: fixed; top: 0; left: 0; background: #f8ece0;}
+.main .contents {width: 100%; height: 79vh; display: table; position: relative; font-size: 48px; text-align: center;}
+.main .bg {width: 100%; height: 100%; position: absolute; top:0; left:0; background: url(../images/mainBg.jpg) top center no-repeat;  background-size: auto 100%;}
+.main .mainText {display: table-cell; vertical-align: middle; font-size: 153px; color: #ff2a69; font-weight: 600;}
+.main .mainText .container > div {padding-left: 20px; text-align: left;}
+.main .mainText .smallText {padding-top: 20px; font-size: 24px; font-weight: 400;}
+body.hire .main .bg {background: url(../images/hireBg.jpg) top center no-repeat; background-size: auto 100%;}
+body.hire .main .mainText {color: #fff;}
+body.hire .main .mainText .container > div {padding-left: 0; text-align: center;}
+body.hire .main .mainText .no1 {font-size: 50px;}
+body.hire .main .mainText .no2 i {display: inline-block; vertical-align: middle; width: 33px; height: 33px; background: url(../images/hireX.png) no-repeat; background-size: 100% auto; text-indent: -9999px;}
+body.hire .main .mainText .no3 {font-size: 106px; font-family: 'Noto', sans-serif !important;}
+body.hire .main .bg:after {content:""; display: inline-block; width: 100%; height: 100%; position: absolute; top: 0; left: 0; background: #000; opacity: 0; transition: opacity 1s; -webkit-transition: opacity 1s; -moz-transition: opacity 1s; -ms-transition: opacity 1s; -o-transition: opacity 1s; opacity: 0.5;}
+body.epiens .main .bg {background: url(../images/epiensBg.jpg) top center no-repeat; background-size: auto 100%;}
+body.epiens .mainText {color: #fff;}
+body.epiens .main .mainText .container > div {padding-left: 0; text-align: center;}
+body.epiens .mainText .no1 {margin-bottom: 45px; font-size: 152px;}
+body.epiens .mainText .no2 {font-size: 36px; font-weight: 500; line-height: 1.47;}
+
+
+.textLine {display:block;overflow:hidden;}
+.textLine > span,
+.textLine > em {display:inline-block;transform:translate(0, 100%);-webkit-transform:translate(0, 100%);transition:transform .65s cubic-bezier(0.25, 0.46, 0.45, 0.94);-webkit-transition:transform .65s cubic-bezier(0.25, 0.46, 0.45, 0.94); -moz-transition:transform .65s cubic-bezier(0.25, 0.46, 0.45, 0.94); -ms-transition:transform .65s cubic-bezier(0.25, 0.46, 0.45, 0.94); -o-transition:transform .65s cubic-bezier(0.25, 0.46, 0.45, 0.94);}
+
+body.loadEnd .textLine > span,
+body.loadEnd .textLine > em {opacity: 1; transform: translate(0, 0); -webkit-transform: translate(0, 0);}
+
+
+#mainCont {margin-top: 79vh; position: relative; z-index: 10; background: #fff;}
+
+/* @ sws */
+.sws {}
+.sws .title {padding-top: 120px; font-size: 65px; font-weight: 500;}
+.sws .title em {color: #ff2a69;}
+.sws .detail {padding: 40px 0 110px; max-width: 630px; font-size: 20px; line-height: 1.73;}
+.sws .description {margin-left: 200px; margin-bottom: 280px; padding: 85px 0 100px; position: relative; overflow: hidden; background: #000;}
+.sws .description:before {content:""; display: inline-block; width: 200px; height: 100%; position: absolute; top: 0; left: -200px; background: #fff; z-index: 999;}
+.sws .description .slide {width: 37%; margin-right: 24px; max-width: 480px; transition: all .3s; -webkit-transition: all .3s; -moz-transition: all .3s; -ms-transition: all .3s; -o-transition: all .3s;}
+.sws .description .slide:after {content:""; display: block; position: absolute; top: 0; left: 0; width: 100%; height: 100%; transition: all 0.3s; background: url(../images/swsImg_cover1.png) no-repeat;}
+.sws .description .slide.swiper-slide-prev:after {background: url(../images/swsImg_cover.png) no-repeat;}
+
+.sws .description .inner {position: absolute; bottom: 0; padding: 32px; width: 100%;}
+.sws .description .inner h3 {padding-bottom: 18px; font-size: 32px; font-weight: 500; line-height: 1.03; color: #fff;}
+.sws .description .inner div {font-size: 16px; color: #fff;}
+.sws .swsPage {display: none;}
+.sws .description .swsSlide {margin-left: -27%;}
+.sws .swiper-button-prev {width: 40px; height: 40px; left: calc( 18% + 40px); background: url(../images/btnPrev.png) no-repeat; background-size: 100% auto;}
+.sws .swiper-button-next {width: 40px; height: 40px; left: calc( 18% + 106px); background: url(../images/btnNext.png) no-repeat; background-size: 100% auto;}
+.sws .swiper-button-prev,
+.sws .swiper-button-next {top: auto; margin-top: 0; bottom: 40px;}
+
+/* @ brand */
+.brand .title {padding-bottom: 48px; font-size: 60px; font-weight: 600;}
+.brand .title:before {content:""; display: inline-block; width: 32px; height: 32px; margin-right: 20px; background: url(../images/titlePlus.png) center center no-repeat;}
+
+.brand .detail {padding-bottom: 115px;}
+.brand .detail > div {width: 50%; float: left;}
+.brand .detail .left {max-width: 400px; font-size: 30px; line-height: 1.67;}
+.brand .detail .right {width: 56%; padding-left: 112px; font-size: 20px; font-weight: 300; line-height: 1.8;}
+
+.brand .brandBg {width: 100%; max-width: 1712px; padding-right: 11%; position: relative;}
+.brand .brandBg img {max-width: 100%;}
+
+.brandList {padding-bottom: 150px;}
+.brandList .slide {width: 50%; min-height: 140px; float: left; padding: 0 20px 0 48px; margin-top: 70px; position: relative; font-size: 18px;}
+.brandList .slide:after {content:""; display: block; width: 32px; height: 32px; position: absolute; top: -5px; left: 0; background: url(../images/brandPlus.png) no-repeat; background-size: 32px 32px;}
+.brandList .slide h3 {font-size: 20px; padding-bottom: 16px;}
+.brandList .slide div {line-height: 1.75;}
+
+.brand .sponsor {padding: 48px 0 71px; margin-bottom: 270px; background: #faf9f9; text-align: center; font-size: 18px;}
+.brand .sponTitle {font-size: 26px; font-weight: 400;}
+.brand .sponList {padding: 40px 0 48px; max-width: 840px; margin: 0 auto;}
+.brand .sponList li {float: left; max-width: 160px; margin: 8px 0 0 8px;}
+
+/* @ influencer */
+.influencer {}
+.influencer .title { font-size: 60px; font-weight: 600;}
+.influencer .title:before {content:""; display: inline-block; width: 32px; height: 32px; margin-right: 20px; background: url(../images/titlePlus.png) center center no-repeat;}
+.influencer .detail {padding: 30px 0 243px 48px; font-size: 30px; font-weight: 400; line-height: 1.67;}
+.influencer .influImg {width: 48%; position: absolute; top: -60px; right: 0; background: #000;}
+.influencer .influImg .dummy {display: none;}
+.influencer .influImg_m {padding-bottom: 20px;}
+.influencer .influImg_m img {width: 100%;}
+
+/* @ news */
+.news {padding: 150px 0; background: #f9f6f7; text-align: center;}
+.news p {font-size: 24px; padding-bottom: 10px; font-weight: 400;}
+.news em {color: #ff2a69; font-size: 48px;}
+
+/* @ footer */
+.footer {padding: 70px 0; position: relative; background: #fff; font-size: 11px;}
+.footer .container {padding: 0 100px;}
+.footer .copyrights {padding-top: 8px; color: #666;}
+.footer .container > div {display: inline-block; vertical-align: middle;}
+.footer .container > div.right {padding-left: 95px; line-height: 1.8em;}
+.footer .right .infor li {float: left;}
+.footer .right .infor li:before {content:"|"; display: inline-block; padding-left: 5px; padding-right: 5px;}
+.footer .right .infor li:first-child:before {display:none; padding-left: 0; padding-right: 0;}
+
+/* @ 채용 */
+.company .desList {padding-left: 255px;}
+.company .detail {padding: 130px 0 170px 255px; font-size: 22px; line-height: 1.73; background: url(../images/epiens.png) 0 45% no-repeat; background-size: 168px auto;}
+.company .description {text-align: center;}
+.company .description dt {padding-top: 115px; font-size: 34px; line-height: 1.74;}
+.company .description dd {padding: 65px 0 120px; font-size: 20px; line-height: 1.65; font-weight: 300;}
+
+.advantage {padding: 150px 0; background: #f1f4f5; }
+.adList li {display: table; margin-top: 40px; min-height: 216px; background: #fff; padding: 55px 50px; box-shadow: 0 6px 24px 0 rgba(0, 0, 0, 0.05);}
+.adList li:first-child {margin-top: 0;}
+.adList dl {display: table-cell; vertical-align: middle;}
+.adList dt,
+.adList dd {display:table-cell; vertical-align: middle;}
+.adList dt {min-width: 220px; font-size: 27px; font-weight: 500; position: relative; white-space: nowrap; line-height: 1.3;}
+.adList dd:before {content:""; width: 21px; height: 25px; display: block; position: absolute; top: 0; left: 0; }
+.adList dd {padding-left: 95px; font-size: 20px; line-height: 1.65; position: relative; background: url(../images/adLine.png) 35px 50% no-repeat; font-weight: 300;}
+
+.place {padding: 150px 0;}
+.place .container {max-width: 880px; padding: 0;}
+.place h2 {font-size: 26px; font-weight: 300;}
+.place h2 em {font-weight: 400;}
+.place .placeSlide {width: 100%; margin: 0 auto; padding: 40px 0 65px;}
+.place .placeSlide img {max-width: 100%;}
+.place .placeExp {position: relative; color: #333; font-size: 24px; font-weight: 400;}
+.place .placeExp li {position: absolute; top: 0; left: 0; transition: opacity 0.2s; -webkit-transition: opacity 0.2s; -moz-transition: opacity 0.2s; -ms-transition: opacity 0.2s; -o-transition: opacity 0.2s; opacity: 0; line-height: 1.2;}
+.place .placeExp li.active {opacity: 1;}
+.place .swiper-button-prev,
+.place .swiper-button-next {position: absolute; top: auto; margin-top: 0; bottom: -40px; right: 0; width: 40px; height: 40px; text-indent:-9999px; z-index: 10;}
+.place .swiper-button-prev {left: auto; right: 72px; background: url(../images/btnPrev2.png) no-repeat; background-size: 100% auto;}
+.place .swiper-button-next {background: url(../images/btnNext2.png) no-repeat; background-size: 100% auto;}
+.place .placePage {display: none; padding-top: 85px;}
+
+.apply {padding: 170px 0 150px; background: #cdd3db; text-align: center; font-size: 20px;}
+.apply h3 {font-size: 34px; font-weight: 500;}
+.apply .text {padding: 20px 0 55px; line-height: 1.65;}
+.apply .goHire {max-width: 320px; width: 100%; height: 50px; overflow: hidden; margin: 0 auto; line-height: 46px; border: 1px solid #979797;}
+.apply .goHire a {display: block; width: 100%; height: 100%; font-size: 16px; color: #000; background: none; display: block; text-transform: uppercase;}
+.apply .goHire a::after { content:""; height: 100%; left: -35%; top: 0; transform: skew(50deg); transition-duration: 0.6s; transform-origin: top left; width: 0;}
+.apply .goHire a:hover:after { height: 100%; width: 135%; z-index: 1;}
+.apply .goHire a,
+.apply .goHire a span,
+.apply .goHire a::after { -webkit-transition: all 0.3s; -moz-transition: all 0.3s; -o-transition: all 0.3s; -ms-transition: all 0.3s; transition: all 0.3s; position: relative;}
+.apply .goHire a::before,
+.apply .goHire a::after { background: #333; content: ''; position: absolute; z-index: -1;}
+.apply .goHire a:hover span {color: #fff; z-index: 5;}
+
+.tablet,
+.mobile {display: none;}
+
+.swiper-pagination {width: 100%; padding-top: 35px;}
+.swiper-pagination-bullet {margin-left: 8px; background-color: rgb(207,207,207); opacity: 0.5;}
+.swiper-pagination-bullet:first-child {margin-left: 0;}
+.swiper-pagination-bullet-active {background-color: #cfcfcf; opacity: 1;}
+.brand .swiper-pagination,
+.influencer .swiper-pagination {display: none; padding-top: 0; bottom: 60px;}
+
+/* @ 1911 이피엔스 페이지 */
+body.epiens h2 {text-align: center; font-size: 45px;}
+
+.what .detail {padding-top: 190px; padding-bottom: 240px; display: table; width: 100%;}
+.what .detail > div {display: table-cell; vertical-align: middle; }
+.what .detail .left {position: relative; font-size: 63px; line-height: 1.3; color: #ff454a; font-weight: 500;}
+.what .detail .left .spCompany {width: 64px; height: 64px; margin-top: -5px; margin-left: 35px; display: inline-block; vertical-align: middle; text-indent: -9999px; background: url(../images/company.png) no-repeat; background-size: 100% auto; transition: transform 0.3s;}
+.what .detail:hover .spCompany {animation: directionArrow 0.8s ease-out infinite; -ms-animation: directionArrow 0.8s ease-out infinite;}
+.what .detail .right {padding-left: 48px; font-size: 22px; font-weight: 300; line-height: 1.8;}
+.what .hexagon_figure {width:315px; height:315px; position: absolute; top: 0; left: 115px; z-index: -1; display: block; color: #f4f4f4; background: #f4f4f4; display: block; border-radius: 50%;}
+
+
+
+.make {padding: 267px 0; background: #f1f2f5;}
+.make .detail {padding-bottom: 128px; display: table;}
+.make .detail > div {width: 50%; display: table-cell; vertical-align: middle;}
+.make .detail .left {max-width: 400px; font-size: 40px; line-height: 1.5;}
+.make .detail .right {width: 56%; padding-left: 60px; font-size: 20px; font-weight: 300; line-height: 1.8;}
+.makeList li {width: 100%; height: 100%; position: relative; max-height: 280px; padding: 120px 80px; margin-top: 32px; display: table; color: #fff; box-shadow: 0 6px 24px 0 rgba(0, 0, 0, 0.25);}
+.makeList li:first-child {margin-top: 0;}
+.makeList li:after {content:""; display: block; width: 56px; height: 56px; position: absolute; top: 0; right: 0;background: url(../images/mark.png) no-repeat;}
+.makeList li.no1 {background: url(../images/make01.jpg) center center no-repeat; background-size: cover;}
+.makeList li.no2 {color: #000; background: url(../images/make02.jpg) center center no-repeat; background-size: cover;}
+.makeList li.no3 {background: url(../images/make03.jpg) center center no-repeat; background-size: cover;}
+
+.makeList li dl {display: table-cell; vertical-align: middle;}
+.makeList li dt {padding-bottom: 12px; font-size: 38px; font-weight: 500;}
+.makeList li dd {font-size: 22px;}
+
+
+.portfolio {padding: 208px 0 60px; background: #000;}
+.portfolio h2 {padding-bottom: 106px; color: #fff;}
+#portfolio .brandList .slide {max-width: 460px; padding: 0; margin-top: 2%; padding-left: 1%; position: relative; font-size: 18px;}
+#portfolio .brandList .slide:nth-child(odd) {padding-left: 0; padding-right: 1%;}
+#portfolio .brandList .slide:nth-child(1),
+#portfolio .brandList .slide:nth-child(2) {margin-top: 0;}
+#portfolio .brandList .slide:after {display: none;}
+#portfolio .brandList .slide div {line-height: 1 !important;}
+
+
+.portImgWrap {position: relative; display: inline-block; margin: 0; max-width: 102%; color: #fff; overflow: hidden; -webkit-backface-visibility: hidden; backface-visibility: hidden; -moz-osx-font-smoothing: grayscale; -webkit-transform: translateZ(0); transform: translateZ(0);}
+.portImgWrap > img {vertical-align: top; max-width: 100%;}
+.portImgWrap figcaption {background: rgba(0,0,0,0.6); padding: 30px; position: absolute; top: 0; bottom: 0; left: 0; right: 0; color: #fff; opacity: 0; z-index: 1;}
+.portImgWrap:hover figcaption {opacity: 1; transition-delay: 0.21s;}
+.portImgWrap a {position: absolute; top: 0; bottom: 0; left: 0; right: 0; z-index: 1;}
+.portImgWrap:before,
+.portImgWrap:after,
+.portImgWrap *,
+.portImgWrap *:before,
+.portImgWrap *:after {box-sizing: border-box; transition: all .35s ease;}
+.portImgWrap:after,
+.portImgWrap:before {width: 0; height: 102%; opacity: 0.25; background: #000; position: absolute; content: '';}
+.portImgWrap:hover:after,
+.portImgWrap:hover:before {width: 102%;}
+.portImgWrap:after {top: 0; left: 0;}
+.portImgWrap:before { right: 0; bottom: 0;}
+.portImgWrap h3 {color: #fff; font-size: 25px !important; padding-bottom: 7px !important;}
+.portImgWrap p {font-size: 17px;}
+.portImgWrap .captionWrap {position: absolute; bottom: 32px; left: 32px;}
+
+.btnMoviePlay {position: absolute; bottom: 85px; left: 20px; box-sizing: content-box; display: block; width: 32px; height: 44px; border-radius: 50%; padding: 18px 20px 18px 28px; z-index: 10;}
+.btnMoviePlay:before {content: ""; position: absolute; z-index: 0; left: 50%; top: 50%; transform: translateX(-50%) translateY(-50%); display: block; width: 55px; height: 55px; background: #eb2055; border-radius: 50%; animation: pulse-border 1100ms ease-out infinite; -webkit-animation: pulse-border 1100ms ease-out infinite;}
+.btnMoviePlay:after {content: ""; position: absolute; z-index: 1; left: 50%; top: 50%; transform: translateX(-50%) translateY(-50%); display: block; width: 60px; height: 60px; background: #eb2055; border-radius: 50%; transition: all 200ms;}
+.btnMoviePlay span {display: block; position: relative; z-index: 3; width: 0; height: 0; border-left: 19px solid #fff; border-top: 12px solid transparent; border-bottom: 12px solid transparent; top: 10px; left: 5px;}
+
+@keyframes pulse-border {
+  0% {
+    transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1.5);
+    opacity: 0;
+  }
+}
+
+
+
+
+.scope {padding: 208px 0; background: #fbfafa;}
+.scope h2 {padding-bottom: 106px;}
+.scope .adList dd {background: url(../images/adLine_p.png) 35px 50% no-repeat;}
+
+.location {padding: 130px 0 115px;}
+.location .mapWrap {}
+.mapWrap .spContact {width: 64px; height: 64px; display: inline-block; vertical-align: middle; text-indent: -9999px; background: url(../images/contact.png) no-repeat; background-size: 100% auto;}
+.mapWrap .direction {float: left;}
+.mapWrap .direction a:hover div {text-decoration: underline;}
+.mapWrap .direction a:hover p {animation: directionArrow 0.8s ease-out infinite; -ms-animation: directionArrow 0.8s ease-out infinite;}
+@keyframes directionArrow {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(15%);
+  }
+}
+.mapWrap .direction h3 {margin: 16px 0; font-size: 31px; font-weight: 500;}
+.mapWrap .direction div {line-height: 1.5; font-size: 16px;}
+.mapWrap .map {float: right;}
+
+.overlay_info {height: 50px; border-radius: 6px; margin-bottom: 12px; top:-48px; float:left;position: relative; border: 1px solid #ccc; border-bottom: 2px solid #ddd;background-color:#fff;}
+.overlay_info:nth-of-type(n) {border:0; box-shadow: 0px 1px 2px #888;}
+.overlay_info a:hover .address {color: #666;}
+.overlay_info .desc {padding: 8px 12px; position: relative; min-width: 100px; text-align: center;}
+.overlay_info img { margin: 0 auto; display: block; vertical-align: top; width: 60px; height: 20px;}
+.overlay_info .address {padding-top: 3px; font-size: 12px; color: #333;}
+.overlay_info:after {content:'';position: absolute; margin-left: -11px; left: 50%; bottom: -12px; width: 22px; height: 12px; background:url(../images/locationTail.png) no-repeat 0 bottom;}
+
+
+/*POPUP*/
+.modal-open { overflow-y: scroll; }
+.modal-open > #viewport { position: fixed; right: 0; left: 0; width: 100%; margin-right: auto; margin-left: auto; }
+
+
+.popup {position: fixed; left:0; top:0; bottom:0; width: 100%; height: 100%; z-index:200; text-align: center; display: none; overflow-y:auto;}
+.popup .bg { position: fixed; left:0; top:0; width: 100%; height: 100%; z-index: 1; background:rgba(0,0,0,.7);}
+.popup .popIn {position:relative; margin: 0 auto; left:0; top:50%; max-width: 640px;  width: 100%; box-sizing:border-box;  z-index:2; text-align: center; animation-name: anim-scale; animation-duration: .3s; animation-direction: alternate; animation-timing-function: cubic-bezier(0.18, 0.89, 0.32, 1.28); }
+.popup .popIn .closePop {position:absolute; right:5px; top:-40px; z-index: 40; display: inline-block;}
+.popup .popIn .closePop a {transition: transform 0.8s; display: inline-block; width:27px; height:27px;  background:url('../images/btnPopClose.png') no-repeat;}
+.popup .popIn .closePop a:hover {-ms-transform: rotate(360deg); transform: rotate(360deg);}
+
+.popup.mainPop .popIn .youtubeCont {position: relative; max-width: 1200px; /*height:669px;*/ margin:0 auto; background: #000; border: 3px solid #fff;}
+.popup.mainPop .popIn .youtubeCont #youtubeMovie {position: relative; padding-bottom: 56.25%; width: 100%;}
+.popup.mainPop .popIn .youtubeCont iframe {height: 100%; width: 100%; position: absolute; left: 0;}
+
+@keyframes anim-scale { from { -webkit-transform: scale3d(0.8, 0.8, 0.8);
+    transform: scale3d(0.8, 0.8, 0.8); }
+  to { -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1); } }
+
+
+
+/* @ reponsive */
+
+  /* laptops */
+@media screen and (max-width: 1280px) {
+  .sws .title {font-size: 54px;}
+  .sws .detail {font-size: 18px; max-width: 570px;}
+
+  .sws .description {padding-left: 10%;}
+  .sws .description .slide {width: 42%;}
+  .sws .swiper-button-prev {left: calc( 15% + 40px);}
+  .sws .swiper-button-next {left: calc( 15% + 106px);}
+
+  .brand .title,
+  .influencer .title {font-size: 48px;}
+  .influencer .detail {font-size: 24px;}
+
+  .brand .detail .left {font-size: 24px;}
+  .brand .detail .right {font-size: 17px;}
+  .brand .sponsor { margin-bottom: 180px; font-size: 16px;}
+  .brand .sponList li {max-width: 100%; width:19%; margin: 8px 0 0 1%;}
+  .brand .detail .right {padding-left: 0; width: 50%;}
+  .influencer .detail {padding: 30px 0 140px 48px; }
+
+  /* @ 채용 */
+  .company .detail {font-size: 19px;}
+  .company .description dt {font-size: 27px;}
+  .company .description dd {font-size: 18px;}
+  .apply {font-size: 18px;}
+  .apply h3 {font-size: 28px;}
+
+  /* @ 이피엔스 */
+  .what .detail {padding: 180px 0;}
+  .what .detail .left {font-size: 48px;}
+  .what .detail .right {font-size: 20px;}
+  .what .hexagon_figure {width: 260px; height: 260px;}
+
+  .make {padding: 180px 0;}
+  .make .detail .left {font-size: 32px;}
+  .make .detail .right {font-size: 20px; padding-left: 32px;}
+  .makeList li {padding: 80px 50px;}
+
+  .scope {padding: 150px 0;}
+  .portfolio {padding-top: 150px;}
+
+
+}
+
+  /* tablets */
+@media screen and (max-width: 1024px) {
+  .main .mainText.original {font-size: 130px;}
+  .container {padding: 0 60px;}
+
+  .desList li {padding-left: 110px; font-size: 18px;}
+  .sws .description {margin-left: 100px; margin-bottom: 150px;}
+  .sws .description .inner h3 {font-size: 22px;}
+  .sws .description .inner div {font-size: 14px;}
+
+  .sws .swiper-button-prev {left: calc( 10% + 40px);}
+  .sws .swiper-button-next {left: calc( 10% + 106px);}
+
+  .brandList .slide {font-size: 16px;}
+  .brandList .slide h3 {font-size: 18px;}
+
+  .influencer .influImg {top: -40px;}
+  .influencer .influImg .original {display: none;}
+  .influencer .influImg .dummy {display: block !important;}
+  .influencer .detail {padding: 30px 0 100px 48px; }
+
+  .brand .title, .influencer .title {font-size: 42px;}
+
+  .news p {font-size: 21px;}
+  .news em {font-size: 42px;}
+
+  .footer .container {padding: 0 30px;}
+
+  /* @ 채용 */
+  body.hire .container {padding: 0 32px;}
+  .company .desList {padding-left: 0; margin: 0 auto;}
+  .adList dt {min-width: 190px; font-size: 23px;}
+  .adList dd {font-size: 18px;}
+
+  /* @ 이피엔스 */
+  body.epiens .mainText .no1 {font-size: 120px;}
+  body.epiens .mainText .no2 {font-size: 28px;}
+
+  .what .desList {margin: 0 auto;}
+  .what .detail .right {font-size: 17px;}
+
+  body.epiens h2 {font-size: 35px;}
+
+  .make .detail .right {font-size: 17px;}
+
+  .location .direction {padding: 0 32px 25px; display: inline-block;}
+  .mapWrap > div {float: none !important; display: block;}
+  .mapWrap .map {max-width: 100% !important;}
+
+}
+
+
+@media (min-width: 769px) {
+  .titleWrap {transition: all 0.5s; -moz-transition: all 0.5s; -ms-transition: all 0.5s; -webkit-transition: all 0.5s; -o-transition: all 0.5s; transform: translateY(15%); opacity: 0;}
+  .page.active .titleWrap {transform: translateY(0); opacity: 1;}
+}
+
+  /* low tablets & mobile landscape */
+@media screen and (max-width: 768px) {
+  .tablet {display: block;}
+  .pc {display: none;}
+  .container {padding: 0 32px;}
+
+  .main .bg {background: url(../images/mainBg_m.png) #f8ece0 bottom center no-repeat; background-size: auto 100%;}
+  .main .mainText.original { vertical-align: top; padding-top: 7vh; font-size: 96px;}
+  .main .mainText.original .smallText {font-size: 22px;}
+  .main .mainText.original .container > div {padding-left: 0; text-align: center;}
+  .swsLogo {margin-top: 3px;}
+
+  .desTableWrap {padding-top: 50px;}
+  .desTable {width: 100%; text-align: center; font-size: 18px; font-weight: 300;}
+  .desTable td {width: 50%; line-height: 2.5;}
+  .desTable td:last-child {background: url(../images/swsPlus.png) 0 center no-repeat;}
+
+  .sws .title { font-size: 40px; line-height: 1.35;}
+  .sws .detail {padding-bottom: 90px; font-size: 16px;}
+  .sws .description {margin-left: 0; padding: 48px 0 96px;}
+  .sws .description:before {width: 100px;}
+  .sws .description .swsSlide {margin-left: -5%;}
+  .sws .description .slide {width: 75%; margin-right: 24px;}
+  .sws .description .inner {padding: 16px;}
+  .sws .description .inner h3 {padding-bottom: 9px;}
+  .sws .swsPage {display: block;}
+  .sws .swsBtn {display: none;}
+
+
+  .brand .title, .influencer .title {font-size: 36px;}
+  .brand .sponsor {padding: 80px 0 60px;}
+  .brand .sponsor p {line-height: 1.5;}
+  .brand .title {padding-bottom: 16px;}
+  .brand .detail {padding-bottom: 50px;}
+  .brand .detail > div {width: 100%; float: none;}
+  .brand .detail .left {font-size: 24px;}
+  .brand .detail .right {display: block; font-size: 16px; padding-top: 32px; width: 100%;}
+
+  .brand .brandBg {padding-right: 0;}
+  .brand .brandBg img {width: 100%;}
+  .brandList .slide h3 {font-size: 20px;}
+
+  .brand .title:before,
+  .influencer .title:before {width: 24px; height: 24px; margin-right: 15px; background-size: 100% auto;}
+
+  .influencer .detail {padding-left: 0;}
+
+  .brandList {padding-bottom: 120px;}
+  .brandList .slide {padding: 0 10px 0 35px; margin-top: 50px;}
+  .brandList .slide:after {width: 24px; height: 24px; top: -5px; left: 0; background-size: 24px 24px;}
+
+  .news p {font-size: 19px;}
+  .news em {font-size: 38px;}
+
+  .footer .container {padding: 0 16px;}
+  .footer .container > div {display: block;}
+  .footer .container > div.right {padding-left: 0; padding-top: 16px;}
+
+  /* @ 채용 */
+
+  body.hire .main .mainText .no1 {font-size: 40px;}
+  body.hire .main .mainText .no3 {font-size: 84px; }
+
+  .company .desList li {padding-left: 40px; font-size: 18px; background-position: 9% center;}
+  .company .desList li:first-child {padding-left: 0;}
+  .company .detail {padding: 120px 0 100px 155px; font-size: 17px; background-size: 125px auto;}
+  .company .description dt {font-size: 22px;}
+  .company .description dd {padding: 30px 0 80px; font-size: 16px;}
+  .advantage {padding: 56px 0;}
+  .adList li {padding: 0 35px;}
+  .adList dt {min-width: 170px; font-size: 20px;}
+  .adList dd,
+  .scope .adList dd {padding-left: 80px; font-size: 16px; background-position: 25px 50%;}
+  .place {padding: 75px 0 150px;}
+  .place h2 {font-size: 24px; text-align: center;}
+  .place .placeSlide {padding: 28px 0 17px;}
+  .place .swiper-button-prev {right: 104px;}
+  .place .swiper-button-next {right: 32px;}
+  .place .placeExp {font-size: 20px;}
+  .apply {padding: 72px 0 97px; font-size: 17px;}
+  .apply h3 {font-size: 22px;}
+  .apply .text {padding-top: 27px;}
+
+
+  /* 이피엔스 */
+
+  body.epiens .mainText .no1 {font-size: 85px;}
+  body.epiens .mainText .no2 {font-size: 22px;}
+
+  .what .detail {padding: 120px 0; max-width:400px; margin: 0 auto;}
+  .what .desList li {padding-left: 40px; font-size: 18px; background-position: 9% center;}
+  .what .desList li:first-child {padding-left: 0;}
+  .what .detail > div {display: block;}
+  .what .detail:hover .spCompany {animation: none; -ms-animation: none;}
+  .what .detail .left {font-size: 48px;}
+  .what .detail .left .spCompany {width: 40px; height: 40px; margin-left: 15px; transform: rotate(90deg);}
+  .what .detail .right {padding-top: 80px; padding-left: 0;}
+  .what .hexagon_figure {left: auto; right: -25%;}
+
+  .make {padding: 120px 0;}
+  .make .detail {padding-bottom: 56px;}
+  .make .detail > div {display: block; width: 100%;}
+  .make .detail .left {font-size: 32px;}
+  .make .detail .right {width: 100%; padding-top: 32px; padding-left: 0;}
+  .makeList li {padding: 53px 24px;}
+  .makeList li:after {display: none;}
+  .makeList li dt {font-size: 30px;}
+  .makeList li dd {font-size: 17px;}
+
+  .scope {padding: 96px 0 109px;}
+
+  .portfolio {padding-top: 90px;}
+  .portfolio h2 {padding-bottom: 50px;}
+  #portfolio .brandList {margin-left: 0;}
+  #portfolio .brandList .slide {width: 100%; max-width: 100%; padding: 0;}
+  .portImgWrap {overflow: visible;}
+  .portImgWrap figcaption {opacity: 1 !important; padding: 0; height: 102%; background-size: 102% 102%;}
+  .portImgWrap .captionWrap {bottom: -60px; left: 0;}
+  .portImgWrap:hover:after,
+  .portImgWrap:hover:before {width: 0 !important;}
+  .btnMoviePlay {position: absolute; top: 50%; bottom: auto; left: 50%; margin-top: -35px; margin-left: -40px;}
+  .portImgWrap h3 {font-size: 16px !important;}
+  .portImgWrap p {font-size: 14px;}
+
+  .location {padding: 65px 0 35px;}
+  .location .container {padding: 0;}
+  .mapWrap .spContact {width: 40px; height: 40px;}
+  .mapWrap .direction h3 {font-size: 24px;}
+  .mapWrap .direction div {font-weight: 600; text-decoration: underline;}
+
+
+  .popup .popIn {width: 90%;}
+
+}
+  /* mobile */
+
+@media screen and (max-width: 640px) {
+  .adList dt,
+  .adList dd {display: block; text-align: center;}
+  .adList dd,
+  .scope .adList dd {padding: 16px 0 0; background: none;}
+  .what .hexagon_figure {right: -12%;}
+}
+
+@media (min-width: 769px) {
+  #portfolio .brandList {flex-wrap: wrap; width: 100%;}
+}
+@media (min-width: 461px) {
+  .slideWrap .brandList {flex-wrap: wrap; width: 100%;}
+}
+
+@media screen and (max-width: 460px) {
+  .mobile {display: block;}
+  .mobileNo {display: none !important;}
+
+  .header .container {padding: 0 24px;}
+  .gnbWrap {font-size: 13px;}
+  .gnb li {margin-left: 20px;}
+
+  .main .mainText.original {padding-top: 10vh; font-size: 70px;}
+  .main .mainText.original .smallText {font-size: 18px;}
+  .desTable {font-size: 16px;}
+
+  .sws .description .slide {/*width: 78%;*/}
+
+  .brandList {margin-left: -30px;}
+  .brandList .slide {width: 70%; cursor: pointer; opacity: 0.5;}
+  .brandList .slide.swiper-slide-active {opacity: 1;}
+  .brandList .slide h3 {padding-bottom: 32px;}
+
+  .brand .title, .influencer .title {}
+  .brand .title {padding-bottom: 8px;}
+  .brand .detail {padding-bottom: 50px;}
+  .brand .sponList li {width: 49%;}
+
+  .brand .slideWrap,
+  .influencer .slideWrap {padding: 0;}
+  .brand .swiper-pagination,
+  .influencer .swiper-pagination {display: block;}
+
+  .brand .title:before,
+  .influencer .title:before {width: 16px; height: 16px; margin-right: 10px; background-size: 100% auto;}
+  .news em {font-size: 36px;}
+
+  .footer {padding: 35px 0;}
+
+  /* @ 채용 */
+  body.hire .main .mainText .no1 {font-size: 30px;}
+  body.hire .main .mainText .no2 {line-height: 0.6;}
+  body.hire .main .mainText .no2 i {width: 25px; height: 25px; margin: -25px auto 0; background: url(../images/hireX.png) no-repeat; background-size: 100% auto;}
+  body.hire .main .mainText .no3 {font-size: 64px; }
+
+  .company .detail {padding-left: 0; background: none;}
+  .company .epiLogo {max-width: 144px; margin: 0 auto; padding-bottom: 55px;}
+  .company .desList li {font-size: 16px;}
+  .company .description dt {font-size: 20px;}
+
+
+  .place .placeExp {text-align: center; font-size: 18px;}
+  .place .placeExp li {width: 100%;}
+
+  .place .placePage {display: block; margin-left: -32px;}
+  .place .swiper-button-prev,
+  .place .swiper-button-next {display: none;}
+
+  /* @이피엔스 */
+  body.epiens .mainText .no1 {font-size: 62px;}
+  .what .desList {margin: 0;}
+  .what .detail .left {font-size: 42px;}
+  .what .detail .right {font-size: 17px;}
+  .what .hexagon_figure {width: 214px; height: 214px; right: 0;}
+  .what .desListDummy { padding-left: 40px; margin-top: 15px; white-space: nowrap; position: relative; font-weight: 300; background: url(../images/swsPlus.png) 2% center no-repeat; font-size: 18px;}
+
+  .make .detail .left {font-size: 24px;}
+  .make .detail .right {padding-top: 32px;}
+  .makeList li dt {font-size: 24px;}
+
+  body.epiens h2 {font-size: 28px;}
+
+}
+
+@media screen and (max-width: 360px) {
+    .main .mainText.original {font-size: 64px;}
+    .desTable {font-size: 14px;}
+    .sws .title {font-size: 36px;}
+    .brand .title, .influencer .title {font-size: 32px;}
+    .brand .detail .left, .influencer .detail {font-size: 21px;}
+
+    /* @ 채용 */
+    .company .desList li {font-size: 14px;}
+    .company .detail {font-size: 15px;}
+    .company .description dt,
+    .adList dt {font-size: 17px;}
+    .company .description dd,
+    .adList dd {font-size: 15px;}
+    .place h2 {font-size: 21px;}
+    .place .placeExp {font-size: 15px;}
+    .apply h3 {font-size: 19px;}
+    .apply {font-size: 14px;}
+    .apply .goHire a {font-size: 15px;}
+
+}
+
+@media (max-width: 768px) and (orientation: landscape) {
+
+  #main {position: relative;}
+  #mainCont {margin-top: 0;}
+  .main .contents {height: 100%;}
+  .main .bg {background-size: cover;}
+  .main .mainText {padding: 30% 0;}
+}
