@@ -21,7 +21,7 @@ h3 strong {font-weight: 900;}
 .page .inner {display: table-cell; vertical-align: middle;}
 
 /* main */
-.main {background-color: #f7f7f8;}
+.main {background-color: #f7f7f8; position: relative; overflow: hidden;}
 
 .main .circle i {width: 17vw; height: 17vw;  max-width: 343px; max-height: 343px; display: inline-block; position: absolute; background-color: #44d62c; border-radius: 50%;  transition: all .6s;}
 .main .circle i.no1 {top: 0px; right: 40%;}
@@ -43,7 +43,8 @@ h3 strong {font-weight: 900;}
 .changeWrap { border-bottom: 1px solid #707070;}
 .changeWrap h3 {padding-bottom: 113px;}
 .changeWrap .cntWrap:after {content:""; display: block; clear: both;}
-.changeWrap .cntWrap .cnt {width: 300px; height: 300px; display: table; border-radius: 50%; text-align: center;}
+.changeWrap .cntWrap > div {}
+.changeWrap .cntWrap .cnt {width: 300px; height: 300px; display: table; border-radius: 50%; text-align: center; transition: all .3s ease-in-out;}
 .changeWrap .cntWrap .cnt.before {float: left; border: 1px dashed #707070;}
 .changeWrap .cntWrap .cnt.after {float: right; border: 1px solid #35d331;}
 .changeWrap .cntWrap .cnt > div {display: table-cell; vertical-align: middle;}
@@ -58,8 +59,9 @@ h3 strong {font-weight: 900;}
 .whatWrap {background: #272727; color: #fff;}
 .whatWrap h3 {padding-bottom: 135px;}
 .whatWrap ul:after {content:""; display: block; clear: both;}
-.whatWrap li {float: left; margin-left: 80px;}
+.whatWrap li {width: 22%; margin-left: 4%; float: left; text-align: center;}
 .whatWrap li:first-child {margin-left: 0;}
+.whatWrap li p {padding-bottom: 35px; width: 40%; margin: 0 auto; text-align: center;}
 .whatWrap dt {font-size: 26px; font-weight: 900; line-height: 2.23;}
 .whatWrap dd {font-size: 20px;line-height: 1.5;}
 
@@ -77,18 +79,92 @@ h3 strong {font-weight: 900;}
 
 /* 랩탑 미디어쿼리 */
 @media screen and (max-width: 1300px) {
+    .inner {padding: 0 10%;}
+
     .main .visual01 h2 {font-size: 70px;}
+    .main .visual01 p {font-size: 45px;}
+
+    .midTit {font-size: 46px;}
+    .smTit {font-size: 40px;}
+
+    .inforWrap h3 {font-size: 46px;}
+
+    .whatWrap dt {font-size: 20px;}
+    .whatWrap dd {font-size: 16px;}
+
 }
 
 @media screen and (max-width: 1024px) {
+    .inner {padding: 0 8%;}
+
     .mVisible {display: block;}
     .main .visual01 h2 {font-size: 58px;}
+
+
+    .inforWrap .right {font-size: 20px;}
+    .inforWrap .right h4 {font-size: 30px;}
+
+    .whatWrap li {width: 45%; margin-left: 10%;}
+    .whatWrap li:nth-child(odd) {margin-left: 0;}
+    .whatWrap li:nth-child(3) {padding-top: 60px;}
+    .whatWrap li:nth-child(4) {padding-top: 60px;}
+
+    .changeWrap .cntWrap .cnt {width: 250px; height: 250px;}
+    .changeWrap .cntWrap .cnt strong {font-size: 16px;}
+    .changeWrap .cntWrap .cnt p {font-size: 18px;}
+
 }
 
 /* 태블릿 미디어쿼리 */
 @media screen and (max-width: 768px) {
+
     .main .circle i {width: 20vw; height: 20vw;}
     .main .visual01 h2 {font-size: 45px; line-height: 1.33;}
+    .main .visual01 p {font-size: 35px;}
+
+    .subTit {font-size: 14px;}
+    .midTit {font-size: 35px;}
+    .smTit {font-size: 35px;}
+
+    .left {float: none;}
+    .right {float: none;}
+
+    .collaboWrap .left {}
+    .collaboWrap .right {padding-top: 93px;}
+
+    .introWrap {border: none;}
+    .inforWrap h3 {line-height: 2.15; font-size: 35px;}
+    .inforWrap .right {font-size: 16px;}
+    .inforWrap .right h4 {font-size: 23px;}
+
+    .whatWrap li {width: 48%; margin-left: 4%;}
+    .whatWrap dt {font-size: 16px;}
+    .whatWrap dd {font-size: 13px;}
+
+    .changeWrap {border: none;}
+    .changeWrap .cntWrap .cnt {margin: 0 auto; float: none !important;}
+    .changeWrap .cntWrap .cnt.after {margin-top: 90px;}
+    .changeWrap .cntWrap .cnt strong {font-size: 12px;}
+    .changeWrap .cntWrap .cnt p {font-size: 14px; }
 }
 
 /* 모바일 미디어쿼리 */
+
+@media screen and (max-width: 480px) {
+    .inner {padding: 0 5%;}
+
+    .subTit {font-size: 12px;}
+    .midTit {font-size: 25px;}
+    .smTit {font-size: 25px;}
+
+    .whatWrap h3 {padding-bottom: 70px;}
+    .whatWrap dt {font-size: 14px;}
+    .whatWrap dd {font-size: 10px;}
+
+    .changeWrap .cntWrap .cnt {width: 168px; height: 168px;}
+    .changeWrap .cntWrap .cnt strong {font-size: 10px;}
+    .changeWrap .cntWrap .cnt p {font-size: 12px; }
+
+
+
+}

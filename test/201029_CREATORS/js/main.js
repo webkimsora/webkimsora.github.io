@@ -37,13 +37,13 @@
 
 		// @ swiper
 		var placeSlider = new Swiper(".placeSlide", {
-            slidesPerView: 4.5,
+            slidesPerView: 1.5,
             spaceBetween: 20,
             //centeredSlides: false,
             loop: true,
             //loopFillGroupWithBlank: false,
 			breakpoints: {
-				640: {
+				320: {
 					slidesPerView: 1.5,
 				},
 				768: {

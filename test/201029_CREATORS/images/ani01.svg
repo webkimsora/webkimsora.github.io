@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1350" height="20" viewBox="0 0 1350 20">
+  <defs>
+    <style>
+      .cls-1 {
+        clip-path: url(#clip-아트보드_2);
+      }
+
+      .cls-2 {
+        fill: none;
+        stroke: #707070;
+      }
+    </style>
+    <clipPath id="clip-아트보드_2">
+      <rect width="1350" height="20"/>
+    </clipPath>
+  </defs>
+  <g id="아트보드_2" data-name="아트보드 – 2" class="cls-1">
+    <path id="패스_741" data-name="패스 741" class="cls-2" d="M-10405.675,6039.631h1350l-26.238-20" transform="translate(10406.175 -6019.131)"/>
+  </g>
+</svg>
