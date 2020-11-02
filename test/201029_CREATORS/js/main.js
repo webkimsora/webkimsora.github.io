@@ -127,7 +127,7 @@
 	// 스크롤 애니메이션
     $(window).on('scroll',function() {
         $('.scrollAni').each( function(i){
-            var elScroll = $(this).offset().top + 500;
+            var elScroll = $(this).offset().top + 300;
             var nowScroll = $(window).scrollTop() + $(window).height();
 
             if( nowScroll > elScroll ){
@@ -163,4 +163,11 @@
 		}
 		*/
 	});
+
+	grabCursor();
+
+	function grabCursor() {
+	    document.getElementById("placeSlide").style.cursor = url('../images/cursor.png');
+	}
+
 }());
