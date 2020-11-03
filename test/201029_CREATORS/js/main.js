@@ -43,11 +43,13 @@
 
 		// @ swiper
 		var placeSlider = new Swiper(".placeSlide", {
+			autoplay: {
+				delay: 2000,
+				disableOnInteraction: false
+			},
             slidesPerView: 1.5,
             spaceBetween: 20,
-            //centeredSlides: false,
             loop: true,
-            //loopFillGroupWithBlank: false,
 			breakpoints: {
 				320: {
 					slidesPerView: 1.5,
@@ -95,20 +97,58 @@
 			}
 		});
 
+
+		// cursor event
+		if(!$('body').hasClass('mobilebody')) {
+
+			var $cursor = $('.cursor');
+
+			$(document).bind('mousemove', function (e) {
+				var offset = $(window).scrollTop();
+
+				TweenLite.to($cursor, 0.6, {
+					left: e.pageX - 20,
+					top: e.pageY - offset - 20
+				});
+			});
+
+			$('.introWrap').on('mouseenter', function() {
+				TweenLite.to($cursor, 0.3, {
+				    scale: 0.4,
+					opacity: 1,
+				    backgroundColor: 'rgba(0, 0, 0, 1)'
+				});
+				//console.log('들어왔다');
+			});
+
+			$('.introWrap').on('mouseleave', function() {
+				TweenLite.to($cursor, 0.3, {
+					scale: 0,
+					opacity: 0
+				});
+				//console.log('나갔다');
+			});
+
+			$('.placeSlide .swiper-slide').hover(function () {
+				TweenLite.to($cursor, 0.6, {
+				    ease: Elastic.easeOut.config(1, 0.4),
+				    scale: 1,
+					opacity: 1,
+				    backgroundColor: 'rgba(0, 0, 0, 0.3)'
+				});
+			}, function(){
+				TweenLite.to($cursor, 0.6, {
+					ease: Elastic.easeOut.config(1, 0.4),
+					scale: 0.4,
+					opacity: 1,
+					backgroundColor: 'rgba(0, 0, 0, 1)'
+				});
+			});
+		};
+
 	});
 
 	$(window).load(function(){
-		// skrollr 사용
-		// var s = skrollr.init();
-		// if (s.isMobile()) {
-		// 	s.destroy();
-		// } else {
-		// 	skrollr.init({
-		// 		forceHeight: false
-		// 	});
-		// 	//$('body').height('auto');
-		// }
-
 		// if($(document).scrollTop() > 300){
 		// 	setTimeout(function(){
 		// 		$('body').addClass('on');
@@ -119,7 +159,7 @@
 		// 	},2000);
 		// }
 
-		// 메인 스크롤 애니메이션
+		// skrollr
         var s = skrollr.init();
 		if (s.isMobile()) {
 			s.destroy();
@@ -188,36 +228,5 @@
 	});
 	*/
 
-	  //Selecting cursor
-	var cursor = $('.cursor');
-
-	//Following cursor
-	$(document).bind('mousemove', function (e) {
-	    var offset = $(window).scrollTop();
-
-	    TweenLite.to(cursor, 0, {left: e.pageX - 20, top: e.pageY - offset - 20});
-	  // -20 = half of your cursor width & height
-	  //Offset calculation to prevent position on scroll
-	});
-
-	    var hoverElem = $('body a')
-
-	    //Entering on the element, cursor changes
-	    hoverElem.on('mouseenter', function () {
-	        TweenLite.to(cursor, 0.6, {
-	            ease: Elastic.easeOut.config(1, 0.4),
-	            scale: 0.2,
-	            backgroundColor: 'rgba(0, 0, 0, 1)'
-	        })
-	    });
-
-	    //Leaving the element, cursor goes default
-	    hoverElem.on('mouseleave', function () {
-	        TweenLite.to(cursor, 0.6, {
-	            ease: Elastic.easeOut.config(1, 0.4),
-	            scale: 1,
-	            backgroundColor: 'rgba(0, 0, 0, 0.3)'
-	        })
-	    });
 
 }());
