@@ -116,7 +116,7 @@
 				TweenLite.to($cursor, 0.3, {
 				    scale: 0.4,
 					opacity: 1,
-				    backgroundColor: 'rgba(0, 0, 0, 1)'
+				    backgroundColor: 'rgba(68, 214, 44, 0.5)'
 				});
 				//console.log('들어왔다');
 			});
@@ -134,14 +134,14 @@
 				    ease: Elastic.easeOut.config(1, 0.4),
 				    scale: 1,
 					opacity: 1,
-				    backgroundColor: 'rgba(0, 0, 0, 0.3)'
+				    backgroundColor: 'rgba(68, 214, 44, 1)'
 				});
 			}, function(){
 				TweenLite.to($cursor, 0.6, {
 					ease: Elastic.easeOut.config(1, 0.4),
 					scale: 0.4,
 					opacity: 1,
-					backgroundColor: 'rgba(0, 0, 0, 1)'
+					backgroundColor: 'rgba(68, 214, 44, 0.5)'
 				});
 			});
 		};
@@ -149,16 +149,6 @@
 	});
 
 	$(window).load(function(){
-		// if($(document).scrollTop() > 300){
-		// 	setTimeout(function(){
-		// 		$('body').addClass('on');
-		// 	},500);
-		// } else {
-		// 	setTimeout(function(){
-		// 		$('body').addClass('on');
-		// 	},2000);
-		// }
-
 		// skrollr
         var s = skrollr.init();
 		if (s.isMobile()) {
