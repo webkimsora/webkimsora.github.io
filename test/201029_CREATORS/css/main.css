@@ -11,7 +11,7 @@ body.mobilebody .mVisible {display: block;}
 body.mobilebody .mNone {display: none;}
 
 h3 strong {font-weight: 900;}
-.subTit {padding-bottom: 30px; font-size: 23px; font-family: 'Roboto', sans-serif;}
+.subTit {padding-bottom: 30px; font-size: 23px; font-family: 'Roboto', sans-serif; font-weight: bold;}
 .midTit {font-size: 60px; line-height: 1.33;}
 .smTit {font-size: 45px; line-height: 1.29;}
 
@@ -80,7 +80,7 @@ h3 strong {font-weight: 900;}
 .changeWrap .cntWrap .cnt p {padding-top: 17px; font-size: 23px; line-height: 1.52;}
 .changeWrap .cntWrap .cnt.after strong {color: #35d331;}
 
-.changeWrap .arrow {position: absolute; top: 62vh; left: 0; width: 100%; z-index: 1; opacity: 0;}
+.changeWrap .arrow {position: absolute; top: 61vh; left: 0; width: 100%; z-index: 1; opacity: 0;}
 .changeWrap.on .arrow {opacity: 1;}
 .changeWrap .arrow span {width: 0; height: 1px; display: inline-block; position: relative; background: #707070; /*transition: .5s width ease-in-out; transition-delay: 1s;*/}
 .changeWrap.on .arrow span {/*width: 63%;*/  animation: sizeChange .5s 1s linear both;}
@@ -112,16 +112,14 @@ h3 strong {font-weight: 900;}
 .whatWrap dd {padding-top: 5px; font-size: 18px;line-height: 1.5; font-weight: 300;}
 
 /* contect */
-.inforWrap {}
 .inforWrap h3 {padding-bottom: 90px; line-height: 1.15; font-size: 65px; font-weight: 900; font-family: 'Roboto', sans-serif;}
-.inforWrap .inner > div {}
 .inforWrap .left {width: 60%; padding-right: 80px;}
-.inforWrap .right {width: 40%; font-size: 24px; line-height: 1.5;}
+.inforWrap .right {width: 40%; font-size: 24px; line-height: 1.5; font-weight: 400;}
 .inforWrap .right h4 {font-size: 40px; font-weight: bold; font-family: 'Roboto', sans-serif;}
 
 .contectWrap {padding: 110px 0 0; text-align: center;}
 .contectWrap h3 {padding-bottom: 40px; line-height: 1.15; font-size: 65px; font-weight: 900;}
-.contectWrap p {padding-bottom: 110px; font-size: 29px; line-height: 1.5;}
+.contectWrap p {padding-bottom: 110px; font-size: 29px; line-height: 1.5; font-weight: 400;}
 
 @keyframes slideInUp {
     100%{transform: translateY(0);opacity: 1;}
@@ -150,10 +148,6 @@ h3 strong {font-weight: 900;}
     0% {opacity: 0;}
     100% { opacity: 1; }
 }
-/*.main .ani.no5 {position: absolute; top: 357px; left: 400px; animation: 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1.5s 1 normal both running focus-in-contract;}*/
-
-
-/* body.mobilebody .main #bgMain {display: none;} */
 
 /* 랩탑 미디어쿼리 */
 @media screen and (max-width: 1300px) , (max-height :900px) {
@@ -165,20 +159,18 @@ h3 strong {font-weight: 900;}
     .midTit {font-size: 46px;}
     .smTit {font-size: 40px;}
 
-    .inforWrap h3 {font-size: 46px;}
-
-    .whatWrap dt {font-size: 20px;}
-    .whatWrap dd {font-size: 16px;}
-
     .changeWrap.on .arrow .bigLine {width: 55%;}
 
     .collaboWrap .colImg {max-width:450px;}
 
-    .contectWrap h3 {font-size: 46px;}
+    .whatWrap dt {font-size: 20px;}
+    .whatWrap dd {font-size: 16px;}
 
+    .inforWrap h3 {font-size: 46px;}
     .inforWrap .left {padding-right: 40px;}
     .inforWrap .right {line-height: 1.4;}
 
+    .contectWrap h3 {font-size: 46px;}
 }
 
 @media screen and (max-width: 1024px), (max-height :750px) {
@@ -191,6 +183,7 @@ h3 strong {font-weight: 900;}
 
     .introWrap .placeSlide {padding: 5% 0; }
 
+    .inforWrap .left {padding-right: 20px;}
     .inforWrap .right {font-size: 20px;}
     .inforWrap .right h4 {font-size: 30px;}
 
@@ -199,11 +192,8 @@ h3 strong {font-weight: 900;}
     .changeWrap .cntWrap .cnt strong {font-size: 16px;}
     .changeWrap .cntWrap .cnt p {font-size: 18px;}
     .changeWrap.on .arrow {top: 64vh;}
-    /*.changeWrap.on .arrow span {width: 55%;}*/
 
     .collaboWrap .colImg {padding-left: 30px; max-width:400px;}
-
-    .inforWrap .left {padding-right: 20px;}
 
     .contectWrap p {font-size: 20px;}
 
@@ -215,6 +205,7 @@ h3 strong {font-weight: 900;}
 
 @media screen and (max-width: 1024px) {
     .mVisible {display: block;}
+
     .changeWrap .arrow.mVisible {display: none;}
 
     .whatWrap li {width: 45%; margin-left: 10%;}
@@ -229,39 +220,28 @@ h3 strong {font-weight: 900;}
 
     .main .circle i {width: 36vw; height: 36vw;}
     .main .circle i.no1 {right: 20%;}
-    .main .visual01 h2 {font-size: 45px; line-height: 1.33;}
-    .main .visual01 p {font-size: 35px;}
-
-    .subTit {font-size: 14px;}
-    .midTit {font-size: 35px;}
-    .smTit {font-size: 35px;}
 
     .left {float: none;}
     .right {float: none;}
 
     .mNone {display: none;}
 
-    .whatWrap li {width: 48%; margin-left: 4%;}
-    .whatWrap dt {font-size: 16px;}
-    .whatWrap dd {font-size: 13px;}
-
-    .changeWrap {border: none;}
-    .changeWrap .cntWrap .cnt {margin: 0 auto; float: none !important;}
-    .changeWrap .cntWrap .cnt.after {margin-top: 90px;}
-    .changeWrap .cntWrap .cnt strong {font-size: 12px;}
-    .changeWrap .cntWrap .cnt p {font-size: 14px; }
-    .changeWrap .arrow span:after {width: 13px; top: -5px; right: -2px;}
-
-    .changeWrap .arrow.mVisible {display: block;}
-    .changeWrap.on .arrow {top: 40%; transform: rotate(90deg);}
-
-    .collaboWrap .inner > div {display: block; float: none;}
-    .collaboWrap .colImg {padding-left: 0; padding-top: 93px; max-width:80%; margin: 0 auto;}
-
     .introWrap {border: none;}
     .introWrap .logo li {height: 30px;}
     .introWrap .logo li img {height: 100%;}
     .introWrap .placeSlide {padding: 10% 0;}
+    .changeWrap {border: none;}
+    .changeWrap h3 { padding-bottom: 100px;}
+    .changeWrap .cntWrap .cnt {width: 200px; height: 200px; margin: 0 auto; float: none !important;}
+    .changeWrap .cntWrap .cnt.after {margin-top: 60px;}
+    .changeWrap .cntWrap .cnt strong {font-size: 12px;}
+    .changeWrap .cntWrap .cnt p {font-size: 14px; }
+    .changeWrap .arrow span:after {width: 13px; top: -5px; right: -2px;}
+    .changeWrap .arrow.mVisible {display: block;}
+    .changeWrap.on .arrow {top: 58%; transform: rotate(90deg);}
+
+    .collaboWrap .inner > div {display: block; float: none;}
+    .collaboWrap .colImg {padding-left: 0; padding-top: 93px; max-width:80%; margin: 0 auto;}
 
     .inforWrap h3 {line-height: 2.15; font-size: 35px;}
     .inforWrap .left {width: 100%; padding-right: 0;}
@@ -272,32 +252,47 @@ h3 strong {font-weight: 900;}
     .contectWrap h3 {line-height: 2.15; font-size: 35px;}
     .contectWrap p {font-size: 16px;}
 
+    @keyframes sizeChange {
+        0% {width: 0; opacity: 0;}
+        100% {width: 42vw; opacity: 1;}
+    }
+
+    .whatWrap li {width: 48%; margin-left: 4%;}
+    .whatWrap dt {font-size: 16px;}
+    .whatWrap dd {font-size: 13px;}
+
+
 }
 
 /* 모바일 미디어쿼리 */
 
 @media screen and (max-width: 480px) {
     .inner {padding: 0 5%;}
-
+/*
     .subTit {font-size: 12px;}
     .midTit {font-size: 25px;}
     .smTit {font-size: 25px;}
-
+*/
     .main .circle i {width: 42vw; height: 42vw;}
+    .main .visual01 h2 {font-size: 45px; line-height: 1.33;}
+    .main .visual01 p {font-size: 35px;}
 
-    .whatWrap h3 {padding-bottom: 70px;}
-    .whatWrap dt {font-size: 14px;}
-    .whatWrap dd {font-size: 10px;}
+    .subTit {font-size: 14px;}
+    .midTit {font-size: 35px;}
+    .smTit {font-size: 35px;}
 
     .changeWrap .cntWrap .cnt {width: 168px; height: 168px;}
     .changeWrap .cntWrap .cnt strong {font-size: 10px;}
     .changeWrap .cntWrap .cnt p {font-size: 12px; }
-    .changeWrap.on .arrow {top: 30%;}
+    .changeWrap.on .arrow {top: 34%;}
 
     @keyframes sizeChange {
         0% {width: 0; opacity: 0;}
         100% {width: 60vw; opacity: 1;}
     }
 
-
+    .whatWrap h3 {padding-bottom: 70px;}
+    .whatWrap dt {font-size: 14px;}
+    .whatWrap dd {font-size: 10px;}
+    .whatWrap li p {padding-bottom: 15px;}
 }
