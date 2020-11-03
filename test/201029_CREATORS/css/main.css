@@ -50,7 +50,7 @@ h3 strong {font-weight: 900;}
 .introWrap h3 {}
 .introWrap.on p {transform: translateY(-50%); animation: slideInUp .3s .2s linear both;}
 .introWrap.on h3 {transform: translateY(-50%); animation: slideInUp .5s .3s linear both;}
-.introWrap .placeSlide {padding: 10% 0 5%; transition: all .3s; }
+.introWrap .placeSlide {padding: 8% 0 5%; transition: all .3s; }
 .introWrap .placeSlide li:hover {cursor: pointer;}
 .introWrap .logo {text-align: center;}
 .introWrap .logo li {display: inline-block; vertical-align: middle; margin-left: 25px;}
@@ -82,14 +82,14 @@ h3 strong {font-weight: 900;}
 
 .changeWrap .arrow {position: absolute; top: 62vh; left: 0; width: 100%; z-index: 1; opacity: 0;}
 .changeWrap.on .arrow {opacity: 1;}
-.changeWrap .arrow span {width: 0; height: 1px; display: inline-block; position: relative; background: #707070; transition: .5s width ease-in-out; transition-delay: .8s;}
-.changeWrap.on .arrow span {width: 63%;}
+.changeWrap .arrow span {width: 0; height: 1px; display: inline-block; position: relative; background: #707070; /*transition: .5s width ease-in-out; transition-delay: 1s;*/}
+.changeWrap.on .arrow span {/*width: 63%;*/  animation: sizeChange .5s 1s linear both;}
 .changeWrap .arrow span:after {content:""; width: 25px; height: 1px; display: block; position: absolute; top: -9px; right: -4px; background: #707070; transition: .5s width ease-in-out; transition-delay: 1s; transform: rotate(45deg);}
 
 .changeWrap.on .cntWrap .before {}
-.changeWrap.on .cntWrap .before > div {animation: .3s cubic-bezier(0.25, 0.46, 0.45, 0.94) .5s 1 normal both running focus-in-contract;}
+.changeWrap.on .cntWrap .before > div {animation: .5s cubic-bezier(0.25, 0.46, 0.45, 0.94) .5s 1 normal both running focus-in-contract;}
 /* .changeWrap.on .cntWrap .after {transform: rotate(360deg); transition: all .3s 1.3s ease-in-out;} */
-.changeWrap.on .cntWrap .after > div {animation: .3s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1.5s 1 normal both running focus-in-contract;}
+.changeWrap.on .cntWrap .after > div {animation: .5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1.5s 1 normal both running focus-in-contract;}
 
 /* 콜라보 */
 .collaboWrap .inner {display: table;}
@@ -142,10 +142,8 @@ h3 strong {font-weight: 900;}
 }
 
 @keyframes sizeChange {
-    0% {opacity: 0; transform: scale(0);}
-    30% { transform: scale(0.7);}
-    45% { transform: scale(0.5);}
-    100% {opacity: 1; transform: scale(1);}
+    0% {width: 0; opacity: 0;}
+    100% {width: 58vw; opacity: 1;}
 }
 
 @keyframes afterView {
@@ -183,31 +181,25 @@ h3 strong {font-weight: 900;}
 
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1024px), (max-height :750px) {
     .inner {padding: 0 8%;}
-
-    .mVisible {display: block;}
 
     .main .circle i {width: 24vw; height: 24vw;}
     .main .circle i.no1 {top: -50px;}
     .main .circle i.no2 {left: -3%; top: 180px;}
     .main .visual01 h2 {font-size: 58px;}
 
+    .introWrap .placeSlide {padding: 5% 0; }
 
     .inforWrap .right {font-size: 20px;}
     .inforWrap .right h4 {font-size: 30px;}
 
-    .whatWrap li {width: 45%; margin-left: 10%;}
-    .whatWrap li:nth-child(odd) {margin-left: 0;}
-    .whatWrap li:nth-child(3) {padding-top: 60px;}
-    .whatWrap li:nth-child(4) {padding-top: 60px;}
-
+    .changeWrap h3 {padding-bottom: 70px;}
     .changeWrap .cntWrap .cnt {width: 250px; height: 250px;}
     .changeWrap .cntWrap .cnt strong {font-size: 16px;}
     .changeWrap .cntWrap .cnt p {font-size: 18px;}
     .changeWrap.on .arrow {top: 64vh;}
-
-    .changeWrap .arrow.mVisible {display: none;}
+    /*.changeWrap.on .arrow span {width: 55%;}*/
 
     .collaboWrap .colImg {padding-left: 30px; max-width:400px;}
 
@@ -215,15 +207,27 @@ h3 strong {font-weight: 900;}
 
     .contectWrap p {font-size: 20px;}
 
+    @keyframes sizeChange {
+        0% {width: 0; opacity: 0;}
+        100% {width: 53vw; opacity: 1;}
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .mVisible {display: block;}
+    .changeWrap .arrow.mVisible {display: none;}
+
+    .whatWrap li {width: 45%; margin-left: 10%;}
+    .whatWrap li:nth-child(odd) {margin-left: 0;}
+    .whatWrap li:nth-child(3) {padding-top: 60px;}
+    .whatWrap li:nth-child(4) {padding-top: 60px;}
 }
 
 /* 태블릿 미디어쿼리 */
 @media screen and (max-width: 768px) {
     .inner {padding: 30px;}
 
-
     .main .circle i {width: 36vw; height: 36vw;}
-
     .main .circle i.no1 {right: 20%;}
     .main .visual01 h2 {font-size: 45px; line-height: 1.33;}
     .main .visual01 p {font-size: 35px;}
@@ -246,6 +250,7 @@ h3 strong {font-weight: 900;}
     .changeWrap .cntWrap .cnt.after {margin-top: 90px;}
     .changeWrap .cntWrap .cnt strong {font-size: 12px;}
     .changeWrap .cntWrap .cnt p {font-size: 14px; }
+    .changeWrap .arrow span:after {width: 13px; top: -5px; right: -2px;}
 
     .changeWrap .arrow.mVisible {display: block;}
     .changeWrap.on .arrow {top: 40%; transform: rotate(90deg);}
@@ -256,6 +261,7 @@ h3 strong {font-weight: 900;}
     .introWrap {border: none;}
     .introWrap .logo li {height: 30px;}
     .introWrap .logo li img {height: 100%;}
+    .introWrap .placeSlide {padding: 10% 0;}
 
     .inforWrap h3 {line-height: 2.15; font-size: 35px;}
     .inforWrap .left {width: 100%; padding-right: 0;}
@@ -286,7 +292,12 @@ h3 strong {font-weight: 900;}
     .changeWrap .cntWrap .cnt {width: 168px; height: 168px;}
     .changeWrap .cntWrap .cnt strong {font-size: 10px;}
     .changeWrap .cntWrap .cnt p {font-size: 12px; }
+    .changeWrap.on .arrow {top: 30%;}
 
+    @keyframes sizeChange {
+        0% {width: 0; opacity: 0;}
+        100% {width: 60vw; opacity: 1;}
+    }
 
 
 }
