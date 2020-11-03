@@ -5,6 +5,12 @@
 		var UAVendor = UserAgent.match(/LG|SAMSUNG|Samsung/);
 		if (UADevice !== null || UAVendor!== null){
 			$('body').addClass('mobilebody');
+
+			// var verSlider = new Swiper(".verSlide", {
+			// 	direction: 'vertical',
+	        //     loop: false,
+			// 	//mousewheel: true
+	        // });
 		}
 
 		/*resize 반복실행 방지 : smartResize js 해석 */
@@ -54,6 +60,7 @@
 				}
 			}
         });
+
 
 		// 상단으로 이동
 		$.fn.scrollEnd = function(callback, timeout) {
@@ -164,10 +171,53 @@
 		*/
 	});
 
-	grabCursor();
+	/*
 
-	function grabCursor() {
-	    document.getElementById("placeSlide").style.cursor = url('../images/cursor.png');
-	}
+	$(document).mousemove(function(e) {
+		$('.small-circle').css({
+		    left: e.pageX,
+		    top: e.pageY
+		  });
+
+		setTimeout(function() {
+		  $('.big-circle').css({
+		      left: e.pageX,
+		      top: e.pageY
+		    });
+		}, 50);
+	});
+	*/
+
+	  //Selecting cursor
+	var cursor = $('.cursor');
+
+	//Following cursor
+	$(document).bind('mousemove', function (e) {
+	    var offset = $(window).scrollTop();
+
+	    TweenLite.to(cursor, 0, {left: e.pageX - 20, top: e.pageY - offset - 20});
+	  // -20 = half of your cursor width & height
+	  //Offset calculation to prevent position on scroll
+	});
+
+	    var hoverElem = $('body a')
+
+	    //Entering on the element, cursor changes
+	    hoverElem.on('mouseenter', function () {
+	        TweenLite.to(cursor, 0.6, {
+	            ease: Elastic.easeOut.config(1, 0.4),
+	            scale: 0.2,
+	            backgroundColor: 'rgba(0, 0, 0, 1)'
+	        })
+	    });
+
+	    //Leaving the element, cursor goes default
+	    hoverElem.on('mouseleave', function () {
+	        TweenLite.to(cursor, 0.6, {
+	            ease: Elastic.easeOut.config(1, 0.4),
+	            scale: 1,
+	            backgroundColor: 'rgba(0, 0, 0, 0.3)'
+	        })
+	    });
 
 }());
