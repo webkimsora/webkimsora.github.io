@@ -158,7 +158,7 @@ h3 strong {font-weight: 900;}
 /* body.mobilebody .main #bgMain {display: none;} */
 
 /* 랩탑 미디어쿼리 */
-@media screen and (max-width: 1300px) {
+@media screen and (max-width: 1300px) , (max-height :900px) {
     .inner {padding: 0 10%;}
 
     .main .visual01 h2 {font-size: 70px;}
