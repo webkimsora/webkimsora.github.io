@@ -34,28 +34,8 @@
 
 		smartresize.init();
 
-		// @ swiper : 인테리어
-		var changeSlider = new Swiper('.changeSlide', {
-			autoplay: {
-				delay: 5000,
-				disableOnInteraction: false
-			},
-			effect: 'fade',
-			on: {
-				slideChangeTransitionStart: function(){
-					$('.changeWrap .list > li').removeClass('on').eq(changeSlider.activeIndex).addClass('on');
-				}
-			}
 
-		});
-
-		$('.changeWrap .list > li').hover(function(){
-			var idx = $(this).index();
-
-			changeSlider.slideTo(idx);
-		});
-
-		// @ swiper : 공간디자인
+		// @ swiper
 		var placeSlider = new Swiper(".placeSlide", {
 			autoplay: {
 				delay: 2000,
@@ -75,21 +55,6 @@
 					slidesPerView: 4.5,
 				}
 			}
-        });
-
-		// @ swiper : PROJECT
-		var proSlider = new Swiper(".proSlide", {
-			// autoplay: {
-			// 	delay: 2000,
-			// 	disableOnInteraction: false
-			// },
-            slidesPerView: 'auto',
-			effect: "slide",
-            spaceBetween: 30,
-			speed: 500,
-			grabCursor: true,
-			freeMode: true,
-            loop: false
         });
 
 
@@ -141,7 +106,7 @@
 				});
 			});
 
-			$('.introWrap , .proWrap').on('mouseenter', function() {
+			$('.introWrap').on('mouseenter', function() {
 				TweenLite.to($cursor, 0.3, {
 				    scale: 0.4,
 					opacity: 1,
@@ -150,7 +115,7 @@
 				//console.log('들어왔다');
 			});
 
-			$('.introWrap , .proWrap').on('mouseleave', function() {
+			$('.introWrap').on('mouseleave', function() {
 				TweenLite.to($cursor, 0.3, {
 					scale: 0,
 					opacity: 0
@@ -158,7 +123,7 @@
 				//console.log('나갔다');
 			});
 
-			$('.placeSlide .swiper-slide , .proSlide .swiper-slide').hover(function () {
+			$('.placeSlide .swiper-slide').hover(function () {
 				TweenLite.to($cursor, 0.6, {
 				    ease: Elastic.easeOut.config(1, 0.4),
 				    scale: 1,
@@ -193,7 +158,7 @@
 	// 스크롤 애니메이션
     $(window).on('scroll',function() {
         $('.scrollAni').each( function(i){
-            var elScroll = $(this).offset().top + 400;
+            var elScroll = $(this).offset().top + 300;
             var nowScroll = $(window).scrollTop() + $(window).height();
 
             if( nowScroll > elScroll ){
