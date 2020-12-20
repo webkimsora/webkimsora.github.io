@@ -40,9 +40,10 @@
 				delay: 5000,
 				disableOnInteraction: false
 			},
+			loop: true,
 			effect: 'fade',
 			on: {
-				slideChangeTransitionStart: function(){
+				slideChange: function(){
 					$('.changeWrap .list > li').removeClass('on').eq(changeSlider.activeIndex).addClass('on');
 				}
 			}
