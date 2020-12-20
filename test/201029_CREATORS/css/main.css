@@ -113,15 +113,15 @@ h3 strong {font-weight: 900;}
 .whatWrap {background: #272727; color: #fff;}
 .whatWrap h3 {padding-bottom: 135px; color: #fff;}
 .whatWrap ul:after {content:""; display: block; clear: both;}
-.whatWrap .point {margin-bottom: 110px; text-align: center;}
-.whatWrap .point li {width: 22%; margin-left: 4%; float: left; text-align: center;}
+.whatWrap .point {margin-bottom: 110px; }
+.whatWrap .point li {width: 22%; margin-left: 4%; float: left; }
 .whatWrap .point li:first-child {margin-left: 0;}
 .whatWrap.on .point li { animation: afterView .3s .5s linear both;}
 .whatWrap.on .point li:nth-child(1) {animation-delay: .5s;}
 .whatWrap.on .point li:nth-child(2) {animation-delay: .8s;}
 .whatWrap.on .point li:nth-child(3) {animation-delay: 1.1s;}
 .whatWrap.on .point li:nth-child(4) {animation-delay: 1.4s;}
-.whatWrap .point p { margin: 0 auto; text-align: center;}
+.whatWrap .point p { margin: 0 auto; }
 
 .whatWrap .text li {width: 30%; margin-left: 5%; margin-bottom: 70px; float: left; text-align: center;}
 .whatWrap .text li:first-child,
@@ -221,7 +221,7 @@ h3 strong {font-weight: 900;}
 @media screen and (max-width: 1024px), (max-height :800px) {
     .container {padding: 0 8vw;}
 
-    .subpage {padding: 15% 0; height: auto;}
+    .subpage {padding: 12% 0; height: auto;}
     .subpage .inner {position: relative; top: auto; left: auto; transform: none; vertical-align: middle;  width: 100%;}
 
     /* .main .circle i {width: 24vw; height: 24vw;} */
@@ -235,6 +235,8 @@ h3 strong {font-weight: 900;}
     .introWrap .placeSlide {padding: 5% 0; }
 
     .inforWrap .left {padding-right: 20px;}
+
+    .whatWrap h3 {padding-bottom: 55px;}
 
     .changeWrap h3 {padding-bottom: 70px;}
     .changeWrap .cntWrap .cnt {width: 250px; height: 250px;}
