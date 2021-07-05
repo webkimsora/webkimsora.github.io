@@ -7,15 +7,11 @@
 			$('body').addClass('mobilebody');
 		}
 
-		if($('#viewport')) {
-
-		}
-
 		/*resize 반복실행 방지 : smartResize js 해석 */
 		var smartresize = {
 			init : function(){
 				var self = this;
-				$(window).on("resize", function(){
+				$(window).resize(function(){
 					self.handler(); // 윈도우의 사이즈가 변하면 handler() 함수를 실행
 				});
 			},
@@ -34,7 +30,12 @@
 
 		smartresize.init();
 
+
 		// @ swiper : 인테리어
+        if($('body').hasClass('mobilebody')){
+            $('.changeWrap .cntImg').attr('src','web/images/change_mo_cnt0.png');
+        }
+
 		var changeSlider = new Swiper('.changeSlide', {
 			autoplay: {
 				delay: 5000,
@@ -44,7 +45,11 @@
 			effect: 'fade',
 			on: {
 				slideChange: function(){
-					$('.changeWrap .list > li').removeClass('on').eq(changeSlider.activeIndex).addClass('on');
+					$('.changeWrap .cntImg').attr('src','web/images/change_cnt'+changeSlider.realIndex+'.png');
+                    if($('body').hasClass('mobilebody')){
+                    	$('.changeWrap .cntImg').attr('src','web/images/change_mo_cnt'+changeSlider.realIndex+'.png');
+                    }
+                    //$('.changeWrap .list > li').removeClass('on').eq(changeSlider.activeIndex).addClass('on');
 				}
 			}
 
@@ -53,7 +58,7 @@
 		$('.changeWrap .list > li').hover(function(){
 			var idx = $(this).index();
 
-			changeSlider.slideTo(idx);
+			changeSlider.slideTo(idx+1);
 		});
 
 		// @ swiper : 공간디자인
@@ -90,8 +95,13 @@
 			speed: 500,
 			grabCursor: true,
 			freeMode: true,
-            loop: false
+            loop: false,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            }
         });
+
 
 
 		// 상단으로 이동
@@ -105,12 +115,12 @@
 				$this.data('scrollTimeout', setTimeout(callback, timeout));
 			});
 		};
-
-		// $(window).scrollEnd(function() {
-		// 	$('.fixedRight').fadeOut();
-		// }, 1000);
-
-		$('.fixedRight .btnTop').on('click', function(e) {
+		/*
+		$(window).scrollEnd(function() {
+			$('.fixedRight').fadeOut();
+		}, 1000);
+        */
+		$('.fixedRight .btnTop').click(function(e) {
 			e.preventDefault();
 			//var goTop = $('.page').eq(0).attr('data-height');
 			$('html, body').stop().animate({
@@ -142,7 +152,7 @@
 				});
 			});
 
-			$('.introWrap , .proWrap').on('mouseenter', function() {
+			$('.introWrap , .proWrap').bind('mouseenter', function() {
 				TweenLite.to($cursor, 0.3, {
 				    scale: 0.4,
 					opacity: 1,
@@ -151,7 +161,7 @@
 				//console.log('들어왔다');
 			});
 
-			$('.introWrap , .proWrap').on('mouseleave', function() {
+			$('.introWrap , .proWrap').bind('mouseleave', function() {
 				TweenLite.to($cursor, 0.3, {
 					scale: 0,
 					opacity: 0
@@ -192,9 +202,9 @@
 	});
 
 	// 스크롤 애니메이션
-    $(window).on('scroll',function() {
+    $(window).scroll(function() {
         $('.scrollAni').each( function(i){
-            var elScroll = $(this).offset().top + 400;
+            var elScroll = $(this).offset().top + 300;
             var nowScroll = $(window).scrollTop() + $(window).height();
 
             if( nowScroll > elScroll ){
@@ -202,10 +212,6 @@
             }
         });
     });
-
-
-	$(window).scroll(function() {
-	});
 
 
 }());

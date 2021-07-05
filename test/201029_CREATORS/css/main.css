@@ -78,15 +78,17 @@ h3 strong {font-weight: 900;}
 .changeWrap .inner {z-index: 3;  text-align: center;}
 .changeWrap .cntWrap {position: relative; display: inline-block;}
 .changeWrap .cntWrap:after {content:""; display: block; clear: both;}
+
 .changeWrap .cntWrap ul {position: absolute; top: 0; left: 0; width: 100%; height: 100%;}
 .changeWrap .cntWrap li {width: 26.5%; height: 26.5%; border-radius: 50%; border: 3px solid transparent; transition: all .3s; cursor: pointer; box-sizing: border-box; text-indent: -9999px; color: transparent; font-size: 0;}
-.changeWrap .cntWrap li:nth-child(1) {position: absolute; top: 2%; left: 50%; margin-left: -13.5%;}
+.changeWrap .cntWrap li:nth-child(1) {position: absolute; top: 0; left: 50%; margin-left: -13.5%;}
 .changeWrap .cntWrap li:nth-child(2) {position: absolute; top: 50%; margin-top: -13.5%; right: 0;}
-.changeWrap .cntWrap li:nth-child(3) {position: absolute; bottom: 2%; left: 50%; margin-left: -13.5%;}
+.changeWrap .cntWrap li:nth-child(3) {position: absolute; bottom: 0; left: 50%; margin-left: -13.5%;}
 .changeWrap .cntWrap li:nth-child(4) {position: absolute; top: 50%; margin-top: -13.5%; left: 0;}
+/*
 .changeWrap .cntWrap li:hover {border: 3px solid #000; transition: all .3s;}
 .changeWrap .cntWrap li.on {border: 3px solid #000; transition: all .3s;}
-
+*/
 .changeWrap .changeSlide {position: absolute; top: 0; left: 0; width: 100%; height: 100%;}
 .changeWrap .changeSlide .swiper-slide.no1 {background: url('../images/change01.jpg') top center no-repeat; background-size: cover;}
 .changeWrap .changeSlide .swiper-slide.no2 {background: url('../images/change02.jpg') top center no-repeat; background-size: cover;}
@@ -97,17 +99,18 @@ h3 strong {font-weight: 900;}
 .collaboWrap .inner {display: table; text-align: center;}
 .collaboWrap .inner > div {display: table-cell; vertical-align: middle;}
 /* .collaboWrap.on h3 { transition: all .3s; animation: .5s cubic-bezier(0.25, 0.46, 0.45, 0.94) .3s 1 normal both running focus-in-contract;} */
-.collaboWrap h3 p {font-family: 'Roboto', sans-serif; font-size: 55px; line-height: 1; }
-.collaboWrap h3 small { padding-top: 10px; display: inline-block; line-height: 1; font-size: 23px; font-weight: bold;}
+.collaboWrap .tit p {font-family: 'Roboto', sans-serif; font-size: 55px; line-height: 1; }
+.collaboWrap .tit small { padding-top: 10px; display: inline-block; line-height: 1; font-size: 23px; font-weight: bold; color: #000;}
 .collaboWrap .txt {padding-top: 40px; line-height: 1.58; font-size: 18px;  transition: all .3s;}
-.collaboWrap .line {width: 1px; height: 0px; margin: 0 auto; background: #000; transition: all 1s; transition-delay: .5s; opacity: 0;}
+.collaboWrap .line {width: 1px; height: 118px; margin: 0 auto; position: relative; transition: all 1s; transition-delay: .5s;}
+.collaboWrap .line span {position: absolute; width: 1px; height: 0; background: #000; transition: all 1s; transition-delay: .5s; opacity: 0;}
 .collaboWrap .line.up {margin-bottom: 10%;}
 .collaboWrap .line.down {margin-top: 10%;}
-.collaboWrap.on .line {height: 118px; opacity: 1;}
-.collaboWrap .line.down:after,
-.collaboWrap .line.down:before {display:block;content:"";position:absolute;width:1px;height:9px;background:#000;bottom: -1.5px; left: 50%;}
-.collaboWrap .line.down:after {margin-left: 3.7px; -webkit-transform: rotate(45deg);transform: rotate(45deg);}
-.collaboWrap .line.down:before {margin-left: -3.7px; -webkit-transform: rotate(-45deg);transform: rotate(-45deg);}
+.collaboWrap.on .line span {height: 118px; opacity: 1; background: #000;}
+.collaboWrap .line.down span:after,
+.collaboWrap .line.down span:before {display:block;content:"";position:absolute;width:1px;height:9px;background:#000;bottom: -1.5px; left: 50%;}
+.collaboWrap .line.down span:after {margin-left: 3.3px; -webkit-transform: rotate(45deg);transform: rotate(45deg);}
+.collaboWrap .line.down span:before {margin-left: -3.3px; -webkit-transform: rotate(-45deg);transform: rotate(-45deg);}
 
 /* 쇼룸 */
 .whatWrap {background: #272727; color: #fff;}
@@ -134,10 +137,10 @@ h3 strong {font-weight: 900;}
 .proWrap .inner {padding: 0;}
 .proWrap .subInner {padding: 0 16.1458vw;}
 /*.introWrap > div {vertical-align: middle; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 100%;}*/
-.proWrap h3 {}
+.proWrap h3 {font-family: 'Roboto',sans-serif;}
 .proWrap.on p {transform: translateY(-50%); animation: slideInUp .3s .2s linear both;}
 .proWrap.on h3 {transform: translateY(-50%); animation: slideInUp .5s .3s linear both;}
-.proWrap .proSlide {padding: 8% 0 10%; transition: all .3s; }
+.proWrap .proSlide {padding: 5% 0 10%; transition: all .3s; }
 .proWrap .proSlide li:hover {cursor: pointer;}
 .proWrap .proSlide .swiper-slide {width: auto; position: relative; padding-bottom: 10px;}
 .proWrap .proSlide .swiper-slide img {width: auto; height: 100%;}
@@ -145,6 +148,8 @@ h3 strong {font-weight: 900;}
 .proWrap .proSlide .swiper-slide div .tit {font-size: 14px;}
 .proWrap .logo {text-align: center; }
 .proWrap .logo .mVisible {margin: 0 auto;}
+.proWrap .proBtnWrap {opacity: 0;}
+.proWrap .swiper-button-prev, .proWrap .swiper-button-next {color: #fff; margin-top: -13%;}
 
 /* contect */
 .inforWrap h3 {padding-bottom: 90px; line-height: 1.15; font-size: 65px; font-weight: 900; font-family: 'Roboto', sans-serif;}
@@ -203,8 +208,8 @@ h3 strong {font-weight: 900;}
 
     .changeWrap.on .arrow .bigLine {width: 55%;}
 
-    .collaboWrap h3 p {font-size: 45px;}
-    .collaboWrap h3 small {font-size: 19px;}
+    .collaboWrap .tit p {font-size: 45px;}
+    .collaboWrap .tit small {font-size: 19px;}
     .collaboWrap .txt {font-size: 16px;}
 
     .inforWrap h3 {font-size: 46px;}
@@ -238,11 +243,14 @@ h3 strong {font-weight: 900;}
 
     .whatWrap h3 {padding-bottom: 55px;}
 
+
     .changeWrap h3 {padding-bottom: 70px;}
-    .changeWrap .cntWrap .cnt {width: 250px; height: 250px;}
-    .changeWrap .cntWrap .cnt strong {font-size: 16px;}
-    .changeWrap .cntWrap .cnt p {font-size: 18px;}
-    .changeWrap.on .arrow {top: 335px;}
+    .changeWrap .inner {padding: 0 16vw;}
+    /*.changeWrap .cntWrap li:nth-child(1) {margin-left: -13%;}
+    .changeWrap .cntWrap li:nth-child(2) {margin-top: -14.5%; right: 0;}
+    .changeWrap .cntWrap li:nth-child(3) {bottom: 3.5%; margin-left: -13%;}
+    .changeWrap .cntWrap li:nth-child(4) {margin-top: -14.5%;}*/
+
 
     .collaboWrap .colImg {padding-left: 30px; max-width:400px;}
 
@@ -294,19 +302,15 @@ h3 strong {font-weight: 900;}
     .proWrap .logo .mNone {display: block;}
     .proWrap .proSlide {padding: 5% 0 17%;}
 
-    .changeWrap {border: none;}
+    .changeWrap.subpage {padding: 235px 0;}
     .changeWrap h3 { padding-bottom: 100px;}
-    .changeWrap .cntWrap .cnt {width: 200px; height: 200px; margin: 0 auto; float: none !important;}
-    .changeWrap .cntWrap .cnt.after {margin-top: 60px;}
-    .changeWrap .cntWrap .cnt strong {font-size: 12px;}
-    .changeWrap .cntWrap .cnt p {font-size: 14px; }
-    .changeWrap .arrow span:after {width: 13px; top: -5px; right: -2px;}
-    .changeWrap .arrow.mVisible {display: block;}
-    .changeWrap.on .arrow {top: 58%; transform: rotate(90deg);}
+    .changeWrap .inner {padding: 0 8vw;}
+    /* .changeWrap .cntWrap li:nth-child(3) {bottom: 4.5%;} */
 
-    .collaboWrap h3 p {font-size: 38px;}
+    .collaboWrap .tit p {font-size: 38px;}
     .collaboWrap .txt {font-size: 16px;}
     .collaboWrap.on .line.up {height: 53px;}
+    .collaboWrap.on .line.up span {height: 53px;}
 
     @keyframes sizeChange {
         0% {width: 0; opacity: 0;}
@@ -314,7 +318,7 @@ h3 strong {font-weight: 900;}
     }
 
     .whatWrap .midTit {font-size: 36px;}
-    .whatWrap .point {margin-bottom: 88px;}
+    .whatWrap .point {margin-bottom: 88px; text-align: center;}
     .whatWrap .text li {width: 100%; margin-left: 0 !important; margin-bottom: 40px;}
 
     .contectWrap .inner {text-align: left;}
@@ -348,11 +352,13 @@ h3 strong {font-weight: 900;}
 
     .proWrap .logo .pc {display: none;}
     .proWrap .logo .mVisible {display: block;}
+    .proWrap .proBtnWrap {opacity: 1;}
 
-    .changeWrap .cntWrap .cnt {width: 168px; height: 168px;}
-    .changeWrap .cntWrap .cnt strong {font-size: 10px;}
-    .changeWrap .cntWrap .cnt p {font-size: 12px; }
-    .changeWrap.on .arrow {top: 34%;}
+    .changeWrap.subpage {padding: 170px 0;}
+    /* .changeWrap .cntWrap li:nth-child(1) {margin-left: -13.2%;}
+    .changeWrap .cntWrap li:nth-child(2) {margin-top: -15.5%;}
+    .changeWrap .cntWrap li:nth-child(3) {bottom: 0%;}
+    .changeWrap .cntWrap li:nth-child(4) {margin-top: -15.5%;} */
 
     @keyframes sizeChange {
         0% {width: 0; opacity: 0;}
@@ -370,7 +376,7 @@ h3 strong {font-weight: 900;}
     .inforWrap .right {font-size: 16px;}
     .inforWrap .right h4 {font-size: 23px;}
 
-    .collaboWrap h3 p {font-size: 28px;}
-    .collaboWrap h3 small {font-size: 17px;}
+    .collaboWrap .tit p {font-size: 28px;}
+    .collaboWrap .tit small {font-size: 17px;}
     .collaboWrap .txt {font-size: 14px;}
 }
