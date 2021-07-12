@@ -172,25 +172,38 @@ body.mobilebody .hamburger.surface.is-active:hover .line:nth-child(3){
     .gnb .txtWrap > div.right p {font-size: 14px;}
 }
 
+@media screen and (max-height :800px) {
+    .gnb .txtWrap {margin: 80px auto 0;}
+    .gnbMenu .menu-item {font-size: 72px;}
+    .gnbMenu .menu-item .numbering {line-height: 72px;}
+    .gnb .txtWrap > div.right {padding-top: 170px;}
+}
+
+
 @media screen and (max-width: 768px) {
     .header {padding: 20px 20px 0;}
     .gnb h1 {top: 25px; left: 23px;}
+    .gnbMenu .menu-item {font-size: 62px;}
+    .gnbMenu .menu-item .numbering {line-height: 62px;}
     .gnb .inner .gnbSubMenu {padding-top: 50px;}
     .gnb .txtWrap > div.left {float: none;}
     .gnb .txtWrap > div.right {float: none; padding-top: 93px;}
     .gnb .txtWrap > div.right dl {display: none;}
+    .gnb .txtWrap > div.right a {font-size: 16px;}
+
+
 }
 
 @media screen and (max-width: 480px) {
     .header h1 img {max-width: 80%;}
     .gnb h1 img {max-width: 70%;}
-    .gnb .inner .menu-item {font-size: 55px;}
+    .gnb .inner .menu-item {font-size: 50px;}
     .gnb .inner .gnbSubMenu {padding-top: 30px;}
-    .gnb .inner .gnbSubMenu li a {font-size: 22px;}
+    .gnb .inner .gnbSubMenu li a {font-size: 20px;}
     .gnbMenu .menu-item:hover .grayed {-webkit-transform: translate3d(35px, 0, 0); transform: translate3d(35px, 0, 0);}
     .gnbMenu .menu-item .numbering {font-size: 15px; line-height: 65px;}
     .gnb .txtWrap > div.right {padding-top: 55px;}
-    .gnb .txtWrap > div.right a {font-size: 16px;}
-    .gnb .txtWrap > div.right p {font-size: 14px;}
+    .gnb .txtWrap > div.right p {font-size: 12px;}
+
 
 }
