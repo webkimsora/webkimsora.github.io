@@ -213,9 +213,10 @@ body.on .mainBgPal {animation: cubic-bezier(0.25, 0.46, 0.45, 0.94) 1s 1 normal 
 /* 모바일 미디어쿼리 */
 
 @media screen and (max-width: 480px) {
+    .mainGnb .gnbMenu .menu-item {font-size: 27px;}
     .mainBgPal {width: 230%; margin-left: -20%;}
-    .main .title h2 {font-size: 36px;}
-    .main .title h2:nth-child(2) {top: 50vh;}
+    .main .title h2 {font-size: 30px;}
+    .main .title h2:nth-child(2) {top: 47vh;}
 
     @keyframes mainBg {
         0% { transform: rotate(0deg);}

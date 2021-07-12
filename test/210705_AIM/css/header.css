@@ -183,11 +183,12 @@ body.mobilebody .hamburger.surface.is-active:hover .line:nth-child(3){
 @media screen and (max-width: 480px) {
     .header h1 img {max-width: 80%;}
     .gnb h1 img {max-width: 70%;}
-    .gnb .inner .menu-item {font-size: 65px;}
+    .gnb .inner .menu-item {font-size: 55px;}
     .gnb .inner .gnbSubMenu {padding-top: 30px;}
     .gnb .inner .gnbSubMenu li a {font-size: 22px;}
     .gnbMenu .menu-item:hover .grayed {-webkit-transform: translate3d(35px, 0, 0); transform: translate3d(35px, 0, 0);}
     .gnbMenu .menu-item .numbering {font-size: 15px; line-height: 65px;}
+    .gnb .txtWrap > div.right {padding-top: 55px;}
     .gnb .txtWrap > div.right a {font-size: 16px;}
     .gnb .txtWrap > div.right p {font-size: 14px;}
 
