@@ -268,11 +268,16 @@
 
 		setTimeout(function(){
 			$('body').addClass('loaded');
-		},1000);
+		},800);
 
 		setTimeout(function(){
 			$('body').addClass('on');
-		},2000);
+		},1800);
+
+		setTimeout(function(){
+			$('body').addClass('finish');
+		},10000);
+
 	});
 
 	// 스크롤 애니메이션

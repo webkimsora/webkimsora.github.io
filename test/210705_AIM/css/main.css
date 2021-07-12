@@ -58,13 +58,14 @@ body.on .main .btnGoContact {right: 0; transition-delay: .3s;}
 .main .visual01 p {padding-top: 53px; font-size: 54px; font-weight: 300; line-height: 1.5; text-align: right; font-family: 'Roboto', sans-serif;  transition: all .3s; animation: .5s cubic-bezier(0.25, 0.46, 0.45, 0.94) .8s 1 normal both running focus-in-contract;}
 
 .main .title {width: 100%; height: 100%;}
-.main .title h2 {transform: translateY(-50%);  font-size: 5.3vw;line-height: 1.31; font-weight: 100; position: absolute; transition: all .3s;}
-.main .title h2:nth-child(1) {left: 360px; /*left:18vw;*/ top: 16vh;}
+.main .title h2 {transform: translateY(-50%);  font-size: 4.5vw;line-height: 1.31; font-weight: 100; position: absolute; transition: all .3s;}
+.main .title h2:nth-child(1) {left: 310px; /*left:18vw;*/ top: 16vh;}
 .main .title h2:nth-child(2) {right: 164px;/*right:8vw;*/ top: 54vh; text-align: right;}
 body.on .main .title h2 {animation: slideInUp .6s linear both;}
 body.on .main .title h2:nth-child(1) {animation-delay: 5.8s;}
 body.on .main .title h2:nth-child(2) {animation-delay: 6.4s;}
-
+body.finish .main .title h2:nth-child(1) {animation-delay: .3s !important;}
+body.finish .main .title h2:nth-child(2) {animation-delay: .6s !important;}
 /* cursor */
 .cursor {width: 27px; height: 27px; opacity: 0; background-color: #2648a3; position: fixed; border-radius: 50%; pointer-events: none; z-index: 100; transition: all .3s;}
 .cursor::before {
@@ -155,6 +156,7 @@ body.on .mainBgPal {animation: cubic-bezier(0.25, 0.46, 0.45, 0.94) 1s 1 normal 
 
 /* 랩탑 미디어쿼리 */
 @media screen and (min-width: 1500px) {
+    .main .title { max-width: 1920px; margin: 0 auto; position: relative;}
     .main .title h2{font-size: 80px;}
     .mainBgPal {width: 130%;}
 }
@@ -164,14 +166,12 @@ body.on .mainBgPal {animation: cubic-bezier(0.25, 0.46, 0.45, 0.94) 1s 1 normal 
     .main .title h2:nth-child(2) {right: 100px;}
 }
 
-@media screen and (max-height :850px) {
-}
-
 @media screen and (max-width: 1024px), (max-height :800px) {
     .mainBgPal {width: 130%;}
     .mainGnb {bottom: 100px; top: auto;}
     .mainGnb .gnbMenu .menu-item {font-size: 38px;}
-    .main .title h2:nth-child(1) {left: 10vw;}
+
+    .main .title h2:nth-child(1) {left: 17vw;}
     .main .title h2:nth-child(2) {right: 7.5vw;}
     .main .btnGoContact {width: 205px; height: 63px; font-size: 16px; line-height:63px; top: 320px;}
 
@@ -185,7 +185,11 @@ body.on .mainBgPal {animation: cubic-bezier(0.25, 0.46, 0.45, 0.94) 1s 1 normal 
 }
 
 @media screen and (max-width: 1024px) {
+    .main .title h2 {font-size:5.5vw;}
+}
 
+@media screen and (max-height :800px) {
+    .main .title h2 {font-size:4.5vw;}
 }
 
 /* 태블릿 미디어쿼리 */

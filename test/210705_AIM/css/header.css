@@ -4,6 +4,7 @@
 .header {width: 100%;padding: 43px 51px 0;position: fixed;top: -100%;transition: top ease-in-out 1.5s;z-index: 100;}
 .header:after {content:""; display: block; clear: both;}
 body.loaded .header {top: 0;}
+.header .inner {max-width: 1800px; margin: 0 auto;}
 .header h1 {float: left;}
 .hamburger {float: right;transition: all .5s; position: relative;}
 
