@@ -221,7 +221,7 @@ body.mobilebody .hamburger.surface.is-active:hover .line:nth-child(3){
     .gnb .inner .menu-item {font-size: 50px;}
     .gnb .inner .gnbSubMenu {padding-top: 30px;}
     .gnb .inner .gnbSubMenu li a {font-size: 20px;}
-    .gnbMenu .menu-item:hover .grayed {-webkit-transform: translate3d(35px, 0, 0); transform: translate3d(35px, 0, 0);}
+    .gnbMenu .menu-item:hover .grayed {-webkit-transform: translate3d(25px, 0, 0); transform: translate3d(25px, 0, 0);}
     .gnbMenu .menu-item .numbering {font-size: 15px; line-height: 50px;}
     .gnb .txtWrap > div.right {padding-top: 55px;}
     .gnb .txtWrap > div.right p {font-size: 12px; line-height: 1.2;}
