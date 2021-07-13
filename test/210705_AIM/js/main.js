@@ -192,7 +192,7 @@
 				} else {
 					$('.cursor').show();
 
-					TweenLite.to($cursor, 0.6, {
+					TweenLite.to($cursor, 0.1, {
 						opacity: 1,
 					    //backgroundColor: '#0b6fe8',
 						left: e.pageX - 13,
@@ -207,6 +207,13 @@
 				  },3000);
 				$('.cursor').removeClass('stop');
 			});
+
+		    // $(document).bind('mousemove', function (e) {
+		    //     var mouseX = e.clientX;
+		    //     var mouseY = e.clientY;
+			// 	$cursor.css('left',mouseX + 'px') ;
+		    //     $cursor.css('top',mouseY + 'px') ;
+		    // });
 
 			$('a').mouseover(function(){
 				$('.cursor').addClass('hover');
@@ -264,19 +271,19 @@
 
 		setTimeout(function(){
 			$('#loader-wrapper').addClass('fadeout');
-		},700);
+		},2000);
 
 		setTimeout(function(){
 			$('body').addClass('loaded');
-		},800);
+		},2100);
 
 		setTimeout(function(){
 			$('body').addClass('on');
-		},1800);
+		},3000);
 
 		setTimeout(function(){
 			$('body').addClass('finish');
-		},10000);
+		},28000);
 
 	});
 
