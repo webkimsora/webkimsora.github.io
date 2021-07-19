@@ -109,22 +109,28 @@ body.on .mainGnb {animation: slideInLeft .7s 4.2s ease-in-out both; }
 .mainBgWrap {position: absolute; width: 100%; height: 100%; top: 0; left: 0;}
 .mainBg {position: absolute; bottom: -20%; left: 30%; display: inline-block; transition: all .3s;
      opacity: 0; transform-origin:25% 25%; width: 30%; height: 30%;}
+body.ie11 .mainBg {width:100%; height: 100%;}
 body.on .mainBg {animation: mainBg 4s cubic-bezier(.77,.37,.56,.8);}
+body.on.ie11 .mainBg {animation: mainBg_ie 4s cubic-bezier(.77,.37,.56,.8);}
 .mainBgPal {opacity: 0;}
 body.on .mainBgPal {animation: cubic-bezier(0.25, 0.46, 0.45, 0.94) 1s 1 normal both focus-in-contract; animation-delay: 4.1s;}
 
 @keyframes mainBg {
-    0% { transform: rotate(0deg);}
-    /*95% {opacity: 0.05; transform: scale(1) rotate(320deg) translate(0%,80%);}*/
-    50% {opacity: 0.2; /*width: 90%; height: 90%; */ }
+    0% {opacity: 0; transform: rotate(0deg);}
+    50% {opacity: 0.2;}
     100% {opacity: 0; transform: rotate(360deg); width: 90%; height: 90%;}
+}
+
+@keyframes mainBg_ie {
+    0% {opacity: 0; transform: rotate(0deg);}
+    50% {opacity: 0.2;}
+    100% {opacity: 0; transform: rotate(360deg);}
 }
 
 @keyframes circularMotion {100% {transform: rotate(360deg);}}
 @-webkit-keyframes circularMotion {100% {transform: rotate(360deg);}}
 @-moz-keyframes circularMotion {100% {transform: rotate(360deg);}}
 @-o-keyframes circularMotion {100% {transform: rotate(360deg);}}
-@keyframes circularMotion {100% {transform: rotate(360deg);}}
 
 @keyframes slideInUp {
     100%{transform: translateY(0);opacity: 1;}
