@@ -183,7 +183,7 @@
 	                $(this).addClass('on');
 
 					// subpage 타이틀 타이핑애니메이션
-					typingAni($(this),4000,'1');
+					typingAni($(this),400,'1');
 
 	            } else if (nowScroll +600 < elScroll){
 					$(this).removeClass('on');
