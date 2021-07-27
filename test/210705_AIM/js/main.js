@@ -102,7 +102,6 @@
 				$('.cursor').addClass('hover');
 			}).mouseout(function(){
 				$('.cursor').removeClass('hover');
-
 			})
 
 
@@ -122,36 +121,6 @@
 			}
 
 		};
-
-		$(window).load(function(){
-			// skrollr
-	        var s = skrollr.init();
-			if (s.isMobile()) {
-				s.destroy();
-			} else {
-				skrollr.init({
-					forceHeight: false
-				});
-				//$('body').height('auto');
-			};
-
-			setTimeout(function(){
-				$('#loader-wrapper').addClass('fadeout');
-			},2000);
-
-			setTimeout(function(){
-				$('body').addClass('loaded');
-			},2100);
-
-			setTimeout(function(){
-				$('body').addClass('on');
-			},3000);
-
-			setTimeout(function(){
-				$('body').addClass('finish');
-			},28000);
-
-		});
 
 		//IE 브라우저 체크
 		function BrowserVersionCheck() {
@@ -195,14 +164,65 @@
 			return false;
 		});
 
-		$(window).scroll(function() {
+		$(window).on('scroll', function() {
+			// 스크롤 했을 때
 			if ($(this).scrollTop() > 200) {
+				$('.header').addClass('scrollOn');
 				$('.fixedRight').fadeIn();
 			} else {
+				$('.header').removeClass('scrollOn');
 				$('.fixedRight').fadeOut();
 			}
+
+			// 스크롤애니메이션
+			$('.scrollAni').each( function(i){
+	            var elScroll = $(this).offset().top + 300;
+	            var nowScroll = $(window).scrollTop() + $(window).height();
+
+	            if( nowScroll > elScroll ){
+	                $(this).addClass('on');
+
+					// subpage 타이틀 타이핑애니메이션
+					typingAni($(this),4000,'1');
+
+	            } else if (nowScroll +600 < elScroll){
+					$(this).removeClass('on');
+					typingAni($(this),400,'0');
+				}
+	        });
 		});
 
+		// subpage
+		if($('body').hasClass('subPage')) {
+			setTimeout(function(){
+				$('body').addClass('loaded');
+			},100);
+
+			setTimeout(function(){
+				$('.typingAni').addClass('on');
+				typingAni($('.typingAni'),800,'1');
+			},1000);
+		}
+
+		// subpage 타이틀 타이핑애니메이션
+		function typingAni(el,timeCount,opacity){
+			var txt = el.find('.typewriter-effect').find('.text');
+			var sub_txt = el.find('.typewriter-effect').siblings('p');
+
+			txt.each(function (index) {
+				TweenMax.to(this, 0.2, {
+					opacity: opacity,
+					delay: .04 * index,
+					onComplete:completeSub
+				});
+			});
+
+			function completeSub() {
+				setTimeout(function(){
+					sub_txt.addClass('on');
+				},timeCount);
+			};
+		}
 
 		// @ swiper : 인테리어
         if($('body').hasClass('mobilebody')){
@@ -264,7 +284,8 @@
 			// },
             slidesPerView: 'auto',
 			effect: "slide",
-            spaceBetween: 30,
+			slidesPerView: 1.5, // width고정일경우 제외
+            spaceBetween: 20,
 			speed: 500,
 			grabCursor: true,
 			freeMode: true,
@@ -272,23 +293,28 @@
             navigation: {
                 nextEl: '.swiper-button-next',
                 prevEl: '.swiper-button-prev',
-            }
+            },
+			breakpoints: {
+				1024: {
+					slidesPerView: 2.8,
+				}
+			}
         });
 
 	});
 
-
-	// 스크롤 애니메이션
-    $(window).scroll(function() {
-        $('.scrollAni').each( function(i){
-            var elScroll = $(this).offset().top + 300;
-            var nowScroll = $(window).scrollTop() + $(window).height();
-
-            if( nowScroll > elScroll ){
-                $(this).addClass('on');
-            }
-        });
-    });
+	// $(window).load(function(){
+	// 	// skrollr
+    //     var s = skrollr.init();
+	// 	if (s.isMobile()) {
+	// 		s.destroy();
+	// 	} else {
+	// 		skrollr.init({
+	// 			forceHeight: false
+	// 		});
+	// 		//$('body').height('auto');
+	// 	};
+	// });
 
 
 }());

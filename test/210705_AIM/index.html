@@ -176,6 +176,26 @@
 			</section>
 			<!-- // @ main -->
 
+			<script type="text/javascript">
+				$(window).load(function(){
+					setTimeout(function(){
+						$('#loader-wrapper').addClass('fadeout');
+					},2000);
+
+					setTimeout(function(){
+						$('body').addClass('loaded');
+					},2100);
+
+					setTimeout(function(){
+						$('body').addClass('on');
+					},3000);
+
+					setTimeout(function(){
+						$('body').addClass('finish');
+					},28000);
+
+				});
+			</script>
 
 		</main>
 	</body>
