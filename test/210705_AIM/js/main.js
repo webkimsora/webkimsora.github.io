@@ -176,7 +176,11 @@
 
 			// 스크롤애니메이션
 			$('.scrollAni').each( function(i){
-	            var elScroll = $(this).offset().top + 300;
+				if(!$('body').hasClass('mobilebody')) {
+					var elScroll = $(this).offset().top + 300;
+				} else {
+					var elScroll = $(this).offset().top + 100;
+				}
 	            var nowScroll = $(window).scrollTop() + $(window).height();
 
 	            if( nowScroll > elScroll ){

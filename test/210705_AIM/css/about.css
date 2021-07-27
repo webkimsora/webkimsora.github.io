@@ -249,6 +249,8 @@ section.subContent .container {max-width: 1600px; margin: 0 auto;}
     #about .botCntWrap .listTxt li {font-size: 10px;}
 
     #about .proWrap .proBtnWrap { opacity: 1;}
+    #about .proWrap .proSlide .swiper-slide div .tit {font-size: 14px;}
+    #about .proWrap .proSlide .swiper-slide div {font-size: 11px;}
 
     #about .contactWrap .top {font-size: 28px;}
     #about .contactWrap .top small {font-size: 12px;}
