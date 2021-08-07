@@ -26,7 +26,7 @@
 html,body {height: 100%;  width: 100%;  /*overflow-x: hidden;*/}
 body.onePage {overflow-y:hidden !important}
 body.onePage #viewport {position: relative; width: 100%; height: 100%; display: block; overflow: hidden;}
-#viewport {position: relative; overflow-x: hidden;}
+#viewport {position: relative; overflow: hidden;}
 body.onePage section {height: 100%;}
 
 body.onePage .container {display: table; table-layout: fixed; width: 100%; height: 100%; position: relative; z-index: 5; padding-left: 0;}
@@ -35,8 +35,8 @@ body.onePage .contents {
 }
 
 .main {position: relative; overflow: hidden;}
-.main .btnGoContact {position: fixed; top: 400px; right: -100%; text-align: center; line-height: 76px;width: 260px; height: 76px; display: inline-block; background-color: #2648a3; color: #ffffff; font-size: 20px; transform: rotate(-90deg) translate3d(100%, 0, 0); transform-origin: bottom right;  transition: all .5s; z-index: 10;}
-body.on .main .btnGoContact {right: 0; transition-delay: .3s;}
+.btnGoContact {position: fixed; top: 400px; right: -100%; text-align: center; line-height: 76px;width: 260px; height: 76px; display: inline-block; background-color: #2648a3; color: #ffffff; font-size: 20px; transform: rotate(-90deg) translate3d(100%, 0, 0); transform-origin: bottom right;  transition: all .5s; z-index: 10;}
+body.on .btnGoContact {right: 0; transition-delay: .3s;}
 
 .main .visual01 h2 {font-size: 64px; line-height: 1.2; font-weight: 100;  transition: all .3s; animation: .5s cubic-bezier(0.25, 0.46, 0.45, 0.94) .3s 1 normal both running focus-in-contract;}
 .main .visual01 h2 strong {font-weight: 900;}
@@ -97,7 +97,7 @@ body.ie11 .mainBg {width:100%; height: 100%;}
 body.on .mainBg {animation: mainBg 4s cubic-bezier(.77,.37,.56,.8);}
 body.on.ie11 .mainBg {animation: mainBg_ie 4s cubic-bezier(.77,.37,.56,.8);}
 .mainBgPal {opacity: 0;}
-body.on .mainBgPal {animation: cubic-bezier(0.25, 0.46, 0.45, 0.94) 1s 1 normal both focus-in-contract; animation-delay: 4.1s;}
+body.on .main .mainBgPal {animation: cubic-bezier(0.25, 0.46, 0.45, 0.94) 1s 1 normal both focus-in-contract; animation-delay: 4.1s;}
 
 @keyframes mainBg {
     0% {opacity: 0; transform: rotate(0deg);}
@@ -117,6 +117,7 @@ body.on .mainBgPal {animation: cubic-bezier(0.25, 0.46, 0.45, 0.94) 1s 1 normal 
 @-o-keyframes circularMotion {100% {transform: rotate(360deg);}}
 
 @keyframes slideInUp {
+    0% {opacity: 0;}
     100%{transform: translateY(0);opacity: 1;}
 }
 
@@ -130,8 +131,8 @@ body.on .mainBgPal {animation: cubic-bezier(0.25, 0.46, 0.45, 0.94) 1s 1 normal 
 }
 
 @keyframes scrollBottom {
-    0% { opacity: 1; transform: translateY(-10px); }
-    100% { opacity: 1; transform: translateY(20px); }
+    0% { opacity: 1; transform: translateY(-5px); }
+    100% { opacity: 1; transform: translateY(5px); }
 }
 
 @keyframes sizeChange {
@@ -164,7 +165,7 @@ body.on .mainBgPal {animation: cubic-bezier(0.25, 0.46, 0.45, 0.94) 1s 1 normal 
 
     .main .title h2:nth-child(1) {left: 17vw;}
     .main .title h2:nth-child(2) {right: 7.5vw;}
-    .main .btnGoContact {width: 205px; height: 63px; font-size: 16px; line-height:63px; top: 320px;}
+    .btnGoContact {width: 205px; height: 63px; font-size: 16px; line-height:63px; top: 320px;}
 
     .main .title h2 {transform: translateX(-50%);}
     body.on .main .title h2 {animation: slideInLeft .4s linear both;}
@@ -197,7 +198,7 @@ body.on .mainBgPal {animation: cubic-bezier(0.25, 0.46, 0.45, 0.94) 1s 1 normal 
     .mainGnb .gnbSubMenu {position: fixed; right: 20px; bottom: 5px; transition: all .3s; text-align: right;}
     .mainGnb .gnbSubMenu li a {font-size: 16px;}
     .mainGnb .gnbSubMenu li:last-child {padding-top: 0;}
-    .main .btnGoContact {width: 155px; height: 50px; font-size: 12px; line-height:50px; top: 250px;}
+    .btnGoContact {width: 155px; height: 50px; font-size: 12px; line-height:50px; top: 250px;}
     .mainBg {bottom: -70%; left: 20%;}
     .mainBgPal {width: 180%;}
     @keyframes mainBg {

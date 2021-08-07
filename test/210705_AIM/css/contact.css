@@ -1,0 +1,143 @@
+@charset "utf-8";
+
+#contact .inner {padding: 0 2%;}
+
+body.subPage .mainBgPal {opacity: 0.05;}
+body.subPage .mainBgPal.circle {opacity: 1; margin: 50vh 0px 0px -60vw;}
+section.subContent {padding-top: 280px;}
+section.subContent .container {max-width: 1600px; margin: 0 auto;}
+
+.slideUp {transform: translateY(30%);}
+.on.slideUp {animation: slideInUp .8s linear both;}
+
+.titWrap {position: relative;}
+.titWrap h2 {padding-bottom: 30px; font-size: 65px; font-weight: 300;  line-height: 1.26; letter-spacing: -1px; transition: all .3s; word-break: keep-all;}
+.titWrap .scrollAni2 {font-size: 23px; line-height: 1.52;  color: #000; font-weight: 400; transition: all .3s; word-break: keep-all;}
+
+.floatCnt:after {content:""; display: block; clear: both;}
+.floatCnt > div {float: left;}
+.floatCnt > div:nth-child(even) {float: right;}
+
+.typewriter-effect {}
+.typewriter-effect .text {opacity :0;}
+
+.miniTit {position: absolute; top: 0; left: -188px;  transform: rotate(-90deg) translate3d(14%, 0, 0); transform-origin: bottom right; letter-spacing: 1px; font-size: 32px; color: #000; font-weight: bold; transition: all .3s;}
+.miniTit span {display: inline-block; vertical-align: middle;}
+.miniTit small {font-size: 14px; vertical-align: middle; display: inline-block;}
+
+#contact .layer.no1 .titWrap {padding-left: 6vw;}
+#contact .layer.no1 .titWrap h2 {padding-bottom: 150px;}
+#contact .layer.no1 .titSubWrap {padding: 120px 0 0 21.13vw;}
+
+/* 문의하러가기 */
+#contact .mapWrap {text-align: center; position: relative;}
+#contact .mapWrap .map {}
+
+#contact .mapWrap .icon-marker{height:200px;width:200px;position:absolute;top:50%;left:50%;text-align:center;border-radius:100px;z-index:1;transform:translate(-50%, -50%);opacity:0.5;transition:.3s}
+#contact .mapWrap .icon-marker .bg-point{background-color:rgba(11,111,232,0.5) !important;background-image:linear-gradient(90deg, rgba(11,111,232,0.5), rgba(11,111,232,0.15))}
+#contact .mapWrap .icon-marker::before{content:"";position:absolute;top:50%;left:50%;width:15%;height:15%;background-color:#0b6fe8;border-radius:50%;transform:translate(-50%, -50%)}
+#contact .mapWrap .icon-marker .ripple{position:absolute;width:40%;height:40%;z-index:-1;left:50%;top:50%;opacity:0;margin:-20% 0 0 -20%;border-radius:50%;-webkit-animation:rippleAnimation 1.8s infinite;animation:rippleAnimation 1.8s infinite}
+#contact .mapWrap .icon-marker .ripple:nth-child(2){animation-delay:0.3s;-webkit-animation-delay:0.3s}
+#contact .mapWrap .icon-marker .ripple:nth-child(3){animation-delay:0.6s;-webkit-animation-delay:0.6s}
+
+@-webkit-keyframes rippleAnimation {
+  from {opacity: 1;-webkit-transform: scale(0);transform: scale(0);}
+  to {opacity: 0;-webkit-transform: scale(1);transform: scale(1);}
+}
+@-moz-keyframes rippleAnimation {
+  from {opacity: 1;-moz-transform: scale(0);transform: scale(0);}
+  to {opacity: 0;-moz-transform: scale(1);transform: scale(1);}
+}
+@-o-keyframes rippleAnimation {
+  from {opacity: 1;-o-transform: scale(0);transform: scale(0);}
+  to {opacity: 0;-o-transform: scale(1);transform: scale(1);}
+}
+@keyframes rippleAnimation {
+  from {opacity: 1;-webkit-transform: scale(0);transform: scale(0);}
+  to {opacity: 0;-webkit-transform: scale(1);transform: scale(1);}
+}
+
+#contact .contactWrap {padding-top: 120px;}
+#contact .contactWrap .top {font-size: 58px; font-family: 'Lateef', sans-serif; line-height: 1;}
+#contact .contactWrap .top small {font-size: 18px; display: block;}
+#contact .contactWrap .bottom {padding-top: 125px; font-size: 20px;}
+#contact .contactWrap .bottom:after {content:""; display: block; clear: both; }
+#contact .contactWrap .bottom li {width: 50%; float: left; line-height: 1.6;}
+#contact .contactWrap .bottom b {font-size: 28px; padding-bottom: 70px; display: block;}
+#contact .contactWrap .bottom strong {font-size: 50px; display: block; padding-bottom: 40px; line-height: 1;}
+#contact .contactWrap .bottom a {font-size: 28px; text-decoration: underline;}
+
+@media screen and (max-width: 1600px) {
+    .miniTit {font-size: 2vw; left: -9vw;}
+
+    #contact .inner {padding: 0 60px;}
+
+    body.subPage .mainBgPal.circle {margin: 130vh 0px 0px -60vw; width: 130%;}
+
+    #contact .layer.no1 .titWrap {padding-left: 12vw;}
+    #contact .layer.no2 .titWrap {padding-left: 6vw;}
+
+    #contact .midCntWrap .listTxt {max-width: calc(100% - 220px);}
+}
+
+@media screen and (max-width: 1300px) , (max-height :900px) {
+    .titWrap h2 {font-size: 5vw; letter-spacing: -3px;}
+    .titWrap .scrollAni2 {font-size: 1.9vw;}
+
+}
+
+@media screen and (max-width: 1024px), (max-height :800px) {
+    #contact .inner {padding: 0 40px;}
+
+    body.subPage .mainBgPal.circle {margin: 105vh 0px 0px -60vw;}
+
+    #contact .contactWrap .bottom li {width: auto;}
+    #contact .contactWrap .bottom li:last-child {float: right;}
+
+}
+
+/* 태블릿 미디어쿼리 */
+@media screen and (max-width: 768px) {
+
+    .miniTit {transform: rotate(0) translate3d(0%, -50px, 0); left: 0; font-size: 18px;}
+    .miniTit small {font-size: 10px;}
+
+    .titWrap h2 {font-size: 42px;}
+    .titWrap .scrollAni2 {font-size: 17px;}
+
+    #contact .layer.no1 .titWrap h2 {padding-bottom: 120px;}
+    #contact .layer.no1 {padding-left: 6.6vw;}
+    #contact .layer.no1 .titSubWrap {padding: 40px 0 0 0;}
+
+    #contact .layer .titSubWrap {width: 100% !important;}
+    #contact .layer.no1 .titWrap {padding-left: 0;}
+    #contact .layer.no1 .titSubWrap {padding: 60px 0 0 5.87vw;}
+
+    #contact .contactWrap .top small {font-size: 2.2vw;}
+    #contact .contactWrap .bottom li {float: none !important; }
+    #contact .contactWrap .bottom li:last-child {padding-top: 80px;}
+
+    #contact .contactWrap .bottom {font-size: 16px;}
+    #contact .contactWrap .bottom b {font-size: 23px;}
+    #contact .contactWrap .bottom strong {font-size: 30px;}
+    #contact .contactWrap .bottom a {font-size: 23px;}
+}
+
+/* 모바일 미디어쿼리 */
+
+@media screen and (max-width: 480px) {
+
+    .miniTit {transform: rotate(0) translate3d(0%, -50px, 0); font-size: 16px;}
+
+    .titWrap h2 {font-size: 30px; letter-spacing: -1.5px;}
+    .titWrap .scrollAni2 {font-size: 14px;}
+
+    body.subPage .mainBgPal.circle {opacity: 0;}
+
+    #contact .inner {padding: 0 20px;}
+
+    #contact .contactWrap .top {font-size: 28px;}
+    #contact .contactWrap .top small {font-size: 12px;}
+    #contact .contactWrap .bottom {font-size: 13px;}
+
+}

@@ -196,22 +196,42 @@
 	        });
 		});
 
-		// subpage
+		// window loading
 		if($('body').hasClass('subPage')) {
 			setTimeout(function(){
 				$('body').addClass('loaded');
 			},100);
 
 			setTimeout(function(){
+				$('body').addClass('on');
+			},700);
+
+			setTimeout(function(){
 				$('.typingAni').addClass('on');
 				typingAni($('.typingAni'),800,'1');
 			},1000);
+		} else {
+			setTimeout(function(){
+				$('#loader-wrapper').addClass('fadeout');
+			},2000);
+
+			setTimeout(function(){
+				$('body').addClass('loaded');
+			},2100);
+
+			setTimeout(function(){
+				$('body').addClass('on');
+			},3000);
+
+			setTimeout(function(){
+				$('body').addClass('finish');
+			},28000);
 		}
 
 		// subpage 타이틀 타이핑애니메이션
 		function typingAni(el,timeCount,opacity){
 			var txt = el.find('.typewriter-effect').find('.text');
-			var sub_txt = el.find('.typewriter-effect').siblings('p');
+			var sub_txt = el.find('.typewriter-effect').siblings('.scrollAni2');
 
 			txt.each(function (index) {
 				TweenMax.to(this, 0.2, {

@@ -1,14 +1,14 @@
 @charset "utf-8";
 
 /* header */
-.header {width: 100%;padding: 43px 51px;position: fixed;top: -100%;transition: top ease-in-out 1.5s;z-index: 100;}
+.header {width: 100%;padding: 37px 51px;position: fixed;top: -100%;transition: all ease-in-out 1.5s;z-index: 100;}
 .header:after {content:""; display: block; clear: both;}
 body.loaded .header {top: 0;}
-body.subPage .header {transition: top ease-in-out .8s;}
+body.subPage .header {transition: top ease-in-out .8s, padding ease-in-out .3s;}
 .header .inner {max-width: 1800px; margin: 0 auto;}
 .header h1 {float: left;}
 
-.header.scrollOn {background: rgba(255,255,255,0.5);}
+.header.scrollOn {background: rgba(255,255,255,0.5); padding: 25px 51px 19px;}
 
 
 .hamburger {float: right;transition: all .5s; position: relative;}
@@ -182,9 +182,10 @@ body.mobilebody .hamburger.surface.is-active:hover .line:nth-child(3){
 
 
 @media screen and (max-width: 768px) {
-    .header {padding: 20px 20px;}
+    .header {padding: 23px 20px 11px;}
+    .header.scrollOn {padding: 18px 20px 6px;}
     .fixedRight {line-height: 1; right: 20px;}
-    .gnb h1 {top: 23px; left: 23px;}
+    .gnb h1 {top: 20px; left: 23px;}
     .gnbMenu .menu-item {font-size: 62px;}
     .gnbMenu .menu-item .numbering {line-height: 62px;}
     .gnb .inner .gnbSubMenu {padding-top: 50px;}
@@ -194,9 +195,6 @@ body.mobilebody .hamburger.surface.is-active:hover .line:nth-child(3){
     .gnb .txtWrap > div.right a {font-size: 16px;}
     .gnb .inner .gnbSubMenu li:last-child {padding-top: 0;}
 
-}
-
-@media screen and (max-width: 480px) {
     .hamburger .line {width: 32px; margin-top: 8px;}
     .hamburger .line:first-child {margin-top: 4px;}
     .hamburger.surface.is-active .line:nth-child(1) {-webkit-transform: translateY(8px);-ms-transform: translateY(8px); -o-transform: translateY(8px); transform: translateY(8px);}
@@ -219,6 +217,11 @@ body.mobilebody .hamburger.surface.is-active:hover .line:nth-child(3){
 
     .header h1 img {max-width: 80%;}
     .gnb h1 img {max-width: 70%;}
+
+}
+
+@media screen and (max-width: 480px) {
+
     .gnb .inner .menu-item {font-size: 50px;}
     .gnb .inner .gnbSubMenu {padding-top: 30px;}
     .gnb .inner .gnbSubMenu li a {font-size: 20px;}

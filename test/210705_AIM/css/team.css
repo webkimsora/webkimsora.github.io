@@ -1,0 +1,156 @@
+@charset "utf-8";
+
+#team .inner {padding: 0 2%;}
+
+body.subPage .mainBgPal {opacity: 0.05;}
+body.subPage .mainBgPal.circle {opacity: 1; margin: 50vh 0px 0px -60vw;}
+section.subContent {padding-top: 280px;}
+section.subContent .container {max-width: 1600px; margin: 0 auto;}
+
+.slideUp {transform: translateY(30%);}
+.on.slideUp {animation: slideInUp 1s linear both;}
+
+.slideDown {transform: translateY(-30%);}
+.on.slideDown {animation: slideInUp .5s linear both;}
+
+.slideLeft {transform: translateX(-30%);}
+.on.slideLeft {animation: slideInLeft .8s linear both;}
+
+.slideRight {transform: translateX(30%);}
+.on.slideRight {animation: slideInLeft .8s linear both;}
+
+.titWrap {position: relative;}
+.titWrap h2 {padding-bottom: 30px; font-size: 65px; font-weight: bold;  line-height: 1.26; letter-spacing: -1px; transition: all .3s; word-break: keep-all;}
+.titWrap .scrollAni2 {font-size: 23px; line-height: 1.52;  color: #000; font-weight: 400; transition: all .3s; word-break: keep-all;}
+
+.floatCnt:after {content:""; display: block; clear: both;}
+.floatCnt > div {float: left;}
+.floatCnt > div:nth-child(even) {float: right;}
+
+.typewriter-effect {}
+.typewriter-effect .text {opacity :0;}
+
+.miniTit {position: absolute; top: 0; left: -134px;  transform: rotate(-90deg) translate3d(16%, 0, 0); transform-origin: bottom right; letter-spacing: 1px; font-size: 32px; color: #000; font-weight: bold; transition: all .3s;}
+.miniTit span {display: inline-block; vertical-align: middle;}
+.miniTit small {font-size: 14px; vertical-align: middle; display: inline-block;}
+
+#team .layer.no1 .titWrap {padding-left: 6vw;}
+#team .layer.no1 .titWrap h2 {padding-bottom: 20px;}
+#team .layer.no1 .titWrap .scrollAni2{position: absolute;top: 220px; right: 0;}
+
+/* list */
+#team .teamList {padding-top: 107px;}
+#team .teamList:after {content:""; display: block; clear: both;}
+#team .teamList > li {text-align: left; position: relative; margin-top: 285px;}
+#team .teamList > li:first-child {margin-top: 0;}
+#team .teamList > li:nth-child(3),
+#team .teamList > li:nth-child(9n) {padding-left: 6vw;}
+#team .teamList > li:nth-child(even) {margin-left: auto;}
+#team .teamList > li .detail {position: relative;}
+#team .teamList > li .detail:after {content:""; display: block; clear: both;}
+#team .teamList > li:nth-child(even) .detail {margin-left: auto;}
+#team .teamList > li .teamImgWrap {}
+#team .teamList > li .teamImgWrap:after {content:""; display: block; clear: both;}
+#team .teamList > li .teamImg {display: inline-block; max-width: 40%; float: left; }
+#team .teamList > li dl {padding-top: 50px; font-size: 26px;  position: absolute; top: 0; left: 50%; margin-left: -17%; color: #000; transition: all .3s;}
+#team .teamList > li dt {font-size: 30px; line-height: 1.2; font-weight: bold; transition: all .3s;}
+#team .teamList > li dt strong {font-size: 50px; }
+#team .teamList > li dd {padding-top: 20px;  line-height: 1.5; font-weight: 500; transition: all .3s;}
+#team .teamList > li .achieve {padding: 25% 45px 0; display: inline-block; line-height: 1.5; vertical-align: top; font-size: 18px;  font-weight: 500;  transition: all .3s;}
+
+#team .teamList > li:nth-child(even) {text-align: right;}
+#team .teamList > li:nth-child(even) dl {left: auto; right: 50%; margin-left: 0; margin-right: -17%; }
+#team .teamList > li:nth-child(even) .teamImg {float: right;}
+
+/* */
+#team .adWrap {padding-top: 250px;}
+
+#team .networkWrap {padding-top: 250px;}
+
+#team .networkWrap .logo {padding-top: 100px; max-width: 80%; margin: 0 auto;}
+#team .networkWrap .logo .list {margin-left: -2%;}
+#team .networkWrap .logo .list:after {content:""; display: block; clear: both; }
+#team .networkWrap .logo .list > li {float: left; width: 23%; margin-left: 2%; margin-bottom: 20px; text-align: center; }
+ #team .networkWrap .logo .list > li img {} 
+
+/* 미디어쿼리 */
+@media screen and (max-width: 1600px) {
+    .miniTit {font-size: 2vw; left: -5.8vw;}
+
+    #team .inner {padding: 0 60px;}
+
+    #team .layer.no1 .titWrap {padding-left: 12vw; padding-right: 6vw;}
+
+    /* #team .teamList > li .achieve {font-size: 1.2vw;} */
+}
+
+@media screen and (max-width: 1300px) , (max-height :900px) {
+    .titWrap h2 {font-size: 5vw; letter-spacing: -3px;}
+    .titWrap .scrollAni2 {font-size: 1.9vw;}
+
+    #team .bgImg {margin: 150px auto 120px;}
+
+    #team .teamList > li {margin-top: 180px;}
+    #team .teamList > li dl {font-size: 18px; padding-top: 25px;}
+    #team .teamList > li dt {font-size: 23px;}
+    #team .teamList > li dt strong {font-size: 38px;}
+    #team .teamList > li .achieve {font-size: 14px;}
+
+
+}
+
+@media screen and (max-width: 1024px), (max-height :800px) {
+    #team .inner {padding: 0 40px;}
+
+    #team .teamList > li .teamImg {max-width: 47%;}
+    #team .teamList > li .achieve {padding: 30% 45px 0;}
+
+}
+
+/* 태블릿 미디어쿼리 */
+@media screen and (max-width: 768px) {
+
+    .miniTit {transform: rotate(0) translate3d(0%, -50px, 0); left: 0; font-size: 18px;}
+    .miniTit small {font-size: 10px;}
+
+    .titWrap h2 {font-size: 42px;}
+    .titWrap .scrollAni2 {font-size: 17px;}
+
+    #team .layer.no1 {padding: 0 6.6vw;}
+    #team .layer.no1 .titWrap {padding:0;}
+    
+    #team .teamList > li {margin-top: 100px;}
+    #team .teamList > li dl {padding-top: 25px; font-size: 16px; left: auto; right: 0; margin-left: 0 !important;}
+    #team .teamList > li:nth-child(even) dl {left: 0; right: auto;}
+    #team .teamList > li dt {font-size: 16px;}
+    #team .teamList > li dt strong {font-size:28px;}
+
+    #team .teamList > li .teamImg {float: none; max-width: 70%;}
+    #team .teamList > li .achieve {padding: 20px 0 0;}
+
+    #team .adWrap {padding-top: 130px;}
+
+    #team .networkWrap {padding-top: 130px;}
+
+    #team .networkWrap .logo {padding-top: 70px; max-width: 100%;}
+    #team .networkWrap .logo .list > li {float: left; width: 31%; margin-left: 2%; margin-bottom: 20px;}
+
+}
+
+/* 모바일 미디어쿼리 */
+
+@media screen and (max-width: 480px) {
+
+    .miniTit {transform: rotate(0) translate3d(0%, -50px, 0); font-size: 16px;}
+
+    .titWrap h2 {font-size: 30px; letter-spacing: -1.5px;}
+
+    #team .inner {padding: 0 20px;}
+
+    #team .teamList > li dl {font-size: 11px;}
+    #team .teamList > li dt {font-size: 11px;}
+    #team .teamList > li dt strong {font-size:20px;}
+
+
+
+}

@@ -7,12 +7,12 @@ body.subPage .mainBgPal.circle {opacity: 1; margin: 50vh 0px 0px -60vw;}
 section.subContent {padding-top: 280px;}
 section.subContent .container {max-width: 1600px; margin: 0 auto;}
 
-.slideUp {transform: translateY(20%);}
-.on.slideUp {animation: slideInUp .5s linear both;}
+.slideUp {transform: translateY(30%);}
+.on.slideUp {animation: slideInUp .8s linear both;}
 
 .titWrap {position: relative;}
 .titWrap h2 {padding-bottom: 30px; font-size: 65px; font-weight: bold;  line-height: 1.26; letter-spacing: -1px; transition: all .3s; word-break: keep-all;}
-.titWrap p {font-size: 23px; line-height: 1.52;  color: #404040; font-weight: 300; transition: all .3s; word-break: keep-all;}
+.titWrap .scrollAni2 {font-size: 23px; line-height: 1.52;  color: #000; font-weight: 400; transition: all .3s; word-break: keep-all;}
 
 .floatCnt:after {content:""; display: block; clear: both;}
 .floatCnt > div {float: left;}
@@ -21,7 +21,7 @@ section.subContent .container {max-width: 1600px; margin: 0 auto;}
 .typewriter-effect {}
 .typewriter-effect .text {opacity :0;}
 
-.miniTit {position: absolute; top: 0; left: -70px; z-index: 100;  transform: rotate(-90deg) translate3d(25%, 0, 0); transform-origin: bottom right; letter-spacing: 1px; font-size: 32px; color: #000; font-weight: bold; transition: all .3s;}
+.miniTit {position: absolute; top: 0; left: -88px;  transform: rotate(-90deg) translate3d(27%, 0, 0); transform-origin: bottom right; letter-spacing: 1px; font-size: 32px; color: #000; font-weight: bold; transition: all .3s;}
 .miniTit span {display: inline-block; vertical-align: middle;}
 .miniTit small {font-size: 14px; vertical-align: middle; display: inline-block;}
 
@@ -130,7 +130,7 @@ section.subContent .container {max-width: 1600px; margin: 0 auto;}
 
 @media screen and (max-width: 1300px) , (max-height :900px) {
     .titWrap h2 {font-size: 5vw; letter-spacing: -3px;}
-    .titWrap p {font-size: 1.9vw;}
+    .titWrap .scrollAni2 {font-size: 1.9vw;}
 
     #about .layer.no2 .titWrap {padding: 150px 0 100px 10.13vw;}
 
@@ -173,7 +173,7 @@ section.subContent .container {max-width: 1600px; margin: 0 auto;}
     .miniTit small {font-size: 10px;}
 
     .titWrap h2 {font-size: 42px;}
-    .titWrap p {font-size: 17px;}
+    .titWrap .scrollAni2 {font-size: 17px;}
 
     body.subPage .mainBgPal.circle {margin: 700px 0px 0px -60vw;}
 
@@ -231,7 +231,7 @@ section.subContent .container {max-width: 1600px; margin: 0 auto;}
     .miniTit {transform: rotate(0) translate3d(0%, -50px, 0); font-size: 16px;}
 
     .titWrap h2 {font-size: 30px; letter-spacing: -1.5px;}
-    .titWrap p {font-size: 14px;}
+    .titWrap .scrollAni2 {font-size: 14px;}
 
     body.subPage .mainBgPal.circle {opacity: 0;}
 
