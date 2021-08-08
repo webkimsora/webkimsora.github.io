@@ -1,29 +1,6 @@
 @charset "utf-8";
 
-#philosophy .inner {padding: 0 2%;}
-
-body.subPage .mainBgPal {opacity: 0.05;}
-body.subPage .mainBgPal.circle {opacity: 1; margin: 50vh 0px 0px -60vw;}
-section.subContent {padding-top: 280px;}
-section.subContent .container {max-width: 1600px; margin: 0 auto;}
-
-.slideUp {transform: translateY(30%);}
-.on.slideUp {animation: slideInUp .8s linear both;}
-
-.titWrap {position: relative;}
-.titWrap h2 {padding-bottom: 30px; font-size: 65px; font-weight: bold;  line-height: 1.26; letter-spacing: -1px; transition: all .3s; word-break: keep-all;}
-.titWrap .scrollAni2 {font-size: 23px; line-height: 1.52;  color: #000; font-weight: 400; transition: all .3s; word-break: keep-all;}
-
-.floatCnt:after {content:""; display: block; clear: both;}
-.floatCnt > div {float: left;}
-.floatCnt > div:nth-child(even) {float: right;}
-
-.typewriter-effect {}
-.typewriter-effect .text {opacity :0;}
-
-.miniTit {position: absolute; top: 0; left: -173px;  transform: rotate(-90deg) translate3d(16%, 0, 0); transform-origin: bottom right; letter-spacing: 1px; font-size: 32px; color: #000; font-weight: bold; transition: all .3s;}
-.miniTit span {display: inline-block; vertical-align: middle;}
-.miniTit small {font-size: 14px; vertical-align: middle; display: inline-block;}
+.miniTit {left: -173px;  transform: rotate(-90deg) translate3d(16%, 0, 0); }
 
 #philosophy .bgAniWrap {position: relative;}
 #philosophy .bg {display: block; width: 100%; height: 100%; position: absolute; left: 0; top: 0; background: linear-gradient(180deg, #fff 18%, #2648a3 37%); opacity: 0; transition: opacity 1s linear; z-index: -1;}
@@ -31,7 +8,7 @@ section.subContent .container {max-width: 1600px; margin: 0 auto;}
 #philosophy .titWrap .scrollAni2:last-child {width: 50%;}
 
 #philosophy .line {width: 1px; height: 420px; margin: 200px auto 0; position: relative; transition: all 1s; transition-delay: .5s;}
-#philosophy .line span {position: absolute; width: 1px; height: 0; background: #000; transition: all 1s; transition-delay: .5s; opacity: 0;}
+#philosophy .line span {position: absolute; width: 1px; height: 0; background: #000; transition: all 1s; /*transition-delay: .5s;*/ opacity: 0;}
 #philosophy .line.on span {height: 100%; opacity: 1; background: #1e4ed1;}
 
 #philosophy .layer.no1 .titWrap {padding-left: 6vw;}
@@ -43,37 +20,19 @@ section.subContent .container {max-width: 1600px; margin: 0 auto;}
 #philosophy .layer.no2 .titWrap small {font-size: 23px;}
 #philosophy .layer.no2 .titWrap .scrollAni2{margin: 30px auto;}
 
-
+/* 미디어쿼리 */
 @media screen and (max-width: 1600px) {
-    .miniTit {font-size: 2vw; left: -8.2vw;}
-
-    #philosophy .inner {padding: 0 60px;}
-
-    #philosophy .layer.no1 .titWrap {padding-left: 12vw; padding-right: 6vw;}
+    .miniTit {left: -8.2vw;}
 }
 
 @media screen and (max-width: 1300px) , (max-height :900px) {
-    .titWrap h2 {font-size: 5vw; letter-spacing: -3px;}
-    .titWrap .scrollAni2 {font-size: 1.9vw;}
-
 }
 
 @media screen and (max-width: 1024px), (max-height :800px) {
-    #philosophy .inner {padding: 0 40px;}
-
-    body.subPage .mainBgPal.circle {margin: 105vh 0px 0px -60vw;}
-
 }
 
 /* 태블릿 미디어쿼리 */
 @media screen and (max-width: 768px) {
-
-    .miniTit {transform: rotate(0) translate3d(0%, -50px, 0); left: 0; font-size: 18px;}
-    .miniTit small {font-size: 10px;}
-
-    .titWrap h2 {font-size: 42px;}
-    .titWrap .scrollAni2 {font-size: 17px;}
-
     #philosophy .titWrap .scrollAni2:last-child {width: 70%; }
 
     #philosophy .layer.no1 {padding: 0 6.6vw;}
@@ -89,13 +48,6 @@ section.subContent .container {max-width: 1600px; margin: 0 auto;}
 /* 모바일 미디어쿼리 */
 
 @media screen and (max-width: 480px) {
-
-    .miniTit {transform: rotate(0) translate3d(0%, -50px, 0); font-size: 16px;}
-
-    .titWrap h2 {font-size: 30px; letter-spacing: -1.5px;}
-    .titWrap .scrollAni2 {font-size: 14px;}
-
-    #philosophy .inner {padding: 0 20px;}
 
     #philosophy .titWrap .scrollAni2:last-child {width: 80%;}
 

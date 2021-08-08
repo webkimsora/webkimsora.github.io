@@ -1,30 +1,6 @@
 @charset "utf-8";
 
-#business .inner {padding: 0 2%;}
-
-body.subPage .mainBgPal {opacity: 0.05;}
-body.subPage .mainBgPal.circle {opacity: 1; margin: 50vh 0px 0px -60vw;}
-section.subContent {padding-top: 280px;}
-section.subContent .container {max-width: 1600px; margin: 0 auto;}
-
-.slideUp {transform: translateY(30%);}
-.on.slideUp {animation: slideInUp .8s linear both;}
-
-.titWrap {position: relative;}
-.titWrap h2 {padding-bottom: 30px; font-size: 65px; font-weight: bold;  line-height: 1.26; letter-spacing: -1px; transition: all .3s; word-break: keep-all;}
-.titWrap .scrollAni2 {font-size: 23px; line-height: 1.52;  color: #000; font-weight: 400; transition: all .3s; word-break: keep-all;}
-
-.floatCnt:after {content:""; display: block; clear: both;}
-.floatCnt > div {float: left;}
-.floatCnt > div:nth-child(even) {float: right;}
-
-.typewriter-effect {}
-.typewriter-effect .text {opacity :0;}
-
-.miniTit {position: absolute; top: 0; left: -133px;  transform: rotate(-90deg) translate3d(16%, 0, 0); transform-origin: bottom right; letter-spacing: 1px; font-size: 32px; color: #000; font-weight: bold; transition: all .3s;}
-.miniTit span {display: inline-block; vertical-align: middle;}
-.miniTit small {font-size: 14px; vertical-align: middle; display: inline-block;}
-
+.miniTit {left: -133px;  transform: rotate(-90deg) translate3d(16%, 0, 0);}
 
 #business .layer.no1 .titWrap {padding-left: 6vw;}
 #business .layer.no1 .titWrap h2 {padding-bottom: 20px;}
@@ -57,13 +33,9 @@ section.subContent .container {max-width: 1600px; margin: 0 auto;}
 #business .midCntWrap .titSubWrap h3 {font-family: Roboto; font-size: 48px; font-weight: bold; line-height: 2.08;}
 #business .midCntWrap .titSubWrap p {font-size: 18px; line-height: 1.56;}
 
-
+/* 미디어쿼리 */
 @media screen and (max-width: 1600px) {
-    .miniTit {font-size: 2vw; left: -5.6vw;}
-
-    #business .inner {padding: 0 60px;}
-
-    #business .layer.no1 .titWrap {padding-left: 12vw; padding-right: 6vw;}
+    .miniTit {left: -5.6vw;}
 
     #business .layer.no2 ul {width: 85%;}
 
@@ -72,9 +44,6 @@ section.subContent .container {max-width: 1600px; margin: 0 auto;}
 }
 
 @media screen and (max-width: 1300px) , (max-height :900px) {
-    .titWrap h2 {font-size: 5vw; letter-spacing: -3px;}
-    .titWrap .scrollAni2 {font-size: 1.9vw;}
-
     #business .layer.no1 ol > li strong {font-size: 24px;}
 
     #business .layer.no2 ul {padding-bottom: 200px;}
@@ -88,8 +57,6 @@ section.subContent .container {max-width: 1600px; margin: 0 auto;}
 }
 
 @media screen and (max-width: 1024px), (max-height :800px) {
-    #business .inner {padding: 0 40px;}
-
     #business .layer.no1 ol > li strong {font-size: 2.2vw;}
 
     #business .layer.no2 li {padding: 90px 0 50px;}
@@ -101,13 +68,6 @@ section.subContent .container {max-width: 1600px; margin: 0 auto;}
 
 /* 태블릿 미디어쿼리 */
 @media screen and (max-width: 768px) {
-
-    .miniTit {transform: rotate(0) translate3d(0%, -50px, 0); left: 0 !important; font-size: 18px;}
-    .miniTit small {font-size: 10px;}
-
-    .titWrap h2 {font-size: 42px;}
-    .titWrap .scrollAni2 {font-size: 17px;}
-
     #business .titWrap .scrollAni2:last-child {width: 70%; }
 
     #business .layer.no1 {padding: 0 40px;}
@@ -131,12 +91,6 @@ section.subContent .container {max-width: 1600px; margin: 0 auto;}
 
 @media screen and (max-width: 480px) {
     #business .inner {padding: 0 30px;}
-
-    .miniTit {transform: rotate(0) translate3d(0%, -50px, 0); font-size: 16px;}
-
-    .titWrap h2 {font-size: 30px; letter-spacing: -1.5px;}
-    .titWrap .scrollAni2 {font-size: 14px;}
-
 
 
     #business .layer.no1 {padding: 0 30px;}

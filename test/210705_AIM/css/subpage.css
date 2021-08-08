@@ -1,0 +1,78 @@
+@charset "utf-8";
+
+#portfolio .inner {padding: 0 2%;}
+
+body.subPage .mainBgPal {opacity: 0.05;}
+body.subPage .mainBgPal.circle {opacity: 1; margin: 50vh 0px 0px -60vw;}
+section.subContent {padding-top: 280px; transition: padding .3s;}
+section.subContent .container {max-width: 1600px; margin: 0 auto;}
+
+.slideUp {transform: translateY(30%);}
+.on.slideUp {animation: slideInUp 1s linear both;}
+
+.slideDown {transform: translateY(-30%);}
+.on.slideDown {animation: slideInUp .8s linear both;}
+
+.slideLeft {transform: translateX(-10%);}
+.on.slideLeft {animation: slideInLeft .8s linear both;}
+
+.slideRight {transform: translateX(10%);}
+.on.slideRight {animation: slideInLeft .8s linear both;}
+
+.titWrap {position: relative;}
+.titWrap h2 {padding-bottom: 30px; font-size: 65px; font-weight: bold;  line-height: 1.26; letter-spacing: -1px; transition: all .3s; word-break: keep-all;}
+.titWrap .scrollAni2 {font-size: 23px; line-height: 1.52;  color: #000; font-weight: 400; transition: all .3s; word-break: keep-all;}
+
+.floatCnt:after {content:""; display: block; clear: both;}
+.floatCnt > div {float: left;}
+.floatCnt > div:nth-child(even) {float: right;}
+
+.typewriter-effect {}
+.typewriter-effect .text {opacity :0;}
+
+.miniTit {position: absolute; top: 0; transform-origin: bottom right; letter-spacing: 1px; font-size: 32px; color: #000; font-weight: bold; transition: all .3s;}
+.miniTit span {display: inline-block; vertical-align: middle;}
+.miniTit small {font-size: 14px; vertical-align: middle; display: inline-block;}
+
+
+/* 미디어쿼리 */
+@media screen and (max-width: 1600px) {
+    .inner {padding: 0 60px !important;}
+
+    .miniTit {font-size: 2vw !important;}
+
+    .layer.no1 .titWrap {padding-left: 12vw !important; padding-right: 6vw !important;}
+}
+
+@media screen and (max-width: 1300px) , (max-height :900px) {
+    section.subContent {padding-top: 220px !important;}
+
+    .titWrap h2 {font-size: 5vw !important; letter-spacing: -3px !important;}
+    .titWrap .scrollAni2 {font-size: 1.9vw !important;}
+}
+
+@media screen and (max-width: 1024px), (max-height :800px) {
+    .inner {padding: 0 40px !important;}
+}
+
+/* 태블릿 미디어쿼리 */
+@media screen and (max-width: 768px) {
+    section.subContent {padding-top: 170px !important;}
+
+    .miniTit {transform: rotate(0) translate3d(0%, -50px, 0) !important; left: 0 !important; font-size: 18px !important;}
+    .miniTit small {font-size: 10px !important;}
+
+    .titWrap h2 {font-size: 42px !important;}
+    .titWrap .scrollAni2 {font-size: 17px !important;}
+
+    .layer.no1 {padding: 0 6.6vw !important;}
+    .layer.no1 .titWrap {padding:0 !important;}
+}
+
+/* 모바일 미디어쿼리 */
+
+@media screen and (max-width: 480px) {
+    .miniTit {transform: rotate(0) translate3d(0%, -50px, 0) !important; font-size: 16px !important;}
+    .titWrap h2 {font-size: 30px !important; letter-spacing: -1.5px !important;}
+    .inner {padding: 0 20px !important;}
+}
