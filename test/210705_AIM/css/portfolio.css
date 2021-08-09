@@ -4,7 +4,7 @@
 
 #portfolio .layer.no1 .titWrap {padding-left: 6vw;}
 #portfolio .layer.no1 .titWrap h2 {padding-bottom: 20px; font-weight: 400;}
-#portfolio .layer.no1 .titWrap h2 p {display: inline-block; font-family: 'Roboto', sans-serif;}
+#portfolio .layer.no1 .titWrap h2 p {display: inline-block; font-family: 'Roboto', sans-serif; font-weight: 500;}
 #portfolio .layer.no1 .titWrap .scrollAni2{position: absolute;top: 220px; right: 0;}
 
 #portfolio .bgImg {text-align: center; margin: 237px auto 200px; max-width: 1920px; max-height: 825px; overflow: hidden; position: relative; transition: all .3s; }
@@ -36,7 +36,7 @@ body.on #portfolio .bgImg:after {transform: translateX(100%); transition: 0.8s .
 /* 미디어쿼리 */
 @media screen and (max-width: 1600px) {
     .miniTit {left: -5.8vw;}
-    #portfolio .layer.no1 .titWrap .scrollAni2 {width: 14vw; right: 3vw;} 
+    #portfolio .layer.no1 .titWrap .scrollAni2 {width: 18vw; right: 3vw;} 
 }
 
 @media screen and (max-width: 1300px) , (max-height :900px) {
@@ -54,7 +54,8 @@ body.on #portfolio .bgImg:after {transform: translateX(100%); transition: 0.8s .
 /* 태블릿 미디어쿼리 */
 @media screen and (max-width: 768px) {
     #portfolio .layer.no1 {padding: 0 6.6vw;}
-    #portfolio .layer.no1 .titWrap {padding:0;} /**/
+    #portfolio .layer.no1 .titWrap {padding:0;} 
+    #portfolio .layer.no1 .titWrap .scrollAni2 {width: 20vw; right: 0;}
 
     #portfolio .bgImg {margin: 90px auto 85px;}
 
@@ -70,5 +71,6 @@ body.on #portfolio .bgImg:after {transform: translateX(100%); transition: 0.8s .
 
 /* 모바일 미디어쿼리 */
 @media screen and (max-width: 480px) {
+    #portfolio .layer.no1 .titWrap .scrollAni2 {top: 190px;}
 
 }

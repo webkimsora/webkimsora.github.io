@@ -42,7 +42,7 @@
 #contact .contactWrap .bottom li {width: 50%; float: left; line-height: 1.6;}
 #contact .contactWrap .bottom b {font-size: 28px; padding-bottom: 70px; display: block;}
 #contact .contactWrap .bottom strong {font-size: 50px; display: block; padding-bottom: 40px; line-height: 1;}
-#contact .contactWrap .bottom a {font-size: 28px; text-decoration: underline;}
+#contact .contactWrap .bottom a {font-size: 28px; text-decoration: underline; font-weight: 500;}
 
 /* 미디어쿼리 */
 @media screen and (max-width: 1600px) {
@@ -68,13 +68,14 @@
     #contact .layer.no1 .titWrap {padding-left: 0;}
     #contact .layer.no1 .titSubWrap {padding: 60px 0 0 5.87vw;}
 
+    #contact .contactWrap .top {font-size: 40px;}
     #contact .contactWrap .top small {font-size: 2.2vw;}
     #contact .contactWrap .bottom li {float: none !important; }
     #contact .contactWrap .bottom li:last-child {padding-top: 80px;}
 
-    #contact .contactWrap .bottom {font-size: 16px;}
-    #contact .contactWrap .bottom b {font-size: 23px;}
-    #contact .contactWrap .bottom strong {font-size: 30px;}
+    #contact .contactWrap .bottom {font-size: 15px; padding-top: 60px;}
+    #contact .contactWrap .bottom b {font-size: 23px; padding-bottom: 20px;}
+    #contact .contactWrap .bottom strong {font-size: 30px; padding-bottom: 20px;}
     #contact .contactWrap .bottom a {font-size: 23px;}
 }
 
@@ -84,5 +85,6 @@
     #contact .contactWrap .top {font-size: 28px;}
     #contact .contactWrap .top small {font-size: 12px;}
     #contact .contactWrap .bottom {font-size: 13px;}
+    #contact .contactWrap .bottom a {font-size: 16px;}
 
 }

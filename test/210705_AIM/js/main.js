@@ -61,13 +61,13 @@
 		});
 
 		$(".gnbMenu li").click(function() {
-			var scrollPosition = $($(this).attr("data-target")).offset().top;
-			console.log(scrollPosition)
-			gnbClose();
+			// var scrollPosition = $($(this).attr("data-target")).offset().top;
+			// console.log(scrollPosition)
+			// gnbClose();
 
-			$('html, body').stop().animate({
-				scrollTop: scrollPosition - headerH
-			}, 500);
+			// $('html, body').stop().animate({
+			// 	scrollTop: scrollPosition - headerH
+			// }, 500);
 		});
 
 		// cursor event
@@ -319,6 +319,9 @@
                 prevEl: '.swiper-button-prev',
             },
 			breakpoints: {
+				1920: {
+					slidesPerView: 3.5,
+				},
 				1024: {
 					slidesPerView: 2.8,
 				}

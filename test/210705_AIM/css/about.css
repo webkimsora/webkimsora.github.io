@@ -2,8 +2,8 @@
 
 .miniTit {left: -88px;  transform: rotate(-90deg) translate3d(27%, 0, 0);}
 
-#about .bgAniWrap {position: relative;}
-#about .bg {display: block; width: 100%; height: 100%; position: absolute; left: 0; top: 0; background: linear-gradient(180deg, #fff 18%, #2648a3 37%); opacity: 0; transition: opacity 1s linear; z-index: -1;}
+/* #about .bgAniWrap {position: relative;}
+#about .bg {display: block; width: 100%; height: 100%; position: absolute; left: 0; top: 0; background: linear-gradient(180deg, #fff 18%, #2648a3 37%); opacity: 0; transition: opacity 1s linear; z-index: -1;} */
 
 #about .layer.no1 .titWrap {padding-left: 6vw;}
 #about .layer.no1 .titWrap h2 {padding-bottom: 20px;}
@@ -32,14 +32,14 @@
 #about .midCntWrap .listTxt dd {font-size: 18px; font-weight: 500; line-height: 1.56;color: #666666; word-break: keep-all; transition: all .3s;}
 
 #about .botCntWrap {padding: 200px 0; background: #2648a3; color: #fff !important;}
-#about .botCntWrap h2 {max-width: 1200px; padding-bottom: 110px; margin-bottom: 250px; font-size: 78px; font-weight: bold; line-height: 1.26; letter-spacing: -1.56px; border-bottom: 8px solid #fff; transition: all .3s; color: #fff;}
+#about .botCntWrap h2 {/*max-width: 1200px;*/ padding-bottom: 110px; margin-bottom: 250px; font-size: 78px; font-weight: bold; line-height: 1.26; letter-spacing: -1.56px; border-bottom: 8px solid #fff; transition: all .3s; color: #fff; text-align: center;}
 #about .botCntWrap h2 sub {font-family: 'Lateef', sans-serif; display: inline-block; vertical-align: middle; transform: scale(1.5); padding-right: 20px; margin-left: 35px;}
 #about .botCntWrap .listTxtWrap {}
 #about .botCntWrap .listTxt {max-width: 585px; margin-top: 60px;}
 #about .botCntWrap .listTxt:first-child {margin-top: 0;}
 #about .botCntWrap .listTxt:nth-child(even) {margin-left: auto;}
-#about .botCntWrap .listTxt h3 {padding-bottom: 45px; font-size: 62px; font-weight: bold; line-height: 1; letter-spacing: -0.93px; border-bottom: 3px solid #fff; transition: all .3s; color: #fff;}
-#about .botCntWrap .listTxt li {padding-left: 5px; font-size: 18px; line-height: 3.17;border-bottom: 1px solid #fff; transition: all .3s;}
+#about .botCntWrap .listTxt h3 {padding-bottom: 45px; font-size: 55px; font-weight: bold; line-height: 1; letter-spacing: -0.93px; border-bottom: 3px solid #fff; transition: all .3s; color: #fff;}
+#about .botCntWrap .listTxt li {padding-left: 5px; font-size: 16px; line-height: 3.17;border-bottom: 1px solid #fff; transition: all .3s;}
 
 /* 슬라이드 */
 #about .proWrap {padding: 350px 0;}
@@ -90,7 +90,7 @@
 #about .contactWrap .bottom li {width: 50%; float: left; line-height: 1.6;}
 #about .contactWrap .bottom b {font-size: 28px; padding-bottom: 70px; display: block;}
 #about .contactWrap .bottom strong {font-size: 50px; display: block; padding-bottom: 40px; line-height: 1;}
-#about .contactWrap .bottom a {font-size: 28px; text-decoration: underline;}
+#about .contactWrap .bottom a {font-size: 28px; text-decoration: underline; font-weight: 500;}
 
 /* 미디어쿼리 */
 @media screen and (max-width: 1600px) {
@@ -125,8 +125,8 @@
     #about .botCntWrap {padding: 100px 0 200px;}
     #about .botCntWrap h2 {font-size: 60px; padding-bottom: 110px; margin-bottom: 180px;}
     #about .botCntWrap h2 sub {margin-left: 30px; padding-right: 15px;}
-    #about .botCntWrap .listTxt h3 {font-size: 48px;}
-    #about .botCntWrap .listTxt li {font-size: 16px;}
+    #about .botCntWrap .listTxt h3 {font-size: 42px;}
+    #about .botCntWrap .listTxt li {font-size: 15px;}
 
     #about .proWrap {padding: 220px 0;}
     #about .proWrap .proSlide {padding-top: 120px;}
@@ -139,6 +139,8 @@
 /* 태블릿 미디어쿼리 */
 @media screen and (max-width: 768px) {
     body.subPage .mainBgPal.circle {margin: 700px 0px 0px -60vw;}
+
+    #about .topCntWrap .titWrap .scrollAni2 {font-size: 15px !important;}
 
     #about .layer.no1 {padding-left: 6.6vw;}
     #about .layer.no1 .titSubWrap {padding: 40px 0 0 0;}
@@ -153,7 +155,6 @@
     #about .layer.no4 .titWrap {padding: 100px 0 0 10vw;}
     #about .layer.no5 .titWrap {padding: 100px 0 100px 26.6vw;}
     #about .layer.no5 .titSubWrap {padding-right: 9.33vw;}
-
 
     #about .midCntWrap {padding: 180px 0 80px;}
     #about .midCntWrap h2 {font-size: 48px; line-height: 1.05;  }
@@ -177,13 +178,14 @@
     #about .proWrap .proSlide .swiper-slide div .tit {font-size: 18px;}
     #about .proWrap .proSlide .swiper-slide div {font-size: 14px;}
 
+    #about .contactWrap .top {font-size: 40px;}
     #about .contactWrap .top small {font-size: 2.2vw;}
     #about .contactWrap .bottom li {float: none !important; }
     #about .contactWrap .bottom li:last-child {padding-top: 80px;}
 
-    #about .contactWrap .bottom {font-size: 16px;}
-    #about .contactWrap .bottom b {font-size: 23px;}
-    #about .contactWrap .bottom strong {font-size: 30px;}
+    #about .contactWrap .bottom {font-size: 15px; padding-top: 60px;}
+    #about .contactWrap .bottom b {font-size: 23px; padding-bottom: 20px;}
+    #about .contactWrap .bottom strong {font-size: 30px; padding-bottom: 20px;}
     #about .contactWrap .bottom a {font-size: 23px;}
 }
 
@@ -191,6 +193,8 @@
 
 @media screen and (max-width: 480px) {
     body.subPage .mainBgPal.circle {opacity: 0;}
+
+    #about .topCntWrap .titWrap .scrollAni2 {font-size: 13px !important;}
 
     #about .midCntWrap h2 {font-size: 38px; padding-bottom: 40px; }
     #about .midCntWrap .listTxt {max-width: 80%;}
@@ -211,5 +215,6 @@
     #about .contactWrap .top {font-size: 28px;}
     #about .contactWrap .top small {font-size: 12px;}
     #about .contactWrap .bottom {font-size: 13px;}
+    #about .contactWrap .bottom a {font-size: 16px;}
 
 }

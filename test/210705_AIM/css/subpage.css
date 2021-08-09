@@ -48,7 +48,7 @@ section.subContent .container {max-width: 1600px; margin: 0 auto;}
     section.subContent {padding-top: 220px !important;}
 
     .titWrap h2 {font-size: 5vw !important; letter-spacing: -3px !important;}
-    .titWrap .scrollAni2 {font-size: 1.9vw !important;}
+    .titWrap .scrollAni2 {font-size: 1.8vw !important;}
 }
 
 @media screen and (max-width: 1024px), (max-height :800px) {
