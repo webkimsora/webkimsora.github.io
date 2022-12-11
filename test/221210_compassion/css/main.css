@@ -1,0 +1,338 @@
+@charset "utf-8";
+
+/* common */
+html,body { background:  #000;}
+.event_compMovie {font-family: 'Noto Sans KR', sans-serif; overflow-x: hidden; background:  #000;}
+.event_compMovie * {-webkit-box-sizing: border-box; box-sizing: border-box;}
+.event_compMovie .inner:after {content:""; display: block; clear: both;}
+.event_compMovie .floatDouble:after {content:""; display: block; clear: both;}
+.event_compMovie .floatDouble > .left {float: left;}
+.event_compMovie .floatDouble > .right {float: right;}
+.event_compMovie .ani{ z-index:1;opacity: 0;opacity:1 \0/IE9;}
+.mVisible {display: none !important;} /* 모바일조건문*/
+body.mobilebody .mVisible {display: block !important;}
+body.mobilebody .mNone {display: none !important;}
+.a11y {font-size:0;display: block;z-index: -1;height: 1px;overflow: hidden;font-size: 1px;line-height: 1px;color: transparent;border: 0;padding: 0;opacity: 0;filter: alpha(opacity=0);background: none;position: absolute;width: 1px;margin: 0;}
+
+.event_compMovie  img {max-width: 100%;}
+
+/* 영상 레이어 팝업 */
+.popWrap {position: fixed; left:0; top:0; bottom:0; width: 100%; height: 100%; z-index:200; text-align: center; display: none; overflow-y:auto;}
+.popWrap .bg { position: fixed; left:0; top:0; width: 100%; height: 100%; z-index: 1; background: #000; opacity: 0.6; -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=60)'; filter: alpha(opacity=60);}
+.popWrap .popIn {position:relative; margin: 0 auto; left:0; top:50%; /*max-width: 950px;*/  width: 100%; box-sizing:border-box;  z-index:2; text-align: center;  animation-name: anim-scale; animation-duration: .3s; animation-direction: alternate; animation-timing-function: cubic-bezier(0.18, 0.89, 0.32, 1.28); }
+.popWrap .popIn .btn_closePop {display:inline-block; vertical-align:middle; position:absolute; right:0; top:-40px; width:30px; height:30px; transform:rotate(-45deg); transition:0.3s; -webkit-transition:0.3s;}
+.popWrap .popIn .btn_closePop:hover {transform:rotate(-135deg);}
+.popWrap .popIn .btn_closePop:before {content:""; position:absolute; left:4px; right:4px; top:50%; height:2px; margin-top:-1px; background-color:#fff;}
+.popWrap .popIn .btn_closePop:after {content:""; position:absolute; left:50%; top:4px; bottom:4px; width:2px; margin-left:-1px; background-color:#fff;}
+
+.popWrap .popIn .youtubeCont {position: relative; max-width: 80%; margin:0 auto; background: #000; border: 2px solid #fff;}
+.popWrap .popIn .youtubeCont #youtubeMovie {position: relative; padding-bottom: 56.25%; width: 100%;}
+.popWrap .popIn .youtubeCont iframe {height: 100%; width: 100%; position: absolute; left: 0;}
+.popWrap .popIn .youtubeCont video {height: 100%; width: 100%; position: absolute; left: 0;}
+
+/* TOP 버튼 */
+.event_compMovie .fixedRight {position: fixed; bottom: 5%; right: 30px; display: none; z-index: 100; letter-spacing: 2px; }
+
+/* main */
+.event_compMovie {padding-bottom: 200px;}
+.event_compMovie .main {position: relative;}
+.event_compMovie .main:after {content:""; display: block; width: 100%; height: 200px; position: absolute; bottom: -100px; left: 0; z-index: 1; background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.9) 42%, rgba(0,0,0,1) 100%);}
+.event_compMovie .main .top {position: absolute; top: 0; width: 100%; left: 0; z-index: 5;}
+.event_compMovie .main .top .inner {width: 1200px; margin: 0 auto;}
+.event_compMovie .main .logo {margin-top: 30px; display: inline-block;}
+.event_compMovie .main .mainSlide .item { height: 856px; position: relative;}
+.event_compMovie .main .mainSlide .owl-item.active .item {animation: visualAni .8s linear;}
+.event_compMovie .main .mainSlide .item a {display: block; width: 100%; height: 100%;}
+
+@keyframes visualAni {
+    0% {transform: scale(1);}
+    0% {transform: scale(1.2);}
+    100%{transform: scale(1);}
+}
+
+/* main contents */ 
+.event_compMovie .cntWrap {padding-top: 80px; position: relative; z-index: 2;}
+.event_compMovie .cntWrap > div:not(:first-child) {padding-top: 70px;}
+.event_compMovie .cntWrap h4 {font-size: 50px; padding-bottom: 40px; font-weight: bold; color: #fff; transition: all .1s;}
+.event_compMovie .cntWrap .inner { position: relative; width: 1860px; margin: 0 0 0 auto;}
+
+.event_compMovie .listWrap .list { }
+.event_compMovie .listWrap .listSlide .item {border-radius: 10px; overflow: hidden;}
+.event_compMovie .lineBnr .cnt {text-align: center;}
+.event_compMovie .lineBnr img {max-width: 100%;}
+
+/* subpage */
+.event_compMovie .subPage {max-width: 952px; margin: 0 auto;}
+.event_compMovie .subPage .inner {padding: 0 80px;}
+.event_compMovie .subPage .movieWrap {}
+.event_compMovie .subPage .movieWrap .movie {position: relative;}
+.event_compMovie .subPage .movieWrap .youtube {position: absolute; top: 0; left: 0; display: none; padding-bottom: 56.25%; width: 100%;}
+.event_compMovie .subPage .movieWrap .youtube iframe {height: 100%; width: 100%; position: absolute; left: 0;}
+
+/* 랩탑 미디어쿼리 */
+@media only screen and (max-width: 1860px) {
+    .event_compMovie .cntWrap .inner { width: 100%; -webkit-box-sizing: border-box; box-sizing: border-box; padding-left: 60px;}
+}
+
+@media only screen and (max-width: 1560px) {
+    .event_compMovie .cntWrap h4 {font-size: 38px; padding-bottom: 30px;}
+}
+
+@media only screen and (max-width: 1280px) {
+    .event_compMovie .main .top .inner { width: 100%; padding: 0 60px;}
+    .event_compMovie .main .logo {width: 150px; height: 55px;}
+
+    .event_compMovie .main .mainSlide .item { height: 65vw;}
+}
+
+@media only screen and (max-width: 1024px) {
+    
+    .event_compMovie .cntWrap h4 {font-size: 28px;}
+}
+
+@media only screen and (max-width: 768px) { /*no필수*/
+    .mNone {display: none !important;}
+    .mVisible {display: block !important;}
+
+    .event_compMovie .main .top .inner { padding: 0 30px;}
+    .event_compMovie .main .logo {width: 104px; height: 40px;}
+    .event_compMovie .cntWrap .inner {padding-left: 30px;}
+
+    
+    .event_compMovie .subPage .inner {padding: 0 60px;}
+}
+
+@media only screen and (max-width: 570px) {
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@keyframes slideInUp {
+    100%{transform: translateY(0);opacity: 1;}
+}
+
+@keyframes slideInLeft {
+    100%{transform: translateX(0);opacity: 1;}
+}
+
+@keyframes focus-in-contract{
+    0%{-webkit-filter:blur(12px);filter:blur(12px);opacity:0}
+    to{-webkit-filter:blur(0);filter:blur(0);opacity:1}
+}
+
+@keyframes scrollBottom {
+    0% { opacity: 1; transform: translateY(-10px); }
+    100% { opacity: 1; transform: translateY(20px); }
+}
+
+@keyframes sizeChange {
+    0% {width: 0; opacity: 0;}
+    100% {width: 60vw; opacity: 1;}
+}
+
+@keyframes afterView {
+    0% {opacity: 0;}
+    100% { opacity: 1; }
+}
+
+
+@media screen and (max-width: 1500px) {
+    .midTit {font-size: 52px;}
+}
+
+@media screen and (max-width: 1300px) , (max-height :900px) {
+    .container {padding: 0 12vw;}
+    .main .visual01 p {font-size: 45px;}
+    .main .visual02 p {font-size: 28px; }
+
+    .midTit {font-size: 46px;}
+    .smTit {font-size: 40px;}
+
+
+    .whatWrap dt {font-size: 16px;}
+    .whatWrap dd {font-size: 14px;}
+
+    .changeWrap.on .arrow .bigLine {width: 55%;}
+
+    .collaboWrap .tit p {font-size: 45px;}
+    .collaboWrap .tit small {font-size: 19px;}
+    .collaboWrap .txt {font-size: 16px;}
+
+    .inforWrap h3 {font-size: 46px;}
+    .inforWrap .left {padding-right: 40px;}
+    .inforWrap .right {line-height: 1.4; font-size: 20px;}
+    .inforWrap .right h4 {font-size: 30px;}
+
+    .contectWrap h3 {font-size: 46px;}
+}
+
+@media screen and (max-height :850px) {
+    }
+
+@media screen and (max-width: 1024px), (max-height :800px) {
+    .container {padding: 0 8vw;}
+
+    .subpage {padding: 12% 0; height: auto;}
+    .subpage .inner {position: relative; top: auto; left: auto; transform: none; vertical-align: middle;  width: 100%;}
+
+    /* .main .circle i {width: 24vw; height: 24vw;} */
+    .main .circle i.no1 {top: 30px;}
+    .main .circle i.no2 {left: -3%; top: 180px;}
+    .main .circle i.no4 {top: 100vh;}
+    .main .circle i.no5 {top: 130vh;}
+    .main .circle i.no6 {top: 180vh;}
+    .main .visual01 h2 {font-size: 58px;}
+
+    .introWrap .placeSlide {padding: 5% 0; }
+
+    .inforWrap .left {padding-right: 20px;}
+
+    .whatWrap h3 {padding-bottom: 55px;}
+
+
+    .changeWrap h3 {padding-bottom: 70px;}
+    .changeWrap .inner {padding: 0 16vw;}
+    /*.changeWrap .cntWrap li:nth-child(1) {margin-left: -13%;}
+    .changeWrap .cntWrap li:nth-child(2) {margin-top: -14.5%; right: 0;}
+    .changeWrap .cntWrap li:nth-child(3) {bottom: 3.5%; margin-left: -13%;}
+    .changeWrap .cntWrap li:nth-child(4) {margin-top: -14.5%;}*/
+
+
+    .collaboWrap .colImg {padding-left: 30px; max-width:400px;}
+
+    .contectWrap p {font-size: 20px;}
+
+    @keyframes sizeChange {
+        0% {width: 0; opacity: 0;}
+        100% {width: 65%; opacity: 1;}
+    }
+}
+
+@media screen and (max-width: 1024px) {
+
+    .main .visual02 .mNone {display: none;}
+
+    .introWrap .logo .mVisible {display: none;}
+    .proWrap .logo .mVisible {display: none;}
+
+    .changeWrap .arrow.mVisible {display: none;}
+
+    .whatWrap .text li {width: 45%; margin-left: 10% !important;}
+    .whatWrap .text li:nth-child(odd) {margin-left: 0 !important;}
+}
+
+/* 태블릿 미디어쿼리 */
+@media screen and (max-width: 768px) {
+    .fixedRight {right: 15px;}
+    .fixedRight a {font-size: 10px;}
+
+    .main .circle i {width: 36vw; height: 36vw;}
+    .main .circle i.no1 {right: 20%;}
+    .main .circle i.no2 {left: -20%; top: 6%;}
+    .main .circle i.no4 {left: 20%; top: 90vh;}
+
+    .main .visual02 .midTit {font-size: 38px;}
+    .main .visual02 p {font-size: 22px; }
+
+    .left {float: none;}
+    .right {float: none;}
+
+    .mNone {display: none;}
+    .mVisible {display: block;}
+
+
+    .introWrap {border: none;}
+    .introWrap .placeSlide {padding: 10% 0;}
+
+    .introWrap .logo .mNone {display: block;}
+    .proWrap .logo .mNone {display: block;}
+    .proWrap .proSlide {padding: 5% 0 17%;}
+
+    .changeWrap.subpage {padding: 235px 0;}
+    .changeWrap h3 { padding-bottom: 100px;}
+    .changeWrap .inner {padding: 0 8vw;}
+    /* .changeWrap .cntWrap li:nth-child(3) {bottom: 4.5%;} */
+
+    .collaboWrap .tit p {font-size: 38px;}
+    .collaboWrap .txt {font-size: 16px;}
+    .collaboWrap.on .line.up {height: 53px;}
+    .collaboWrap.on .line.up span {height: 53px;}
+
+    @keyframes sizeChange {
+        0% {width: 0; opacity: 0;}
+        100% {width: 42vw; opacity: 1;}
+    }
+
+    .whatWrap .midTit {font-size: 36px;}
+    .whatWrap .point {margin-bottom: 88px; text-align: center;}
+    .whatWrap .text li {width: 100%; margin-left: 0 !important; margin-bottom: 40px;}
+
+    .contectWrap .inner {text-align: left;}
+    .contectWrap h3 {line-height: 2.15; font-size: 35px;}
+    .contectWrap p {font-size: 16px;}
+
+    .inforWrap .left {width: 100%; padding-right: 0;}
+    .inforWrap .left img {width: 100%;}
+    .inforWrap .right {width: 100%; padding-top: 53px;}
+}
+
+/* 모바일 미디어쿼리 */
+
+@media screen and (max-width: 480px) {
+    .container {padding: 0 30px;}
+    .subpage {padding: 100px 0; height: auto;}
+
+    .main .circle i {width: 42vw; height: 42vw;}
+    .main .visual01 h2 {font-size: 45px; line-height: 1.33;}
+    .main .visual01 p {font-size: 35px;}
+
+    .main .visual02 .midTit {font-size: 28px;}
+    .main .visual02 p {font-size: 18px; }
+
+    .subTit {font-size: 14px;}
+    .midTit {font-size: 32px;}
+    .smTit {font-size: 32px;}
+
+    .introWrap .logo .pc {display: none;}
+    .introWrap .logo .mVisible {display: block;}
+
+    .proWrap .logo .pc {display: none;}
+    .proWrap .logo .mVisible {display: block;}
+    .proWrap .proBtnWrap {opacity: 1;}
+
+    .changeWrap.subpage {padding: 170px 0;}
+    /* .changeWrap .cntWrap li:nth-child(1) {margin-left: -13.2%;}
+    .changeWrap .cntWrap li:nth-child(2) {margin-top: -15.5%;}
+    .changeWrap .cntWrap li:nth-child(3) {bottom: 0%;}
+    .changeWrap .cntWrap li:nth-child(4) {margin-top: -15.5%;} */
+
+    @keyframes sizeChange {
+        0% {width: 0; opacity: 0;}
+        100% {width: 60vw; opacity: 1;}
+    }
+
+    .whatWrap h3 {font-size: 28px !important; padding-bottom: 70px;}
+    .whatWrap .point {margin-bottom: 45px;}
+    .whatWrap dt {font-size: 14px;}
+    .whatWrap dd {font-size: 12px;}
+
+    .proWrap .proSlide {padding: 5% 0 27%;}
+
+    .inforWrap h3 {line-height: 2.15; font-size: 35px;}
+    .inforWrap .right {font-size: 16px;}
+    .inforWrap .right h4 {font-size: 23px;}
+
+    .collaboWrap .tit p {font-size: 28px;}
+    .collaboWrap .tit small {font-size: 17px;}
+    .collaboWrap .txt {font-size: 14px;}
+}
