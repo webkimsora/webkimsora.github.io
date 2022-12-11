@@ -88,6 +88,7 @@ body.mobilebody .mNone {display: none !important;}
 @media only screen and (max-width: 1024px) {
     
     .event_compMovie .cntWrap h4 {font-size: 28px;}
+    .event_compMovie .subPage .inner {padding: 0 60px;}
 }
 
 @media only screen and (max-width: 768px) { /*no필수*/
@@ -98,8 +99,8 @@ body.mobilebody .mNone {display: none !important;}
     .event_compMovie .main .logo {width: 104px; height: 40px;}
     .event_compMovie .cntWrap .inner {padding-left: 30px;}
 
+    .event_compMovie .subPage .inner {padding: 0 30px;}
     
-    .event_compMovie .subPage .inner {padding: 0 60px;}
 }
 
 @media only screen and (max-width: 570px) {
