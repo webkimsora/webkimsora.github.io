@@ -231,20 +231,22 @@
 	 */
 	var youtubePlayer;
 	function onYouTubeIframeAPIReady () {
-	youtubePlayer = new YT.Player('compIframe', {
-		// videoId: '9bZkp7q19f0',   // <iframe> 태그 지정시 필요없음
-		events: {
-		'onReady': onPlayerReady,               // 플레이어 로드가 완료되고 API 호출을 받을 준비가 될 때마다 실행
-		'onStateChange': onPlayerStateChange    // 플레이어의 상태가 변경될 때마다 실행
-		}
-	});
+		youtubePlayer = new YT.Player('compIframe', {
+			// videoId: '9bZkp7q19f0',   // <iframe> 태그 지정시 필요없음
+			events: {
+				'onReady': onPlayerReady,               // 플레이어 로드가 완료되고 API 호출을 받을 준비가 될 때마다 실행
+				'onStateChange': onPlayerStateChange    // 플레이어의 상태가 변경될 때마다 실행
+			}
+		});
 	}
+
 	function onPlayerReady (event) {
 		//$('#result').val($('#result').val() + 'onPlayerReady 실행\n')
 
 		// 플레이어 자동실행 (주의: 모바일에서는 자동실행되지 않음)
 		event.target.playVideo();
 	}
+	
 	var playerState;
 	function onPlayerStateChange (event) {
 	playerState = event.data == YT.PlayerState.ENDED ? '종료됨' :
@@ -267,5 +269,6 @@
 	// 유튜브 플레이리스트 변경
 	function fnChangeVideoId(videoId){
 		youtubePlayer.cueVideoById(videoId);
+		youtubePlayer.unMute();
    }
 
