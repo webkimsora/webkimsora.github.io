@@ -71,7 +71,7 @@ body.mobilebody .mNone {display: none !important;}
 .subDetailPop .popIn {top:0; }
 
 .subDetailPop .popList {max-width: 952px; margin: 0 auto; padding-top: 30px; position: relative;}
-.subDetailPop .popList .inner {padding: 0 80px;}
+.subDetailPop .inner {padding: 0 80px;}
 .subDetailPop .detailPop .movieWrap {}
 .subDetailPop .detailPop .movieWrap .movie {position: relative;}
 .subDetailPop .detailPop .movieWrap .youtube {position: absolute; top: 0; left: 0; display: none; padding-bottom: 56.25%; width: 100%;}
