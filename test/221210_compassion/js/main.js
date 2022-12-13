@@ -60,7 +60,13 @@
      		touchDrag: true,
 			autoplay:true,
 			autoplayTimeout:4000,
-			dots: false
+			dots: false,
+			responsiveClass:true,
+			responsive:{
+				768:{
+					dots: true
+				}
+			}
 		});
 
 		// main list slide
@@ -78,10 +84,9 @@
 				dots: false,
 				responsiveClass:true,
 				responsive:{
-					2000:{
-						//items:5
-					},
-
+					768:{
+						margin: 10
+					}
 				}
 			});
 		});
