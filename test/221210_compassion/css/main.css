@@ -18,12 +18,12 @@ body.mobilebody .mNone {display: none !important;}
 .popWrap img {max-width: 100%;}
 
 /* TOP 버튼 */
-.event_compMovie .fixedRight {position: fixed; bottom: 5%; right: 30px; display: none; z-index: 100; letter-spacing: 2px; }
+.event_compMovie .fixedRight {position: fixed; bottom: 5%; right: 30px; display: none; z-index: 100; letter-spacing: 2px;}
 
 /* main */
 .event_compMovie {padding-bottom: 200px;}
 .event_compMovie .main {position: relative;}
-.event_compMovie .main:after {content:""; display: block; width: 100%; height: 200px; position: absolute; bottom: -100px; left: 0; z-index: 1; background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.9) 30%, rgba(0,0,0,1) 100%);}
+.event_compMovie .main .mainSlide .item:after {content:""; display: block; width: 100%; height: 200px; position: absolute; bottom: -100px; left: 0; z-index: 1; background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.9) 30%, rgba(0,0,0,1) 100%);}
 .event_compMovie .main .top {position: absolute; top: 0; width: 100%; left: 0; z-index: 5;}
 .event_compMovie .main .top .inner {width: 1200px; margin: 0 auto;}
 .event_compMovie .main .logo {margin-top: 30px; display: inline-block;}
@@ -119,6 +119,8 @@ body.mobilebody .mNone {display: none !important;}
     .subDetailPop .inner {padding: 0 60px;}
 
     .subDetailPop .btn_pop_close {left: 30px;}
+
+    .subDetailPop .detailPop .playlist {padding: 80px 0;}
 }
 
 @media only screen and (max-width: 768px) { /*no필수*/
@@ -126,15 +128,21 @@ body.mobilebody .mNone {display: none !important;}
     .mVisible {display: block !important;}
 
     .event_compMovie {padding-bottom: 100px;}
-    .event_compMovie .fixedRight {position: fixed; bottom: 30px; right:0; padding: 0 30px;}
+    .event_compMovie .fixedRight {display: block; bottom: 30px; right:0; padding: 0 30px;}
     .event_compMovie .fixedRight img {width: auto;}
 
     .event_compMovie .main .top .inner { padding: 0 30px;}
     .event_compMovie .main .logo {width: 104px; height: 40px;}
+    .event_compMovie .main .mainSlide .item { height: auto;}
+    .event_compMovie .main .mainSlide .owl-dots {position: absolute; bottom: 10px; width: 100%; display: inline-block; text-align: center;}
+    .event_compMovie .main .mainSlide .owl-dots > button {width: 60px; height: 4px; background: #fff; opacity: 0.3; transition: all .2s;}
+    .event_compMovie .main .mainSlide .owl-dots > button.active {opacity: 1; width: 80px;}
+
     .event_compMovie .cntWrap {padding-top: 40px;}
     .event_compMovie .cntWrap .inner {padding-left: 30px;}
     .event_compMovie .cntWrap h4 {font-size: 24px;}
     .event_compMovie .cntWrap > div:not(:first-child) {padding-top: 35px;}
+    .event_compMovie .listWrap .listSlide .owl-item {margin-right: 10px !important;}
     .event_compMovie .listWrap .listSlide .item {width: 190px;}
     .event_compMovie .listWrap .listSlide .item.common {width: 400px;}
 
@@ -143,17 +151,23 @@ body.mobilebody .mNone {display: none !important;}
 
     .subDetailPop .introducePop li:first-child {padding-bottom: 30px;}
     .subDetailPop .introducePop li:last-child {padding: 40px 0 80px;}
+    
+    .subDetailPop .detailPop .movieWrap .txt {padding: 30px 0 40px;}
+    .subDetailPop .detailPop .playlist li:not(:first-child) {padding-top: 20px;}
+    .subDetailPop .detailPop .btn > li:first-child {padding-bottom: 15px;}
 }
 
 @media only screen and (max-width: 570px) {
     .event_compMovie .listWrap .listSlide .item {width: 130px;}
     .event_compMovie .listWrap .listSlide .item.common {width: 235px;}
+
+    .subDetailPop .detailPop .playlist {padding: 40px 0 80px;}
     
 }
 
 @media only screen and (max-width: 400px) {
-    /* .event_compMovie .listWrap .listSlide .item {width: 100px;}
-    .event_compMovie .listWrap .listSlide .item.common {width:195px;} */
+    .event_compMovie .listWrap .listSlide .item {width: 110px;}
+    .event_compMovie .listWrap .listSlide .item.common {width:205px;}
     
 }
 

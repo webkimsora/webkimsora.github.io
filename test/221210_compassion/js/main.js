@@ -4,7 +4,7 @@
 		var UADevice = UserAgent.match(/iPhone|iPod|iPad|Android|Windows CE|BlackBerry|Symbian|Windows Phone|webOS|Opera Mini|Opera Mobi|POLARIS|IEMobile|lgtelecom|nokia|SonyEricsson/i);
 		var UAVendor = UserAgent.match(/LG|SAMSUNG|Samsung/);
 		if (UADevice !== null || UAVendor!== null){
-			$('body').addClass('mobilebody');
+			$('.event_compMovie').addClass('mobilebody');
 		}
 
 		/*resize 반복실행 방지 : smartResize js 해석 */
@@ -56,15 +56,14 @@
 		mainSlider.owlCarousel({
 			items:1,
 			loop:true,
-			mouseDrag: true,
-     		touchDrag: true,
 			autoplay:true,
 			autoplayTimeout:4000,
-			dots: false,
+			nav: false,
+			dots: true,
 			responsiveClass:true,
 			responsive:{
 				768:{
-					dots: true
+					dots: false,
 				}
 			}
 		});
@@ -89,9 +88,7 @@
 					}
 				}
 			});
-		});
-
-		
+		});		
 
 		// 메인 컨텐츠 클릭 영상정보 띄우기
 		$('.event_compMovie .listSlide a').on('click', function(){
@@ -116,7 +113,7 @@
 			},100)
 		})
 
-		// subpage 영상재생
+		// 영상보기팝업 영상재생
 		$('.detailPop .movieWrap .btn_play').on('click', function(){
 			detailPopScroll();
 
@@ -128,7 +125,7 @@
 			},700);
 		});
 
-		// subpage 회차정보
+		// 영상보기팝업 회차정보
 		$('.detailPop .playlist li').on('click', function(){
 			var idx = $(this).index() + 1;
 			var subnum = $(this).find('a').data('subnum');
@@ -154,9 +151,8 @@
 			}, 'slow');
 		};
 
-		
 		// PC버전일때만
-		if(!$('body').hasClass('mobilebody')) {
+		if(!$('.event_compMovie').hasClass('mobilebody')) {
 			$(window).scroll(function() {
 				if ($(this).scrollTop() > 200) {
 					$('.fixedRight').fadeIn();
