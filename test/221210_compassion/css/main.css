@@ -27,8 +27,8 @@ body.mobilebody .mNone {display: none !important;}
 .event_compMovie .main .top {position: absolute; top: 0; width: 100%; left: 0; z-index: 5;}
 .event_compMovie .main .top .inner {width: 1200px; margin: 0 auto;}
 .event_compMovie .main .logo {margin-top: 30px; display: inline-block;}
-.event_compMovie .main .mainSlide .item { height: 856px; position: relative;}
-.event_compMovie .main .mainSlide .owl-item.active .item {animation: visualAni .8s linear;}
+.event_compMovie .main .mainSlide .item { height: 1036px; position: relative;}
+.event_compMovie .main .mainSlide .owl-item.active .item {animation: visualAni 1s linear;}
 .event_compMovie .main .mainSlide .item a {display: block; width: 100%; height: 100%;}
 
 @keyframes visualAni {
@@ -103,7 +103,7 @@ body.mobilebody .mNone {display: none !important;}
 
     .event_compMovie .main .top .inner { width: 100%; padding: 0 60px;}
     .event_compMovie .main .logo {width: 150px; height: 55px;}
-    .event_compMovie .main .mainSlide .item { height: 65vw;}
+    .event_compMovie .main .mainSlide .item { height: 81vw;}
 
     .event_compMovie .cntWrap h4 {font-size: 32px; padding-bottom: 30px;}
     .event_compMovie .listWrap .listSlide .item {width: 320px;}
@@ -129,7 +129,7 @@ body.mobilebody .mNone {display: none !important;}
 
     .event_compMovie {padding-bottom: 100px;}
     .event_compMovie .fixedRight {display: block; bottom: 30px; right:0; padding: 0 30px;}
-    .event_compMovie .fixedRight img {width: auto;}
+    .event_compMovie .fixedRight img {width: 100%;}
 
     .event_compMovie .main .top .inner { padding: 0 30px;}
     .event_compMovie .main .logo {width: 104px; height: 40px;}
@@ -137,6 +137,7 @@ body.mobilebody .mNone {display: none !important;}
     .event_compMovie .main .mainSlide .owl-dots {position: absolute; bottom: 10px; width: 100%; display: inline-block; text-align: center;}
     .event_compMovie .main .mainSlide .owl-dots > button {width: 60px; height: 4px; background: #fff; opacity: 0.3; transition: all .2s;}
     .event_compMovie .main .mainSlide .owl-dots > button.active {opacity: 1; width: 80px;}
+    .event_compMovie .main .mainSlide .item:after {height: 100px; bottom: -45px;}
 
     .event_compMovie .cntWrap {padding-top: 40px;}
     .event_compMovie .cntWrap .inner {padding-left: 30px;}
@@ -144,7 +145,7 @@ body.mobilebody .mNone {display: none !important;}
     .event_compMovie .cntWrap > div:not(:first-child) {padding-top: 35px;}
     .event_compMovie .listWrap .listSlide .owl-item {margin-right: 10px !important;}
     .event_compMovie .listWrap .listSlide .item {width: 190px;}
-    .event_compMovie .listWrap .listSlide .item.common {width: 400px;}
+    .event_compMovie .listWrap .listSlide .item.common {width: 472px;}
 
     .subDetailPop .btn_pop_close {width: 15px;}
     .subDetailPop .inner {padding: 0 30px;}
@@ -160,7 +161,7 @@ body.mobilebody .mNone {display: none !important;}
 @media only screen and (max-width: 570px) {
     .event_compMovie .cntWrap .inner {padding-left: 15px;}
     .event_compMovie .listWrap .listSlide .item {width: 130px;}
-    .event_compMovie .listWrap .listSlide .item.common {width: 235px;}
+    .event_compMovie .listWrap .listSlide .item.common {width: 305px;}
 
     .subDetailPop .detailPop .playlist {padding: 40px 0 80px;}
     
@@ -168,7 +169,7 @@ body.mobilebody .mNone {display: none !important;}
 
 @media only screen and (max-width: 400px) {
     .event_compMovie .listWrap .listSlide .item {width: 102px;}
-    .event_compMovie .listWrap .listSlide .item.common {width:215px;}
+    .event_compMovie .listWrap .listSlide .item.common {width:240px;}
     
 }
 

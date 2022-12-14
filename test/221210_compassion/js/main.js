@@ -57,7 +57,8 @@
 			items:1,
 			loop:true,
 			autoplay:true,
-			autoplayTimeout:4000,
+			autoplayTimeout:5000,
+			smartSpeed: 500,
 			nav: false,
 			dots: true,
 			responsiveClass:true,
@@ -81,12 +82,7 @@
 				mouseDrag: true,
 				touchDrag: true,
 				dots: false,
-				responsiveClass:true,
-				responsive:{
-					768:{
-						margin: 10
-					}
-				}
+				responsiveClass:true
 			});
 		});		
 
@@ -100,7 +96,8 @@
 			var youtubeID = playlist.eq(subnum - 1).find('li').eq(idx-1).children('a').data('videoid');
 
 			thumb.attr('src','./img/detail_'+subnum+'/movie_thumb_'+idx+'.png');
-			movie_txt.attr('src','./img/detail_'+subnum+'/movie_txt_'+idx+'.png');
+			//movie_txt.attr('src','./img/detail_'+subnum+'/movie_txt_'+idx+'.png');
+			movie_txt.attr('src','./img/detail_'+subnum+'/movie_txt_1.png');
 			
 			$('.movieWrap .movie .thumb').css('opacity','1');
 			$('.movieWrap .movie .youtube').hide();
