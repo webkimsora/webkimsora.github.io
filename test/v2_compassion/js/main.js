@@ -77,25 +77,29 @@
 				var playlist = $('.detailPop .playlist').find('ul');
 				var youtubeID = playlist.eq(subnum - 1).find('li').eq(idx-1).children('a').data('videoid');
 
-				if($(this).parents('.listSlide').length > 0) {
-					thumb.attr('src','./img/detail_'+subnum+'/movie_thumb_'+idx+'.jpg');
-					movie_tit.attr('src','./img/detail_'+subnum+'/movie_tit_'+idx+'.png');
-					fnChangeVideoId(youtubeID);
+				if($(this).data('coming').length > 0){
+					alert('Coming soon! 추후 영상이 공개됩니다.');
 				} else {
-					thumb.attr('src','./img/detail_'+subnum+'/movie_thumb_1.jpg');
-					movie_tit.attr('src','./img/detail_'+subnum+'/movie_tit_1.png');
-					fnChangeVideoId(playlist.eq(subnum - 1).find('li').eq(0).children('a').data('videoid'));
+					if($(this).parents('.listSlide').length > 0) {
+						thumb.attr('src','./img/detail_'+subnum+'/movie_thumb_'+idx+'.jpg');
+						movie_tit.attr('src','./img/detail_'+subnum+'/movie_tit_'+idx+'.png');
+						fnChangeVideoId(youtubeID);
+					} else {
+						thumb.attr('src','./img/detail_'+subnum+'/movie_thumb_1.jpg');
+						movie_tit.attr('src','./img/detail_'+subnum+'/movie_tit_1.png');
+						fnChangeVideoId(playlist.eq(subnum - 1).find('li').eq(0).children('a').data('videoid'));
+					}
+					movie_txt.attr('src','./img/detail_'+subnum+'/movie_txt.png');
+					
+					$('.movieWrap .movie .thumb').css('opacity','1');
+					$('.movieWrap .movie .youtube').hide();
+					
+					playlist.eq(subnum - 1).show().siblings('ul').hide();
+	
+					setTimeout(function(){
+						subDetailPopOpen('.detailPop');
+					},100)
 				}
-				movie_txt.attr('src','./img/detail_'+subnum+'/movie_txt.png');
-				
-				$('.movieWrap .movie .thumb').css('opacity','1');
-				$('.movieWrap .movie .youtube').hide();
-				
-				playlist.eq(subnum - 1).show().siblings('ul').hide();
-
-				setTimeout(function(){
-					subDetailPopOpen('.detailPop');
-				},100)
 			}
 		})
 
