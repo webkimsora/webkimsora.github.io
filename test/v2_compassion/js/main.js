@@ -1,10 +1,11 @@
 ;(function(){
 	$(document).ready(function(){
+		var agent = navigator.userAgent.toLowerCase();
 		var UserAgent = navigator.userAgent;
 		var UADevice = UserAgent.match(/iPhone|iPod|iPad|Android|Windows CE|BlackBerry|Symbian|Windows Phone|webOS|Opera Mini|Opera Mobi|POLARIS|IEMobile|lgtelecom|nokia|SonyEricsson/i);
 		var UAVendor = UserAgent.match(/LG|SAMSUNG|Samsung/);
 		if (UADevice !== null || UAVendor!== null){
-			$('.event_compMovie').addClass('mobilebody');
+			$('.event_compMovie').addClass('mobilebody'); // 모바일경우 클래스 추가
 		}
 
 		/*resize 반복실행 방지 : smartResize js 해석 */
@@ -27,30 +28,6 @@
 
 		smartresize.init();
 
-		/* 메인영상 레이어 팝업 호출 */
-		$('.popMovie').click(function() {
-			var _movieId = $(this).data('movie');
-			var _movieType = (_movieId.indexOf('.mp4') != -1) ? 'video' : 'iframe';
-
-			$('.dimMovie').html('');
-			if(_movieId) {
-				if(_movieType == 'iframe') {
-					$('.dimMovie').html('<iframe id="moviePlayer" width="560" height="315" src="https://www.youtube.com/embed/' + _movieId + '?autoplay=1&mute=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
-				}
-
-				var pop = $('.mainPop .popIn');
-				setTimeout(function(){
-					pop.css({
-						'visibility' : 'visible'
-					});
-				},10);
-
-				$('.mainPop').show();
-			} else {
-				alert('영상이 곧 공개됩니다! :)');
-			}
-		});
-
 		// main visual slide
 		var mainSlider = $('.event_compMovie .mainSlide');
 		mainSlider.owlCarousel({
@@ -59,7 +36,7 @@
 			autoplay:true,
 			autoplayTimeout:5000,
 			smartSpeed: 500,
-			nav: false,
+			nav: true,
 			dots: true,
 			responsiveClass:true,
 			responsive:{
@@ -69,7 +46,7 @@
 			}
 		});
 
-		// main list slide
+		// main contents slide
 		var listSlider = $('.event_compMovie .listSlide');
 		listSlider.each(function() {
 			var $this = $(this);
@@ -87,27 +64,39 @@
 		});		
 
 		// 메인 컨텐츠 클릭 영상정보 띄우기
-		$('.event_compMovie .listSlide a').on('click', function(){
-			var idx = $(this).parents('.owl-item').index() + 1;
-			var subnum = $(this).data('subnum');
-			var thumb = $('.detailPop .movie .thumb').find('img');
-			var movie_txt = $('.detailPop .movieWrap .txt').find('img');
-			var playlist = $('.detailPop .playlist').find('ul');
-			var youtubeID = playlist.eq(subnum - 1).find('li').eq(idx-1).children('a').data('videoid');
+		$('.event_compMovie .listSlide a, .event_compMovie .mainSlide a').on('click', function(){
+			// ie11이하 알럿
+			if ( (navigator.appName == 'Netscape' && navigator.userAgent.search('Trident') != -1) || (agent.indexOf("msie") != -1) ) {
+				if(confirm("해당 브라우저는 호환되지 않는 브라우저 입니다.\nMicrosoft 권장 브라우저인 Microsoft Edge 브라우저를 이용해주세요.")) document.location = 'https://www.microsoft.com/ko-kr/edge/home';
+			} else {
+				var idx = $(this).parents('.owl-item').index() + 1;
+				var subnum = $(this).data('subnum');
+				var thumb = $('.detailPop .movie .thumb').find('img');
+				var movie_tit = $('.detailPop .movieWrap .tit').find('img');
+				var movie_txt = $('.detailPop .movieWrap .txt').find('img');
+				var playlist = $('.detailPop .playlist').find('ul');
+				var youtubeID = playlist.eq(subnum - 1).find('li').eq(idx-1).children('a').data('videoid');
 
-			thumb.attr('src','./img/detail_'+subnum+'/movie_thumb_'+idx+'.png');
-			//movie_txt.attr('src','./img/detail_'+subnum+'/movie_txt_'+idx+'.png');
-			movie_txt.attr('src','./img/detail_'+subnum+'/movie_txt_1.png');
-			
-			$('.movieWrap .movie .thumb').css('opacity','1');
-			$('.movieWrap .movie .youtube').hide();
-			
-			playlist.eq(subnum - 1).show().siblings('ul').hide();
-			fnChangeVideoId(youtubeID);
+				if($(this).parents('.listSlide').length > 0) {
+					thumb.attr('src','./img/detail_'+subnum+'/movie_thumb_'+idx+'.jpg');
+					movie_tit.attr('src','./img/detail_'+subnum+'/movie_tit_'+idx+'.png');
+					fnChangeVideoId(youtubeID);
+				} else {
+					thumb.attr('src','./img/detail_'+subnum+'/movie_thumb_1.jpg');
+					movie_tit.attr('src','./img/detail_'+subnum+'/movie_tit_1.png');
+					fnChangeVideoId(playlist.eq(subnum - 1).find('li').eq(0).children('a').data('videoid'));
+				}
+				movie_txt.attr('src','./img/detail_'+subnum+'/movie_txt.png');
+				
+				$('.movieWrap .movie .thumb').css('opacity','1');
+				$('.movieWrap .movie .youtube').hide();
+				
+				playlist.eq(subnum - 1).show().siblings('ul').hide();
 
-			setTimeout(function(){
-				subDetailPopOpen('.detailPop');
-			},100)
+				setTimeout(function(){
+					subDetailPopOpen('.detailPop');
+				},100)
+			}
 		})
 
 		// 영상보기팝업 영상재생
@@ -115,11 +104,14 @@
 			detailPopScroll();
 
 			$('.movieWrap .movie .thumb').css('opacity','0');
-			$('.movieWrap .movie .youtube').show();
 
 			setTimeout(function(){
 				playVideo();
-			},700);
+			},100);
+
+			setTimeout(function(){
+				$('.movieWrap .movie .youtube').show();
+			},300);
 		});
 
 		// 영상보기팝업 회차정보
@@ -127,14 +119,16 @@
 			var idx = $(this).index() + 1;
 			var subnum = $(this).find('a').data('subnum');
 			var thumb = $('.detailPop .movie .thumb').find('img');
+			var movie_tit = $('.detailPop .movieWrap .tit').find('img');
 			var movie_txt = $('.detailPop .movieWrap .txt').find('img');
 			var youtubeID = $(this).children('a').data('videoid');
 
 
 			if(!$(this).hasClass('coming')){
 
-				thumb.attr('src','./img/detail_'+subnum+'/movie_thumb_'+idx+'.png');
-				movie_txt.attr('src','./img/detail_'+subnum+'/movie_txt_'+idx+'.png');
+				thumb.attr('src','./img/detail_'+subnum+'/movie_thumb_'+idx+'.jpg');
+				movie_tit.attr('src','./img/detail_'+subnum+'/movie_tit_'+idx+'.png');
+				movie_txt.attr('src','./img/detail_'+subnum+'/movie_txt.png');
 				
 				$('.movieWrap .movie .thumb').css('opacity','1');
 				$('.movieWrap .movie .youtube').hide();
@@ -145,6 +139,7 @@
 			}
 		});
 
+		// 상단으로 이동
 		function detailPopScroll() {
 			$('.subDetailPop').stop().animate({
 				scrollTop: 0
@@ -162,19 +157,15 @@
 			});
 		}
 
+		// footer
+		$('.family-site').on('click', function(){
+			$(this).toggleClass('js-dropdown-opened');
+		})
+
 	});
-
-
 
 }());
 
-
-	/* 메인 영상 레이어 팝업 닫기 */
-	function _popClose() {
-		$('.dimMovie').html('');
-		$('.mainPop').hide();
-	};
-	
 	// @ popup open
 	function subDetailPopOpen(el){
 		scrollOff();
@@ -224,15 +215,10 @@
 	var firstScriptTag = document.getElementsByTagName('script')[0];
 	firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-	/**
-	 * onYouTubeIframeAPIReady 함수는 필수로 구현해야 한다.
-	 * 플레이어 API에 대한 JavaScript 다운로드 완료 시 API가 이 함수 호출한다.
-	 * 페이지 로드 시 표시할 플레이어 개체를 만들어야 한다.
-	 */
 	var youtubePlayer;
 	function onYouTubeIframeAPIReady () {
 		youtubePlayer = new YT.Player('compIframe', {
-			// videoId: '9bZkp7q19f0',   // <iframe> 태그 지정시 필요없음
+			// videoId: '9bZkp7q19f0',
 			events: {
 				'onReady': onPlayerReady,               // 플레이어 로드가 완료되고 API 호출을 받을 준비가 될 때마다 실행
 				'onStateChange': onPlayerStateChange    // 플레이어의 상태가 변경될 때마다 실행
@@ -242,7 +228,6 @@
 
 	function onPlayerReady (event) {
 		//$('#result').val($('#result').val() + 'onPlayerReady 실행\n')
-
 		// 플레이어 자동실행 (주의: 모바일에서는 자동실행되지 않음)
 		event.target.playVideo();
 	}
@@ -263,6 +248,7 @@
 	function playVideo() {
         youtubePlayer.playVideo();
     }
+	//유튜브 멈춤
 	function stopVideo() {
         youtubePlayer.stopVideo();
     }
