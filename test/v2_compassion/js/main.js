@@ -77,7 +77,7 @@
 				var playlist = $('.detailPop .playlist').find('ul');
 				var youtubeID = playlist.eq(subnum - 1).find('li').eq(idx-1).children('a').data('videoid');
 
-				if($(this).data('coming').length > 0){
+				if($(this).hasClass('coming')){
 					alert('Coming soon! 추후 영상이 공개됩니다.');
 				} else {
 					if($(this).parents('.listSlide').length > 0) {
