@@ -171,13 +171,14 @@ body.mobilebody .mNone {display: none !important;}
     .event_compMovie .listWrap .listSlide .item {width: 190px;}
     .event_compMovie .listWrap .listSlide .item.common {width: 472px;}
 
+    .subDetailPop {background: #000;}
     .subDetailPop .btn_pop_close {width: 35px; right: 10px; top: 10px;}
     .subDetailPop .inner {padding: 0 30px;}
 
     /* .subDetailPop .introducePop li:first-child {padding-bottom: 30px;} */
     .subDetailPop .introducePop li:last-child {padding: 40px 0 80px;}
-    
-    .subDetailPop .detailPop .movieWrap .txt {padding: 30px 0 40px;}
+    .subDetailPop .detailPop .movieWrap .tit {padding: 30px 0;}
+    .subDetailPop .detailPop .movieWrap .txt {padding-top: 30px;}
     .subDetailPop .detailPop .playlist li:not(:first-child) {padding-top: 20px;}
     .subDetailPop .detailPop .btn > li:first-child {padding-bottom: 15px;}
 }
@@ -188,7 +189,7 @@ body.mobilebody .mNone {display: none !important;}
     .event_compMovie .listWrap .listSlide .item {width: 130px;}
     .event_compMovie .listWrap .listSlide .item.common {width: 305px;}
 
-    .subDetailPop .detailPop .playlist {padding: 40px 0 80px;}
+    .subDetailPop .detailPop .playlist {padding: 30px 0 80px;}
     
 }
 
