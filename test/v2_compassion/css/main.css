@@ -45,9 +45,9 @@ body.mobilebody .mNone {display: none !important;}
 }
 
 /* main contents */ 
-.event_compMovie .cntWrap { position: relative; z-index: 2; transition: padding .1s;}
-.event_compMovie .cntWrap > div:not(:first-child) {padding-top: 70px; transition: padding .1s;}
-.event_compMovie .cntWrap h4 {font-size: 38px; padding-bottom: 26px; font-weight: bold; color: #fff; -webkit-transition: all 0.2s; transition: all 0.2s;}
+.event_compMovie .cntWrap { position: relative; z-index: 2; padding-top: 30px;}
+.event_compMovie .cntWrap > div:not(:first-child) {padding-top: 45px; transition: padding .1s;}
+.event_compMovie .cntWrap h4 {font-size: 30px; padding-bottom: 15px; font-weight: bold; color: #fff; -webkit-transition: all 0.2s; transition: all 0.2s;}
 .event_compMovie .cntWrap .inner { position: relative; width: 1745px; margin: 0 0 0 auto;}
 
 .event_compMovie .listWrap .list { }
@@ -77,18 +77,18 @@ body.mobilebody .mNone {display: none !important;}
 /* .subDetailPop .bg {opacity: 1 !important; -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=100)'; filter: alpha(opacity=100);} */
 .subDetailPop .popIn {top:0; }
 
-.subDetailPop .popList {max-width: 820px; margin: 0 auto; padding-top: 30px; position: relative; background: #000;}
-.subDetailPop .inner {padding: 0 80px;}
+.subDetailPop .popList {max-width: 768px; margin: 0 auto; padding-top: 30px; position: relative; background: #000;}
+.subDetailPop .inner {padding: 0 40px; }
 .subDetailPop .detailPop .movieWrap {}
 .subDetailPop .detailPop .movieWrap .movie {position: relative;}
 .subDetailPop .detailPop .movieWrap .youtube {position: absolute; top: 0; left: 0; display: none; padding-bottom: 56.25%; width: 100%;}
 .subDetailPop .detailPop .movieWrap .youtube iframe {height: 100%; width: 100%; position: absolute; left: 0;}
-.subDetailPop .detailPop .movieWrap .tit {padding: 60px 0;}
-.subDetailPop .detailPop .movieWrap .txt {padding-top: 60px;}
-.subDetailPop .detailPop .btn > li:first-child {padding-bottom: 30px;}
-.subDetailPop .detailPop .playlist {padding: 90px 0;}
+.subDetailPop .detailPop .movieWrap .tit {padding: 30px 0;}
+.subDetailPop .detailPop .movieWrap .txt {padding-top: 30px;}
+.subDetailPop .detailPop .btn > li:first-child {padding-bottom: 20px;}
+.subDetailPop .detailPop .playlist {padding: 50px 0;}
 .subDetailPop .detailPop .playlist ul {display: none;}
-.subDetailPop .detailPop .playlist li:not(:first-child) {padding-top: 50px;}
+.subDetailPop .detailPop .playlist li:not(:first-child) {padding-top: 20px;}
 /* .subDetailPop .introducePop li:first-child {padding-bottom: 80px;} */
 .subDetailPop .introducePop li:last-child {padding: 100px 0 160px;}
 
@@ -109,7 +109,7 @@ body.mobilebody .mNone {display: none !important;}
 }
 
 @media only screen and (max-width: 1560px) {
-    .event_compMovie .cntWrap h4 {font-size: 35px;}
+  .event_compMovie .cntWrap h4 {font-size: 27px;}
     .event_compMovie .listWrap .listSlide .item {width: 460px;}
     .event_compMovie .main .mainSlide .owl-nav {width: 100%; margin-left: 0; left: 0; padding: 0 4%;}
 }
@@ -121,7 +121,8 @@ body.mobilebody .mNone {display: none !important;}
     /* .event_compMovie .main .mainSlide .item { height: 81vw;} */
     /* .event_compMovie .main .mainSlide .item { height: 65vw;} */
 
-    .event_compMovie .cntWrap h4 {font-size: 32px; padding-bottom: 18px;}
+    .event_compMovie .cntWrap h4 {font-size: 24px; padding-bottom: 18px;}
+    .event_compMovie .cntWrap > div:not(:first-child) {padding-top: 30px;}
     .event_compMovie .listWrap .listSlide .item {width: 400px;}
 
     /* .subDetailPop .introducePop li:first-child {padding-bottom: 50px;} */
@@ -134,11 +135,11 @@ body.mobilebody .mNone {display: none !important;}
     /* .event_compMovie .cntWrap h4 {font-size: 27px;} */
     .event_compMovie .listWrap .listSlide .item {width: 320px;}
 
-    .subDetailPop .inner {padding: 0 60px;}
+    .subDetailPop .inner {padding: 0 30px;}
 
     /* .subDetailPop .btn_pop_close {right: 30px;} */
 
-    .subDetailPop .detailPop .playlist {padding: 80px 0;}
+    .subDetailPop .detailPop .playlist {padding: 35px 0 50px;}
 }
 
 @media only screen and (max-width: 768px) { /*no필수*/
@@ -146,13 +147,10 @@ body.mobilebody .mNone {display: none !important;}
     .mVisible {display: block !important;}
 
     .event_compMovie {padding-bottom: 100px;}
-    .event_compMovie.mobilebody .fixedRight {position:fixed; width: 100%; margin: 10px auto; bottom: 0px; height: 50px; color:#FFF; text-align:center; right: auto; left: auto;}
-    .event_compMovie.mobilebody .fixedRight a {display: block;}
-    .event_compMovie.mobilebody .fixedRight button{width: 90%; margin: 0 auto; font-size: large; font-weight: bold; min-width: 140px; height: 48px; line-height: 48px; padding: 0 10px; border-radius: 4px; vertical-align: top; text-align: center; background: #005eb8; color: #fff;}
-    .event_compMovie .fixedRight .mNone {display: block !important;}
-    .event_compMovie .fixedRight .mVisible {display: none !important;}
-    .event_compMovie.mobilebody .fixedRight .mNone {display: none !important;}
-    .event_compMovie.mobilebody .fixedRight .mVisible {display: block !important;}
+    .event_compMovie .fixedRight {position:fixed; display: block; width: 100%; margin: 10px auto; bottom: 0px; height: 50px; color:#FFF; text-align:center; right: auto; left: auto;}
+    .event_compMovie .fixedRight a {display: block;}
+    .event_compMovie .fixedRight button{width: 90%; margin: 0 auto; font-size: large; font-weight: bold; min-width: 140px; height: 48px; line-height: 48px; padding: 0 10px; border-radius: 4px; vertical-align: top; text-align: center; background: #005eb8; color: #fff;}
+
 
     .event_compMovie .main .top {height: 84px;}
     .event_compMovie .main .top .inner { }
@@ -163,24 +161,23 @@ body.mobilebody .mNone {display: none !important;}
     .event_compMovie .main .mainSlide .owl-dots > button.active {opacity: 1; width: 80px;}
     .event_compMovie .main .mainSlide .item:after {height: 100px; bottom: -45px;}
 
-    .event_compMovie .cntWrap {padding-top: 40px; margin-top: 0;}
+    .event_compMovie .cntWrap {padding-top: 30px; margin-top: 0;}
     .event_compMovie .cntWrap .inner {padding-left: 30px;}
-    .event_compMovie .cntWrap h4 {font-size: 27px;}
-    .event_compMovie .cntWrap > div:not(:first-child) {padding-top: 35px;}
+    /* .event_compMovie .cntWrap h4 {font-size: 20px;} */
     .event_compMovie .listWrap .listSlide .owl-item {margin-right: 10px !important;}
     .event_compMovie .listWrap .listSlide .item {width: 190px;}
     .event_compMovie .listWrap .listSlide .item.common {width: 472px;}
 
     .subDetailPop {background: #000;}
     .subDetailPop .btn_pop_close {width: 35px; right: 10px; top: 10px;}
-    .subDetailPop .inner {padding: 0 30px;}
+    .subDetailPop .inner {padding: 0 20px;}
 
     /* .subDetailPop .introducePop li:first-child {padding-bottom: 30px;} */
     .subDetailPop .introducePop li:last-child {padding: 40px 0 80px;}
-    .subDetailPop .detailPop .movieWrap .tit {padding: 30px 0;}
-    .subDetailPop .detailPop .movieWrap .txt {padding-top: 30px;}
-    .subDetailPop .detailPop .playlist li:not(:first-child) {padding-top: 20px;}
-    .subDetailPop .detailPop .btn > li:first-child {padding-bottom: 15px;}
+    .subDetailPop .detailPop .movieWrap .tit {padding: 15px 0;}
+    .subDetailPop .detailPop .movieWrap .txt {padding-top: 15px;}
+    .subDetailPop .detailPop .playlist li:not(:first-child) {padding-top: 10px;}
+    .subDetailPop .detailPop .btn > li:first-child {padding-bottom: 10px;}
 }
 
 @media only screen and (max-width: 570px) {
@@ -189,7 +186,7 @@ body.mobilebody .mNone {display: none !important;}
     .event_compMovie .listWrap .listSlide .item {width: 130px;}
     .event_compMovie .listWrap .listSlide .item.common {width: 305px;}
 
-    .subDetailPop .detailPop .playlist {padding: 30px 0 80px;}
+    .subDetailPop .detailPop .playlist {padding: 25px 0 40px;}
     
 }
 
