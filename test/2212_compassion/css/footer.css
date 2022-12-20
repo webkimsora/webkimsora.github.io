@@ -1,0 +1,423 @@
+
+/* s: footer */
+footer {
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 14px;
+background-color: #3a3a3a;
+color: #8d8d8d;
+}
+footer .inner {
+width: 1200px;
+margin: 0 auto;
+position: relative;
+}
+footer .inner:after {content:""; display: block; clear: both;}
+
+footer .policy-wrap {
+padding: 18px 0;
+border-bottom: 1px solid #4c4e51;
+width: 100%;
+}
+
+footer .policy-wrap .inner {
+position: relative;
+}
+
+footer .policy-wrap .inner > a {
+position: relative;
+display: inline-block;
+margin: 0 22px;
+color: #707070;
+letter-spacing: -1.17px;
+}
+
+footer .policy-wrap .inner > a:first-child {
+margin-left: 0;
+}
+
+footer .policy-wrap .inner > a:not(:first-child)::after {
+position: absolute;
+top: -1px;
+left: -25px;
+content: '|';
+display: block;
+color: #707070;
+}
+
+footer .mailto {
+color: #8d8d8d;
+}
+
+.family-site-wrap {
+position: absolute;
+right: 0;
+top: -16px;
+width: 248px;
+height: 56px;
+border-right: 1px solid #4c4e51;
+border-left: 1px solid #4c4e51;
+-webkit-box-sizing: border-box;
+        box-sizing: border-box;
+font-size: 16px;
+line-height: 56px;
+cursor: pointer;
+}
+
+.family-site-wrap .current {
+letter-spacing: -1.33px;
+color: #8d8d8d;
+display: block;
+width: 100%;
+text-align: left;
+height: 56px;
+padding: 0 16px;
+background: url("../img/common/btn_worldwide_plus.png") no-repeat right 20px top 20px;
+}
+
+.family-site-wrap ul {
+margin-left: -1px;
+width: 248px;
+height: auto;
+z-index: 1;
+display: none;
+}
+
+.family-site-wrap ul li {
+text-indent: 16px;
+border-bottom: 1px solid #4c4e51;
+background-color: #3a3a3a;
+}
+
+.family-site-wrap .family-site.js-dropdown-opened .current {
+background-image: url("../img/common/ico_minus.png");
+}
+.family-site-wrap .family-site.js-dropdown-opened {
+z-index: 1200;
+}
+.family-site-wrap .family-site.js-dropdown-opened ul {
+display: block !important;
+left: 0px;
+bottom: 100%;
+}
+.family-site-wrap .family-site ul a {color: #707070;}
+.family-site-wrap .family-site ul a:hover {text-decoration: underline;}
+
+.address-wrap {
+padding: 48px 0 60px !important;
+}
+
+.address-wrap > div {
+float: left;
+}
+
+.address {
+margin-left: 92px;
+}
+
+.address .cp-name {
+font-weight: bold;
+color: #fff;
+}
+
+.address address div {
+width: 413px;
+margin-bottom: 24px;
+margin-left: -8px;
+}
+
+.address address div::after {
+content: '';
+display: table;
+clear: both;
+}
+
+.address address div p {
+display: inline-block;
+margin: 0 8px 8px;
+}
+
+.address address div p span {
+display: block;
+}
+
+.address-wrap .footer-sns-wrap {
+float: right;
+}
+
+.address-wrap .footer-sns-wrap .footer-sns {
+margin-bottom: 29px;
+}
+
+.address-wrap .footer-sns-wrap .footer-newsletter {
+color: #fff;
+padding: 16px 76px;
+background-color: #768692;
+width: 100%;
+border-radius: 4px;
+}
+
+.address-wrap .more-info-wrap {
+float: none;
+text-align: center;
+font-size: 11px;
+}
+
+.address-wrap .btn-more-info {
+background: none;
+color: #6f6f6f;
+margin-top: 16px;
+display: none;
+}
+
+.sns-list {
+margin-bottom: 29px;
+}
+
+.sns-list::after {
+content: '';
+display: table;
+clear: both;
+}
+
+.sns-list li {
+float: left;
+margin: 0 9px;
+}
+
+.sns-list a {
+height: 20px;
+display: block;
+}
+
+.sns-list a.ico-youtube {
+width: 31px;
+background: url("../img/common/btn_footer_youtube.png") no-repeat center;
+background-size: 100%;
+}
+
+.sns-list a.ico-instagram {
+width: 20px;
+background: url("../img/common/btn_footer_instagram.png") no-repeat center;
+background-size: 100%;
+}
+
+.sns-list a.ico-facebook {
+width: 11px;
+background: url("../img/common/btn_footer_facebook.png") no-repeat center;
+background-size: 100%;
+}
+
+.sns-list a.ico-naver-blog {
+width: 23px;
+background: url("../img/common/btn_footer_naverblog.png") no-repeat center;
+background-size: 100%;
+}
+
+.sns-list a.ico-kakao-channel {
+width: 20px;
+background: url("../img/common/btn_footer_kakaoch.png") no-repeat center;
+background-size: 100%;
+}
+
+.sns-list a.ico-post {
+width: 15px;
+background: url("../img/common/btn_footer_naverpost.png") no-repeat center;
+background-size: 100%;
+}
+
+.sns-list a.ico-happybean {
+width: 18px;
+background: url("../img/common/btn_footer_happybean.png") no-repeat center;
+background-size: 100%;
+}
+
+@media only screen and (max-width: 1280px) {
+footer .inner {
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0 4%;
+}
+footer .policy-wrap .inner {
+  padding: 0;
+}
+footer .policy-wrap a:first-child {
+  text-indent: 20px;
+}
+footer .address-wrap .footer-logo-wrap {
+  margin-left: 20px;
+}
+footer .footer-sns-wrap {
+  margin-right: 16px;
+}
+}
+
+@media only screen and (max-width: 1024px) {
+footer .family-site-wrap,
+footer .footer-logo-wrap,
+footer .footer-newsletter {
+  display: none;
+}
+footer .policy-wrap {
+  text-align: center;
+  border-bottom: none;
+}
+footer .address-wrap .footer-sns-wrap {
+  float: none;
+  margin: 0 auto;
+  text-align: center;
+}
+footer .address-wrap .sns-list {
+  font-size: 0;
+}
+footer .address-wrap .sns-list li {
+  display: inline-block;
+  float: none;
+  margin: 0;
+}
+footer .address-wrap .sns-list li + li {
+  margin-left: 23px;
+}
+.address-wrap {
+  padding: 16px 0 60px;
+}
+.address-wrap .address {
+  float: none;
+  text-align: center;
+  margin: 0;
+}
+.address-wrap .address div {
+  width: 100%;
+  margin-top: 16px;
+}
+.address-wrap .address .hosting {
+  width: 100%;
+  position: relative;
+}
+.address-wrap .address .hosting .copyright {
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  background: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  top: 0;
+  left: 0;
+}
+.address-wrap .address .hosting::after {
+  position: absolute;
+  top: -12px;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  content: '짤 COMPASSION KOREA All Rights Reserved.';
+}
+}
+
+@media only screen and (max-width: 768px) {
+#topBanrWrap .inner {
+  font-size: 16px;
+}
+#topBanrWrap .inner strong {
+  font-size: 16px;
+}
+#topBanrWrap .inner .top-banr-btn {
+  font-size: 12px;
+}
+.policy-wrap .inner a {
+  display: none !important;
+}
+.policy-wrap .inner a.type-essential {
+  display: inline-block !important;
+}
+.address-wrap .more-info-wrap {
+  float: none;
+  text-align: center;
+  font-size: 11px;
+}
+.address-wrap .more-info-wrap div {
+  margin-left: 0;
+}
+.address-wrap .more-info-wrap div p {
+  display: block;
+}
+.address-wrap .btn-more-info {
+  background: none;
+  color: #6f6f6f;
+  margin-top: 16px;
+  display: none;
+}
+}
+
+@media only screen and (max-width: 520px) {
+footer {
+  padding: 28px 0;
+}
+footer .policy-wrap {
+  padding: 0 0 16px;
+  font-size: 12px;
+}
+footer .address-wrap {
+  padding: 0;
+}
+footer .address-wrap .footer-sns-wrap::after {
+  content: 'COMPASSION KOREA All Rights Reserved.';
+  display: block;
+  text-align: center;
+  font-size: 11px;
+}
+footer .address-wrap .footer-sns-wrap .sns-list {
+  margin-bottom: 16px;
+}
+footer .address-wrap .address {
+  margin: 12px 0 0;
+}
+footer .address-wrap .address address {
+  height: 0;
+  overflow: hidden;
+  margin-top: 16px;
+  line-height: 20px;
+  font-size: 11px;
+  -webkit-transition: height 0.2s;
+  transition: height 0.2s;
+}
+footer .address-wrap .address address.is-active {
+  height: 80px;
+}
+footer .address-wrap .address address .cp-name {
+  font-size: 11px;
+}
+footer .address-wrap .address address div {
+  margin: 0;
+}
+footer .address-wrap .address address div p {
+  margin: 0;
+  display: block;
+}
+footer .address-wrap .address address div p span {
+  display: inline-block;
+}
+footer .address-wrap .address address div p span + span {
+  margin-left: 5px;
+}
+footer .address-wrap .address .hosting {
+  display: none;
+}
+footer .address-wrap .btn-more-info {
+  display: block;
+  margin: 0 auto;
+  font-size: 11px;
+}
+}
+
+/* e: footer */
+
+
+
+
+
+
+
