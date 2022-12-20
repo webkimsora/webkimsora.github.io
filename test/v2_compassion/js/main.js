@@ -89,7 +89,12 @@
 						movie_tit.attr('src','./img/detail_'+subnum+'/movie_tit_1.png');
 						fnChangeVideoId(playlist.eq(subnum - 1).find('li').eq(0).children('a').data('videoid'));
 					}
-					movie_txt.attr('src','./img/detail_'+subnum+'/movie_txt.png');
+
+					if(subnum == 4 && idx == 3) {
+						movie_txt.attr('src','./img/detail_'+subnum+'/movie_txt_2.png');
+					} else {
+						movie_txt.attr('src','./img/detail_'+subnum+'/movie_txt.png');
+					}
 					
 					$('.movieWrap .movie .thumb').css('opacity','1');
 					$('.movieWrap .movie .youtube').hide();
@@ -129,10 +134,13 @@
 
 
 			if(!$(this).hasClass('coming')){
-
 				thumb.attr('src','./img/detail_'+subnum+'/movie_thumb_'+idx+'.jpg');
 				movie_tit.attr('src','./img/detail_'+subnum+'/movie_tit_'+idx+'.png');
-				movie_txt.attr('src','./img/detail_'+subnum+'/movie_txt.png');
+				if(subnum == 4 && $(this).index() == 2) {
+					movie_txt.attr('src','./img/detail_'+subnum+'/movie_txt_2.png');
+				} else {
+					movie_txt.attr('src','./img/detail_'+subnum+'/movie_txt.png');
+				}
 				
 				$('.movieWrap .movie .thumb').css('opacity','1');
 				$('.movieWrap .movie .youtube').hide();
