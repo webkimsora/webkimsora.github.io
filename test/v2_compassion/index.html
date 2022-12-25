@@ -1,8 +1,17 @@
 <!DOCTYPE html>
 <html lang="ko" dir="ltr">
 	<head>
-		<!-- Google Tag Manager -->
+		<!-- Global site tag (gtag.js) - Google Ads: 11043032264 -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=AW-11043032264"></script>
+		<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
 
+		gtag('config', 'AW-11043032264');
+		</script>
+
+		<!-- Google Tag Manager -->
 		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 			new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 			j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
@@ -17,9 +26,23 @@
 			})(window,document,'script','dataLayer','GTM-K575V8M');
 		</script>
 		<!-- End Google Tag Manager -->
+		
+		<script>
+			var agent = navigator.userAgent.toLowerCase();
+			var UserAgent = navigator.userAgent;
+			var UADevice = UserAgent.match(/iPhone|iPod|iPad|Android|Windows CE|BlackBerry|Symbian|Windows Phone|webOS|Opera Mini|Opera Mobi|POLARIS|IEMobile|lgtelecom|nokia|SonyEricsson/i);
+			var UAVendor = UserAgent.match(/LG|SAMSUNG|Samsung/);
+			if (UADevice !== null || UAVendor!== null){
+				//Event snippet for 0. 메인페이지 조회_Mo conversion page
+				gtag('event', 'conversion', {'send_to': 'AW-11043032264/9inkCLOvzIUYEMiZ3ZEp'});
+			} else {
+				//Event snippet for 0. 메인페이지 조회_PC conversion page 
+				gtag('event', 'conversion', {'send_to': 'AW-11043032264/Ig2UCLCvzIUYEMiZ3ZEp'});
+			}
+		</script>
 
 		<meta charset="utf-8">
-		<title>compassion 컴패션</title>
+		<title>컴패션 - 어린이 후원 캠페인</title>
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
 		<!-- 컴패션 추가 S -->
@@ -28,10 +51,10 @@
 		<meta name="description" content="나는 컴패셔너 입니다">
 		<meta name="author" content="컴패션-국제어린이양육기구">
 		<meta property="og:title" content="컴패션-나는 컴패셔너 입니다">
-		<meta property="og:image" content="./img/main_01.jpg">
+		<meta property="og:image" content="./img/share_img.jpg">
 		<meta property="og:type" content="website">
 		<meta property="og:site-name" content="컴패션-국제어린이양육기구">
-		<meta property="og:description" content="컴패션-국제어린이양육기구">
+		<meta property="og:description" content="나는 컴패셔너 입니다">
 		<link rel="shortcut icon" href="https://www.compassion.or.kr/resources/fo/compassion/assets/images/common/favicon.ico">
 		<link rel="icon" href="https://www.compassion.or.kr/resources/fo/compassion/assets/images/common/favicon.ico">
 		<!-- //컴패션 추가 E-->
@@ -42,673 +65,780 @@
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 
-		<script type="text/javascript" src="./js/main.js?v=01"></script>
+		<script type="text/javascript" src="./js/main.js?v=02"></script>
 		<link rel="stylesheet" href="./css/common.css?v=04">
 		<link rel="stylesheet" href="./css/footer.css?v=04">
-		<link rel="stylesheet" href="./css/main.css?v=01">
+		<link rel="stylesheet" href="./css/main.css?v=02">
 
 	    <!--[if lte IE 9]>
 	      <script type="text/javascript">
 	          window.location="./error.html";
 	      </script>
 	    <![endif]-->
-	</head>
 
-	<body>
-		<!-- Google Tag Manager (noscript) -->
-		<noscript>
-			<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NDC63ZM" height="0" width="0" style="display:none;visibility:hidden"></iframe>
-		</noscript>
+		<!-- Facebook Pixel Code -->
+		<script>
+			!function(f,b,e,v,n,t,s)
+			{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+			n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+			if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+			n.queue=[];t=b.createElement(e);t.async=!0;
+			t.src=v;s=b.getElementsByTagName(e)[0];
+			s.parentNode.insertBefore(t,s)}(window, document,'script',
+			'https://connect.facebook.net/en_US/fbevents.js');
+			fbq('init', '429283081411463');
+			fbq('track', 'PageView');
+		</script>
+		<noscript><img height="1" width="1" style="display:none"
+		src="https://www.facebook.com/tr?id=429283081411463&ev=PageView&noscript=1"
+		/></noscript>
+		<!-- End Facebook Pixel Code -->
+</head>
+
+<body>
+	<!-- Google Tag Manager (noscript) -->
+	<noscript>
+		<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NDC63ZM" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+	</noscript>
+		
+	<noscript>
+		<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K575V8M" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+	</noscript>
+	<!-- End Google Tag Manager (noscript) -->
+
+	<div class="event_compMovie" id="viewport">
+		<main class="mainWrap">
+			<!-- @ fixed right 버튼 -->
+			<div class="fixedRight">
+				<a class="js-link-id btn_comp" href="https://www.compassion.or.kr/sponsor/children?campaignID=7012x000000hH5tAAE&t_id=">
+					<img class="mNone" src="./img/btn_go_compassion.png?v=02" alt="컴패셔너 되기">
+					<button class="mVisible">
+						컴패셔너 되기
+					</button>
+				</a>
+			</div>
 			
-		<noscript>
-			<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K575V8M" height="0" width="0" style="display:none;visibility:hidden"></iframe>
-		</noscript>
-		<!-- End Google Tag Manager (noscript) -->
-	
-		<div class="event_compMovie" id="viewport">
-			<main class="mainWrap">
-				<!-- @ fixed right 버튼 -->
-				<div class="fixedRight">
-					<a href="https://www.compassion.or.kr/sponsor/children?campaignID=7012x000000hH5tAAE">
-						<img class="mNone" src="./img/btn_go_compassion.png" alt="컴패셔너 되기">
-						<button class="mVisible">
-							컴패셔너 되기
-						</button>
-					</a>
-				</div>
-				
-				<!-- @ main -->
-				<div class="main">
-					<div class="top">
-						<div class="inner">
-							<a class="logo" href="//www.compassion.or.kr/"><span class="a11y">한국컴패션</span></a>
-						</div>
-					</div>
-					<div class="visual">
-						<div class="mainSlide owl-carousel mNone">
-							<a data-subnum="1" href="javascript:void(0);">
-								<div class="item" style="background: url('./img/main_01.jpg') no-repeat center top; background-size: auto 100%;">
-									<span class="a11y">나는 컴패셔너입니다. 후원자와 어린이의 동반스토리</span>
-								</div>
-							</a>
-							<a data-subnum="2" href="javascript:void(0);">
-								<div class="item" style="background: url('./img/main_02.jpg') no-repeat center top; background-size: auto 100%;">
-									<span class="a11y">졸업생 컴패셔너 이야기</span>
-								</div>
-							</a>
-							<a data-subnum="3" href="javascript:void(0);">
-								<div class="item" style="background: url('./img/main_03.jpg') no-repeat center top; background-size: auto 100%;">
-									<span class="a11y">컴패션 인사이드</span>
-								</div>
-							</a>
-							<a data-subnum="4" href="javascript:void(0);">
-								<div class="item" style="background: url('./img/main_04.jpg') no-repeat center top; background-size: auto 100%;">
-									<span class="a11y">컴패션 양육시리즈</span>
-								</div>
-							</a>
-						</div>
-
-						<div class="mainSlide owl-carousel mVisible">
-							<a data-subnum="1" href="javascript:void(0);">
-								<div class="item">
-									<img src="./img/main_01_m.jpg" alt="영상보기">
-									<span class="a11y">나는 컴패셔너입니다. 후원자와 어린이의 동반스토리</span>
-								</div>
-							</a>
-							
-							<a data-subnum="2" href="javascript:void(0);">
-								<div class="item">
-									<img src="./img/main_02_m.jpg" alt="영상보기">
-									<span class="a11y">졸업생 컴패셔너 이야기</span>
-								</div>
-							</a>
-							<a data-subnum="3" href="javascript:void(0);">
-								<div class="item">
-									<img src="./img/main_03_m.jpg" alt="영상보기">
-									<span class="a11y">컴패션 인사이드</span>
-								</div>
-							</a>
-							<a data-subnum="4" href="javascript:void(0);">
-								<div class="item">
-									<img src="./img/main_04_m.jpg" alt="영상보기">
-									<span class="a11y">컴패션 양육시리즈</span>
-								</div>
-							</a>
-						</div>
+			<!-- @ main -->
+			<div class="main">
+				<div class="top">
+					<div class="inner">
+						<a class="logo js-link-id" href="//www.compassion.or.kr/"><span class="a11y">한국컴패션</span></a>
 					</div>
 				</div>
-				<!-- // @ main -->
-
-				<div class="cntWrap">
-					<!-- @ 1. 후원자 컴패셔너 s -->
-					<div class="listWrap">
-						<div class="inner">
-							<h4>후원자 컴패셔너 이야기</h4>
-							<div class="list">
-								<div class="listSlide owl-carousel">
-									<a href="javascript:void(0);" data-subnum="1">
-										<div class="item">
-											<img class="mNone" src="./img/main_list_01_1.png" alt="우리 너무 애쓰지 말아요">
-											<img class="mVisible" src="./img/main_list_01_1_m.png" alt="우리 너무 애쓰지 말아요">
-										</div>
-									</a>
-									<a href="javascript:void(0);" data-subnum="1">
-										<div class="item">
-											<img class="mNone" src="./img/main_list_01_2.png" alt="우울을 안고 사는 사람에게">
-											<img class="mVisible" src="./img/main_list_01_2_m.png" alt="우울을 안고 사는 사람에게">
-										</div>
-									</a>
-									<a href="javascript:void(0);" data-subnum="1">
-										<div class="item">
-											<img class="mNone" src="./img/main_list_01_3.png" alt="유난히 평범했던 그날을 꿈꿔요">
-											<img class="mVisible" src="./img/main_list_01_3_m.png" alt="유난히 평범했던 그날을 꿈꿔요">
-										</div>
-									</a>
-									<a href="javascript:void(0);" data-subnum="1" class="coming">
-										<div class="item">
-											<img class="mNone" src="./img/main_list_01_4.png" alt="후원은 서브컬처와 비슷해요">
-											<img class="mVisible" src="./img/main_list_01_4_m.png" alt="후원은 서브컬처와 비슷해요">
-										</div>
-									</a>
-									<a href="javascript:void(0);" data-subnum="1" class="coming">
-										<div class="item">
-											<img class="mNone" src="./img/main_list_01_5.png" alt="칼을 뽑았으면 끝장을 봐야죠">
-											<img class="mVisible" src="./img/main_list_01_5_m.png" alt="칼을 뽑았으면 끝장을 봐야죠">
-										</div>
-									</a>
-									<a href="javascript:void(0);" data-subnum="1" class="coming">
-										<div class="item">
-											<img class="mNone" src="./img/main_list_01_6.png" alt="선한 일이라 생각하면 후원 못해요">
-											<img class="mVisible" src="./img/main_list_01_6_m.png" alt="선한 일이라 생각하면 후원 못해요">
-										</div>
-									</a>
-									<a href="javascript:void(0);" data-subnum="1" class="coming">
-										<div class="item">
-											<img class="mNone" src="./img/main_list_01_7.png" alt="카메라에 가난을 담지 않는 이유">
-											<img class="mVisible" src="./img/main_list_01_7_m.png" alt="카메라에 가난을 담지 않는 이유">
-										</div>
-									</a>
-									<a href="javascript:void(0);" data-subnum="1" class="coming">
-										<div class="item">
-											<img class="mNone" src="./img/main_list_01_8.png" alt="아이를 향한 동정은 사양합니다">
-											<img class="mVisible" src="./img/main_list_01_8_m.png" alt="아이를 향한 동정은 사양합니다">
-										</div>
-									</a>
-									<a href="javascript:void(0);" data-subnum="1" class="coming">
-										<div class="item">
-											<img class="mNone" src="./img/main_list_01_9.png" alt="소중한 것은 눈에 보이지 않아요">
-											<img class="mVisible" src="./img/main_list_01_9_m.png" alt="소중한 것은 눈에 보이지 않아요">
-										</div>
-									</a>
-								</div>
+				<div class="visual">
+					<div class="mainSlide owl-carousel mNone">
+						<a data-subnum="1" href="javascript:void(0);">
+							<div class="item" style="background: url('./img/main_01.jpg') no-repeat center top; background-size: auto 100%;">
+								<span class="a11y">나는 컴패셔너입니다. 후원자와 어린이의 동반스토리</span>
 							</div>
-						</div>
+						</a>
+						<a data-subnum="2" href="javascript:void(0);">
+							<div class="item" style="background: url('./img/main_02.jpg') no-repeat center top; background-size: auto 100%;">
+								<span class="a11y">졸업생 컴패셔너 이야기</span>
+							</div>
+						</a>
+						<a data-subnum="3" href="javascript:void(0);">
+							<div class="item" style="background: url('./img/main_03.jpg') no-repeat center top; background-size: auto 100%;">
+								<span class="a11y">컴패션 인사이드</span>
+							</div>
+						</a>
+						<a data-subnum="4" href="javascript:void(0);">
+							<div class="item" style="background: url('./img/main_04.jpg') no-repeat center top; background-size: auto 100%;">
+								<span class="a11y">컴패션 양육시리즈</span>
+							</div>
+						</a>
 					</div>
-					<!-- //@ 1. 후원자 컴패셔너 e -->
 
-					<!-- @ 2. 컴패셔너 소개 s -->
-					<div class="lineBnr">
-						<div class="inner">
-							<h4>컴패셔너가 궁금한 분들을 위한</h4>
-							<div class="cnt">
-								<a href="javascript:void(0);" onclick="subDetailPopOpen('.introducePop')">
-									<img class="mNone" src="./img/main_bnr.jpg" alt="김명중 작가와 함께한 나는 컴패셔너입니다 프로젝트 소개">
-									<img class="mVisible" src="./img/main_bnr_m.jpg" alt="김명중 작가와 함께한 나는 컴패셔너입니다 프로젝트 소개">
+					<div class="mainSlide owl-carousel mVisible">
+						<a data-subnum="1" href="javascript:void(0);">
+							<div class="item">
+								<img src="./img/main_01_m.jpg" alt="영상보기">
+								<span class="a11y">나는 컴패셔너입니다. 후원자와 어린이의 동반스토리</span>
+							</div>
+						</a>
+						
+						<a data-subnum="2" href="javascript:void(0);">
+							<div class="item">
+								<img src="./img/main_02_m.jpg" alt="영상보기">
+								<span class="a11y">졸업생 컴패셔너 이야기</span>
+							</div>
+						</a>
+						<a data-subnum="3" href="javascript:void(0);">
+							<div class="item">
+								<img src="./img/main_03_m.jpg" alt="영상보기">
+								<span class="a11y">컴패션 인사이드</span>
+							</div>
+						</a>
+						<a data-subnum="4" href="javascript:void(0);">
+							<div class="item">
+								<img src="./img/main_04_m.jpg" alt="영상보기">
+								<span class="a11y">컴패션 양육시리즈</span>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+			<!-- // @ main -->
+
+			<div class="cntWrap">
+				<!-- @ 1. 후원자 컴패셔너 s -->
+				<div class="listWrap">
+					<div class="inner">
+						<h4>후원자 컴패셔너 이야기</h4>
+						<div class="list">
+							<div class="listSlide owl-carousel">
+								<a href="javascript:void(0);" data-subnum="1">
+									<div class="item">
+										<img class="mNone" src="./img/main_list_01_1.png?v=02" alt="우리 너무 애쓰지 말아요">
+										<img class="mVisible" src="./img/main_list_01_1_m.png?v=02" alt="우리 너무 애쓰지 말아요">
+									</div>
+								</a>
+								<a href="javascript:void(0);" data-subnum="1">
+									<div class="item">
+										<img class="mNone" src="./img/main_list_01_2.png?v=02" alt="우울을 안고 사는 사람에게">
+										<img class="mVisible" src="./img/main_list_01_2_m.png?v=02" alt="우울을 안고 사는 사람에게">
+									</div>
+								</a>
+								<a href="javascript:void(0);" data-subnum="1">
+									<div class="item">
+										<img class="mNone" src="./img/main_list_01_3.png?v=02" alt="유난히 평범했던 그날을 꿈꿔요">
+										<img class="mVisible" src="./img/main_list_01_3_m.png?v=02" alt="유난히 평범했던 그날을 꿈꿔요">
+									</div>
+								</a>
+								<a href="javascript:void(0);" data-subnum="1">
+									<div class="item">
+										<img class="mNone" src="./img/main_list_01_4.png?v=02" alt="후원은 서브컬처와 비슷해요">
+										<img class="mVisible" src="./img/main_list_01_4_m.png?v=02" alt="후원은 서브컬처와 비슷해요">
+									</div>
+								</a>
+								<a href="javascript:void(0);" data-subnum="1">
+									<div class="item">
+										<img class="mNone" src="./img/main_list_01_5.png?v=02" alt="칼을 뽑았으면 끝장을 봐야죠">
+										<img class="mVisible" src="./img/main_list_01_5_m.png?v=02" alt="칼을 뽑았으면 끝장을 봐야죠">
+									</div>
+								</a>
+								<a href="javascript:void(0);" data-subnum="1">
+									<div class="item">
+										<img class="mNone" src="./img/main_list_01_6.png?v=02" alt="선한 일이라 생각하면 후원 못해요">
+										<img class="mVisible" src="./img/main_list_01_6_m.png?v=02" alt="선한 일이라 생각하면 후원 못해요">
+									</div>
+								</a>
+								<a href="javascript:void(0);" data-subnum="1" class="coming">
+									<div class="item">
+										<img class="mNone" src="./img/main_list_01_7.png?v=02" alt="카메라에 가난을 담지 않는 이유">
+										<img class="mVisible" src="./img/main_list_01_7_m.png?v=02" alt="카메라에 가난을 담지 않는 이유">
+									</div>
+								</a>
+								<a href="javascript:void(0);" data-subnum="1" class="coming">
+									<div class="item">
+										<img class="mNone" src="./img/main_list_01_8.png?v=02" alt="아이를 향한 동정은 사양합니다">
+										<img class="mVisible" src="./img/main_list_01_8_m.png?v=02" alt="아이를 향한 동정은 사양합니다">
+									</div>
+								</a>
+								<a href="javascript:void(0);" data-subnum="1" class="coming">
+									<div class="item">
+										<img class="mNone" src="./img/main_list_01_9.png?v=02" alt="소중한 것은 눈에 보이지 않아요">
+										<img class="mVisible" src="./img/main_list_01_9_m.png?v=02" alt="소중한 것은 눈에 보이지 않아요">
+									</div>
 								</a>
 							</div>
 						</div>
 					</div>
-					<!-- //@ 2. 컴패셔너 소개 e -->
-
-					<!-- @ 3. 컴패션 졸업생 s -->
-					<div class="listWrap">
-						<div class="inner">
-							<h4>컴패션 졸업생 이야기</h4>
-							<div class="list">
-								<div class="listSlide owl-carousel">
-									<a href="javascript:void(0);" data-subnum="2">
-										<div class="item">
-											<img class="mNone" src="./img/main_list_02_1.png" alt="삶에 희망을 가져다 준 생일선물">
-											<img class="mVisible" src="./img/main_list_02_1_m.png" alt="삶에 희망을 가져다 준 생일선물">
-										</div>
-									</a>
-									<a href="javascript:void(0);" data-subnum="2">
-										<div class="item">
-											<img class="mNone" src="./img/main_list_02_2.png" alt="어린이들을 후원하고 있는 졸업생">
-											<img class="mVisible" src="./img/main_list_02_2_m.png" alt="어린이들을 후원하고 있는 졸업생">
-										</div>
-									</a>
-									<a href="javascript:void(0);" data-subnum="2">
-										<div class="item">
-											<img class="mNone" src="./img/main_list_02_3.png" alt="슬럼가에서 사회복지사가 되기까지">
-											<img class="mVisible" src="./img/main_list_02_3_m.png" alt="슬럼가에서 사회복지사가 되기까지">
-										</div>
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- //@ 3. 컴패션 졸업생 e -->
-
-					<!-- @ 4. Compassion_inside s -->
-					<div class="listWrap">
-						<div class="inner">
-							<h4>Compassion_inside</h4>
-							<div class="list">
-								<div class="listSlide owl-carousel">
-									<a href="javascript:void(0);" data-subnum="3">
-										<div class="item common">
-											<img src="./img/main_list_03_1.png" alt="나의 청춘 어린이를 위하여">
-										</div>
-									</a>
-									<a href="javascript:void(0);" data-subnum="3">
-										<div class="item common">
-											<img src="./img/main_list_03_2.png" alt="컴패션에 전화하면 제가 받습니다">
-										</div>
-									</a>
-									<a href="javascript:void(0);" data-subnum="3">
-										<div class="item common">
-											<img src="./img/main_list_03_3.png" alt="법대로 하는 무서운 사람">
-										</div>
-									</a>
-									<a href="javascript:void(0);" data-subnum="3">
-										<div class="item common">
-											<img src="./img/main_list_03_4.png" alt="매일 어린이 100명">
-										</div>
-									</a>
-									<a href="javascript:void(0);" data-subnum="3">
-										<div class="item common">
-											<img src="./img/main_list_03_5.png" alt="섬세한 양육">
-										</div>
-									</a>
-									<a href="javascript:void(0);" data-subnum="3">
-										<div class="item common">
-											<img src="./img/main_list_03_6.png" alt="오! 서터레스">
-										</div>
-									</a>
-									<a href="javascript:void(0);" data-subnum="3">
-										<div class="item common">
-											<img src="./img/main_list_03_7.png" alt="14년차 옥상 마니아">
-										</div>
-									</a>
-									<a href="javascript:void(0);" data-subnum="3">
-										<div class="item common">
-											<img src="./img/main_list_03_8.png" alt="상처라는 고성능 통역기">
-										</div>
-									</a>
-									<a href="javascript:void(0);" data-subnum="3">
-										<div class="item common">
-											<img src="./img/main_list_03_9.png" alt="몰입하고 기도하고">
-										</div>
-									</a>
-									<a href="javascript:void(0);" data-subnum="3">
-										<div class="item common">
-											<img src="./img/main_list_03_10.png" alt="아들 딸 아들 아들">
-										</div>
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- //@ 4. Compassion_inside e -->
-
-					<!-- @ 5. 컴패션 양육 시리즈 s -->
-					<div class="listWrap">
-						<div class="inner">
-							<h4>컴패션 양육 시리즈</h4>
-							<div class="list">
-								<div class="listSlide owl-carousel">
-									<a href="javascript:void(0);" data-subnum="4">
-										<div class="item common">
-											<img src="./img/main_list_04_1.png" alt="컴패션 양육시리즈 1화">
-										</div>
-									</a>
-									<a href="javascript:void(0);" data-subnum="4">
-										<div class="item common">
-											<img src="./img/main_list_04_2.png" alt="컴패션 양육시리즈 2화">
-										</div>
-									</a>
-									<a href="javascript:void(0);" data-subnum="4">
-										<div class="item common">
-											<img src="./img/main_list_04_3.png" alt="컴패션 양육시리즈 3화">
-										</div>
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- //@ 5. 컴패션 양육 시리즈 e -->
 				</div>
+				<!-- //@ 1. 후원자 컴패셔너 e -->
 
-			</main>
-
-			<!-- @ MAIN MOVIE POPUP s -->
-			<div class="mainPop popWrap">
-				<div class="bg" onclick="_popClose();"></div>
-				<div class="popIn">
-					<div class="youtubeCont">
-						<div id="youtubeMovie" class="dimMovie"></div>
-						<a class="btn_closePop" href="javascript:;" onclick="_popClose();"></a>
+				<!-- @ 2. 컴패셔너 소개 s -->
+				<div class="lineBnr">
+					<div class="inner">
+						<h4>컴패셔너가 궁금한 분들을 위한</h4>
+						<div class="cnt">
+							<a href="javascript:void(0);" onclick="subDetailPopOpen('.introducePop')">
+								<img class="mNone" src="./img/main_bnr.jpg" alt="김명중 작가와 함께한 나는 컴패셔너입니다 프로젝트 소개">
+								<img class="mVisible" src="./img/main_bnr_m.jpg" alt="김명중 작가와 함께한 나는 컴패셔너입니다 프로젝트 소개">
+							</a>
+						</div>
 					</div>
 				</div>
-			</div>
-			<!-- @ MAIN MOVIE POPUP s -->
+				<!-- //@ 2. 컴패셔너 소개 e -->
 
-			<!-- @ SUB CONTENTS POPUP s -->
-			<div class="subDetailPop popWrap" id="CategoryModal">
-				<!-- <div class="bg" onclick="_subDetailPopClose();"></div> -->
-				<div class="popIn">
-					<div class="popList">
-						<!-- @@ 영상보러가기 s -->
-						<div class="detailPop">
-							<div class="contents">
-								<a class="btn_pop_close" href="javascript:void(0);" onclick="_subDetailPopClose();">
-									<img src="./img/btn_back.png" alt="닫기">
+				<!-- @ 3. 컴패션 졸업생 s -->
+				<div class="listWrap">
+					<div class="inner">
+						<h4>컴패션 졸업생 이야기</h4>
+						<div class="list">
+							<div class="listSlide owl-carousel">
+								<a href="javascript:void(0);" data-subnum="2">
+									<div class="item">
+										<img class="mNone" src="./img/main_list_02_1.png?v=02" alt="삶에 희망을 가져다 준 생일선물">
+										<img class="mVisible" src="./img/main_list_02_1_m.png?v=02" alt="삶에 희망을 가져다 준 생일선물">
+									</div>
 								</a>
-								<!-- @@@ 영상영역 s -->
-								<div class="movieWrap">
-									<div class="movie">
-										<div class="thumb"><img src="./img/detail_1/movie_thumb_1.jpg" alt="영상 썸네일"></div>
-										<div class="youtube">
-											<iframe id="compIframe" width="100%" src="https://www.youtube.com/embed/tK1eZGS-voI?rel=0&enablejsapi=1&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-										</div>
-										<!-- <textarea name="" id="result" cols="30" rows="10"></textarea> -->
+								<a href="javascript:void(0);" data-subnum="2">
+									<div class="item">
+										<img class="mNone" src="./img/main_list_02_2.png?v=02" alt="어린이들을 후원하고 있는 졸업생">
+										<img class="mVisible" src="./img/main_list_02_2_m.png?v=02" alt="어린이들을 후원하고 있는 졸업생">
 									</div>
-									<div class="inner">
-										<!-- 영상 텍스트 -->
-										<div class="tit"> 
-											<img src="./img/detail_1/movie_tit_1.png" alt="영상 타이틀">
-										</div>
-										<ul class="btn">
-											<li>
-												<a class="btn_play" onclick="playVideo();" href="javascript:void(0);"><img src="./img/detail_btn_play.png" alt="영상재생"></a>
-											</li>
-											<li>
-												<a href="https://www.compassion.or.kr/sponsor/children?campaignID=7012x000000hH5tAAE" target="_blank"><img src="./img/detail_btn_go_comp.png" alt="컴패셔너되기"></a>
-											</li>
-										</ul>
-										<div class="txt"> 
-											<img src="./img/detail_1/movie_txt.png" alt="영상 상세설명">
-										</div>
+								</a>
+								<a href="javascript:void(0);" data-subnum="2">
+									<div class="item">
+										<img class="mNone" src="./img/main_list_02_3.png?v=02" alt="슬럼가에서 사회복지사가 되기까지">
+										<img class="mVisible" src="./img/main_list_02_3_m.png?v=02" alt="슬럼가에서 사회복지사가 되기까지">
 									</div>
-								</div>
-								<!-- @@@ 영상영역 e -->
-			
-								<!-- @@@ 회차정보 s -->
-								<div class="playlist">
-									<div class="inner">
-										<!-- 컨텐츠1 -->
-										<ul>
-											<li>
-												<a class="btn_infor" data-videoid="zfbDbGtNRoM" data-subnum="1" href="javascript:void(0);">
-													<img src="./img/detail_1/playlist_1.png" alt="우리 너무 애쓰지 말아요">
-												</a>
-											</li>
-											<li>
-												<a class="btn_infor" data-videoid="-Udy5vL_JzE" data-subnum="1" href="javascript:void(0);">
-													<img src="./img/detail_1/playlist_2.png" alt="우울을 안고 사는 사람에게">
-												</a>
-											</li>
-											<li>
-												<a class="btn_infor" data-videoid="f0LWIbXvlfA" data-subnum="1" href="javascript:void(0);">
-													<img src="./img/detail_1/playlist_3.png" alt="유난히 평범했던 그날을 꿈꿔요">
-												</a>
-											</li>
-											<li class="coming">
-												<a class="btn_infor" onclick="alert('Coming soon! 추후 영상이 공개됩니다.');" href="javascript:void(0);">
-													<img src="./img/detail_1/playlist_4.png" alt="후원은 서브컬처와 비슷해요">
-												</a>
-											</li>
-											<li class="coming">
-												<a class="btn_infor" onclick="alert('Coming soon! 추후 영상이 공개됩니다.');" href="javascript:void(0);">
-													<img src="./img/detail_1/playlist_5.png" alt="칼을 뽑았으면 끝장을 봐야죠">
-												</a>
-											</li>
-											<li class="coming">
-												<a class="btn_infor" onclick="alert('Coming soon! 추후 영상이 공개됩니다.');" href="javascript:void(0);">
-													<img src="./img/detail_1/playlist_6.png" alt="선한 일이라 생각하면 후원 못해요">
-												</a>
-											</li>
-											<li class="coming">
-												<a class="btn_infor" onclick="alert('Coming soon! 추후 영상이 공개됩니다.');" href="javascript:void(0);">
-													<img src="./img/detail_1/playlist_7.png" alt="카메라에 가난을 담지 않는 이유">
-												</a>
-											</li>
-											<li class="coming">
-												<a class="btn_infor" onclick="alert('Coming soon! 추후 영상이 공개됩니다.');" href="javascript:void(0);">
-													<img src="./img/detail_1/playlist_8.png" alt="아이를 향한 동정은 사양합니다">
-												</a>
-											</li>
-											<li class="coming">
-												<a class="btn_infor" onclick="alert('Coming soon! 추후 영상이 공개됩니다.');" href="javascript:void(0);">
-													<img src="./img/detail_1/playlist_9.png" alt="소중한 것은 눈에 보이지 않아요">
-												</a>
-											</li>
-										</ul>
-										<!-- 컨텐츠2 -->
-										<ul>
-											<li>
-												<a class="btn_infor" data-videoid="Z8p3uzP53Ac" data-subnum="2" href="javascript:void(0);">
-													<img src="./img/detail_2/playlist_1.png" alt="삶에 희망을 가져다 준 생일선물">
-												</a>
-											</li>
-											<li>
-												<a class="btn_infor" data-videoid="owmzfLcjU24" data-subnum="2" href="javascript:void(0);">
-													<img src="./img/detail_2/playlist_2.png" alt="어린이들을 후원하고 있는 졸업생">
-												</a>
-											</li>
-											<li>
-												<a class="btn_infor" data-videoid="GzqO6blAygQ" data-subnum="2" href="javascript:void(0);">
-													<img src="./img/detail_2/playlist_3.png" alt="슬럼가에서 사회복지사가 되기까지">
-												</a>
-											</li>
-										</ul>
-										<!-- 컨텐츠3 -->
-										<ul>
-											<li>
-												<a class="btn_infor" data-videoid="5d_uG07c1tA" data-subnum="3" href="javascript:void(0);">
-													<img src="./img/detail_3/playlist_1.png" alt="나의 청춘 어린이를 위하여">
-												</a>
-											</li>
-											<li>
-												<a class="btn_infor" data-videoid="6-94YHoYXiA" data-subnum="3" href="javascript:void(0);">
-													<img src="./img/detail_3/playlist_2.png" alt="컴패션에 전화하면 제가 받습니다">
-												</a>
-											</li>
-											<li>
-												<a class="btn_infor" data-videoid="xgvV3wVsPdU" data-subnum="3" href="javascript:void(0);">
-													<img src="./img/detail_3/playlist_3.png" alt="법대로 하는 무서운 사람">
-												</a>
-											</li>
-											<li>
-												<a class="btn_infor" data-videoid="xJB2m-MmDpo" data-subnum="3" href="javascript:void(0);">
-													<img src="./img/detail_3/playlist_4.png" alt="매일 어린이 100명">
-												</a>
-											</li>
-											<li>
-												<a class="btn_infor" data-videoid="kcxz5p4B2kY" data-subnum="3" href="javascript:void(0);">
-													<img src="./img/detail_3/playlist_5.png" alt="섬세한 양육">
-												</a>
-											</li>
-											<li>
-												<a class="btn_infor" data-videoid="kfT5ull0ryE" data-subnum="3" href="javascript:void(0);">
-													<img src="./img/detail_3/playlist_6.png" alt="오! 서터레스">
-												</a>
-											</li>
-											<li>
-												<a class="btn_infor" data-videoid="RXsip16xAVI" data-subnum="3" href="javascript:void(0);">
-													<img src="./img/detail_3/playlist_7.png" alt="14년차 옥상 마니아">
-												</a>
-											</li>
-											<li>
-												<a class="btn_infor" data-videoid="248vasFxKlU" data-subnum="3" href="javascript:void(0);">
-													<img src="./img/detail_3/playlist_8.png" alt="상처라는 고성능 통역기">
-												</a>
-											</li>
-											<li>
-												<a class="btn_infor" data-videoid="5xRLF_6XUXg" data-subnum="3" href="javascript:void(0);">
-													<img src="./img/detail_3/playlist_9.png" alt="몰입하고 기도하고">
-												</a>
-											</li>
-											<li>
-												<a class="btn_infor" data-videoid="r49gQ-_1hHo" data-subnum="3" href="javascript:void(0);">
-													<img src="./img/detail_3/playlist_10.png" alt="아들 딸 아들 아들">
-												</a>
-											</li>
-										</ul>
-										<!-- 컨텐츠4 -->
-										<ul>
-											<li>
-												<a class="btn_infor" data-videoid="tK1eZGS-voI" data-subnum="4" href="javascript:void(0);">
-													<img src="./img/detail_4/playlist_1.png" alt="컴패션 양육시리즈 1화">
-												</a>
-											</li>
-											<li>
-												<a class="btn_infor" data-videoid="tzoEpIhVfqs" data-subnum="4" href="javascript:void(0);">
-													<img src="./img/detail_4/playlist_2.png" alt="컴패션 양육시리즈 2화">
-												</a>
-											</li>
-											<li>
-												<a class="btn_infor" data-videoid="u2dY6e-FptE" data-subnum="4" href="javascript:void(0);">
-													<img src="./img/detail_4/playlist_3.png" alt="컴패션 양육시리즈 3화">
-												</a>
-											</li>
-										</ul>
-									</div>
-								</div>
-								<!-- @@@ 회차정보 e -->
+								</a>
 							</div>
 						</div>
-						<!-- // @@ 영상보러가기 e -->
-
-						<!-- @@ 김명중작가의 컴패셔너 소개 s -->
-						<div class="introducePop">
-							<div class="contents">
-								<ul>
-									<li>
-										<img src="./img/introduce_01.png" alt="김명중 이미지">
-										<a class="btn_pop_close" href="javascript:void(0);" onclick="_subDetailPopClose();">
-											<img src="./img/btn_back.png" alt="뒤로가기">
-										</a>
-										<div class="a11y">
-											<h4>나는 컴패셔너입니다 (프로젝트 소개)</h4>
-											<div>
-												‘나는 컴패셔너 입니다.’ 는 김명중 사진작가의 시선으로 바라본 다양한 컴패션 후원자들의 모습을 영상과 사진으로 담아내는 프로젝트입니다.<br>
-												<br>
-												컴패션 안에서 웃기 시작한 어린이들은 가족들의 삶에 희망을 틔우고, 더불어 후원자의 일상을 변화시킵니다. 그 변화는 후원자의 삶 곳곳으로 지금도 흘러가고 있습니다. 한 어린이의 웃음이 많은 것을 바꿔 나갑니다. 아픔과 상처를 가진 평범하지만 당당한 그들의 자부심. 그 진솔한 이야기를 영상을 통해 만나보실 수 있습니다. 
-											</div>
-										</div>
-									</li>
-									<li>
-										<div class="inner">
-											<a href="https://www.compassion.or.kr/sponsor/children?campaignID=7012x000000hH5tAAE" target="_blank"><img src="./img/detail_btn_go_comp.png" alt="컴패셔너되기"></a>
-										</div>
-									</li>
-									<li>
-										<img src="./img/introduce_03.png" alt="김명중 이미지">
-										<div class="a11y">
-											<em>사진작가 김명중 / MJ KIM</em>
-											<div>
-												14년동안 비틀즈 멤버 폴 매카트니의 전속 사진작가로 활동하며, 수많은 유명인들을 사진에 담아왔다. 감동을 주는 사진이 무엇일까 고민하던 중 한국에서 평범한 사람들의 모습을 사진으로 기록하며 소통하는 프로젝트를  이어가고 있다.
-											</div>
-										</div>
-									</li>
-								</ul>
-							</div>
-						</div>
-						<!-- // @@ 김명중작가의 컴패셔너 소개 e -->
 					</div>
+				</div>
+				<!-- //@ 3. 컴패션 졸업생 e -->
 
+				<!-- @ 4. Compassion_inside s -->
+				<div class="listWrap">
+					<div class="inner">
+						<h4>Compassion_inside</h4>
+						<div class="list">
+							<div class="listSlide owl-carousel">
+								<a href="javascript:void(0);" data-subnum="3">
+									<div class="item common">
+										<img src="./img/main_list_03_1.png?v=02" alt="나의 청춘 어린이를 위하여">
+									</div>
+								</a>
+								<a href="javascript:void(0);" data-subnum="3">
+									<div class="item common">
+										<img src="./img/main_list_03_2.png?v=02" alt="컴패션에 전화하면 제가 받습니다">
+									</div>
+								</a>
+								<a href="javascript:void(0);" data-subnum="3">
+									<div class="item common">
+										<img src="./img/main_list_03_3.png?v=02" alt="법대로 하는 무서운 사람">
+									</div>
+								</a>
+								<a href="javascript:void(0);" data-subnum="3">
+									<div class="item common">
+										<img src="./img/main_list_03_4.png?v=02" alt="매일 어린이 100명">
+									</div>
+								</a>
+								<a href="javascript:void(0);" data-subnum="3">
+									<div class="item common">
+										<img src="./img/main_list_03_5.png?v=02" alt="섬세한 양육">
+									</div>
+								</a>
+								<a href="javascript:void(0);" data-subnum="3">
+									<div class="item common">
+										<img src="./img/main_list_03_6.png?v=02" alt="오! 서터레스">
+									</div>
+								</a>
+								<a href="javascript:void(0);" data-subnum="3">
+									<div class="item common">
+										<img src="./img/main_list_03_7.png?v=02" alt="14년차 옥상 마니아">
+									</div>
+								</a>
+								<a href="javascript:void(0);" data-subnum="3">
+									<div class="item common">
+										<img src="./img/main_list_03_8.png?v=02" alt="상처라는 고성능 통역기">
+									</div>
+								</a>
+								<a href="javascript:void(0);" data-subnum="3">
+									<div class="item common">
+										<img src="./img/main_list_03_9.png?v=02" alt="몰입하고 기도하고">
+									</div>
+								</a>
+								<a href="javascript:void(0);" data-subnum="3">
+									<div class="item common">
+										<img src="./img/main_list_03_10.png?v=02" alt="아들 딸 아들 아들">
+									</div>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- //@ 4. Compassion_inside e -->
+
+				<!-- @ 5. 컴패션 양육 시리즈 s -->
+				<div class="listWrap">
+					<div class="inner">
+						<h4>컴패션 양육 시리즈</h4>
+						<div class="list">
+							<div class="listSlide owl-carousel">
+								<a href="javascript:void(0);" data-subnum="4">
+									<div class="item common">
+										<img src="./img/main_list_04_1.png?v=02" alt="컴패션 양육시리즈 1화">
+									</div>
+								</a>
+								<a href="javascript:void(0);" data-subnum="4">
+									<div class="item common">
+										<img src="./img/main_list_04_2.png?v=02" alt="컴패션 양육시리즈 2화">
+									</div>
+								</a>
+								<a href="javascript:void(0);" data-subnum="4">
+									<div class="item common">
+										<img src="./img/main_list_04_3.png?v=02" alt="컴패션 양육시리즈 3화">
+									</div>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- //@ 5. 컴패션 양육 시리즈 e -->
+			</div>
+
+		</main>
+
+		<!-- @ MAIN MOVIE POPUP s -->
+		<div class="mainPop popWrap">
+			<div class="bg" onclick="_popClose();"></div>
+			<div class="popIn">
+				<div class="youtubeCont">
+					<div id="youtubeMovie" class="dimMovie"></div>
+					<a class="btn_closePop" href="javascript:;" onclick="_popClose();"></a>
 				</div>
 			</div>
-			<!-- //@ SUB CONTENTS POPUP e -->	
-			
 		</div>
+		<!-- @ MAIN MOVIE POPUP s -->
 
-		<!-- @ 컴패션 푸터 삽입 s -->
-		<footer id="footerCh">
-			<div class="policy-wrap">
-				<div class="inner">
-					<a href="/etc/terms" class="type-essential">이용약관</a>
-					<a href="/etc/privacy" class="type-essential">개인정보 처리방침</a>
-					<a href="https://compassion.recruiter.co.kr" target="_blank">인재채용</a>
-					<a href="/customer/faq" class="type-essential">FAQ</a>
-					<!-- <a href="https://113366.com/compassion" target="_blank">원격지원</a> -->
-					<a href="/resources/fo/compassion/assets/templet/TeamViewerQS.exe" download="">원격지원</a>
-					<div class="family-site-wrap">
-						<div class="family-site" style="position: relative;">
-							<button class="current">Compassion Worldwide</button>
-							<ul style="position: absolute; display: none;">
+		<!-- @ SUB CONTENTS POPUP s -->
+		<div class="subDetailPop popWrap" id="CategoryModal">
+			<!-- <div class="bg" onclick="_subDetailPopClose();"></div> -->
+			<div class="popIn">
+				<div class="popList">
+					<!-- @@ 영상보러가기 s -->
+					<div class="detailPop">
+						<div class="contents">
+							<a class="btn_pop_close" href="javascript:void(0);" onclick="_subDetailPopClose();">
+								<img src="./img/btn_back.png?v=02" alt="닫기">
+							</a>
+							<!-- @@@ 영상영역 s -->
+							<div class="movieWrap">
+								<div class="movie">
+									<div class="thumb"><img src="./img/detail_1/movie_thumb_1.jpg" alt="영상 썸네일"></div>
+									<div class="youtube">
+										<iframe id="compIframe" width="100%" src="https://www.youtube.com/embed/tK1eZGS-voI?rel=0&enablejsapi=1&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+									</div>
+								</div>
+								<div class="inner">
+									<!-- 영상 텍스트 -->
+									<div class="tit"> 
+										<img src="./img/detail_1/movie_tit_1.png?v=02" alt="영상 타이틀">
+									</div>
+									<ul class="btn">
+										<li>
+											<a class="btn_play" onclick="playVideo();" href="javascript:void(0);"><img src="./img/detail_btn_play.png?v=02" alt="영상재생"></a>
+										</li>
+										<li>
+											<a class="js-link-id btn_comp" href="https://www.compassion.or.kr/sponsor/children?campaignID=7012x000000hH5tAAE&t_id=" target="_blank"><img src="./img/detail_btn_go_comp.png?v=02" alt="컴패셔너되기"></a>
+										</li>
+									</ul>
+									<div class="txt"> 
+										<img src="./img/detail_1/movie_txt.png?v=02" alt="영상 상세설명">
+									</div>
+								</div>
+							</div>
+							<!-- @@@ 영상영역 e -->
+		
+							<!-- @@@ 회차정보 s -->
+							<div class="playlist">
+								<div class="inner">
+									<!-- 컨텐츠1 -->
+									<ul>
+										<li>
+											<a class="btn_infor" data-videoid="zfbDbGtNRoM" data-subnum="1" href="javascript:void(0);">
+												<img src="./img/detail_1/playlist_1.png?v=02" alt="우리 너무 애쓰지 말아요">
+											</a>
+										</li>
+										<li>
+											<a class="btn_infor" data-videoid="-Udy5vL_JzE" data-subnum="1" href="javascript:void(0);">
+												<img src="./img/detail_1/playlist_2.png?v=02" alt="우울을 안고 사는 사람에게">
+											</a>
+										</li>
+										<li>
+											<a class="btn_infor" data-videoid="f0LWIbXvlfA" data-subnum="1" href="javascript:void(0);">
+												<img src="./img/detail_1/playlist_3.png?v=02" alt="유난히 평범했던 그날을 꿈꿔요">
+											</a>
+										</li>
+										<li>
+											<a class="btn_infor" data-videoid="ytlhc5gAujw" data-subnum="1" href="javascript:void(0);">
+												<img src="./img/detail_1/playlist_4.png?v=02" alt="후원은 서브컬처와 비슷해요">
+											</a>
+										</li>
+										<li>
+											<a class="btn_infor" data-videoid="xv2LP6GX0Ik" data-subnum="1" href="javascript:void(0);">
+												<img src="./img/detail_1/playlist_5.png?v=02" alt="칼을 뽑았으면 끝장을 봐야죠">
+											</a>
+										</li>
+										<li>
+											<a class="btn_infor" data-videoid="cFWGUBKzHos" data-subnum="1" href="javascript:void(0);">
+												<img src="./img/detail_1/playlist_6.png?v=02" alt="선한 일이라 생각하면 후원 못해요">
+											</a>
+										</li>
+										<li class="coming">
+											<a class="btn_infor" onclick="alert('Coming soon! 추후 영상이 공개됩니다.');" href="javascript:void(0);">
+												<img src="./img/detail_1/playlist_7.png?v=02" alt="카메라에 가난을 담지 않는 이유">
+											</a>
+										</li>
+										<li class="coming">
+											<a class="btn_infor" onclick="alert('Coming soon! 추후 영상이 공개됩니다.');" href="javascript:void(0);">
+												<img src="./img/detail_1/playlist_8.png?v=02" alt="아이를 향한 동정은 사양합니다">
+											</a>
+										</li>
+										<li class="coming">
+											<a class="btn_infor" onclick="alert('Coming soon! 추후 영상이 공개됩니다.');" href="javascript:void(0);">
+												<img src="./img/detail_1/playlist_9.png?v=02" alt="소중한 것은 눈에 보이지 않아요">
+											</a>
+										</li>
+									</ul>
+									<!-- 컨텐츠2 -->
+									<ul>
+										<li>
+											<a class="btn_infor" data-videoid="Z8p3uzP53Ac" data-subnum="2" href="javascript:void(0);">
+												<img src="./img/detail_2/playlist_1.png?v=02" alt="삶에 희망을 가져다 준 생일선물">
+											</a>
+										</li>
+										<li>
+											<a class="btn_infor" data-videoid="owmzfLcjU24" data-subnum="2" href="javascript:void(0);">
+												<img src="./img/detail_2/playlist_2.png?v=02" alt="어린이들을 후원하고 있는 졸업생">
+											</a>
+										</li>
+										<li>
+											<a class="btn_infor" data-videoid="GzqO6blAygQ" data-subnum="2" href="javascript:void(0);">
+												<img src="./img/detail_2/playlist_3.png?v=02" alt="슬럼가에서 사회복지사가 되기까지">
+											</a>
+										</li>
+									</ul>
+									<!-- 컨텐츠3 -->
+									<ul>
+										<li>
+											<a class="btn_infor" data-videoid="5d_uG07c1tA" data-subnum="3" href="javascript:void(0);">
+												<img src="./img/detail_3/playlist_1.png?v=02" alt="나의 청춘 어린이를 위하여">
+											</a>
+										</li>
+										<li>
+											<a class="btn_infor" data-videoid="6-94YHoYXiA" data-subnum="3" href="javascript:void(0);">
+												<img src="./img/detail_3/playlist_2.png?v=02" alt="컴패션에 전화하면 제가 받습니다">
+											</a>
+										</li>
+										<li>
+											<a class="btn_infor" data-videoid="xgvV3wVsPdU" data-subnum="3" href="javascript:void(0);">
+												<img src="./img/detail_3/playlist_3.png?v=02" alt="법대로 하는 무서운 사람">
+											</a>
+										</li>
+										<li>
+											<a class="btn_infor" data-videoid="xJB2m-MmDpo" data-subnum="3" href="javascript:void(0);">
+												<img src="./img/detail_3/playlist_4.png?v=02" alt="매일 어린이 100명">
+											</a>
+										</li>
+										<li>
+											<a class="btn_infor" data-videoid="kcxz5p4B2kY" data-subnum="3" href="javascript:void(0);">
+												<img src="./img/detail_3/playlist_5.png?v=02" alt="섬세한 양육">
+											</a>
+										</li>
+										<li>
+											<a class="btn_infor" data-videoid="kfT5ull0ryE" data-subnum="3" href="javascript:void(0);">
+												<img src="./img/detail_3/playlist_6.png?v=02" alt="오! 서터레스">
+											</a>
+										</li>
+										<li>
+											<a class="btn_infor" data-videoid="RXsip16xAVI" data-subnum="3" href="javascript:void(0);">
+												<img src="./img/detail_3/playlist_7.png?v=02" alt="14년차 옥상 마니아">
+											</a>
+										</li>
+										<li>
+											<a class="btn_infor" data-videoid="248vasFxKlU" data-subnum="3" href="javascript:void(0);">
+												<img src="./img/detail_3/playlist_8.png?v=02" alt="상처라는 고성능 통역기">
+											</a>
+										</li>
+										<li>
+											<a class="btn_infor" data-videoid="5xRLF_6XUXg" data-subnum="3" href="javascript:void(0);">
+												<img src="./img/detail_3/playlist_9.png?v=02" alt="몰입하고 기도하고">
+											</a>
+										</li>
+										<li>
+											<a class="btn_infor" data-videoid="r49gQ-_1hHo" data-subnum="3" href="javascript:void(0);">
+												<img src="./img/detail_3/playlist_10.png?v=02" alt="아들 딸 아들 아들">
+											</a>
+										</li>
+									</ul>
+									<!-- 컨텐츠4 -->
+									<ul>
+										<li>
+											<a class="btn_infor" data-videoid="tK1eZGS-voI" data-subnum="4" href="javascript:void(0);">
+												<img src="./img/detail_4/playlist_1.png?v=02" alt="컴패션 양육시리즈 1화">
+											</a>
+										</li>
+										<li>
+											<a class="btn_infor" data-videoid="tzoEpIhVfqs" data-subnum="4" href="javascript:void(0);">
+												<img src="./img/detail_4/playlist_2.png?v=02" alt="컴패션 양육시리즈 2화">
+											</a>
+										</li>
+										<li>
+											<a class="btn_infor" data-videoid="u2dY6e-FptE" data-subnum="4" href="javascript:void(0);">
+												<img src="./img/detail_4/playlist_3.png?v=02" alt="컴패션 양육시리즈 3화">
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<!-- @@@ 회차정보 e -->
+						</div>
+					</div>
+					<!-- // @@ 영상보러가기 e -->
+
+					<!-- @@ 김명중작가의 컴패셔너 소개 s -->
+					<div class="introducePop">
+						<div class="contents">
+							<ul>
 								<li>
-									<a href="http://www.selfrance.org/" target="_blank" title="프랑스">프랑스</a>
+									<img src="./img/introduce_01.png?v=02" alt="김명중 이미지">
+									<a class="btn_pop_close" href="javascript:void(0);" onclick="_subDetailPopClose();">
+										<img src="./img/btn_back.png?v=02" alt="뒤로가기">
+									</a>
+									<div class="a11y">
+										<h4>나는 컴패셔너입니다 (프로젝트 소개)</h4>
+										<div>
+											‘나는 컴패셔너 입니다.’ 는 김명중 사진작가의 시선으로 바라본 다양한 컴패션 후원자들의 모습을 영상과 사진으로 담아내는 프로젝트입니다.<br>
+											<br>
+											컴패션 안에서 웃기 시작한 어린이들은 가족들의 삶에 희망을 틔우고, 더불어 후원자의 일상을 변화시킵니다. 그 변화는 후원자의 삶 곳곳으로 지금도 흘러가고 있습니다. 한 어린이의 웃음이 많은 것을 바꿔 나갑니다. 아픔과 상처를 가진 평범하지만 당당한 그들의 자부심. 그 진솔한 이야기를 영상을 통해 만나보실 수 있습니다. 
+										</div>
+									</div>
 								</li>
 								<li>
-									<a href="http://www.tearfund.org.nz/" target="_blank" title="뉴질랜드">뉴질랜드</a>
+									<div class="inner">
+										<a class="js-link-id btn_comp" href="https://www.compassion.or.kr/sponsor/children?campaignID=7012x000000hH5tAAE&t_id=" target="_blank"><img src="./img/detail_btn_go_comp.png?v=02" alt="컴패셔너되기"></a>
+									</div>
 								</li>
 								<li>
-									<a href="http://www.compassion-de.org/" target="_blank" title="독일">독일</a>
-								</li>
-								<li>
-									<a href="http://www.compassionuk.org/" target="_blank" title="영국">영국</a>
-								</li>
-								<li>
-									<a href="http://www.compassion.it/ita/" target="_blank" title="이탈리아">이탈리아</a>
-								</li>
-								<li>
-									<a href="http://www.compassion.com.au/" target="_blank" title="호주">호주</a>
-								</li>
-								<li>
-									<a href="https://www.compassion.ca/" target="_blank" title="캐나다">캐나다</a>
-								</li>
-								<li>
-									<a href="http://www.compassion.com/" target="_blank" title="미국">미국</a>
-								</li>
-								<li>
-									<a href="https://www.compassion.ch/" target="_blank" title="스위스">스위스</a>
-								</li>
-								<li>
-									<a href="https://www.compassion.nl/" target="_blank" title="네덜란드">네덜란드</a>
-								</li>
-								<li>
-									<a href="http://www.compassion.se/" target="_blank" title="노르덴">노르덴</a>
+									<img src="./img/introduce_03.png?v=02" alt="김명중 이미지">
+									<div class="a11y">
+										<em>사진작가 김명중 / MJ KIM</em>
+										<div>
+											14년동안 비틀즈 멤버 폴 매카트니의 전속 사진작가로 활동하며, 수많은 유명인들을 사진에 담아왔다. 감동을 주는 사진이 무엇일까 고민하던 중 한국에서 평범한 사람들의 모습을 사진으로 기록하며 소통하는 프로젝트를  이어가고 있다.
+										</div>
+									</div>
 								</li>
 							</ul>
 						</div>
 					</div>
+					<!-- // @@ 김명중작가의 컴패셔너 소개 e -->
 				</div>
+
 			</div>
-			<div class="inner address-wrap">
-				<div class="footer-sns-wrap">
-					<ul class="sns-list">
-						<li>
-							<a href="https://www.youtube.com/user/CompassionKR" target="_blank" title="youtube" class="ico-youtube">
-								<span class="for-a11y">youtube</span>
-							</a>
-						</li>
-						<li>
-							<a href="https://www.instagram.com/compassionkorea/" target="_blank" title="instagram" class="ico-instagram">
-								<span class="for-a11y">instagram</span>
-							</a>
-						</li>
-						<li>
-							<a href="https://www.facebook.com/compassion.Korea" target="_blank" title="facebook" class="ico-facebook">
-								<span class="for-a11y">facebook</span>
-							</a>
-						</li>
-						<li>
-							<a href="https://blog.naver.com/compassionkorea" target="_blank" title="naver blog" class="ico-naver-blog">
-								<span class="for-a11y">naver blog</span>
-							</a>
-						</li>
-						<li>
-							<a href="https://pf.kakao.com/_YKgWxd" target="_blank" title="kakao channel" class="ico-kakao-channel">
-								<span class="for-a11y">kakao channel</span>
-							</a>
-						</li>
-						<li>
-							<a href="https://m.post.naver.com/my.nhn?memberNo=41678725" target="_blank" class="ico-post">
-								<span class="for-a11y">naver post</span>
-							</a>
-						</li>
-						<li>
-							<a href="http://happylog.naver.com/compassion.do" target="_blank" title="happybean" class="ico-happybean">
-								<span class="for-a11y">naver happybean</span>
-							</a>
-						</li>
-					</ul>
-				</div>
-				<div class="footer-logo-wrap">
-					<h4 class="footer-logo">
-						<a href="https://www.compassion.or.kr">
-							<img src="./img/logo_footer.png" alt="한국컴패션">
-						</a>
-					</h4>
-				</div>
-				<div class="address">
-					<button class="btn-more-info" type="button">More</button>
-					<address>
-						<strong class="cp-name" id="footer_company_name">한국컴패션</strong>
-						<div>
-							<p id="footer_address"><span>서울시 용산구 한남대로 102-5 (한남동 723-41)석전빌딩(04418)</span></p>
-							<p>
-								<span id="footer_bizNum">사업자등록번호:108-82-05789</span>
-								<span id="footer_ceo">대표자:서정인</span>
-							</p>
-							<p>
-								<span id="telNum">후원상담/안내:02-740-1000</span>
-								<span>
-									<a href="mailto:info@compassion.or.kr" class="mailto" id="footer_mail">이메일: info@compassion.or.kr</a>
-								</span>
-							</p>
-						</div>
-					</address>
-					<div class="hosting">
-						<p class="copyright" id="footer_copyright">ⓒ COMPASSION KOREA All Rights Reserved Contact us for more information</p>
+		</div>
+		<!-- //@ SUB CONTENTS POPUP e -->	
+		
+	</div>
+
+	<!-- @ 컴패션 푸터 삽입 s -->
+	<footer id="footerCh">
+		<div class="policy-wrap">
+			<div class="inner">
+				<a href="/etc/terms" class="type-essential">이용약관</a>
+				<a href="/etc/privacy" class="type-essential">개인정보 처리방침</a>
+				<a href="https://compassion.recruiter.co.kr" target="_blank">인재채용</a>
+				<a href="/customer/faq" class="type-essential">FAQ</a>
+				<!-- <a href="https://113366.com/compassion" target="_blank">원격지원</a> -->
+				<a href="/resources/fo/compassion/assets/templet/TeamViewerQS.exe" download="">원격지원</a>
+				<div class="family-site-wrap">
+					<div class="family-site" style="position: relative;">
+						<button class="current">Compassion Worldwide</button>
+						<ul style="position: absolute; display: none;">
+							<li>
+								<a href="http://www.selfrance.org/" target="_blank" title="프랑스">프랑스</a>
+							</li>
+							<li>
+								<a href="http://www.tearfund.org.nz/" target="_blank" title="뉴질랜드">뉴질랜드</a>
+							</li>
+							<li>
+								<a href="http://www.compassion-de.org/" target="_blank" title="독일">독일</a>
+							</li>
+							<li>
+								<a href="http://www.compassionuk.org/" target="_blank" title="영국">영국</a>
+							</li>
+							<li>
+								<a href="http://www.compassion.it/ita/" target="_blank" title="이탈리아">이탈리아</a>
+							</li>
+							<li>
+								<a href="http://www.compassion.com.au/" target="_blank" title="호주">호주</a>
+							</li>
+							<li>
+								<a href="https://www.compassion.ca/" target="_blank" title="캐나다">캐나다</a>
+							</li>
+							<li>
+								<a href="http://www.compassion.com/" target="_blank" title="미국">미국</a>
+							</li>
+							<li>
+								<a href="https://www.compassion.ch/" target="_blank" title="스위스">스위스</a>
+							</li>
+							<li>
+								<a href="https://www.compassion.nl/" target="_blank" title="네덜란드">네덜란드</a>
+							</li>
+							<li>
+								<a href="http://www.compassion.se/" target="_blank" title="노르덴">노르덴</a>
+							</li>
+						</ul>
 					</div>
 				</div>
 			</div>
-		</footer>
-		<!-- @ //컴패션 푸터 삽입 e -->
-	</body>
+		</div>
+		<div class="inner address-wrap">
+			<div class="footer-sns-wrap">
+				<ul class="sns-list">
+					<li>
+						<a href="https://www.youtube.com/user/CompassionKR" target="_blank" title="youtube" class="ico-youtube">
+							<span class="for-a11y">youtube</span>
+						</a>
+					</li>
+					<li>
+						<a href="https://www.instagram.com/compassionkorea/" target="_blank" title="instagram" class="ico-instagram">
+							<span class="for-a11y">instagram</span>
+						</a>
+					</li>
+					<li>
+						<a href="https://www.facebook.com/compassion.Korea" target="_blank" title="facebook" class="ico-facebook">
+							<span class="for-a11y">facebook</span>
+						</a>
+					</li>
+					<li>
+						<a href="https://blog.naver.com/compassionkorea" target="_blank" title="naver blog" class="ico-naver-blog">
+							<span class="for-a11y">naver blog</span>
+						</a>
+					</li>
+					<li>
+						<a href="https://pf.kakao.com/_YKgWxd" target="_blank" title="kakao channel" class="ico-kakao-channel">
+							<span class="for-a11y">kakao channel</span>
+						</a>
+					</li>
+					<li>
+						<a href="https://m.post.naver.com/my.nhn?memberNo=41678725" target="_blank" class="ico-post">
+							<span class="for-a11y">naver post</span>
+						</a>
+					</li>
+					<li>
+						<a href="http://happylog.naver.com/compassion.do" target="_blank" title="happybean" class="ico-happybean">
+							<span class="for-a11y">naver happybean</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="footer-logo-wrap">
+				<h4 class="footer-logo">
+					<a class="js-link-id" href="https://www.compassion.or.kr">
+						<img src="./img/logo_footer.png?v=02" alt="한국컴패션">
+					</a>
+				</h4>
+			</div>
+			<div class="address">
+				<address>
+					<strong class="cp-name" id="footer_company_name">한국컴패션</strong>
+					<div>
+						<p id="footer_address"><span>서울시 용산구 한남대로 102-5 (한남동 723-41)석전빌딩(04418)</span></p>
+						<p>
+							<span id="footer_bizNum">사업자등록번호:108-82-05789</span>
+							<span id="footer_ceo">대표자:서정인</span>
+						</p>
+						<p>
+							<span id="telNum">후원상담/안내:02-740-1000</span>
+							<span>
+								<a href="mailto:info@compassion.or.kr" class="mailto" id="footer_mail">이메일: info@compassion.or.kr</a>
+							</span>
+						</p>
+					</div>
+				</address>
+				<div class="hosting">
+					<p class="copyright" id="footer_copyright">ⓒ COMPASSION KOREA All Rights Reserved Contact us for more information</p>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!-- @ //컴패션 푸터 삽입 e -->
+
+	<!-- @ 221221 트래킹코드 추가 -->
+	<script>
+		// t_id 파라미터 
+		var t_id = getParameterByName('t_id');
+		console.log("t_id : " + t_id);
+	
+		function getParameterByName(name) {
+		name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+		var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+				results = regex.exec(location.search);
+		return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+		}
+
+		// t_id 버튼 클래스 
+		(function () {
+		  function getUrlParams() {
+			var params = {};
+			window.location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (str, key, value) {
+			  params[key] = value;
+			});
+			return params;
+		  }
+		
+		  var params = getUrlParams();
+		  var id = params['t_id'];
+		
+		  if (id) {
+			document.querySelectorAll('.js-link-id').forEach(function (element) {
+			  var href = element.getAttribute('href');
+			  var addHref = href.indexOf('?') > -1 ? "".concat(id) : "?t_id=".concat(id);
+			  element.setAttribute('href', "".concat(href).concat(addHref));
+			});
+		  }
+
+		  // 컴패셔너 버튼 클릭
+		  $('.btn_comp').on('click', function(){
+			if($('.event_compMovie').hasClass('mobilebody')) {
+				// GA
+				window.dataLayer.push({ 
+					"event" : "customEvent", 
+					"customEvent-category" : "mo",
+					"customEvent-action" : "compassion_kr",
+					"customEvent-label" : "click"
+				});
+				// google ads
+				function gtag_report_conversion(url) {
+				var callback = function () {
+					if (typeof(url) != 'undefined') {
+					window.location = url;
+					}
+				};
+				gtag('event', 'conversion', {
+					'send_to': 'AW-11043032264/eH1cCLmvzIUYEMiZ3ZEp',
+					'event_callback': callback
+				});
+				return false;
+				}
+			} else {
+				// GA
+				window.dataLayer.push({ 
+					"event" : "customEvent", 
+					"customEvent-category" : "pc",
+					"customEvent-action" : "compassion_kr",
+					"customEvent-label" : "click"
+				});
+				// google ads
+				function gtag_report_conversion(url) {
+					var callback = function () {
+						if (typeof(url) != 'undefined') {
+						window.location = url;
+						}
+					};
+					gtag('event', 'conversion', {
+						'send_to': 'AW-11043032264/mSV1CLavzIUYEMiZ3ZEp',
+						'event_callback': callback
+					});
+					return false;
+				}
+			}
+			// GOOGLE Ads
+			gtag_report_conversion(); 
+			// facebook
+			fbq('track', 'Contact');
+		  });
+		})();
+		
+	</script>
+	<!-- //@ 221221 트래킹코드 추가 -->
+
+</body>
+		
 
 </html>

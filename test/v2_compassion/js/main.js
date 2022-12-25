@@ -59,7 +59,8 @@
 				mouseDrag: true,
 				touchDrag: true,
 				dots: false,
-				responsiveClass:true
+				responsiveClass:true,
+				nav: true,
 			});
 		});		
 
@@ -157,17 +158,6 @@
 				scrollTop: 0
 			}, 'slow');
 		};
-
-		// PC버전일때만
-		if(!$('.event_compMovie').hasClass('mobilebody')) {
-			$(window).scroll(function() {
-				if ($(this).scrollTop() > 200) {
-					$('.fixedRight').fadeIn();
-				} else {
-					$('.fixedRight').fadeOut();
-				}
-			});
-		}
 
 		// footer
 		$('.family-site').on('click', function(){
@@ -298,4 +288,3 @@
 		youtubePlayer.cueVideoById(videoId);
 		youtubePlayer.unMute();
    }
-
