@@ -29,7 +29,7 @@ section.subContent .container {max-width: 1400px; margin: 0 auto;}
 .subPage .tit {position: relative; text-align: center; font-size: 62px; line-height: 1; color: #000; transition: font-size .3s;}
 .subPage .visual .tit, .subPage .tit.white { color: #fff;}
 .subPage .tit strong {font-family: 'Lateef', sans-serif; font-weight: 300; line-height: 0.8;}
-.subPage .tit p {font-size: 20px;}
+.subPage .tit p {font-size: 20px; font-weight: 500;}
 
 .fixedRight {position: fixed; bottom: 5%; right: 5%; z-index: 100;}
 .fixedRight .btnTop {display: block; max-width: 60px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.12); border-radius: 50%;}
