@@ -1,0 +1,71 @@
+@charset "utf-8";
+
+section.subContent {transition: padding .3s;}
+section.subContent .container {max-width: 1400px; margin: 0 auto;}
+
+.slideUp {transform: translateY(30%);}
+.on.slideUp {animation: slideInUp 1s linear both;}
+
+.slideDown {transform: translateY(-30%);}
+.on.slideDown {animation: slideInUp .8s linear both;}
+
+.slideLeft {transform: translateX(-10%);}
+.on.slideLeft {animation: slideInLeft .8s linear both;}
+
+.slideRight {transform: translateX(10%);}
+.on.slideRight {animation: slideInLeft .8s linear both;}
+
+.floatCnt:after {content:""; display: block; clear: both;}
+.floatCnt > div {float: left;}
+.floatCnt > div:nth-child(even) {float: right;}
+
+.typewriter-effect {}
+.typewriter-effect .text {opacity :0;}
+
+.visual {position: relative; height: 774px; background: url('../web/images/about_bg.jpg') center top no-repeat; transition: height .3s;}
+.visual h2 {position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);}
+
+.subPage .tit:after {content:""; position: absolute; top: 0; left: 50%; transform: translateX(-50%); transition: width .3s; display: block; width: 55px; height: 3px; background-color: #ffd857;}
+.subPage .tit {position: relative; text-align: center; font-size: 62px; line-height: 1; color: #000; transition: font-size .3s;}
+.subPage .visual .tit, .subPage .tit.white { color: #fff;}
+.subPage .tit strong {font-family: 'Lateef', sans-serif; font-weight: 300; line-height: 0.8;}
+.subPage .tit p {font-size: 20px;}
+
+.fixedRight {position: fixed; bottom: 5%; right: 5%; z-index: 100;}
+.fixedRight .btnTop {display: block; max-width: 60px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.12); border-radius: 50%;}
+
+/* 미디어쿼리 */
+@media screen and (max-width: 1600px) {
+    .inner {padding: 0 60px !important;}
+}
+
+@media screen and (max-width: 1400px) , (max-height :900px) {
+}
+
+@media screen and (max-width: 1024px), (max-height :800px) {
+    .inner {padding: 0 40px !important;}
+    .subPage .tit {font-size: 54px;}
+    .visual {height: 680px;}
+}
+
+/* 태블릿 미디어쿼리 */
+@media screen and (max-width: 768px) {
+    .visual {height: 600px;}
+    .subPage .tit:after {width: 35px;}
+    .subPage .tit {font-size: 45px;}
+    .subPage .tit p {font-size: 18px;}
+
+    .fixedRight {right: 2%;}
+    .fixedRight .btnTop {display: block; max-width: 40px;}
+}
+
+/* 모바일 미디어쿼리 */
+
+@media screen and (max-width: 480px) {
+    .inner {padding: 0 20px !important;}
+
+    .subPage .tit:after {width: 26px;}
+    .subPage .tit {font-size: 40px;}
+    .subPage .tit p {font-size: 14px;}
+}
+

@@ -1,0 +1,150 @@
+@charset "utf-8";
+
+/* */
+#portfolio .visual {background: url('../web/images/portfolio/portfolio_main.jpg') center top no-repeat;}
+
+#portfolio .all_contents {padding: 120px 0;}
+#portfolio .topCnt {text-align: center;}
+#portfolio .topCnt .tab {}
+#portfolio .topCnt .tab > li {width: 140px; padding: 6px 0; transition: all .2s; color: #999; border-radius: 24px; border: solid 2px #ccc; background-color: #fff; display: inline-block; vertical-align: middle;}
+#portfolio .topCnt .tab > li:first-child {margin-right: 15px;}
+#portfolio .topCnt .tab > li a {display: block; color: inherit; font-size: 28px; line-height: 1.3;}
+#portfolio .topCnt .tab > li:hover,
+#portfolio .topCnt .tab > li.on {border-color: #ffc65a; background-color: #000; color: #fff;}
+#portfolio .topCnt .txt {transition: all .2s; padding-top: 50px; font-size: 20px; line-height: 1.5; color: #000;}
+
+#portfolio .tabCnt > li {width: 100%; display: none;}
+#portfolio .tabCnt > li.on {display: block;}
+
+/* */
+#team .visual {background: url('../web/images/team/team_main.jpg') center top no-repeat;}
+
+#team .all_contents {padding: 120px 0;}
+#team .topCnt {text-align: center; transition: all .2s; font-size: 23px; line-height: 1.5; color: #000;}
+
+
+
+/* portfolio & team LIST */
+.boardList {padding-top: 120px;}
+.boardList .itemViewer { clear: both; width: 100%; min-height: 150px; margin-bottom: 25px; position: relative; overflow:hidden;top:0;}
+.boardList .itemViewer > div{padding: 65px; background:#f6f6f6;}
+#team .boardList .itemViewer > div {background: #fff; border-top: 2px solid #999;}
+.boardList .itemViewer .closeBtn {position: absolute; top: 30px; right: 30px; background: url("../web/images/btn_close_list.png") no-repeat center center; width: 20px; height: 20px; display: block; text-indent: -9999em; }
+.boardList .itemViewer > div dd {line-height: 1.44; font-size:18px;color:#000;}
+.boardList .itemViewer > div .title {position: relative; padding-bottom: 25px; margin-bottom: 25px;}
+.boardList .itemViewer > div .title strong {font-size: 28px; font-weight: bold;}
+.boardList .itemViewer > div .title:after {content:""; display: block; width: 25px; height: 2px; background: #ffc65a; position: absolute; bottom: 0; left: 0;}
+#team .boardList .itemViewer > div .title p {font-weight: 500; font-size: 14px; color: #999;}
+.boardList .itemViewer > div .txt {padding-top: 50px;}
+
+.boardList .itemList{overflow:hidden;}
+.boardList .itemList .itemViewer{margin-bottom:0;background:none;}
+.boardList .itemList .itemViewer > div{margin-bottom:20px;}
+
+.boardList .item { width: 23.5%; margin-right: 2%; float: left; box-sizing: border-box;padding-bottom:10px;}
+#team .boardList .item[data-size]:nth-child(3) {margin-right: 0 !important;}
+
+.boardList .item .position {}
+.boardList .item .position .thumb {position:relative;overflow:hidden; }
+.boardList .item .position .thumb span {display: block; transition: all 0.3s ease-in-out; background-size: cover; background-position: center center;}
+.boardList .item:hover .position .thumb span {transform: scale(1.1,1.1);}
+.boardList .item .position .thumb:before{content:""; display: block; position: absolute; top: 0; left: 0; right:0; bottom:0; opacity: 0; border:2px solid #fcc80d;transition:all .5s; }
+.boardList .item.here .position .thumb:before {opacity: 1;}
+#team .boardList .item .position .thumb:before {display: none;}
+.boardList .item .position .thumb span:after {content: ""; display: block; padding-bottom: 70%;}
+#team .boardList .item .position .thumb span:after {padding-bottom: 128%;}
+
+.boardList .item .position dl {padding: 15px 0;}
+.boardList .item .position dl * {transition: all .2s;}
+#team .boardList .item .position dl {margin-top: 30px; border-top: 2px solid #000;}
+#team .boardList .item.here .position dl {border-color: #ffc65a;}
+.boardList .item .position dl dt { position: relative; }
+.boardList .item .position dl dt .miniTit {font-size:18px;color:#000; font-weight:500;line-height:1;width:calc(100% - 20px);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+#team .boardList .item .position dl dt .miniTit {font-size: 26px;}
+#team .boardList .item .position dl dt p {font-weight: 500; line-height: 1.56; font-size: 17px; color: #999;}
+#team .boardList .item.here .position dl dt * {color: #ffc65a; }
+.boardList .item .position dl dt .arrow {}
+.boardList .item .position dl dt .arrow:after {
+    content: '';
+    width: 10px; /* 사이즈 */
+    height: 10px; /* 사이즈 */
+    border-top: 2px solid #121212; /* 선 두께 */
+    border-right: 2px solid #121212; /* 선 두께 */
+    display: inline-block;
+    transition: transform .2s;
+    transform: translateY(-50%) rotate(45deg); /* 각도 */
+    position: absolute;
+    top: 50%;
+    right: 10px;}
+.boardList .item.here .position dl dt .arrow:after {transform: translateY(-60%) rotate(135deg);}
+
+
+/* 미디어쿼리 */
+@media screen and (min-width:1600px){
+}
+
+@media screen and (max-width: 1300px) , (max-height :900px) {
+}
+
+@media screen and (max-width: 1024px), (max-height :800px) {
+	.boardList .itemViewer > div{padding: 50px;}
+	.boardList .itemViewer > div dd {font-size:16px;}
+
+    #portfolio .topCnt .txt,
+    #team .topCnt {font-size: 16px;}
+}
+
+@media screen and (max-width:768px){
+    #portfolio .visual {background-image: url('../web/images/portfolio/portfolio_main_mb.jpg'); background-size: cover;}
+    #team .visual {background-image: url('../web/images/team/team_main_mb.jpg'); background-size: cover;}
+
+
+    .boardList {padding-top: 90px;}
+	.boardList .itemViewer > div{padding: 50px 25px;}
+	.boardList .itemViewer .closeBtn {top: 20px; right: 20px; }
+	.boardList .itemViewer > div dd {line-height: 1.6;font-size:14px;}
+    .boardList .itemViewer > div .title strong {font-size: 24px;}
+
+    #team .boardList .item[data-size]:nth-child(3) {margin-right: 2% !important;}
+	.boardList .item .position dl {padding: 15px 0 20px;}
+	.boardList .item .position dl dt .miniTit {font-size:16px;}
+	.boardList .item .position dl dd {font-size:14px; }
+
+    #portfolio .all_contents {padding: 90px 0;}
+    #portfolio .topCnt .tab > li {width: 115px; padding: 6px 0 3px;}
+    #portfolio .topCnt .tab > li a {font-size: 23px;}
+}
+
+@media screen and (max-width:480px){
+    .boardList {padding-top: 60px;}
+    .boardList .itemViewer > div .title strong {font-size: 20px;}
+
+
+    #portfolio .all_contents {padding: 60px 0;}
+    #portfolio .topCnt .tab > li:first-child {margin-right: 2%;}
+    #portfolio .topCnt .tab > li a {font-size: 18px;}
+    
+    #portfolio .topCnt .txt,
+    #team .topCnt  {font-size: 12px;}
+}
+
+
+/* .pop_bg{display: none;position: fixed;left:0;top:0;bottom:0;right:0;width:100%;height:100%;background:rgba(0,0,0,0.8);z-index: 9992;}
+.pop_box{display: none;position: fixed;left:50%;top:80px;bottom: 40px;box-sizing:border-box;width:calc(100% - 20px);max-width:1180px;transform: translate(-50%, 0);z-index:9993;}
+.pop_area{position: relative;width: 100%;height: 95%;background: #fff;overflow-y:auto;box-sizing:border-box;border-top:1px solid #fcc80d;}
+.pop_area > .tops{padding:40px 10px;text-align:center;background:#f6f6f6;}
+.pop_area > .tops > p{font-size:25px;color:#000;font-weight:500;margin-bottom:15px;}
+.pop_area > .tops > span{display:block;font-size:15px;color:#979797;font-weight:300;}
+.pop_area > .boxs{padding:50px 100px;}
+.pop_area > .boxs > p{font-size:17px;color:#454545;font-weight:300;line-height:1.6;}
+.pop_area > .boxs > a{display:block;margin-top:50px;width:250px;height:58px;line-height:58px;border-radius:58px;border:1px solid #dfdfdf;text-align:center;font-size:17px;color:#979797;}
+.pop_area > .boxs > a > span{display:inline-block;margin-left:20px;}
+.pop_out{position: absolute;left:0;top:-35px;} */
+
+
+
+
+
+
+
+

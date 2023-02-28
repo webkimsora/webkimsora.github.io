@@ -1,0 +1,102 @@
+@charset "utf-8";
+
+#news .visual {background: url('../web/images/news_main.jpg') center top no-repeat;}
+
+#news .newsWrap * {transition: font-size .2s;}
+
+#news h3 {padding: 85px 0; text-align: center;font-size: 18px; line-height: 1.44; color: #000;}
+#news h3 strong {font-size: 23px; font-weight: bold; padding-bottom: 20px; display: block;}
+
+#news .newsWrap {padding-bottom: 150px;}
+#news .newsWrap .list > li { border-bottom: 2px solid #dbdbdb;}
+#news .newsWrap .list > li:first-child {border-top: 2px solid #000;}
+#news .newsWrap .list > li > a {display: block; padding: 50px 20px; font-size: 16px; line-height: 1.63;  color: #000; transition: color .2s;}
+#news .newsWrap .list > li:hover > a {color: #ffd857;}
+#news .newsWrap .list .date {width: 15%; font-weight: bold; font-size: 20px;}
+#news .newsWrap .list .date b {display: block; font-size: 32px; line-height: 1.2;}
+#news .newsWrap .list .detail {width: 80%;}
+#news .newsWrap .list .detail p {font-size: 23px; padding-bottom: 22px;}
+#news .newsWrap .list .detail div {text-overflow: ellipsis; overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2;}
+#news .newsWrap .list .icon {font-size: 26px; font-weight: 900; line-height: 1;}
+
+/* 뉴스팝업 */
+.newsPop {position: fixed; left:0; top:0; bottom:0; width: 100%; height: 100%; z-index:200; text-align: center; display: none; overflow-y:auto;}
+.newsPop .bg { position: fixed; left:0; top:0; width: 100%; height: 100%; z-index: 1; background: #000; opacity: 0;}
+.newsPop.active .bg {transition: opacity 1s .5s; opacity: 0.6; -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=60)'; filter: alpha(opacity=60);}
+.newsPop .popIn {position:relative; margin: 0 auto; left:0; top:50%; max-width: 1400px;  width: 100%; box-sizing:border-box;  z-index:2; text-align: center;  animation-name: anim-scale; animation-duration: .3s; animation-direction: alternate; animation-timing-function: cubic-bezier(0.18, 0.89, 0.32, 1.28); }
+.newsPop .popIn .btn_close {position:absolute; right:20px; top:20px; z-index: 40; display: inline-block; width: 40px; height: 40px; opacity: 0.8;}
+.newsPop .popIn .btn_close:before, .newsPop .popIn .btn_close:after {position: absolute; left: 15px; content: ' '; height: 40px; width: 2px; background-color: #000;}
+.newsPop .popIn .btn_close:before {transform: rotate(45deg);}
+.newsPop .popIn .btn_close:after {transform: rotate(-45deg);}
+
+.newsPop .miniPop {background: #fff; width: 100%; padding: 80px 110px; text-align: center;}
+.newsPop .miniPop .title {font-size: 23px; line-height: 1.57; letter-spacing: -0.46px;color: #000;}
+.newsPop .miniPop .title strong {font-size: 18px; color: #ffc65a;}
+.newsPop .miniPop .title p {font-size: 13px; color: #bababa;}
+.newsPop .miniPop .detail {margin: 60px 0;  max-height: 370px; overflow-y: auto; font-size: 16px; line-height: 1.63; color: #000; text-align: left;}
+.newsPop .miniPop .btn_go {display: inline-block; transition: all .2s; padding: 18px 18px 25px; font-size: 16px; line-height: 1.63; letter-spacing: -0.16px; border: solid 1px #ccc; color: #999;}
+.newsPop .miniPop .btn_go span {display: inline-block; vertical-align: middle; line-height: 1;}
+.newsPop .miniPop .btn_go span.arrow {padding-left: 10px; }
+.newsPop .miniPop .btn_go span.arrow img {vertical-align: middle;}
+.newsPop .miniPop .btn_go:hover {border-color: #000; color: #000;}
+
+
+/* 미디어쿼리 */
+@media screen and (max-width: 1600px) {
+    .newsPop .popIn {max-width: 1200px;}
+}
+
+@media screen and (max-width: 1300px) , (max-height :900px) {
+    .newsPop .popIn {max-width: 90%;}
+}
+
+@media screen and (max-width: 1024px), (max-height :800px) {
+    #news h3 {font-size: 16px; padding: 65px 0;}
+    #news h3 strong {font-size: 20px;}
+    #news .newsWrap .list > li > a {padding: 35px 20px;}
+    #news .newsWrap .list .date b {font-size: 26px;}
+    #news .newsWrap .list .detail p {font-size: 20px; padding-bottom: 14px;}
+
+    .newsPop .miniPop {padding: 65px 60px;}
+    .newsPop .miniPop .title {font-size: 21px;}
+    .newsPop .miniPop .title strong {font-size: 15px;}
+}
+
+/* 태블릿 미디어쿼리 */
+@media screen and (max-width: 768px) {
+    #news .visual {background-image: url('../web/images/news_main_mb.jpg'); background-size: cover;}
+
+    #news h3 strong {font-size: 18px;}
+    #news .newsWrap .list > li > a {padding: 25px 10px; font-size: 14px;}
+    #news .newsWrap .list .date {font-size: 14px;}
+    #news .newsWrap .list .date b {font-size: 22px;}
+    #news .newsWrap .list .detail {float: right;}
+    #news .newsWrap .list .detail p {font-size: 17px;  padding-bottom: 8px;}
+    #news .newsWrap .list .icon {display: none;}
+
+    .newsPop .miniPop {padding: 55px 32px;}
+    .newsPop .miniPop .title {font-size: 18px;}
+    .newsPop .miniPop .title strong {font-size: 13px;}
+    .newsPop .miniPop .detail {margin: 35px 0; font-size: 14px;}
+    .newsPop .miniPop .btn_go {padding: 10px 18px 15px; font-size: 13px;}
+
+    .newsPop .popIn .btn_close {width: 25px;}
+    .newsPop .popIn .btn_close:before, .newsPop .popIn .btn_close:after {height: 25px;}
+}
+
+/* 모바일 미디어쿼리 */
+
+@media screen and (max-width: 480px) {
+    #news h3 {font-size: 12px; padding: 50px 0; }
+    #news h3 strong {font-size: 14px;}
+    #news .newsWrap .list > li > a {padding: 10px; font-size: 12px;}
+    #news .newsWrap .list .date { font-size: 12px;}
+    #news .newsWrap .list .date b {font-size: 14px;}
+    #news .newsWrap .list .detail p {font-size: 14px; line-height: 1;}
+
+    .newsPop .miniPop .detail {font-size: 12px;}
+
+    .newsPop .popIn .btn_close {width: 18px;}
+    .newsPop .popIn .btn_close:before, .newsPop .popIn .btn_close:after {height: 18px;}
+
+}

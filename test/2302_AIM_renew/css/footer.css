@@ -1,0 +1,26 @@
+@charset "utf-8";
+
+.footer {padding: 250px 0 100px; font-family: 'Lateef',sans-serif; font-size: 23px; line-height: 1.54; text-align: center; color: #000; transition: font-size .3s;}
+.footerNavi {display: inline-block; text-align: center;}
+.footerNavi ul:after {content:""; display: block; clear: both;}
+.footerNavi ul:last-child {padding-top: 10px; display: inline-block; text-align: center;}
+.footerNavi li {padding: 0 20px; float: left; line-height: 1; position: relative;}
+.footerNavi li:after {content: ""; display: block; vertical-align: middle; height: 90%; width: 1px; background: #000; position: absolute; left: 0; top: 1px;}
+.footerNavi li:first-child:after {display: none;}
+
+/* 태블릿 미디어쿼리 */
+@media screen and (max-width: 1024px) {
+    .footer {font-size: 22px;}
+}
+
+/* 태블릿 미디어쿼리 */
+@media screen and (max-width: 768px) {
+    .footer {font-size: 18px;}
+}
+
+/* 모바일 미디어쿼리 */
+
+@media screen and (max-width: 480px) {
+    .footer {font-size: 14px;}
+    .footerNavi ul:last-child {padding-top: 5px;}
+}

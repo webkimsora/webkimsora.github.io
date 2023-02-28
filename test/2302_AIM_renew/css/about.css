@@ -1,0 +1,200 @@
+@charset "utf-8";
+
+#about .visual {background: url('../web/images/about/aboutus_main.jpg') center top no-repeat;}
+
+#about .rightNavi {position: fixed; top: 50%; right: 2%; transform: translateY(-50%); display: none; z-index: 100;}
+#about .rightNavi * {transition: all .2s;}
+#about .rightNavi li {position: relative; line-height: 1; text-align: right; cursor:pointer; }
+#about .rightNavi li:not(:first-child) {margin-top: 22px;}
+#about .rightNavi li a {display: block; color: #ffc65a; font-size: 12px; font-weight: bold; vertical-align: top;}
+#about .rightNavi li a span {opacity: 0;  padding-right: 22px;}
+#about .rightNavi li a:after {content:""; box-sizing: border-box; position: absolute; top: 0; right: 0; display: block; width: 13px; height: 13px; border: 3px solid #ccc; border-radius: 50%;}
+
+#about .rightNavi li.on a span,
+#about .rightNavi li:hover a span {opacity:1;}
+#about .rightNavi li.on a:after,
+#about .rightNavi li:hover a:after {border-color: #ffc65a;}
+
+/* profile */
+#about .profileWrap {text-align: center; padding: 200px 0 100px;}
+#about .profileWrap .explain {padding: 60px 0 95px; font-size: 23px;  line-height: 1.57; transition: font-size .3s;}
+#about .profileWrap .list > li {width: 23.5%; border: 1px solid #ccc; position: relative;}
+#about .profileWrap .list > li:after {content:""; display: block; padding-bottom: 100%;}
+#about .profileWrap .list > li:not(:first-child) {margin-left: 2%;}
+#about .profileWrap .list > li .detail {position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); }
+#about .profileWrap .list > li .detail p {}
+#about .profileWrap .list > li .detail strong {font-size: 40px;}
+#about .profileWrap .list > li .detail .txt {padding-top: 15px; margin-top: 15px; font-size: 18px; font-weight: bold; line-height: 1.61; color: #ffc65a; position: relative;}
+#about .profileWrap .list > li .detail .txt:after {content:""; position: absolute; top: 0; left: 50%; transform: translateX(-50%); transition: width .3s; display: block; width: 55px; height: 3px; background-color: #ffd857;}
+
+/* vision */
+#about .visionWrap {text-align: center; padding: 100px 0 200px;}
+#about .visionWrap .listAll {position: relative; margin-top: 50px;}
+#about .visionWrap .listAll:after {content:""; display: block; position: absolute; top: calc(50% + 10px); left: 50%; transform: translate(-50%, -50%); width: 211px; height: 211px; background: url('../web/images/about/vision_img.svg') top center no-repeat;}
+#about .visionWrap .list > li {width: calc(50% - 10px); margin-top: 20px; max-width: 690px; padding: 55px 10px; position: relative; background-size: cover !important; font-size: 16px; line-height: 1.63; letter-spacing: 0.16px; color: #fff;}
+#about .visionWrap .list > li:nth-child(even) {margin-left: 20px;}
+#about .visionWrap .list > li:nth-child(1) {background: url('../web/images/about/vision01.jpg') #000 center top no-repeat;}
+#about .visionWrap .list > li:nth-child(2) {background: url('../web/images/about/vision02.jpg') #000 center top no-repeat;}
+#about .visionWrap .list > li:nth-child(3) {background: url('../web/images/about/vision03.jpg') #000 center top no-repeat;}
+#about .visionWrap .list > li:nth-child(4) {background: url('../web/images/about/vision04.jpg') #000 center top no-repeat;}
+#about .visionWrap .list > li strong {font-size: 38px; letter-spacing: -0.76px;}
+
+/* history */
+#about .historyWrap {padding: 200px 0; background: #3c3c3b; color: #fff !important;}
+#about .historyWrap h3 {padding-bottom: 140px; margin-bottom: 150px; border-bottom: 6px solid #fff;}
+#about .historyWrap .listTxt {max-width: 585px; margin-top: 60px;}
+#about .historyWrap .listTxt:first-child {margin-top: 0;}
+#about .historyWrap .listTxt:nth-child(even) {margin-left: auto;}
+#about .historyWrap .listTxt h4 {padding-bottom: 45px; font-size: 55px; font-weight: bold; line-height: 1; letter-spacing: -0.93px; border-bottom: 3px solid #ffd857; transition: all .3s; color: #ffd857;}
+#about .historyWrap .listTxt li {padding-left: 5px; font-size: 16px; line-height: 3.17;border-bottom: 1px solid #fff; transition: all .3s;}
+
+/* business */
+#about .businessWrap {padding: 200px 0; }
+#about .businessWrap h4 {position: relative; margin-top: 70px; text-align: center; font-size: 45px; line-height: 1; color: #000; transition: font-size .3s;}
+#about .businessWrap h4:after {content:""; position: absolute; top: 0; left: 50%; transform: translateX(-50%); transition: width .3s; display: block; width: 55px; height: 3px; background-color: #ffd857;}
+#about .businessWrap .floatDouble > div {width: 42%;}
+#about .businessWrap dl {padding-top: 40px;}
+#about .businessWrap dt {border-bottom: 2px solid #ccc;   font-size: 31px;}
+#about .businessWrap dd {padding-top: 16px; width: 85%; font-size: 16px; font-weight: 500; line-height: 1.63;}
+
+
+/* 문의하러가기 */
+#about .mapWrap {text-align: center; position: relative; margin-top: 78px;}
+#about .mapWrap .map {}
+
+#about .mapWrap .icon-marker{height:200px;width:200px;position:absolute;top:50%;left:50%;text-align:center;border-radius:100px;z-index:1;transform:translate(-50%, -50%);opacity:0.5;transition:.3s}
+#about .mapWrap .icon-marker .bg-point{background-color:rgba(255,216,87,0.5) !important;background-image:linear-gradient(90deg, rgba(255,216,87,0.5), rgba(255,216,87,0.15))}
+#about .mapWrap .icon-marker::before{content:"";position:absolute;top:50%;left:50%;width:15%;height:15%;background-color:#ffd857;border-radius:50%;transform:translate(-50%, -50%)}
+#about .mapWrap .icon-marker .ripple{position:absolute;width:40%;height:40%;z-index:-1;left:50%;top:50%;opacity:0;margin:-20% 0 0 -20%;border-radius:50%;-webkit-animation:rippleAnimation 1.8s infinite;animation:rippleAnimation 1.8s infinite}
+#about .mapWrap .icon-marker .ripple:nth-child(2){animation-delay:0.3s;-webkit-animation-delay:0.3s}
+#about .mapWrap .icon-marker .ripple:nth-child(3){animation-delay:0.6s;-webkit-animation-delay:0.6s}
+
+@-webkit-keyframes rippleAnimation {
+  from {opacity: 1;-webkit-transform: scale(0);transform: scale(0);}
+  to {opacity: 0;-webkit-transform: scale(1);transform: scale(1);}
+}
+@-moz-keyframes rippleAnimation {
+  from {opacity: 1;-moz-transform: scale(0);transform: scale(0);}
+  to {opacity: 0;-moz-transform: scale(1);transform: scale(1);}
+}
+@-o-keyframes rippleAnimation {
+  from {opacity: 1;-o-transform: scale(0);transform: scale(0);}
+  to {opacity: 0;-o-transform: scale(1);transform: scale(1);}
+}
+@keyframes rippleAnimation {
+  from {opacity: 1;-webkit-transform: scale(0);transform: scale(0);}
+  to {opacity: 0;-webkit-transform: scale(1);transform: scale(1);}
+}
+
+#about .contactWrap .top {margin-top: 100px; font-size: 78px; line-height: 1; font-weight: 300;}
+#about .contactWrap .top small {font-size: 26px; display: block;}
+#about .contactWrap .bottom {padding-top: 60px; font-size: 20px;}
+#about .contactWrap .bottom:after {content:""; display: block; clear: both; }
+#about .contactWrap .bottom li {width: 50%; float: left; line-height: 1.6;}
+#about .contactWrap .bottom b {font-size: 30px; padding-bottom: 70px; display: block;}
+#about .contactWrap .bottom a {font-size: 20px; font-weight: 500; display: inline-block; }
+#about .contactWrap .bottom a span {display: inline; vertical-align: middle; position: relative;}
+#about .contactWrap .bottom a span:first-child:after {content:""; display: block; width: 100%; height: 3px; background: #000; position: absolute; bottom: 0; left: 0;}
+
+#about .contactWrap .bottom a span img {margin-left: 3px;  vertical-align: middle;}
+/* 미디어쿼리 */
+@media screen and (max-width: 1600px) {
+}
+
+@media screen and (max-width: 1400px) , (max-height :900px) {
+  #about .profileWrap .list li img {width: 80%;}
+  #about .profileWrap .list > li .detail strong {font-size: 32px;}
+
+  #about .contactWrap .top {font-size: 65px;}
+  #about .visionWrap .listAll:after {width: 160px; height: 160px; background-size: 100%;}
+  #about .businessWrap .floatDouble > div {width: 45%;}
+  #about .visionWrap .list > li {font-size: 14px;}
+  
+}
+
+@media screen and (max-width: 1024px), (max-height :800px) {
+    #about .rightNavi {display: none !important;}
+  
+    #about .profileWrap {padding: 100px 0 ;}
+    #about .profileWrap .explain {font-size: 18px; padding: 50px 0;}
+    #about .profileWrap .list > li .detail strong {font-size: 24px;}
+    #about .profileWrap .list > li .detail .txt {font-size: 13px;}
+
+    #about .visionWrap .list > li {min-height: 232px;}
+    #about .visionWrap .list > li strong {font-size: 32px;}
+
+    #about .historyWrap {padding: 100px 0 200px;}
+    #about .historyWrap h3 {padding-bottom: 85px; margin-bottom: 100px; }
+    #about .historyWrap .listTxt h3 {font-size: 42px;}
+    #about .historyWrap .listTxt li {font-size: 14px;}
+
+    #about .businessWrap h4 {font-size: 37px;}
+
+    #about .contactWrap .bottom li {width: auto;}
+    #about .contactWrap .bottom li:last-child {float: right;}
+
+}
+
+/* 태블릿 미디어쿼리 */
+@media screen and (max-width: 768px) {
+    #about .visual {background-image: url('../web/images/about/about_main_mb.jpg'); background-size: cover;}
+    #about .profileWrap .explain {font-size: 15px; padding-bottom: 30px;}
+
+    #about .profileWrap .list > li {width: 48%; margin-top: 4%;}
+    #about .profileWrap .list > li:nth-child(even) {float: right;}
+    #about .profileWrap .list > li:nth-child(3) {margin-left: 0;}
+    #about .profileWrap .list > li .detail strong {font-size: 28px;}
+    #about .profileWrap .list > li .detail .txt {font-size: 16px;}
+
+    #about .visionWrap {padding: 100px 0 150px;}
+    #about .visionWrap .listAll:after {display: none;}
+    #about .visionWrap .list > li {width: 100%; margin-left: 0 !important; padding: 30px 10px; min-height: auto;}
+
+    #about .historyWrap {padding: 150px 0;}
+    #about .historyWrap h3 { padding-bottom: 50px; margin-bottom: 50px; border: none;}
+    #about .historyWrap .listTxt {max-width: 100%;}
+    #about .historyWrap .listTxt h4 {font-size: 32px;}
+
+    #about .businessWrap {padding: 160px 0;}
+    #about .businessWrap .floatDouble > div {float: none; width: 100%;}
+    #about .businessWrap dl {padding-top: 25px;}
+    #about .businessWrap dd {width: 98%; font-size: 15px;}
+
+    #about .contactWrap .top {font-size: 40px;}
+    #about .contactWrap .top small {font-size: 2.2vw;}
+    #about .contactWrap .bottom li {float: none !important; }
+    #about .contactWrap .bottom li:last-child {padding-top: 80px;}
+
+    #about .contactWrap .bottom {font-size: 15px; padding-top: 60px;}
+    #about .contactWrap .bottom b {font-size: 23px; padding-bottom: 20px;}
+    #about .contactWrap .bottom strong {font-size: 30px; padding-bottom: 20px;}
+    #about .contactWrap .bottom a {font-size: 15px;}
+    #about .contactWrap .bottom a span:first-child:after {height: 2px; bottom: -2px;}
+}
+
+/* 모바일 미디어쿼리 */
+
+@media screen and (max-width: 480px) {
+    #about .profileWrap {padding:100px 0 50px;}
+    #about .profileWrap .explain {font-size: 13px; padding: 40px 0 15px;}
+    #about .profileWrap .list li img {width: 55%;}
+    #about .profileWrap .list > li .detail .txt {font-size: 12px;}
+
+    #about .visionWrap .list > li {font-size: 12px;}
+    #about .visionWrap .list > li strong {font-size: 26px;}
+
+    #about .historyWrap .listTxt {padding: 0 10px;}
+    #about .historyWrap .listTxt h4 {font-size: 26px;}
+    #about .historyWrap .listTxt li {font-size: 12px;}
+
+    #about .businessWrap {padding: 130px 0;}
+    #about .businessWrap h4 {font-size: 32px;}
+    #about .businessWrap dt {font-size: 26px;}
+    #about .businessWrap dd {font-size: 12px;}
+
+    #about .contactWrap .top {font-size: 28px;}
+    #about .contactWrap .top small {font-size: 12px;}
+    #about .contactWrap .bottom {font-size: 13px;}
+    #about .contactWrap .bottom a {font-size: 16px;}
+
+}
