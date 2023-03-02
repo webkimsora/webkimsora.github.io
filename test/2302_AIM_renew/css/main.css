@@ -13,7 +13,7 @@ body.onePage .contents {
 }
 
 .main {position: relative; overflow: hidden;}
-.main .tit {position: absolute; top: 50%; left: 10%; transform: translateY(-50%);  color: #fff; z-index: 10;}
+.main .tit {position: absolute; top: 50%; left: 10%; transform: translateY(-50%);  color: #fff; z-index: 10; webkit-text-size-adjust: none; -webkit-text-fill-color: #fff;}
 .main .tit h2 {color: #fff;min-width: 1000px; font-size: 42px;line-height: 1.31; font-weight: bold; transform: translateY(50px); padding-bottom: 20px; transition: all .3s;}
 .main .tit p {color: #fff; font-size: 18px;line-height: 1.31; transform: translateY(50px); padding-bottom: 20px; transition: all .3s;}
 .main .tit .btn_about {text-decoration: underline; font-size: 26px;line-height: 1.31; transform: translateY(50px); transition: all .6s; font-family: 'Lateef Regular', sans-serif; color: #ffc65a;}
@@ -25,7 +25,7 @@ body.loaded .main .tit .btn_about {animation: slideInUp .6s .6s linear both;}
 .main .fixedBottom {position: fixed; bottom: 5%; left: 51px; text-align: center;  line-height: 1.08; z-index: 100; letter-spacing: 1px; font-size: 14px; color: #ccc; opacity: 0.7; font-family: 'Lateef Regular', sans-serif;}
 
 /* main bg */
-.mainBgWrap {position: absolute; width: 100%; height: 100%; top: 0; left: 0; z-index: -1;  transform: scale(1.2, 1.2) translateZ(1px); transition: transform 1s;  background: url('../web/images/main_bg.jpg') top center no-repeat; background-size: cover; transition: all 1s;}
+.mainBgWrap {position: absolute; width: 100%; height: 100%; top: 0; left: 0;  transform: scale(1.2, 1.2) translateZ(1px); transition: transform 1s;  background: url('../web/images/main_bg.jpg') top center no-repeat; background-size: cover; transition: all 1s;}
 body.loaded .mainBgWrap {transform: scale(1, 1) translateZ(1px);}
 
 .mainBg {position: absolute; bottom: -20%; left: 30%; display: inline-block; transition: all .3s;
