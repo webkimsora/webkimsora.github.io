@@ -32,7 +32,7 @@
 
 @media screen and (max-width: 1024px), (max-height :800px) {
     #investment .areaWrap .list .bottom p {font-size: 17px;}
-    #investment .areaWrap .list .bottom {min-height: 380px; padding: 35px 20px 0;}
+    #investment .areaWrap .list .bottom {/*min-height: 380px;*/ padding: 35px 20px 0;}
     #investment .areaWrap .list .bottom ul > li {font-size: 14px;}
 }
 

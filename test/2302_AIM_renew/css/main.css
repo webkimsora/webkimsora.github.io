@@ -13,9 +13,9 @@ body.onePage .contents {
 }
 
 .main {position: relative; overflow: hidden;}
-.main .title {position: absolute; top: 50%; left: 10%; transform: translateY(-50%);  color: #fff;}
-.main .title h2 {min-width: 1000px; font-size: 42px;line-height: 1.31; font-weight: bold; transform: translateY(50px); padding-bottom: 20px; transition: all .3s;}
-.main .title p {font-size: 18px;line-height: 1.31; transform: translateY(50px); padding-bottom: 20px; transition: all .3s;}
+.main .title {position: absolute; top: 50%; left: 10%; transform: translateY(-50%);  color: #fff; z-index: 10;}
+.main .title h2 {color: #fff;min-width: 1000px; font-size: 42px;line-height: 1.31; font-weight: bold; transform: translateY(50px); padding-bottom: 20px; transition: all .3s;}
+.main .title p {color: #fff; font-size: 18px;line-height: 1.31; transform: translateY(50px); padding-bottom: 20px; transition: all .3s;}
 .main .title .btn_about {text-decoration: underline; font-size: 26px;line-height: 1.31; transform: translateY(50px); transition: all .6s; font-family: 'Lateef Regular', sans-serif; color: #ffc65a;}
 .main .title .btn_about:hover {letter-spacing: 5px;}
 body.loaded .main .title h2 {animation: slideInUp .6s linear both;}

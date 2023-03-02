@@ -111,7 +111,7 @@
 	.boardList .item .position dl dd {font-size:14px; }
 
     #portfolio .all_contents {padding: 90px 0;}
-    #portfolio .topCnt .tab > li {width: 115px; padding: 6px 0 3px;}
+    #portfolio .topCnt .tab > li {width: 115px; padding: 6px 0 5px;}
     #portfolio .topCnt .tab > li a {font-size: 23px;}
 
     #team .boardList .item .position dl dt p {font-size: 14px;}
