@@ -13,14 +13,14 @@ body.onePage .contents {
 }
 
 .main {position: relative; overflow: hidden;}
-.main .title {position: absolute; top: 50%; left: 10%; transform: translateY(-50%);  color: #fff; z-index: 10;}
-.main .title h2 {color: #fff;min-width: 1000px; font-size: 42px;line-height: 1.31; font-weight: bold; transform: translateY(50px); padding-bottom: 20px; transition: all .3s;}
-.main .title p {color: #fff; font-size: 18px;line-height: 1.31; transform: translateY(50px); padding-bottom: 20px; transition: all .3s;}
-.main .title .btn_about {text-decoration: underline; font-size: 26px;line-height: 1.31; transform: translateY(50px); transition: all .6s; font-family: 'Lateef Regular', sans-serif; color: #ffc65a;}
-.main .title .btn_about:hover {letter-spacing: 5px;}
-body.loaded .main .title h2 {animation: slideInUp .6s linear both;}
-body.loaded .main .title p {animation: slideInUp .6s .3s linear both;}
-body.loaded .main .title .btn_about {animation: slideInUp .6s .6s linear both;}
+.main .tit {position: absolute; top: 50%; left: 10%; transform: translateY(-50%);  color: #fff; z-index: 10;}
+.main .tit h2 {color: #fff;min-width: 1000px; font-size: 42px;line-height: 1.31; font-weight: bold; transform: translateY(50px); padding-bottom: 20px; transition: all .3s;}
+.main .tit p {color: #fff; font-size: 18px;line-height: 1.31; transform: translateY(50px); padding-bottom: 20px; transition: all .3s;}
+.main .tit .btn_about {text-decoration: underline; font-size: 26px;line-height: 1.31; transform: translateY(50px); transition: all .6s; font-family: 'Lateef Regular', sans-serif; color: #ffc65a;}
+.main .tit .btn_about:hover {letter-spacing: 5px;}
+body.loaded .main .tit h2 {animation: slideInUp .6s linear both;}
+body.loaded .main .tit p {animation: slideInUp .6s .3s linear both;}
+body.loaded .main .tit .btn_about {animation: slideInUp .6s .6s linear both;}
 /* TOP 버튼 */
 .main .fixedBottom {position: fixed; bottom: 5%; left: 51px; text-align: center;  line-height: 1.08; z-index: 100; letter-spacing: 1px; font-size: 14px; color: #ccc; opacity: 0.7; font-family: 'Lateef Regular', sans-serif;}
 
@@ -34,6 +34,7 @@ body.on.ie11 .mainBg {animation: mainBg_ie 4s cubic-bezier(.77,.37,.56,.8);}
 
 
 @keyframes slideInUp {
+    0% {opacity: 0;}
     100%{transform: translateY(0);opacity: 1;}
 }
 
@@ -64,7 +65,7 @@ body.on.ie11 .mainBg {animation: mainBg_ie 4s cubic-bezier(.77,.37,.56,.8);}
 
 /* 랩탑 미디어쿼리 */
 @media screen and (min-width: 1600px) {
-    /* .main .title { max-width: 1920px; margin: 0 auto; position: relative;} */
+    /* .main .tit { max-width: 1920px; margin: 0 auto; position: relative;} */
 }
 
 @media screen and (max-width: 1300px) , (max-height :900px) {
@@ -82,7 +83,7 @@ body.on.ie11 .mainBg {animation: mainBg_ie 4s cubic-bezier(.77,.37,.56,.8);}
 
 @media screen and (max-width: 1024px) {
     .mainBgWrap {background-image: url('../web/images/main_mb.jpg');}
-    .main .title h2 {font-size:36px;}
+    .main .tit h2 {font-size:36px; min-width: auto;}
 }
 
 @media screen and (max-height :800px) {
@@ -92,9 +93,9 @@ body.on.ie11 .mainBg {animation: mainBg_ie 4s cubic-bezier(.77,.37,.56,.8);}
 @media screen and (max-width: 768px) {
     body .mVisible {display: block;}
     body .mNone {display: none;}
-    .main .title h2 {font-size: 32px;}
-    .main .title p {font-size: 16px;}
-    .main .title .btn_about {font-size: 22px;}
+    .main .tit h2 {font-size: 32px;}
+    .main .tit p {font-size: 16px;}
+    .main .tit .btn_about {font-size: 22px;}
 
     .main .fixedBottom {bottom: 30px; left: 50%; transform: translateX(-50%);}
 }
@@ -102,7 +103,7 @@ body.on.ie11 .mainBg {animation: mainBg_ie 4s cubic-bezier(.77,.37,.56,.8);}
 /* 모바일 미디어쿼리 */
 
 @media screen and (max-width: 480px) {
-    .main .title h2 {font-size: 25px;}
-    .main .title p {font-size: 13px;}
+    .main .tit h2 {font-size: 25px;}
+    .main .tit p {font-size: 13px;}
 
 }
