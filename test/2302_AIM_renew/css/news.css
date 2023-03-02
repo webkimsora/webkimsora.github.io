@@ -66,8 +66,9 @@
 /* 태블릿 미디어쿼리 */
 @media screen and (max-width: 768px) {
     #news .visual {background-image: url('../web/images/news_main_mb.jpg'); }
-
+#news .newsWrap
     #news h3 strong {font-size: 18px;}
+    #news .newsWrap {padding-bottom: 50px;}
     #news .newsWrap .list > li > a {padding: 20px 10px; font-size: 14px;}
     #news .newsWrap .list .date {font-size: 14px;}
     #news .newsWrap .list .date b {font-size: 22px;}
@@ -90,7 +91,7 @@
 @media screen and (max-width: 480px) {
     #news h3 {font-size: 12px; padding: 50px 0; }
     #news h3 strong {font-size: 14px;}
-    #news .newsWrap .list > li > a {padding: 10px; font-size: 12px;}
+    #news .newsWrap .list > li > a {font-size: 12px;}
     #news .newsWrap .list .date { font-size: 12px;}
     #news .newsWrap .list .date b {font-size: 14px;}
     #news .newsWrap .list .detail p {font-size: 14px; line-height: 1;}
