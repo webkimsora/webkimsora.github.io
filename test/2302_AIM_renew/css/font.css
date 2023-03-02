@@ -35,3 +35,10 @@
     url('../font/SpoqaHanSansThin.woff') format('woff'),
     url('../font/SpoqaHanSansThin.ttf') format('truetype');
 }
+
+@font-face {
+    font-family: 'Lateef Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Lateef Regular'), url('../font/LateefRegOT.woff') format('woff');
+    }

@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 /* header */
-.header {width: 100%;padding: 25px 51px 19px;position: fixed;top: 0;transition: all ease-in-out 1.5s;z-index: 100;}
+.header {width: 100%;padding: 25px 25px 19px;position: fixed;top: 0;transition: all ease-in-out 1.5s;z-index: 100;}
 .header:after {content:""; display: block; clear: both;}
 body.subPage .header {transition: top ease-in-out .8s, padding ease-in-out .3s;}
 .header .inner {max-width: 1800px; margin: 0 auto; padding: 0 !important;}
@@ -134,7 +134,7 @@ body.mobilebody .hamburger.surface.is-active:hover .line:nth-child(3){
 .user-close {width: 100px; height: 50px; position: absolute; right: 30px; top: 7px; z-index: 999; display: none;}
 #viewport.gnbOn .user-close {display: block;}
 
-.gnb { width: 513px; font-family: 'Lateef', sans-serif; height: 100%; overflow-y: auto; overflow-x: hidden; -webkit-overflow-scrolling: touch; transform: translate3d(100%, 0, 0); -webkit-transform: translate3d(100%, 0, 0); -o-transform: translate3d(100%, 0, 0); transition-property: all; transition-duration: .5s; background: rgba(20,20,20,0.9); position: fixed; top: 0; right: 0; }
+.gnb { width: 513px; font-family: 'Lateef Regular', sans-serif; height: 100%; overflow-y: auto; overflow-x: hidden; -webkit-overflow-scrolling: touch; transform: translate3d(100%, 0, 0); -webkit-transform: translate3d(100%, 0, 0); -o-transform: translate3d(100%, 0, 0); transition-property: all; transition-duration: .5s; background: rgba(20,20,20,0.9); position: fixed; top: 0; right: 0; }
 .gnb h1 {float: none; position: absolute; top: 61px; left: 52px;}
 .gnb .inner { height: 100%;}
 .gnb .gnbMenu {padding-left: 90px; padding-top: 40%;  transition: all .3s;}

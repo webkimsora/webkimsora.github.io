@@ -1,6 +1,6 @@
 @charset "utf-8";
 
-.footer {padding: 250px 0 100px; font-family: 'Lateef',sans-serif; font-size: 23px; line-height: 1.54; text-align: center; color: #000; transition: font-size .3s;}
+.footer {padding: 250px 0 100px; font-family: 'Lateef Regular',sans-serif; font-size: 23px; line-height: 1.54; text-align: center; color: #000; transition: font-size .3s;}
 .footerNavi {display: inline-block; text-align: center;}
 .footerNavi ul:after {content:""; display: block; clear: both;}
 .footerNavi ul:last-child {padding-top: 10px; display: inline-block; text-align: center;}
