@@ -33,19 +33,16 @@ html,body, input, textarea, select {
 }
 
 @media all and (max-width: 750px) { html { font-size: 20px; } }
-
 @media all and (max-width: 600px) { html { font-size: 16px; } }
-
 @media all and (max-width: 480px) { html { font-size: 13px; } }
-
-@media all and (max-width: 360px) { html { font-size: 12px; } }
-
+@media all and (max-width: 400px) { html { font-size: 12px; } }
+@media all and (max-width: 360px) { html { font-size: 11px; } }
 @media all and (max-width: 320px) { html { font-size: 10px; } }
 
 body {background: #988575; color: #fff;}
 .grained_dday {background: #988575; color: #fff;}
-.grained_dday .inner {max-width: 750px; margin: 0 auto; padding: 55px 35px;}
-.grained_dday .top {display: flex; align-items: center; padding-bottom: 43px;}
+.grained_dday .inner {max-width: 750px; margin: 0 auto; padding: 55px 4%;}
+.grained_dday .top {display: flex; align-items: center; padding-bottom: 2.5rem;}
 .grained_dday .top p {font-size: 1rem;}
 .grained_dday .top .logo {margin-left: auto; width: 15.7vw; max-width: 135px;}
 .grained_dday .dday_box {padding: 4rem 7.5% 5.5rem; background: #000; font-size: 3.2rem; box-shadow: 10px 15px 14px 0px rgba(0, 0, 0, 0.3);}
@@ -57,26 +54,27 @@ body {background: #988575; color: #fff;}
 .grained_dday .dday_box #timer span:nth-child(5):after {content:"MINUTES";}
 .grained_dday .dday_box #timer span:nth-child(7):after {content:"SECONDS";}
 
-.grained_dday .count_box {font-size: 1.2rem; font-weight: 900; text-align: right;}
-.grained_dday .count_box p {font-size: 250px; text-shadow: 8px 8px 15px rgba(0,0,0,0.3); letter-spacing: -0.3px;}
-.grained_dday .birth_box {padding-top: 4rem; font-size: 1.2rem; font-weight: 900;}
-.grained_dday .birth_box span {font-size: 125px; text-shadow: 8px 8px 15px rgba(0,0,0,0.3); letter-spacing: -0.3px;}
+.grained_dday .count_box {margin-top: 3rem; font-size: 1.1rem; font-weight: 900; text-align: right;}
+.grained_dday .count_box p {font-size: 225px; text-shadow: 8px 8px 15px rgba(0,0,0,0.3); letter-spacing: -0.3px;}
+.grained_dday .birth_box {padding-top: 4rem; font-size: 1.1rem; font-weight: 900;}
+.grained_dday .birth_box span {font-size: 100px; text-shadow: 8px 8px 15px rgba(0,0,0,0.3); letter-spacing: -0.3px;}
 
 @media all and (max-width: 750px) {
-    .grained_dday .count_box p {font-size: 11rem;}
+    .grained_dday .count_box p {font-size: 10rem;}
     .grained_dday .birth_box span {font-size: 6rem;}
 }
 
 @media all and (max-width: 600px) {
-    .grained_dday .count_box p {font-size: 10rem;}
+    .grained_dday .count_box p {font-size: 9rem;}
     .grained_dday .birth_box span {font-size: 5.5rem;}
 }
 @media all and (max-width: 480px) {
+    .grained_dday .count_box p {font-size: 8rem;}
     .grained_dday .dday_box {font-size:2.6rem;}
     .grained_dday .dday_box #timer span:after {font-size: 0.6rem;}
 }
 
 @media all and (max-width: 360px) {
-    .grained_dday .count_box p {font-size: 8rem;}
+    .grained_dday .count_box p {font-size: 7rem;}
     .grained_dday .birth_box span {font-size: 4.5rem;}
 }
