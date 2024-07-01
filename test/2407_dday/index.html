@@ -1,6 +1,6 @@
 <script src="https://code.jquery.com/jquery-latest.min.js"></script>
-<link rel="stylesheet" href="./css/reset.css?v=1">
-<link rel="stylesheet" href="./css/style.css?v=1">
+<link rel="stylesheet" href="./css/reset.css?v=2">
+<link rel="stylesheet" href="./css/style.css?v=2">
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -32,7 +32,15 @@
                 <a class="logo" href="./"><img src="./img/grained.png" alt=""></a>
             </div>
             <div class="dday_box">
-                <span id="timer">00:00:00:00</span>
+                <span id="timer">
+                    <span>00</span>
+                    <span>:</span>
+                    <span>00</span>
+                    <span>:</span>
+                    <span>00</span>
+                    <span>:</span>
+                    <span>00</span>
+                </span>
             </div>
             <div class="count_box">
                 <p id="count">760</p>
@@ -55,6 +63,8 @@
             setInterval(function() {
                 set_timer(reference_date);
             }, 200);
+        } else {
+            alert('URL에 날짜를 입력해주세요!')
         }
     });
 

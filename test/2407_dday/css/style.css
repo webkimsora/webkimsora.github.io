@@ -10,22 +10,13 @@
         url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-bRg.ttf) format("truetype");
 }
 @font-face { font-family: 'NanumSquareNeo'; font-style: normal; font-weight: 300;
-    src:url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoLightTTF-bRg.eot);
-        url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoLightTTF-bRg.eot?#iefix) format("embedded-opentype"),
-        url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoLightTTF-bRg.woff) format("woff"),
-        url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoLightTTF-bRg.ttf) format("truetype");
-}
-@font-face { font-family: 'NanumSquareNeo'; font-style: normal; 
-    src:url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-bRg.eot);
-        url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-bRg.eot?#iefix) format("embedded-opentype"),
-        url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-bRg.woff) format("woff"),
-        url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-bRg.ttf) format("truetype");
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-aLt.eot);
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-aLt.eot?#iefix) format("embedded-opentype"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-aLt.woff) format("woff"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-aLt.ttf) format("truetype");
 }
 @font-face { font-family: 'NanumSquareNeo'; font-style: normal; font-weight: 900;
-    src:url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoExtraBoldTTF-bRg.eot);
-        url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoExtraBoldTTF-bRg.eot?#iefix) format("embedded-opentype"),
-        url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoExtraBoldTTF-bRg.woff) format("woff"),
-        url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoExtraBoldTTF-bRg.ttf) format("truetype");
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.eot);
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.eot?#iefix) format("embedded-opentype"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.woff) format("woff"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.ttf) format("truetype");
+
 }
 
 html,body, input, textarea, select {
@@ -43,7 +34,7 @@ body {background: #988575; color: #fff;}
 .grained_dday {background: #988575; color: #fff;}
 .grained_dday .inner {max-width: 750px; margin: 0 auto; padding: 55px 4%;}
 .grained_dday .top {display: flex; align-items: center; padding-bottom: 2.5rem;}
-.grained_dday .top p {font-size: 1rem;}
+.grained_dday .top p {padding-left: 1.5rem; font-size: 1rem; font-weight: 900;}
 .grained_dday .top .logo {margin-left: auto; width: 15.7vw; max-width: 135px;}
 .grained_dday .dday_box {padding: 4rem 7.5% 5.5rem; background: #000; font-size: 3.2rem; box-shadow: 10px 15px 14px 0px rgba(0, 0, 0, 0.3);}
 .grained_dday .dday_box #timer {display:flex; justify-content: space-between;}
@@ -55,18 +46,18 @@ body {background: #988575; color: #fff;}
 .grained_dday .dday_box #timer span:nth-child(7):after {content:"SECONDS";}
 
 .grained_dday .count_box {margin-top: 3rem; font-size: 1.1rem; font-weight: 900; text-align: right;}
-.grained_dday .count_box p {font-size: 225px; text-shadow: 8px 8px 15px rgba(0,0,0,0.3); letter-spacing: -0.3px;}
+.grained_dday .count_box p {font-size: 195px; text-shadow: 8px 8px 15px rgba(0,0,0,0.3); letter-spacing: -0.3px;}
 .grained_dday .birth_box {padding-top: 4rem; font-size: 1.1rem; font-weight: 900;}
-.grained_dday .birth_box span {font-size: 100px; text-shadow: 8px 8px 15px rgba(0,0,0,0.3); letter-spacing: -0.3px;}
+.grained_dday .birth_box span {font-size: 90px; text-shadow: 8px 8px 15px rgba(0,0,0,0.3); letter-spacing: -0.3px;}
 
 @media all and (max-width: 750px) {
-    .grained_dday .count_box p {font-size: 10rem;}
-    .grained_dday .birth_box span {font-size: 6rem;}
+    .grained_dday .count_box p {font-size: 9rem;}
+    .grained_dday .birth_box span {font-size: 5rem;}
 }
 
-@media all and (max-width: 600px) {
-    .grained_dday .count_box p {font-size: 9rem;}
-    .grained_dday .birth_box span {font-size: 5.5rem;}
+@media all and (max-width: 640px) {
+    .grained_dday .count_box p {font-size: 8.5rem;}
+    .grained_dday .birth_box span {font-size: 4.5rem;}
 }
 @media all and (max-width: 480px) {
     .grained_dday .count_box p {font-size: 8rem;}
@@ -75,6 +66,6 @@ body {background: #988575; color: #fff;}
 }
 
 @media all and (max-width: 360px) {
-    .grained_dday .count_box p {font-size: 7rem;}
-    .grained_dday .birth_box span {font-size: 4.5rem;}
+    .grained_dday .count_box p {font-size: 7.5rem;}
+    .grained_dday .birth_box span {font-size: 4rem;}
 }
