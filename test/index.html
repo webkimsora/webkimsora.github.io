@@ -1,0 +1,143 @@
+<script src="https://code.jquery.com/jquery-latest.min.js"></script>
+<link rel="stylesheet" href="./css/reset.css?v=4">
+<link rel="stylesheet" href="./css/style.css?v=4">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes">
+    <meta name="description" content="Grained D-DAY">
+    <meta name="keywords" content="Grained D-DAY, 디데이, Grained">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Grained D-DAY">
+    <meta property="og:description" content="Grained D-DAY">
+    <meta property="og:image" content="./img/favicon.png">
+    <meta property="og:site_name" content="Grained D-DAY">
+    <link rel="apple-touch-icon" href="./img/favicon.png"><!-- 바로가기 아이콘 -->
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="./img/favicon.ico">
+    <meta name="msapplication-TileColor" content="#681e20">
+    <meta name="msapplication-square70x70logo" content="./img/favicon.png">
+    <meta name="msapplication-square150x150logo" content="./img/favicon.png">
+    <link rel="apple-touch-icon-precomposed" href="./img/favicon.png">
+
+    <title>Grained D-DAY</title>
+</head>
+
+<body>
+    <main class="grained_dday">
+        <div class="inner">
+            <div class="top">
+                <p><span id="set_date"></span> 출생일 기준</p>
+                <a class="logo" href="./"><img src="./img/grained.png" alt=""></a>
+            </div>
+            <div class="dday_box">
+                <span id="timer">
+                    <span id="days" class="fig">00</span>
+                    <span>:</span>
+                    <span id="hours" class="fig">00</span>
+                    <span>:</span>
+                    <span id="minutes" class="fig">00</span>
+                    <span>:</span>
+                    <span id="seconds" class="fig">00</span>
+                </span>
+            </div>
+            <div class="count_box">
+                <p id="day_count">0</p>
+                일째 되는 날입니다
+            </div>
+            <div class="birth_box">
+                생일은 <span class="count" id="birthday_count">0</span>일 남으셨네요!
+            </div>
+        </div>
+    </main>
+</body>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        // 기준 날짜
+        const reference_date = get_parameter('reference_date');
+        // 기준 날짜가 있으면 타이머 실행
+        if(reference_date) {
+            $('#set_date').html(reference_date);
+            setInterval(function() {
+                set_timer(reference_date);
+            }, 200);
+        } else {
+            alert('URL에 날짜를 입력해주세요!')
+        }
+
+        get_remaining_days_until_birthday(reference_date);
+    });
+
+    // URL Query String 조회
+    function get_parameter(key) {
+        return new URLSearchParams(location.search).get(key);
+    }
+
+    // 세팅 날짜 받아오기
+
+    // 타이머 계산
+    function set_timer(reference_date) {
+        // 기준 날짜 객체
+        const reference_date_obj = new Date(`${reference_date} 00:00:00`);
+        // 기준 날짜 Timestamp
+        const reference_timstamp = reference_date_obj.getTime();
+        // 현재 날짜 객체
+        const current_date_obj = new Date();
+        // 현재 날짜 Timestamp
+        const current_timestamp = current_date_obj.getTime();
+        // 현재 날짜와 기준 날짜의 차이 Unix Timestamp
+        let diff_unix_timestamp = Math.floor((reference_timstamp < current_timestamp ? (current_timestamp - reference_timstamp) : (reference_timstamp - current_timestamp)) / 1000);
+        // 일
+        let days = Math.round(diff_unix_timestamp / 86400);
+        // 일 표시
+        $('#day_count').html(days);
+        days = days < 10 ? days.toString().padStart(2, '0') : days;
+        // 시
+        let hours = Math.floor(diff_unix_timestamp % (3600*24) / 3600);
+        hours = hours.toString().padStart(2, '0');
+        // 분
+        let minutes = Math.floor(diff_unix_timestamp % 3600 / 60);
+        minutes = minutes.toString().padStart(2, '0');
+        // 초
+        let seconds = Math.floor(diff_unix_timestamp % 60);
+        seconds = seconds.toString().padStart(2, '0');
+        // 타이머 표시
+        $('#days').html(days);
+        $('#hours').html(hours);
+        $('#minutes').html(minutes);
+        $('#seconds').html(seconds);
+    }
+
+    // 생일로부터 남은 일 조회
+    function get_remaining_days_until_birthday(reference_date) {
+        // 기준 날짜 객체
+        let reference_date_obj = new Date(reference_date + " 00:00:00");
+        // 기준 날짜 배열
+        reference_date_arr = reference_date.split('-');
+        // 현재 날짜 객체
+        const current_date_obj = new Date();
+        // 현재 날짜 연도
+        const current_years = current_date_obj.getFullYear();
+        // 현재 날짜 달
+        const current_months = current_date_obj.getMonth() + 1;
+        // 현재 날짜 일
+        const current_days = current_date_obj.getDate();
+        // 기준 날짜가 오늘 날짜보다 이전일 경우
+        if(reference_date < `${current_years}-${current_months.toString().padStart(2, '0')}-${current_days.toString().padStart(2, '0')}`) {
+            reference_date_obj = new Date(`${reference_date_arr[0] < current_years ? current_years : current_years + 1}-${reference_date_arr[1]}-${reference_date_arr[2]} 00:00:00`);
+        }
+
+        // 기준 날짜 Timestamp
+        const reference_timstamp = reference_date_obj.getTime();
+        // 현재 날짜 Timestamp
+        const current_timestamp = current_date_obj.getTime();
+        // 현재 날짜와 기준 날짜의 차이 Unix Timestamp
+        let diff_unix_timestamp = Math.floor((reference_timstamp - current_timestamp) / 1000);
+        // 일
+        let days = Math.ceil(diff_unix_timestamp / 86400);
+        // 일 표시
+        $('#birthday_count').html(days);
+    }
+</script>
