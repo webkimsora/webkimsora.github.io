@@ -33,13 +33,13 @@
             </div>
             <div class="dday_box">
                 <span id="timer">
-                    <span id="days">00</span>
+                    <span id="days" class="fig">00</span>
                     <span>:</span>
-                    <span id="hours">00</span>
+                    <span id="hours" class="fig">00</span>
                     <span>:</span>
-                    <span id="minutes">00</span>
+                    <span id="minutes" class="fig">00</span>
                     <span>:</span>
-                    <span id="seconds">00</span>
+                    <span id="seconds" class="fig">00</span>
                 </span>
             </div>
             <div class="count_box">
@@ -124,10 +124,9 @@
         const current_months = current_date_obj.getMonth() + 1;
         // 현재 날짜 일
         const current_days = current_date_obj.getDate();
-        // 오늘 월일보다 작을 경우
-        if(reference_date_arr[1] + reference_date_arr[2] < `${current_months.toString().padStart(2, '0')}${current_days.toString().padStart(2, '0')}`) {
-            reference_date_obj = new Date(`${current_years + 1}-${reference_date_arr[1]}-${reference_date_arr[2]} 00:00:00`);
-            console.log(reference_date_obj);
+        // 기준 날짜가 오늘 날짜보다 이전일 경우
+        if(reference_date < `${current_years}-${current_months.toString().padStart(2, '0')}-${current_days.toString().padStart(2, '0')}`) {
+            reference_date_obj = new Date(`${reference_date_arr[1] < current_years ? current_years : current_years + 1}-${reference_date_arr[1]}-${reference_date_arr[2]} 00:00:00`);
         }
 
         // 기준 날짜 Timestamp
@@ -136,7 +135,6 @@
         const current_timestamp = current_date_obj.getTime();
         // 현재 날짜와 기준 날짜의 차이 Unix Timestamp
         let diff_unix_timestamp = Math.floor((reference_timstamp - current_timestamp) / 1000);
-        console.log(diff_unix_timestamp);
         // 일
         let days = Math.ceil(diff_unix_timestamp / 86400);
         // 일 표시
