@@ -126,7 +126,7 @@
         const current_days = current_date_obj.getDate();
         // 기준 날짜가 오늘 날짜보다 이전일 경우
         if(reference_date < `${current_years}-${current_months.toString().padStart(2, '0')}-${current_days.toString().padStart(2, '0')}`) {
-            reference_date_obj = new Date(`${reference_date_arr[1] < current_years ? current_years : current_years + 1}-${reference_date_arr[1]}-${reference_date_arr[2]} 00:00:00`);
+            reference_date_obj = new Date(`${reference_date_arr[0] < current_years ? current_years : current_years + 1}-${reference_date_arr[1]}-${reference_date_arr[2]} 00:00:00`);
         }
 
         // 기준 날짜 Timestamp
