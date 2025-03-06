@@ -30,6 +30,14 @@
 #about .profileWrap .list > li .detail .txt {padding-top: 15px; margin-top: 15px; font-size: 18px; font-weight: 500; line-height: 1.61; color: #ffc65a; position: relative;}
 #about .profileWrap .list > li .detail .txt:after {content:""; position: absolute; top: 0; left: 50%; transform: translateX(-50%); transition: width .3s; display: block; width: 20px; height: 3px; background-color: #ffd857;}
 
+/* ceo */
+#about .ceoWrap .list {max-width: 1130px; margin: 50px auto 0;}
+#about .ceoWrap .list .left {width: 56%; font-size: 20px; font-weight: 400;  line-height: 1.6;}
+#about .ceoWrap .list .left .sign {text-align: right;}
+#about .ceoWrap .list .left .sign span {display: inline-block; width: 250px; margin-top: 40px;}
+#about .ceoWrap .list .right {width: 43%;}
+#about .ceoWrap .list .right img {max-width: fit-content;}
+
 /* vision */
 #about .visionWrap {text-align: center; }
 #about .visionWrap .listAll {position: relative; margin-top: 50px;}
@@ -55,11 +63,13 @@
 #about .businessWrap {padding-bottom: 0;}
 #about .businessWrap h4 {position: relative; margin-top: 70px; text-align: center; font-size: 45px; line-height: 1; color: #000; transition: font-size .3s;}
 #about .businessWrap h4:after {content:""; position: absolute; bottom: -3px; left: 50%; transform: translateX(-50%); transition: width .3s; display: block; width: 25px; height: 2px; background-color: #ffd857;}
-#about .businessWrap .floatDouble > div {width: 42%;}
-#about .businessWrap dl {padding-top: 50px;}
+#about .businessWrap .floatDouble > div {width: 42%; position: relative;}
+#about .businessWrap dl {margin-top: 50px; position: relative;}
+#about .businessWrap .floatDouble > div.left dl:after {content:""; display: block; width: 2px; top: 0; right: -21%; height: 105%; position: absolute; background: #ccc;}
+#about .businessWrap .floatDouble > div.left dl.top:after {height: 200%;}
 #about .businessWrap dt {border-bottom: 2px solid #ccc;   font-size: 31px;}
-#about .businessWrap dd {padding-top: 16px; width: 85%; font-size: 16px; font-weight: 400; line-height: 1.63;}
-
+#about .businessWrap dd {position: relative; padding-top: 16px; padding-left: 16px; width: 85%; font-size: 16px; font-weight: 400; line-height: 1.63;}
+#about .businessWrap dd:before {content:"·"; display: block; font-size: inherit; font-weight: 400; position: absolute; left: 5px; }
 
 /* 문의하러가기 */
 #about .mapWrap {text-align: center; position: relative; margin-top: 78px;}
@@ -112,7 +122,10 @@
   #about .visionWrap .listAll:after {width: 160px; height: 160px; background-size: 100%;}
   #about .businessWrap .floatDouble > div {width: 45%;}
   #about .visionWrap .list > li {font-size: 14px;}
-  
+  #about .businessWrap .floatDouble > div.left dl:after {right: -12%;}
+
+  #about .ceoWrap .list .left {font-size: 19px;}
+  #about .ceoWrap .list .right img {max-width: 100%;}
 }
 
 @media screen and (max-width: 1024px), (max-height :800px) {
@@ -136,6 +149,10 @@
     #about .contactWrap .bottom li {width: auto;}
     #about .contactWrap .bottom li:last-child {float: right;}
 
+    #about .ceoWrap .list {position: relative; width:100%;}
+    #about .ceoWrap .list .left {font-size: 18px;}
+    #about .ceoWrap .list .left .sign span {width: 200px;}
+    #about .ceoWrap .list .right {position: absolute; top: 45%; right: 0; transform: translateY(-50%);}
 }
 
 /* 태블릿 미디어쿼리 */
@@ -158,7 +175,8 @@
     #about .historyWrap .listTxt h4 {font-size: 32px;}
 
     #about .businessWrap .floatDouble > div {float: none; width: 100%;}
-    #about .businessWrap dl {padding-top: 25px;}
+    #about .businessWrap dl {margin-top: 25px;}
+    #about .businessWrap .floatDouble > div.left dl:after {display: none;}
     #about .businessWrap dd {width: 98%; font-size: 15px;}
 
     #about .contactWrap .top {font-size: 40px;}
@@ -171,7 +189,13 @@
     #about .contactWrap .bottom strong {font-size: 30px; padding-bottom: 20px;}
     #about .contactWrap .bottom a {font-size: 15px;}
     #about .contactWrap .bottom a span:first-child:after {height: 2px; bottom: -2px;}
-}
+
+    #about .ceoWrap .list {margin-top: 80px;}
+    #about .ceoWrap .list .left {font-size: 16px; float: none; width: 100%;}
+    #about .ceoWrap .list .right {float: none; margin-top: 50px; width: 100%; position: relative; top:0; transform: none; text-align: center;}
+    #about .ceoWrap .list .right .sign {text-align: right;}
+    #about .ceoWrap .list .right .sign span {width:50%;     display: inline-block;}
+  }
 
 /* 모바일 미디어쿼리 */
 
@@ -189,11 +213,13 @@
 
     #about .businessWrap h4 {font-size: 32px;}
     #about .businessWrap dt {font-size: 26px;}
-    #about .businessWrap dd {font-size: 12px;}
+    #about .businessWrap dd {font-size: 12px; padding-left: 12px;}
 
     #about .contactWrap .top {font-size: 28px;}
     #about .contactWrap .top small {font-size: 12px;}
     #about .contactWrap .bottom {font-size: 13px;}
     #about .contactWrap .bottom a {font-size: 16px;}
 
+    #about .ceoWrap .list {margin-top: 60px;}
+    #about .ceoWrap .list .left {font-size: 14px;}
 }

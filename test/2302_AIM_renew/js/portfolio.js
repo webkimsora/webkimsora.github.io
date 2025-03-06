@@ -44,15 +44,24 @@
             teamMem.css('margin-right','2%');
             teamMem.removeClass('here');
         
-            if( teamW > 1024){
+            if( teamW > 768){
                 teamMem.css('width', '23.5%');
                 for(var i1= 0; i1 < memLen; i1++){
                     var t1 = i1 + 1;
                     
                     if(teamMem.data('size') != undefined){ //team page
-                        $('[data-size="big"').css('width', '32%');
-                        if(i1==6 || i1==10 || i1==14 || i1==18) {
-                            teamMem.eq(i1).css('margin-right','0%');
+                        if($('#team .tab > li').eq(0).hasClass('on')){ // tab01
+                            $('[data-size="big"').css('width', '28%');
+                            $('.bigger[data-size="big"').css('width', '40%');
+    
+                            if(i1==6 || i1==10 || i1==14 || i1==18) {
+                                teamMem.eq(i1).css('margin-right','0%');
+                            }
+                        } else { // tab02
+                            $('[data-size="three"').css('width', '32%');
+                            if(parseInt( t1 % 3) == 0){
+                                teamMem.eq(i1).css('margin-right','0%');
+                            }
                         }
                     } else {
                         if(parseInt( t1 % 4) == 0){
@@ -73,14 +82,20 @@
                 }
                 windowSize = 'tablet';
             }else if( teamW > 480){
-                teamMem.css('width', '49%');
-                for(var i3= 0; i3 < memLen; i3++){
-                    var t3 = i3 + 1;
-                    if(parseInt( t3 % 2) == 0){
-                        teamMem.eq(i3).css('margin-right', '0%');
+                if(teamMem.data('size') != undefined){
+                    teamMem.css('margin-right', '0%');
+                    teamMem.css('width', '100%');
+                    windowSize = 'mobile';
+                } else {
+                    teamMem.css('width', '49%');
+                    for(var i3= 0; i3 < memLen; i3++){
+                        var t3 = i3 + 1;
+                        if(parseInt( t3 % 2) == 0){
+                            teamMem.eq(i3).css('margin-right', '0%');
+                        }
                     }
+                    windowSize = 'mob';
                 }
-                windowSize = 'mob';
             }
             else{
                 teamMem.css('margin-right', '0%');
@@ -136,7 +151,7 @@
                             if(windowSize == 'desk'){
 
                                 if($item.data('size') != undefined){ //team page
-                                    if($item.data('size') == 'big') {//상단 임원진
+                                    if($item.data('size') == 'big' || $item.data('size') == 'three') {//상단 임원진
                                         col = 3;
                                         p = (( parseInt(_itemNum/col) + 1) * col )- 1;
                                         limit = parseInt(arr_memLen[_listNum]/col);
@@ -292,11 +307,28 @@
                 var idx = $(this).index();
 
                 $(this).addClass('on').siblings('li').removeClass('on');
+                $('#portfolio .topCnt .txt > li').removeClass('on').eq(idx).addClass('on');
                 $('#portfolio .tabCnt > li').removeClass('on').eq(idx).addClass('on');
                 $('#portfolio .tabCnt > li').css('opacity','0');
 
                 setTimeout(function(){
                     $('#portfolio .tabCnt > li.on').css('opacity','1');
+                    showSub();
+                    marginChk();
+                },80);
+            });
+
+            // TEAM 탭
+            $('#team .tab > li').on('click', function(){
+                var idx = $(this).index();
+
+                $(this).addClass('on').siblings('li').removeClass('on');
+                $('#team .topCnt .txt > li').removeClass('on').eq(idx).addClass('on');
+                $('#team .tabCnt > li').removeClass('on').eq(idx).addClass('on');
+                $('#team .tabCnt > li').css('opacity','0');
+
+                setTimeout(function(){
+                    $('#team .tabCnt > li.on').css('opacity','1');
                     showSub();
                     marginChk();
                 },80);
@@ -328,5 +360,5 @@
     $(document).ready(function(){
       inveTeam.teamInit();
     });
-	
+
 }());
