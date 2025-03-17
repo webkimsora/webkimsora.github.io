@@ -1,0 +1,914 @@
+<link rel="stylesheet" href="<?=UN_STATIC?>/css/m/common/event.css">
+<link rel="stylesheet" href="/css/premium/m/premium.css?<?=time()?>">
+<link rel="stylesheet" href="/css/premium/icons.css?<?=time()?>">
+
+<style>
+    /* 공통 */
+    area {outline: none;}
+    video {width: 100%; height: 100%; outline: none; background: #000; cursor: pointer;}
+    button {outline: none;}
+    .ani{opacity: 0;opacity:1 /IE9;}
+    .no_padding {padding: 0 !important;}
+    .spacer {width: 100%; height: 100%;}
+    .event-contents {position: relative;}
+	.event-contents .inner {max-width: 37.5rem;margin: 0 auto;padding: 0 1.6rem;}
+	.event-contents .inner.no_padding {padding: 0;}
+	.event-contents video {display: block;width: 100%;height: 100%;background: #000;}
+    .event-contents [class^="cont_"]:not([class^="cont_notice"]) {text-align: center; overflow: hidden;}
+
+    @keyframes scrollBottom {
+        0% { transform: translateY(-2%); }
+        100% { transform: translateY(2%); }
+    }
+
+    @keyframes ani_translate {
+        100%{transform: translate(0);}
+    }
+
+    @keyframes ani_translate2 {
+        0% {opacity: 0;}
+        100%{transform: translate(0); opacity: 1;}
+    }
+
+    @keyframes bounce {
+        0%   {transform: translateY(0); }
+        50%  {transform: translateY(-5px);}
+        100% {transform: translateY(0); }
+    }
+    
+    @keyframes blink {
+      0% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeIn {
+        0% {opacity: 0;}
+        100% {opacity: 1;}
+    }
+
+    @keyframes shake {
+		0%, 100% {-webkit-transform: rotate(0deg);transform: rotate(0deg);-webkit-transform-origin: 50% 100%;transform-origin: 50% 100%;}
+		10% {-webkit-transform: rotate(2deg);transform: rotate(2deg) scale(1);}
+		20%, 40%, 60% {-webkit-transform: rotate(-4deg);transform: rotate(-4deg);}
+		30%, 50%, 70% {-webkit-transform: rotate(4deg);transform: rotate(4deg) scale(1.05) ;}
+		80% {-webkit-transform: rotate(-2deg);transform: rotate(-2deg);}
+		90% {-webkit-transform: rotate(2deg);transform: rotate(2deg) scale(1);}
+	}
+
+    /* 메인 */
+    .event_20241108 [class^="cont_"] h4 {padding-bottom: 2.4rem;}
+    .event_20241108 .box {border-radius: 1.6rem; overflow: hidden; position: relative;}
+    .event_20241108 .box.line {border: .1rem solid var(--gray-30);}
+    .event_20241108 .box.black {background: #000;}
+    .event_20241108 .box.gray {background: var(--gray-10);}
+    .event_20241108 .slide_box {position: relative;}
+    .event_20241108 .py-50 {padding: 5rem 0;}
+
+    .event_quick {right: 40px;}
+	.event_quick li + li {margin-top: 7px;}
+
+    .cont_main {height: 70rem; padding-top: 8.3rem; position: relative; background: url('<?=UN_STATIC_IMG?>/gong/landing/2024/11/gong_15789/m/main_bg.jpg') #7A15FA no-repeat center top / auto 100%;}
+    .cont_main h3 {position: relative; width: 32rem; height: 31.9rem;     margin-left: 2.7rem;}
+    .cont_main h3 .front {position: absolute; top: 0; left: 0; display: none;}
+    .cont_main .txt {width: 27.8rem; margin: 4.4rem auto 0;}
+    .cont_main .txt a {width: 11.6rem; margin: 2rem auto 0; display: block;}
+    .cont_main .noti {position: absolute; bottom: 0; width: 29.7rem; left:50%; margin-left: -14.8rem; z-index: 1;}
+
+    .cont_movie {height: 55rem; position: relative; background: url('<?=UN_STATIC_IMG?>/gong/landing/2024/11/gong_15789/m/movie_bg.jpg')  no-repeat center top / auto 100%; color: transparent; }
+    .cont_movie.moving {height: 61rem;}
+    .cont_movie video {cursor: default;}
+    /* .cont_movie video {position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: fit-content; max-width: fit-content;} */
+
+    .cont_intro { background: #000;}
+    .cont_intro .cnt01 .box {  margin-bottom: 1.2rem;}
+    .cont_intro .cnt01 .intro01_slide {padding: 3rem 2.1rem 0; height: 28.6rem;}
+    .cont_intro .cnt01 .intro01_slide li {height: auto !important; box-shadow: .4rem .4rem 2.3rem 0px rgba(0, 0, 0, 0.12); border-radius: 2rem;}
+    .cont_intro .cnt02 {background: #130824; }
+    .cont_intro .cnt02 .slide_box {margin-bottom: 2.4rem;}
+    .cont_intro .cnt02 .intro02_slide {overflow: visible;}
+
+    .cont_intro .cnt02 .intro02_slide li {width: 32rem !important;}
+    .cont_intro .cnt02 .txt {position: absolute; top: 7.5rem; left: 3.1rem; text-align: left;}
+    .cont_intro .cnt02 .txt strong {color: #000; font-family: SUIT; font-size: 3.6rem; font-weight: 800; line-height: 138%; letter-spacing: -1.5px; text-transform: capitalize;}
+    .cont_intro .cnt02 .txt sup {font-size: 2rem;}
+    .cont_intro .cnt02 .graph_box {position:absolute; bottom: 6rem; left: 0; width: 100%; height: 18.8rem;}
+    .cont_intro .cnt02 .graph_box .graph_w {width:calc(100% - 6rem); margin-left: 2.7rem; overflow: hidden; display: block; opacity: 0;}
+    .cont_intro .cnt02.active .graph_box .graph_w {opacity:1; transition:opacity 1s ease-in-out;}
+    .cont_intro .cnt02 .graph_box .graph_h {height: 0; overflow: hidden; width: 3.5rem; position: absolute; bottom: -1.2rem; right: 1.8rem; border-radius:.5rem;background: linear-gradient(180deg, #7A15FA 4.33%, #9F6FFF 20.36%, #FFF 92.57%); opacity: 0.7;}
+    .cont_intro .cnt02.active .graph_box .graph_h {height:19.6rem; transition:height 1s ease-in-out;}
+    .cont_intro .cnt02 .graph_box .graph_txt {position: absolute; top: -6.5rem; right: .8rem; opacity: 0; width: 5.9rem;}
+    .cont_intro .cnt02.active .graph_box .graph_txt {animation: stamp .2s .8s ease-in-out both;}    
+
+    @keyframes ping{
+        0% {opacity: 0; transform: translate(-50%, -50%) scale(.3);}
+        100% {opacity: 1; transform: translate(-50%, -50%) scale(1);}
+    }
+
+    @keyframes stamp {
+        0%{opacity: 0; transform-origin: 50% 50%; transform: scale(5); transition: all .3s cubic-bezier(0.6, 0.04, 0.98, 0.335);}
+        100%{opacity: 1; transform: scale(1);}
+    }
+
+    .cont_pass {padding-top: 5rem;}
+    .cont_pass .inner > strong {display: block; padding: 4rem 0;}
+    .cont_pass .inner > div:not(.cnt01) {padding-top: 4rem;}
+    .cont_pass .cnt01 .box {padding: 6rem 0 6.5rem;}
+    .cont_pass .cnt01 .pass01_slide .swiper-wrapper {transition-timing-function:linear;}
+    .cont_pass .cnt01 .pass01_slide li {width: 20.1rem !important;}
+    .cont_pass .cnt02 .prem__layout--column > div {position: relative;}
+    .cont_pass .cnt02 .graph_bar {width: 10.7rem; display: flex; justify-content: space-between; position: absolute; bottom: 5rem; left: 11.8rem;     align-items: end;}
+    .cont_pass .cnt02 .graph_bar span {width: 4.48rem; height: 0; padding-top: 7.5px; border-radius: 5.075px 5.075px 0px 0px; background: #C800FF; color: #fff; }
+    .cont_pass .cnt02 .graph_bar span:nth-child(2) {background: #6101D9; }
+    .cont_pass .cnt02 .active .graph_bar span {height: 9.5rem; transition:height 1s ease-in-out; }
+    .cont_pass .cnt02 .active .graph_bar span:nth-child(1) {height: 6.9rem; transition-delay: .1s;}
+    .cont_pass .cnt02 .active .graph_bar span:nth-child(2) {height: 8rem; transition-delay: .5s;}
+    .cont_pass .cnt02 .graph_box {position:absolute; bottom: 0; left: 0; width: 100%; height: 32.9rem;}
+    .cont_pass .cnt02 .graph_box .graph_w {width:calc(100% - 9.7rem); height: 13.1rem; margin: 13.8rem auto 0; opacity:0; overflow: hidden; display: block; z-index: 1;}
+    .cont_pass .cnt02 .active .graph_box .graph_w {opacity:1; transition: opacity .6s .4s ease-in-out;}
+    .cont_pass .cnt02 .graph_box .icon {width: 12.6rem; position: absolute; bottom: 3.5rem; left: 1.4rem;}
+    .cont_pass .cnt02 .graph_box .graph_txt {width: 16.2rem; position: absolute; top: 10.6rem; right: 3.3rem; opacity: 0;}
+    .cont_pass .cnt02 .active .graph_box .graph_txt {animation: stamp .2s .8s ease-in-out both;}
+    .cont_pass .cnt03 .detail {position: relative;}
+    .cont_pass .cnt03 .line {position: absolute; top: 34.5rem; left: 4.56rem; width: 25.2rem; height: 4.48rem; border: .2rem solid #6101D9;     animation: blink .7s infinite; border-radius: 5px;}
+    .cont_pass .cnt04 .detail {position: relative;}
+    .cont_pass .cnt04 .graph{position: absolute; top: 13.4rem; left: 7.4rem;  background: var(--gray-10); width: 19rem; height: 9.5rem; margin: 0 auto; -webkit-mask-image: url('<?=UN_STATIC_IMG?>/un_static/img/common/premium/passmaker/graph_mask.svg'); mask-image: url('<?=UN_STATIC_IMG?>/un_static/img/common/premium/passmaker/graph_mask.svg'); mask-size: 100% auto;}
+    .cont_pass .cnt04.active .graph::after{content: ""; position: absolute; top: 100%; left: 0; transform-origin: center top; width: 100%; height: 100%; background: linear-gradient(-105deg, #6101D9 -14.14%, #C800FF 183.02%); mask-image: url('<?=UN_STATIC_IMG?>/un_static/img/common/premium/passmaker/graph_mask_flip.svg'); animation: graph__rotate .5s .5s forwards; pointer-events: none; mask-size: 100% auto;}
+    @keyframes graph__rotate{
+        from {transform: rotate(0)}
+        to {transform: rotate(var(--graph-rotate, 140deg))}
+    }
+    .cont_pass .cnt04 .box {padding: 3rem 0; margin-top: 1.6rem; margin-bottom: 5rem;}
+    .cont_pass .cnt04 .box p {width: 20.5rem; margin-left: 3.4rem;}
+    .cont_pass .cnt04 .pass04_slide {padding-top: 3rem;}
+    .cont_pass .cnt04 .pass04_slide .swiper-wrapper{transition-timing-function:linear;}
+    .cont_pass .cnt04 .pass04_slide li {width: 84rem !important;}
+    .cont_pass .last {background: #7A15FA;}
+    
+    .cont_mentoring {padding-top: 5rem;}
+    .cont_mentoring .cnt01 {padding-top: 4rem;}
+    .cont_mentoring .mentoring01_slide {overflow: visible;}
+    .cont_mentoring .mentoring01_slide li {overflow: hidden; width: 12.5rem; position: relative;}
+    .cont_mentoring .cnt02 .box {height: 32.3rem;}
+    .cont_mentoring .cnt02 .box img.paper01 {position: absolute; top: 3rem; left: 10.6rem; transform: translateY(30%); width: 76.2rem; max-width: fit-content;}
+    .cont_mentoring .cnt02 .box img.paper02 {position: absolute; top: 17rem; right: 0; border-radius: 1.5rem; width: 76.2rem; max-width: fit-content; transform: translateX(-30%); box-shadow: 4px 4px 50px 0px rgba(0, 0, 0, 0.20);}
+    .cont_mentoring .cnt02 .num li {position: absolute; opacity: 0; width: 7.2rem;}
+    .cont_mentoring .cnt02 .num li:nth-child(1) {top: 4.5rem; left: 6.87rem;}
+    .cont_mentoring .cnt02 .num li:nth-child(2) {bottom: 0.5rem; left: 5.2rem;}
+    .cont_mentoring .cnt02 .num li:nth-child(3) {bottom: 4.5rem; right: 8rem; width: 5.85rem;}
+    .cont_mentoring .cnt02.active .box img.paper01 {animation: ani_translate .7s .1s ease forwards;}
+    .cont_mentoring .cnt02.active .box img.paper02 {animation: ani_translate .7s .7s ease forwards;}
+    .cont_mentoring .cnt02.active .num li {animation:fadeIn .7s 1s ease-in-out forwards}
+    .cont_mentoring .cnt02.active .num li:nth-child(2) {animation-delay: 1.3s;}
+    .cont_mentoring .cnt02.active .num li:nth-child(3) {animation-delay: 1.6s;}
+    .cont_mentoring .cnt03 .cnt_tit {width: 29.1rem; padding: 3rem 2rem 4rem; box-sizing: content-box;}
+    .cont_mentoring .cnt03 .icon {position: absolute; width: 11.5rem; top: 1.8rem; right: 1.8rem; animation: shake 4.5s linear infinite;}
+    .cont_mentoring .cnt03 .mentoring03_slide {padding-bottom: 3rem;}
+    .cont_mentoring .cnt03 .mentoring03_slide .swiper-wrapper{transition-timing-function:linear;}
+    .cont_mentoring .cnt03 .mentoring03_slide li {width: 24.1rem !important;}
+    .cont_mentoring .cnt03 .detail {margin-top: 1.6rem; height: 52.3rem; position: relative; background: linear-gradient(180deg, #E70DB8 -43.56%, #7A15FA 137.77%);}
+    .cont_mentoring .cnt03 .detail p {padding: 3rem 2rem 0;}
+    .cont_mentoring .cnt03 img.paper01 {position: absolute; bottom: -10rem; left: 2rem; width: 30.3rem; transform: translateY(30%); z-index: 1; border-radius: 1rem; box-shadow: .4rem .4rem 5rem 0px rgba(0, 0, 0, 0.20), 0px 4px 4px 0px rgba(0, 0, 0, 0.25);}
+    .cont_mentoring .cnt03 .active img.paper01 {animation: ani_translate .5s .1s ease forwards;}
+    .cont_mentoring .cnt04 {padding-top: 5rem;}
+    .cont_mentoring .cnt04 .mentoring04_slide .swiper-wrapper{transition-timing-function:linear;}
+    .cont_mentoring .cnt04 .mentoring04_slide li {width: 25.7rem !important;}
+    .cont_mentoring .cnt04 .box {padding-top: 3.9rem; height: 31.3rem;}
+
+    .cont_knowhow .box {margin-top: 4rem; overflow: hidden;}
+    .cont_knowhow .box .txt01 {position: absolute; opacity: 0; top: 3.3rem; left: 3rem; width: 25.5rem;}
+    .cont_knowhow .box .txt02 {position: absolute; opacity: 0; bottom: 3.3rem; left: 3rem; width: 28.6rem;}
+    .cont_knowhow .box.active .txt01 {animation:fadeIn .5s .2s ease-in-out forwards}
+    .cont_knowhow .box.active .txt02 {animation:fadeIn .5s .7s ease-in-out forwards}
+
+
+    .cont_secret {padding-top: 5rem; height: 68rem; background: url('<?=UN_STATIC_IMG?>/gong/landing/2024/11/gong_15789/m/secret_bg.jpg') #0F0029 no-repeat center top / auto 100%;}
+    .cont_secret .stamp {margin-top: 20.8rem;}
+    .cont_secret.active .stamp {animation: stamp .3s .2s ease-in-out both;}
+
+    /* 프리패스 상품단 S*/
+    .cont_product {background: #1A1E25;}
+    .cont_product input[type=checkbox] {width: 2.8rem; height: 2.8rem; background: #363D48;}
+    .cont_product input[type=checkbox]:checked {background: #6101D9;}
+
+    .cont_product .freepass_nav{display: flex; margin-bottom: 2.4rem; gap: .8rem;}
+	.cont_product .freepass_nav > li{height: 4.65rem; line-height: 4.4rem; text-align: center; color: #D3D3D3; background: #363D48; font-size: 1.4rem;font-weight: 700;letter-spacing: -0.001rem;text-align: center; flex: 1; border-radius: 0.8rem; position: relative; border: 0.1rem solid transparent;box-sizing: border-box;}
+	.cont_product .freepass_nav > li.active{color: #7A15FA;background: #E7EBFD;border-color: #7A15FA;}
+	.cont_product .freepass_tab > li .freepass_ban{margin-top: -1.2rem;}
+	.cont_product .freepass_tab > li .freepass_ban img{width: 35.1rem; max-width: none;}
+	.cont_product .freepass_wrap .freepass_tab .freepass_list{display: flex; flex-direction: column; gap: 1.2rem; text-align: left;}
+	.cont_product .freepass_wrap .freepass_tab .freepass_list * {color: #fff;}
+    .cont_product .freepass_list > li > :is(div, label){flex: 1;}
+	.cont_product .freepass_notice{color: #C2C2C2; font-size: 1.2rem; line-height: 1.7rem; text-align: center; margin-top: 1.2rem;}
+	.cont_product .freepass_desc{font-size: 1.1rem; line-height: 140%; letter-spacing: -0.033rem; color: #7E8B9A; margin-top: 1.2rem; text-align: left;}
+	.cont_product .freepass_label{display: flex; align-items: center; justify-content: center; background: #E6EEFF; font-weight: 500; border-radius: 0.4rem; height: 2.2rem; gap: 0.4rem; font-size: 0.75rem;}
+	.cont_product .freepass_label span{font-weight: 700; color: #025AF6;}
+	
+    .cont_product .freepass_item{display: block; position: relative; background: #121212; border: 0.3rem solid #7A15FA; width: 100%; box-shadow: -.4rem -.4rem 1.4rem 0px rgba(122, 21, 250, 0.50), .4rem .4rem 1.4rem 0px rgba(122, 21, 250, 0.50); border-radius: 2rem; overflow: hidden;}
+	.cont_product .freepass_item .freepass_content{display: flex; flex-direction: column; padding: 3rem 2rem 2rem;}
+	.cont_product .freepass_item .freepass_content input[type='radio']{display: none;}
+	.cont_product .freepass_item .item_info{display: flex; flex-direction: column; gap: 1.2rem;}
+	.cont_product .freepass_item .item_info strong{font-size: 2.8rem;font-weight: 900;line-height: 136%;letter-spacing: -0.12rem;text-align: left;word-break: keep-all;}
+	.cont_product .freepass_item .item_info .sel-box{width: 14rem;}
+	.cont_product .freepass_item .item_info .info_top{display: flex; gap: 0.5rem;}
+	.cont_product .freepass_item .item_info .info_top .info_labels{display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem; font-family: SUIT;}
+	.cont_product .freepass_item .item_info .info_top .info_labels > span{background: #21252C; color: #C2CAD6; font-size: 1.3rem; font-weight: 700; border-radius: 0.4rem; padding: .5rem; line-height: normal;}
+    .cont_product .freepass_item .item_info .date {font-size: 1.4rem; font-weight: 700; line-height: 138%; letter-spacing: -0.07rem; font-family: SUIT;}
+	.cont_product .freepass_item .item_info .info_discount{display: flex; flex-direction: column; gap: 0.4rem; background: #FAFAFC; text-align: left; padding: 0.6rem; width: 100%;}
+	.cont_product .freepass_item .item_info .info_discount > li{display: flex; align-items: start; justify-content: space-between; gap: 0.4rem;}
+	.cont_product .freepass_item .item_info .info_discount > li > span{color: #C6CBD2; font-size: 0.65rem; letter-spacing: -0.0195rem; word-spacing: -0.05rem; word-spacing: -0.075rem;}
+	.cont_product .freepass_item .item_info .info_discount > li > em{color: #C5CBD3; text-decoration: line-through; font-size: 0.6rem; flex-shrink: 0;}
+	.cont_product .freepass_item .item_price{display: flex; justify-content: end; align-items: center; margin-top: 3.6rem;}
+	.cont_product .freepass_item .item_price p{position: relative; height: 2.5rem; padding: 0 1.2rem; border: 0.2rem solid #C6CBD2; border-radius: 2.5rem; color: #C6CBD2; font-size: 1.4rem; line-height: 2.5rem; font-weight: 700; text-align: left; box-sizing: content-box;}
+	.cont_product .freepass_item .item_price p span{position: relative;}
+	.cont_product .freepass_item .item_price .price_label{display: inline-block; font-size: 1.2rem; font-weight: 700; position: relative; box-sizing: content-box; margin-left:0.5rem}
+	.cont_product .freepass_item .item_price .price_label span{position: relative; background: linear-gradient(272deg, #7A15FA -67.05%, #FB41D3 115.74%); background-clip: text;-webkit-background-clip: text;-webkit-text-fill-color: transparent;}
+	.cont_product .freepass_item .item_price .price_num{font-size: 0; text-align: right; display: flex; flex-direction: column; align-items: end;}
+	.cont_product .freepass_item .item_price .price_num > span{display: block; color: #C2C2C2; font-size: 1rem; font-weight: 500; margin-bottom: 0.1rem;}
+	.cont_product .freepass_item .item_price .price_num > span em{text-decoration: line-through; font-size: 1.2rem; font-style:normal; color: #7E8B9A;}
+	.cont_product .freepass_item .item_price .price_num strong{font-size: 2rem; font-weight: 900; word-spacing: -0.3rem; letter-spacing: -0.125rem; line-height: 1.5;}
+
+	.cont_product .freepass_item .freepass_line{width: 30.3rem; margin: 0 auto; display: flex; flex-direction: column; gap: .8rem; padding: 2rem; border-radius: 2rem; background:#2F006B; font-size: 1.4rem;}
+    .cont_product .freepass_item .freepass_line i {width: 1.6rem; height: 1.6rem; margin-left: .2rem; margin-right: .4rem;}
+    .cont_product .freepass_item .freepass_line i::after {background: url('<?=UN_STATIC_IMG?>/gong/landing/2024/11/gong_15789/m/product_icon.png'); background-size: 100% auto;}
+    .cont_product .freepass_item .freepass_line .top {font-size: 14px; font-weight: 700; display: inline-flex; align-items: center;}
+    .cont_product .freepass_item .freepass_line .top em {margin-left: .8rem; font-size: 1.2rem; background: linear-gradient(271deg, #00FFD1 -1.24%, #EBFF00 102.14%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .cont_product .freepass_item .freepass_line p {font-size: 1.1rem; color: #A7B1BE !important;}
+	
+    .cont_product .freepass_options {margin-top: 2rem; border-top: .1rem solid  #363D48;}
+    .cont_product .freepass_options input{width: 2.4rem; height: 2.4rem; -webkit-appearance: none; border-radius: 0; border: none;}
+	.cont_product .freepass_options > ul > li{padding: 2.4rem;}
+	.cont_product .freepass_options > ul > li + li{border-top: 0.05rem solid #F2F2F2;}
+	.cont_product .freepass_options > ul > li .option_tit{margin-bottom: 0.4rem; text-align: left;}
+	.cont_product .freepass_options > ul > li .option_desc{color: #778DB2 !important; font-size: 1.2rem; font-weight: 700;}
+	.cont_product .freepass_options > ul > li .option_desc em{background-image: linear-gradient(to left, #0258FF 0%, #FF00E5 100%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-left: 0.4rem; display: none;}
+	.cont_product .freepass_options > ul > li .option_tit p{font-size: 2rem; font-weight: 700; letter-spacing: -0.06rem;}
+	.cont_product .freepass_options > ul > li .option_tit .label_area {display: flex; align-items: center; gap: 0.6rem;}
+	.cont_product .freepass_options > ul > li .option_tit .label_area > span{margin-top: 0.15rem; animation: opacity 1.5s ease infinite; height:1.7rem; width:auto;}
+	.cont_product .freepass_options > ul > li .option_tit .label_area > span img {width:auto; height:100%; filter: grayscale(1); opacity: .2;}
+	.cont_product .freepass_options > ul > li .option_item{display: flex; gap: 0.8rem; margin-top: 0.8rem; }
+	.cont_product .freepass_options > ul > li .option_item + .option_item{margin-top: 0.8rem}
+	.cont_product .freepass_options > ul > li .option_item .info_price{ font-size: 1.4rem; font-weight: 700; line-height: 140%; letter-spacing: -0.056rem;}
+    .cont_product .freepass_options > ul > li .option_item .info_price span {color: #778DB2 !important;}
+    .cont_product .freepass_options > ul > li .option_item .info_price ul > li ._highlight{line-height: 1.65rem; margin-top: 0.2rem; padding-left: 2rem; background-image: linear-gradient(to left, #0258FF 0%, #FF00E5 100%);background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;}
+	.cont_product .freepass_options > ul > li .option_item .info_price ul > li .ico_arrow_line:before {background-color: rgba(205, 18, 235, 1); right:auto; width:1.5rem; height:1.5rem;}
+	.cont_product .freepass_options > ul > li .option_info .option_note{font-size: 1.1rem; font-weight: 400; color: #7E8B9A; line-height: 1.54rem; margin-top: 1rem; text-align: left;}
+
+    .cont_product .freepass_total {display: flex;justify-content: space-between;align-items: center;height: 5.8rem;padding: 0 2.4rem;background: #21252C;border-bottom-right-radius: 0.8rem;border-bottom-left-radius: 0.8rem;}
+	.cont_product .freepass_total span {font-size: 1.4rem;font-weight: 500;line-height: 2.1rem;letter-spacing: -0.015rem;}
+	.cont_product .freepass_total b {font-size: 2rem;font-weight: 900;line-height: 138%;letter-spacing: -0.044rem;text-align: right;}
+	.cont_product .freepass_btns{display: flex; flex-direction: column; gap: 1.2rem; margin-top:1.2rem;}
+	.cont_product .freepass_btns > a{font-size: 1.5rem;flex: 1;line-height: 1.95rem; padding:2rem 0; border-radius: 11.4rem;}
+	.cont_product .freepass_btns > a > span{font-size: inherit;}
+	.cont_product .freepass_btns > a:first-of-type {color:#fff; background:#6101D9;}
+	.cont_product .freepass_btns > a:last-of-type {color:#fff; background:#21252C;}
+    /* 프리패스 상품단 E */
+
+    .cont_teacher {background: #000; }
+    .cont_teacher .top { background: #B795DA;}
+    .cont_teacher .top img {margin: 0 auto;}
+    .cont_teacher p {padding-bottom: 5rem;}
+
+    .cont_last {padding-top: 5rem; height: 27.2rem; overflow: hidden; background: url('<?=UN_STATIC_IMG?>/gong/landing/2024/11/gong_15789/m/last_bg.jpg') #690EDC no-repeat center top / auto 100%;}
+
+    .cont_sticky {background: #121212; position: sticky; bottom: 0; left: 0; right: 0; margin: 0 auto; z-index: 2; padding: 1.8rem 0;}
+    .cont_sticky .inner {display: flex; gap: .5rem;}
+    .cont_sticky .inner:after {display:none;}
+    
+	.modal_sticky_bnr.modal-bottom-wrap{max-height: calc(100dvh - 8rem);}
+	.modal_sticky_bnr .modal-body{background-color: #121212;}
+	.modal_sticky_bnr .modal-head-area, .modal_sticky_bnr .modal-conts-area{width: 34.3rem; margin: auto;}
+	.modal_sticky_bnr .modal-head-area h1.tit{color: #fff; font-size: 1.6rem; font-weight: 700; line-height: 140%; letter-spacing: -0.64px;}
+	.modal_sticky_bnr .cn-modal-close{display: none;}
+	.modal_sticky_bnr .modal__col{display: flex; flex-direction: column; gap: .4rem;}
+</style>
+
+<div class="event_20241108 event-contents">
+    <!-- @ main -->
+    <section class="cont_main scrollAni" id="cont_main">
+        <div class="inner no_padding">
+            <h3>
+                <img class="back" src="<?=UN_STATIC_IMG?>/gong/landing/2024/11/gong_15789/m/main_tit.png" alt="결국 합격을 결정하는 기출은 따로 있다는데, 선별된 문항으로 회독 시간을 단축할 수 있다는 거 알고 계신가요?">
+                <img class="front" src="<?=UN_STATIC_IMG?>/gong/landing/2024/11/gong_15789/m/main_tit_on.png" alt="프리미엄 서비스">
+            </h3>
+            <div class="txt">
+                <p><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/11/gong_15789/m/main_txt.png" alt="감히 타사에서 시도조차 할 수 없는, 공단기 91,962명의 합격생이 알려주는 똑똑한 기출 공부법을 오직 공단기 프리패스 회원에게만 공개!"></p>
+                <a href="javascript:;" onclick="goPage('#cont_product')"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/11/gong_15789/m/main_btn.png" alt="지금 구매하기"></a>
+            </div>
+            <p class="noti"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/11/gong_15789/m/main_notice.png" alt="기준문구"></p>
+        </div>
+    </section>
+
+    <!-- @ 영상 -->
+    <section class="cont_movie scrollAni">
+        <video muted="" playsinline style="display: none;">
+            <source src="<?=VIDEO_URL?>/2024/241120_prm_mbs_mb_800k.mp4" type="video/mp4">
+        </video>
+    </section>
+
+    <!-- @ -->
+    <section class="cont_intro" id="cont_intro">
+        <div class="cnt01 py-50">
+            <div class="inner">
+                <h4><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/11/gong_15789/m/intro01_tit.png" alt="‘15점? > 고작 5점’ 그 1문제가 뭐였길래"></h4>
+                <div class="box gray">
+                    <p><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/11/gong_15789/m/intro01_txt.png" alt="안정적인 합격을 원하면 언제나 [고득점]이 당연해진 상황"></p>  
+                    <ul class="intro01_slide">
+                        <? for($i=1; $i<=3; $i++){ ?>
+                        <li><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/11/gong_15789/m/intro01_slide<?= $i ?>.png" alt="리뷰"></li>
+                        <? } ?>
+                        <? for($i=1; $i<=3; $i++){ ?>
+                        <li><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/11/gong_15789/m/intro01_slide<?= $i ?>.png" alt="리뷰"></li>
+                        <? } ?>
+                    </ul>                  
+                </div>
+                <p><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/11/gong_15789/m/intro01_cnt.png" alt="확실한 [합격생들의 데이터] 기반 서비스"></p>
+            </div>
+        </div>
+
+        <div class="cnt02 py-50 scrollAni">
+            <div class="inner">
+                <h4><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/11/gong_15789/m/intro02_tit.png" alt="숫자는 속일 수 없으니, 오직 공단기만 할 수 있습니다."></h4>
+                <div class="slide_box">
+                    <ul class="intro02_slide">
+                        <li>
+                            <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/11/gong_15789/m/intro02_cnt.png" alt="">
+                            <div class="txt">
+                                <strong><span class="total_count">0</span>명<sup>1)</sup></strong>
+                            </div>
+                            <div class="graph_box">
+                                <span class="graph_w"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/11/gong_15789/m/intro02_graph_line.png" alt="그래프"></span>
+                                <div class="graph_h"></div>
+                                <span class="graph_txt"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/11/gong_15789/m/intro02_blink.png" alt="합격률"></span>
+                            </div>
+                        </li>
+                        <li><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/11/gong_15789/m/intro02_graph_txt.png" alt="지표"></li>
+                    </ul>    
+                </div>
+                <p><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/11/gong_15789/m/intro02_txt.png" alt="기준문구"></p>
+            
+            </div>
+        </div>
+    </section>
+
+    <!-- @ 패스메이커 -->
+    <section class="cont_pass" id="cont_pass">
+        <div class="inner">
+            <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/11/gong_15789/m/passmaker.png" alt="그렇게 완성된 합격생 정답률 분석 서비스 [ PASS Maker]">
+            <strong><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/11/gong_15789/m/pass_tit.png" alt="PASS Maker의 합격 완성 3STEP"></strong>
+            <div class="cnt01">
+                <h4><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/11/gong_15789/m/pass01_tit.png" alt="STEP 1. 합격생 기출 모의고사"></h4>
+                <div class="prem__layout--column gap-16">
+                    <div class="box black line small">
+                        <ul class="pass01_slide">
+                            <? for($i=1; $i<=7; $i++){ ?>
+                            <li><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/11/gong_15789/m/pass01_slide<?= $i ?>.png" alt="리뷰"></li>
+                            <? } ?>
+                        </ul>     
+                    </div>
+                    <p><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/11/gong_15789/m/pass01_txt.png" alt="매월 공개되는 시크릿 기출"></p>
+                </div>
+            </div>
+            <div class="cnt02">
+                <h4><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/11/gong_15789/m/pass02_tit.png" alt="STEP 2. 위치 확인 서비스"></h4>
+                <div class="prem__layout--column">
+                    <div class="scrollAni">
+                        <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/11/gong_15789/m/pass02_cnt.png" alt="나를 알고 점검해야 시너지 200% ">  
+                        <div class="graph_bar">
+                            <span></span>
+                            <span></span>
+                        </div> 
+                    </div>
+                    <div class="scrollAni" data-once="true">
+                        <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/11/gong_15789/m/pass02_txt.png" alt="본인의 실력을 매월 파악하다 보면 합격 직전에는 합격선보다 한참 위에 도달할거에요!">
+                        <div class="graph_box">
+                            <span class="graph_w"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/11/gong_15789/m/pass02_line.png" alt="그래프"></span>
+                            <span class="icon"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/11/gong_15789/m/pass02_icon_fixed.png" alt="지금의 나"></span>
+                            <span class="graph_txt">
+                                <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/11/gong_15789/m/pass02_icon.png" alt="#">
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cnt03 py-100">
+                <h4><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/11/gong_15789/m/pass03_tit.png" alt="STEP 3. 학습 리포트"></h4>
+                <div class="detail">
+                    <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/11/gong_15789/m/pass03_cnt.png" alt="그저 그런 결과표가 아닌 나만의 진단표">
+                    <div class="line"></div>
+                </div>
+            </div>
+            <div class="cnt04 py-100 scrollAni">
+                <h4><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/11/gong_15789/m/pass04_tit.png" alt="기출 진단평가"></h4>
+                <div class="detail">
+                    <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/11/gong_15789/m/pass04_cnt.png" alt="나의 수준을 모를 때 받아보는 학습 가이드">
+                    <div class="graph"></div>
+                </div>
+                <div class="box black line">
+                    <p><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/11/gong_15789/m/pass04_txt.png" alt="PASS Maker 그대로 따라간 결과는, 빠른 합격"></p>
+                    <ul class="pass04_slide">
+                        <? for($i=1; $i<=4; $i++){ ?>
+                        <li><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/11/gong_15789/m/pass04_slide.png" alt="리뷰"></li>
+                        <? } ?>
+                    </ul>     
+                </div>
+            </div>
+        </div>
+        <div class="last">
+            <div class="inner no_padding">
+                <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/11/gong_15789/m/pass_last.png" alt="[PASS Maker]로 단기 합격의 합격 공식이 될 [프리미엄 서비스] 완성">
+            </div>
+        </div>
+    </section>
+
+    <!-- @ 멘토링 -->
+    <section class="cont_mentoring scrollAni" id="cont_mentoring">
+        <div class="inner">
+            <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/11/gong_15789/m/mentoring.png" alt="맞춤 공부법을 찾아내 줄 합격생 멘토링">
+            <div class="cnt01">
+                <h4><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/11/gong_15789/m/mentoring01_tit.png" alt="제대로 검증된 여러분의 합격 멘토를 소개합니다."></h4>
+                <div class="slide_box">
+                    <ul class="mentoring01_slide">
+                        <? for($i=1; $i<=5; $i++){ ?>
+                        <li><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/11/gong_15789/m/mentoring01_slide<?= $i ?>.png" alt="합격생"></li>
+                        <? } ?>
+                        <? for($i=1; $i<=5; $i++){ ?>
+                        <li><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/11/gong_15789/m/mentoring01_slide<?= $i ?>.png" alt="합격생"></li>
+                        <? } ?>
+                    </ul>   
+                </div>
+            </div>
+            <div class="cnt02 py-50 scrollAni" data-once="true">
+                <h4><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/11/gong_15789/m/mentoring02_tit.png" alt="공부하다 궁금한 건 전-부 언제든지 해결가능"></h4>
+                <div class="prem__layout--column gap-16">
+                    <div class="box black line small">
+                        <img class="paper01" src="<?=UN_STATIC_IMG?>/gong/landing/2024/11/gong_15789/m/mentoring02_img1.png" alt="답변이 가장 많은 Q&A">   
+                        <img class="paper02" src="<?=UN_STATIC_IMG?>/gong/landing/2024/11/gong_15789/m/mentoring02_img1.png" alt="답변이 가장 많은 Q&A">   
+                        <ul class="num">
+                            <li><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/11/gong_15789/m/mentoring02_num1.png" alt="1"></li>
+                            <li><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/11/gong_15789/m/mentoring02_num2.png" alt="2"></li>
+                            <li><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/11/gong_15789/m/mentoring02_num3.png" alt="3"></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/11/gong_15789/m/mentoring02_txt.png" alt="설명글">
+                    </div>
+                </div>
+            </div>
+            <div class="cnt03 py-100" data-once="true">
+                <h4><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/11/gong_15789/m/mentoring03_tit.png" alt="확실한 동기부여가 될 합격생과의 실시간 만남"></h4>
+                <div class="cnt box black">
+                    <img class="cnt_tit" src="<?=UN_STATIC_IMG?>/gong/landing/2024/11/gong_15789/m/mentoring03_cnt.png" alt="‘이런걸 질문해도 되나?’">
+                    <img class="icon" src="<?=UN_STATIC_IMG?>/gong/landing/2024/11/gong_15789/m/mentoring03_icon.png" alt="?">
+                    <ul class="mentoring03_slide">
+                        <? for($i=1; $i<=3; $i++){ ?>
+                        <li><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/11/gong_15789/m/mentoring03_slide<?= $i ?>.png" alt="단권화"></li>
+                        <? } ?>
+                        <? for($i=1; $i<=3; $i++){ ?>
+                        <li><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/11/gong_15789/m/mentoring03_slide<?= $i ?>.png" alt="단권화"></li>
+                        <? } ?>
+                    </ul> 
+                </div>
+                <div class="detail box prem__layout gap-20 scrollAni">
+                    <p><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/11/gong_15789/m/mentoring03_txt.png" alt="시간이 없다면, 원하는 주제에 투표하고 그 라이브에만 참석해도 좋아요."></p>
+                    <img class="paper01" src="<?=UN_STATIC_IMG?>/gong/landing/2024/11/gong_15789/m/mentoring03_img1.png" alt="투표">   
+                </div>
+            </div>
+            <div class="cnt04 py-100">
+                <h4><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/11/gong_15789/m/mentoring04_tit.png" alt="합격생이 알려주는 단권화 비법"></h4>
+                <div class="prem__layout gap-20">
+                    <?php /* ?>
+                    <div class="box black line small">
+                        <ul class="mentoring04_slide">
+                            <? for($i=1; $i<=2; $i++){ ?>
+                            <li><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/11/gong_15789/m/mentoring04_slide<?= $i ?>.png" alt="단권화"></li>
+                            <? } ?>
+                            <? for($i=1; $i<=2; $i++){ ?>
+                            <li><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/11/gong_15789/m/mentoring04_slide<?= $i ?>.png" alt="단권화"></li>
+                            <? } ?>
+                            <? for($i=1; $i<=2; $i++){ ?>
+                            <li><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/11/gong_15789/m/mentoring04_slide<?= $i ?>.png" alt="단권화"></li>
+                            <? } ?>
+                        </ul>     
+                    </div>
+                    <?php */ ?>
+                    <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/11/gong_15789/m/mentoring04_cnt.png" alt="단권화">
+                    <p><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/11/gong_15789/m/mentoring04_txt.png" alt="시험장에 들고 갈 단 한 권 완성!"></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- @ 합격수기 -->
+    <section class="cont_knowhow py-50" id="cont_knowhow">
+        <div class="inner">
+            <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/11/gong_15789/m/knowhow.png" alt="더욱 생생한 합격 스토리, 합격수기">
+            <div class="box scrollAni">
+                <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/11/gong_15789/m/knowhow_cnt.png" alt="BEST 합격수기">
+                <img class="txt01" src="<?=UN_STATIC_IMG?>/gong/landing/2024/11/gong_15789/m/knowhow_txt1.png" alt="어떤 합격수기라도 최대한 찾아서 보기 쉽게">
+                <img class="txt02" src="<?=UN_STATIC_IMG?>/gong/landing/2024/11/gong_15789/m/knowhow_txt2.png" alt="어마어마한 양의 공단기 합격생 수기!">
+            </div>
+        </div>
+    </section>
+
+    <!-- @ 시크릿 서비스 -->
+    <section class="cont_secret scrollAni" id="cont_secret">
+        <div class="inner">
+            <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/11/gong_15789/m/secret.png" alt="기대해도 좋아요. 시크릿 서비스 ">
+            <p class="stamp"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/11/gong_15789/m/secret_tit.png" alt="COMING SOON!"></p>
+        </div>
+    </section>
+
+    <!-- @ 타겟 분기처리 : 프리패스 -->
+    <section class="cont_product py-50" id="cont_product">
+        <div class="inner">
+            <h4><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/11/gong_15789/m/product_tit.png" alt="눈앞의 합격 공식을 놓칠 수는 없잖아요. 지금 시작하세요."></h4>
+            
+            <!-- 프리패스 상품 영역 -->
+            <div class="freepass_wrap">
+                <!-- 프리패스 탭 버튼 -->
+                <ul class="freepass_nav cn-nav cn-auto-index">
+                    <li class="active">26대비 프리미엄</li>
+                    <li>25대비 프리미엄</li>
+                </ul>
+                <!-- 프리패스 탭 내용 -->
+                <ul class="freepass_tab freepass_area cn-tab">
+                    <li class="active">
+                        <ul class="freepass_list">
+                            <li class="triple">
+                                <label class="freepass_item active  recommend">
+                                    <div class="freepass_content">
+                                        <div class="item_info">
+                                            <div class="info_top">
+                                                <input type="radio" class="saleinfo" checked>
+                                                <div class="info_labels">
+                                                    <span>환급</span>
+                                                    <span>26대비</span>
+                                                </div>
+                                            </div>
+                                            <strong>[공단기]<br>26대비 프리미엄 서비스</strong>
+                                            <p class="date">2026.06.30까지 / 25,26년 시험 대비</p>
+                                        </div>
+                                        <div class="item_price">
+                                            <div class="price_num">
+                                                <span class="discount_price">
+                                                    <span><em>200,000원</em></span>
+                                                    <span class="price_label"><span>50% 할인</span></span>
+                                                </span>
+                                                <strong>100,000원</strong>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="freepass_line">
+                                        <div class="top"><i class="prem__ico--cash"></i>혜택 <em>선착순 마감 예정</em></div>
+                                        <div>적중 500제(2만원 상당)</div>
+                                        <p>* 전 수량 소진 시 별도 안내 없이 혜택 미지급 됩니다.</p>
+                                    </div>
+                                    <div class="freepass_options">
+                                        <ul>
+                                            <li class="li_option_a">
+                                                <span class="option_desc">선택 구매 (교재 구매 지원)<em>구매 시 5만원 지원</em></span>
+                                                <div class="option_info">
+                                                    <label class="option_item">
+                                                        <input type="checkbox" class="option_a" name="freepass_option_9/7급_403177_a" value="a1" data-title="2만 캐시 추가제공" data-price="200000">
+                                                        <div class="option_item_info">
+                                                            <div class="option_tit">
+                                                                <p>단기캐시 100,000원</p>
+                                                            </div>
+                                                            <div class="info_price">
+                                                                <ul class="info_txt">
+                                                                    <li><span>2만 캐시 추가</span> <span class="_highlight ico ico_arrow_line _right">총 12만 캐시 제공</span></li>
+                                                                </ul>
+                                                            </div>
+                                                            <p class="option_note">* 단기 캐시는 단독으로 구매 불가하며,<br>프리패스 구매자에 한하여 2만원 추가 캐시가 제공됩니다.</p>
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <!-- 최종 결제금액 -->
+                                    <div class="freepass_total">
+                                        <span>최종 결제금액</span>
+                                        <b>200,000원</b>
+                                    </div>
+                                </label>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul class="freepass_list">
+                            <li class="triple">
+                                <label class="freepass_item active  recommend">
+                                    <div class="freepass_content">
+                                        <div class="item_info">
+                                            <div class="info_top">
+                                                <input type="radio" class="saleinfo" checked>
+                                                <div class="info_labels">
+                                                    <span>환급</span>
+                                                    <span>26대비</span>
+                                                </div>
+                                            </div>
+                                            <strong>[공단기]<br>25대비 프리미엄 서비스</strong>
+                                            <p class="date">2025.06.30까지 / 25년 시험 대비</p>
+                                        </div>
+                                        <div class="item_price">
+                                            <div class="price_num">
+                                                <span class="discount_price">
+                                                    <span><em>100,000원</em></span>
+                                                    <span class="price_label"><span>40% 할인</span></span>
+                                                </span>
+                                                <strong>60,000원</strong>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="freepass_line">
+                                        <div class="top"><i class="prem__ico--cash"></i>혜택 <em>선착순 마감 예정</em></div>
+                                        <div>적중 500제(2만원 상당)</div>
+                                        <p>* 전 수량 소진 시 별도 안내 없이 혜택 미지급 됩니다.</p>
+                                    </div>
+                                    <div class="freepass_options">
+                                        <ul>
+                                            <li class="li_option_a">
+                                                <span class="option_desc">선택 구매 (교재 구매 지원)<em>구매 시 5만원 지원</em></span>
+                                                <div class="option_info">
+                                                    <label class="option_item">
+                                                        <input type="checkbox" class="option_a" name="freepass_option_9/7급_403177_a" value="a1" data-title="2만 캐시 추가제공" data-price="200000">
+                                                        <div class="option_item_info">
+                                                            <div class="option_tit">
+                                                                <p>단기캐시 100,000원</p>
+                                                            </div>
+                                                            <div class="info_price">
+                                                                <ul class="info_txt">
+                                                                    <li><span>2만 캐시 추가</span> <span class="_highlight ico ico_arrow_line _right">총 12만 캐시 제공</span></li>
+                                                                </ul>
+                                                            </div>
+                                                            <p class="option_note">* 단기 캐시는 단독으로 구매 불가하며,<br>프리패스 구매자에 한하여 2만원 추가 캐시가 제공됩니다.</p>
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <!-- 최종 결제금액 -->
+                                    <div class="freepass_total">
+                                        <span>최종 결제금액</span>
+                                        <b>200,000원</b>
+                                    </div>
+                                </label>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <!-- 버튼 -->
+                <div class="freepass_btns">
+                    <a class="btn-l _fill" href="javascript:;" onclick="app.purchase('.freepass_area');"><span>서비스 구매하기</span></a>
+                    <a class="btn-l _fill" href="javascript:;" onclick="goPage('.cont_notice')"><span>상품 구매 전 필수 확인 사항</span></i></a>
+                </div>
+                <div class="freepass_desc">
+                    *현재 판매되는 상품은 동일 구성 및 동일 가격으로 재판매될 수 있으며, 판매중인 상품 중 일부는 조기 판매 종료될 수 있습니다.<br>
+                    * 단기캐시는 단과, 면접강좌, 교재, 모의고사 등 단기 사이트 내 모든 상품 구매 시에 현급처럼 사용 가능합니다.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- @ 타겟 분기처리 : 선생님 소개 -->
+    <section class="cont_teacher" id="cont_teacher">
+        <div class="top">
+            <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/11/gong_15789/m/teacher_top.png" alt="이 모든 프리미엄 서비스는 오직, 공단기 프리패스 회원에게만 공개됩니다.">
+        </div>
+        <div class="inner">
+            <div class=" py-50">
+                <h4><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/11/gong_15789/m/teacher_tit.png" alt="결국 모든 수험생의 단기 합격 공식이 될 “프리미엄 서비스”"></h4>
+                <p><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/11/gong_15789/m/teacher_cnt.png" alt="선생님 리스트"></p>
+                <a href="javascript:void(0);"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/11/gong_15789/m/teacher_bnr.png" alt="환급형 프리미엄 프리패스 구매하기"></a>    
+            </div>
+        </div>
+    </section>
+
+    <!-- @ -->
+    <section class="cont_last">
+        <div class="inner">
+            <h4><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/11/gong_15789/m/last_tit.png" alt="공단기 프리미엄 서비스 with PASS Maker와 개편된 2025 시험에서도 단번에 합격하세요."></h4>
+        </div>
+    </section>
+
+    <!-- @ sticky banner -->
+    <div class="cont_sticky">
+        <div class="inner">
+            <a class="btn_sticky_bnr" href="javascript:void(0);"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/11/gong_15789/m/quick01.png" alt=""></a>
+            <!-- 구매하기 퀵배너 타겟별 노출 위치 다름
+            onclick="goPage('#cont_product')"
+            onclick="goPage('#cont_teacher')"
+            -->
+            <a href="javascript:void(0);" onclick="_gotoArea('#cont_product')"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/11/gong_15789/m/quick02.png" alt=""></a>
+        </div>
+        <div class="modal_sticky_bnr">
+			<div class="inner">
+				<div class="modal__col">
+					<a href="javascript:void(0);"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/11/gong_15789/m/modal_btn1.png" alt="기술단기 프리패스"></a>
+					<a href="javascript:void(0);"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/11/gong_15789/m/modal_btn2.png" alt="소방단기 프리패스"></a>
+					<a href="javascript:void(0);"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/11/gong_15789/m/modal_btn3.png" alt="경찰단기 프리패스"></a>
+					<a href="javascript:void(0);"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/11/gong_15789/m/modal_btn4.png" alt="정년보장 프리패스"></a>
+				</div>
+			</div>
+		</div>
+    </div>
+
+    <!-- @ 유의사항 -->
+    <section class="cont_notice">
+        <div id="use_guide"></div>
+    </section>
+
+    <script type="text/javascript">use_guide.html('<?= $base_uri ?>','#use_guide','','');</script>
+</div>
+
+<script type="text/javascript">
+    var graphView = false;
+    var movieVisible = false;
+    $(function(){
+        // scroll
+        $(window).cnScroll({
+            targetClass: 'scrollAni'
+        });
+
+        // sticky
+        $('.event_sticky').cnStickyBar()
+
+        // 메인
+        setTimeout(function(){
+            $('.cont_main .back').fadeOut(1000).siblings('.front').fadeIn(1000)
+        },1000);
+
+        // intro slide 1
+        $('.cont_intro .intro01_slide').cnSlider({
+            swiperOptions: {
+                // centeredSlides: true,
+                direction: "vertical",
+                slidesPerView: 'auto',
+                spaceBetween: 20,
+                autoHeight: true,
+                loop: true,
+                speed: 1000,
+                allowTouchMove: false,
+                autoplay: {
+                    delay: 2000,
+                },
+                observer:true,
+                observeParents:true,
+            }
+        });
+
+        // intro slide 1
+        $('.cont_intro .intro02_slide').cnSlider({
+            swiperOptions: {
+                slidesPerView: 'auto',
+                loop: false,
+                allowTouchMove: true,
+                spaceBetween: 10,
+            }
+        });
+
+        //
+        $(window).scroll(function(){
+            var scrollTop = $(window).scrollTop();
+
+            //카운트
+            if($('.cont_intro .cnt02').hasClass('active') && graphView == false) {
+                $('.total_count').prop('Counter', 0).animate({
+                    Counter: 31962,
+                }, {
+                    duration: 2000,
+                    easing: 'swing',
+                    step: function (now) {
+                        $(this).text(Math.ceil(now).toLocaleString('en'));
+                    }
+                });
+                graphView = true;
+            }
+
+            // VIDEO
+            if($('.cont_movie').hasClass('active') && !movieVisible) {
+                setTimeout(function(){
+                    $(".cont_movie video").show();
+                    $('.cont_movie').addClass('moving');
+                    if($('.cont_movie video').get(0).played.length === 0 ) {
+                        $('.cont_movie video').get(0).play();
+                    }
+                    movieVisible = true;
+                },1000)
+            }
+        });
+
+        setInterval(function(){
+            if($(".cont_movie video").prop("ended")){
+                $(".cont_movie video").hide();
+                $('.cont_movie').removeClass('moving');
+            }
+        },200);
+
+
+        // 패스메이커 slide 1
+        $('.cont_pass .pass01_slide').cnSlider({
+            swiperOptions: {
+                //centeredSlides: true,
+                slidesPerView: 'auto',
+                spaceBetween: 12,
+                allowTouchMove: false,
+                loop: true,
+                speed: 4200,
+                autoplay: {
+                    delay: 1,
+                }
+            }
+        });
+
+        // 패스메이커 slide 2
+        $('.cont_pass .pass04_slide').cnSlider({
+            swiperOptions: {
+                centeredSlides: true,
+                slidesPerView: 'auto',
+                spaceBetween: 19,
+                loop: true,
+                allowTouchMove: false,
+                speed: 14000,
+                autoplay: {
+                    delay: 1,
+                }
+            }
+        });
+        
+        // 멘토링 slide 1
+        $('.cont_mentoring .mentoring01_slide').cnSlider({
+            swiperOptions: {
+                slidesPerView: 'auto',
+                loop: true,
+                allowTouchMove: true,
+                spaceBetween: 9,
+                autoplay: {
+                    delay: 1700,
+                },
+                autoHeight: true,
+                observer:true,
+                observeParents:true,
+            }
+        });
+
+        // 멘토링 slide 3
+        $('.cont_mentoring .mentoring03_slide').cnSlider({
+            swiperOptions: {
+                slidesPerView: 'auto',
+                spaceBetween: 10,
+                allowTouchMove: false,
+                loop: true,
+                speed: 4600,
+                autoplay: {
+                    delay: 1,
+                }
+            }
+        });
+
+        // 멘토링 slide 4
+        $('.cont_mentoring .mentoring04_slide').cnSlider({
+            swiperOptions: {
+                slidesPerView: 'auto',
+                spaceBetween: 20,
+                allowTouchMove: false,
+                loop: true,
+                speed: 4600,
+                autoplay: {
+                    delay: 1,
+                }
+            }
+        });
+
+        // 프리패스
+        $('.freepass_nav').eq(0).cnTab({'startIndex' : 0 || 0});
+
+        //
+        const footerStickyModal = $('.btn_sticky_bnr').cnBottomModal({
+            modalBody: '.modal_sticky_bnr',
+            btnVisible:false,
+            strModalTit: '단기 주요 프로그램 바로가기',
+        });
+
+        $('.modal_sticky_bnr a').on('click', function(){
+            footerStickyModal.close();
+        })
+    });
+
+    // 해당 영역으로 이동하기
+    function goPage(el) {
+        $('html, body').stop().animate({ scrollTop: $(el).offset().top }, 'slow');
+        return false;
+    };
+
+</script>
+

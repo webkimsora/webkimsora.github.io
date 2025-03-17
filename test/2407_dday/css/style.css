@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 @charset "utf-8";
 
@@ -72,4 +73,80 @@ body {background: #988575; color: #fff;}
     .grained_dday .dday_box #timer span.fig {min-width: 3rem;}
     .grained_dday .count_box p {font-size: 7rem;}
     .grained_dday .birth_box span {font-size: 4rem;}
+=======
+
+@charset "utf-8";
+
+/* 기본 폰트 선언 */
+@font-face {
+    font-family: 'NanumSquareNeo';
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-bRg.eot);
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-bRg.eot?#iefix) format("embedded-opentype"),
+        url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-bRg.woff) format("woff"),
+        url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-bRg.ttf) format("truetype");
+}
+@font-face { font-family: 'NanumSquareNeo'; font-style: normal; font-weight: 300;
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-aLt.eot);
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-aLt.eot?#iefix) format("embedded-opentype"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-aLt.woff) format("woff"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-aLt.ttf) format("truetype");
+}
+@font-face { font-family: 'NanumSquareNeo'; font-style: normal; font-weight: 900;
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.eot);
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.eot?#iefix) format("embedded-opentype"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.woff) format("woff"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.ttf) format("truetype");
+
+}
+
+html,body, input, textarea, select {
+    font-family: 'NanumSquareNeo', sans-serif,-apple-system,BlinkMacSystemFont,"Malgun Gothic","맑은 고딕",helvetica,"Apple SD Gothic Neo",sans-serif; font-size: 20px;color: #121212; letter-spacing: -0.03em;-webkit-text-size-adjust: none;-webkit-font-smoothing: antialiased;
+}
+
+@media all and (max-width: 750px) { html { font-size: 20px; } }
+@media all and (max-width: 640px) { html { font-size: 18px; } }
+@media all and (max-width: 560px) { html { font-size: 16px; } }
+@media all and (max-width: 480px) { html { font-size: 14px; } }
+@media all and (max-width: 400px) { html { font-size: 13px; } }
+@media all and (max-width: 360px) { html { font-size: 12px; } }
+@media all and (max-width: 320px) { html { font-size: 10px; } }
+
+body {background: #988575; color: #fff;}
+.grained_dday {background: #988575; color: #fff;}
+.grained_dday .inner {max-width: 750px; margin: 0 auto; padding: 55px 4%;}
+.grained_dday .top {display: flex; align-items: center; padding-bottom: 2.5rem;}
+.grained_dday .top p {padding-left: 1.5rem; font-size: 1rem; font-weight: 900;}
+.grained_dday .top .logo {margin-left: auto; width: 15.7vw; max-width: 135px;}
+.grained_dday .dday_box {padding: 4rem 5.5% 5.5rem; background: #000; font-size: 3rem; box-shadow: 10px 15px 14px 0px rgba(0, 0, 0, 0.3);}
+.grained_dday .dday_box #timer {display:flex; justify-content: space-around;}
+.grained_dday .dday_box #timer span {text-align: center; position: relative; line-height :1;}
+.grained_dday .dday_box #timer span.fig {min-width: 4.5rem;}
+.grained_dday .dday_box #timer span:after {display: block; font-size: 0.65rem; position: absolute; bottom: -20px; left: 0; width: 100%; text-align: center;}
+.grained_dday .dday_box #timer span:nth-child(1):after {content:"DAYS";}
+.grained_dday .dday_box #timer span:nth-child(3):after {content:"HOURS";}
+.grained_dday .dday_box #timer span:nth-child(5):after {content:"MINUTES";}
+.grained_dday .dday_box #timer span:nth-child(7):after {content:"SECONDS";}
+
+.grained_dday .count_box {margin-top: 3rem; font-size: 1.1rem; font-weight: 900; text-align: right;}
+.grained_dday .count_box p {font-size: 180px; text-shadow: 8px 8px 15px rgba(0,0,0,0.3); letter-spacing: -0.3px;}
+.grained_dday .birth_box {padding-top: 4rem; font-size: 1.1rem; font-weight: 900;}
+.grained_dday .birth_box span {font-size: 90px; text-shadow: 8px 8px 15px rgba(0,0,0,0.3); letter-spacing: -0.3px;}
+
+@media all and (max-width: 750px) {
+    .grained_dday .count_box p {font-size: 8rem;}
+    .grained_dday .birth_box span {font-size: 5rem;}
+}
+
+@media all and (max-width: 640px) {
+    .grained_dday .birth_box span {font-size: 4.5rem;}
+    .grained_dday .dday_box #timer span.fig {min-width: 4rem;}
+}
+@media all and (max-width: 480px) {
+    .grained_dday .count_box p {font-size: 7.5rem;}
+    .grained_dday .dday_box {font-size:2.4rem;}
+    .grained_dday .dday_box #timer span.fig {min-width: 3.2rem;}
+    .grained_dday .dday_box #timer span:after {font-size: 0.6rem;}
+}
+
+@media all and (max-width: 400px) {
+    .grained_dday .dday_box #timer span.fig {min-width: 3rem;}
+    .grained_dday .count_box p {font-size: 7rem;}
+    .grained_dday .birth_box span {font-size: 4rem;}
+>>>>>>> 967f01393ba0800c8ec13db9d0512f88daf844e4
 }

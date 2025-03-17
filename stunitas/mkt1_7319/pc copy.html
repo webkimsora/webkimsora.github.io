@@ -1,0 +1,397 @@
+<script type="text/javascript" src="<?=JS_DIR?>/common/lib/swiper-bundle.min.js"></script>
+<link rel="stylesheet" href="<?=CSS_DIR?>/common/lib/swiper-bundle.min.css">
+<!-- GSAP 라이브러리 설정 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/ScrollToPlugin.min.js"></script>
+
+
+<style type="text/css">
+    /* common */
+    * {font-family: 'Noto Sans KR', sans-serif;}
+    b {font-weight: bold;}
+    h1,h2,h3,h4,h5,h6  {font-family: 'Noto Sans KR', sans-serif !important;}
+    .inner {width: 1140px; margin: 0 auto; position: relative; text-align: center;}
+    .inner:after {content:""; display: block; clear: both;}
+    .spacer {width: 100%; height: 100%;}
+    area {outline: none;}
+    video {width: 100%; height: 100%; outline: none;}
+    .ani{opacity: 0;opacity:1 \0/IE9;}
+    button {outline: none;}
+    .floatDouble:after {content:""; display: block; clear: both;}
+    .floatDouble > .left {float: left;}
+    .floatDouble > .right {float: right;}
+    .floatDouble > li {float: left;}
+
+    .event_20240710 * {box-sizing: border-box;}
+
+    @keyframes scrollBottom {
+        0% { transform: translateY(-2%); }
+        100% { transform: translateY(2%); }
+    }
+
+    @keyframes ani_translate {
+        0% {opacity: 0;}
+        100%{transform: translate(0);opacity: 1;}
+    }
+
+    @keyframes shake {
+		0%, 100% {-webkit-transform: rotate(0deg);transform: rotate(0deg);-webkit-transform-origin: 50% 100%;transform-origin: 50% 100%;}
+		10% {-webkit-transform: rotate(2deg);transform: rotate(2deg) scale(1);}
+		20%, 40%, 60% {-webkit-transform: rotate(-4deg);transform: rotate(-4deg);}
+		30%, 50%, 70% {-webkit-transform: rotate(4deg);transform: rotate(4deg) scale(1.3) ;}
+		80% {-webkit-transform: rotate(-2deg);transform: rotate(-2deg);}
+		90% {-webkit-transform: rotate(2deg);transform: rotate(2deg) scale(1);}
+	}
+    @keyframes spinner { 
+        from { 
+            -moz-transform: rotateY(0deg); 
+            -ms-transform: rotateY(0deg); 
+            transform: rotateY(0deg); 
+        } 
+        to { 
+            -moz-transform: rotateY(-360deg); 
+            -ms-transform: rotateY(-360deg); 
+            transform: rotateY(-360deg); 
+        } 
+    }
+    @keyframes bounce {
+        0%   {transform: translateY(0); }
+        50%  {transform: translateY(-10px);}
+        100% {transform: translateY(0); }
+    }
+    @keyframes stamp {
+        0%{opacity: 0; transform: scale(4);}
+        40%{opacity: 1; transform: scale(1);}
+        100%{opacity: 1; transform: scale(1);}
+    }
+    
+    #parallax_cont {overflow: hidden;}
+    .parallax_item {width: 100%;  height: 100vh; position: relative; display: flex; align-items: center; justify-content: center; }
+    #point h4 {margin-top: -745px;}
+    #point .parallax__item__text {padding: 100px 0; position: absolute;left: 50%;top: 50%;transform: translate(-50%, -50%);width: 100%;text-align: center;}
+    /* .pin-spacer {height: 4900px !important; padding: 0 0 4900px !important;} */
+
+    .quick_ban{position:fixed;top:350px;right:0; z-index: 300;}
+    .quick_ban li{box-shadow:4px 7px 11px rgba(0, 0, 0, 0.1);overflow:hidden; margin-top: 5px;}
+
+    .main {padding-top: 100px; height: 1088px; position: relative; background: url('<?=UN_STATIC_IMG?>/gong/landing/2024/07/mkt1_7319/pc/main_bg.jpg') top center no-repeat; position: relative;     overflow: hidden;}
+    .main .ani_box {position: relative;}
+    .main .tit{height:286px;margin: 40px auto 0; position: relative;}
+    .main .tit .no1{transform: translateX(-30%);}
+    .main .tit .no2{transform: translateX(30%); margin-left: 40px;}
+    .main .tit .no3{margin-top: 30px; transform: translateY(100%);}
+    .main .img {margin-top: -70px; position: relative; z-index: 1;}
+    .main .cha {position: absolute; animation: bounce 2s ease-in-out infinite;}
+    .main .cha.no1 { top: -30px; right: 120px;}
+    .main .cha.no2 {bottom: -150px; left: 180px;}
+    .main .point {position: absolute; top: 360px; right: 170px; animation: stamp 0.4s 1.2s ease-in-out both; z-index:2;}
+
+    .main.on .tit .no1 {animation:ani_translate .5s ease forwards;}
+    .main.on .tit .no2 {animation:ani_translate .5s ease forwards;}
+    .main.on .tit .no3 {animation:ani_translate .5s .7s ease forwards;}
+
+    .cont_intro {padding: 110px 0 100px;}
+    .cont_intro h4 img {vertical-align: middle; display: inline-block; transform: translateY(-100%);}
+    .cont_intro h4 img.no2 {margin: -10px 10px 0;}
+    .cont_intro.on h4 img {animation:ani_translate .3s ease forwards;}
+    .cont_intro.on h4 img.no2 {animation-delay: .3s !important;}
+    .cont_intro.on h4 img.no3 {animation-delay: .5s !important;}
+    .cont_intro .cnt {position: relative;}
+    .cont_intro .cnt .deco {position: absolute; top:102px; animation: shake 4s linear infinite; }
+    .cont_intro .cnt .deco.no1 {left: 394px; }
+    .cont_intro .cnt .deco.no2 {right: 384px; }
+
+    .cont_review {padding: 80px 0 10px;}
+    .cont_review .cnt > li:first-child {margin-bottom: 20px;}
+    .cont_review .cnt > li {position: relative;}
+    .cont_review .review_slide_box {position: absolute; bottom: 53px; width: 100%; overflow: hidden;}
+    .cont_review .review_slide .swiper-container [class*="swiper-btn-"]{z-index:50;width:50px;height:37px;background: 50% 50% no-repeat;position:absolute;top:50%; margin-top: -18px; z-index:999;cursor:pointer;overflow:hidden;}
+    .cont_review .review_slide .swiper-container .swiper-btn-prev{background-image:url('<?=UN_STATIC_IMG?>/gong/landing/2024/07/mkt1_7319/pc/review_btn_prev.png');left: 145px;}
+    .cont_review .review_slide .swiper-container .swiper-btn-next{background-image:url('<?=UN_STATIC_IMG?>/gong/landing/2024/07/mkt1_7319/pc/review_btn_next.png');right: 145px;}
+
+
+    .cont_detail {padding: 280px 0 75px; background: url('<?=UN_STATIC_IMG?>/gong/landing/2024/07/mkt1_7319/pc/detail_bg.jpg') center bottom no-repeat;}
+    .cont_detail h4 {margin-bottom: 20px;}
+    .cont_detail .twinkle {animation: twinkle 1.8s linear infinite;}
+    .cont_detail .cnt {position: relative; width: 541px; margin: 35px auto 0;}
+    .cont_detail .bb li {animation: bounce 2s ease-in-out infinite; position: absolute; cursor: pointer;}
+    .cont_detail .bb li:nth-child(1) {top: 103px; left: -140px;}
+    .cont_detail .bb li:nth-child(2) {top: 0; right: -20px;}
+    .cont_detail .bb li:nth-child(3) {bottom: 137px; left: -62px;}
+    .cont_detail .bb li:nth-child(4) {bottom: 83px; right: -90px;}
+    .cont_detail .bb li .on_img {display: none; position: absolute; }
+    .cont_detail .bb li:nth-child(1) .on_img {bottom: -5px; right: -8px;}
+    .cont_detail .bb li:nth-child(2) .on_img {bottom: -5px; right: -85px;}
+    .cont_detail .bb li:nth-child(3) .on_img {top: -17px; right: -12px;}
+    .cont_detail .bb li:nth-child(4) .on_img {top: -5px; left: -8px;}
+    .cont_detail .bb li.on .on_img {display: block;}
+
+    @keyframes twinkle {
+        0%, 50%, 100% {opacity: 1;}
+        25%, 75% {opacity: 0.7;}
+    }
+
+    .cont_every {padding: 80px 0 100px; background: #025AF6;}
+    .cont_every .cnt {position: relative; overflow: hidden;}
+    .cont_every .cnt .deco {position: absolute; bottom: 4px; width: 100%;}
+    .cont_every .cnt .cha {position: relative;z-index:2;}
+    .cont_every .cnt .light {position: absolute; bottom: 0; width: 100%; display:  block; }
+    .cont_every .cnt .light img {animation: light 5s cubic-bezier(0.470, 0.000, 0.745, 0.715) both infinite alternate;}
+    .cont_every .txt {position: relative; display: inline-block; margin-top: 30px;}
+    .cont_every .txt .line {position: absolute; bottom: -1px; left: 340px; display: block; width: 0; height: 47px; transition: width 1s; background: #FFFB52;}
+    .cont_every.on .txt .line {width: 260px; }
+    .cont_every .txt img {position: relative; z-index: 1;}
+
+    @keyframes light {
+        0% {transform:  scale(1);}
+        30% {transform: scale(1.7); opacity: 0.85;}
+        50% {opacity: 1;}
+        70% {transform: scale(1.1); opacity: 0.9;}
+        100%{transform: scale(1.5); opacity: 1;}
+    }
+    
+    .cont_point {padding: 100px 0; background: url('<?=UN_STATIC_IMG?>/gong/landing/2024/07/mkt1_7319/pc/point_bg.jpg') center top no-repeat;}
+    .cont_point h4 {padding-bottom: 60px;}
+    .cont_point .banner-sticky {left: 50%; position: sticky; top: 62px; overflow: hidden;}
+    .cont_point div.banner-sticky {width: 1140px; height: 535px; box-shadow :0px 6px 29px rgba(0, 0, 0, 0.25); border-radius: 40px;}
+    .cont_point .banner-sticky:nth-child(2) {top: 222px;}
+    .cont_point .banner-sticky:nth-child(3) {top: 332px;}
+    .cont_point .banner-sticky:nth-child(4) {top: 442px;}
+    .cont_point .banner-sticky:nth-child(5) {top: 622px;}
+
+    /* EVENT */
+    .event01 {padding: 100px 0; background: linear-gradient(180deg, #FFFEB5 0%, #FFF 37.53%, #FFF 100%);}
+    .event01 h4 {padding-bottom: 60px; position: relative;}
+    .event01 h4 .deco {position: absolute; top: -5px;  animation: shake 4s linear infinite; }
+    .event01 h4 .deco.no1 {left: 162px;}
+    .event01 h4 .deco.no2 {right: 160px;}
+    .event01 .cnt {position: relative; margin-bottom: 10px;}
+    .event01 .ticket {position: absolute; top: 51px; right: 152px; width: 185px; height: 65px; display: flex; align-items: center; justify-content: center; }
+    .event01 .ticket .txt  {color: #FFF; font-size: 30px;  line-height: 140%; letter-spacing: -1.2px;}
+    .event01 .ticket .count {position: relative; color: #025AF6; font-weight: 900; font-family: Pretendard; font-size: 45px; line-height: 140%; letter-spacing: -1.8px;}
+    .event01 .btn_fp {width: 368px; height: 52px; display: inline-block; transition: .3s; border-radius: 40px; background: #000; color: #FFF; border: 1px solid #000; font-size: 16px; font-weight: bold; line-height: 46px; letter-spacing: -0.7px;}
+    .event01 .btn_fp:hover {background: #fff; color: #000; text-decoration: none;}
+
+    .event02 {padding: 100px 0; background: linear-gradient(180deg, #DAF2FF 0%, #FFF 44.44%, #FFF 100%);}
+    .event02 h4 {padding-bottom: 50px;}
+    .event02 .cnt {position: relative;}
+    .event02 .input_area {width: 1061px; position: absolute; bottom: 215px; left: 36px; gap: 20px; line-height: 58px;box-sizing: border-box;background:#fff; text-align: left; font-size: 0;display: flex;align-items: center;}
+	.event02 .input_area a:hover {text-decoration: none;}
+    .event02 .input_area span{background: #025AF6; border-radius: 8px; text-align: center; display: block;line-height: 58px;width: 150px;color: #fff;font-size: 16px;font-weight: 700;letter-spacing: -0.26px;box-sizing: border-box;overflow: hidden;text-overflow: ellipsis;}
+	.event02 .input_area input[type=text] {border: 1px solid #E3E6EC;border-radius: 8px;  vertical-align: top;height: 58px;line-height: 58px;font-weight: 400;font-size: 16px;letter-spacing: -0.02em;padding: 0 25px;box-sizing: border-box;}
+	.event02 .input_area input[type=text]::placeholder {color: #888888 !important;opacity: 0.5 !important;font-size: 16px !important;}
+	.event02 .input_area input.input_cmt {flex: 1;}
+</style>
+
+<div class="event_20240710">
+    <!-- @ -->
+    <div class="main on">
+        <div class="inner">
+            <p><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/07/mkt1_7319/pc/main_top.png" alt="이번 여름, 공단기와 맞이할 합격 황금기!"></p>
+            <div class="ani_box">
+                <h3 class="tit">
+                    <img class="no1 ani" src="<?=UN_STATIC_IMG?>/gong/landing/2024/07/mkt1_7319/pc/main_tit01.png" alt="합격의">
+                    <img class="no2 ani" src="<?=UN_STATIC_IMG?>/gong/landing/2024/07/mkt1_7319/pc/main_tit02.png" alt="첫시작">
+                    <img class="no3 ani" src="<?=UN_STATIC_IMG?>/gong/landing/2024/07/mkt1_7319/pc/main_tit.png" alt="공단기 골든 타이머">
+                </h3>
+                <img class="cha no1" src="<?=UN_STATIC_IMG?>/gong/landing/2024/07/mkt1_7319/pc/main_cha01.png" alt="몰티즈">
+                <img class="cha no2" src="<?=UN_STATIC_IMG?>/gong/landing/2024/07/mkt1_7319/pc/main_cha02.png" alt="몰티즈">
+            </div>
+            <img class="img" src="<?=UN_STATIC_IMG?>/gong/landing/2024/07/mkt1_7319/pc/main_img.png" alt="몰티즈 공단기 특별 굿즈는 오직 공단기에서만! 지금 무료로 받고 25년 시험 합격해요">
+            <img class="ani point" src="<?=UN_STATIC_IMG?>/gong/landing/2024/07/mkt1_7319/pc/main_point.png" alt="1,000개 한정배포">
+        </div>
+    </div>
+
+    <!-- @ -->
+    <div class="cont_intro scrollAni">
+        <div class="inner">
+            <h4>
+                <img class="no1 ani" src="<?=UN_STATIC_IMG?>/gong/landing/2024/07/mkt1_7319/pc/intro_tit01.png" alt="책상에 앉아 있는 시간">
+                <img class="no2 ani" src="<?=UN_STATIC_IMG?>/gong/landing/2024/07/mkt1_7319/pc/intro_tit02.png" alt="=">
+                <img class="no3 ani" src="<?=UN_STATIC_IMG?>/gong/landing/2024/07/mkt1_7319/pc/intro_tit03.png" alt="순 공부 시간">
+            </h4>
+            <div class="cnt">
+                <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/07/mkt1_7319/pc/intro_cnt.png" alt="순 공부시간은 기껏해야 70%!">
+                <img class="deco no1" src="<?=UN_STATIC_IMG?>/gong/landing/2024/07/mkt1_7319/pc/intro_deco01.png" alt="?">
+                <img class="deco no2" src="<?=UN_STATIC_IMG?>/gong/landing/2024/07/mkt1_7319/pc/intro_deco02.png" alt="?">
+            </div>
+        </div>
+    </div>
+
+    <!-- @ -->
+    <div class="cont_review">
+        <div class="inner">
+            <ul class="cnt">
+                <li><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/07/mkt1_7319/pc/review_cnt01.png" alt="오랫동안 집중하기 어렵다면"></li>
+                <li>
+                    <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/07/mkt1_7319/pc/review_cnt02.png" alt="뽀모도로 공부법에 도전해보세요!">
+                    <div class="review_slide_box">
+                        <div class="review_slide">
+                            <div class="swiper-container">
+                                <div class="swiper-wrapper">
+                                    <? for($i=1;$i<=4;$i++){ ?>
+                                        <div class="swiper-slide"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/07/mkt1_7319/pc/review_slide0<?= $i ?>.png" alt="리뷰"></div>
+                                    <? } ?>
+                                </div>
+                                <div class="swiper-btn-prev"></div>
+                                <div class="swiper-btn-next"></div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- @ -->
+    <div class="cont_detail">
+        <div class="inner">
+            <h4><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/07/mkt1_7319/pc/detail_tit.png" alt="뽀모도로 공부법용 골든 타이머"></h4>
+            <img class="twinkle" src="<?=UN_STATIC_IMG?>/gong/landing/2024/07/mkt1_7319/pc/detail_bubble.png" alt="말풍선 클릭해서 확인!">
+            <div class="cnt">
+                <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/07/mkt1_7319/pc/detail_img.png" alt="타이머">
+                <ul class="bb">
+                    <? for($i=1;$i<=4;$i++){ ?>
+                    <li>
+                        <img class="off_img" src="<?=UN_STATIC_IMG?>/gong/landing/2024/07/mkt1_7319/pc/detail_bb0<?= $i ?>_off.png" alt="#">
+                        <img class="on_img" src="<?=UN_STATIC_IMG?>/gong/landing/2024/07/mkt1_7319/pc/detail_bb0<?= $i ?>_on.png" alt="#">
+                    </li>
+                    <? } ?>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- @ -->
+    <div class="cont_every scrollAni">
+        <div class="inner">
+            <div class="cnt">
+                <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/07/mkt1_7319/pc/every_cnt.png" alt="여러분의 공부를 방해하는 모든 것들 귀여운 우리가 처리했으니 안심하라구!">
+                <div class="deco">
+                    <span class="light"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/07/mkt1_7319/pc/every_light.png" alt="#"></span>
+                    <img class="cha" src="<?=UN_STATIC_IMG?>/gong/landing/2024/07/mkt1_7319/pc/every_img.png" alt="몰티즈">
+                </div>
+            </div>
+            <div class="txt">
+                <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/07/mkt1_7319/pc/every_txt.png" alt="공단기 골든 타이머와 함께라면 매 순간이 최고의 집중력 합격의 골든 타임!">
+                <span class="line"></span>
+            </div>
+        </div>
+    </div>
+    <!-- @ -->
+    <div class="cont_point">
+        <div class="inner">
+            <h4 class="banner-sticky"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/07/mkt1_7319/pc/point_tit.png" alt="갓생러라면 누구나 꿈꾸던 Detail points!"></h4>
+            <div class="banner-sticky"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/07/mkt1_7319/pc/point_cnt01.png" alt="누구나 쉽게"></div>
+            <div class="banner-sticky"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/07/mkt1_7319/pc/point_cnt02.png" alt="언제 어디서든"></div>
+            <div class="banner-sticky"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/07/mkt1_7319/pc/point_cnt03.png" alt="마음의 무게까지 덜기"></div>
+            <div class="banner-sticky"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/07/mkt1_7319/pc/point_cnt04.png" alt="공부 의욕 충전!"></div>
+        </div>
+    </div>
+
+    <!-- @ EVENT01 -->
+    <div class="event01" id="event01">
+        <div class="inner">
+            <h4>
+                <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/07/mkt1_7319/pc/event01_tit.png" alt="공단기 회원이라면 누구나 응모 가능! 총 1,000개 무료배포!">
+                <img class="deco no1" src="<?=UN_STATIC_IMG?>/gong/landing/2024/07/mkt1_7319/pc/event01_deco01.png" alt="#">
+                <img class="deco no2" src="<?=UN_STATIC_IMG?>/gong/landing/2024/07/mkt1_7319/pc/event01_deco02.png" alt="#">
+            </h4>
+            <div class="cnt">
+                <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/07/mkt1_7319/pc/event01_cnt.png" alt="내가 가지고 있는 응모권">
+                <!-- @@ 응모권현황 -->
+                <div class="ticket">
+                    <div class="count">300</div>
+                </div>
+            </div>
+            <a href="" class="btn_fp">응모하기</a>
+        </div>
+    </div>
+
+    <!-- @ EVENT02 -->
+    <div class="event02" id="event02">
+        <div class="inner">
+            <h4><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/07/mkt1_7319/pc/event02_tit.png" alt="친구에게 추천인 소문내고 추가 응모권까지 get!"></h4>
+            <div class="cnt">
+                <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/07/mkt1_7319/pc/event02_cnt.png" alt="참여방법">
+                <!-- @@ url작성 -->
+                <div class="event-contents">
+                    <div class="input_area">
+                        <input type="text" class="input_cmt comment1" placeholder="추천인을 입력해주세요.">
+                        <a href="javascript:void(0);"><span>추천인 ID 입력</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- @ 유의사항 -->
+    <div id="use_guide"></div>
+    <script type="text/javascript">use_guide.html('<?= $base_uri ?>','#use_guide','','');</script>
+</div>
+
+<script type="text/javascript">
+    $(function(){
+         // 스크롤 애니메이션
+         $(window).on('scroll',function() {
+            var nowScroll = $(this).scrollTop();
+
+            // each
+            $('.scrollAni').each( function(i){
+                var elScroll = $(this).offset().top + 600;
+                var nowEachScroll = $(window).scrollTop() + $(window).height();
+
+                if( nowEachScroll > elScroll ){
+                    $(this).addClass('on');
+                }
+            });
+        });
+
+        $('.cont_detail .bb > li').on('click', function(){
+            $(this).addClass('on').siblings('li').removeClass('on');
+        })
+
+
+        // parallax
+        const ani7 = gsap.timeline();
+        // ani7.from("#point .t1", {autoAlpha:0, duration: 1, y: 50}, "+=1")
+        ani7.from("#point .t2", {autoAlpha:0, duration: 1, y: 50}, "+=1")
+            .from("#point .t3", {autoAlpha:0, duration: 1, y: 50}, "+=1")
+            .from("#point .t4", {autoAlpha:0, duration: 1, y: 50}, "+=1")
+
+        ScrollTrigger.create({
+            animation: ani7,
+            trigger: "#point",
+            start: "top top",
+            end: "+=2000",
+            scrub: true,
+            pin: true, 
+            anticipatePin: 1,
+            markers: false
+        });
+
+        // 리뷰 swiper
+        var review_swiper = new Swiper ('.review_slide .swiper-container', {
+            slidesPerView: 'auto',
+            loop: true,
+            centeredSlides: true,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+                waitForTransition: false
+            },
+            navigation: {
+                nextEl: ".review_slide .swiper-btn-next",
+                prevEl: ".review_slide .swiper-btn-prev",
+            },
+        });
+    });
+
+    // 해당 영역으로 이동하기
+    function goPage(el) {
+        $('html, body').stop().animate({ scrollTop: $(el).offset().top }, 'slow');
+        return false;
+    };
+
+</script>

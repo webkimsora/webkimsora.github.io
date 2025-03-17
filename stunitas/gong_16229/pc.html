@@ -1,0 +1,271 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+<script>
+	gsap.registerPlugin(ScrollTrigger);
+</script>
+<style>
+    #union-footer {padding-bottom: 100px;}
+	.event-contents {position: relative;}
+	.event-contents * {font-family: 'Noto Sans KR', sans-serif;}
+	.event-contents h3 {text-align: center;margin-bottom: 100px;}
+	.event-contents h4 {margin-bottom: 40px;}
+	.event-contents img {display: inline;}
+	.event-contents .inner {width: 1140px;margin: 0 auto;}
+	.event-contents .btn {display: flex;justify-content: center;gap: 12px;margin-top: 40px;}
+
+	.event-contents .swiper-container {overflow: hidden;}
+	.event-contents .swiper-button-next, .event-contents .swiper-button-prev {width: 60px;height: 60px;border-radius: 50%;overflow: hidden;margin-top: -30px;}
+	.event-contents .swiper-button-next.swiper-button-disabled, .event-contents .swiper-button-prev.swiper-button-disabled {opacity: 1;}
+	.event-contents .swiper-button-next::after, .event-contents .swiper-button-prev::after {display: none;}
+	.event-contents .swiper-button-next {right: -30px;background: url('<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/pc/cont02_slide2_next.png') no-repeat center;}
+	.event-contents .swiper-button-prev {left: -30px;background: url('<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/pc/cont02_slide2_prev.png') no-repeat center;}
+
+	/* 퀵배너 */
+	.quick_ban {position: sticky;top: 0;z-index: 99;}
+	.quick_ban ul {position: absolute;top: 160px;right: 0;}
+	.quick_ban li+li {margin-top: 5px;}
+
+	/* 컨텐츠 */
+	.event_20241226 {position: relative;}
+	.top_msg {width: 100%;height: 100vh;background: #FFF url('<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/pc/top_msg.png') no-repeat center center;position: absolute;left: 0;top: 0;z-index: 1;animation: fadeout 1s 1s linear both;}
+	@keyframes fadeout {
+		0% {opacity: 1;}
+		100% {opacity: 0;}
+	}
+	.cont_top {height: 1020px;position: relative;overflow: hidden;text-align: center;}
+	.cont_top .text {margin-top: 59px;}
+	.cont_top .img {position: absolute;left: 50%;top: 0;margin-left: -570px;}
+	.cont_top .bubble {position: absolute;left: 50%;top: 318px;margin-left: 105px;}
+	.cont01 {background: url('<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/pc/cont01_bg.png') no-repeat center top;margin-top: -84px;padding-top: 184px;padding-bottom: 100px;position: relative;}
+	.cont01 .link {text-align: right;margin-top: 44px;margin-bottom: 20px;}
+	.cont01 .sub2 {padding-top: 214px;}
+	.cont01 .sub3 {padding-top: 150px;}
+	.cont01 .slide_wrap {margin-bottom: 24px;position: relative;}
+	.cont01 .cont01_slide1 .swiper-button-next {width: 38px;height: 38px;margin-top: 0;top: 268px;left: 668px;background: url('<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/pc/cont02_slide1_next.png') no-repeat center;}
+	.cont01 .cont01_slide1 .swiper-button-prev {width: 38px;height: 38px;margin-top: 0;top: 268px;left: 616px;background: url('<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/pc/cont02_slide1_prev.png') no-repeat center;}
+	.cont01 .cont01_slide1 .swiper-slide {position: relative;}
+	.cont01 .cont01_slide1 .gif {width: 566px;height: 350px;position: absolute;left: 0;top: 0;}
+	.cont02 {padding: 100px 0;background: linear-gradient(180deg, #40A1C9 4.17%, #E9FFEE 29.69%, #FFDCA6 55.73%, #FF9E4A 88.54%);}
+	.cont02 .sub + .sub {padding-top: 150px;}
+	.cont02 .video {margin-bottom: 20px;height: 641px;background: #212121;}
+	.cont02 .slide_wrap {position: relative;width: 727px;}
+	.cont02 .pop_slide .swiper-button-next {width: 36px;height: 36px;margin-top: -18px;top: 50%;right: -18px;background: url('<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/pc/pop_next.png') no-repeat center;}
+	.cont02 .pop_slide .swiper-button-prev {width: 36px;height: 36px;margin-top: -18px;top: 50%;left: -18px;background: url('<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/pc/pop_prev.png') no-repeat center;}
+	.cont03 {background: #242424;}
+	.cont04 {padding: 100px 0;background: #41A1CA url('<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/pc/cont04_bg.png') no-repeat center top;text-align: center;}
+
+    .fixed_ban{position: fixed;bottom: 0;left: 0;right: 0;padding: 20px 0;background: #272D37;z-index: 5;}
+    .fixed_ban .cnt{display: flex;justify-content: space-between;align-items: center;}
+    .fixed_ban .cnt span{flex: 1;color: #fff;font-family: 'SUIT';font-size: 18px;font-weight: 800;line-height: 140%;}
+    .fixed_ban .cnt .btns{display: flex;justify-content: flex-end;gap: 8px;}
+
+	/* 팝업 */
+	.popWrap {justify-content: center;align-items: center;width: 100%;height: 100%;position: fixed;left: 0;top: 0;display: none;z-index: 99;background: rgba(0, 0, 0, 0.6);}
+	.popWrap.on {display: flex;}
+	.popCont {padding-top: 38px;position: relative;}
+	.popCont .popClose {position: absolute;right: 0;top: 0;z-index: 10;}
+	.popCont .popClose img {width: 32px;height: 32px;}
+
+	.class-combine_lecture-main .lecture-list-area .lecture-division .lecture-summary {background: #fff !important;}
+</style>
+<div class="event-contents event_20241226">
+	<div class="quick_ban">
+		<ul>
+			<!-- <li><a href="javascript: fnScrollLink('.cont01 .sub3');"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/pc/quick1.png" alt="김유경 모의고사 적중률 100%"></a></li> -->
+			<li><a href="javascript: fnScrollLink('.cont02');"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/pc/quick2.png" alt="놀라운 적중률 교재 살펴보기"></a></li>
+			<li><a href="javascript: fnScrollLink('.cont02 .sub2');"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/pc/quick3.png" alt="시너지 200% 강의 살펴보기"></a></li>
+		</ul>
+	</div>
+	<div class="top_msg"></div>
+	<div class="cont_top">
+		<div class="text"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/pc/top_txt.png" alt="단원별 모의고사"></div>
+		<div class="img"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/pc/top_img.png" alt=""></div>
+		<div class="bubble"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/pc/top_bubble.png" alt="단원별 모의고사"></div>
+	</div>
+	<div class="cont01">
+		<div class="inner">
+			<div class="sub sub1">
+				<h4><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/pc/cont01_tit1.png" alt="지금 이 시기,  모든 질문에 대한 명쾌한 해답은 2024 김유경 단원별 모의고사입니다."></h4>
+				<div class="link">
+					<a href="https://gong.conects.com/gong/teacher/v2/home?teacher_id=44" target="_blank"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/pc/cont01_link.png" alt="교수님 홈"></a>
+				</div>
+				<img src="<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/pc/cont01_img1.png" alt="리뷰">
+			</div>
+			<div class="sub sub2">
+				<h4><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/pc/cont01_tit2.png" alt="수많은 합격생들이 사회복지학 김유경 모의고사를 필수로 선택한 이유는 분명합니다."></h4>
+				<div class="slide_wrap">
+					<div class="swiper-container cont01_slide1">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide">
+								<img src="<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/pc/cont01_slide1_1.png" alt="">
+								<img src="<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/pc/cont01_slide1_1.gif" alt="" class="gif">
+							</div>
+							<div class="swiper-slide">
+								<img src="<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/pc/cont01_slide1_2.png" alt="">
+								<img src="<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/pc/cont01_slide1_2.gif" alt="" class="gif">
+							</div>
+							<div class="swiper-slide">
+								<img src="<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/pc/cont01_slide1_3.png" alt="">
+								<img src="<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/pc/cont01_slide1_3.gif" alt="" class="gif">
+							</div>
+						</div>
+						<div class="swiper-button-prev"></div>
+						<div class="swiper-button-next"></div>
+					</div>
+				</div>
+				<img src="<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/pc/cont01_img2.png" alt="공단기 1위 사회복지학 유경쌤이 실전보다 더 실전같이 만들어낸 모의고사니까!">
+			</div>
+			<div class="sub sub3">
+				<h4><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/pc/cont01_tit3.png" alt="무엇보다 확실한 한가지, 결국 2024 시험에서 마주할 문제들만 담겨있으니까!"></h4>
+				<div class="slide_wrap">
+					<div class="swiper-container cont01_slide2">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/pc/cont01_slide2_1.png" alt="적중"></div>
+							<div class="swiper-slide"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/pc/cont01_slide2_2.png" alt="적중"></div>
+							<div class="swiper-slide"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/pc/cont01_slide2_3.png" alt="적중"></div>
+							<div class="swiper-slide"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/pc/cont01_slide2_4.png" alt="적중"></div>
+							<div class="swiper-slide"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/pc/cont01_slide2_5.png" alt="적중"></div>
+							<div class="swiper-slide"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/pc/cont01_slide2_6.png" alt="적중"></div>
+							<div class="swiper-slide"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/pc/cont01_slide2_7.png" alt="적중"></div>
+						</div>
+						<div class="swiper-button-prev"></div>
+						<div class="swiper-button-next"></div>
+					</div>
+				</div>
+				<div class="btn">
+					<a href="//cafe.naver.com/passwel/5414" target="_blank"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/pc/cont01_btn.png" alt="더 많은 적중내역 확인하기"></a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="cont02">
+		<div class="inner">
+			<h3><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/pc/cont02_tit.png" alt="파이널 모의고사 SEASON 01. 단원별 모의고사 활용법을 공개합니다."></h3>
+			<div class="sub sub1">
+				<h4><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/pc/cont02_sub1.png" alt="STEP 01. 각 회차별 모의고사를 시간을 재면서 실전처럼 풀기!"></h4>
+				<img src="<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/pc/cont02_img1.png" alt="교재">
+				<div class="btn">
+					<a href="javascript:alert('링크 전달');"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/pc/cont02_btn1.png" alt="교재 자세히 보기"></a>
+					<a href="javascript:alert('링크 전달');"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/pc/cont02_btn2.png" alt="교재 구매하기"></a>
+				</div>
+			</div>
+			<div class="sub sub2">
+				<h4><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/pc/cont02_sub2.png" alt="STEP 02. 강의와 함께 모의고사 선지 하나하나 파헤치기!"></h4>
+				<div class="video">
+					<a href="javascript:alert('1월 10일 개강 예정입니다. 조금만 기다려주세요 :)');"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/pc/cont02_video.png" alt="자세한 풀이로 머리 속에 각인시킬 강의!"></a>
+				</div>
+				<img src="<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/pc/cont02_img2.png" alt="" style="margin-left: -16px;margin-top: -16px;">
+				<div class="list" id="lecture_list">
+					강의 리스트
+				</div>
+			</div>
+			<div class="sub sub3">
+				<h4><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/pc/cont02_sub3.png" alt="STEP 03. 헷갈린다면 꼭 질문하여 완벽하게 해결하기!"></h4>
+				<img src="<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/pc/cont02_img3.png" alt="평균 24시간 이내 100% 답변">
+				<div class="btn">
+					<a href="https://cafe.naver.com/passwel/565" target="_blank"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/pc/cont02_btn.png" alt="카페 바로가기"></a>
+				</div>
+			</div>
+		</div>
+		<div class="popWrap" id="popup1">
+			<div class="popCont">
+				<a href="javascript:popClose('#popup1');" class="popClose"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/pc/btn_popup_close.png" alt="레이어팝업 닫기"></a>
+				<div class="slide_wrap">
+					<div class="swiper-container pop_slide">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/pc/pop_book1.png" alt="교재"></div>
+							<div class="swiper-slide"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/pc/pop_book2.png" alt="교재"></div>
+							<div class="swiper-slide"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/pc/pop_book3.png" alt="교재"></div>
+							<div class="swiper-slide"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/pc/pop_book4.png" alt="교재"></div>
+						</div>
+						<div class="swiper-button-prev"></div>
+						<div class="swiper-button-next"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="cont03">
+		<div class="inner">
+			<img src="<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/pc/cont03_img.png" alt="편지">
+		</div>
+	</div>
+	<div class="cont04">
+		<div class="inner">
+			<img src="<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/pc/cont04_img.png" alt="단기 합격 최적화 커리큘럼 유경쌤의 FINAL SEASON 02. 동형 모의고사 COMING SOON!">
+		</div>
+	</div>
+    <div class="fixed_ban">
+        <div class="inner">
+            <div class="cnt">
+                <span>2025 김유경 사회복지학 FINAL</span>
+                <div class="btns">
+                    <a href="javascript:goPage('.cont02 .sub2');"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/pc/fixed_btn1.png" alt=""></a>
+                    <a href="javascript:alert('2월 14일 개강합니다 ! 조금만 기다려주세요 :)');"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/pc/fixed_btn2.png" alt=""></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+	var top_tl = gsap.timeline({
+		scrollTrigger: {
+			trigger: '.cont_top',
+			start: '0% 0%',
+			end: '+=400',
+			scrub: true,
+			pin: true,
+			anticipatePin: 1,
+		},
+	});
+	top_tl.add('start')
+		  .to('.cont_top .img', {scale: 0.54, y: -35})
+		  .to('.cont_top .bubble', {x: -85}, 'start');
+</script>
+<script>
+	$(function() {
+		new Swiper('.cont01_slide1', {
+			effect: 'fade',
+			autoplay: {
+				delay: 3000,
+				disableOnInteraction: false,
+				pauseOnMouseEnter: true,
+			},
+			navigation: {
+				nextEl: '.cont01_slide1 .swiper-button-next',
+				prevEl: '.cont01_slide1 .swiper-button-prev',
+			},
+			loop: true,
+		});
+		new Swiper('.cont01_slide2', {
+			navigation: {
+				nextEl: '.cont01_slide2 .swiper-button-next',
+				prevEl: '.cont01_slide2 .swiper-button-prev',
+			},
+			loop: true,
+		});
+		new Swiper('.pop_slide', {
+			navigation: {
+				nextEl: '.pop_slide .swiper-button-next',
+				prevEl: '.pop_slide .swiper-button-prev',
+			},
+			loop: true,
+		});
+	
+		eventLectureList('event_20240108091454','','lecture_list');
+	});
+
+	// 팝업
+	function popOpen(el) {
+		$(el).addClass('on');
+		$(el).click(function(e){
+			if('#'+ e.target.id == el) {
+				popClose(el);
+			}
+		})
+	}
+
+	function popClose(el) {
+		$(el).removeClass('on');
+	}
+</script>

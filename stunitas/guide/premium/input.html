@@ -1,0 +1,146 @@
+<?php include('skin/pub/guide/head.html'); ?>
+<?php include('skin/pub/guide/'.$nav.'/side_menu.html'); ?>
+
+<link rel="stylesheet" href="<?=UN_STATIC?>/css/premium/common.css?<?=time()?>">
+<link rel="stylesheet" href="<?=UN_STATIC?>/css/premium/pc/premium.css?<?=time()?>">
+<style>
+    .example_wrap{display: flex; flex-direction: column; gap: 30px; padding: 30px;}
+    .example_wrap > div{display: flex; gap: 30px;}
+</style>
+<div class="content">
+    <div class="content_tit">
+        <h2>Input</h2>
+    </div>
+    <ul class="content_nav inner cn-nav cn-auto-index">
+        <li class="active">Examples</li>
+    </ul>
+    <ul class="content_tab cn-tab">
+        <!-- Examples -->
+        <li class="active">
+            <div class="content_wrap">
+                <!-- 기본 사용법 -->
+                <div>
+                    <div class="content_txt">
+                        <h4>Input search</h4>
+                    </div>
+    
+                    <div class="code_wrap">
+                        <ul class="code_tab cn-tab">
+                            <li class="active">
+                                <div class="example_wrap">
+                                    <div class="prem__input--search">
+                                        <form class="prem__box--border prem__radius--m">
+                                            <input type="search" placeholder="검색어를 입력하세요" class="prem__typo--body15">
+                                            <button type="submit" class="prem__search--btn"><i class="prem__ico--search"></i></button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+<pre><code class="language-html">
+    <div class="prem__input--search">
+        <form class="prem__box--border prem__radius--m">
+            <input type="search" placeholder="검색어를 입력하세요" class="prem__typo--body15">
+            <button type="submit" class="prem__search--btn"><i class="prem__ico--search"></i></button>
+        </form>
+    </div>
+</code></pre>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div>
+                    <div class="content_txt">
+                        <h4>Input textarea - 하단 버튼이 없는 경우</h4>
+                    </div>
+                    <div class="code_wrap">
+                        <ul class="code_tab cn-tab">
+                            <li class="active">
+                                <div class="example_wrap">    
+                                    <div class="prem__input--box py-20 px-20">
+                                        <textarea name="" id="" placeholder="이곳에 내용을 입력해주세요." class="prem__typo--body17"></textarea>
+                                    </div>
+                                </div>
+                            </li>
+            
+                            <li>
+<pre><code class="language-html">
+<div class="prem__input--box py-20 px-20">
+    <textarea name="" id="" placeholder="이곳에 내용을 입력해주세요." class="prem__typo--body17"></textarea>
+</div>
+</code></pre>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div>
+                    <div class="content_txt">
+                        <h4>Input textarea - 하단 버튼이 있는 경우</h4>
+                    </div>
+                    <div class="code_wrap">
+                        <ul class="code_tab cn-tab">
+                            <li class="active">
+                                <div class="example_wrap">    
+                                    <div class="prem__input--box py-16 px-20">
+                                        <textarea name="" id="" class="prem__typo--body17"></textarea>
+                                        <div class="input__btn"><a href="javascript:alert('댓글 등록');"><i class="prem__ico--mail_speed"></i></a></div>
+                                    </div>
+                                </div>
+                            </li>
+            
+                            <li>
+<pre><code class="language-html">
+<div class="prem__input--box py-16 px-20">
+    <textarea name="" id="" class="prem__typo--body17"></textarea>
+    <div class="input__btn"><a href="javascript:alert('댓글 등록');"><i class="prem__ico--mail_speed"></i></a></div>
+</div>
+</code></pre>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div>
+                    <div class="content_txt">
+                        <h4>Input underline</h4>
+                    </div>
+                    <div class="code_wrap">
+                        <ul class="code_tab cn-tab">
+                            <li class="active">
+                                <div class="example_wrap">  
+                                    <h3 class="prem__typo--heading24">Input underline</h3>
+                                    <input type="text" placeholder="제목을 입력해주세요" class="prem__input--underline prem__typo--body17">
+                                </div>
+                            </li>
+            
+                            <li>
+<pre><code class="language-html">
+<input type="text" placeholder="제목을 입력해주세요" class="prem__input--underline prem__typo--body17">
+</code></pre>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div>
+                    <div class="content_txt">
+                        <h4>Input text</h4>
+                    </div>
+                    <div class="code_wrap">
+                        <ul class="code_tab cn-tab">
+                            <li class="active">
+                                <div class="example_wrap">
+                                    <input type="text" placeholder="제목을 입력해주세요" class="prem__input--text prem__typo--body16 px-12">
+                                </div>
+                            </li>
+            
+                            <li>
+<pre><code class="language-html">
+<input type="text" placeholder="제목을 입력해주세요" class="prem__input--text prem__typo--body16 px-12">
+</code></pre>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>

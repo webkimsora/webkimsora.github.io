@@ -1,0 +1,215 @@
+<?php include('skin/pub/guide/head.html'); ?>
+<?php include('skin/pub/guide/'.$nav.'/side_menu.html'); ?>
+
+<link rel="stylesheet" href="<?=UN_STATIC?>/css/premium/common.css?<?=time()?>">
+<link rel="stylesheet" href="<?=UN_STATIC?>/css/premium/pc/premium.css?<?=time()?>">
+<style>
+    table.document tbody :is(th, td) p > span,
+    table.document tbody td ul li span{color: #b91c1c;}
+    table.document tbody td ul li{color: #5f6570;}
+
+    .example_wrap{display: flex; flex-direction: column; gap: 30px; padding: 30px;}
+    .example_wrap > div{display: flex; gap: 30px;}
+</style>
+<div class="content">
+    <div class="content_tit">
+        <h2>Button</h2>
+        <!-- <p>랜딩페이지 퍼블리싱 가이드</p> -->
+    </div>
+    <ul class="content_nav inner cn-nav cn-auto-index">
+        <li class="active">Examples</li>
+        <li class="">Option</li>
+        <!-- <li class="">Methods</li> -->
+    </ul>
+    <ul class="content_tab cn-tab">
+        <!-- Examples -->
+        <li class="active">
+            <div class="content_wrap">
+                <!-- 기본 사용법 -->
+                <div>
+                    <div class="content_txt">
+                        <h4>기본 버튼</h4>
+                    </div>
+    
+                    <div class="code_wrap">
+                        <ul class="code_tab cn-tab">
+                            <li class="active">
+                                <div class="example_wrap">
+                                    <div class="btns">
+                                        <a href="javascript:;" class="prem__btn--box--basic--small disabled">비활성 버튼1</a>
+                                        <a href="javascript:;" class="prem__btn--box--accent--small disabled">비활성 버튼2</a>
+                                        <a href="javascript:;" class="prem__btn--box--basic--small">버튼</a>
+                                        <a href="javascript:;" class="prem__btn--box--basic--outline--small">테두리 버튼</a>
+                                        <a href="javascript:;" class="prem__btn--box--accent--small">배경 버튼1</a>
+                                        <a href="javascript:;" class="prem__btn--box--primary--small">배경 버튼2</a>
+                                    </div>
+                                    <div class="btns">
+                                        <a href="javascript:;" class="prem__btn--box--basic--medium disabled">비활성 버튼1</a>
+                                        <a href="javascript:;" class="prem__btn--box--accent--medium disabled">비활성 버튼2</a>
+                                        <a href="javascript:;" class="prem__btn--box--basic--medium">버튼</a>
+                                        <a href="javascript:;" class="prem__btn--box--basic--outline--medium">테두리 버튼</a>
+                                        <a href="javascript:;" class="prem__btn--box--accent--medium">배경 버튼1</a>
+                                        <a href="javascript:;" class="prem__btn--box--primary--medium">배경 버튼2</a>
+                                    </div>
+                                </div>
+                            </li>
+            
+                            <li>
+<pre><code class="language-html"><!-- small button -->
+<a href="javascript:;" class="prem__btn--box--basic--small disabled">비활성 버튼1</a>
+<a href="javascript:;" class="prem__btn--box--accent--small disabled">비활성 버튼2</a>
+<a href="javascript:;" class="prem__btn--box--basic--small">버튼</a>
+<a href="javascript:;" class="prem__btn--box--basic--outline--small">테두리 버튼</a>
+<a href="javascript:;" class="prem__btn--box--accent--small">배경 버튼1</a>
+<a href="javascript:;" class="prem__btn--box--primary--small">배경 버튼2</a>
+
+<!-- medium button -->
+<a href="javascript:;" class="prem__btn--box--basic--medium disabled">비활성 버튼1</a>
+<a href="javascript:;" class="prem__btn--box--accent--medium disabled">비활성 버튼2</a>
+<a href="javascript:;" class="prem__btn--box--basic--medium">버튼</a>
+<a href="javascript:;" class="prem__btn--box--basic--outline--medium">테두리 버튼</a>
+<a href="javascript:;" class="prem__btn--box--accent--medium">배경 버튼1</a>
+<a href="javascript:;" class="prem__btn--box--primary--medium">배경 버튼2</a>
+</code></pre>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 라운드 사용법 -->
+                <div>
+                    <div class="content_txt">
+                        <h4>라운드 버튼</h4>
+                    </div>
+    
+                    <div class="code_wrap">
+                        <ul class="code_tab cn-tab">
+                            <li class="active">
+                                <div class="example_wrap">
+                                    <div class="btns">
+                                        <a href="javascript:;" class="prem__btn--box--round disabled">비활성 버튼</a>
+                                        <a href="javascript:;" class="prem__btn--box--basic--round">버튼</a>
+                                        <a href="javascript:;" class="prem__btn--box--basic--outline--round">테두리 버튼1</a>
+                                        <a href="javascript:;" class="prem__btn--box--outline--round">테두리 버튼2</a>
+                                        <a href="javascript:;" class="prem__btn--box--accent--round">배경 버튼1</a>
+                                        <a href="javascript:;" class="prem__btn--box--primary--round">배경 버튼2</a>
+                                    </div>
+                                </div>
+                            </li>
+            
+                            <li>
+<pre><code class="language-html"><!-- 라운드 버튼 -->
+<a href="javascript:;" class="prem__btn--box--round disabled">비활성 버튼</a>
+<a href="javascript:;" class="prem__btn--box--basic--round">버튼</a>
+<a href="javascript:;" class="prem__btn--box--basic--outline--round">테두리 버튼1</a>
+<a href="javascript:;" class="prem__btn--box--outline--round">테두리 버튼2</a>
+<a href="javascript:;" class="prem__btn--box--accent--round">배경 버튼1</a>
+<a href="javascript:;" class="prem__btn--box--primary--round">배경 버튼2</a>
+</code></pre>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- 하단 버튼 -->
+                <div>
+                    <div class="content_txt">
+                        <h4>하단 버튼</h4>
+                    </div>
+    
+                    <div class="code_wrap">
+                        <ul class="code_tab cn-tab">
+                            <li class="active">
+                                <div class="example_wrap">
+                                    <div class="btns">
+                                        <a href="javascript:;" class="prem__btn--special"><i class="ico ico_pencil_line"></i>버튼</a>
+                                        <a href="javascript:;" class="prem__btn--special"><i class="prem__ico--pencil_line"></i>질문하기</a>
+                                    </div>
+                                </div>
+                            </li>
+            
+                            <li>
+<pre><code class="language-html"><!-- 버튼 -->
+<a href="javascript:;" class="prem__btn--special"><i class="ico ico_pencil_line"></i>버튼</a>
+<a href="javascript:;" class="prem__btn--special"><i class="prem__ico--pencil_line"></i>질문하기</a>
+</code></pre>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 텍스트 버튼 -->
+                <div>
+                    <div class="content_txt">
+                        <h4>텍스트 버튼</h4>
+                    </div>
+    
+                    <div class="code_wrap">
+                        <ul class="code_tab cn-tab">
+                            <li class="active">
+                                <div class="example_wrap">
+                                    <div class="btns">
+                                        <a href="javascript:;" class="prem__btn--text"><i class="ico ico_plus"></i>관심 키워드</a>
+                                    </div>
+                                </div>
+                            </li>
+            
+                            <li>
+<pre><code class="language-html"><!-- 텍스트 버튼 -->
+<a href="javascript:;" class="prem__btn--text"><i class="ico ico_plus"></i>관심 키워드</a>
+</code></pre>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </li>
+
+        <!-- Options -->
+        <li>
+            <div class="content_wrap">
+                <div>
+                    <table class="document">
+                        <colgroup>
+                            <col width="16.6666%" />
+                            <col width="16.6666%" />
+                            <col width="16.6666%" />
+                            <col width="50%" />
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th colspan="4">Properties</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th colspan="2">사이즈</th>
+                                <td colspan="2">
+                                    <p>
+                                        <ul>
+                                            <li>prem__btn<span>--small</span></li>
+                                            <li>prem__btn<span>--medium</span></li>
+                                            <li>prem__btn<span>--large</span></li>
+                                        </ul>
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th colspan="2">타입</th>
+                                <td colspan="2">
+                                    <p>
+                                        <ul>
+                                            <li>prem__btn<span>--basic</span></li>
+                                            <li>prem__btn<span>--accent</span></li>
+                                            <li>prem__btn<span>--primary</span></li>
+                                        </ul>
+                                    </p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>

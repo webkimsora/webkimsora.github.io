@@ -1,0 +1,80 @@
+<?php include('skin/pub/guide/head.html'); ?>
+<?php include('skin/pub/guide/'.$nav.'/side_menu.html'); ?>
+
+<link rel="stylesheet" href="<?=UN_STATIC?>/css/premium/common.css?<?=time()?>">
+<link rel="stylesheet" href="<?=UN_STATIC?>/css/premium/pc/premium.css?<?=time()?>">
+<style>
+    .example_wrap{display: flex; flex-direction: column; gap: 30px; padding: 30px;}
+    .example_wrap > div{display: flex; gap: 30px; justify-content: center;}
+</style>
+<div class="content">
+    <div class="content_tit">
+        <h2>Paging</h2>
+    </div>
+    <ul class="content_nav inner cn-nav cn-auto-index">
+        <li class="active">Examples</li>
+    </ul>
+    <ul class="content_tab cn-tab">
+        <!-- Examples -->
+        <li class="active">
+            <div class="content_wrap">
+                <!-- 기본 사용법 -->
+                <div>
+                    <div class="content_txt">
+                        <h4>페이징</h4>
+                    </div>
+    
+                    <div class="code_wrap">
+                        <ul class="code_tab cn-tab">
+                            <li class="active">
+                                <div class="example_wrap">
+                                    <div class="prem__paging">
+                                        <div class="paging__wrap">
+                                            <div class="paging__box">
+                                                <a href="javascript::"><i class="prem__ico--arrow_left_s"></i></a>
+                                                <a href="javascript:;" class="active">1</a>
+                                                <a href="javascript:;">2</a>
+                                                <a href="javascript:;">3</a>
+                                                <a href="javascript:;">4</a>
+                                                <a href="javascript:;">5</a>
+                                                <a href="javascript:;">6</a>
+                                                <a href="javascript:;">7</a>
+                                                <a href="javascript:;">8</a>
+                                                <a href="javascript:;">9</a>
+                                                <a href="javascript:;">10</a>
+                                                <a href="javascript::"><i class="prem__ico--arrow_right_s"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+            
+                            <li>
+<pre><code class="language-html">
+<div class="prem__paging">
+    <div class="paging__wrap">
+        <div class="paging__box">
+            <a href="javascript::"><i class="prem__ico--arrow_left_s"></i></a>
+            <a href="javascript:;" class="active">1</a>
+            <a href="javascript:;">2</a>
+            <a href="javascript:;">3</a>
+            <a href="javascript:;">4</a>
+            <a href="javascript:;">5</a>
+            <a href="javascript:;">6</a>
+            <a href="javascript:;">7</a>
+            <a href="javascript:;">8</a>
+            <a href="javascript:;">9</a>
+            <a href="javascript:;">10</a>
+            <a href="javascript::"><i class="prem__ico--arrow_right_s"></i></a>
+        </div>
+    </div>
+</div>
+</code></pre>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,397 @@
+<?php include('skin/pub/guide/head.html'); ?>
+<?php include('skin/pub/guide/'.$nav.'/side_menu.html'); ?>
+
+<link rel="stylesheet" href="<?=UN_STATIC?>/css/premium/common.css?<?=time()?>">
+<link rel="stylesheet" href="<?=UN_STATIC?>/css/premium/pc/premium.css?<?=time()?>">
+<style>
+    .example_wrap{display: flex; flex-direction: column; gap: 30px; padding: 30px;}
+    .example_wrap > div{display: flex; gap: 30px;}
+
+    .dropdown__btns{display: flex; gap: 40px;}
+    .dropdown__btns a{display: flex; align-items: center;}
+
+    .prem__select--box {width: 300px;}
+</style>
+<div class="content">
+    <div class="content_tit">
+        <h2>Dropdown</h2>
+    </div>
+    <ul class="content_nav inner cn-nav cn-auto-index">
+        <li class="active">Examples</li>
+    </ul>
+    <ul class="content_tab cn-tab">
+        <!-- Examples -->
+        <li class="active">
+            <div class="content_wrap">
+                <!-- 기본 사용법 -->
+                <div>
+                    <div class="content_txt">
+                        <h4>드롭다운</h4>
+                    </div>
+                    <div class="code_wrap">
+                        <ul class="code_tab cn-tab">
+                            <li class="active">
+                                <div class="example_wrap">
+                                    <!-- 드롭다운 버튼 -->
+                                    <div class="dropdown__btns">
+                                        <a href="javascript:;" class="prem__dropdown--btn1" id="" data-dropdown="drop__menu1">더보기<i class="prem__ico--arrow_down"></i></a>
+                                        <a href="javascript:;" class="prem__dropdown--btn1" id="" data-dropdown="drop__menu1">더보기<i class="prem__ico--arrow_down"></i></a>
+                                    </div>
+                                </div>
+                            </li>
+            
+                            <li>
+<pre><code class="language-html">
+<!-- 드롭다운 버튼 -->
+<div class="dropdown__btns">
+    <a href="javascript:;" class="prem__dropdown--btn1" id="" data-dropdown="drop__menu1">더보기<i class="prem__ico--arrow_down"></i></a>
+    <a href="javascript:;" class="prem__dropdown--btn1" id="" data-dropdown="drop__menu1">더보기<i class="prem__ico--arrow_down"></i></a>
+</div>
+
+<div class="dropdown__btns">
+    <div class="prem__select--box">
+        <select name="" id="" required>
+            <option value="" selected disabled hidden>성별을 선택해주세요.</option>
+            <option value="옵션1">옵션1</option>
+        </select>
+    </div>
+
+    <div class="prem__select--box">
+        <select name="" id="">
+            <option value="">직렬을 선택해주세요.</option>
+        </select>
+    </div>
+</div>
+
+<div class="dropdown__btns">
+    <a href="javascript:;" class="prem__select--box prem__dropdown--btn1" data-dropdown="drop__menu1">
+        <input type="hidden">
+        <div class="select" >직렬을 선택해주세요.</div>
+    </a>
+    <a href="javascript:;" class="prem__select--box prem__dropdown--btn1" data-dropdown="drop__menu1">
+        <input type="hidden">
+        <div class="select" >직렬을 선택해주세요.</div>
+    </a>
+</div>
+
+<div style="display: block;">
+    <a href="javascript:;" class="prem__select--box--large prem__dropdown--btn2 selected" data-dropdown='drop__menu2'>
+        <input type="hidden">
+        <div class="select">
+            <div>
+                <span>일반행정</span>
+                <p>기출 모의고사 1회 공통과목</p>
+            </div>
+            <span>2024.12.31</span>
+        </div>
+    </a>
+</div>
+
+<!-- 드롭다운 메뉴 -->
+<ul class="prem__dropdown--menu drop__menu1">
+    <li data-value="1"><a href="javascript:;">드롭메뉴 1</a></li>
+    <li data-value="2"><a href="javascript:;">드롭메뉴 2</a></li>
+    <li data-value="3"><a href="javascript:;">드롭메뉴 3</a></li>
+</ul>
+<ul class="prem__dropdown--menu--large drop__menu2"   >
+    <li data-value="1">
+        <a href="javascript:;">
+            <div>
+                <span>일반행정</span>
+                <p>기출 모의고사 1회 공통과목1</p>
+            </div>
+            <span>2024.12.31</span>
+        </a>
+    </li>
+    <li data-value="2">
+        <a href="javascript:;">
+            <div>
+                <span>일반행정</span>
+                <p>기출 모의고사 1회 공통과목2</p>
+            </div>
+            <span>2024.12.31</span>
+        </a>
+    </li>
+    <li data-value="3">
+        <a href="javascript:;">
+            <div>
+                <span>일반행정</span>
+                <p>기출 모의고사 1회 공통과목3</p>
+            </div>
+            <span>2024.12.31</span>
+        </a>
+    </li>
+</ul>
+&lt;script type="text/javascript"&gt;
+    $(function(){
+        $('.prem__dropdown--btn1').cnDropdown({
+            width: 'auto',
+            align: 'left',
+            onMenuClick: function(menuEl, menuIndex, btnEl){ // 메뉴 엘리먼트, 메뉴 인덱스, 버튼 엘리먼트
+                const menuHTML = menuEl.find('a').html().trim();
+                btnEl.find('.select').html(menuHTML);
+                btnEl.find('input[type=hidden]').val(menuEl.data('value'));
+            }
+        })
+
+        $('.prem__dropdown--btn2').cnDropdown({
+            width: 'auto',
+            align: 'left',
+            onMenuClick: function(menuEl, menuIndex, btnEl){ // 메뉴 엘리먼트, 메뉴 인덱스, 버튼 엘리먼트
+                const menuHTML = menuEl.find('a').html().trim();
+                btnEl.addClass('selected').find('.select').html(menuHTML);
+                btnEl.find('input[type=hidden]').val(menuEl.data('value'));
+            }
+        })
+    })
+&lt;/script&gt;
+</code></pre>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div>
+                    <div class="code_wrap">
+                        <ul class="code_tab cn-tab">
+                            <li class="active">
+                                <div class="example_wrap">
+                                    <div class="dropdown__btns">
+                                        <div class="prem__select--box">
+                                            <select name="" id="" required>
+                                                <option value="" selected disabled hidden>성별을 선택해주세요.</option>
+                                                <option value="옵션1">옵션1</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="prem__select--box">
+                                            <select name="" id="">
+                                                <option value="">직렬을 선택해주세요.</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li>
+<pre><code class="language-html">
+<div class="dropdown__btns">
+    <div class="prem__select--box">
+        <select name="" id="" required>
+            <option value="" selected disabled hidden>성별을 선택해주세요.</option>
+            <option value="옵션1">옵션1</option>
+        </select>
+    </div>
+
+    <div class="prem__select--box">
+        <select name="" id="">
+            <option value="">직렬을 선택해주세요.</option>
+        </select>
+    </div>
+</div>
+</code></pre>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div>
+                    <div class="code_wrap">
+                        <ul class="code_tab cn-tab">
+                            <li class="active">
+                                <div class="example_wrap">
+                                    <div class="dropdown__btns">
+                                        <a href="javascript:;" class="prem__select--box prem__dropdown--btn1" data-dropdown="drop__menu1">
+                                            <input type="hidden">
+                                            <div class="select" >직렬을 선택해주세요.</div>
+                                        </a>
+                                        <a href="javascript:;" class="prem__select--box prem__dropdown--btn1" data-dropdown="drop__menu1">
+                                            <input type="hidden">
+                                            <div class="select" >직렬을 선택해주세요.</div>
+                                        </a>
+                                    </div>
+                        
+                                    <!-- 드롭다운 메뉴 -->
+                                    <ul class="prem__dropdown--menu drop__menu1">
+                                        <li data-value="1"><a href="javascript:;">드롭메뉴 1</a></li>
+                                        <li data-value="2"><a href="javascript:;">드롭메뉴 2</a></li>
+                                        <li data-value="3"><a href="javascript:;">드롭메뉴 3</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+<pre><code class="language-html">
+<div class="dropdown__btns">
+    <a href="javascript:;" class="prem__select--box prem__dropdown--btn1" data-dropdown="drop__menu1">
+        <input type="hidden">
+        <div class="select" >직렬을 선택해주세요.</div>
+    </a>
+    <a href="javascript:;" class="prem__select--box prem__dropdown--btn1" data-dropdown="drop__menu1">
+        <input type="hidden">
+        <div class="select" >직렬을 선택해주세요.</div>
+    </a>
+</div>
+
+<!-- 드롭다운 메뉴 -->
+<ul class="prem__dropdown--menu drop__menu1">
+    <li data-value="1"><a href="javascript:;">드롭메뉴 1</a></li>
+    <li data-value="2"><a href="javascript:;">드롭메뉴 2</a></li>
+    <li data-value="3"><a href="javascript:;">드롭메뉴 3</a></li>
+</ul>
+
+&lt;script type="text/javascript"&gt;
+    $(function(){
+        $('.prem__dropdown--btn1').cnDropdown({
+            width: 'auto',
+            align: 'left',
+            onMenuClick: function(menuEl, menuIndex, btnEl){ // 메뉴 엘리먼트, 메뉴 인덱스, 버튼 엘리먼트
+                const menuHTML = menuEl.find('a').html().trim();
+                btnEl.find('.select').html(menuHTML);
+                btnEl.find('input[type=hidden]').val(menuEl.data('value'));
+            }
+        })
+    })
+&lt;/script&gt;
+</code></pre>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div>
+                    <div class="code_wrap">
+                        <ul class="code_tab cn-tab">
+                            <li class="active">
+                                <div class="example_wrap">
+                                    <div style="display: block;">
+                                        <a href="javascript:;" class="prem__select--box--large prem__dropdown--btn2 selected" data-dropdown='drop__menu2'>
+                                            <input type="hidden">
+                                            <div class="select">
+                                                <div>
+                                                    <span>일반행정</span>
+                                                    <p>기출 모의고사 1회 공통과목</p>
+                                                </div>
+                                                <span>2024.12.31</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                        
+                                    <!-- 드롭다운 메뉴 -->
+                                    <ul class="prem__dropdown--menu--large drop__menu2"   >
+                                        <li data-value="1">
+                                            <a href="javascript:;">
+                                                <div>
+                                                    <span>일반행정</span>
+                                                    <p>기출 모의고사 1회 공통과목1</p>
+                                                </div>
+                                                <span>2024.12.31</span>
+                                            </a>
+                                        </li>
+                                        <li data-value="2">
+                                            <a href="javascript:;">
+                                                <div>
+                                                    <span>일반행정</span>
+                                                    <p>기출 모의고사 1회 공통과목2</p>
+                                                </div>
+                                                <span>2024.12.31</span>
+                                            </a>
+                                        </li>
+                                        <li data-value="3">
+                                            <a href="javascript:;">
+                                                <div>
+                                                    <span>일반행정</span>
+                                                    <p>기출 모의고사 1회 공통과목3</p>
+                                                </div>
+                                                <span>2024.12.31</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+<pre><code class="language-html">
+
+<div style="display: block;">
+    <a href="javascript:;" class="prem__select--box--large prem__dropdown--btn2 selected" data-dropdown='drop__menu2'>
+        <input type="hidden">
+        <div class="select">
+            <div>
+                <span>일반행정</span>
+                <p>기출 모의고사 1회 공통과목</p>
+            </div>
+            <span>2024.12.31</span>
+        </div>
+    </a>
+</div>
+<ul class="prem__dropdown--menu--large drop__menu2"   >
+    <li data-value="1">
+        <a href="javascript:;">
+            <div>
+                <span>일반행정</span>
+                <p>기출 모의고사 1회 공통과목1</p>
+            </div>
+            <span>2024.12.31</span>
+        </a>
+    </li>
+    <li data-value="2">
+        <a href="javascript:;">
+            <div>
+                <span>일반행정</span>
+                <p>기출 모의고사 1회 공통과목2</p>
+            </div>
+            <span>2024.12.31</span>
+        </a>
+    </li>
+    <li data-value="3">
+        <a href="javascript:;">
+            <div>
+                <span>일반행정</span>
+                <p>기출 모의고사 1회 공통과목3</p>
+            </div>
+            <span>2024.12.31</span>
+        </a>
+    </li>
+</ul>
+&lt;script type="text/javascript"&gt;
+    $(function(){
+        $('.prem__dropdown--btn2').cnDropdown({
+            width: 'auto',
+            align: 'left',
+            onMenuClick: function(menuEl, menuIndex, btnEl){ // 메뉴 엘리먼트, 메뉴 인덱스, 버튼 엘리먼트
+                const menuHTML = menuEl.find('a').html().trim();
+                btnEl.addClass('selected').find('.select').html(menuHTML);
+                btnEl.find('input[type=hidden]').val(menuEl.data('value'));
+            }
+        })
+    })
+&lt;/script&gt;
+</code></pre>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+
+<script>
+    $(function(){
+        $('.prem__dropdown--btn1').cnDropdown({
+            width: 'auto',
+            align: 'left',
+            onMenuClick: function(menuEl, menuIndex, btnEl){ // 메뉴 엘리먼트, 메뉴 인덱스, 버튼 엘리먼트
+                const menuHTML = menuEl.find('a').html().trim();
+                btnEl.find('.select').html(menuHTML);
+                btnEl.find('input[type=hidden]').val(menuEl.data('value'));
+            }
+        })
+
+        $('.prem__dropdown--btn2').cnDropdown({
+            width: 'auto',
+            align: 'left',
+            onMenuClick: function(menuEl, menuIndex, btnEl){ // 메뉴 엘리먼트, 메뉴 인덱스, 버튼 엘리먼트
+                const menuHTML = menuEl.find('a').html().trim();
+                btnEl.addClass('selected').find('.select').html(menuHTML);
+                btnEl.find('input[type=hidden]').val(menuEl.data('value'));
+            }
+        })
+    })
+</script>

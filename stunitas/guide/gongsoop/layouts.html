@@ -1,0 +1,225 @@
+<?php include('skin/pub/guide/head.html'); ?>
+<?php include('skin/pub/guide/'.$nav.'/side_menu.html'); ?>
+
+<link rel="stylesheet" href="<?=UN_STATIC?>/css/gongsoop/common.css?<?=time()?>">
+<link rel="stylesheet" href="<?=UN_STATIC?>/css/gongsoop/pc/gongsoop.css?<?=time()?>">
+<style>
+    .example_wrap{padding: 30px;}
+    .example_wrap > div{display: flex; gap: 30px;}
+
+    .example_wrap main > div,
+    .example_wrap aside > div {min-height:100px;}
+
+    table.document tbody :is(th, td) p > span,
+    table.document tbody td ul li span{color: #b91c1c;}
+    table.document tbody td ul li{color: #5f6570;}
+</style>
+<div class="content">
+    <div class="content_tit">
+        <h2>Layouts</h2>
+        <!-- <p>랜딩페이지 퍼블리싱 가이드</p> -->
+    </div>
+    <ul class="content_nav inner cn-nav cn-auto-index">
+        <li class="active">Examples</li>
+        <li class="">Option</li>
+        <!-- <li class="">Methods</li> -->
+    </ul>
+    <ul class="content_tab cn-tab">
+        <!-- Examples -->
+        <li class="active">
+            <div class="content_wrap">
+                <!-- 기본 사용법 -->
+                <div>
+                    <div class="content_txt">
+                        <h4>기본 레이아웃</h4>
+                    </div>
+    
+                    <div class="code_wrap">
+                        <ul class="code_tab cn-tab">
+                            <li class="active">
+                                <div class="example_wrap gongsoop_service">
+                                    <div class="sp__layout--column">
+                                        <div class="sp__layout">
+                                            <aside>
+                                                <div class="sp__box--gradient">
+                                                    
+                                                </div>
+                                            </aside>
+                                            <main>
+                                                <div class="sp__box--border"></div>
+                                            </main>
+                                        </div>
+                                        <div class="sp__layout">
+                                            <aside>
+                                                <div class="sp__box--bg"></div>
+                                            </aside>
+                                            <main class="sp__layout--two">
+                                                <div class="sp__box--bg px-24 py-24"></div>
+                                                <div class="sp__box--border px-24 py-24"></div>
+                                            </main>
+                                        </div>
+                                        <div class="sp__layout">
+                                            <aside>
+                                                <div class="sp__box--border"></div>
+                                            </aside>
+                                            <main class="sp__layout--three">
+                                                <div class="sp__box--border px-30 py-30"></div>
+                                                <div class="sp__box--border px-30 py-30"></div>
+                                                <div class="sp__box--border px-30 py-30"></div>
+                                            </main>
+                                        </div>
+                                        <main>
+                                            <div class="sp__box--border"></div>
+                                        </main>
+                                        <div class="sp__layout">
+                                            <main class="sp__layout--four">
+                                                <div class="sp__box--bg"></div>
+                                                <div class="sp__box--bg"></div>
+                                                <div class="sp__box--bg"></div>
+                                                <div class="sp__box--bg"></div>
+                                            </main>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+            
+                            <li>
+<pre><code class="language-html"><!-- 레이아웃 -->
+<div class="gongsoop_service">
+    <div class="sp__layout--column">
+        <div class="sp__layout">
+            <main>
+                <div class="sp__box--border"></div>
+            </main>
+            <aside>
+                <div class="sp__box--gradient">
+                    
+                </div>
+            </aside>
+        </div>
+    </div>
+</div>
+</code></pre>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Empty -->
+                <div>
+                    <div class="content_txt">
+                        <h4>Empty</h4>
+                    </div>
+    
+                    <div class="code_wrap">
+                        <ul class="code_tab cn-tab">
+                            <li class="active">
+                                <div class="example_wrap gongsoop_service">
+                                    <div class="sp__layout--column">
+                                        <div class="sp__layout">
+                                            <main>
+                                                <div class="sp__box--empty">
+                                                    <p class="sp__typo--body15">서비스 이용을 위해<br>응시 직렬을 먼저 입력해주세요.</p>
+                                                </div>
+                                                <div class="sp__box--empty">
+                                                    <div class="sp__layout--column gap-24">
+                                                        <p class="sp__typo--body15">서비스 이용을 위해<br>응시 직렬을 먼저 입력해주세요.</p>
+                                                        <a href="javascript:;" class="sp__btn--box--accent--round--mediume">응시하기</a>
+                                                    </div>
+                                                </div>
+                                            </main>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+            
+                            <li>
+<pre><code class="language-html"><!-- 타입 1 -->
+<div class="sp__box--empty">
+    <p class="sp__typo--body15">서비스 이용을 위해<br>응시 직렬을 먼저 입력해주세요.</p>
+</div>
+<div class="sp__box--empty">
+    <div class="sp__layout--column gap-24">
+        <p class="sp__typo--body15">서비스 이용을 위해<br>응시 직렬을 먼저 입력해주세요.</p>
+        <a href="javascript:;" class="sp__btn--box--accent--round--mediume">응시하기</a>
+    </div>
+</div>
+
+<!-- 타입 2 -->
+<div class="sp__box--empty">
+    <div class="sp__layout--column gap-24">
+        <p class="sp__typo--body15">서비스 이용을 위해<br>응시 직렬을 먼저 입력해주세요.</p>
+        <a href="javascript:;" class="sp__btn--box--accent--round--mediume">응시하기</a>
+    </div>
+</div>
+</code></pre>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </li>
+
+        <!-- Options -->
+        <li>
+            <div class="content_wrap">
+                <div>
+                    <table class="document">
+                        <colgroup>
+                            <col width="16.6666%" />
+                            <col width="16.6666%" />
+                            <col width="16.6666%" />
+                            <col width="50%" />
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th colspan="4">Properties</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th colspan="2">사이즈</th>
+                                <td colspan="2">
+                                    <p>
+                                        <ul>
+                                            <li>sp__btn<span>--small</span></li>
+                                            <li>sp__btn<span>--medium</span></li>
+                                            <li>sp__btn<span>--large</span></li>
+                                        </ul>
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th colspan="2">modal.modalMode(<span>effect</span>)</th>
+                                <td colspan="2">
+                                    <p>모달의 효과를 변경하거나 적용 효과의 이름을 가져옵니다.</p>
+<pre><code class="language-js">const modal = $('#modal').cnModal();
+
+modal.modalMode('fade'); // 효과 변경
+modal.modalMode(); // 'fade'
+</code></pre>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th colspan="2">modal.modalTitle(<span>title</span>)</th>
+                                <td colspan="2">
+                                    <p>모달의 타이틀을 변경합니다.</p>
+<pre><code class="language-js">modal.modalTitle('타이틀 변경');
+</code></pre>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th colspan="2">modal.html(<span>html</span>)</th>
+                                <td colspan="2">
+                                    <p>모달의 내용을 변경합니다.</p>
+<pre><code class="language-js">modal.html('내용 변경');
+</code></pre>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>

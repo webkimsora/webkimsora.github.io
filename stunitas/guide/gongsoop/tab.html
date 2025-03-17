@@ -1,0 +1,87 @@
+<?php include('skin/pub/guide/head.html'); ?>
+<?php include('skin/pub/guide/'.$nav.'/side_menu.html'); ?>
+
+<link rel="stylesheet" href="<?=UN_STATIC?>/css/gongsoop/common.css?<?=time()?>">
+<link rel="stylesheet" href="<?=UN_STATIC?>/css/gongsoop/pc/gongsoop.css?<?=time()?>">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.11/clipboard.min.js"></script>
+
+<style>
+    .example_wrap{display: flex; flex-direction: column; gap: 30px; padding: 30px;}
+    .example_wrap > div{display: flex; gap: 30px;}
+</style>
+<div class="content">
+    <div class="content_tit">
+        <h2>Tab</h2>
+        <!-- <p>랜딩페이지 퍼블리싱 가이드</p> -->
+    </div>
+    <ul class="content_nav inner cn-nav cn-auto-index">
+        <li class="active">Examples</li>
+        <!-- <li class="">Library</li> -->
+        <!-- <li class="">Methods</li> -->
+    </ul>
+    <ul class="content_tab cn-tab">
+        <!-- Examples -->
+        <li class="active">
+            <div class="content_wrap">
+                <!-- Tab -->
+                <div>
+                    <div class="content_txt">
+                        <div class="tit_wrap">
+                            <h4>Tab</h4>
+                        </div>
+                    </div>
+    
+                    <div class="code_wrap">
+                        <ul class="code_tab cn-tab">
+                            <li class="active">
+                                <div class="example_wrap">
+                                    <ul class="sp__tab--rounded ex__nav">
+                                        <li class="active">질문 게시판</li>
+                                        <li>자유 게시판</li>
+                                        <li>수험생 강의/교재평</li>
+                                        <li>스터디 모집</li>
+                                        <li>커리큘럼 평가</li>
+                                    </ul>
+                                    <ul class="sp__tab--rounded--dark ex__nav">
+                                        <li class="active">질문 게시판</li>
+                                        <li>자유 게시판</li>
+                                        <li>수험생 강의/교재평</li>
+                                        <li>스터디 모집</li>
+                                        <li>커리큘럼 평가</li>
+                                    </ul>
+                                </div>
+                            </li>
+            
+                            <li>
+<pre><code class="language-html"><!-- HTML -->
+<ul class="sp__tab--rounded">
+    <li class="active">질문 게시판</li>
+    <li>자유 게시판</li>
+    <li>수험생 강의/교재평</li>
+    <li>스터디 모집</li>
+    <li>커리큘럼 평가</li>
+</ul>
+<ul class="sp__tab--rounded--dark">
+    <li class="active">질문 게시판</li>
+    <li>자유 게시판</li>
+    <li>수험생 강의/교재평</li>
+    <li>스터디 모집</li>
+    <li>커리큘럼 평가</li>
+</ul>
+</code></pre>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+
+<script>
+    $(function(){
+        $('.ex__nav').cnTab({
+            useConts: 'N',
+        });
+    })
+</script>

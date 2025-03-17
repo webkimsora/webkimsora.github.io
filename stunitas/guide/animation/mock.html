@@ -1,0 +1,221 @@
+<?php
+    include('skin/pub/guide/head.html'); 
+    include('skin/pub/guide/' . $nav . '/side_menu.html');
+?>
+<link rel="stylesheet" href="/css/document.css"/>
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/highlight.min.js"></script>
+<script src="/js/document.js"></script>
+
+<style>
+    .nav > li{list-style: none; text-align: center; border-bottom: 2px solid #ddd; padding: 15px 0; color: #bbb; font-weight: 700; flex: 1;}
+    .nav > li.active{border-color: #000; color: #000;}
+    .tab{margin-top: 15px;}
+    .tab li video{background: #111; width: 100%; border-radius: 10px; overflow: hidden;}
+    .tab > li{text-align: center;}
+    .tab > li > ul.c-nav > li{width: auto !important; height: 40px; line-height: 40px; font-size: 14px; padding: 0 12px; border: 0; background: #f6f6f6; border-radius: 5px;}
+    .tab > li > ul.c-nav > li.active{background: #000; color: #fff;}
+    .tab > li > ul.c-nav > li + li{margin-left: 10px;}
+    .tab > li > .nav{display: inline-flex; gap: 10px; width: auto;}
+    .tab > li > .nav > li{height: 38px; line-height: 38px; padding: 0 14px; width: auto; flex: none; background: #eee; color: #aaa; border-radius: 50px; font-size: 15px; border: 0;}
+    .tab > li > .nav > li.active{background: #000; color: #fff;}
+
+    h3 {margin-bottom: 20px !important;}
+
+    .btn_link > a {display: inline-block;}
+    .btn_link > a + a {margin-left: 10px;}
+
+    main {padding: 50px 0 35vh !important;}
+</style>
+<?
+    include('skin/pub/layout/pc/document/inc_document_lnb.html');
+?>
+<div class="document">
+    <main>
+
+<pre><code class="language-html">
+<!-- 스크롤 위치할 때 애니메이션 실행할 경우  -->
+<div class="cn-scroll-ani">애니메이션 소스 코드</div>
+
+<script>
+    $(window).cnScroll({
+        targetClass: 'cn-scroll-ani',
+    });
+</script>
+</code></pre>
+    
+        <section id="ex" style="width: 1060px;">
+            <!-- 1 -->
+            <section>
+                <h3>Animation - 1. ani_opacity / ani_trans </h3>
+                <?
+                    include('skin/pub/guide/animation/pc/include/1.html');
+                ?>
+            </section>
+
+            <!-- 2 -->
+            <section>
+                <h3>Animation - 2. ani_ping </h3>
+                <p class="btn_link">
+                    <a href="https://gong.conects.com/freepass/renewal" target="_blank">☞ Link 이동</a>
+                </p>
+                <?
+                    include('skin/pub/guide/animation/pc/include/2.html');
+                ?>
+            </section>
+
+            <!-- 3 -->
+            <section>
+                <h3>Animation - 3. 카운터 모션</h3>
+                <?
+                    include('skin/pub/guide/animation/pc/include/3.html');
+                ?>
+            </section>
+            
+            <!-- 4 -->
+            <section>
+                <h3>Animation - 4. 보더 애니메이션</h3>
+                <?
+                    include('skin/pub/guide/animation/pc/include/4.html');
+                ?>
+            </section>
+
+            <!-- 5 -->
+            <section>
+                <h3>Animation - 5. ani_bounce</h3>
+                <?
+                    include('skin/pub/guide/animation/pc/include/5.html');
+                ?>
+            </section>
+
+            <!-- 6 -->
+            <section>
+                <h3>Animation - 6. ani_stamp</h3>
+                <?
+                    include('skin/pub/guide/animation/pc/include/6.html');
+                ?>
+            </section>
+
+            <!-- 7 -->
+            <section>
+                <h3>Animation - 7. slide up </h3>
+                <?
+                    include('skin/pub/guide/animation/pc/include/7.html');
+                ?>
+            </section>
+
+            <!-- 8 -->
+            <section>
+                <h3>Animation - 8. rolling swiper </h3>
+                <?
+                    include('skin/pub/guide/animation/pc/include/8.html');
+                ?>
+            </section>
+
+            <!-- 9 -->
+            <section>
+                <h3>Animation - 9. ani_heart_up </h3>
+                <p>
+                    <a href="https://codepen.io/kathykato/pen/NwzJNL" target="_blank">☞ Link 이동</a>
+                </p>
+                <?
+                    include('skin/pub/guide/animation/pc/include/9.html');
+                ?>
+            </section>
+
+            <!-- 10 -->
+            <section>
+                <h3>Animation - 10. ani_scroll_cs</h3>
+                <p>
+                    <a href="https://gong.conects.com/promotion/2024/07/golden_timer" target="_blank">☞ Link 이동</a>
+                </p>
+                <?
+                    include('skin/pub/guide/animation/pc/include/10.html');
+                ?>
+            </section>
+
+            <!-- 11 -->
+            <section>
+                <h3>Animation - 11. card hover</h3>
+                <p>
+                    <a href="https://codepen.io/michellebarker/pen/jObooew" target="_blank">☞ Link 이동</a>
+                    <a href="https://codepen.io/michellebarker/pen/jObooew" target="_blank">☞ Link 이동</a>
+                </p>
+                <?
+                    include('skin/pub/guide/animation/pc/include/11.html');
+                ?>
+            </section>
+
+            
+            <!-- 11 & 12 -->
+            <section>
+                <h3>Animation - 12. 텍스트 강조 애니메이션 / blink </h3>
+                <?
+                    include('skin/pub/guide/animation/pc/include/12.html');
+                ?>
+            </section>
+
+            <!-- 13 -->
+            <section>
+                <h3>Animation - 13. Transition Tab </h3>
+                <p>
+                    <a href="https://codepen.io/havardob/pen/ExVaELV" target="_blank">☞ Link 이동</a>
+                </p>
+                <?
+                    include('skin/pub/guide/animation/pc/include/13.html');
+                ?>
+            </section>
+
+            <!-- 14 -->
+            <section>
+                <h3>Animation - 14. ani_blur_focus </h3>
+                <p>
+                    <a href="https://codepen.io/shadeed/pen/MwMdqL" target="_blank">☞ Link 이동</a>
+                </p>
+                <?
+                    include('skin/pub/guide/animation/pc/include/14.html');
+                ?>
+            </section>
+
+            <!-- 15 -->
+            <section>
+                <h3>Animation - 15. rotate loading </h3>
+                <p>
+                    <a href="https://codepen.io/harichu/pen/KYRdPr" target="_blank">☞ Link 이동</a>
+                </p>
+                <?
+                    include('skin/pub/guide/animation/pc/include/15.html');
+                ?>
+            </section>
+
+            <!-- 16 -->
+            <section>
+                <h3>Animation - 16. radial chart : 박스 배경 fill만 가능</h3>
+                <p>
+                    <a href="https://codepen.io/paulobrien/pen/vYjPRE" target="_blank">☞ Link 이동</a>
+                    <a href="https://codepen.io/EricPorter/pen/grpqVB" target="_blank">☞ 레퍼런스 이동</a>
+                </p>
+                <?
+                    include('skin/pub/guide/animation/pc/include/16.html');
+                ?>
+            </section>
+
+            <!-- 17 -->
+            <section>
+                <h3>Animation - 17. Swiper slide</h3>
+                <?
+                    include('skin/pub/guide/animation/pc/include/17.html');
+                ?>
+            </section>
+        </section>
+
+    </main>
+</div>
+
+
+
+<!-- @ script -->
+<script>
+    $(window).cnScroll({
+		targetClass: 'cn-scroll-ani',
+	});
+</script>

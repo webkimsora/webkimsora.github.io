@@ -1,0 +1,29 @@
+<!-- 플러그인 사이드 -->
+<div class="side_menu">
+    <div class="menu active<?=$page == 'home' ? ' selected' : ''?>">
+        <a href="/pub/guide/<?=$nav?>/home<?=$isMobile ? '?set_view=mobile' : '' ?>"><strong><span>Home</span></strong></a>
+    </div>
+
+    <div class="menu active<?=$page == 'modal' ? ' selected' : ''?>">
+        <a href="/pub/guide/<?=$nav?>/modal<?=$isMobile ? '?set_view=mobile' : '' ?>"><strong><span>Modal</span></strong></a>
+    </div>
+
+    <div class="menu active<?=$page == 'slider' ? ' selected' : ''?>">
+        <a href="/pub/guide/<?=$nav?>/slider<?=$isMobile ? '?set_view=mobile' : '' ?>"><strong><span>Slider</span></strong></a>
+    </div>
+
+    <div class="menu active<?=$page == 'tab' ? ' selected' : ''?>">
+        <a href="/pub/guide/<?=$nav?>/tab<?=$isMobile ? '?set_view=mobile' : '' ?>"><strong><span>Tab</span></strong></a>
+    </div>
+    
+    
+    <!-- <div class="menu active<?=strpos($page, 'event') > -1 ? ' selected' : ''?>">
+        <strong><span>이벤트</span><i class="ico <?=$isMobile ? 'ico_arrow _down' : 'ico_arrow_down'?>"></i></strong>
+        <ul>
+            <li class="<?=$page == 'event_basic' ? 'selected' : ''?>"><a href="/pub/guide/<?=$nav?>/event_basic<?=$isMobile ? '?set_view=mobile' : '' ?>"><span>기본형</span></a></li>
+            <li class="<?=$page == 'event_comment' ? 'selected' : ''?>"><a href="/pub/guide/<?=$nav?>/event_comment<?=$isMobile ? '?set_view=mobile' : '' ?>"><span>댓글형</span></a></li>
+            <li class="<?=$page == 'event_distri' ? 'selected' : ''?>"><a href="/pub/guide/<?=$nav?>/event_distri<?=$isMobile ? '?set_view=mobile' : '' ?>"><span>배포형</span></a></li>
+            <li class="<?=$page == 'event_popup' ? 'selected' : ''?>"><a href="/pub/guide/<?=$nav?>/event_popup<?=$isMobile ? '?set_view=mobile' : '' ?>"><span>팝업형</span></a></li>
+        </ul>
+    </div> -->
+</div>

@@ -1,0 +1,388 @@
+<?php include('skin/pub/guide/head.html'); ?>
+<?php include('skin/pub/guide/'.$nav.'/side_menu.html'); ?>
+
+<style>
+    .example_wrap{min-height: 200px; padding: 20px;}
+
+    .example_nav > li{list-style: none; text-align: center; border-bottom: 2px solid #ddd; padding: 15px 0; color: #bbb; font-weight: 700; flex: 1;}
+    .example_nav > li.active{border-color: #000; color: #000;}
+    .example_tab{margin-top: 15px;}
+    .example_tab li video{background: #111; width: 100%; border-radius: 10px; overflow: hidden;}
+    .example_tab > li{text-align: center;}
+    .example_tab > li > ul.c-nav > li{width: auto !important; height: 40px; line-height: 40px; font-size: 14px; padding: 0 12px; border: 0; background: #f6f6f6; border-radius: 5px;}
+    .example_tab > li > ul.c-nav > li.active{background: #000; color: #fff;}
+    .example_tab > li > ul.c-nav > li + li{margin-left: 10px;}
+    .example_tab > li > .nav{display: inline-flex; gap: 10px; width: auto;}
+    .example_tab > li > .nav > li{height: 38px; line-height: 38px; padding: 0 14px; width: auto; flex: none; background: #eee; color: #aaa; border-radius: 50px; font-size: 15px; border: 0;}
+    .example_tab > li > .nav > li.active{background: #000; color: #fff;}
+
+</style>
+<div class="content">
+    <div class="content_tit">
+        <h2>Tab</h2>
+        <!-- <p>랜딩페이지 퍼블리싱 가이드</p> -->
+    </div>
+    <ul class="content_nav inner cn-nav cn-auto-index">
+        <li class="active">Examples</li>
+        <li class="">Option</li>
+        <li class="">Methods</li>
+    </ul>
+    <ul class="content_tab cn-tab">
+        <!-- Examples -->
+        <li class="active">
+            <div class="content_wrap">
+                <!-- 기본 사용법 -->
+                <div>
+                    <div class="content_txt">
+                        <h4>기본 사용법</h4>
+                        <p>
+                            스크립트 적용시 탭을 자동으로 인식하여 탭 영역으로 지정됩니다.<br />
+                            태그 종류와는 상관 없이 <span>div > span, div > div, ul > li</span>와 같은 모든 구조에서도 동작합니다.<br/>
+                        </p>
+                    </div>
+    
+                    <div class="code_wrap">
+                        <ul class="code_tab cn-tab">
+                            <li class="active">
+                                <div class="example_wrap">
+                                    <ul class="example_nav nav">
+                                        <li>메뉴1</li>
+                                        <li>메뉴2</li>
+                                        <li>메뉴3</li>
+                                    </ul>
+                                    <ul class="example_tab">
+                                        <li><img src="https://picsum.photos/1000/200" alt="탭 이미지1" width="1000" height="200"></li>
+                                        <li><img src="https://picsum.photos/1000/200?random=1" alt="탭 이미지2" width="1000" height="200"></li>
+                                        <li><img src="https://picsum.photos/1000/200?random=2" alt="탭 이미지3" width="1000" height="200"></li>
+                                    </ul>
+                                </div>
+                            </li>
+            
+                            <li>
+<pre><code class="language-html"><!-- HTML -->
+<ul class="example_nav">
+    <li>메뉴1</li>
+    <li>메뉴2</li>
+    <li>메뉴3</li>
+</ul>
+<ul class="example_tab cn-tab">
+    <li><img src="https://picsum.photos/1000/200" alt="탭 이미지1" width="1000" height="200"></li>
+    <li><img src="https://picsum.photos/1000/200?random=1" alt="탭 이미지2" width="1000" height="200"></li>
+    <li><img src="https://picsum.photos/1000/200?random=2" alt="탭 이미지3" width="1000" height="200"></li>
+</ul>
+
+<!-- SCRIPT -->
+<script>
+$('.example_nav').cnTab()
+</script>
+</code></pre>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+    
+                <!-- 내부 비디오 -->
+                <div>
+                    <div class="content_txt">
+                        <h4>내부 비디오 태그</h4>
+                        <p>탭 내부에 있는 비디오 태그는 탭 변경시 <u>리셋</u>됩니다.</p>
+                    </div>
+        
+                    <div class="code_wrap">
+                        <ul class="code_tab cn-tab">
+                            <li class="active">
+                                <div class="example_wrap">
+                                    <ul class="example_nav nav">
+                                        <li>비디오1</li>
+                                        <li>비디오2</li>
+                                    </ul>
+                                    <ul class="example_tab">
+                                        <li>
+                                            <video muted="" playsinline="" controls="" poster="//s3.ap-northeast-2.amazonaws.com/st.dangidata/gong_dangicokr/img/gong/landing/2023/04/gong_12627/pc/head_video.png">
+                                                <source src="<?= VIDEO_URL ?>/2023media/2023gong_cheerup.mp4" type="video/mp4">
+                        
+                                                <img src="//s3.ap-northeast-2.amazonaws.com/st.dangidata/gong_dangicokr/img/gong/landing/2023/01/gong_11996/pc/cont02_video.png" alt=" ">
+                                            </video>
+                                        </li>
+                                        <li>
+                                            <video muted="" playsinline="" controls="" poster="//s3.ap-northeast-2.amazonaws.com/st.dangidata/gong_dangicokr/img/gong/landing/2023/04/gong_12627/pc/head_video.png">
+                                                <source src="<?= VIDEO_URL ?>/2023media/2023gong_cheerup.mp4" type="video/mp4">
+                        
+                                                <img src="//s3.ap-northeast-2.amazonaws.com/st.dangidata/gong_dangicokr/img/gong/landing/2023/01/gong_11996/pc/cont02_video.png" alt=" ">
+                                            </video>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                
+                            <li>
+<pre><code class="language-html"><!-- HTML -->
+<ul class="example_nav">
+    <li>비디오1</li>
+    <li>비디오2</li>
+</ul>
+<ul class="example_tab">
+    <li>
+        <video muted="" playsinline="" controls="" poster="/img/gong/landing/2023/04/gong_12627/pc/head_video.png">
+            <source src="/2023media/2023gong_cheerup.mp4" type="video/mp4">
+
+            <img src="/img/gong/landing/2023/01/gong_11996/pc/cont02_video.png" alt=" ">
+        </video>
+    </li>
+    <li>
+        <video muted="" playsinline="" controls="" poster="/img/gong/landing/2023/04/gong_12627/pc/head_video.png">
+            <source src="/2023media/2023gong_cheerup.mp4" type="video/mp4">
+
+            <img src="/img/gong/landing/2023/01/gong_11996/pc/cont02_video.png" alt=" ">
+        </video>
+    </li>
+</ul>
+
+<!-- SCRIPT -->
+<script>
+$('.example_nav').cnTab()
+</script>
+</code></pre>                            
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+    
+                <!-- 마우스 오버 사용하기 -->
+                <div>
+                    <div class="content_txt">
+                        <h4>마우스 오버 사용하기</h4>
+                        <p>클릭시 활성화되는 탭을 마우스 오버로 변경합니다.</p>
+                    </div>
+    
+                    <div class="code_wrap">
+                        <ul class="code_tab cn-tab">
+                            <li class="active">
+                                <div class="example_wrap">
+                                    <ul class="example_nav example_nav2">
+                                        <li>메뉴1</li>
+                                        <li>메뉴2</li>
+                                        <li>메뉴3</li>
+                                    </ul>
+                                    <ul class="example_tab">
+                                        <li><img src="https://picsum.photos/1000/200" alt="탭 이미지1" width="1000" height="200"></li>
+                                        <li><img src="https://picsum.photos/1000/200?random=1" alt="탭 이미지2" width="1000" height="200"></li>
+                                        <li><img src="https://picsum.photos/1000/200?random=2" alt="탭 이미지3" width="1000" height="200"></li>
+                                    </ul>
+                                </div>
+                            </li>
+            
+                            <li>
+<pre><code class="language-html"><!-- HTML -->
+<ul class="mouseover_nav">
+    <li>메뉴1</li>
+    <li>메뉴2</li>
+    <li>메뉴3</li>
+</ul>
+<ul class="mouseover_tab cn-tab">
+    <li><img src="https://picsum.photos/1000/200" alt="탭 이미지1" width="1000" height="200"></li>
+    <li><img src="https://picsum.photos/1000/200?random=1" alt="탭 이미지2" width="1000" height="200"></li>
+    <li><img src="https://picsum.photos/1000/200?random=2" alt="탭 이미지3" width="1000" height="200"></li>
+</ul>
+
+<!-- SCRIPT -->
+<script>
+$('.mouseover_nav').cnTab({
+    mouseover: true
+})
+</script>
+</code></pre>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </li>
+
+        <!-- Options -->
+        <li>
+            <div class="content_wrap">
+                <div>
+                    <table class="document">
+                        <colgroup>
+                            <col width="16.6666%" />
+                            <col width="16.6666%" />
+                            <col width="16.6666%" />
+                            <col width="50%" />
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Type</th>
+                                <th>Default</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr id="tab">
+                                <th>tab</th>
+                                <td>string</td>
+                                <td>-</td>
+                                <td>
+                                    <p>버튼 다음에 탭이 위치할 수 없거나, 구조가 복잡해질 경우 아래 옵션을 사용하여 탭을 지정할 수 있습니다.</p>
+<pre><code class="language-html"><!-- 버튼 영역 -->
+<ul class="nav_type2">...</ul>
+
+<div class="something"></div>
+
+<!-- 탭 영역 -->
+<div class="tab_box">
+    <ul class="tab">...</ul>
+</div>
+<script>
+    $(function(){
+        $('.nav_type2').cnTab({
+            tab: '.tab' // className
+        });
+    });
+</script>
+</code></pre>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>tabParent</th>
+                                <td>string</td>
+                                <td></td>
+                                <td>
+                                    <p>탭의 부모 클래스를 지정합니다.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>mouseover</th>
+                                <td>boolean</td>
+                                <td>true | false</td>
+                                <td>
+                                    <p>true로 설정하면 마우스 오버했을 때 탭을 트리거합니다.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>width</th>
+                                <td>string</td>
+                                <td>'auto', '100px', '50%', 'css'</td>
+                                <td>
+                                    <p>각 버튼의 너비를 설정합니다. (단위와 함께 입력 예: '100px')<br />이 옵션을 넣지 않으면 탭 갯수에 따라 자동으로 너비가 조정됩니다. <br>'css' 옵션은 밑에 사용자가 설정한 css의 넓이 및 여백을 사용합니다.<br>'css' 로 설정하면 gap 옵션은 무시 됩니다. <br><b>탭은 display:flex 로 되어 있습니다.</b></p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>spaceTab</th>
+                                <td>number</td>
+                                <td>n</td>
+                                <td>
+                                    <p>각 탭 사이의 공백 숫자로 입력해야 하며 뒤에 px이 자동 붙습니다.<br>기본 - 설정안함</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>startIndex</th>
+                                <td>number</td>
+                                <td>0, 'auto'</td>
+                                <td>
+                                    <p>시작 탭을 설정합니다.<br>'auto'로 설정하면 탭 갯수에 맞춰 랜덤으로 노출됩니다.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>activeClass</th>
+                                <td>string</td>
+                                <td>'active'</td>
+                                <td>
+                                    <p>활성화된 버튼과 탭 영역에 추가되는 클래스를 변경합니다.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>useConts</th>
+                                <td>string</td>
+                                <td>'Y', 'N'</td>
+                                <td>
+                                    <p>'Y'로 설정하면 탭을 버튼으로만 사용합니다.<br>하위 탭이 지정되지 탭이 작동하지 않습니다.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>onClick</th>
+                                <td>function</td>
+                                <td>-</td>
+                                <td>
+                                    <p>
+                                        버튼을 클릭했을 때 이벤트를 추가하며 클릭한 엘리먼트와 인덱스를 반환합니다.<br />
+                                        이미 활성화된 버튼을 다시 클릭할 경우 중복해서 실행되지 않습니다.
+        
+                                    </p>
+<pre><code class="language-js">$('.custom_nav').cnTab({
+    onClick: function(el, index, tabs){
+        console.log(index + '번째 메뉴 클릭');
+        el.addClass('clicked'); // 클릭한 영역에 클래스 추가
+    };
+});
+</code></pre>
+                                </td>
+                            </tr>
+        
+                            <tr>
+                                <th>onInit</th>
+                                <td>function</td>
+                                <td>-</td>
+                                <td>
+                                    <p>
+                                        맨 처음에 로드되고 실행 되는 함수
+        
+                                    </p>
+<pre><code class="language-js">$('.custom_nav').cnTab({
+    onInit: function(el, index, tabs){
+        console.log('로드 되고 처음으로 시작할때');
+    };
+});
+</code></pre>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </li>
+
+        <!-- Methods -->
+        <li>
+            <div class="content_wrap">
+                <div>
+                    <table class="document">
+                        <colgroup>
+                            <col width="16.6666%" />
+                            <col width="16.6666%" />
+                            <col width="16.6666%" />
+                            <col width="50%" />
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th colspan="4">Properties</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th colspan="2">tab.goTo(<span>index</span>)</th>
+                                <td colspan="2">
+                                    <p>index와 동일한 번호로 탭을 전환합니다.<br>eq를 사용하기 때문에 탭의 인덱스는 0부터 시작됩니다.</p>
+<pre><code class="language-js">let tab = $('.tab').cnTab();
+
+tab.goTo(1); // 두번째 탭으로 이동
+</code></pre>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+
+<script>
+    $(function(){
+        $('.nav').cnTab();
+        $('.example_nav2').cnTab({
+            mouseover: true,
+        });
+    })
+</script>

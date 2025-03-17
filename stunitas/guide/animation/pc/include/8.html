@@ -1,0 +1,30 @@
+<!-- @ CSS -->
+<style>
+.swiper_infinite{height: 34px;overflow: hidden;}
+.swiper_infinite .swiper-wrapper{transition-timing-function:linear;}
+.swiper_infinite .swiper-slide{width: 397px !important;}
+</style>
+
+<section style="text-align: center; padding: 50px 0; background: #005CF3">
+    <ul class="swiper_infinite">
+        <? for($num=0; $num<10; $num++){ ?>
+        <li><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/07/mkt1_7313/pc/top_txt_slide.png" alt=""></li>
+        <? } ?>
+    </ul>
+</section>
+
+<script>
+     $('.swiper_infinite').cnSlider({
+        swiperOptions: {
+            slidesPerView: 'auto',
+            spaceBetween: 3,
+            loop: true,
+            speed: 3000,
+            allowTouchMove: false,
+            autoplay: {
+                delay: 1,
+                disableOnInteraction: true,
+            }
+        }
+    });
+</script>

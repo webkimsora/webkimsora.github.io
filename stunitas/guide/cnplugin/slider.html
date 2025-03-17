@@ -1,0 +1,449 @@
+<?php include('skin/pub/guide/head.html'); ?>
+<?php include('skin/pub/guide/'.$nav.'/side_menu.html'); ?>
+
+<style>
+    .example_wrap{min-height: 300px;}
+
+    .slide_nav li{list-style: none; text-align: center; padding: 15px 0; color: #bbb; font-weight: 700; flex: 1; cursor: pointer; border-bottom: 1px solid #ededf3;}
+    .slide_nav li.active{background: #000; color: #fff; border-color: #000;}
+    .slide_nav li + li{border-left: 1px solid #ededf3;}
+    .example_tab{margin-top: 15px;}
+    .example_tab li video{background: #111; width: 100%; border-radius: 10px; overflow: hidden;}
+    .example_tab > li{text-align: center;}
+    .example_tab > li > ul.c-nav > li{width: auto !important; height: 40px; line-height: 40px; font-size: 14px; padding: 0 12px; border: 0; background: #f6f6f6; border-radius: 5px;}
+    .example_tab > li > ul.c-nav > li.active{background: #000; color: #fff;}
+    .example_tab > li > ul.c-nav > li + li{margin-left: 10px;}
+    .example_tab > li > .nav{display: inline-flex; gap: 10px; width: auto;}
+    .example_tab > li > .nav > li{height: 38px; line-height: 38px; padding: 0 14px; width: auto; flex: none; background: #eee; color: #aaa; border-radius: 50px; font-size: 15px; border: 0;}
+    .example_tab > li > .nav > li.active{background: #000; color: #fff;}
+
+    .code_layouts{display: flex; align-items: center; gap: 70px; width: 1440px;}
+    .code_layouts::after{width: 32px; height: 32px; margin: 0; position: absolute; top: 50%; left: 50%; margin-top: -16px; margin-left: -16px;}
+    .code_layouts > div{flex: 1; width: 0; min-height: 236px;} 
+    .code_layouts > div pre code{min-height: 236px;} 
+
+    .example_pagination{position: absolute; font-size: 0; line-height: 0; bottom: 15px !important;}
+    .example_pagination > span{background: #000; width: 10px; height: 10px; margin: 0 4px !important;}
+    .example_control{background: rgba(0, 0, 0, 0.45); position: absolute; top: 50%; transform: translateY(-50%); width: 28px; height: 70px; margin: 0; border-radius: 6px;}
+    .example_control::after{background: #fff; width: 24px; height: 38px;}
+    .example_control.swiper-button-prev{left: 10px; right: auto;}
+    .example_control.swiper-button-next{left: auto; right: 10px;}
+    .example_control.swiper-button-next::after{transform: rotate(180deg);}
+
+    table.document tbody > tr > th a:hover{text-decoration: underline;}
+    table.document tbody > tr > th span{color: #b91c1c;}
+</style>
+<div class="content">
+    <div class="content_tit">
+        <h2>Slider</h2>
+        <!-- <p>cnSlider는 swiper를 사용하기 때문에 없다면 꼭 불러와야합니다.</p> -->
+    </div>
+    <ul class="content_nav inner cn-nav cn-auto-index">
+        <li class="active">Examples</li>
+        <li class="">Option</li>
+        <li class="">Methods</li>
+    </ul>
+    <ul class="content_tab cn-tab">
+        <!-- Examples -->
+        <li class="active">
+            <div class="content_wrap">
+                <!-- 기본 사용법 -->
+                <div>
+                    <div class="content_txt">
+                        <h4>기본 사용법</h4>
+                        <p>
+                            cnSlider는 <a href="https://swiperjs.com/get-started" target="_blank">swiper</a>를 사용하기 때문에 없다면 꼭 불러와야합니다.<br>
+                            아래처럼 cnSlider의 기본 구조만 추가하면 스와이퍼 슬라이드의 구조가 자동으로 적용됩니다.
+                        </p>
+                    </div>
+
+                    <div class="code_layouts ico ico_arrow_line_right">
+                        <div>
+<pre><code class="language-html"><!-- cnSlider의 기본 구조 -->
+<ul class="cnSlider">
+    <li>Slide 1</li>
+    <li>Slide 2</li>
+    <li>Slide 3</li>
+</ul>
+
+&lt;script&gt;
+    $('.cnSlider').cnSlier(...);
+&lt;/script&gt;
+</code></pre>
+                        </div>
+                        <div>
+<pre><code class="language-html"><!-- 스크립트 적용시 자동으로 생성되는 구조 -->
+<div class="swiper cnSlider">
+    <ul class="swiper-wrapper">
+        <li class="swiper-slide">Slide 1</li>
+        <li class="swiper-slide">Slide 2</li>
+        <li class="swiper-slide">Slide 3</li>
+    </ul>
+
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+</div>
+</code></pre>
+                        </div>
+                        
+                    </div>
+                </div>
+    
+                <!-- 스와이퍼 옵션 사용하기 -->
+                <div>
+                    <div class="content_txt">
+                        <h4>스와이퍼 옵션 사용하기</h4>
+                        <p>스와이퍼의 옵션을 swiperOptions에서 동일하게 사용할 수 있습니다.</p>
+                    </div>
+        
+                    <div class="code_wrap">
+                        <ul class="code_tab cn-tab">
+                            <li class="active">
+                                <div class="example_wrap">
+                                    <ul class="example_slider1">
+                                        <li><img src="https://picsum.photos/1000/300" alt="탭 이미지1" width="1000" height="300"></li>
+                                        <li><img src="https://picsum.photos/1000/300?random=1" alt="탭 이미지2" width="1000" height="300"></li>
+                                        <li><img src="https://picsum.photos/1000/300?random=2" alt="탭 이미지3" width="1000" height="300"></li>
+                                    </ul>
+                                </div>
+
+                                <script>
+                                    $('.example_slider1').cnSlider({
+                                        swiperOptions: {
+                                            loop: true,
+                                            autoplay: {
+                                                delay: 3000,
+                                                disableOnInteraction: false,
+                                            },
+                                        }
+                                    })
+                                </script>
+                            </li>
+            
+                            <li>
+<pre><code class="language-html"><!-- HTML -->
+<ul class="example_slider">
+    <li><img src="https://picsum.photos/1000/300" alt="탭 이미지1" width="1000" height="300"></li>
+    <li><img src="https://picsum.photos/1000/300?random=1" alt="탭 이미지2" width="1000" height="300"></li>
+    <li><img src="https://picsum.photos/1000/300?random=2" alt="탭 이미지3" width="1000" height="300"></li>
+</ul>
+
+<!-- SCRIPT -->
+&lt;script&gt;
+$('.example_slider').cnSlider({
+    swiperOptions: {
+        loop: true,
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+        },
+    }
+})
+&lt;/script&gt;
+</code></pre>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- 커스텀 옵션 사용하기 -->
+                <div>
+                    <div class="content_txt">
+                        <h4>커스텀 옵션 사용하기</h4>
+                        <p>
+                            html 추가가 필요한 navigation(controls), pagination(pager), thumbs(nav) 옵션은 따로 옵션을 만들어 쉽게 추가할 수 있습니다.<br>
+                            pagerClassName, controlsClassName를 사용하여 클래스이름을 변경할 수 있고, thumbOptions과 navOptions을 사용하여 등록된 thumbs옵션과 등록된 슬라이드의 옵션을 설정할 수 있습니다.
+                        </p>
+                    </div>
+        
+                    <div class="code_wrap">
+                        <ul class="code_tab cn-tab">
+                            <li class="active">
+                                <div class="example_wrap">
+                                    <ul class="slide_nav">
+                                        <li>슬라이드 1</li>
+                                        <li>슬라이드 2</li>
+                                        <li>슬라이드 3</li>
+                                    </ul>
+                                    <ul class="example_slider2">
+                                        <li><img src="https://picsum.photos/1000/300?random=3" alt="탭 이미지1" width="1000" height="300"></li>
+                                        <li><img src="https://picsum.photos/1000/300?random=4" alt="탭 이미지2" width="1000" height="300"></li>
+                                        <li><img src="https://picsum.photos/1000/300?random=5" alt="탭 이미지3" width="1000" height="300"></li>
+                                    </ul>
+                                </div>
+
+                                <script>
+                                    $('.example_slider2').cnSlider({
+                                        pager: true,
+                                        pagerClassName: 'example_pagination',
+                                        controls: true,
+                                        controlsClassName: 'ico ico_arrow_left example_control example-control-',
+                                        nav: '.slide_nav',
+                                        swiperOptions: {
+                                            loop: true,
+                                            autoplay: {
+                                                delay: 3000,
+                                                disableOnInteraction: false,
+                                            },
+                                        }
+                                    })
+                                </script>
+                            </li>
+            
+                            <li>
+<pre><code class="language-html"><!-- HTML -->
+<ul class="example_slider">
+    <li><img src="https://picsum.photos/1000/300" alt="탭 이미지1" width="1000" height="300"></li>
+    <li><img src="https://picsum.photos/1000/300?random=1" alt="탭 이미지2" width="1000" height="300"></li>
+    <li><img src="https://picsum.photos/1000/300?random=2" alt="탭 이미지3" width="1000" height="300"></li>
+</ul>
+
+<!-- SCRIPT -->
+&lt;script&gt;
+$('.example_slider').cnSlider({
+    // pagination 설정과 생성되는 class 이름 설정
+    pager: true,
+    pagerClassName: 'example_pagination',
+
+    // navigation 설정과 생성되는 class 이름 설정
+    controls: true,
+    controlsClassName: 'ico ico_arrow_left example_control example-control-',
+
+    // thumbs 설정과 옵션
+    nav: '.slide_nav',
+    thumbOptions: { ... }
+
+    // thumb로 등록된 슬라이드 옵션
+    navOptions: { ... }
+
+    // 스와이퍼 옵션
+    swiperOptions: {
+        loop: true,
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+        },
+    }
+})
+&lt;/script&gt;
+</code></pre>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </li>
+
+        <!-- Options -->
+        <li>
+            <div class="content_wrap">
+                <div>
+                    <table class="document">
+                        <colgroup>
+                            <col width="16.6666%" />
+                            <col width="16.6666%" />
+                            <col width="16.6666%" />
+                            <col width="50%" />
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Type</th>
+                                <th>Default</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr id="mode">
+                                <th>swiperOptions</th>
+                                <td>objects</td>
+                                <td>{}</td>
+                                <td>
+                                    <p>
+                                        기존 swiper의 옵션을 설정합니다. 옵션은 <a href="https://swiperjs.com/swiper-api" target="_blank">여기</a>에서 확인 가능합니다.
+                                    </p>
+<pre><code class="language-js">$('#ex_slider').cnSlider({
+    swiperOptions: {
+        // swiper options
+        loop: true,
+        autoplay: {
+            delay: 5000,
+        },
+    }
+})
+</code></pre>
+                                </td>
+                            </tr>
+        
+                            <tr>
+                                <th>pager</th>
+                                <td>boolean</td>
+                                <td>false</td>
+                                <td><p>페이징 사용 여부를 설정합니다.</p></td>
+                            </tr>
+                            <tr>
+                                <th>pagerClassName</th>
+                                <td>string</td>
+                                <td>-</td>
+                                <td><p>페이징 버튼에 커스텀 클래스를 추가할 수 있습니다.</p></td>
+                            </tr>
+                            <tr>
+                                <th>controls</th>
+                                <td>boolean</td>
+                                <td>false</td>
+                                <td><p>컨트롤 사용 여부를 설정합니다.</p></td>
+                            </tr>
+                            <tr>
+                                <th>controlsClassName</th>
+                                <td>string</td>
+                                <td>
+                                    [className]-prev,<br />
+                                    [className]-next,
+                                </td>
+                                <td>
+                                    <p>컨트롤 버튼에 커스텀 클래스를 추가할 수 있습니다.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>nav</th>
+                                <td>string</td>
+                                <td>-</td>
+                                <td>
+                                    <p>스와이퍼의 <a href="https://swiperjs.com/swiper-api#thumbs" target="_blank">thumbs</a>속성을 클래스명만 입력하여 간단하게 설정할 수 있습니다.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>navOptions</th>
+                                <td>objects</td>
+                                <td>{}</td>
+                                <td>
+                                    <p>
+                                        nav에 등록된 슬라이더의 속성을 여기에서 추가할 수 있습니다.
+                                    </p>
+<pre><code class="language-js">$('#ex_slider').cnSlider({
+    nav: '.ex_nav',
+    navOptions: {
+        // .ex_nav options
+        slidesPerView: 'auto'
+    }
+})
+</code></pre>
+                            </tr>
+                            <tr>
+                                <th>thumbOptions</th>
+                                <td>objects</td>
+                                <td>{}</td>
+                                <td>
+                                    <p>
+                                        스와이퍼의 thumbs 속성을 여기에서 추가할 수 있습니다.
+                                    </p>
+<pre><code class="language-js">$('#ex_slider').cnSlider({
+    nav: '.ex_nav',
+    thumbOptions: {
+        // .ex_nav thumb options
+        slideThumbActiveClass: 'active',
+        autoScrollOffset: 2
+    }
+})
+</code></pre>
+                            </tr>
+                            <tr>
+                                <th>returnAll</th>
+                                <td>boolean</td>
+                                <td>false</td>
+                                <td>
+                                    <p>nav를 사용할 경우 true로 설정하면 nav슬라이드도 리턴됩니다.<br>네비게이션 슬라이드를 제어해야할 때 사용할 수 있습니다.</p>
+<pre><code class="language-js">const swiper = $('#ex_slider').cnSlider({
+    nav: '.ex_nav',
+    swiperOptions: {...}
+})
+
+let slide = swiper.slide; // 기존 슬라이드
+let slide = swiper.slide_nav; // 네이게이션 슬라이드
+
+// ex) 네이게이션 슬라이드 이동하기
+swiper.slide_nav.slideTo(2, 0);
+</code></pre>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </li>
+
+        <!-- Methods -->
+        <li>
+            <div class="content_wrap">
+                <div>
+                    <table class="document">
+                        <colgroup>
+                            <col width="16.6666%" />
+                            <col width="16.6666%" />
+                            <col width="16.6666%" />
+                            <col width="50%" />
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th colspan="4">Properties</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="4">
+                                    <p>기본적으로 스와이퍼의 모든 메소드를 사용할 수 있습니다.</p>
+                                </td>
+                            </tr>
+                            <tr><th colspan="4"><a href="https://swiperjs.com/swiper-api#method-swiper-attachEvents" target="_blank">swiper.attachEvents()</a></th></tr>
+                            <tr><th colspan="4"><a href="https://swiperjs.com/swiper-api#method-swiper-changeDirection" target="_blank">swiper.changeDirection(<span>direction, needUpdate</span>)</a></th></tr>
+                            <tr><th colspan="4"><a href="https://swiperjs.com/swiper-api#method-swiper-changeLanguageDirection" target="_blank">swiper.changeLanguageDirection(<span>direction</span>)</a></th></tr>
+                            <tr><th colspan="4"><a href="https://swiperjs.com/swiper-api#method-swiper-destroy" target="_blank">swiper.destroy(<span>deleteInstance, cleanStyles</span>)</a></th></tr>
+                            <tr><th colspan="4"><a href="https://swiperjs.com/swiper-api#method-swiper-detachEvents" target="_blank">swiper.detachEvents()</a></th></tr>
+                            <tr><th colspan="4"><a href="https://swiperjs.com/swiper-api#method-swiper-disable" target="_blank">swiper.disable()</a></th></tr>
+                            <tr><th colspan="4"><a href="https://swiperjs.com/swiper-api#method-swiper-emit" target="_blank">swiper.emit(<span>event, args</span>)</a></th></tr>
+                            <tr><th colspan="4"><a href="https://swiperjs.com/swiper-api#method-swiper-enable" target="_blank">swiper.enable()</a></th></tr>
+                            <tr><th colspan="4"><a href="https://swiperjs.com/swiper-api#method-swiper-extendDefaults" target="_blank">swiper.extendDefaults(<span>options</span>)</a></th></tr>
+                            <tr><th colspan="4"><a href="https://swiperjs.com/swiper-api#method-swiper-getTranslate" target="_blank">swiper.getTranslate()</a></th></tr>
+                            <tr><th colspan="4"><a href="https://swiperjs.com/swiper-api#method-swiper-init" target="_blank">swiper.init(<span>el</span>)</a></th></tr>
+                            <tr><th colspan="4"><a href="https://swiperjs.com/swiper-api#method-swiper-maxTranslate" target="_blank">swiper.maxTranslate()</a></th></tr>
+                            <tr><th colspan="4"><a href="https://swiperjs.com/swiper-api#method-swiper-minTranslate" target="_blank">swiper.minTranslate()</a></th></tr>
+                            <tr><th colspan="4"><a href="https://swiperjs.com/swiper-api#method-swiper-off" target="_blank">swiper.off(<span>event, handler</span>)</a></th></tr>
+                            <tr><th colspan="4"><a href="https://swiperjs.com/swiper-api#method-swiper-offAny" target="_blank">swiper.offAny(<span>handler</span>)</a></th></tr>
+                            <tr><th colspan="4"><a href="https://swiperjs.com/swiper-api#method-swiper-on" target="_blank">swiper.on(<span>event, handler</span>)</a></th></tr>
+                            <tr><th colspan="4"><a href="https://swiperjs.com/swiper-api#method-swiper-onAny" target="_blank">swiper.onAny(<span>handler</span>)</a></th></tr>
+                            <tr><th colspan="4"><a href="https://swiperjs.com/swiper-api#method-swiper-once" target="_blank">swiper.once(<span>event, handler</span>)</a></th></tr>
+                            <tr><th colspan="4"><a href="https://swiperjs.com/swiper-api#method-swiper-setGrabCursor" target="_blank">swiper.setGrabCursor()</a></th></tr>
+                            <tr><th colspan="4"><a href="https://swiperjs.com/swiper-api#method-swiper-setProgress" target="_blank">swiper.setProgress(<span>progress, speed</span>)</a></th></tr>
+                            <tr><th colspan="4"><a href="https://swiperjs.com/swiper-api#method-swiper-setTranslate" target="_blank">swiper.setTranslate(<span>translate</span>)</a></th></tr>
+                            <tr><th colspan="4"><a href="https://swiperjs.com/swiper-api#method-swiper-slideNext" target="_blank">swiper.slideNext(<span>speed, runCallbacks</span>)</a></th></tr>
+                            <tr><th colspan="4"><a href="https://swiperjs.com/swiper-api#method-swiper-slidePrev" target="_blank">swiper.slidePrev(<span>speed, runCallbacks</span>)</a></th></tr>
+                            <tr><th colspan="4"><a href="https://swiperjs.com/swiper-api#method-swiper-slideReset" target="_blank">swiper.slideReset(<span>speed, runCallbacks</span>)</a></th></tr>
+                            <tr><th colspan="4"><a href="https://swiperjs.com/swiper-api#method-swiper-slideTo" target="_blank">swiper.slideTo(<span>index, speed, runCallbacks</span>)</a></th></tr>
+                            <tr><th colspan="4"><a href="https://swiperjs.com/swiper-api#method-swiper-slideToClosest" target="_blank">swiper.slideToClosest(<span>speed, runCallbacks</span>)</a></th></tr>
+                            <tr><th colspan="4"><a href="https://swiperjs.com/swiper-api#method-swiper-slideToLoop" target="_blank">swiper.slideToLoop(<span>index, speed, runCallbacks</span>)</a></th></tr>
+                            <tr><th colspan="4"><a href="https://swiperjs.com/swiper-api#method-swiper-slidesPerViewDynamic" target="_blank">swiper.slidesPerViewDynamic()</a></th></tr>
+                            <tr><th colspan="4"><a href="https://swiperjs.com/swiper-api#method-swiper-translateTo" target="_blank">swiper.translateTo(<span>translate, speed, runCallbacks, translateBounds</span>)</a></th></tr>
+                            <tr><th colspan="4"><a href="https://swiperjs.com/swiper-api#method-swiper-unsetGrabCursor" target="_blank">swiper.unsetGrabCursor()</a></th></tr>
+                            <tr><th colspan="4"><a href="https://swiperjs.com/swiper-api#method-swiper-update" target="_blank">swiper.update()</a></th></tr>
+                            <tr><th colspan="4"><a href="https://swiperjs.com/swiper-api#method-swiper-updateAutoHeight" target="_blank">swiper.updateAutoHeight(<span>speed</span>)</a></th></tr>
+                            <tr><th colspan="4"><a href="https://swiperjs.com/swiper-api#method-swiper-updateProgress" target="_blank">swiper.updateProgress()</a></th></tr>
+                            <tr><th colspan="4"><a href="https://swiperjs.com/swiper-api#method-swiper-updateSize" target="_blank">swiper.updateSize()</a></th></tr>
+                            <tr><th colspan="4"><a href="https://swiperjs.com/swiper-api#method-swiper-updateSlides" target="_blank">swiper.updateSlides()</a></th></tr>
+                            <tr><th colspan="4"><a href="https://swiperjs.com/swiper-api#method-swiper-updateSlidesClasses" target="_blank">swiper.updateSlidesClasses()</a></th></tr>
+                            <tr><th colspan="4"><a href="https://swiperjs.com/swiper-api#method-swiper-use" target="_blank">swiper.use(<span>modules</span>)</a></th></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+
+<script>
+    $(function(){
+        $('.nav').cnTab();
+        $('.example_nav2').cnTab({
+            mouseover: true,
+        });
+    })
+</script>

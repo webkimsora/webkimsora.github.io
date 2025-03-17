@@ -1,0 +1,289 @@
+<?php include('skin/pub/guide/head.html'); ?>
+<?php include('skin/pub/guide/'.$nav.'/side_menu.html'); ?>
+
+<link rel="stylesheet" href="<?=UN_STATIC?>/css/premium/common.css?<?=time()?>">
+<link rel="stylesheet" href="<?=UN_STATIC?>/css/premium/pc/premium.css?<?=time()?>">
+<style>
+    .example_wrap{display: flex; flex-direction: column; gap: 30px; padding: 30px;}
+    .example_wrap > div{display: flex; gap: 30px;}
+
+    .tooltip__wrap .tooltip__list{display: flex; align-items: center; gap: 20px;}
+    .tooltip__wrap .tooltip__list .tooltip__box{display: flex; justify-content: center; align-items: center; background: var(--prem-background); color: var(--prem-primary); width: 150px; height: 150px; font-size: 16px;}
+    .tooltip__wrap a{display: inline-flex; align-items: center; gap: 2px; color: var(--prem-primary); text-decoration: underline !important; text-underline-position: under;}
+    .tooltip__wrap .tooltip__icon i{width: 15px; height: 15px;}
+    .tooltip__wrap .tooltip__icon i:after{background: var(--prem-primary);}
+</style>
+<div class="content">
+    <div class="content_tit">
+        <h2>Tooltip</h2>
+    </div>
+    <ul class="content_nav inner cn-nav cn-auto-index">
+        <li class="active">Examples</li>
+    </ul>
+    <ul class="content_tab cn-tab">
+        <!-- Examples -->
+        <li class="active">
+            <div class="content_wrap">
+                <!-- 기본 버튼 -->
+                <div>
+                    <div class="content_txt">
+                        <h4>기본 툴팁</h4>
+                    </div>
+                    <div class="code_wrap">
+                        <ul class="code_tab cn-tab">
+                            <li class="active">
+                                <div class="example_wrap">
+                                    <div class="tooltip__wrap">
+                                        <div class="tooltip__list">
+                                            <a href="javascript:;" class="tooltip__icon">
+                                                기본 툴팁(위)
+                                                <!-- 툴팁 -->
+                                                <div class="prem__tooltip--icon">
+                                                    <div class="tooltip__label">변경 가능 횟수 1/2</div>
+                                                    <i class="prem__ico--info"></i>
+                                                </div>
+                                            </a>
+                                            <a href="javascript:;" class="tooltip__icon">
+                                                오른쪽
+                                                <!-- 툴팁 -->
+                                                <div class="prem__tooltip--icon--right">
+                                                    <div class="tooltip__label">변경 가능 횟수 1/2</div>
+                                                    <i class="prem__ico--info"></i>
+                                                </div>
+                                            </a>
+                                            <a href="javascript:;" class="tooltip__icon">
+                                                왼쪽
+                                                <!-- 툴팁 -->
+                                                <div class="prem__tooltip--icon--left">
+                                                    <div class="tooltip__label">변경 가능 횟수 1/2</div>
+                                                    <i class="prem__ico--info"></i>
+                                                </div>
+                                            </a>
+                                            <a href="javascript:;" class="tooltip__icon">
+                                                아래
+                                                <!-- 툴팁 -->
+                                                <div class="prem__tooltip--icon--bottom">
+                                                    <div class="tooltip__label">변경 가능 횟수 1/2</div>
+                                                    <i class="prem__ico--info"></i>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+<pre><code class="language-html">
+<div class="tooltip__list">
+    <a href="javascript:;" class="tooltip__icon">
+        기본 툴팁(위)
+        <!-- 툴팁 -->
+        <div class="prem__tooltip--icon">
+            <div class="tooltip__label">변경 가능 횟수 1/2</div>
+            <i class="prem__ico--info"></i>
+        </div>
+    </a>
+    <a href="javascript:;" class="tooltip__icon">
+        오른쪽
+        <!-- 툴팁 -->
+        <div class="prem__tooltip--icon--right">
+            <div class="tooltip__label">변경 가능 횟수 1/2</div>
+            <i class="prem__ico--info"></i>
+        </div>
+    </a>
+    <a href="javascript:;" class="tooltip__icon">
+        왼쪽
+        <!-- 툴팁 -->
+        <div class="prem__tooltip--icon--left">
+            <div class="tooltip__label">변경 가능 횟수 1/2</div>
+            <i class="prem__ico--info"></i>
+        </div>
+    </a>
+    <a href="javascript:;" class="tooltip__icon">
+        아래
+        <!-- 툴팁 -->
+        <div class="prem__tooltip--icon--bottom">
+            <div class="tooltip__label">변경 가능 횟수 1/2</div>
+            <i class="prem__ico--info"></i>
+        </div>
+    </a>
+</div>
+</code></pre>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div>
+                    <div class="content_txt">
+                        <h4>텍스트 툴팁</h4>
+                    </div>
+                    <div class="code_wrap">
+                        <ul class="code_tab cn-tab">
+                            <li class="active">
+                                <div class="example_wrap">
+                                    <div class="tooltip__wrap">
+                                        <div class="prem__typo">
+                                            Lorem ipsum dolor sit amet 
+                                            <div class="prem__tooltip--left">
+                                                <div class="tooltip__label">왼쪽 툴팁</div>
+                                                <a href="javascript:;">consectetur</a>
+                                            </div>
+                                            adipisicing elit. Commodi sed, quidem repudiandae sit ullam 
+                                            <div class="prem__tooltip">
+                                                <div class="tooltip__label">기존 위쪽 툴팁</div>
+                                                <a href="javascript:;">deserunt</a>
+                                            </div>
+                                            eos eum at animi mollitia corrupti
+                                            <div class="prem__tooltip--bottom">
+                                                <div class="tooltip__label">아래 방향 툴팁</div>
+                                                <a href="javascript:;">doloremque</a>
+                                            </div>
+                                            quae quaerat modi soluta placeat recusandae eveniet
+                                            <div class="prem__tooltip--right">
+                                                <div class="tooltip__label">오른쪽 방향 툴팁</div>
+                                                <a href="javascript:;">adipisci?</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+<pre><code class="language-html">
+<div class="prem__typo">
+    Lorem ipsum dolor sit amet 
+    <div class="prem__tooltip--left">
+        <div class="tooltip__label">왼쪽 툴팁</div>
+        <a href="javascript:;">consectetur</a>
+    </div>
+    adipisicing elit. Commodi sed, quidem repudiandae sit ullam 
+    <div class="prem__tooltip">
+        <div class="tooltip__label">기존 위쪽 툴팁</div>
+        <a href="javascript:;">deserunt</a>
+    </div>
+    eos eum at animi mollitia corrupti
+    <div class="prem__tooltip--bottom">
+        <div class="tooltip__label">아래 방향 툴팁</div>
+        <a href="javascript:;">doloremque</a>
+    </div>
+    quae quaerat modi soluta placeat recusandae eveniet
+    <div class="prem__tooltip--right">
+        <div class="tooltip__label">오른쪽 방향 툴팁</div>
+        <a href="javascript:;">adipisci?</a>
+    </div>
+</div>
+</code></pre>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div>
+                    <div class="content_txt">
+                        <h4>박스 툴팁</h4>
+                    </div>
+                    <div class="code_wrap">
+                        <ul class="code_tab cn-tab">
+                            <li class="active">
+                                <div class="example_wrap">
+                                    <div class="tooltip__wrap">
+                                        <div class="tooltip__list">
+                                            <div class="tooltip__list">
+                                                <div class="prem__tooltip">
+                                                    <div class="tooltip__label">기존 툴팁</div>
+                                                    <div class="tooltip__box prem__box-border--gradient">기존 툴팁</div>
+                                                </div>
+                                                <div class="prem__tooltip--left">
+                                                    <div class="tooltip__label">왼쪽 툴팁</div>
+                                                    <div class="tooltip__box prem__box-border--gradient">왼쪽 툴팁</div>
+                                                </div>
+                                                <div class="prem__tooltip--right">
+                                                    <div class="tooltip__label">오른쪽 툴팁</div>
+                                                    <div class="tooltip__box prem__box-border--gradient">오른쪽 툴팁</div>
+                                                </div>
+                                                <div class="prem__tooltip--bottom">
+                                                    <div class="tooltip__label">아래 툴팁</div>
+                                                    <div class="tooltip__box prem__box-border--gradient">아래 툴팁</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+<pre><code class="language-html">
+<div class="tooltip__list">
+    <div class="tooltip__list">
+        <div class="prem__tooltip">
+            <div class="tooltip__label">기존 툴팁</div>
+            <div class="tooltip__box prem__box-border--gradient">기존 툴팁</div>
+        </div>
+        <div class="prem__tooltip--left">
+            <div class="tooltip__label">왼쪽 툴팁</div>
+            <div class="tooltip__box prem__box-border--gradient">왼쪽 툴팁</div>
+        </div>
+        <div class="prem__tooltip--right">
+            <div class="tooltip__label">오른쪽 툴팁</div>
+            <div class="tooltip__box prem__box-border--gradient">오른쪽 툴팁</div>
+        </div>
+        <div class="prem__tooltip--bottom">
+            <div class="tooltip__label">아래 툴팁</div>
+            <div class="tooltip__box prem__box-border--gradient">아래 툴팁</div>
+        </div>
+    </div>
+</div>
+</code></pre>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div>
+                    <div class="content_txt">
+                        <h4>버튼 툴팁</h4>
+                    </div>
+                    <style>
+                        .tooltip__btn{flex-shrink: 0; display: flex; align-items: center; gap: 16px;}
+                        .tooltip__btn .btn__item{display: inline-flex; flex-direction: column-reverse; justify-content: center; align-self: center; gap: 2px; color: var(--gray-50, #A4B1C1); font-size: 14px; line-height: 19px; letter-spacing: -0.14px; min-width: 32px; text-align: center; text-indent: -1px; text-decoration: none !important;}
+                        .tooltip__btn .btn__item::after{background: var(--gray-50, #A4B1C1); width: 28px; height: 28px; position: relative;}
+                        .tooltip__btn .btn__item.active{color: var(--prem-primary);}
+                        .tooltip__btn .btn__item.active::after{background: var(--prem-primary);}
+                        .tooltip__btn .tooltip__label{text-align: center;}
+                    </style>
+                    <div class="code_wrap">
+                        <ul class="code_tab cn-tab">
+                            <li class="active">
+                                <div class="example_wrap">
+                                    <div class="tooltip__wrap" style="justify-content: center;">
+                                        <div class="tooltip__list">
+                                            <div class="tooltip__btn">
+                                                <div class="prem__tooltip--toggle active">
+                                                    <div class="tooltip__label px-12 py-12">
+                                                        <a href="javascript:;" class="prem__ico--close" onclick="$(this).closest('[class*=prem__tooltip]').removeClass('active');"></a>
+                                                        내가 보고싶은 선생님 글에<br>♥좋아요를 눌러 순위를 높여보세요!
+                                                    </div>
+                                                    <a href="javascript:;" class="prem__ico--heart btn__item btn__like">456</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+<pre><code class="language-html">
+<div class="tooltip__list" style="justify-content: center;">
+    <div class="tooltip__btn">
+        <div class="prem__tooltip--toggle active">
+            <div class="tooltip__label px-12 py-12">
+                <a href="javascript:;" class="prem__ico--close" onclick="$(this).closest('[class*=prem__tooltip]').removeClass('active');"></a>
+                내가 보고싶은 선생님 글에<br>♥좋아요를 눌러 순위를 높여보세요!
+            </div>
+            <a href="javascript:;" class="prem__ico--heart btn__item btn__like">456</a>
+        </div>
+    </div>
+</div>
+</code></pre>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,1201 @@
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
+<style>
+    .footer-toolbar{display: none;}
+    @keyframes bounce {
+        0%   { transform: translateY(0); }
+        50%  { transform: translateY(-0.3rem); }
+        100% { transform: translateY(0); }
+    }
+    @keyframes bounce_btn {
+        0%   { transform: translateX(-50%) translateY(0); }
+        50%  { transform: translateX(-50%) translateY(-0.5rem); }
+        100% { transform: translateX(-50%) translateY(0); }
+    }
+
+    @keyframes blink{0%, 50%, 100% { opacity: 0; } 25%, 75% { opacity: 1; }}
+    @keyframes slideUp {
+        0%{transform: translateY(1rem); opacity: 0;}
+        100%{transform: translateY(0); opacity: 1;}
+    }
+    
+    .event_20240613{position: relative;}
+    .event_20240613 img{display: inline-block;}
+    .event_20240613 a{text-decoration: none !important;}
+    .event_20240613 *{box-sizing: border-box;}
+    .event_20240613 .inner{max-width: 37.5rem; margin: 0 auto; padding: 0 1.6rem; position: relative;}
+    .event_20240613 select option{font-size: 1.4rem !important;}
+    .event_20240613 input::placeholder{font-size: inherit !important;}
+    .event_20240613 .swiper{position: unset;}
+    .event_20240613 .swiper-pagination{font-size: 0; line-height: 0; position: static; margin-top: 1.6rem;}
+    .event_20240613 .swiper-pagination > span{background: #000; width: .8rem; height: .8rem; margin: 0 .5rem !important; opacity: .1;}
+    .event_20240613 .swiper-pagination > span.swiper-pagination-bullet-active{opacity: 1;}
+    .event_20240613 .event_nav{display: flex;}
+    .event_20240613 .event_nav > li{flex: 1; font-size: 1.6rem; font-weight: 700; background: #E4E4E4; color: #999; height: 4.8rem; line-height: 4.8rem;}
+    .event_20240613 .event_nav > li.active{background: #5A39FF; color: #fff;}
+    .event_20240613 :is(h3, h4){text-align: center;}
+    .footer-sticky .btn-wrap{bottom: 8rem;}
+
+    .cn-modal-mobile{background: #fff; overflow: hidden; height: 100%;}
+    .cn-modal-mobile .cn-modal-close{width: 5rem; height: 5rem; right: 0; left: auto; z-index: 1;}
+    .cn-modal-mobile .cn-modal-close i{width: 2.4rem; height: 2.4rem;}
+    .cn-modal-mobile .cn-modal-close i::before{background: #fff;}
+    .cn-modal-mobile .modal_wrap{display: flex; flex-direction: column; gap: 1.4rem; width: 37.5rem; height: 100%; margin: 0 auto; padding: 2.4rem 2.4rem 0 2.4rem;}
+    .cn-modal-mobile .modal_wrap strong{display: block; flex-shrink: 0; height: 4.9rem;}
+    .cn-modal-mobile .modal_wrap strong img{width: auto; height: 100%;}
+    .cn-modal-mobile .modal_wrap .modal_ct{flex: 1; overflow: auto; padding-bottom: 4.8rem; width: 30rem;}
+    .cn-modal-mobile .modal_wrap .modal_ct img{width: 100%;}
+
+    .cont_quick{background: linear-gradient(45deg, #5033e3 50%, #130170 50%); position: sticky; bottom: 0; left: 0; z-index: 3;}
+    .cont_quick ul{display: flex; background: #000; width: 37.5rem; margin: 0 auto; position: relative;}
+    .cont_quick ul li a{display: block;}
+
+    .event_wrap .event-toggle-box .agree-check-box{background: transparent; padding: 1.6rem 1.2rem 1.2rem;}
+    .event_wrap .event-toggle-box:not(.white){background: #000; border-color: #E3E6EC; border-radius: .4rem;}
+    .event_wrap .event-toggle-box:not(.white) .agree-check span{color: #fff; font-size: 1.4rem;}
+    .event_wrap .event-toggle-box:not(.white) ul > li{font-size: 1.3rem; line-height: 1.82rem;}
+
+    .cont_payback{background: url('<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/payback_bg.jpg') no-repeat center top / auto 100%, linear-gradient(176deg, #F102F6 64.27%, #FFF 116.27%); position: relative; padding: 6rem 0; text-align: center;}
+    .cont_payback h3 img{max-width: 33.8rem; width: 100%;}
+    .cont_payback a{display: inline-block; margin-top: 32.8rem;}
+    .cont_payback p{margin-top: 2.2rem;}
+    .cont_payback p img{max-width: 32.2rem; width: 100%;}
+    .cont_payback .payback_wrap{position: relative;}
+    .cont_payback .payback_wrap ul li{position: absolute; animation: slideUp 0.5s 0.5s linear both;}
+    .cont_raffle{background: #000; padding: 6rem 0; overflow: hidden;}
+    .cont_raffle h4{text-align: center; position: relative;}
+    .cont_raffle h4 .powder1{position: absolute; left: -11.8rem; bottom: -6rem; width: 28rem; height: 28rem;}
+    .cont_raffle h4 .powder2{position: absolute; top: -9.2rem; right: -8rem;}
+    .cont_raffle h4 img{max-width: 30rem; width: 100%;}
+    .cont_raffle .raffle_nav{margin: 3.6rem 0 1.1rem; overflow: unset;}
+    .cont_raffle .raffle_nav ul{margin: 0; padding: 0;}
+    .cont_raffle .raffle_nav ul > li{width: 6.4rem;}
+    .cont_raffle .raffle_nav ul > li > div{display: flex; align-items: center; justify-content: center; background: #000; list-style: none; text-align: center; user-select: none; cursor: pointer; border-radius: .8rem; width: 5.6rem; height: 5.6rem; overflow: hidden; border: .1rem solid #1f1f1f;}
+    .cont_raffle .raffle_nav ul > li > div > p{font-size: 1.3rem; font-weight: 600; line-height: 1.95rem; letter-spacing: -0.039rem; color: #757575;}
+    .cont_raffle .raffle_nav ul > li.active > div{border: .1rem solid #025AF6;; color: #fff; width: 5.6rem;}
+    .cont_raffle .raffle_slider li{position: relative;}
+    .cont_raffle .raffle_btns {display: flex; flex-direction: column; gap: .8rem; margin-top: 1.5rem;}
+    .cont_raffle .raffle_btns > a{position: relative; display: block; font-size: 0; line-height: 0;}
+    .cont_raffle .raffle_btns > a .raffle_label{position: absolute; top: -5rem; left: 50%; margin-left: -13.05rem; animation: bounce 2s ease-in-out infinite; width: 26.1rem; max-width: none; z-index: 1;}
+    .cont_raffle .raffle_txt{margin-top: 1.8rem;}
+    .cont_draw{background: #000 url('<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/draw_bg.jpg') no-repeat center top / auto 100%; padding: 6rem 0; overflow: hidden;}
+    .cont_draw h4{text-align: center;}
+    .cont_draw h4 img{max-width: 31.2rem; width: 100%;}
+    .cont_draw .draw_wrap{position: relative; width: 100%; height: 39.6rem; margin: 18.3rem auto 0;}
+    .cont_draw .draw_wrap:after{content: ""; position: absolute; bottom: -14.3rem; left: 50%; transform: translateX(-50%); width: 150%; height: 34.8rem; background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) -6.22%, #000 17.24%); filter: blur(4rem); pointer-events: none;}
+    .cont_draw .draw_wrap .draw_btns{position: absolute; top: 0; left: 50%; transform: translateX(-50%);}
+    .cont_draw .draw_wrap .draw_btns > img{width: 39.6rem; height: 39.6rem; max-width: none;}
+    .cont_draw .draw_wrap .draw_btns .draw_btn1{display: none;}
+    .cont_draw .draw_wrap .draw_btns:not(.active) .draw_btn1{position: relative; display: inline-block;}
+    .cont_draw .draw_wrap .draw_btns:not(.active) .draw_btn2{display: none;}
+    .cont_draw .draw_wrap .draw_btn{display: inline-block; position: absolute; width: 19rem; height: 15rem; border-radius: 500px; top: 7.4rem; left: 50%; margin-left: -9.5rem; font-size: 0;}
+    .cont_draw .draw_wrap .draw_label{position: absolute; top: 15.1rem; left: 50%; margin-left: 3rem; animation: blink 2.5s .2s infinite both; pointer-events: none; width: 5.1rem; height: 5.15rem;}
+    .cont_draw .draw_btm{margin-top: -12rem; text-align: center; position: relative; z-index: 2;}
+    .cont_draw .draw_btm .draw_history{font-size: 1.8rem; font-weight: 900; letter-spacing: -0.054rem; text-decoration: underline !important; color: #fff; text-underline-position: under;}
+    .cont_draw .draw_btm .draw_txt{margin-top: 2.5rem;}
+    .cont_prev{background: linear-gradient(180deg, #000 0.34%, #052DFF 11.23%, #94A5FF 54.75%); padding: 6rem 0; overflow: hidden;}
+    .cont_prev h4{position: relative;}
+    .cont_prev .prev_nav{margin: 8.3rem 0 1.4rem; overflow: unset;} 
+    .cont_prev .prev_nav li{width: auto !important; padding-right: 0.6rem;}
+    .cont_prev .prev_nav li a{display: inline-block; border: .1rem solid #fff; border-radius: .8rem; font-size: 1.4rem; font-weight: 500; padding: .5rem .8rem; color: #fff;}
+    .cont_prev .prev_nav li.active a{background: #fff; color: #000; font-weight: 700;}
+    .cont_prev .prev_slider{overflow: unset;}
+    .cont_prev .prev_label{width: 32.1rem; position: absolute; left: 50%; bottom: -9.8rem; margin-left: -16.05rem; animation: bounce 2s ease-in-out infinite;}
+    .cont_prev p{font-size: 1.2rem; color: #fff; opacity: 0.8; font-weight: 500; text-align: center; margin-top: .8rem;}
+    .cont_review .review_tit{background: #DDE2FB; padding: 4.4rem 0 4rem; overflow: hidden;}
+    .cont_review .review_tit h4 img{width: 33.7rem;}
+    .cont_review .review_tit :is(.prev_slider1, .prev_slider2){width: 100%; height: 16rem; overflow: unset;}
+    .cont_review .review_tit :is(.prev_slider1, .prev_slider2) .swiper-wrapper{-webkit-transition-timing-function: linear !important; transition-timing-function: linear !important;}
+    .cont_review .review_tit ul li{width: 13.6rem !important;}
+    .cont_review .review_tit ul li img{width: 12rem;}
+    .cont_review .review_tit .prev_slide_wrap{display: flex; flex-direction: column; gap: 2.1rem; margin-top: 3rem;}
+    .cont_review .review_event{padding-top: 5rem;}
+    .cont_review .review_event h4{font-size: 1.8rem; font-weight: 700; line-height: 2.52rem; text-align: left; letter-spacing: -0.072rem;}
+    .cont_review .review_event .event_wrap .review_btn{padding: 1.2rem 0 1.6rem;}
+    .cont_review .review_event .event_wrap .review_btn a{width: 100%;}
+    .cont_review .review_event .event_wrap .review_btn a span{font-size: 1.5rem; font-weight: 400;}
+    .cont_review .review_event .event_wrap .event_list_wrap{padding-bottom: 0;}
+    .cont_review .review_event .event_wrap .event_list_wrap .event-input-group{margin: 2.7rem 0 1.6rem;}
+    .cont_review .review_event .event_wrap .event_list_wrap :is(.text_list, .card_list) > ul{border-top: 0;}
+    .cont_review .review_event .event_wrap .event_list_wrap :is(.text_list, .card_list) > ul > li{border-bottom: .1rem solid #EDEDF3;}
+    .cont_review .review_event .event_wrap .event_list_wrap :is(.text_list, .card_list) > ul > li .list_name{margin: .8rem 0 0;}
+    .cont_review .review_event .event_wrap .event_list_wrap :is(.text_list, .card_list) > ul > li i{display: inline-block; flex-shrink: 0; width: 1rem; height: 1rem; margin-left: .3rem;}
+    .ico.ico_new_img::before { background: url('<?=UN_STATIC_IMG?>/un_static/img/common/icon/new_label_img.png') no-repeat 50% 50% / 100% auto;}
+
+    .draw_modal{z-index: 100000;}
+    .draw_modal .cn-modal-main{width: 30rem; border-radius: .8rem;}
+    .draw_modal .cn-modal-main .modal_wrap{padding: 4rem 2.4rem 3rem; position: relative; text-align: center;}
+    .draw_modal .cn-modal-main .modal_wrap h5{font-size: 2rem; font-weight: 700; line-height: 2.8rem; letter-spacing: -0.06rem;}
+    .draw_modal .modal_wrap strong{display: flex; justify-content: center; align-items: center; font-size: 3.2rem; line-height: 56px; margin-top: 12px; line-height: 4.48rem;}
+    .draw_modal .modal_wrap strong:after{content: "원"; margin-left: .4rem; font-size: 1.6rem; font-weight: 700;}
+    .draw_modal .modal_wrap ul{margin-top: 1.6rem; max-height: 11.2rem; overflow: auto;}
+    .draw_modal .modal_wrap ul > li{font-size: 1.4rem; line-height: 2.26rem;}
+    .draw_modal .cn-modal-main .modal_wrap .bg{width: 32.2rem; max-width: none; position: absolute; top: -4rem; left: 0.37rem; pointer-events: none;}
+    .draw_modal .cn-modal-main .modal_wrap a{display: block; background: #025AF6; color: #fff; width: 100%; height: 4.8rem; line-height: 4.8rem; border-radius: .8rem; font-size: 1.5rem; font-weight: 700; margin-top: 2.4rem;}
+
+    .draw_modal.voice_modal .cn-modal-main{width: 34.3rem;}
+    .draw_modal.voice_modal .cn-modal-main .modal_wrap{padding: 3rem 2.4rem;}
+    .draw_modal.voice_modal audio{width: 100%;}
+
+
+    .cont_top{position: relative; padding-bottom: 64rem; box-sizing: content-box;}
+    .cont_top .bg{position: absolute; width: 100%; height: 100%; top: 0; left: 0; background: #000; opacity: 0; z-index: 1; pointer-events: none;}
+    .cont_story{background: #000 url('<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/story_bg.jpg') no-repeat center top / auto 94.8rem; padding: 6rem 0; text-align: center;}
+    .cont_story h4 img{max-width: 32.3rem; width: 100%;}
+    .cont_story p{display: block; margin-top: -4.3rem; position: relative; pointer-events: none;}
+    .cont_story p img{max-width: 33.7rem; width: 100%;}
+    .cont_story .story_wrap{overflow: auto; position: relative;}
+    .cont_story .story_wrap::-webkit-scrollbar { display: none; }
+    .cont_story .story_wrap img{max-width: none; width: 120.3rem;}
+    .cont_story .story_wrap .story_box{position: relative; width: 120.3rem;}
+    .cont_story .story_wrap .story_box:after{content: ""; position: absolute; top: 1.2rem; right: 5.1rem; width: 23.2rem; height: 12rem; border: .3rem solid #025AF6; border-radius: .8rem; box-sizing: border-box; animation: blink 2.5s .2s infinite both;}
+    .cont_voice{background: #000; padding: 6rem 0; text-align: center; overflow: hidden;}
+    .cont_voice h4 img{width: 32.2rem;}
+    .cont_voice .voice_nav{width: 100%; height: 6.7rem; margin: 1.8rem auto; overflow: unset;}
+    .cont_voice .voice_nav li{width: 6.6rem !important; height: 6.6rem; line-height: 6.6rem; opacity: .3; cursor: pointer; font-size: 0;}
+    .cont_voice .voice_nav li > div{width: 6.6rem; height: 6.6rem; line-height: 6.6rem; cursor: pointer; font-size: 0;}
+    .cont_voice .voice_nav li > div > img{display: inline-block; width: 5.7rem; height: 5.7rem; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);}
+    .cont_voice .voice_nav li.active{opacity: 1;}
+    .cont_voice .voice_nav li.active:before{content: ""; display: inline-block; position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: .2rem solid #025AF6; border-radius: 5rem; box-sizing: border-box; pointer-events: none;}
+    .cont_voice .voice_nav li.active:after{content: ""; display: inline-block; position: absolute; top: 50%; left: 50%; width: 5.7rem; height: 5.7rem; border: .2rem solid #fff; border-radius: 5rem; box-sizing: border-box; transform: translate(-50%, -50%); pointer-events: none; z-index: 1;}
+    .cont_voice .voice_slider{border-radius: 1.6rem; overflow: hidden;}
+    .cont_voice .voice_slider a{display: block; font-size: 0; line-height: 0;}
+    .cont_voice .voice_slider ul li::after{content: ""; background: url('<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/voice_click.png') no-repeat center top / 100% auto; width: 7.95rem; height: 8.15rem; position: absolute; bottom: 3rem; left: 50%; margin-left: -3.975rem; animation: blink 2.5s .2s infinite both; pointer-events: none; max-width: none;}
+
+    .cont_voice .voice_label{margin-top: 1.8rem;}
+    .cont_text{background: #000;}
+    .cont_text .text_wrap{position: relative; width: 100%; height: 100vh;}
+    .cont_text .text_wrap img{max-width: none;}
+    .cont_text .text_wrap h4{position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);}
+    .cont_text .text_wrap .text2{opacity: 0;}
+    .cont_daum{padding: 6rem 0; overflow: hidden;}
+    .cont_daum h4{position: relative;}
+    .cont_daum h4 img{position: relative; z-index: 1;}
+    .cont_daum h4 .logo{position: absolute; top: 25.1rem; left: 50%; transform: translateX(-50%); z-index: 0;}
+    .cont_daum p{display: block; text-align: center; margin-top: 1.3rem;}
+    .cont_daum p img{width: 29.1rem;}
+    .cont_daum .daum_slider{overflow: unset; margin-top: 3rem;}
+    .cont_daum .daum_slider li{width: 29.8rem !important;}
+    .cont_daum .daum_slider li img{width: 28rem;}
+    .cont_teacher{padding: 6rem 0;}
+    .cont_teacher h4 img{width: 32.1rem;}
+    .cont_teacher p img{width: 24.1rem;}
+    .cont_teacher :is(h4, p){text-align: center;}
+    .cont_teacher .teacher_wrap{margin: 2.7rem -1px 3rem;}
+    .cont_teacher .teacher_wrap .teacher_list{display: flex; flex-wrap: wrap; gap: .1rem; max-width: none;}
+    .cont_teacher .teacher_wrap .teacher_list > li{width: calc(33.333333% - 0.1rem); height: 27rem; position: relative; overflow: hidden;}
+    .cont_teacher .teacher_wrap .teacher_list > li:nth-child(-n + 2){width: calc(50% - 0.07rem);}
+    .cont_teacher .teacher_wrap .teacher_list > li .teacher_item{display: flex; align-items: end; width: 100%; height: 27rem; padding: 1.6rem; overflow: hidden; background-position: center bottom; background-repeat: no-repeat; background-size: 100% auto; background-color: #B9B5B5; transition: .3s;}
+    .cont_teacher .teacher_wrap .teacher_list > li .teacher_item > div{position: relative; z-index: 1; font-family: 'SUIT', 'Noto Sans KR', sans-serif;}
+    .cont_teacher .teacher_wrap .teacher_list > li .teacher_item strong{display: block; font-size: 1.8rem; font-weight: 800; line-height: 2.52rem; letter-spacing: -0.072; color: #fff; word-spacing: -0.05rem;}
+    .cont_teacher .teacher_wrap .teacher_list > li .teacher_item strong span{display: inline;}
+    .cont_teacher .teacher_wrap .teacher_list > li .teacher_item span{display: block; font-size: 1.3rem; color: #fff; font-weight: 700; line-height: 1.69rem; margin-top: 1rem;}
+    .cont_teacher .teacher_wrap .teacher_list > li .teacher_item span i{display: inline-block; width: 2rem; height: 2rem; vertical-align: -0.5rem;}
+    .cont_teacher .teacher_wrap .teacher_list > li .teacher_item span i::before{background: #fff; width: 100%; height: 100%;}
+    .cont_teacher .teacher_wrap .teacher_list > li .teacher_item.soon{background-image: url('<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/teacher_soon.png');}
+    .cont_teacher .teacher_wrap .teacher_list > li .teacher_item.soon > div > span{opacity: .5;}
+    .cont_teacher .teacher_wrap .teacher_list > li .teacher_item:not(.soon):not(.next):before{content: ""; position: absolute; bottom: -3.3rem; left: 50%; transform: translateX(-50%); background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 12.23%, rgba(1, 46, 126, 0.51) 35.44%, #025AF6 73.94%); filter: blur(25px); width: 150%; height: 18.8rem; pointer-events: none; z-index: 0;}
+    .cont_teacher .teacher_wrap .teacher_list > li .teacher_item.next{background-image: url('<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/teacher_next.png'); box-shadow: 2px 2px 13px 0px #025AF6;}
+    .cont_teacher .teacher_wrap .teacher_list > li .teacher_item.next > div > span{font-size: 20px; font-weight: 800; line-height: 28px; letter-spacing: -0.8px; margin-top: 3px;}
+    .cont_teacher .teacher_wrap .teacher_list > li .teacher_item.next > div > strong > span{font-size: 24px;}
+    /* .cont_teacher .teacher_wrap .teacher_list > li .teacher_item.next:before{content: ""; width: 100%; height: 100%; position: absolute; top: 0; left: 0; border: 2px solid #0047FF; box-sizing: border-box; pointer-events: none; animation: blink 2.5s .2s infinite both;} */
+    .cont_teacher .teacher_wrap .teacher_list > li .teacher_item.teacher2:before{background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 12.23%, rgba(52, 24, 132, 0.55) 39.2%, #5F2CF0 73.94%) !important;}
+    .cont_benefit{padding: 6rem 0; text-align: center;}
+    .cont_benefit h4 img{width: 31.7rem;}
+    .cont_benefit strong{display: block; margin: 3rem 0 1.6rem; animation: blink 2.5s .2s infinite both;}
+    .cont_benefit strong img{width: 27.6rem;}
+    .cont_benefit p{margin-top: -1.4rem;}
+    .cont_benefit .benefit_btns{display: flex; gap: .8rem; margin-top: 3rem;}
+    .cont_renew{padding: 6rem 0; text-align: center;}
+    .cont_renew h4 img{width: 30.58rem;}
+    .cont_renew .renew_wrap{display: flex; flex-direction: column; gap: 1.2rem; margin: 3rem 0;} 
+    .cont_renew .renew_wrap a{position: relative;} 
+    .cont_renew .renew_wrap a .label{position: absolute; top: 13rem; right: 1.1rem; height: 3.4rem; animation: blink 2.5s .2s infinite both;} 
+    .cont_my{padding: 6rem 0; text-align: center;}
+    .cont_my h4 img{width: 32.1rem}
+    .cont_my .my_wrap{display: inline-block; position: relative; margin: 8.2rem 0 3rem;}
+    .cont_my .my_wrap .label{position: absolute; opacity: 0;}
+    .cont_my .my_wrap .label1{left: 10.1rem; top: -5.2rem; width: 20.8rem;}
+    .cont_my .my_wrap .label2{left: 3.4rem; top: 36.8rem; width: 15.6rem; animation-delay: .6s !important;}
+    .cont_my .my_wrap.active .label{animation: slideUp .5s .3s ease-out both;}
+    .cont_contents{padding: 6rem 0; text-align: center; overflow: hidden;}
+    .cont_contents h4 img{width: 29.2rem;}
+    .cont_contents strong{display: block; margin: 3rem 0 0;}
+    .cont_contents strong img{width: 30.7rem;}
+    .cont_contents .contents_slider{overflow: unset; margin-top: 3rem;}
+    .cont_contents .contents_slider li{width: 23rem !important; text-align: left; font-size: 0; line-height: 0;}
+    .cont_contents .contents_slider li a{display: inline-block; width: 21.8rem; font-size: 0; line-height: 0;}
+    .cont_contents .contents_book{width: 100%; margin-top: 3rem;}
+    .cont_contents .contents_book .swiper-wrapper{-webkit-transition-timing-function: linear !important; transition-timing-function: linear !important;}
+    .cont_contents .contents_book .swiper-wrapper li{width: 15.2rem !important;}
+    .cont_contents .contents_book .swiper-wrapper li a{display: block; width: 12rem;}
+    .cont_contents .contents_book .swiper-wrapper li a > p{display: none; background: rgba(0, 0, 0, 0.8); position: absolute; left: 4px; top: 0; width: 12rem; height: 16rem; border-radius: 8px; padding: 21px 14px; color: #fff; font-size: 15px; font-weight: 700; line-height: 21px; letter-spacing: -0.09rem; text-align: left; border: .1rem solid #CDCDCD; box-sizing: border-box; word-break: keep-all;}
+    /* .cont_contents .contents_book .swiper-wrapper li a:hover > p{display: block;} */
+
+    .cont_pass{background: url('//un-static-qa.conects.com/gong/landing/2024/06/gong_14999/m/pass_bg.jpg') no-repeat center top / auto 109.8rem; padding: 6rem 0 0; height: 68.6rem;}
+    .cont_pass h4 img{width: 29rem;}
+    .cont_pass .pass_wrap{display: block; width: 31.1rem; margin: 5rem auto 0; position: relative; box-shadow: 4px 4px 80px 0px rgba(255, 255, 255, 0.50); position: relative; z-index: 1;}
+    .cont_pass .pass_wrap .name{position: absolute; top: 18.5rem; right: 8.8rem; color: #343434; font-size: 1.8rem; font-weight: 600; line-height: 2.16rem; letter-spacing: -0.072rem; font-family: 'SUIT', 'Noto Sans KR', sans-serif;}
+    .cont_easy{display: flex; justify-content: center; align-items: center; background: url('//un-static-qa.conects.com/gong/landing/2024/06/gong_14999/m/pass_bg.jpg') no-repeat center top -68.6rem / auto 109.8rem; height: 100vh; text-align: center; overflow: hidden;}
+    .cont_easy .easy_wrap{position: relative; display: flex; justify-content: center; align-items: center; width: 24.6rem; height: 19.2rem;}
+    .cont_easy .easy_wrap h4 img{width: 24.6rem;}
+    .cont_easy .easy_wrap .easy_img{position: absolute;}
+    .cont_easy .easy_wrap .easy_img1{top: 10.5rem; left: 8.6rem; z-index: 5;}
+    .cont_easy .easy_wrap .easy_img2{top: 10.8rem; right: 17.9rem; z-index: 4;}
+    .cont_easy .easy_wrap .easy_img3{top: 5.8rem; left: 21.6rem; z-index: 3;}
+    .cont_easy .easy_wrap .easy_img4{bottom: 14.5rem; right: 16rem; z-index: 2;}
+    .cont_easy .easy_wrap .easy_img5{top: 2.6rem; right: 9.1rem; z-index: 1;}
+
+    .cont_sticky{display: flex; position: sticky; bottom: 0; left: 0; width: 100%; z-index: 99; height: 6.4rem; background: #fff;}
+    .cont_sticky a{flex: 1; display: flex; justify-content: center; align-items: center; height: 6.4rem; font-size: 1.4rem; font-weight: 500; color: #4C4C4C; text-align: center;}
+    .cont_sticky a.active{border-top: 1px solid #025AF6; color: #025AF6;}
+    .cont_sticky.dark{background: rgba(255, 255, 255, 0.10); backdrop-filter: blur(25px);}
+    .cont_sticky.dark a{color: #7A7A7A;}
+    .cont_sticky.dark a.active{border-top: 1px solid #fff;}
+</style>
+<div class="event_20240613">
+    <!-- 타이틀 -->
+    <div class="cont_top">
+        <div class="bg"></div>
+        <h3><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/top_tit.png" alt="2025 시즌, 더 새로워진 공단기로 여러분의 단기 합격을 책임집니다. 누구나 쉽게 단기다움 누구보다 빠르게 단기합격"></h3>
+    </div>
+
+    <!-- 합격 스토리 -->
+    <div class="cont_story" data-theme="dark">
+        <h4><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/story_tit.png" alt="공무원 시험 시장에서 혜성처럼 등장한 공단기는 12년 동안 수험생 여러분과 함께 수많은 단기 합격 스토리를 만들어냈습니다. 우리가 함께 했기에 가능했던 합격 스토리"></h4>
+        <div class="story_wrap">
+            <div class="story_box"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/story_img.png" alt="누적 합격 수기"></div>
+        </div>
+        <p><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/story_txt.png" alt="누적 합격생  27,897명, 68.4% 점유1) 누적 환급액  528억 돌파2) 누적 합격 수기  3,918,407건3)"></p>
+    </div>
+
+    <!-- 성공 스토리 -->
+    <div class="cont_voice" data-theme="dark">
+        <div class="inner">
+            <h4><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/voice_tit.png" alt="합격생이 직접 들려주는 성공 스토리"></h4>
+            <div class="voice_wrap">
+                <ul class="voice_nav">
+                    <?php for($i=1; $i<17; $i++){ ?>
+                    <li>
+                        <div><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/voice_nav<?=$i;?>.png" alt="#"></div>
+                    </li>
+                    <?php } ?>
+                </ul>
+                <ul class="voice_slider">
+                    <?php for($i=1; $i<17; $i++){ ?>
+                    <li>
+                        <a href="javascript:;" class="voice_btn" data-audio="<?=$i?>"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/voice_slide<?=$i;?>.png" alt="#"></a>
+                    </li>
+                    <?php } ?>
+                </ul>
+            </div>
+            <div class="voice_label"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/voice_label.png" alt="사운드를 켜고 생생한 스토리를 들어보세요!"></div>
+        </div>
+    </div>
+
+    <!-- 공단기의 새로운 혁신 -->
+    <div class="cont_text" data-theme="dark">
+        <div class="inner">
+            <div class="text_wrap">
+                <h4 class="text1"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/text_img1.png" style="width: 32rem;" alt="하지만 여기서 그치지 않고, ‘세상 모든 수험생을 단기 합격 시킬 것’이라는 공단기의 사명으로. 누구나.쉽게.단기 합격 할 수 있는 방법을 수험생 입장에 서서 고민, 또 고민하여 내린 결론"></h4>
+                <h4 class="text2"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/text_img2.png" style="width: 19rem;" alt="공단기의 새로운 혁신  단기다움 "></h4>
+            </div>
+        </div>
+    </div>
+
+    <!-- 단기다움 -->
+    <div class="cont_daum" data-theme="light">
+        <div class="inner">
+            <h4>
+                <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/daum_logo.gif" alt="누구나. 빠르게. 단기합격." class="logo">
+                <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/daum_tit.png" alt="누구나. 쉽게. 단기다움.">
+            </h4>
+            <ul class="daum_slider">
+                <li><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/daum_slide1.png" alt="맞춤형 선택"></li>
+                <li><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/daum_slide2.png" alt="정확한 방향"></li>
+                <li><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/daum_slide3.png" alt="효율적인 방법"></li>
+            </ul>
+            <p><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/daum_txt.png" alt=""></p>
+        </div>
+    </div>
+
+    <!-- 교수님 -->
+    <div class="cont_teacher" data-theme="light">
+        <div class="inner">
+            <h4><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/teacher_tit.png" alt="그렇게 2025년 시즌, 새롭게 다시 태어난 공단기를 본격적으로 소개합니다. NEW SUPER HEROES 대거 영입 달라지는 공무원 시험과 시장에서 최적화된 라인업 구축을 위해. 다양하고도 전문적인 콘텐츠를 접할 수 있도록 신규 선생님을 모셨습니다."></h4>
+            <div class="teacher_wrap">
+                <ul class="teacher_list">
+                    <li>
+                        <a href="javascript:;" class="teacher_item teacher1" style="background-image: url('<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/teacher_bg1.png');">
+                            <div>
+                                <strong>영어<br>이얼 선생님</strong>
+                                <span>바로가기<i class="ico ico_arrow _right"></i></span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="teacher_item teacher2" style="background-image: url('<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/teacher_bg2.png');">
+                            <div>
+                                <strong>형법<br>홍형철 선생님</strong>
+                                <span>바로가기<i class="ico ico_arrow _right"></i></span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="teacher_item soon">
+                            <div>
+                                <strong>7/2(화)<br>공개</strong>
+                                <span>Coming soon</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="teacher_item soon">
+                            <div>
+                                <strong>7/2(화)<br>공개</strong>
+                                <span>Coming soon</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="teacher_item soon">
+                            <div>
+                                <strong>7/9(화)<br>공개</strong>
+                                <span>Coming soon</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="teacher_item soon">
+                            <div>
+                                <strong>7/9(화)<br>공개</strong>
+                                <span>Coming soon</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="teacher_item soon">
+                            <div>
+                                <strong>7/16(화)<br>공개</strong>
+                                <span>Coming soon</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="teacher_item next">
+                            <div>
+                                <strong>+<span>a</span></strong>
+                                <span>WHO'S<br>NEXT?</span>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <p><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/teacher_txt.png" alt="최고 라인업에 완벽이라는 마침표를 찍을 NEW HEROES까지 공무원 시험은 공단기 하나로 해결됩니다."></p>
+        </div>
+    </div>
+
+    <!-- 혜택 -->
+    <div class="cont_benefit" data-theme="light">
+        <div class="inner">
+            <h4><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/benefit_tit.png" alt="프리패스 파격 혜택 누구보다 치열하게 공부한 만큼 더 큰 보람을 느낄 수 있도록. 200% 환급 프리패스, 파격 혜택을 새로 선보입니다."></h4>
+            <strong><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/benefit_label.png" alt="200% 환급! 5만원 할인 적용 캐시 혜택까지!"></strong>
+            <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/benefit_img.png" alt="">
+            <p><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/benefit_txt.png" alt="고생한 만큼 수강료를 2배로 돌려드릴게요. 다른 곳은 쳐다 볼 필요도 없이 공단기 프리패스로 합격에 더 가까워지세요."></p>
+            <div class="benefit_btns">
+                <a href="https://gongdangi.conects.com/freepass/renewal" target="_blank"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/benefit_btn1.png" alt="공단기 프리패스"></a>
+                <a href="https://techdangi.conects.com/freepass/renewal" target="_blank"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/benefit_btn2.png" alt="기술계리단기 프리패스"></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 완벽 개편 -->
+    <div class="cont_renew" data-theme="light">
+        <div class="inner">
+            <h4><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/renew_tit.png" alt="25년 개편 완벽 대비 개편으로 인해 두려워 할 것 없이 정확한 방향을 잡을 수 있도록 시험이 변해도 오히려 단단하게 대비할 수 있는 콘텐츠와 전략을 대방출합니다."></h4>
+            <div class="renew_wrap">
+                <a href="https://gongdangi.conects.com/npromotion/2024/05/pass_presentation" target="_blank"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/renew_img1.png" alt="2025 공단기X소방단기 THE 합격 설명회"></a>
+                <a href="javascript:;">
+                    <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/renew_img2.png" alt="25 국어/영어 신경향 예상문제.zip E-BOOK 1만부 무료 배포">
+                    <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/renew_label.png" alt="10,000부 배포" class="label">
+                </a>
+            </div>
+            <p><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/renew_txt.png" alt="여러분이 있는 곳이라면 어디든 달려가고, 여러분이 필요한 것이라면 무엇이든 준비하니까 개편에 대한 모든 것, 따라만 오시면 됩니다."></p>
+        </div>
+    </div>
+
+    <!-- 내 강의실 -->
+    <div class="cont_my" data-theme="light">
+        <div class="inner">
+            <h4><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/my_tit.png" alt="내 강의실 리뉴얼"></h4>
+            <div class="my_wrap scrollAni">
+                <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/my_img.png" alt="학습에 관련된 모든 것을 한 눈에, 한 번에! 더 편리해진 공단기 ‘내 강의실’을 경험해보세요.">
+                <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/my_label1.png" alt="관심 선생님 등록부터 선생님 공지사항부터 자료실까지 한 눈에 확인 가능!" class="label label1">
+                <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/my_label2.png" alt="환급/연장 신청도 내 강의실에서 한 번에!" class="label label2">
+            </div>
+            <a href="https://my.conects.com/v3/class/home/main/GONG" target="_blank"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/my_btn.png" alt="내 강의실 살펴보기"></a>
+        </div>
+    </div>
+
+    <!-- NEW 콘텐츠 -->
+    <div class="cont_contents" data-theme="light">
+        <div class="inner">
+            <h4><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/contents_tit.png" alt="1위* 선생님의 NEW 콘텐츠"></h4>
+            <ul class="contents_slider">
+                <li><a href="https://pr.conects.com/course/detail/intro/395371" target="_blank"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/contents_slide1.png" alt="국어 이선재 자세히 보기"></a></li>
+                <li><a href="https://pr.conects.com/course/detail/intro/395233" target="_blank"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/contents_slide2.png" alt="영어 이동기 자세히 보기"></a></li>
+                <li><a href="https://pr.conects.com/course/detail/intro/396036" target="_blank"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/contents_slide3.png" alt="한국사 문동균 자세히 보기"></a></li>
+                <li><a href="https://pr.conects.com/course/detail/intro/396502" target="_blank"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/contents_slide4.png" alt="행정법 박준철 자세히 보기"></a></li>
+                <li><a href="https://pr.conects.com/course/detail/intro/395432" target="_blank"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/contents_slide5.png" alt="행정학 김중규 자세히 보기"></a></li>
+                <li><a href="javascript:;" onclick="alert('Coming soon');"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/contents_slide6.png" alt="교육학 이경범 자세히 보기"></a></li>
+                <li><a href="https://pr.conects.com/course/detail/intro/395446" target="_blank"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/contents_slide7.png" alt="세법 이진욱 자세히 보기"></a></li>
+                <li><a href="https://pr.conects.com/course/detail/intro/395365" target="_blank"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/contents_slide8.png" alt="형법/형소법 이윤탁 자세히 보기"></a></li>
+                <li><a href="javascript:;" onclick="alert('Coming soon');"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/contents_slide9.png" alt="사회복지학 김유경 자세히 보기"></a></li>
+                <li><a href="javascript:;" onclick="alert('Coming soon');"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/contents_slide10.png" alt="회계학 사경인 자세히 보기"></a></li>
+            </ul>
+            <strong><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/contents_txt.png" alt="최소 시간 투자, 최대의 효과, 2025년에도 빠른 합격을 보장합니다."></strong>
+        </div>
+        <ul class="contents_book">
+            <li>
+                <a href="https://book.conects.com/product/bookDetail?goods_id=0100024003718" target="_blank">
+                    <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/contents_book1.png" alt="2025 김중규 필기노트 기필고 선행정학">
+                    <p>2025 김중규 필기노트 기필고 선행정학</p>
+                </a>
+            </li>
+            <li>
+                <a href="https://book.conects.com/product/bookDetail?goods_id=0100024004029" target="_blank">
+                    <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/contents_book2.png" alt="2025 김중규 최빈출 600제 선행정학">
+                    <p>2025 김중규 최빈출 600제 선행정학</p>
+                </a>
+            </li>
+            <li>
+                <a href="https://book.conects.com/product/bookDetail?goods_id=0100024004197" target="_blank">
+                    <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/contents_book3.png" alt="2025 문동균 한국사 All in one (전2권)">
+                    <p>2025 문동균 한국사 All in one (전2권)</p>
+                </a>
+            </li>
+            <li>
+                <a href="https://book.conects.com/product/bookDetail?goods_id=0100024005101" target="_blank">
+                    <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/contents_book4.png" alt="2025 문동균 한국사 한 권으로 모든 것을 정리하는 판서노트">
+                    <p>2025 문동균 한국사 한 권으로 모든 것을 정리하는 판서노트</p>
+                </a>
+            </li>
+            <li>
+                <a href="https://book.conects.com/product/bookDetail?goods_id=0100024005071" target="_blank">
+                    <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/contents_book5.png" alt="2025 써니 행정법총론 행정법로의 초대">
+                    <p>2025 써니 행정법총론 행정법로의 초대</p>
+                </a>
+            </li>
+            <li>
+                <a href="https://book.conects.com/product/bookDetail?goods_id=0100024003657" target="_blank">
+                    <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/contents_book6.png" alt="2025 사경인 프레임회계학 원가정부회계 기본서">
+                    <p>2025 사경인 프레임회계학 원가정부회계 기본서</p>
+                </a>
+            </li>
+            <li>
+                <a href="https://book.conects.com/product/bookDetail?goods_id=0100024003008" target="_blank">
+                    <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/contents_book7.png" alt="2025 사경인 프레임 회계학 재무회계 기본서">
+                    <p>2025 사경인 프레임 회계학 재무회계 기본서</p>
+                </a>
+            </li>
+            <li>
+                <a href="https://book.conects.com/product/bookDetail?goods_id=0100024003589" target="_blank">
+                    <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/contents_book9.png" alt="2025 이동기 영어 친절한 꿀문법">
+                    <p>2025 이동기 영어 친절한 꿀문법</p>
+                </a>
+            </li>
+            <li>
+                <a href="https://book.conects.com/product/bookDetail?goods_id=0100024004494" target="_blank">
+                    <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/contents_book10.png" alt="2025 이동기 영어 신경향 All In One (전2권)">
+                    <p>2025 이동기 영어 신경향 All In One (전2권)</p>
+                </a>
+            </li>
+            <li>
+                <a href="https://book.conects.com/product/bookDetail?goods_id=0100024004661" target="_blank">
+                    <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/contents_book11.png" alt="2025 신경향 이동기 공무원 VOCA">
+                    <p>2025 신경향 이동기 공무원 VOCA</p>
+                </a>
+            </li>
+            <li>
+                <a href="https://book.conects.com/product/bookDetail?goods_id=0100024004463" target="_blank">
+                    <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/contents_book12.png" alt="2025 선재국어 수비니겨 실용 문법과 어휘">
+                    <p>2025 선재국어 수비니겨 실용 문법과 어휘</p>
+                </a>
+            </li>
+            <li>
+                <a href="https://book.conects.com/product/bookDetail?goods_id=0100024004500" target="_blank">
+                    <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/contents_book13.png" alt="2025 선재국어 예상 기출서 1">
+                    <p>2025 선재국어 예상 기출서 1</p>
+                </a>
+            </li>
+            <li>
+                <a href="https://book.conects.com/product/bookDetail?goods_id=0100024005026" target="_blank">
+                    <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/contents_book14.png" alt="2025 이윤탁 형법 기본서 [총론,각론]">
+                    <p>2025 이윤탁 형법 기본서 [총론,각론]</p>
+                </a>
+            </li>
+            <li>
+                <a href="https://book.conects.com/product/bookDetail?goods_id=0100024005002" target="_blank">
+                    <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/contents_book15.png" alt="2025 이윤탁 형사소송법 기본서">
+                    <p>2025 이윤탁 형사소송법 기본서</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- 합격 증명서 -->
+    <div class="cont_pass" data-theme="light">
+        <div class="inner">
+            <h4><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/pass_tit.png" alt="공단기의 단기다움으로, 여러분의 단기합격을 현실로. 여러분에게 기적이 일어날 차례입니다."></h4>
+            <div class="pass_wrap">
+                <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/pass_img.png" alt="합격 증명서">
+                <div class="name">김단기님</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 단기다움 텍스트 -->
+    <div class="cont_easy" data-theme="light">
+        <div class="inner">
+            <div class="easy_wrap">
+                <h4><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/easy_tit.png" alt="누구나 쉽게 단기다움 누구보다 빠르게 단기합격"></h4>
+                <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/easy_img1.png" alt="#" class="easy_img easy_img1">
+                <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/easy_img2.png" alt="#" class="easy_img easy_img2">
+                <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/easy_img3.png" alt="#" class="easy_img easy_img3">
+                <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/easy_img4.png" alt="#" class="easy_img easy_img4">
+                <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/easy_img5.png" alt="#" class="easy_img easy_img5">
+            </div>
+        </div>
+    </div>
+
+    <!-- 이벤트 영역 -->
+    <!-- 페이백 이벤트 -->
+    <div class="cont_payback" data-theme="light">
+        <div class="inner">
+            <div class="payback_wrap">
+                <ul class="payback_label">
+                    <li style="right: -1.6rem; top: 19.5rem;"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/payback_label1.png" alt="프리패스 구매자 5만 캐시" style="width: 17.5rem;"></li>
+                    <li style="left: -1.4rem; top: 39.2rem; animation-delay: .8s;"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/payback_label2.png" alt="단과 구매자 1만 캐시" style="width: 15.3rem;"></li>
+                </ul>
+                <h3><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/payback_tit.png" alt="06.26(수) - 06.30(일), 딱 5일동안만 진행 프리패스 & 단과 구매하면? 캐시 페이백 EVENT"></h3>
+                <a href="javascript:;"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/payback_btn.png" alt="페이백 신청하기"></a>
+                <p><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/payback_txt.png" alt=""></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 래플 이벤트 -->
+    <div class="cont_raffle" data-theme="dark">
+        <div class="inner">
+            <h4>
+                <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/raffle_tit.png" alt="EVENT 1 매일 달라지는 혜택, 기대하는 재미 래플 EVENT 매일 달라지는 혜택, 당첨 상품은 바로바로? 힌트를 통해 다음 상품을 예측해보세요!">
+                <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/raffle_powder.gif" alt="폭죽" class="powder1">
+                <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/raffle_powder.gif" alt="폭죽" class="powder2">
+            </h4>
+
+            <!-- 슬라이드 -->
+            <ul class="raffle_nav">
+                <li><div><p>06/26<br>수요일</p></div></li>
+                <li><div><p>06/27<br>목요일</p></div></li>
+                <li><div><p>06/28<br>금요일</p></div></li>
+                <li><div><p>07/01<br>월요일</p></div></li>
+                <li><div><p>07/02<br>화요일</p></div></li>
+                <li><div><p>07/03<br>수요일</p></div></li>
+                <li><div><p>07/04<br>목요일</p></div></li>
+                <li><div><p>07/05<br>금요일</p></div></li>
+                <li><div><p>07/08<br>월요일</p></div></li>
+                <li><div><p>07/09<br>화요일</p></div></li>
+                <li><div><p>07/10<br>수요일</p></div></li>
+            </ul>
+            <div class="raffle_slider">
+                <?php for($i=1; $i<12; $i++){ ?>
+                <li>
+                    <!-- <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/raffle_slide<?=$i;?>.png" alt="상품"> -->
+                    <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/raffle_slide_off<?=$i;?>.png" alt="상품">
+                </li>
+                <?php } ?>
+            </div>
+
+            <!-- 버튼 -->
+            <div class="raffle_btns">
+                <a href="javascript:;">
+                    <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/raffle_label.png" alt="저녁 6시부터 이벤트 참여 가능!" class="raffle_label">
+                    <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/raffle_btn1.png" alt="오늘의 상품 응모하기">
+                </a>
+                <a href="javascript:;"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/raffle_btn2.png" alt="당첨여부 확인하기"></a>
+            </div>
+
+            <!-- 개인정보동의 -->
+            <div class="event_wrap">
+                <!-- 개인정보동의 -->
+                <section class="event-toggle-box toggle-box sec-info-wrap">
+                    <strong class="toggle-tit flex">
+                        <div class="agree-check-box flex">
+                            <label class="agree-check">
+                                <input type="checkbox">
+                                <span class="ico ico_check">유의사항을 모두 확인했으며, 동의합니다.</span>
+                            </label>
+                        </div>
+                        <button class="toggle-btn ico ico_arrow" data-before-state="show"></button> <!--  data-before-state="show" -->
+                    </strong>
+                    <div class="toggle-conts info-conts active">
+                        <ul>
+                            <li>개인정보의 수집·이용 목적: 이벤트 진행 및 경품 배송</li>
+                            <li>수집하는 개인정보의 항목: 이름, 휴대폰번호</li>
+                            <li>개인정보의 보유·이용 기간: 이벤트 종료 후 즉시 파기</li>
+                            <li>개인정보의 수집 및 이용에 대한 동의를 거부할 수 있으며, 이 경우 이벤트 참여가 제한됩니다.</li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+            <div class="raffle_txt"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/raffle_img.png" alt=""></div>
+        </div>
+    </div>
+
+    <!-- 뽑기 이벤트 -->
+    <div class="cont_draw" data-theme="dark">
+        <div class="inner">
+            <h4><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/draw_tit.png" alt=""></h4>
+        </div>
+
+        <div class="draw_wrap">
+            <div class="draw_btns">
+                <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/draw_btn1.png" alt="PUSH" class="draw_btn1">
+                <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/draw_btn2.png" alt="PUSH" class="draw_btn2">
+            </div>
+            <a href="javascript:;" class="draw_btn" onclick="$('.draw_wrap .draw_btns').addClass('active');">PUSH</a>
+            <div class="draw_label"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/draw_cursor.png" alt="Click!"></div>
+        </div>
+
+        <div class="draw_btm">
+            <a href="javascript:;" class="draw_history">누적 캐시 내역 확인하기</a>
+            <div class="inner">
+                <!-- 개인정보동의 -->
+                <div class="event_wrap">
+                    <section class="event-toggle-box toggle-box sec-info-wrap">
+                        <strong class="toggle-tit flex">
+                            <div class="agree-check-box flex">
+                                <label class="agree-check">
+                                    <input type="checkbox">
+                                    <span class="ico ico_check">유의사항을 모두 확인했으며, 동의합니다.</span>
+                                </label>
+                            </div>
+                            <button class="toggle-btn ico ico_arrow" data-before-state="show"></button> <!--  data-before-state="show" -->
+                        </strong>
+                        <div class="toggle-conts info-conts active">
+                            <ul>
+                                <li>개인정보의 수집·이용 목적: 이벤트 진행 및 경품 배송</li>
+                                <li>수집하는 개인정보의 항목: 이름, 휴대폰번호</li>
+                                <li>개인정보의 보유·이용 기간: 이벤트 종료 후 즉시 파기</li>
+                                <li>개인정보의 수집 및 이용에 대한 동의를 거부할 수 있으며, 이 경우 이벤트 참여가 제한됩니다.</li>
+                            </ul>
+                        </div>
+                    </section>
+                </div>
+                
+                <p class="draw_txt">
+                    <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/draw_txt.png" alt="">
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 맛보기 이벤트 -->
+    <div class="cont_prev" data-theme="dark">
+        <div class="inner">
+            <h4>
+                <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/prev_tit.png" alt="EVENT 3 과목별 공단기 선생님 25대비 강의 맛보기">
+                <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/prev_label.png" alt="원하는 과목 클릭하면 오늘의 영상 자동 재생!" class="prev_label">
+            </h4>
+            <ul class="prev_nav">
+                <li><a href="javascript:;">국어</a></li>
+                <li><a href="javascript:;">영어</a></li>
+                <li><a href="javascript:;">한국사</a></li>
+                <li><a href="javascript:;">행정법</a></li>
+                <li><a href="javascript:;">행정학</a></li>
+                <li><a href="javascript:;">회계학</a></li>
+                <li><a href="javascript:;">교육학</a></li>
+                <li><a href="javascript:;">세법</a></li>
+                <li><a href="javascript:;">형법/형사소송법</a></li>
+            </ul>
+            <ul class="prev_slider">
+                <?php for($i=1; $i<10; $i++){ ?>
+                <li><a href="javascript:;" class="btn_dim_video" data-title="마무리 합격 전략 기출 모의고사" data-autoplay="true" data-movie="https://www.youtube.com/embed/0Sth3em_VcI"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/prev_video<?=$i?>.png" alt=""></a></li>
+                <?php } ?>
+            </ul>
+            <p>*1분 이상 영상을 시청해야 이벤트 참여가 인정됩니다</p>
+        </div>
+    </div>
+
+    <!-- 리뷰 이벤트 -->
+    <div class="cont_review" data-theme="dark">
+        <div class="review_tit">
+            <h4><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/review_tit.png" alt="오늘의 영상 시청을 했다면? 댓글 쓰고 이벤트 응모하기!"></h4>
+            <div class="prev_slide_wrap">
+                <ul class="prev_slider1">
+                    <?php for($i=0; $i<5; $i++){ ?>
+                    <li><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/review_slide1.png" alt="#"></li>
+                    <li><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/review_slide2.png" alt="#"></li>
+                    <li><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/review_slide3.png" alt="#"></li>
+                    <li><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/review_slide4.png" alt="#"></li>
+                    <li><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/review_slide1.png" alt="#"></li>
+                    <li><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/review_slide2.png" alt="#"></li>
+                    <li><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/review_slide3.png" alt="#"></li>
+                    <li><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/review_slide4.png" alt="#"></li>
+                    <?php } ?>
+                </ul>
+                <ul class="prev_slider2">
+                    <?php for($i=0; $i<5; $i++){ ?>
+                    <li><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/review_slide5.png" alt="#"></li>
+                    <li><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/review_slide6.png" alt="#"></li>
+                    <li><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/review_slide7.png" alt="#"></li>
+                    <li><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/review_slide8.png" alt="#"></li>
+                    <li><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/review_slide9.png" alt="#"></li>
+                    <li><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/review_slide5.png" alt="#"></li>
+                    <li><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/review_slide6.png" alt="#"></li>
+                    <li><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/review_slide7.png" alt="#"></li>
+                    <li><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/review_slide8.png" alt="#"></li>
+                    <li><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/review_slide9.png" alt="#"></li>
+                    <?php } ?>
+                </ul>
+            </div>
+        </div>
+        <div class="review_event">
+            <div class="inner">
+                <h4>2025 강의를 맛본 소감 한줄 댓글을 남겨주세요!</h4>
+                <div class="event_wrap">
+                    <div class="event_wrap">
+                        <div class="event_list_wrap">
+                            <!-- 댓글 입력 영역 -->
+                            <div class="label-group-box flex event-input-group">
+                                <div class="label-box flex">
+                                    <input type="text" placeholder="URL을 입력해 주세요." class="_outline" onfocus="$('.event-input-group .label-box').addClass('focus');" onblur="$('.event-input-group .label-box').removeClass('focus');">
+                                    <a href="javascript:;" class="label-box-btn">등록</a>
+                                </div>
+                                <div class="label-msg">error text ( {.label-group-box flex ._error} 일 때만 보임)</div>
+                            </div>
+                        </div>
+                        
+                        <!-- 개인정보동의 -->
+                        <section class="event-toggle-box toggle-box sec-info-wrap white">
+                            <strong class="toggle-tit flex">
+                                <div class="agree-check-box flex">
+                                    <label class="agree-check">
+                                        <input type="checkbox">
+                                        <span class="ico ico_check">유의사항을 모두 확인했으며, 동의합니다.</span>
+                                    </label>
+                                </div>
+                                <button class="toggle-btn ico ico_arrow" data-before-state="show"></button> <!--  data-before-state="show" -->
+                            </strong>
+                            <div class="toggle-conts info-conts active">
+                                <ul>
+                                    <li>개인정보의 수집·이용 목적: 이벤트 진행 및 경품 배송</li>
+                                    <li>수집하는 개인정보의 항목: 이름, 휴대폰번호</li>
+                                    <li>개인정보의 보유·이용 기간: 이벤트 종료 후 즉시 파기</li>
+                                    <li>개인정보의 수집 및 이용에 대한 동의를 거부할 수 있으며, 이 경우 이벤트 참여가 제한됩니다.</li>
+                                </ul>
+                            </div>
+                        </section>
+                    
+                        <div class="event_list_wrap">
+                            <!-- 댓글 리스트 영역 -->
+                            <div class="card_list_wrap">
+                                <div class="card_list">
+                                    <ul>
+                                        <? for($i=0; $i<5; $i++): ?>
+                                        <li>
+                                            <div class="list_content">
+                                                <p>
+                                                    나는 쉽고 재밌게 알려주기 때문에 선재국어 한다 나는 쉽고 재밌게 알려주기 때문에 선재국어 한다 나는 쉽고 재밌습니다.
+                                                    <i class="ico ico_new_img"></i>
+                                                </p>
+                                            </div>
+                                            <div class="list_name">
+                                                <span>김단기(abcdefghijklmno)</span>
+                                                <span>2022.03.22</span>
+                                            </div>
+                                        </li>
+                                        <? endFor; ?>
+                                    </ul>
+                                    <div class="review_btn">
+                                        <a href="javascript:;" class="btn-l _color_black _line list_more"><span>댓글 더보기</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- // 이벤트 영역 -->
+
+    <!-- 유의사항 -->
+	<div class="event_notice_wrap">
+		<div class="inner">
+			<section class="toggle-box sec-info-wrap">
+				<h4 class="toggle-tit flex toggle-btn">
+					<span class="flex">유의사항</span>
+					<button class="ico ico_arrow" data-before-state="show"></button>
+				</h4>
+				<div class="toggle-conts info-conts">
+					<select class="sel-box">
+						<option value="">캐시 페이백 이벤트</option>
+						<option value="">래플 이벤트</option>
+						<option value="">캐시 뽑기 이벤트</option>
+						<option value="">오늘의 영상 시청 이벤트</option>
+					</select>
+					<div class="notice_box">
+						유의사항
+					</div>
+				</div>
+			</section>
+		</div>
+	</div>
+
+    <!-- 하단 스티키 배너 -->
+    <div class="cont_sticky">
+        <a href="javascript:;" data-target=".cont_payback"><span>캐시 페이백<br>이벤트</span></a>
+        <a href="javascript:;" data-target=".cont_raffle"><span>EVENT 01<br>래플 이벤트</span></a>
+        <a href="javascript:;" data-target=".cont_draw"><span>EVENT 02<br>캐시 뽑기</span></a>
+        <a href="javascript:;" data-target=".cont_prev"><span>EVENT 03<br>영상 시청</span></a>
+    </div>
+   
+</div>
+
+<!-- 보이스 모달 -->
+<div class="draw_modal voice_modal">
+    <div class="modal_content">
+        <div class="modal_wrap">
+            <div class="voice_player">
+            </div>
+            <a href="javascript:;" class="voice_modal_close">닫기</a>
+        </div>
+    </div>
+</div>
+
+<!-- 당첨 캐시 모달 -->
+<div class="draw_modal draw_result_modal">
+    <div class="modal_content">
+        <div class="modal_wrap">
+            <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/m/draw_pop.png" alt="bg" class="bg">
+            <h5>당첨 캐시</h5>
+            <strong>100,000</strong>
+            <a href="javascript:;" class="result_modal_btn">받기</a>
+        </div>
+    </div>
+</div>
+
+<!-- 누적 캐시 내역 확인하기 모달 -->
+<div class="draw_modal draw_history_modal">
+    <div class="modal_content">
+        <div class="modal_wrap">
+            <h5>누적 캐시 내역</h5>
+            <ul>
+                <li>6/27(목) 100 캐시 당첨</li>
+                <li>6/27(목) 100 캐시 당첨</li>
+                <li>6/27(목) 100 캐시 당첨</li>
+                <li>6/27(목) 100 캐시 당첨</li>
+                <li>6/27(목) 100 캐시 당첨</li>
+                <li>6/27(목) 100 캐시 당첨</li>
+                <li>6/27(목) 100 캐시 당첨</li>
+                <li>6/27(목) 100 캐시 당첨</li>
+                <li>6/27(목) 100 캐시 당첨</li>
+                <li>6/27(목) 100 캐시 당첨</li>
+                <li>6/27(목) 100 캐시 당첨</li>
+                <li>6/27(목) 100 캐시 당첨</li>
+                <li>6/27(목) 100 캐시 당첨</li>
+                <li>6/27(목) 100 캐시 당첨</li>
+                <li>6/27(목) 100 캐시 당첨</li>
+            </ul>
+            <a href="javascript:;" class="history_modal_btn">닫기</a>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function(){
+        // 스티키 배너
+        $('.cont_sticky').cnStickyBar({
+            offset: false,
+        })
+
+        // 스크롤 애니메이션
+        $(window).cnScroll({
+            targetClass: 'scrollAni',
+            delay: 2,
+        });
+
+        $(window).scroll(function(){
+            const scroll = $(window).scrollTop();
+            const sticky = $('.cont_sticky');
+            const titHeight = $('.cont_top').outerHeight() + 64
+
+            // 스티키 배너 효과
+            if(scroll > titHeight * 0.6){
+                sticky.removeClass('light').addClass('dark');
+            }else{
+                sticky.removeClass('dark').addClass('light');
+            }
+
+            // 단 별로 스티키 배너 배경 변경
+            $('.event_20240613 div[data-theme]').each(function(index, el){
+                let prev = $(el).data('prev');
+                let theme = $(el).data('theme');
+                let top = $(el).offset().top;
+                let end = $(el).offset().top + $(el).height();
+
+                // window.screen.height
+                if((top < scroll && scroll < end) && scroll > titHeight){
+                    sticky.removeClass('light').removeClass('dark');
+                    sticky.addClass(theme)
+                }
+            })
+        })
+
+        // 스티키 배너
+        $('.cont_quick .quick_wrap').cnStickyBar({
+            offset: false,
+        })
+
+        // 상단 페이드 스크롤
+        gsap.utils.toArray(".cont_top").forEach(section => {
+            let tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: section,
+                    start: "top",
+            // makes the height of the scrolling (while pinning) match the width, thus the speed remains constant (vertical/horizontal)
+                    end: () => "+=" + section.offsetHeight * 0.7, 
+                    scrub: true,
+                    pin: false,
+                    anticipatePin: 1
+                },
+                defaults: {ease: "none"}
+            });
+            // animate the container one way...
+            tl.fromTo(section.querySelector(".bg"), { opacity: 0}, { opacity: 1 })
+            // .to(document.querySelector(".cont_quick .quick_wrap"), { className: 'quick_wrap cn-stickybar dark' }, '-=2')
+            // ...and the image the opposite way (at the same time)
+            // .fromTo(section.querySelector(".beforeImage img"), {opacity: 1}, {opacity: 0}, 0);
+        });
+
+        // 단기다움 스크롤 1
+        gsap.utils.toArray(".cont_text").forEach(section => {
+            let tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: section,
+                    start: "top",
+                    end: () => "+=" + section.offsetHeight * 1.7, 
+                    scrub: true,
+                    pin: true,
+                    anticipatePin: 1
+                },
+                defaults: {ease: "none"}
+            });
+            // animate the container one way...
+            tl.fromTo(section.querySelector(".text1"), { opacity: 1 }, { opacity: 0 })
+            .fromTo(section.querySelector(".text2"), { opacity: 0 }, { opacity: 1 })
+            // ...and the image the opposite way (at the same time)
+            // .fromTo(section.querySelector(".beforeImage img"), {opacity: 1}, {opacity: 0}, 0);
+        });
+
+        // 단기다움 스크롤 2
+        gsap.utils.toArray(".cont_easy").forEach(section => {
+            let tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: section,
+                    start: "top",
+                    end: () => "+=" + section.offsetHeight * 3, 
+                    scrub: true,
+                    pin: true,
+                    anticipatePin: 1
+                },
+                defaults: {ease: "none"}
+            });
+            // translate(200%, 100%) rotate(40deg)
+            // translate(150%, 150%) rotate(20deg)
+            // translate(0%, 230%) rotate(20deg)
+            // translate(-180%, 100%) rotate(-60deg)
+            tl.fromTo(section.querySelector('.easy_img1'), { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: '90%', y: '90%', rotation: 40, opacity: 0 })
+            .fromTo(section.querySelector('.easy_img2'), { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: '-120%', y: '200%', rotation: 20, opacity: 0 })
+            .fromTo(section.querySelector('.easy_img3'), { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: '90%', y: '220%', rotation: 20, opacity: 0 })
+            .fromTo(section.querySelector('.easy_img4'), { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: '-170%', y: '90%', rotation: -60, opacity: 0 })
+            .fromTo(section.querySelector('.easy_img5'), { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: '-150%', y: '90%', rotation: -40, opacity: 0 })
+        });
+
+        // 성공 스토리 슬라이드
+        const voice_slider = $('.voice_slider').cnSlider({
+            nav: '.voice_nav',
+            swiperOptions: {
+                loop: false,
+                allowTouchMove: true,
+            },
+            navOptions: {
+                slidesPerView: 'auto',
+                spaceBetween: 18,
+            },
+            thumbOptions: {
+                autoScrollOffset: 0.1
+            }
+        });
+
+        // 단기다움 슬라이드
+        $('.daum_slider').cnSlider({
+            swiperOptions: {
+                loop: true,
+                allowTouchMove: true,
+                slidesPerView: 'auto'
+            },
+        });
+
+        // NEW 콘텐츠 슬라이드
+        $('.contents_slider').cnSlider({
+            swiperOptions: {
+                loop: true,
+                allowTouchMove: true,
+                slidesPerView: 'auto'
+            },
+        })
+        $('.contents_book').cnSlider({
+            swiperOptions: {
+                spaceBetween: 0,
+                autoplay: {
+                    delay: 1,
+                },
+                speed: 10000,
+                loop: true,
+                slidesPerView: 'auto',
+                allowTouchMove: false,
+            }
+        })
+
+        // 래플 슬라이드
+        $('.raffle_slider').cnSlider({
+            controls: true,
+            nav: '.raffle_nav',
+            navOptions: {
+                slidesPerView: 'auto',
+            },
+            swiperOptions: {
+                allowTouchMove: true
+            },
+            thumbOptions: {
+                autoScrollOffset: 0.1
+            }
+        });
+
+        // 맛보기 탭
+        $('.prev_slider').cnSlider({
+            nav: '.prev_nav',
+            navOptions: {
+                slidesPerView: 'auto',
+            },
+            swiperOptions: {
+                allowTouchMove: true,
+                spaceBetween: 10
+            },
+            thumbOptions: {
+                autoScrollOffset: 0.1
+            }
+        });
+
+        // 영상 팝업
+        $('.btn_dim_video').cnModal({
+            modalType: 'video',
+			modalTarget: '.cn-movie-modal',
+            mode: 'fade',
+            head: false,
+            verticalCenter: true,
+            bodyColor: '#000'
+        });
+
+        // 강좌 맛보기 슬라이드
+        const prev_slider1 = $('.prev_slider1').cnSlider({
+            swiperOptions: {
+                spaceBetween: 0,
+                autoplay: {
+                    delay: 1,
+                    pauseOnMouseEnter: true
+                },
+                speed: 8000,
+                loop: true,
+                slidesPerView: 'auto',
+                allowTouchMove: false,
+                loopedSlides: 8
+            }
+        });
+        const prev_slider2 = $('.prev_slider2').cnSlider({
+            swiperOptions: {
+                spaceBetween: 0,
+                autoplay: {
+                    delay: 1,
+                    reverseDirection: true,
+                },
+                speed: 10000,
+                loop: true,
+                slidesPerView: 'auto',
+                allowTouchMove: false,
+                loopedSlides: 10
+            }
+        });
+
+         // 보이스 모달
+         const voice_modal = $('.voice_btn').cnModal({
+            modalTarget: ".voice_modal",
+            head: false,
+            close: false,
+            pcOnly: true,
+            onBeforeOpen: function(btn){
+                if(btn && btn[0].dataset.audio){
+                    const voiceHTML = `
+                        <audio controls controlsList="nodownload" id="voice_audio">
+                            <source src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/voice/voice${btn[0].dataset.audio}.mp3" type="audio/mp3">
+                            이 브라우저는 audio를 지원하지 않습니다.
+                        </audio>
+                    `;
+    
+                    $('.voice_player').html(voiceHTML);
+                    $('#voice_audio').get(0).volume = 0.5;
+                    $('#voice_audio').get(0).play();
+                }
+            },
+            onClose: function(){
+                $('.voice_player').html('');
+            }
+        });
+
+
+        // 뽑기 결과 모달
+        const draw_result = $('.draw_btn').cnModal({
+            modalTarget: ".draw_result_modal",
+            head: false,
+            close: false,
+            pcOnly: true,
+            // closeOutside: false
+        });
+
+        // 당첨 내역 모달
+        const draw_history = $('.draw_history').cnModal({
+            modalTarget: ".draw_history_modal",
+            head: false,
+            close: false,
+            pcOnly: true,
+        })
+
+        $('.voice_modal_close').click(function(){
+            // 모달 닫기
+            voice_modal.close()
+        })
+
+        $('.result_modal_btn').click(function(){
+            // 모달 닫기
+            draw_result.close()
+        })
+
+        $('.history_modal_btn').click(function(){
+            // 모달 닫기
+            draw_history.close()
+        })
+    })
+</script>

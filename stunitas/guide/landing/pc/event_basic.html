@@ -1,0 +1,142 @@
+<div class="content">
+    <link rel="stylesheet" href="<?=UN_STATIC?>/css/common/event.css">
+
+    <div class="content_tit">
+        <h2>event</h2>
+        <p></p>
+    </div>
+    
+    <ul class="content_nav inner">
+        <li>이벤트 영역</li>
+        <li>이벤트 종료</li>
+    </ul>
+    
+    <ul class="content_tab">
+        <!-- 이벤트 영역 -->
+        <li>
+            <div class="content_wrap full">
+                <div>
+                    <div class="content_txt">
+                        <h4>기본 이벤트</h4>
+                    </div>
+                    <div class="code_wrap">
+                        <ul class="code_tab">
+                            <li>
+                                <div class="code">
+                                    <div class="event-contents">
+                                        <div class="cont_event" style="padding: 100px 0;background: linear-gradient(180deg, #E9E9E9 0%, #FFF 600px);">
+                                            <div class="inner">
+                                                <h4 style="margin-bottom: 50px;"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/10/gong_15714/pc/event_comment1_tit.png" alt=""></h4>
+                                                <div class="event_box_wrap">
+                                                    <!-- 개인정보 수집 동의 -->
+                                                    <div class="event_agree_box">
+                                                        <label><input type="checkbox">개인정보의 수집 및 이용에 동의합니다.</label>
+                                                        <ul>
+                                                            <li>1. 개인정보의 수집·이용 목적: 이벤트 진행 및 경품 배송<br /></li>
+                                                            <li>2. 수집하는 개인정보의 항목: 이름, 휴대폰번호<br /></li>
+                                                            <li>3. 개인정보의 보유·이용 기간: 이벤트 종료 후 즉시 파기<br /></li>
+                                                            <li>4. 개인정보의 수집 및 이용에 대한 동의를 거부할 수 있으며, 이 경우 이벤트 참여가 제한됩니다.</li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="event_btn_box btn_flex_none">
+                                                        <div>
+                                                            <a href="javascript:void(0);" class="btn_l style_dark">버튼 이름</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="code html">
+                                <pre><code class="language-html" style="display: none;"><div class="cont_event">
+    <div class="inner">
+        <h4></h4>
+        <div class="event_box_wrap">
+            <!-- 개인정보 수집 동의 -->
+            <div class="event_agree_box">
+                <label><input type="checkbox">개인정보의 수집 및 이용에 동의합니다.</label>
+                <ul>
+                    <li>1. 개인정보의 수집·이용 목적: 이벤트 진행 및 경품 배송<br /></li>
+                    <li>2. 수집하는 개인정보의 항목: 이름, 휴대폰번호<br /></li>
+                    <li>3. 개인정보의 보유·이용 기간: 이벤트 종료 후 즉시 파기<br /></li>
+                    <li>4. 개인정보의 수집 및 이용에 대한 동의를 거부할 수 있으며, 이 경우 이벤트 참여가 제한됩니다.</li>
+                </ul>
+            </div>
+            <div class="event_btn_box btn_flex_none">
+                <div>
+                    <a href="javascript:void(0);" class="btn_l style_dark modal_form_btn" data-target="modal_form">버튼 이름</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div></code></pre>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <!-- 이벤트 종료 -->
+        <li>
+            <div class="content_wrap full">
+                <div>
+                    <div class="content_txt">
+                        <h4>이벤트 종료 이미지</h4>
+                        <p>이벤트 종료시 이벤트 영역에 'event_end' 클래스 추가</p>
+                    </div>
+                    <div class="code_wrap">
+                        <ul class="code_tab">
+                            <li>
+                                <div class="code">
+                                    <div class="event-contents">
+                                        <div class="cont_event1 event_end" style="padding: 100px 0;background: linear-gradient(180deg, #E9E9E9 0%, #FFF 600px);">
+                                            <div style="height:200px;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="code html">
+                                <pre><code class="language-html" style="display: none;"><div class="cont_event event_end"></div></code></pre>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="content_txt">
+                        <h4>이벤트 종료 텍스트</h4>
+                        <p>.event_end::after 요소에 텍스트 추가</p>
+                    </div>
+                    <div class="code_wrap">
+                        <ul class="code_tab">
+                            <li>
+                                <div class="code">
+                                    <div class="event-contents">
+                                        <style>
+                                            .cont_event2.event_end:after{content:'이벤트가\A종료되었습니다.'; background-image: none;}
+                                        </style>
+                                        <div class="cont_event2 event_end" style="padding: 100px 0;background: linear-gradient(180deg, #E9E9E9 0%, #FFF 600px);">
+                                            <div style="height:800px;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="code html">
+                                <pre><code class="language-html" style="display: none;">{content:'이벤트가\A종료되었습니다.'; background-image: none;}</code></pre>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+

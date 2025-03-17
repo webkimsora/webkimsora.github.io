@@ -1,0 +1,284 @@
+<?php include('skin/pub/guide/head.html'); ?>
+<?php include('skin/pub/guide/'.$nav.'/side_menu.html'); ?>
+
+<link rel="stylesheet" href="<?=UN_STATIC?>/css/premium/common.css?<?=time()?>">
+<link rel="stylesheet" href="<?=UN_STATIC?>/css/premium/pc/premium.css?<?=time()?>">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.11/clipboard.min.js"></script>
+
+<style>
+    .example_wrap{display: flex; flex-direction: column; gap: 30px; padding: 30px;}
+    .example_wrap > div{display: flex; gap: 30px;}
+
+    table.document tbody :is(th, td) p > span,
+    table.document tbody td ul li span{color: #b91c1c;}
+    table.document tbody td ul li{color: #5f6570;}
+
+    .prem__icons{display: flex; flex-wrap: wrap; gap: 30px;}
+    .prem__icons > div{padding: 39px; position: relative; cursor: pointer;}
+    .prem__icons > div > i{width: 30px; height: 30px;}
+    .prem__icons > div > span{font-size: 13px; position: absolute; top: 90px; left: 50%; transform: translateX(-50%); width: 110px; text-align: center;}
+    .prem__icons > div > span > span{display: none;}
+    .prem__icons:not(.png) > div:hover i:not(.img)::after{background-color: var(--prem-primary)}
+    .prem__icons:not(.png) > div:hover span > span{display: inline;}
+    .prem__icons > div.hide{display: none;}
+
+    .example_icon{text-align: center; justify-content: center;}
+    .example_icon .prem__icons{display: inline-flex;}
+    .tit_wrap{display: flex; align-items: center; gap: 8px;}
+    .tit_wrap > :is(a, span){color: #5C6675; font-size: 14px;}
+    .tit_wrap > a{text-decoration: underline; text-underline-position: under;}
+    .tit_wrap > span::after{content: "개"}
+
+    .icon_tooltip{position: absolute; bottom: calc(100% - 25px); left: 50%; transform: translateX(-50%); background: rgba(0, 0, 0, .8); color: #fff; padding: 5px 8px; font-size: 12px; line-height: 18px; white-space: nowrap; border-radius: 8px; z-index: 2; word-spacing: -1px; font-family: 'Pretendard', sans-serif; text-align: center;}
+    .icon_tooltip::after{content: ""; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); border: 5px solid #000; opacity: .8; border-top-width: 6px; border-bottom-width: 0; border-left-color: transparent; border-right-color: transparent;}
+
+</style>
+<div class="content">
+    <div class="content_tit">
+        <h2>Icon</h2>
+        <!-- <p>랜딩페이지 퍼블리싱 가이드</p> -->
+    </div>
+    <ul class="content_nav inner cn-nav cn-auto-index">
+        <li class="active">Examples</li>
+        <li class="">Library</li>
+        <!-- <li class="">Methods</li> -->
+    </ul>
+    <ul class="content_tab cn-tab">
+        <!-- Examples -->
+        <li class="active">
+            <div class="content_wrap">
+                <!-- SVG 아이콘 -->
+                <div>
+                    <div class="content_txt">
+                        <div class="tit_wrap">
+                            <h4>SVG 아이콘</h4>
+                            <a href="javascript:;" onclick="content_nav.goTo(1);">전체 아이콘 보기</a>
+                        </div>
+                        <p>
+                            mask-image로 작업된 SVG 아이콘은 ::after를 사용하여 가상 요소에 추가됩니다.<br>
+                            prem__ico--[아이콘 이름] 형식으로 사용할 수 있으며, 백그라운드를 사용하여 아이콘의 색상을 변경할 수 있습니다.<br>
+                            &lt;i&gt; 태그로 사용되는 아이콘은 기본으로 가로 세로가 24px로 고정되어 있으며, 가로나 세로의 고정을 사용하지 않는 경우에는 다른 태그를 사용해주세요.<br>
+                        </p>
+                    </div>
+    
+                    <div class="code_wrap">
+                        <ul class="code_tab cn-tab">
+                            <li class="active">
+                                <div class="example_wrap">
+                                    <div class="example_icon">
+                                        <div class="prem__icons">
+                                            <div><i class="prem__ico--arrow_left_thin"></i></div>
+                                            <div><i class="prem__ico--arrow_up_thin"></i></div>
+                                            <div><i class="prem__ico--arrow_right_thin"></i></div>
+                                            <div><i class="prem__ico--arrow_down_thin"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+            
+                            <li>
+<pre><code class="language-html"><!-- CSS -->
+<style>
+/* hover 했을 때 색상 변경 */
+.icon:hover::after{background: purple;}
+</style>
+    
+<!-- 아이콘 -->
+<i class="prem__ico--arrow_left_thin icon"></i>
+</code></pre>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- PNG 아이콘 -->
+                <div>
+                    <div class="content_txt">
+                        <h4>PNG 아이콘</h4>
+                        <p>
+                            아래 아이콘들은 PNG로 만들어진 아이콘으로 색상 설정이 따로 불가능합니다.
+                        </p>
+                    </div>
+    
+                    <div class="code_wrap">
+                        <ul class="code_tab cn-tab">
+                            <li class="active">
+                                <div class="example_wrap">
+                                    <div class="example_icon">
+                                        <div class="prem__icons png">
+                                            <div><i class="prem__ico--premium_symbol"></i></div>
+                                            <div><i class="prem__ico--premium_symbol_white"></i></div>
+                                            <div><i class="prem__ico--new"></i></div>
+                                            <div><i class="prem__ico--notice"></i></div>
+                                            <div><i class="prem__ico--write"></i></div>
+                                            <div><i class="prem__ico--graduation_cap img"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+            
+                            <li>
+<pre><code class="language-html"><!-- CSS -->
+<style>
+/* hover 했을 때 색상 변경 */
+.icon:hover::after{background: purple;}
+</style>
+    
+<!-- 아이콘 -->
+<i class="prem__ico--arrow_left_thin icon"></i>
+</code></pre>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </li>
+
+        <!-- Library -->
+        <li>
+            <div class="content_wrap">
+                <!-- 아이콘 리스트 -->
+                <div>
+                    <div class="content_txt">
+                        <div class="tit_wrap">
+                            <h4>전체 아이콘</h4>
+                            <span id="icon_count">122</span>
+                        </div>
+                    </div>
+    
+                    <div class="code_wrap">
+                        <ul class="code_tab cn-tab">
+                            <li class="active">
+                                <div class="example_wrap">
+                                    <input type="text" placeholder="검색.." class="prem__input--text prem__typo--body16 px-12 icon__search">
+                                    <div class="prem__icons icon_libary">
+                                        <?php 
+                                            include('skin/pub/premium/icons.html');
+                                        ?>
+                                    </div>
+
+                                    <script>
+                                        function getIconCount(){
+                                            return $('.icon_libary > div:not(.hide)').length;
+                                        }
+
+                                        function setIconCount(query=''){
+                                            let search = query.trim().length > 0 ? `검색된 ${query.trim()} 아이콘 ` : ''
+                                            $('#icon_count').text(`${search}${getIconCount()}`);
+                                        }
+
+                                        setIconCount()
+
+                                        // 검색 스크립트
+                                        $('.icon__search').keyup(function(){
+                                            const value = $(this).val();
+                                            $('.icon_libary > div').each(function(){
+                                                let name = $(this).find('span').text().trim();
+                                                if(name.toLowerCase().indexOf(value) > -1){
+                                                    $(this).removeClass('hide');
+                                                }else{
+                                                    $(this).addClass('hide');
+                                                }
+
+                                                setIconCount(value)
+                                            })
+                                        })
+
+                                        // 복사 스크립트
+                                        let clipboard = new ClipboardJS('.icon_libary > div', {
+                                            text: function(trigger) {
+                                                let name = trigger.querySelector('i').getAttribute('class').split(' ')[0];
+                                                let tag = `<i class="${name}"></i>`
+                                                return tag;
+                                            }
+                                        });
+
+                                        let time;
+                                        clipboard.on('success', function(copy){
+                                            clearTimeout(time);
+                                            let text = copy.text.match(/class=["']([^"']+)["']/)[1];
+                                            $('.icon_tooltip').remove();
+                                            $(`.icon_libary .${text}`).parent().append(`<div class="icon_tooltip"><span></span><br>복사완료</div>`)
+                                            $('.icon_tooltip > span').text(`<i class="${text}"></i>`);
+
+                                            time = setTimeout(() => {
+                                                $('.icon_tooltip').fadeOut(300);
+                                            }, 1000);
+                                        })
+                                        
+                                    </script>
+                                </div>
+                            </li>
+            
+                            <li>
+<pre><code class="language-html"><!-- 전체 아이콘 -->
+<i class="prem__ico--arrow_left_thin"></i>
+<i class="prem__ico--arrow_up_thin"></i>
+<i class="prem__ico--arrow_right_thin"></i>
+<i class="prem__ico--arrow_down_thin"></i>
+<i class="prem__ico--arrow_left"></i>
+<i class="prem__ico--arrow_up"></i>
+<i class="prem__ico--arrow_right"></i>
+<i class="prem__ico--arrow_down"></i>
+<i class="prem__ico--arrow_line_left"></i>
+<i class="prem__ico--arrow_line_up"></i>
+<i class="prem__ico--arrow_line_right"></i>
+<i class="prem__ico--arrow_line_down"></i>
+<i class="prem__ico--arrow_up_s"></i>
+<i class="prem__ico--arrow_down_s"></i>
+<i class="prem__ico--arrow_left_s"></i>
+<i class="prem__ico--arrow_right_s"></i>
+<i class="prem__ico--premium_symbol img"></i>
+<i class="prem__ico--premium_symbol_white img"></i>
+<i class="prem__ico--new img"></i>
+<i class="prem__ico--notice img"></i>
+<i class="prem__ico--write img"></i>
+<i class="prem__ico--clip"></i>
+<i class="prem__ico--close"></i>
+<i class="prem__ico--close_circle"></i>
+<i class="prem__ico--comment"></i>
+<i class="prem__ico--filter"></i>
+<i class="prem__ico--graduation_cap"></i>
+<i class="prem__ico--graduation_cap img"></i>
+<i class="prem__ico--home"></i>
+<i class="prem__ico--send"></i>
+<i class="prem__ico--mail_speed"></i>
+<i class="prem__ico--download_line"></i>
+<i class="prem__ico--more"></i>
+<i class="prem__ico--pencil"></i>
+<i class="prem__ico--pencil_line"></i>
+<i class="prem__ico--pin"></i>
+<i class="prem__ico--plus"></i>
+<i class="prem__ico--plus_circle"></i>
+<i class="prem__ico--search"></i>
+<i class="prem__ico--clock_speed"></i>
+<i class="prem__ico--radio"></i>
+<i class="prem__ico--checkbox_off"></i>
+<i class="prem__ico--checkbox_on"></i>
+<i class="prem__ico--dot"></i>
+<i class="prem__ico--analytics"></i>
+<i class="prem__ico--insights"></i>
+<i class="prem__ico--insights2"></i>
+<i class="prem__ico--formation"></i>
+<i class="prem__ico--info"></i>
+<i class="prem__ico--heart"></i>
+<i class="prem__ico--heart_fill"></i>
+<i class="prem__ico--tag"></i>
+<i class="prem__ico--check"></i>
+<i class="prem__ico--sound_wave"></i>
+<i class="prem__ico--user_check"></i>
+<i class="prem__ico--lock"></i>
+<i class="prem__ico--bar"></i>
+<i class="prem__ico--bookmark_off"></i>
+<i class="prem__ico--bookmark_on"></i>
+<i class="prem__ico--medal"></i>
+<i class="prem__ico--play_circle"></i>
+</code></pre>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>

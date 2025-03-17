@@ -1,0 +1,17 @@
+<div class="side_menu">
+    <div class="menu <?=$page == 'home' ? ' selected' : ''?>">
+        <a href="/pub/guide/<?=$nav?>/home<?=$isMobile ? '?set_view=mobile' : '' ?>"><strong><span>Home</span></strong></a>
+    </div>
+    <div class="menu active<?=$page == 'mock' ? ' selected' : ''?>">
+        <a href="/pub/guide/<?=$nav?>/mock<?=$isMobile ? '?set_view=mobile' : '' ?>"><strong><span>CSS 애니메이션</span></strong></a>
+    </div>
+    <div class="menu <?=strpos($page, 'gsap') > -1 ? ' selected' : ''?>">
+        <strong><span>GSAP 애니메이션</span><i class="ico <?=$isMobile ? 'ico_arrow _down' : 'ico_arrow_down'?>"></i></strong>
+        <ul>
+            <li class="<?=$page == 'gsap_stack' ? 'selected' : ''?>"><a href="/pub/guide/<?=$nav?>/gsap_stack<?=$isMobile ? '?set_view=mobile' : '' ?>"><span>Stack Animation</span></a></li>
+            <li class="<?=$page == 'gsap_card' ? 'selected' : ''?>"><a href="/pub/guide/<?=$nav?>/gsap_card<?=$isMobile ? '?set_view=mobile' : '' ?>"><span>Card Animation</span></a></li>
+            <li class="<?=$page == 'gsap_fadeout' ? 'selected' : ''?>"><a href="/pub/guide/<?=$nav?>/gsap_fadeout<?=$isMobile ? '?set_view=mobile' : '' ?>"><span>Fadeout Animation</span></a></li>
+            <li class="<?=$page == 'gsap_grid' ? 'selected' : ''?>"><a href="/pub/guide/<?=$nav?>/gsap_grid<?=$isMobile ? '?set_view=mobile' : '' ?>"><span>Grid Animation</span></a></li>
+        </ul>
+    </div>
+</div>

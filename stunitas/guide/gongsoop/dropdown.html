@@ -1,0 +1,249 @@
+<?php include('skin/pub/guide/head.html'); ?>
+<?php include('skin/pub/guide/'.$nav.'/side_menu.html'); ?>
+
+<link rel="stylesheet" href="<?=UN_STATIC?>/css/gongsoop/common.css?<?=time()?>">
+<link rel="stylesheet" href="<?=UN_STATIC?>/css/gongsoop/pc/gongsoop.css?<?=time()?>">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.11/clipboard.min.js"></script>
+
+<style>
+    .example_wrap{display: flex; justify-content: center; align-items: center; flex-direction: column; gap: 30px; padding: 30px;}
+    .example_wrap > div{display: flex; gap: 30px;}
+
+    .dropdown__btns{display: flex; gap: 40px;}
+    .dropdown__btns a{display: flex; align-items: center;}
+</style>
+<div class="content">
+    <div class="content_tit">
+        <h2>Dropdown</h2>
+        <!-- <p>랜딩페이지 퍼블리싱 가이드</p> -->
+    </div>
+    <ul class="content_nav inner cn-nav cn-auto-index">
+        <li class="active">Examples</li>
+        <!-- <li class="">Library</li> -->
+        <!-- <li class="">Methods</li> -->
+    </ul>
+    <ul class="content_tab cn-tab">
+        <!-- Examples -->
+        <li class="active">
+            <div class="content_wrap">
+                <!-- 셀렉트박스 -->
+                <div>
+                    <div class="content_txt">
+                        <div class="tit_wrap">
+                            <h4>셀렉트박스</h4>
+                        </div>
+                    </div>
+                    <div class="code_wrap">
+                        <ul class="code_tab cn-tab">
+                            <li class="active">
+                                <div class="example_wrap">
+                                    <!-- 기본 셀렉트박스 -->
+                                    <div class="sp__select--box" style="width: 200px;">
+                                        <select name="" id="" required class="sp__typo--body13--normal sp__color--secondary">
+                                            <option value="" selected disabled hidden>분야를 선택해주세요.</option>
+                                            <option value="옵션1">옵션1</option>
+                                            <option value="옵션2">옵션2</option>
+                                            <option value="옵션3">옵션3</option>
+                                            <option value="옵션4">옵션4</option>
+                                        </select>
+                                    </div>
+
+                                    <!-- 스크립트 셀렉트박스 -->
+                                    <a href="javascript:;" class="sp__select--box dropdown__btn1" data-dropdown="drop__menu1" style="width: 200px">
+                                        <input type="hidden" value="">
+                                        <div class="select sp__typo--body13--normal sp__color--secondary">분야를 선택해주세요.</div>
+                                    </a>
+                                </div>
+                            </li>
+            
+                            <li>
+<pre><code class="language-html"><!-- 기본 셀렉트박스 -->
+<div class="sp__select--box" style="width: 200px;">
+    <select name="" id="" required class="sp__typo--body13--normal sp__color--secondary">
+        <option value="" selected disabled hidden>분야를 선택해주세요.</option>
+        <option value="옵션1">옵션1</option>
+        <option value="옵션2">옵션2</option>
+        <option value="옵션3">옵션3</option>
+        <option value="옵션4">옵션4</option>
+    </select>
+</div>
+
+<!-- 스크립트 셀렉트박스 -->
+<a href="javascript:;" class="sp__select--box dropdown__btn1" data-dropdown="drop__menu1">
+    <input type="hidden" value="">
+    <div class="select sp__typo--body13--normal sp__color--secondary">분야를 선택해주세요.</div>
+</a>
+
+<!-- 드롭다운 메뉴 -->
+<ul class="sp__dropdown--menu drop__menu1">
+    <li data-value="1"><a href="javascript:;" class="sp__typo--subtitle13">드롭메뉴 1</a></li>
+    <li data-value="2"><a href="javascript:;" class="sp__typo--subtitle13">드롭메뉴 2</a></li>
+    <li data-value="3"><a href="javascript:;" class="sp__typo--subtitle13">드롭메뉴 3</a></li>
+</ul>
+<!-- // 드롭다운 메뉴 -->
+
+&lt;script&gt;
+$('.dropdown__btn1').cnDropdown({
+    width: 'auto',
+    align: 'left',
+    onMenuClick: function(menuEl, menuIndex, btnEl){ // 메뉴 엘리먼트, 메뉴 인덱스, 버튼 엘리먼트
+        const menuHTML = menuEl.find('a').html().trim();
+        btnEl.find('.select').html(menuHTML);
+        btnEl.find('input[type=hidden]').val(menuEl.data('value'));
+    }
+})
+&lt;/script&gt;
+<!-- // 스크립트 셀렉트박스 -->
+
+<!-- 텍스트 드롭다운 -->
+<a href="javascript:;" class="sp__dropdown--btn sp__typo--subtitle13 dropdown__btn1" data-dropdown="drop__menu1"><span class="select">더보기</span><i class="sp__ico--arrow_down_s"></i></a>
+</code></pre>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 텍스트 -->
+                <div>
+                    <div class="content_txt">
+                        <div class="tit_wrap">
+                            <h4>텍스트</h4>
+                        </div>
+                    </div>
+                    <div class="code_wrap">
+                        <ul class="code_tab cn-tab">
+                            <li class="active">
+                                <div class="example_wrap">
+                                    <div>
+                                        <!-- 텍스트 드롭다운 -->
+                                        <div class="dropdown__btns">
+                                            <a href="javascript:;" class="sp__dropdown--btn sp__typo--subtitle13 dropdown__btn1" data-dropdown="drop__menu1"><span class="select">더보기</span><i class="sp__ico--arrow_down_s"></i></a>
+                                            <a href="javascript:;" class="sp__dropdown--btn sp__typo--subtitle13 dropdown__btn1" data-dropdown="drop__menu1"><span class="select">더보기</span><i class="sp__ico--arrow_down_s"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+            
+                            <li>
+<pre><code class="language-html"><!-- 텍스트 드롭다운 -->
+<div class="dropdown__btns">
+    <a href="javascript:;" class="sp__dropdown--btn sp__typo--subtitle13 dropdown__btn1" data-dropdown="drop__menu1"><span class="select">더보기</span><i class="sp__ico--arrow_down_s"></i></a>
+    <a href="javascript:;" class="sp__dropdown--btn sp__typo--subtitle13 dropdown__btn1" data-dropdown="drop__menu1"><span class="select">최신순</span><i class="sp__ico--arrow_down_s"></i></a>
+</div>
+
+<!-- 드롭다운 메뉴 -->
+<ul class="sp__dropdown--menu drop__menu1">
+    <li data-value="1"><a href="javascript:;" class="sp__typo--subtitle13">드롭메뉴 1</a></li>
+    <li data-value="2"><a href="javascript:;" class="sp__typo--subtitle13">드롭메뉴 2</a></li>
+    <li data-value="3"><a href="javascript:;" class="sp__typo--subtitle13">드롭메뉴 3</a></li>
+</ul>
+<!-- // 드롭다운 메뉴 -->
+
+&lt;script&gt;
+$('.dropdown__btn1').cnDropdown({
+    width: 'auto',
+    align: 'left',
+    onMenuClick: function(menuEl, menuIndex, btnEl){ // 메뉴 엘리먼트, 메뉴 인덱스, 버튼 엘리먼트
+        const menuHTML = menuEl.find('a').html().trim();
+        btnEl.find('.select').html(menuHTML);
+        btnEl.find('input[type=hidden]').val(menuEl.data('value'));
+    }
+})
+&lt;/script&gt;
+<!-- // 스크립트 셀렉트박스 -->
+
+<!-- 텍스트 드롭다운 -->
+<a href="javascript:;" class="sp__dropdown--btn sp__typo--subtitle13 dropdown__btn1" data-dropdown="drop__menu1"><span class="select">더보기</span><i class="sp__ico--arrow_down_s"></i></a>
+</code></pre>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- 아이콘 드롭다운 -->
+                <div>
+                    <div class="content_txt">
+                        <div class="tit_wrap">
+                            <h4>아이콘</h4>
+                        </div>
+                    </div>
+                    <div class="code_wrap">
+                        <ul class="code_tab cn-tab">
+                            <li class="active">
+                                <div class="example_wrap">
+                                    <div>
+                                        <!-- 아이콘 드롭다운 -->
+                                        <div class="dropdown__btns">
+                                            <a href="javascript:;" class="sp__dropdown--icon sp__typo--subtitle13 sp__ico--dots dropdown__btn2" data-dropdown="drop__menu2"></a>
+                                        </div>
+                                        
+                                        <!-- 아이콘 드롭다운 -->
+                                        <div class="dropdown__btns">
+                                            <a href="javascript:;" class="sp__dropdown--icon sp__typo--subtitle13 sp__ico--thumbsup dropdown__btn2" data-dropdown="drop__menu2"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+            
+                            <li>
+<pre><code class="language-html"><!-- 아이콘 드롭다운 -->
+<div class="dropdown__btns">
+    <a href="javascript:;" class="sp__dropdown--icon sp__typo--subtitle13 sp__ico--dots dropdown__btn2" data-dropdown="drop__menu2"></a>
+</div>
+
+&lt;script&gt;
+$('.dropdown__btn2').cnDropdown({
+    width: 'auto',
+    align: 'right',
+})
+&lt;/script&gt;
+<!-- // 스크립트 셀렉트박스 -->
+
+<!-- 텍스트 드롭다운 -->
+<a href="javascript:;" class="sp__dropdown--btn sp__typo--subtitle13 dropdown__btn1" data-dropdown="drop__menu1"><span class="select">더보기</span><i class="sp__ico--arrow_down_s"></i></a>
+</code></pre>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+
+<!-- 드롭다운 메뉴 1 -->
+<ul class="sp__dropdown--menu drop__menu1">
+    <li data-value="1"><a href="javascript:;" class="sp__typo--subtitle13">드롭메뉴 1</a></li>
+    <li data-value="2"><a href="javascript:;" class="sp__typo--subtitle13">드롭메뉴 2</a></li>
+    <li data-value="3"><a href="javascript:;" class="sp__typo--subtitle13">드롭메뉴 3</a></li>
+</ul>
+
+<!-- 드롭다운 메뉴 2 -->
+<ul class="sp__dropdown--menu drop__menu2">
+    <li data-value="1"><a href="javascript:;" class="sp__typo--body14">수정</a></li>
+    <li data-value="2"><a href="javascript:;" class="sp__typo--body14">삭제</a></li>
+</ul>
+
+<script>
+    $(function(){
+        $('.dropdown__btn1').cnDropdown({
+            width: 'auto',
+            align: 'left',
+            onMenuClick: function(menuEl, menuIndex, btnEl){ // 메뉴 엘리먼트, 메뉴 인덱스, 버튼 엘리먼트
+                const menuHTML = menuEl.find('a').html().trim();
+                btnEl.find('.select').html(menuHTML);
+                btnEl.find('input[type=hidden]').val(menuEl.data('value'));
+            }
+        })
+
+        $('.dropdown__btn2').cnDropdown({
+            width: 'auto',
+            align: 'right',
+            onMenuClick: function(menuEl, menuIndex, btnEl){ // 메뉴 엘리먼트, 메뉴 인덱스, 버튼 엘리먼트
+                // const menuHTML = menuEl.find('a').html().trim();
+                // btnEl.find('.select').html(menuHTML);
+                // btnEl.find('input[type=hidden]').val(menuEl.data('value'));
+            }
+        })
+    })
+</script>

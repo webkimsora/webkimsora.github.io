@@ -1,0 +1,547 @@
+<?php include('skin/pub/guide/head.html'); ?>
+<?php include('skin/pub/guide/'.$nav.'/side_menu.html'); ?>
+
+<link rel="stylesheet" href="<?=UN_STATIC?>/css/gongsoop/common.css?<?=time()?>">
+<link rel="stylesheet" href="<?=UN_STATIC?>/css/gongsoop/pc/gongsoop.css?<?=time()?>">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.11/clipboard.min.js"></script>
+
+<style>
+    .example_wrap{display: flex; flex-direction: column; gap: 30px; padding: 30px;}
+    .example_wrap > div{display: flex; gap: 30px;}
+</style>
+<div class="content">
+    <div class="content_tit">
+        <h2>Table Page</h2>
+        <!-- <p>랜딩페이지 퍼블리싱 가이드</p> -->
+    </div>
+    <ul class="content_nav inner cn-nav cn-auto-index">
+        <li class="active">Examples</li>
+        <!-- <li class="">Library</li> -->
+        <!-- <li class="">Methods</li> -->
+    </ul>
+    <ul class="content_tab cn-tab">
+        <!-- Examples -->
+        <li class="active">
+            <div class="content_wrap">
+                <!-- Tab -->
+                <div>
+                    <div class="content_txt">
+                        <div class="tit_wrap">
+                            <h4>Table</h4>
+                        </div>
+                    </div>
+    
+                    <div class="code_wrap">
+                        <ul class="code_tab cn-tab">
+                            <li class="active">
+                                <div class="example_wrap">
+                                    <div>
+                                        <div class="sp__table">
+                                            <!-- 테이블 헤더 1 -->
+                                            <div class="sp__table--header">
+                                                <div class="table__header--left">
+                                                    <ul class="sp__tab--rounded--dark header__nav">
+                                                        <li class="active">전체</li>
+                                                        <li>자유 게시판</li>
+                                                        <li>수험생 강의/교재평</li>
+                                                        <li>스터디 모집</li>
+                                                        <li>커리큘럼 평가</li>
+                                                    </ul>
+                                                </div>
+                                
+                                                <div class="table__header--right">
+                                                    <a href="javascript:;" class="sp__dropdown--btn sp__typo--subtitle13 dropdown__sort" data-dropdown="header__dropdown--sort"><span class="select">최신순</span><i class="sp__ico--arrow_down_s"></i></a>
+                                                    <a href="javascript:;" class="sp__dropdown--btn sp__typo--subtitle13 dropdown__sort" data-dropdown="header__dropdown--view" style="justify-content: end;"><span class="select">10개씩 보기</span><i class="sp__ico--arrow_down_s"></i></a>
+                                                </div>
+                                            </div>
+                                
+                                            <!-- 테이블 헤더 2 -->
+                                            <div class="sp__table--header">
+                                                <div class="table__header--left">
+                                                    <div class="table__header-title">
+                                                        <span class="sp__typo--title14">답변율</span>
+                                                        <span class="sp__typo--title14">1,374/1,375</span>
+                                                        <span class="sp__label--primary">96.6% 답변 완료</span>
+                                                    </div>
+                                                </div>
+                                
+                                                <div class="table__header--right">
+                                                    <a href="javascript:;" class="sp__dropdown--btn sp__typo--subtitle13 dropdown__sort" data-dropdown="header__dropdown--sort"><span class="select">최신순</span><i class="sp__ico--arrow_down_s"></i></a>
+                                                    <a href="javascript:;" class="sp__dropdown--btn sp__typo--subtitle13 dropdown__sort" data-dropdown="header__dropdown--view" style="justify-content: end;"><span class="select">10개씩 보기</span><i class="sp__ico--arrow_down_s"></i></a>
+                                                </div>
+                                            </div>
+                                
+                                            <!-- 테이블 헤더 3 -->
+                                            <div class="sp__table--header">
+                                                <div class="table__header--left">
+                                                    <a href="javascript:;" class="sp__select--box dropdown__type" data-dropdown="header__dropdown--type">
+                                                        <input type="hidden" value="">
+                                                        <div class="select sp__typo--body13--normal sp__color--secondary">전체</div>
+                                                    </a>
+                                                </div>
+                                
+                                                <div class="table__header--right">
+                                                    <a href="javascript:;" class="sp__dropdown--btn sp__typo--subtitle13 dropdown__sort" data-dropdown="header__dropdown--sort"><span class="select">최신순</span><i class="sp__ico--arrow_down_s"></i></a>
+                                                    <a href="javascript:;" class="sp__dropdown--btn sp__typo--subtitle13 dropdown__sort" data-dropdown="header__dropdown--view" style="justify-content: end;"><span class="select">10개씩 보기</span><i class="sp__ico--arrow_down_s"></i></a>
+                                                </div>
+                                            </div>
+                                
+                                            <!-- 테이블 헤더 4 -->
+                                            <div class="sp__table--header">
+                                                <div class="table__header--right">
+                                                    <a href="javascript:;" class="sp__dropdown--btn sp__typo--subtitle13 dropdown__sort" data-dropdown="header__dropdown--sort"><span class="select">최신순</span><i class="sp__ico--arrow_down_s"></i></a>
+                                                    <a href="javascript:;" class="sp__dropdown--btn sp__typo--subtitle13 dropdown__sort" data-dropdown="header__dropdown--view" style="justify-content: end;"><span class="select">10개씩 보기</span><i class="sp__ico--arrow_down_s"></i></a>
+                                                </div>
+                                            </div>
+                                    
+                                            <!-- 테이블 리스트 -->
+                                            <div class="sp__table--board">
+                                                <table>
+                                                    <colgroup>
+                                                        <col width="70">
+                                                        <col width="*">
+                                                        <col width="120">
+                                                        <col width="80">
+                                                        <col width="64">
+                                                        <col width="64">
+                                                    </colgroup>
+                                                    <thead>
+                                                        <tr>
+                                                            <th></th>
+                                                            <th>제목</th>
+                                                            <th>작성자</th>
+                                                            <th>작성일</th>
+                                                            <th>답변</th>
+                                                            <th>좋아요</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr class="highlight">
+                                                            <th class="center"><span class="sp__typo--title12 sp__label--inverse--large--full">공지</span></th>
+                                                            <td>
+                                                                <a href="javascript:;">
+                                                                    <p class="sp__typo--title14 cp__text--hidden">제목 영역입니다.제목 영역입니다.제목 영역입니다.제목 영역입니다.제목 영역입니다.제목 영역입니다.제목 영역입니다.</p>
+                                                                    <i class="sp__ico--new"></i>
+                                                                    <span class="sp__typo--subtitle12 sp__color--brand shrink">[43]</span>
+                                                                </a>
+                                                            </td>
+                                                            <td class="sp__typo--body13 sp__color--secondary center">
+                                                                <div class="sp__level--wrap--btn dropdown__user" data-dropdown="table__dropdown--user">
+                                                                    <span>공단기</span>
+                                                                    <div class="sp__level--premium"></div>
+                                                                </div>
+                                                            </td>
+                                                            <td class="sp__typo--body12 sp__color--secondary center">25.01.25</td>
+                                                            <td class="sp__typo--body12 sp__color--secondary center">대기중</td>
+                                                            <td class="sp__typo--body12 sp__color--secondary center">100</td>
+                                                        </tr>
+                                                        <tr class="highlight">
+                                                            <th class="center"><span class="sp__typo--title12 sp__label--inverse--large--full">공지</span></th>
+                                                            <td>
+                                                                <a href="javascript:;">
+                                                                    <p class="sp__typo--title14 cp__text--hidden">제목 영역입니다.제목 영역입니다.제목 영역입니다.제목 영역입니다.제목 영역입니다.제목 영역입니다.제목 영역입니다.</p>
+                                                                    <i class="sp__ico--new"></i>
+                                                                    <span class="sp__typo--subtitle12 sp__color--brand shrink">[3]</span>
+                                                                </a>
+                                                            </td>
+                                                            <td class="sp__typo--body13 sp__color--secondary center">
+                                                                <div class="sp__level--wrap--btn dropdown__user" data-dropdown="table__dropdown--user">
+                                                                    <span>abcdefabcdef</span>
+                                                                    <div class="sp__level--premium"></div>
+                                                                </div>
+                                                            </td>
+                                                            <td class="sp__typo--body12 sp__color--secondary center">25.01.25</td>
+                                                            <td class="sp__typo--body12 sp__color--secondary center">대기중</td>
+                                                            <td class="sp__typo--body12 sp__color--secondary center">100</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th class="sp__typo--body12 sp__color--secondary center">456<?=10-$i?></th>
+                                                            <td>
+                                                                <a href="javascript:;">
+                                                                    <span class="sp__typo--body13 sp__color--secondary shrink table__type">기타</span>
+                                                                    <p class="sp__typo--subtitle14 cp__text--hidden">타이틀 호버 시 이렇게 노출</p>
+                                                                    <i class="sp__ico--new"></i>
+                                                                    <span class="sp__typo--subtitle12 sp__color--brand shrink">[3]</span>
+                                                                </a>
+                                                            </td>
+                                                            <td class="sp__typo--body13 sp__color--secondary center">
+                                                                <div class="sp__level--wrap--btn dropdown__user" data-dropdown="table__dropdown--user">
+                                                                    <span>일이삼사</span>
+                                                                    <div class="sp__level"></div>
+                                                                </div>
+                                                            </td>
+                                                            <td class="sp__typo--body12 sp__color--secondary center">25.01.25</td>
+                                                            <td class="sp__typo--body12 sp__color--brand center">완료</td>
+                                                            <td class="sp__typo--body12 sp__color--secondary center">100</td>
+                                                        </tr>
+                                                        <? for($i=1; $i<9; $i++){ ?>
+                                                        <tr>
+                                                            <th class="sp__typo--body12 sp__color--secondary center">456<?=10-$i?></th>
+                                                            <td>
+                                                                <a href="javascript:;">
+                                                                    <span class="sp__typo--body13 sp__color--secondary shrink table__type">학습법</span>
+                                                                    <p class="sp__typo--subtitle14 cp__text--hidden">제목 영역입니다.제목 영역입니다.제목 영역입니다.제목 영역입니다.제목 영역입니다.제목 영역입니다.제목 영역입니다.</p>
+                                                                    <? if($i == 1){ ?>
+                                                                    <i class="sp__ico--new"></i>
+                                                                    <? } ?>
+                                                                    <? if($i == 3){ ?>
+                                                                    <span class="sp__typo--subtitle12 sp__color--brand shrink">[3]</span>
+                                                                    <? } ?>
+                                                                </a>
+                                                            </td>
+                                                            <td class="sp__typo--body13 sp__color--secondary center">
+                                                                <div class="sp__level--wrap--btn dropdown__user" data-dropdown="table__dropdown--user">
+                                                                    <span>일이삼사</span>
+                                                                    <div class="sp__level"></div>
+                                                                </div>
+                                                            </td>
+                                                            <td class="sp__typo--body12 sp__color--secondary center">25.01.25</td>
+                                                            <td class="sp__typo--body12 sp__color--secondary center">대기중</td>
+                                                            <td class="sp__typo--body12 sp__color--secondary center">100</td>
+                                                        </tr>
+                                                        <? } ?>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                    
+                                            <!-- 테이블 푸터 -->
+                                            <div class="sp__table--footer">
+                                                <div class="footer__col">
+                                                    <!-- 페이징 -->
+                                                    <?php include('skin/pub/pc/include/inc_paging.html');?>
+                                    
+                                                    <!-- 버튼 -->
+                                                    <div class="footer__btns">
+                                                        <a href="javascript:;" class="sp__btn--accent--medium sp__typo--title13--normal">글쓰기</a>
+                                                    </div>
+                                                </div>
+                                
+                                                <!-- 검색 -->
+                                                <div class="footer__search">
+                                                    <a href="javascript:;" class="sp__select--box dropdown__search" data-dropdown="header__dropdown--search">
+                                                        <input type="hidden" value="">
+                                                        <div class="select sp__typo--body13--normal sp__color--secondary">제목</div>
+                                                    </a>
+                                                    <div class="sp__input--search">
+                                                        <form class="sp__box--border sp__radius--m">
+                                                            <input type="search" placeholder="검색어 입력" class="sp__typo--body13--normal">
+                                                            <button type="submit" class="sp__search--btn"><i class="sp__ico--search"></i></button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+            
+                            <li>
+<pre><code class="language-html"><!-- 테이블 -->
+<div class="sp__table">
+    <!-- 테이블 헤더 1 -->
+    <div class="sp__table--header">
+        <div class="table__header--left">
+            <ul class="sp__tab--rounded--dark header__nav">
+                <li class="active">전체</li>
+                <li>자유 게시판</li>
+                <li>수험생 강의/교재평</li>
+                <li>스터디 모집</li>
+                <li>커리큘럼 평가</li>
+            </ul>
+        </div>
+
+        <div class="table__header--right">
+            <a href="javascript:;" class="sp__dropdown--btn sp__typo--subtitle13 dropdown__sort" data-dropdown="header__dropdown--sort"><span class="select">최신순</span><i class="sp__ico--arrow_down_s"></i></a>
+            <a href="javascript:;" class="sp__dropdown--btn sp__typo--subtitle13 dropdown__sort" data-dropdown="header__dropdown--view" style="justify-content: end;"><span class="select">10개씩 보기</span><i class="sp__ico--arrow_down_s"></i></a>
+        </div>
+    </div>
+
+    <!-- 테이블 헤더 2 -->
+    <div class="sp__table--header">
+        <div class="table__header--left">
+            <div class="table__header-title">
+                <span class="sp__typo--title14">답변율</span>
+                <span class="sp__typo--title14">1,374/1,375</span>
+                <span class="sp__label--primary">96.6% 답변 완료</span>
+            </div>
+        </div>
+
+        <div class="table__header--right">
+            <a href="javascript:;" class="sp__dropdown--btn sp__typo--subtitle13 dropdown__sort" data-dropdown="header__dropdown--sort"><span class="select">최신순</span><i class="sp__ico--arrow_down_s"></i></a>
+            <a href="javascript:;" class="sp__dropdown--btn sp__typo--subtitle13 dropdown__sort" data-dropdown="header__dropdown--view" style="justify-content: end;"><span class="select">10개씩 보기</span><i class="sp__ico--arrow_down_s"></i></a>
+        </div>
+    </div>
+
+    <!-- 테이블 헤더 3 -->
+    <div class="sp__table--header">
+        <div class="table__header--left">
+            <a href="javascript:;" class="sp__select--box dropdown__type" data-dropdown="header__dropdown--type">
+                <input type="hidden" value="">
+                <div class="select sp__typo--body13--normal sp__color--secondary">전체</div>
+            </a>
+        </div>
+
+        <div class="table__header--right">
+            <a href="javascript:;" class="sp__dropdown--btn sp__typo--subtitle13 dropdown__sort" data-dropdown="header__dropdown--sort"><span class="select">최신순</span><i class="sp__ico--arrow_down_s"></i></a>
+            <a href="javascript:;" class="sp__dropdown--btn sp__typo--subtitle13 dropdown__sort" data-dropdown="header__dropdown--view" style="justify-content: end;"><span class="select">10개씩 보기</span><i class="sp__ico--arrow_down_s"></i></a>
+        </div>
+    </div>
+
+    <!-- 테이블 헤더 4 -->
+    <div class="sp__table--header">
+        <div class="table__header--right">
+            <a href="javascript:;" class="sp__dropdown--btn sp__typo--subtitle13 dropdown__sort" data-dropdown="header__dropdown--sort"><span class="select">최신순</span><i class="sp__ico--arrow_down_s"></i></a>
+            <a href="javascript:;" class="sp__dropdown--btn sp__typo--subtitle13 dropdown__sort" data-dropdown="header__dropdown--view" style="justify-content: end;"><span class="select">10개씩 보기</span><i class="sp__ico--arrow_down_s"></i></a>
+        </div>
+    </div>
+
+    <!-- 테이블 리스트 -->
+    <div class="sp__table--board">
+        <table>
+            <colgroup>
+                <col width="70">
+                <col width="*">
+                <col width="120">
+                <col width="80">
+                <col width="64">
+                <col width="64">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>제목</th>
+                    <th>작성자</th>
+                    <th>작성일</th>
+                    <th>답변</th>
+                    <th>좋아요</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="highlight">
+                    <th class="center"><span class="sp__typo--title12 sp__label--inverse--large--full">공지</span></th>
+                    <td>
+                        <a href="javascript:;">
+                            <p class="sp__typo--title14 cp__text--hidden">제목 영역입니다.제목 영역입니다.제목 영역입니다.제목 영역입니다.제목 영역입니다.제목 영역입니다.제목 영역입니다.</p>
+                            <i class="sp__ico--new"></i>
+                            <span class="sp__typo--subtitle12 sp__color--brand shrink">[43]</span>
+                        </a>
+                    </td>
+                    <td class="sp__typo--body13 sp__color--secondary center">
+                        <div class="sp__level--wrap--btn dropdown__user" data-dropdown="table__dropdown--user">
+                            <span>공단기</span>
+                            <div class="sp__level--premium"></div>
+                        </div>
+                    </td>
+                    <td class="sp__typo--body12 sp__color--secondary center">25.01.25</td>
+                    <td class="sp__typo--body12 sp__color--secondary center">대기중</td>
+                    <td class="sp__typo--body12 sp__color--secondary center">100</td>
+                </tr>
+                <tr>
+                    <th class="sp__typo--body12 sp__color--secondary center">456<?=10-$i?></th>
+                    <td>
+                        <a href="javascript:;">
+                            <span class="sp__typo--body13 sp__color--secondary shrink table__type">학습법</span>
+                            <p class="sp__typo--subtitle14 cp__text--hidden">제목 영역입니다.제목 영역입니다.제목 영역입니다.제목 영역입니다.제목 영역입니다.제목 영역입니다.제목 영역입니다.</p>
+                            <? if($i == 1){ ?>
+                            <i class="sp__ico--new"></i>
+                            <? } ?>
+                            <? if($i == 3){ ?>
+                            <span class="sp__typo--subtitle12 sp__color--brand shrink">[3]</span>
+                            <? } ?>
+                        </a>
+                    </td>
+                    <td class="sp__typo--body13 sp__color--secondary center">
+                        <div class="sp__level--wrap--btn dropdown__user" data-dropdown="table__dropdown--user">
+                            <span>일이삼사</span>
+                            <div class="sp__level"></div>
+                        </div>
+                    </td>
+                    <td class="sp__typo--body12 sp__color--secondary center">25.01.25</td>
+                    <td class="sp__typo--body12 sp__color--secondary center">대기중</td>
+                    <td class="sp__typo--body12 sp__color--secondary center">100</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- 테이블 푸터 -->
+    <div class="sp__table--footer">
+        <div class="footer__col">
+            <!-- 페이징 -->
+            &lt;?php include('skin/pub/pc/include/inc_paging.html');?&gt;
+
+            <!-- 버튼 -->
+            <div class="footer__btns">
+                <a href="javascript:;" class="sp__btn--accent--medium sp__typo--title13--normal">글쓰기</a>
+            </div>
+        </div>
+
+        <!-- 검색 -->
+        <div class="footer__search">
+            <a href="javascript:;" class="sp__select--box dropdown__search" data-dropdown="header__dropdown--search">
+                <input type="hidden" value="">
+                <div class="select sp__typo--body13--normal sp__color--secondary">제목</div>
+            </a>
+            <div class="sp__input--search--normal">
+                <form class="sp__box--border sp__radius--m">
+                    <input type="search" placeholder="검색어 입력" class="sp__typo--body13">
+                    <button type="submit" class="sp__search--btn"><i class="sp__ico--search"></i></button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 게시판 드롭다운 리스트 -->
+<ul class="sp__dropdown--menu cn-dropdown-wrap header__dropdown--type">
+    <li data-value="1"><a href="javascript:;" class="sp__typo--subtitle13">전체</a></li>
+    <li data-value="2"><a href="javascript:;" class="sp__typo--subtitle13">메뉴 1</a></li>
+    <li data-value="3"><a href="javascript:;" class="sp__typo--subtitle13">메뉴 2</a></li>
+</ul>
+<!-- // 게시판 정렬 리스트 -->
+
+<!-- 게시판 정렬 리스트 -->
+<ul class="sp__dropdown--menu cn-dropdown-wrap header__dropdown--sort">
+    <li data-value="1"><a href="javascript:;" class="sp__typo--subtitle13">최신순</a></li>
+    <li data-value="2"><a href="javascript:;" class="sp__typo--subtitle13">좋아요순</a></li>
+    <li data-value="3"><a href="javascript:;" class="sp__typo--subtitle13">미답변순</a></li>
+</ul>
+<!-- // 게시판 정렬 리스트 -->
+
+<!-- 게시판 보기 리스트 -->
+<ul class="sp__dropdown--menu cn-dropdown-wrap header__dropdown--view">
+    <li data-value="1"><a href="javascript:;" class="sp__typo--subtitle13">10개씩 보기</a></li>
+    <li data-value="2"><a href="javascript:;" class="sp__typo--subtitle13">30개씩 보기</a></li>
+    <li data-value="3"><a href="javascript:;" class="sp__typo--subtitle13">50개씩 보기</a></li>
+</ul>
+<!-- // 게시판 보기 리스트 -->
+
+<!-- 게시판 작성자 리스트 -->
+<ul class="sp__dropdown--menu table__dropdown--user">
+    <li data-value="1"><a href="javascript:;" class="sp__typo--subtitle13">글 전체보기</a></li>
+</ul>
+<!-- // 게시판 작성자 리스트 -->
+
+<!-- 스크립트 -->
+&lt;script&gt;
+$(function(){
+    // 게시판 탭
+    $('.header__nav').cnTab({
+        useConts: 'N',
+    });
+
+    // 게시판 타입 드롭다운
+    $('.dropdown__type').cnDropdown({
+        width: 'auto',
+        align: 'left',
+        onMenuClick: function(menuEl, menuIndex, btnEl){ // 메뉴 엘리먼트, 메뉴 인덱스, 버튼 엘리먼트
+            const menuHTML = menuEl.find('a').html().trim();
+            btnEl.find('.select').html(menuHTML);
+            btnEl.find('input[type=hidden]').val(menuEl.data('value'));
+        }
+    })
+
+    // 게시판 정렬 드롭다운
+    $('.dropdown__sort').cnDropdown({
+        width: 'auto',
+        align: 'right',
+        onMenuClick: function(menuEl, menuIndex, btnEl){ // 메뉴 엘리먼트, 메뉴 인덱스, 버튼 엘리먼트
+            const menuHTML = menuEl.find('a').html().trim();
+            btnEl.find('.select').html(menuHTML);
+            btnEl.find('input[type=hidden]').val(menuEl.data('value'));
+        }
+    })
+
+    // 게시판 작성자 드롭다운
+    $('.dropdown__user').cnDropdown({
+        width: 'auto',
+        align: 'left',
+    })
+
+    // 게시판 검색 드롭다운
+    $('.dropdown__search').cnDropdown({
+        width: 'auto',
+        align: 'left',
+        onMenuClick: function(menuEl, menuIndex, btnEl){ // 메뉴 엘리먼트, 메뉴 인덱스, 버튼 엘리먼트
+            const menuHTML = menuEl.find('a').html().trim();
+            btnEl.find('.select').html(menuHTML);
+            btnEl.find('input[type=hidden]').val(menuEl.data('value'));
+        }
+    })
+})
+&lt;/script&gt;
+</code></pre>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+
+<!-- 게시판 드롭다운 리스트 -->
+<ul class="sp__dropdown--menu cn-dropdown-wrap header__dropdown--type">
+    <li data-value="1"><a href="javascript:;" class="sp__typo--subtitle13">전체</a></li>
+    <li data-value="2"><a href="javascript:;" class="sp__typo--subtitle13">메뉴 1</a></li>
+    <li data-value="3"><a href="javascript:;" class="sp__typo--subtitle13">메뉴 2</a></li>
+</ul>
+<!-- // 게시판 정렬 리스트 -->
+
+<!-- 게시판 정렬 리스트 -->
+<ul class="sp__dropdown--menu cn-dropdown-wrap header__dropdown--sort">
+    <li data-value="1"><a href="javascript:;" class="sp__typo--subtitle13">최신순</a></li>
+    <li data-value="2"><a href="javascript:;" class="sp__typo--subtitle13">좋아요순</a></li>
+    <li data-value="3"><a href="javascript:;" class="sp__typo--subtitle13">미답변순</a></li>
+</ul>
+<!-- // 게시판 정렬 리스트 -->
+
+<!-- 게시판 보기 리스트 -->
+<ul class="sp__dropdown--menu cn-dropdown-wrap header__dropdown--view">
+    <li data-value="1"><a href="javascript:;" class="sp__typo--subtitle13">10개씩 보기</a></li>
+    <li data-value="2"><a href="javascript:;" class="sp__typo--subtitle13">30개씩 보기</a></li>
+    <li data-value="3"><a href="javascript:;" class="sp__typo--subtitle13">50개씩 보기</a></li>
+</ul>
+<!-- // 게시판 보기 리스트 -->
+
+<!-- 게시판 작성자 리스트 -->
+<ul class="sp__dropdown--menu table__dropdown--user">
+    <li data-value="1"><a href="javascript:;" class="sp__typo--subtitle13">글 전체보기</a></li>
+</ul>
+<!-- // 게시판 작성자 리스트 -->
+<script>
+$(function(){
+    // 게시판 탭
+    $('.header__nav').cnTab({
+        useConts: 'N',
+    });
+
+    // 게시판 타입 드롭다운
+    $('.dropdown__type').cnDropdown({
+        width: 'auto',
+        align: 'left',
+        onMenuClick: function(menuEl, menuIndex, btnEl){ // 메뉴 엘리먼트, 메뉴 인덱스, 버튼 엘리먼트
+            const menuHTML = menuEl.find('a').html().trim();
+            btnEl.find('.select').html(menuHTML);
+            btnEl.find('input[type=hidden]').val(menuEl.data('value'));
+        }
+    })
+
+    // 게시판 정렬 드롭다운
+    $('.dropdown__sort').cnDropdown({
+        width: 'auto',
+        align: 'right',
+        onMenuClick: function(menuEl, menuIndex, btnEl){ // 메뉴 엘리먼트, 메뉴 인덱스, 버튼 엘리먼트
+            const menuHTML = menuEl.find('a').html().trim();
+            btnEl.find('.select').html(menuHTML);
+            btnEl.find('input[type=hidden]').val(menuEl.data('value'));
+        }
+    })
+
+    // 게시판 작성자 드롭다운
+    $('.dropdown__user').cnDropdown({
+        width: 'auto',
+        align: 'left',
+    })
+})
+</script>

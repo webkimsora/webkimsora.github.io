@@ -1,0 +1,1571 @@
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
+<style type="text/css">
+    /* 공통 CSS */
+    @keyframes blink{0%, 50%, 100% { opacity: 0; } 25%, 75% { opacity: 1; }}
+    @keyframes bounce {
+        0%   { transform: translateY(0); }
+        50%  { transform: translateY(-7px); }
+        100% { transform: translateY(0); }
+    }
+
+    @keyframes slideUp {
+        0%{transform: translateY(20px); opacity: 0;}
+        100%{transform: translateY(0); opacity: 1;}
+    }
+
+    @keyframes bounce2 {
+        0%   {transform: translateY(0); }
+        50%  {transform: translateY(-3px);}
+        100% {transform: translateY(0); }
+    }
+
+
+    html{overflow-y: unset;}
+    html, body{width: unset; height: unset;}
+    a:hover, a:active{text-decoration: none;}
+    body.cn-scroll-block-2 .event_20240611{width: calc(100% + 17px);}
+    body.cn-scroll-block-2 .event_20240611 > div{padding-right: 17px !important; box-sizing: content-box;}
+
+    .cn-modal{z-index: 103}
+    .cn-modal .cn-modal-main{width: 600px;}
+    .cn-modal .cn-modal-main .modal_content{padding: 30px 32px;}
+    .cn-modal .cn-modal-main .modal_content .modal_ct{height: 450px; margin-top: 20px; overflow: auto;}
+    .cn-modal .cn-modal-main .modal_content .modal_ct img{max-width: 100%;}
+
+    .event_20240611{position: relative;}
+    .event_20240611 *{box-sizing: border-box; color: inherit; font-size: inherit; font-weight: inherit; font-family: inherit;}
+    .event_20240611 input{appearance: none;}
+    .event_20240611 .inner{width: 1140px; margin: 0 auto; position: relative;}
+    .event_20240611 .event_control{position: absolute; top: 50%; transform: translateY(-50%); width: 40px; height: 40px; margin: 0;}
+    .event_20240611 .event_control::after{background: #fff; width: 40px; height: 40px;}
+    .event_20240611 .event_control.swiper-button-next::after{transform: rotate(180deg);}
+    .event_20240611 .swiper-pagination{position: absolute; font-size: 0; line-height: 0; bottom: 20px;}
+    .event_20240611 .swiper-pagination > span{background: #000; width: 6px; height: 6px; margin: 0 3px !important;}
+    .event_20240611 .event_nav{display: flex; margin-bottom: 24px;}
+    .event_20240611 .event_nav > li{flex: 1; height: 65px; line-height: 65px; font-size: 18px; font-weight: 700; color: #D3D3D3; flex: 1; text-align: center; border-bottom: 1px solid #D3D3D3;}
+    .event_20240611 .event_nav > li.active{color: #212121; border-bottom: 2px solid #212121;}
+    /* // 공통 CSS */
+
+    /* 모달 */
+    .draw_modal:not(.cn-modal){display: none;}
+    .draw_modal .cn-modal-main{width: 460px; border-radius: 8px;}
+    .draw_modal .cn-modal-main .modal_content{padding: 24px 30px;}
+    .draw_modal .modal_wrap{text-align: center;}
+    .draw_modal .modal_wrap h5{font-size: 24px; font-weight: 700;}
+    .draw_modal .modal_wrap strong{display: flex; justify-content: center; align-items: center; font-size: 40px; line-height: 56px; margin-top: 12px;}
+    .draw_modal .modal_wrap strong::after{content: "원"; margin-left: 12px; font-size: 24px; font-weight: 700;}
+    .draw_modal .modal_wrap a{display: block; background: #025AF6; height: 60px; line-height: 60px; margin-top: 35px; font-size: 20px; color: #fff; font-weight: 800; border-radius: 8px; text-decoration: none;}
+    .draw_modal ul{margin-top: 16px; overflow: auto; max-height: 150px;}
+    .draw_modal ul li{font-size: 16px; letter-spacing: -0.42px; line-height: 27px;}
+    .draw_result_modal .modal_wrap .bg{position: absolute; top: -40px; left: -86px; pointer-events: none;}
+    .voice_modal .modal_wrap a{margin-top: 24px;}
+    .voice_modal .modal_wrap audio{width: 100%;}
+
+    .cont_top{position: relative; height: 689px; padding-bottom: 64px; box-sizing: content-box;}
+    .cont_top h3,
+    .cont_top video{position: absolute; left: 50%; transform: translateX(-50%); text-align: center;}
+    .cont_top .bg{position: absolute; width: 100%; height: 100%; top: 0; left: 0; background: #000; opacity: 0; z-index: 1; pointer-events: none;}
+
+    .cont_story{background: #000 url('<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/story_bg.jpg') no-repeat center top; padding-top: 133px; height: 978px; position: relative;}
+    .cont_story .inner{position: static;}
+    .cont_story .story_box{position: absolute; top: 204px; left: 50%; margin-left: 293px; border-radius: 8px;}
+    .cont_story .story_box::after{content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 3px solid #025AF6; border-radius: 8px; box-sizing: border-box; animation: blink 2.5s .2s infinite both;}
+    .cont_voice{background: #000; padding: 120px 0; text-align: center; position: relative;}
+    .cont_voice::before{content: ""; background: linear-gradient(0deg, rgba(0, 0, 0, 0.00) -21.4%, #000 90%); position: absolute; top: 0; left: 0; width: 100%; height: 250px; z-index: 1; pointer-events: none;}
+    .cont_voice::after{content: ""; background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) -21.4%, #000 90%); position: absolute; bottom: 0; left: 0; width: 100%; height: 250px; z-index: 1; pointer-events: none;}
+    .cont_voice .inner{position: relative; z-index: 2;}
+    .cont_voice strong{display: block; margin: 50px 0 22px;}
+    .cont_voice .voice_wrap{position: relative;}
+    .cont_voice .voice_nav{background: #000; width: 408px; height: 67px; margin: 0 auto; overflow: hidden;}
+    .cont_voice .voice_nav:not(.swiper){display: flex; gap: 18px;}
+    .cont_voice .voice_nav li{width: 67px !important; height: 67px; line-height: 67px; opacity: .3; cursor: pointer; font-size: 0;}
+    .cont_voice .voice_nav li img{display: inline-block; width: 57px; height: 57px; position: relative; vertical-align: middle;}
+    .cont_voice .voice_nav li.active{opacity: 1;}
+    .cont_voice .voice_nav li.active::before{content: ""; display: inline-block; position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 2px solid #025AF6; border-radius: 100px; box-sizing: border-box; pointer-events: none;}
+    .cont_voice .voice_nav li.active::after{content: ""; display: inline-block; position: absolute; top: 50%; left: 50%; width: 57px; height: 57px; border: 2px solid #fff; border-radius: 100px; box-sizing: border-box; transform: translate(-50%, -50%); pointer-events: none; z-index: 1;}
+    .cont_voice .voice_slider{margin-top: 31px; position: static; overflow: hidden;}
+    .cont_voice .voice_slider:not(.swiper){display: flex;}
+    .cont_voice .voice_slider:not(.swiper) li{width: 1140px;}
+    .cont_voice .voice_slider .event_control{width: 57px; height: 57px; top: 0; transform: none; left: 50%;}
+    .cont_voice .voice_slider .event_control.swiper-button-prev{margin-left: -262px}
+    .cont_voice .voice_slider .event_control.swiper-button-next{margin-left: 205px}
+    .cont_voice .voice_slider .event_control::after{width: 54px; height: 54px;}
+    .cont_voice .voice_slider ul li{position: relative;}
+    .cont_voice .voice_slider ul li::after{content: ""; background: url('<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/voice_click.png') no-repeat center top; width: 80px; height: 82px; position: absolute; bottom: 46px; left: 50%; margin-left: -37px; animation: blink 2.5s .2s infinite both; pointer-events: none;}
+    .cont_voice .voice_slider ul li a{display: inline-block;}
+    .cont_voice .voice_list{position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none;}
+    .cont_voice .voice_list li{display: flex; align-items: center; gap: 82px; height: 127px !important; color: #eee; white-space: nowrap; opacity: .1; font-family: 'SUIT', sans-serif;}
+    .cont_voice .voice_list li > div{min-width: 235px;}
+    .cont_voice .voice_list li > div > p{font-size: 18px; line-height: 25px; letter-spacing: -0.36px;}
+    .cont_voice .voice_list li > div > span{display: inline-block; margin-top: 3px; font-size: 15px; line-height: 25px; letter-spacing: -0.3px;}
+    .cont_voice .voice_list .swiper-wrapper{-webkit-transition-timing-function: linear !important; transition-timing-function: linear !important;}
+
+    .cont_voice .voice_label{margin-top: 40px;}
+    .cont_text{background: #000;}
+    .cont_text .text_wrap{position: relative; width: 100%; height: 100vh;}
+    .cont_text .text_wrap h4{position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);}
+    .cont_text .text_wrap .text2{opacity: 0;}
+    .cont_daum{padding: 100px 0; text-align: center;}
+    .cont_daum h4{position: relative;}
+    .cont_daum h4 img{position: relative; z-index: 1;}
+    .cont_daum h4 .logo{position: absolute; top: -30px; left: 50%; margin-left: -490px; z-index: 0; pointer-events: none;}
+
+    /* 선생님 */
+    .cont_teacher{padding: 100px 0;}
+    .cont_teacher :is(h4, p){text-align: center;}
+    .cont_teacher .teacher_wrap{margin: 35px 0 70px}
+    .cont_teacher .teacher_wrap .teacher_list{display: flex; flex-wrap: wrap; margin: 35px 0 70px;}
+    .cont_teacher .teacher_wrap .teacher_list > li{width: 142px; height: 385px; position: relative;}
+    .cont_teacher .teacher_wrap .teacher_list > li + li{border-left: 1px solid #fff;}
+    .cont_teacher .teacher_wrap .teacher_list > li .teacher_item{display: flex; align-items: end; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 100%; height: 100%; padding: 23px 16px; overflow: hidden; background-position: center bottom; background-repeat: no-repeat; background-color: #B9B5B5; transition: .3s;}
+    .cont_teacher .teacher_wrap .teacher_list > li:first-child .teacher_item{left: 0; transform: none;}
+    .cont_teacher .teacher_wrap .teacher_list > li:last-child .teacher_item{left: auto; right: 0; transform: none;}
+    .cont_teacher .teacher_wrap .teacher_list > li .teacher_item > div{position: relative; z-index: 1; font-family: 'SUIT', 'Noto Sans KR', sans-serif;}
+    .cont_teacher .teacher_wrap .teacher_list > li .teacher_item::before{transition: .3s;}
+    .cont_teacher .teacher_wrap .teacher_list > li .teacher_item strong{display: block; font-size: 20px; font-weight: 800; line-height: 28px; letter-spacing: -0.8px; color: #fff; word-spacing: -1.3px;}
+    .cont_teacher .teacher_wrap .teacher_list > li .teacher_item strong span{display: inline;}
+    .cont_teacher .teacher_wrap .teacher_list > li .teacher_item span{display: block; font-size: 14px; color: #fff; font-weight: 700; line-height: 18.2px; margin-top: 10px;}
+    .cont_teacher .teacher_wrap .teacher_list > li .teacher_item span i{display: inline-block; width: 20px; height: 20px; vertical-align: -5px;}
+    .cont_teacher .teacher_wrap .teacher_list > li .teacher_item span i::after{background: #fff; width: 100%; height: 100%;}
+    .cont_teacher .teacher_wrap .teacher_list > li .teacher_item.soon{background-image: url('<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/teacher_soon.png');}
+    .cont_teacher .teacher_wrap .teacher_list > li .teacher_item.soon > div > span{opacity: .5;}
+    .cont_teacher .teacher_wrap .teacher_list > li .teacher_item:not(.soon):not(.next)::before{content: ""; position: absolute; bottom: -30px; left: 50%; transform: translateX(-50%); background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, #025AF6 77.03%); filter: blur(25px); width: 150%; height: 258px; pointer-events: none; z-index: 0;}
+    .cont_teacher .teacher_wrap .teacher_list > li .teacher_item.next{background-image: url('<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/teacher_next.png'); box-shadow: 2px 2px 13px 0px #025AF6;}
+    .cont_teacher .teacher_wrap .teacher_list > li .teacher_item.next > div > span{font-size: 20px; font-weight: 800; line-height: 28px; letter-spacing: -0.8px; margin-top: 3px;}
+    .cont_teacher .teacher_wrap .teacher_list > li .teacher_item.next > div > strong > span{font-size: 24px;}
+    .cont_teacher .teacher_wrap .teacher_list > li .teacher_item.next::after{content: ""; width: 395px; height: 99px; background: url('<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/teacher_next2.png') no-repeat center top; position: absolute; top: 157px; left: 50%; margin-left: -197.5px; opacity: 0; transition: .3s;}
+    .cont_teacher .teacher_wrap .teacher_list > li .teacher_item.next::before{content: ""; width: 100%; height: 100%; position: absolute; top: 0; left: 0; border: 2px solid #0047FF; box-sizing: border-box; pointer-events: none; animation: blink 2.5s .2s infinite both;}
+    .cont_teacher .teacher_wrap .teacher_list > li .teacher_item.teacher2::before{background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, #5F2CF0 77.03%) !important;}
+
+    /* 선생님 Hover */
+    .cont_teacher .teacher_wrap .teacher_list > li:last-child .teacher_item:hover::before{bottom: -110px !important; }
+    .cont_teacher .teacher_wrap .teacher_list > li:last-child .teacher_item:hover{width: 432px;}
+    .cont_teacher .teacher_wrap .teacher_list > li:last-child .teacher_item:hover.next::after{opacity: 1;}
+    .cont_teacher .teacher_wrap .teacher_list > li:last-child .teacher_item.hover{z-index: 3;}
+
+    .cont_benefit{padding: 100px 0 75px; text-align: center;}
+    .cont_benefit .benefit_wrap{position: relative; margin: 43px 0 41px;}
+    .cont_benefit .benefit_wrap .coupon{position: absolute; left: 50%; animation: bounce 3s ease-in-out infinite;}
+    .cont_benefit .benefit_wrap .coupon1{margin-left: -673px; top: -242px;}
+    .cont_benefit .benefit_wrap .coupon2{margin-left: 318px; top: 0; animation-delay: .3s !important;}
+    .cont_benefit .benefit_btns{display: inline-flex; align-items: center; gap: 10px;}
+    .cont_benefit .benefit_btns a{background: #025AF6; color: #fff; width: 356px; height: 60px; line-height: 60px; text-align: center; font-size: 18px; font-weight: 800; font-family: 'SUIT'; letter-spacing: -0.36px; border-radius: 8px; user-select: none; transition: .3s;}
+    .cont_benefit .benefit_btns a:hover{background: #7A15FA;}
+    .cont_renew{padding: 100px 0; text-align: center;}
+    .cont_renew .renew_wrap{display: flex; align-items: center; gap: 17px; margin: 49px 0 57px;}
+    .cont_renew .renew_wrap a{display: block; position: relative;}
+    .cont_renew .renew_wrap a .label{position: absolute; top: 144px; right: 110px; animation: bounce 3s ease-in-out infinite;}
+    .cont_my{padding: 97px 0 62px; text-align: center;}
+    .cont_my .my_wrap{display: inline-block; position: relative; margin: 43px 0 41px;}
+    .cont_my .my_wrap .label{position: absolute; opacity: 0;}
+    .cont_my .my_wrap .label1{left: 557px; top: 71px;}
+    .cont_my .my_wrap .label2{left: 557px; top: 305px; animation-delay: 1s !important;}
+    .cont_my .my_wrap.active .label{animation: slideUp .5s .7s ease-out both;}
+    .cont_my a{display: inline-block;}
+    .cont_contents{padding: 97px 0 100px; text-align: center;}
+    .cont_contents .contents_wrap{display: flex; flex-wrap: wrap; gap: 12px; margin-top: 40px;}
+    .cont_contents .contents_slider{margin-top: 60px;}
+    .cont_contents .contents_slider{width: 100%;}
+    .cont_contents .contents_slider .swiper-wrapper{-webkit-transition-timing-function: linear !important; transition-timing-function: linear !important;}
+    .cont_contents .contents_slider .swiper-wrapper li{width: 124px !important;}
+    .cont_contents .contents_slider .swiper-wrapper li a{display: block; position: relative;}
+    .cont_contents .contents_slider .swiper-wrapper li a > p{display: none; background: rgba(0, 0, 0, 0.8); position: absolute; left: 2px; top: 0; width: 120px; height: 160px; border-radius: 8px; padding: 21px 14px; color: #fff; font-size: 15px; font-weight: 700; line-height: 21px; letter-spacing: -0.9px; text-align: left; border: 1px solid #CDCDCD; box-sizing: border-box; word-break: keep-all;}
+    .cont_contents .contents_slider .swiper-wrapper li a:hover > p{display: block;}
+    .cont_pass{background: url('<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/pass_bg.png') no-repeat center top; padding: 100px 0 146px; text-align: center; position: relative;}
+    .cont_pass h4{position: relative; z-index: 1;}
+    .cont_pass .pass_wrap{display: block; width: 504px; margin: 60px auto 0; position: relative; box-shadow: 4px 4px 80px 0px rgba(255, 255, 255, 0.50); position: relative; z-index: 1;}
+    .cont_pass .pass_wrap .name{position: absolute; top: 299px; right: 146px; color: #343434; font-size: 30px; font-weight: 500; line-height: 36px; letter-spacing: -1.2px; font-family: 'SUIT', 'Noto Sans KR', sans-serif;}
+    .cont_pass .pass_slider{position: absolute; top: 152px; left: 0; width: 100%; height: 720px; z-index: 0; user-select: none; pointer-events: none;}
+    .cont_pass .pass_slider li{display: flex; gap: 60px; color: #eee; font-size: 20px; font-weight: 600; line-height: 20px; font-family: 'Pretendard', 'Noto Sans KR', sans-serif; overflow: hidden; height: 20px; opacity: 0.15; white-space: nowrap;}
+    .cont_pass .pass_slider li span{white-space: nowrap; min-width: 257px; text-align: center;}
+    .cont_pass .pass_slider .swiper-wrapper{-webkit-transition-timing-function: linear !important; transition-timing-function: linear !important;}
+    .cont_easy{display: flex; justify-content: center; align-items: center; background: #fff url('//un-static-qa.conects.com/gong/landing/2024/06/gong_14999/pc/pass_bg.png') no-repeat center top -1116px; height: 100vh; text-align: center; overflow: hidden;}
+    .cont_easy .easy_wrap{position: relative; display: flex; justify-content: center; align-items: center; width: 1140px; height: 646px;}
+    .cont_easy .easy_wrap .easy_img{position: absolute;}
+    .cont_easy .easy_wrap .easy_img1{top: 274px; left: 555px; z-index: 5;}
+    .cont_easy .easy_wrap .easy_img2{top: 198; left: 316px; z-index: 4;}
+    .cont_easy .easy_wrap .easy_img3{top: 188px; left: 845px; z-index: 3;}
+    .cont_easy .easy_wrap .easy_img4{top: 132px; left: 105px; z-index: 2;}
+    .cont_easy .easy_wrap .easy_img5{top: 254px; left: 53px; z-index: 1;}
+
+    /* 이벤트 CSS */
+    :is(.cont_raffle, .cont_draw) .event_wrap .agree_box{background: #181818; margin-bottom: 0; user-select: none; position: relative; z-index: 1;}
+    :is(.cont_raffle, .cont_draw) .event_wrap .agree_box .agree_check > span{display: inline-block; margin-right: 11px; position: relative;}
+    :is(.cont_raffle, .cont_draw) .event_wrap .agree_box .agree_check > span > input{margin: 0; position: relative;}
+    :is(.cont_raffle, .cont_draw) .event_wrap .agree_box .agree_check > span:has(input:checked)::before{content: ""; position: absolute; top: 50%; left: 50%; width: 17px; height: 17px; background: #fff; transform: translate(-50%, -50%);}
+    :is(.cont_raffle, .cont_draw) .event_wrap .agree_box .agree_check input[type=checkbox]{margin-right: 0;}
+    :is(.cont_raffle, .cont_draw) .event_wrap .agree_box .agree_check label{color: #fff;}
+    :is(.cont_raffle, .cont_draw) .event_wrap .agree_box .agree_txt{color: #525252;}
+
+    .cont_payback{background: url('<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/payback_bg.jpg') no-repeat center top / cover; padding: 100px 0 88px; text-align: center;}
+    .cont_payback strong{display: block; font-size: 22px; font-weight: 700; line-height: 33px; letter-spacing: -0.66px; color: #fff; margin-bottom: 16px;}
+    .cont_payback strong span{animation: blink 2.5s .2s infinite both;}
+    .cont_payback .payback_wrap{margin-top: 51px; position: relative; height: 331px;}
+    .cont_payback .payback_wrap .coin{position: absolute; top: -64px; left: 50%; transform: translateX(-50%); width: 498px; height: 431px; pointer-events: none;}
+    .cont_payback .payback_wrap .coin > img{position: absolute; top: 0; left: -15px;}
+    .cont_payback .payback_wrap .coin > .coin_txt{left: 50%; top: 50px; transform: translateX(-50%);}
+    .cont_payback .payback_wrap .coin > .coin_img{animation: bounce 3s ease-in-out infinite;}
+    .cont_payback a{display: inline-block; margin-top: 60px;}
+    .cont_raffle{background: #000; padding: 100px 0;}
+    .cont_raffle h4{position: relative;}
+    .cont_raffle h4 .powder1{position: absolute; top: 93px; left: 37px;}
+    .cont_raffle h4 .powder2{position: absolute; top: -47px; right: -21px;}
+    .cont_raffle .raffle_wrap{display: flex; justify-content: space-between; margin-top: 37px; user-select: none; height: 490px; overflow: hidden;}
+    .cont_raffle .raffle_wrap .raffle_slider{width: 957px; margin: 0;}
+    .cont_raffle .raffle_wrap .raffle_nav{width: 160px; height: 490px;}
+    .cont_raffle .raffle_wrap .raffle_nav li{display: flex; align-items: center; width: 160px; height: 80px; padding-left: 24px; border: 1px solid transparent; border-radius: 8px; opacity: .3; cursor: pointer;}
+    .cont_raffle .raffle_wrap .raffle_nav li p{color: #fff; font-size: 14px; line-height: 21px; letter-spacing: -0.42px;}
+    .cont_raffle .raffle_wrap .raffle_nav li.active{border-color: #025AF6; opacity: 1;}
+    .cont_raffle .raffle_wrap .raffle_nav li.active p{font-weight: 700;}
+    .cont_raffle .raffle_btns{display: flex; gap: 18px; margin-top: 30px;}
+    .cont_raffle .raffle_btns > a{position: relative;}
+    .cont_raffle .raffle_btns > a .raffle_label{position: absolute; top: -26px; left: 50%; margin-left: -110.5px; animation: bounce2 2s ease-in-out infinite;}
+    .cont_draw{background: #000; text-align: center; position: relative; overflow: hidden;}
+    .cont_draw::after{content: ""; position: absolute; bottom: -88px; left: 50%; transform: translateX(-50%); width: 150%; height: 585px; background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 15.1%, #000 51.36%, #000 81.03%); filter: blur(30px); pointer-events: none;}
+    .cont_draw .draw_bg{background: url('<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/draw_bg.jpg') no-repeat center top; padding: 100px 0;}
+    .cont_draw .draw_history{display: inline-block; margin-top: 23px; font-size: 18px; font-weight: 900;; line-height: 23px; letter-spacing: -0.54px; color: #fff; text-decoration: underline; user-select: none; text-underline-position: under;}
+    .cont_draw .draw_wrap{margin-top: 282px; position: relative;}
+    .cont_draw .draw_wrap :is(.draw_btn1){display: none;}
+    .cont_draw .draw_wrap:not(.active) .draw_btn1{position: relative; display: inline-block;}
+    .cont_draw .draw_wrap:not(.active) .draw_btn2{display: none;}
+    .cont_draw .draw_wrap .draw_btn{display: inline-block; position: absolute; width: 236px; height: 193px; border-radius: 500px; top: 130px; left: 50%; margin-left: -118px; font-size: 0;}
+    .cont_draw .draw_wrap .draw_label{position: absolute; top: 214px; left: 50%; margin-left: 60px; animation: blink 2.5s .2s infinite both; pointer-events: none;}
+    .cont_draw .agree_box{margin-top: -238px;}
+    .cont_prev{background: linear-gradient(180deg, #000 0.34%, #052DFF 7.14%, #94A5FF 54.75%); padding: 100px 0 130px; text-align: center;}
+    .cont_prev .prev_nav{display: inline-flex !important; align-items: center; gap: 6px; margin: 60px 0 28px; width: auto;}
+    .cont_prev .prev_nav > li{color: #fff; height: 38px; line-height: 36px; border: 1px solid #fff; border-radius: 8px; padding: 0 11px; font-size: 16px; font-weight: 500;}
+    .cont_prev .prev_nav > li.active{font-weight: 700; background: #fff; color: #000;}
+    .cont_prev .prev_video{background: #000; width: 876px; height: 484px; margin: 0 auto; border-radius: 8px; overflow: hidden;}
+    .cont_prev .prev_wrap{background: #fff; border-radius: 8px; margin-top: 32px; padding-bottom: 32px;}
+    .cont_prev .prev_wrap .prev_slide_wrap{display: flex; flex-direction: column; gap: 16px; margin: 20px 0 45px; position: relative; overflow: hidden;}
+    .cont_prev .prev_wrap .prev_slide_wrap::before{content: ""; background: linear-gradient(90deg, #FFF 50%, rgba(255, 255, 255, 0.00) 145.87%); filter: blur(5px); position: absolute; top: -70px; left: -10px; width: 75px; height: 150%; z-index: 2;}
+    .cont_prev .prev_wrap .prev_slide_wrap::after{content: ""; background: linear-gradient(270deg, #FFF 50%, rgba(255, 255, 255, 0.00) 145.87%); filter: blur(5px); position: absolute; top: -70; right: -10px; width: 75px; height: 150%; z-index: 2;}
+    .cont_prev .prev_wrap :is(.prev_slider1, .prev_slider2){width: 100%;}
+    .cont_prev .prev_wrap :is(.prev_slider1, .prev_slider2) .swiper-wrapper{-webkit-transition-timing-function: linear !important; transition-timing-function: linear !important;}
+    .cont_prev .prev_wrap .swiper-slide{width: auto !important;}
+    .cont_prev .prev_wrap .swiper-slide img{max-width: none; width: 100%}
+    .cont_prev .prev_wrap .event_wrap{width: 1040px; margin: 0 auto; padding-top: 24px; border-top: 1px solid #EDEDF3;}
+    .cont_prev .prev_wrap .event_wrap strong{display: block; font-size: 20px; font-weight: 800; line-height: 30px; letter-spacing: -0.6px; margin-bottom: 12px;}
+    .cont_prev .prev_wrap .event_wrap .event-board-form{margin-bottom: 23px;}
+    .cont_prev .prev_wrap .event_wrap .event-board ul > li .list-name{width: 86px; text-align: center;}
+    .cont_prev .event-board ul > li .list-content p::after{display: inline-block; position: static; vertical-align: -7px; margin-left: -4px}
+
+    .cont_quick{background: rgba(2, 90, 246, 0.10); backdrop-filter: blur(25px); position: sticky; top: 0; left: 0; z-index: 999; height: 64px; margin-top: -64px;}
+    .cont_quick .quick_wrap{display: flex; align-items: center;}
+    .cont_quick .quick_wrap a{display: flex; align-items: center; gap: 12px; flex: 1; height: 64px; position: relative;}
+    .cont_quick .quick_wrap a img{width: 40px; height: 40px; flex-shrink: 0;}
+    .cont_quick .quick_wrap a :is(strong, span){display: inline-block; width: 100%; font-size: 14px; line-height: 19.6px; letter-spacing: -0.42px; color: #4C4C4C;}
+    .cont_quick .quick_wrap a.active::after{content: ""; position: absolute; display: inline-block; width: 100%; height: 100%; top: 0; left: 0; border-bottom: 2px solid #000; box-sizing: border-box; pointer-events: none;}
+    .cont_quick .quick_wrap a.active strong{font-weight: 700; color: #121212;}
+    .cont_quick .quick_wrap a.active span{font-weight: 400; color: #121212;}
+    .cont_quick .quick_wrap.dark{}
+    .cont_quick .quick_wrap.dark a :is(strong, span){color: #A8A8A8;}
+    .cont_quick .quick_wrap.dark a.active :is(strong, span){color: #fff;}
+    .cont_quick .quick_wrap.dark a.active::after{border-color: #fff;}
+
+    .banner_wrap{position: relative;}
+    .cont_banner{position: absolute; top: 0; right: 21px; z-index: 3; height: 100%; padding-top: 71px; pointer-events: none;}
+    .cont_banner ul{display: flex; flex-direction: column; gap: 12px; position: sticky; top: 135px !important; padding-bottom: 100px;}
+    .cont_banner ul > li{padding-right: 15px; position: relative; opacity: .3; pointer-events: all;}
+    /* .cont_banner ul > li > a > *{transition: .3s;} */
+    .cont_banner ul > li::after{content: ""; display: inline-block; position: absolute; top: 50%; right: 0; transform: translateY(-50%); background: #D9D9D9; width: 7px; height: 7px; border-radius: 50px;}
+    .cont_banner ul > li > a{display: flex; align-items: center; gap: 8px; background: rgba(217, 217, 217, 0.70); border-radius: 10px; height: 35px; padding: 0 16px; font-family: 'SUIT', 'Noto Sans KR', sans-serif;}
+    .cont_banner ul > li > a > i{display: inline-block; width: 20px; height: 20px;}
+    .cont_banner ul > li > a > i::after{background: #121212; width: 20px; height: 20px;}
+    .cont_banner ul > li > a > span{color: #000; font-size: 14px; font-weight: 800; letter-spacing: -0.42px;}
+    .cont_banner ul > li.active{opacity: 1;}
+    .cont_banner ul > li.active::after{background: #025AF6;}
+    .cont_banner ul > li.active > a{background: rgba(68, 136, 255, 0.10) !important; backdrop-filter: blur(5px);}
+    .cont_banner ul > li.active > a > span{color: #025AF6 !important;}
+    .cont_banner ul > li.active > a > i::after{background: #025AF6 !important;}
+    .cont_banner.dark ul > li > a{background: rgba(217, 217, 217, 0.20);}
+    .cont_banner.dark ul > li > a > span{color: #fff;}
+    .cont_banner.dark ul > li > a > i::after{background: #fff;}
+</style>
+<div class="event_20240611">
+    <!-- 타이틀 -->
+    <div class="cont_top" data-theme="light">
+        <div class="bg"></div>
+        <div class="inner">
+            <h3><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/top_tit.png" alt="2025 시즌, 더 새로워진 공단기로 여러분의 단기 합격을 책임집니다. 누구나 쉽게 누구보다 빠르게 단기다움 단기합격"></h3>
+            <!-- <video poster="'<?=UN_STATIC_IMG?>/gong/landing/2024/05/mkt1_7289/pc/top_video.png" controlslist="nodownload" loop="true" muted="" autoplay="" width="3000" height="689">
+                <source src="<?=UN_STATIC_IMG?>/gong/landing/2024/05/mkt1_7289/pc/top_video.mp4" type="video/mp4">
+            </video> -->
+        </div>
+    </div>
+
+    <!-- 하단 스티키 배너  -->
+    <div class="cont_quick">
+        <div class="inner">
+            <div class="quick_wrap">
+                <a href="javascript:;" data-target=".cont_payback" onclick="_gotoArea('.cont_payback');">
+                    <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/quick_icon1.png" alt="">
+                    <div class="quick_info">
+                        <strong>프리패스&단과 구매자</strong>
+                        <span>캐시 페이백 이벤트</span>
+                    </div>
+                </a>
+                <a href="javascript:;" data-target=".cont_raffle" onclick="_gotoArea('.cont_raffle');">
+                    <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/quick_icon2.png" alt="">
+                    <div class="quick_info">
+                        <strong>EVENT 01</strong>
+                        <span>래플 이벤트</span>
+                    </div>
+                </a>
+                <a href="javascript:;" data-target=".cont_draw" onclick="_gotoArea('.cont_draw');">
+                    <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/quick_icon3.png" alt="">
+                    <div class="quick_info">
+                        <strong>EVENT 02</strong>
+                        <span>캐시 뽑기 이벤트</span>
+                    </div>
+                </a>
+                <a href="javascript:;" data-target=".cont_prev" onclick="_gotoArea('.cont_prev');">
+                    <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/quick_icon4.png" alt="">
+                    <div class="quick_info">
+                        <strong>EVENT 03</strong>
+                        <span>오늘의 영상 시청</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 배너 컨텐츠 영역 -->
+    <div class="banner_wrap">
+        <!-- 퀵배너 -->
+        <div class="cont_banner dark">
+            <ul class="banner_wrap">
+                <li data-target=".cont_teacher" class="active"><a href="javascript:;"><i class="ico ico_teacher"></i><span>NEW HEROES</span></a></li>
+                <li data-target=".cont_benefit"><a href="javascript:;"><i class="ico ico_coupon"></i><span>파격 프리패스</span></a></li>
+                <li data-target=".cont_renew"><a href="javascript:;"><i class="ico ico_fire"></i><span>25개편 대비</span></a></li>
+                <li data-target=".cont_my"><a href="javascript:;"><i class="ico ico_config"></i><span>NEW 내 강의실</span></a></li>
+                <li data-target=".cont_contents"><a href="javascript:;"><i class="ico ico_thumbs_up"></i><span>1위 선생님 콘텐츠</span></a></li>
+            </ul>
+        </div>
+        
+        <!-- 합격 스토리 -->
+        <div class="cont_story" data-theme="dark">
+            <div class="inner">
+                <h4><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/story_tit.png" alt="우리가 함께 했기에 가능했던 합격 스토리 공무원 시험 시장에서 혜성처럼 등장한 공단기는 12년 동안 수험생 여러분과 함께 수많은 단기 합격 스토리를 만들어냈습니다."></h4>
+                <div class="story_box"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/story_img.png" alt="합격생이 직접 들려주는 성공 스토리 "></div>
+            </div>
+        </div>
+
+        <!-- 성공 스토리 -->
+        <div class="cont_voice" data-theme="dark">
+            <ul class="voice_list">
+                <?php for($j=0; $j<10; $j++){ ?>
+                <li>
+                    <?php for($i=0; $i<5; $i++){ ?>
+                    <div>
+                        <p>아낌없이 알려주시는<br>공단기 선생님들<br>복 받으실 겁니다.</p>
+                        <span>2023 9급 교육행정직 합격자</span>
+                    </div>
+                    
+                    <div>
+                        <p>사회복지직 합격.<br>나에게 맞는 공부 방법으로<br>7개월 단기 합격</p>
+                        <span>2023 9급 사회복지직 합격자</span>
+                    </div>
+                    
+                    <div>
+                        <p>괜히 기본서 깊이 들여다본다고<br>되는 게 아니라<br>기출을 많이 보는 게 최고 </p>
+                        <span>2023 9급 일반행정직 합격자</span>
+                    </div>
+                    
+                    <div>
+                        <p>기출 회독이<br>답이라는 것을 실감할 수<br>있어야 합격이 가능합니다.  </p>
+                        <span>2023 9급 사회복지직 합격자</span>
+                    </div>
+                    
+                    <div>
+                        <p>처음에는 믿지 않았지만<br>회독을 거듭하면 할수록<br>개념에 대한 암기, 이해가<br>점점 100%에 가까워졌습니다. </p>
+                        <span>2023 9급 일반행정직 합격자</span>
+                    </div>
+                    
+                    <div>
+                        <p>헷갈리거나 비슷한 개념을<br>정리해놓은 노트를 활용해<br>과목별로 나눠 공부하는 것이<br>중요합니다. </p>
+                        <span>2023 9급 사회복지직 합격자</span>
+                    </div>
+                    
+                    <div>
+                        <p>어떤 과목이든<br>하프 모의고사를<br>꾸준히 푸는 것을<br>적극 추천합니다. </p>
+                        <span>2023 9급 일반행정직 합격자</span>
+                    </div>
+                    
+                    <div>
+                        <p>플래너 작성으로<br>'계획적 공부'한 것이<br>합격에 큰 도움이 되었습니다.</p>
+                        <span>2023 9급 일반행정직 합격자</span>
+                    </div>
+                    <?php } ?>
+                </li>
+                <li>
+                    <?php for($i=0; $i<5; $i++){ ?>
+                    <div>
+                       <p>가장 중요한 건<br>꾸준함입니다.<br>그래야 공부가<br>습관이 됩니다.</p>
+                        <span>2023 7급 전산직 합격자</span>
+                    </div>
+                    <div>
+                       <p>기본서(요약집),<br>기출문제 반복이<br>가장 중요합니다. </p>
+                        <span>2023 8급 보건직 합격자</span>
+                    </div>
+                    <div>
+                       <p>제 합격 요인은<br>꾸준한 기출회독과<br>공단기 프리패스를<br>잘 활용한 것입니다.</p>
+                        <span>2023 7급 일반행정직 합격자</span>
+                    </div>
+                    <div>
+                       <p>13개월 단기 합격:<br>명확한 목표 의식으로<br>기간 단축!</p>
+                        <span>2023 7급 일반행정직 합격자</span>
+                    </div>
+                    <div>
+                       <p>양을 늘리지 않는 학습:<br>콤팩트하게 기출 위주의<br>학습을 하세요.</p>
+                        <span>2023 7급 감사직 합격자</span>
+                    </div>
+                    <div>
+                        <p>"많은 시간이 걸렸지만<br>결국 합격한 이유는<br>포기하지 않았기 때문이라고<br>생각합니다.</p>
+                        <span>2023 7급 일반행정직 합격자</span>
+                    </div>
+                    <div>
+                        <p>"무한한 기출 회독과<br>취약한 부분 파악 및 보완<br>이러한 과정을 무한 반복하는 게<br>중요한 학습전략입니다.</p>
+                        <span>2023 7급 일반행정직 합격자</span>
+                        
+                    </div>
+                    <div>
+                        <p>"40중반의 나이로<br>11개월만에 합격,<br>매일 똑같은 루틴, 평정심 유지가<br>성공 포인트</p>
+                        <span>2023 7급 일반행정직 합격자</span>
+        
+                    </div>
+                    <?php } ?>
+                </li>
+                <li>
+                    <?php for($i=0; $i<5; $i++){ ?>
+                    <div>
+                        <p>뛰어나신 공단기 교수님들의<br>양질의 강의를<br>집중해서 수강하여 합격 </p>
+                        <span>2023 9급 일반행정직 합격자</span>
+                    </div>
+                    
+                    <div>
+                        <p>강의 반복 시청으로<br>복습한 것이<br>저에게 효과적이었습니다.</p>
+                        <span>2023 9급 일반행정직 합격자</span>
+                        
+                    </div>
+                    <div>
+                        <p>저에게 맞는 선생님을<br>찾았던 것이 큰 도움이 되었습니다.<br>선생님을 믿고 끝까지<br>공부한다면 합격할 것입니다.</p>
+                        <span>2023 9급 일반행정직 합격자</span>
+                    </div>
+                    
+                    <div>
+                        <p>기본강의를 듣는 시간을<br>줄이고 기출 문제집을 다회독,<br>기출을 이용하여 실전 연습을 한 것이<br>굉장히 큰 도움이 되었어요. </p>
+                        <span>2023 9급 교육행정직 합격자</span>
+                    </div>
+                    
+                    <div>
+                        <p>나에게 맞는 강사를<br>찾는 것이<br>합격을 위한 첫 걸음입니다. </p>
+                        <span>2023 9급 일반행정직 합격자</span>
+                    </div>
+                    
+                    <div>
+                        <p>합격하기까지 가장<br>중요한 것은 단권화와<br>무한 반복입니다. </p>
+                        <span>2023 9급 일반행정직 합격자</span>
+                    </div>
+                    
+                    <div>
+                        <p>단기 합격 포인트는<br>요약서를 기본 강의이자<br>기본서로 생각한 것.</p>
+                        <span>2023 9급 일반행정직 합격자</span>
+                    </div>
+                    
+                    <div>
+                        <p>선생님들의 양질의 교재를<br>나만의 단권화로 회독하여<br>합격했습니다.</p>
+                        <span>2023 9급 사회복지직 합격자</span>
+                    </div>
+                    <?php } ?>
+                </li>
+                <li>
+                    <?php for($i=0; $i<5; $i++){ ?>
+                    <div>
+                        <p>시험 한 달 전부터는<br>'나만의 오답노트'만<br>읽었습니다.</p>
+                        <span>2023 7급 교정직 합격자</span>
+                    </div>
+                    <div>
+                        <p>힘들더라도<br>자리에 앉아있는 것이<br>중요합니다. </p>
+                        <span>2023 7급 세무직 합격자</span>
+                    </div>
+                    <div>
+                        <p>합격에 대한 불안감?<br>공부를 더 하면 된다.라는<br>간단한 생각으로 고민을 끝내는 것이<br>극복 방법이었습니다. </p>
+                        <span>2023 7급 우정직 합격자</span>
+                    </div>
+                    <div>
+                        <p>계획에 많은 시간을 쏟지 마시고,<br>본인이 할 수 있는 만큼만<br>정해서 성취감을 느끼는 게<br>더 중요합니다.</p>
+                        <span>2023 7급 일반행정직 합격자</span>
+                    </div>
+                    <div>
+                        <p>마음을 긍정적으로<br>가지는 것이 합격을 위해<br>가장 중요하다고 생각합니다.</p>
+                        <span>2023 7급 일반행정직 합격자</span>
+                        
+                    </div>
+                    <div>
+                        <p>1차 3개월, 2차 7개월만에 합격.<br>사람은 자신에게 맞는<br>공부법이 있습니다. </p>
+                        <span>2023 7급 고용노동직 합격자</span>
+                    </div>
+                    <div>
+                        <p>기본적인 공부 루틴은<br>시험 시간과 비슷하게 유지했어요.<br>그래야 그 시간에 몸도 적응하고<br>뇌도 깨어있으니까요. </p>
+                        <span>2023 7급 일반행정직 합격자</span>
+                    </div>
+                    <div>
+                        <p>기본에 충실하되<br>시험에 대한 감각은<br>기출로 단단히 다져야 합니다. </p>
+                        <span>2023 9급 교육행정직 합격자</span>
+                    </div>
+                    <?php } ?>
+                </li>
+                <li>
+                    <?php for($i=0; $i<5; $i++){ ?>
+                    <div>
+                        <p>선택과 집중으로<br>세무직 5개월 단기합격,<br>단권화 노트를 마지막까지 봤습니다. </p>
+                        <span>2023 9급 세무직 합격자</span>
+                    </div>
+                    <div>
+                        <p>압축 교재를 활용한 것이<br>효율적인 공부에<br>많은 도움이 되었습니다.  </p>
+                        <span>2023 9급 일반행정직 합격자</span>
+                    </div>
+                    <div>
+                        <p>1.나만의 단권화<br>2.체계적으로 공부하기<br>3.체력관리<br>=합격 </p>
+                        <span>2023 9급 일반행정직 합격자</span>
+                    </div>
+                    <div>
+                        <p>한 과목을 세분화해서<br>계획적으로 공부하려고<br>노력했습니다.</p>
+                        <span>2023 9급 교육행정직 합격자</span>
+                    </div>
+                    <div>
+                        <p>양을 줄여나가는 공부가 중요'<br>기존서와 기출 문제 회독으로<br>합격은 충분합니다. </p>
+                        <span>2023 9급 일반행정직 합격자</span>
+                    </div>
+                    <div>
+                        <p>공단기 프리패스의<br>장점을 활용하여<br>여러 선생님들의 강의를 들은 게<br>많은 도움이 되었습니다. </p>
+                        <span>2023 9급 교육행정직 합격자</span>
+                    </div>
+                    <div>
+                        <p>공단기 모의고사를 통해<br>실전 감각을 길렀던 것이<br>많은 도움이 됐습니다. </p>
+                        <span>2023 9급 속기직 합격자</span>
+                    </div>
+                    <?php } ?>
+                </li>
+                <?php } ?>
+            </ul>
+            <div class="inner">
+                <h4><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/voice_tit.png" alt="합격생이 직접 들려주는 성공 스토리 "></h4>
+                <strong><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/voice_txt.png" alt="합격자의 VOICE TALK"></strong>
+    
+                <div class="voice_wrap">
+                    <ul class="voice_nav">
+                        <?php for($i=1; $i<17; $i++){ ?>
+                        <li>
+                            <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/voice_nav<?=$i;?>.png" alt="#">
+                        </li>
+                        <?php } ?>
+                    </ul>
+                    <ul class="voice_slider">
+                        <?php for($i=1; $i<17; $i++){ ?>
+                        <li>
+                            <a href="javascript:;" class="voice_btn" data-audio="<?=$i?>"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/voice_slide<?=$i;?>.png" alt="#"></a>
+                        </li>
+                        <?php } ?>
+                    </ul>
+                </div>
+                <div class="voice_label"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/voice_label.png" alt="사운드를 켜고 생생한 스토리를 들어보세요!"></div>
+            </div>
+        </div>
+
+        <!-- 공단기의 새로운 혁신 -->
+        <div class="cont_text" data-theme="dark">
+            <div class="inner">
+                <div class="text_wrap">
+                    <h4 class="text1"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/text_img1.png" alt="하지만 여기서 그치지 않고, ‘세상 모든 수험생을 단기 합격 시킬 것’이라는 공단기의 사명으로. 누구나.쉽게.단기 합격 할 수 있는 방법을 수험생 입장에 서서 고민, 또 고민하여 내린 결론"></h4>
+                    <h4 class="text2"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/text_img2.png" alt="공단기의 새로운 혁신  단기다움 "></h4>
+                </div>
+            </div>
+        </div>
+
+        <!-- 단기다움 -->
+        <div class="cont_daum" data-theme="light">
+            <div class="inner">
+                <h4>
+                    <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/daum_logo.gif" alt="로고" class="logo">
+                    <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/daum_tit.png" alt="누구나 쉽게 단기다움">
+                </h4>
+            </div>
+        </div>
+
+        <!-- 교수님 -->
+        <div class="cont_teacher" data-theme="light">
+            <div class="inner">
+                <h4><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/teacher_tit.png" alt="NEW SUPER HEROES 대거 영입"></h4>
+                <div class="teacher_wrap">
+                    <ul class="teacher_list">
+                        <li>
+                            <a href="javascript:;" class="teacher_item teacher1" style="background-image: url('<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/teacher_bg1.png');">
+                                <div>
+                                    <strong>영어<br>이얼 선생님</strong>
+                                    <span>바로가기<i class="ico ico_arrow_right"></i></span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;" class="teacher_item teacher2" style="background-image: url('<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/teacher_bg2.png');">
+                                <div>
+                                    <strong>형법<br>홍형철 선생님</strong>
+                                    <span>바로가기<i class="ico ico_arrow_right"></i></span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;" class="teacher_item soon">
+                                <div>
+                                    <strong>7/2(화)<br>공개</strong>
+                                    <span>Coming soon</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;" class="teacher_item soon">
+                                <div>
+                                    <strong>7/2(화)<br>공개</strong>
+                                    <span>Coming soon</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;" class="teacher_item soon">
+                                <div>
+                                    <strong>7/9(화)<br>공개</strong>
+                                    <span>Coming soon</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;" class="teacher_item soon">
+                                <div>
+                                    <strong>7/9(화)<br>공개</strong>
+                                    <span>Coming soon</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;" class="teacher_item soon">
+                                <div>
+                                    <strong>7/16(화)<br>공개</strong>
+                                    <span>Coming soon</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;" class="teacher_item next">
+                                <div>
+                                    <strong>+<span>a</span></strong>
+                                    <span>WHO'S<br>NEXT?</span>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <p><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/teacher_txt.png" alt="최고 라인업에 완벽이라는 마침표를 찍을 NEW HEROES까지 공무원 시험은 공단기 하나로 해결됩니다."></p>
+            </div>
+        </div>
+
+        <!-- 혜택 -->
+        <div class="cont_benefit" data-theme="light">
+            <div class="inner">
+                <h4><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/benefit_tit.png" alt="프리패스 파격 혜택 누구보다 치열하게 공부한 만큼 더 큰 보람을 느낄 수 있도록. 200% 환급 프리패스, 파격 혜택을 새로 선보입니다. 200% 환급! 5만원 할인 적용 캐시 혜택까지!"></h4>
+                <div class="benefit_wrap">
+                    <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/benefit_img.png" alt="고생한 만큼 수강료를 2배로 돌려드릴게요. 다른 곳은 쳐다 볼 필요도 없이 공단기 프리패스로 합격에 더 가까워지세요.">
+                    <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/benefit_coupon1.png" alt="" class="coupon coupon1">
+                    <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/benefit_coupon2.png" alt="" class="coupon coupon2">
+                </div>
+                <div class="benefit_btns">
+                    <a href="https://gongdangi.conects.com/freepass/renewal" target="_blank">공단기 프리패스 자세히 보기</a>
+                    <a href="https://techdangi.conects.com/freepass/renewal" target="_blank">기술계리단기 프리패스 자세히 보기</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 25년 완벽 개편 -->
+        <div class="cont_renew" data-theme="light">
+            <div class="inner">
+                <h4><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/renew_tit.png" alt="25년 개편 완벽 대비 개편으로 인해 두려워 할 것 없이 정확한 방향을 잡을 수 있도록 시험이 변해도 오히려 단단하게 대비할 수 있는 콘텐츠와 전략을 대방출합니다."></h4>
+                <div class="renew_wrap">
+                    <a href="https://gongdangi.conects.com/npromotion/2024/05/pass_presentation" target="_blank"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/renew_img1.png" alt="2025 공단기X소방단기 THE 합격 설명회 자세히 보기"></a>
+                    <a href="javascript:;">
+                        <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/renew_img2.png" alt="25 국어/영어 신경향 예상문제.zip E-BOOK 1만부 무료 배포 자세히 보기">
+                        <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/renew_label.png" alt="10,000부 배포" class="label">
+                    </a>
+                </div>
+                <p><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/renew_txt.png" alt=""></p>
+            </div>
+        </div>
+
+        <!-- 내 강의실 리뉴얼 -->
+        <div class="cont_my" data-theme="light">
+            <div class="inner">
+                <h4><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/my_tit.png" alt="내 강의실 리뉴얼 ‘나의’ 강의실에서는 한치의 불편함도 느껴선 안되니까. 관심 선생님 등록, 공지사항, 자료실부터 학습질문, 수강후기, 환급/연장 신청까지 한 번에! 내 강의실이 한층 더 업그레이드 되었습니다."></h4>
+                <div class="my_wrap scrollAni">
+                    <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/my_img.png" alt="학습에 관련된 모든 것을 한 눈에, 한 번에! 더 편리해진 공단기 ‘내 강의실’을 경험해보세요.">
+                    <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/my_label1.png" alt="관심 선생님 등록부터 선생님 공지사항부터 자료실까지 한 눈에 확인 가능!" class="label label1">
+                    <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/my_label2.png" alt="환급/연장 신청도 내 강의실에서 한 번에!" class="label label2">
+                </div>
+                <a href="https://my.conects.com/v3/class/home/main/GONG" target="_blank"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/my_btn.png" alt="내 강의실 살펴보기"></a>
+            </div>
+        </div>
+
+        <!-- NEW 콘텐츠 -->
+        <div class="cont_contents" data-theme="light">
+            <div class="inner">
+                <h4><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/contents_tit.png" alt="1위 선생님  NEW 콘텐츠 * 전문성 보장 X 공시 트렌드 완벽 파악, 더 간결하고 강력해진 콘텐츠! 무엇을 기대하던 그 이상, 공단기 1위* 선생님의 2025 콘텐츠를 소개합니다. 최소 시간 투자, 최대의 효과, 2025년에도 빠른 합격을 보장합니다. *공단기 과목별 강사 기준"></h4>
+                <div class="contents_wrap">
+                    <a href="https://pr.conects.com/course/detail/intro/395371" target="_blank"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/contents_img1.png" alt="국어 이선재 자세히 보기"></a>
+                    <a href="https://pr.conects.com/course/detail/intro/395233" target="_blank"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/contents_img2.png" alt="영어 이동기 자세히 보기"></a>
+                    <a href="https://pr.conects.com/course/detail/intro/396036" target="_blank"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/contents_img3.png" alt="한국사 문동균 자세히 보기"></a>
+                    <a href="https://pr.conects.com/course/detail/intro/396502" target="_blank"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/contents_img4.png" alt="행정법 박준철 자세히 보기"></a>
+                    <a href="https://pr.conects.com/course/detail/intro/395432" target="_blank"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/contents_img5.png" alt="행정학 김중규 자세히 보기"></a>
+                    <a href="javascript:;" onclick="alert('Coming soon');"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/contents_img6.png" alt="교육학 이경범 자세히 보기"></a>
+                    <a href="https://pr.conects.com/course/detail/intro/395446" target="_blank"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/contents_img7.png" alt="세법 이진욱 자세히 보기"></a>
+                    <a href="https://pr.conects.com/course/detail/intro/395365" target="_blank"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/contents_img8.png" alt="형법/형소법 이윤탁 자세히 보기"></a>
+                    <a href="javascript:;" onclick="alert('Coming soon');"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/contents_img9.png" alt="사회복지학 김유경 자세히 보기"></a>
+                    <a href="javascript:;" onclick="alert('Coming soon');"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/contents_img10.png" alt="회계학 사경인 자세히 보기"></a>
+                </div>
+            </div>
+            <ul class="contents_slider">
+                <?php for($i=0; $i<5; $i++){ ?>
+                    <li>
+                        <a href="https://book.conects.com/product/bookDetail?goods_id=0100024003718" target="_blank">
+                            <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/contents_book1.png" alt="2025 김중규 필기노트 기필고 선행정학">
+                            <p>2025 김중규 필기노트<br>기필고 선행정학</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://book.conects.com/product/bookDetail?goods_id=0100024004029" target="_blank">
+                            <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/contents_book2.png" alt="2025 김중규 최빈출 600제 선행정학">
+                            <p>2025 김중규 최빈출 600제 선행정학</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://book.conects.com/product/bookDetail?goods_id=0100024004197" target="_blank">
+                            <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/contents_book3.png" alt="2025 문동균 한국사 All in one (전2권)">
+                            <p>2025 문동균 한국사<br>All in one<br>(전2권)</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://book.conects.com/product/bookDetail?goods_id=0100024005101" target="_blank">
+                            <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/contents_book4.png" alt="2025 문동균 한국사 한 권으로 모든 것을 정리하는 판서노트">
+                            <p>2025 문동균 한국사<br>한 권으로 모든 것을 정리하는 판서노트</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://book.conects.com/product/bookDetail?goods_id=0100024005071" target="_blank">
+                            <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/contents_book5.png" alt="2025 써니 행정법총론 행정법로의 초대">
+                            <p>2025 써니 행정법총론 행정법으로의 초대</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://book.conects.com/product/bookDetail?goods_id=0100024003657" target="_blank">
+                            <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/contents_book6.png" alt="2025 사경인 프레임회계학 원가정부회계 기본서">
+                            <p>2025 사경인 프레임회계학 원가정부회계 기본서</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://book.conects.com/product/bookDetail?goods_id=0100024003008" target="_blank">
+                            <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/contents_book7.png" alt="2025 사경인 프레임 회계학 재무회계 기본서">
+                            <p>2025 사경인 프레임 회계학 재무회계 기본서</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://book.conects.com/product/bookDetail?goods_id=0100024003589" target="_blank">
+                            <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/contents_book9.png" alt="2025 이동기 영어 친절한 꿀문법">
+                            <p>2025 이동기 영어 친절한 꿀문법</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://book.conects.com/product/bookDetail?goods_id=0100024004494" target="_blank">
+                            <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/contents_book10.png" alt="2025 이동기 영어 신경향 All In One (전2권)">
+                            <p>2025 이동기 영어 신경향<br>All In One<br>(전2권)</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://book.conects.com/product/bookDetail?goods_id=0100024004661" target="_blank">
+                            <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/contents_book11.png" alt="2025 신경향 이동기 공무원 VOCA">
+                            <p>2025 신경향 이동기 공무원 VOCA</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://book.conects.com/product/bookDetail?goods_id=0100024004463" target="_blank">
+                            <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/contents_book12.png" alt="2025 선재국어 수비니겨 실용 문법과 어휘">
+                            <p>2025 선재국어 수비니겨 실용 문법과 어휘</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://book.conects.com/product/bookDetail?goods_id=0100024004500" target="_blank">
+                            <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/contents_book13.png" alt="2025 선재국어 예상 기출서 1">
+                            <p>2025 선재국어 예상 기출서 1</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://book.conects.com/product/bookDetail?goods_id=0100024005026" target="_blank">
+                            <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/contents_book14.png" alt="2025 이윤탁 형법 기본서 [총론,각론]">
+                            <p>2025 이윤탁 형법 기본서 [총론,각론]</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://book.conects.com/product/bookDetail?goods_id=0100024005002" target="_blank">
+                            <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/contents_book15.png" alt="2025 이윤탁 형사소송법 기본서">
+                            <p>2025 이윤탁 형사소송법 기본서</p>
+                        </a>
+                    </li>
+                <?php } ?>
+            </ul>
+        </div>
+
+        <!-- 합격 증명서 -->
+        <div class="cont_pass" data-theme="light">
+            <ul class="pass_slider">
+                <?php for($j=0; $j<10; $j++){ ?>
+                <li>
+                    <?php for($i=0; $i<10; $i++){ ?>
+                    <span>2022 우정직 합격생 고*영</span>
+                    <span>2023 일반행정직 합격생 장*지</span>
+                    <span>2022 일반행정직 합격생 이*은</span>
+                    <span>2023 일반행정직 합격생 김*정</span>
+                    <span>2022 일반행정직 합격생 이*현</span>
+                    <?php } ?>
+                </li>
+                <li>
+                    <?php for($i=0; $i<10; $i++){ ?>
+                    <span>2022 보건직 합격생 백*정</span>
+                    <span>2023 고용노동직 합격생 김*인</span>
+                    <span>2022 우정직 합격생 김*경</span>
+                    <span>2023 교육행정직 합격생 고*숙</span>
+                    <span>2022 보건직 합격생 김*희</span>
+                    <?php } ?>
+                </li>
+                <li>
+                    <?php for($i=0; $i<10; $i++){ ?>
+                    <span>2022 일반행정직 합격생 정*원</span>
+                    <span>2023 일반행정직 합격생 김*영</span>
+                    <span>2022 일반행정직 합격생 김*언</span>
+                    <span>2023 일반행정직 합격생 이*연</span>
+                    <span>2022 일반행정직 합격생 권*준</span>
+                    <?php } ?>
+                </li>
+                <li>
+                    <?php for($i=0; $i<10; $i++){ ?>
+                    <span>2022 교육행정직 합격생 정*혜</span>
+                    <span>2023 교육행정직 합격생 정*림</span>
+                    <span>2022 보건직 합격생 김*희</span>
+                    <span>2023 일반행정직 합격생 홍*서</span>
+                    <span>2022 교육행정직 합격생 이*을</span>
+                    <?php } ?>
+                </li>
+                <li>
+                    <?php for($i=0; $i<10; $i++){ ?>
+                    <span>2022 세무직 합격생 김*라</span>
+                    <span>2023 일반행정직 합격생 이*엽</span>
+                    <span>2022 일반행정직 합격생 고*수</span>
+                    <span>2023 일반행정직 합격생 전*아</span>
+                    <span>2022 일반행정직 합격생 차*경</span>
+                    <?php } ?>
+                </li>
+                <li>
+                    <?php for($i=0; $i<10; $i++){ ?>
+                    <span>2022 고용노동직 합격생 정*민</span>
+                    <span>2023 일반행정직 합격생 이*윤</span>
+                    <span>2022 일반행정직 합격생 현*민</span>
+                    <span>2023 일반행정직 합격생 정*림</span>
+                    <span>2022 교육행정직 합격생 강*원</span>
+                    <?php } ?>
+                </li>
+                <li>
+                    <?php for($i=0; $i<10; $i++){ ?>
+                    <span>2022 일방행정직 합격생 윤*서</span>
+                    <span>2023 교육행정직 합격생 채*호</span>
+                    <span>2022 우정직 합격생 홍*원</span>
+                    <span>2023 교육행정직 합격생 이*정</span>
+                    <span>2022 교육행정직 합격생 유*아</span>
+                    <?php } ?>
+                </li>
+                <li>
+                    <?php for($i=0; $i<10; $i++){ ?>
+                    <span>2022 일반행정직 합격생 김*하</span>
+                    <span>2023 경찰행정직 합격생 조*연</span>
+                    <span>2022 일반행정직 합격생 조*정</span>
+                    <span>2023 고용노동직 합격생 이*영</span>
+                    <span>2022 일반행정직 합격생 유*형</span>
+                    <?php } ?>
+                </li>
+                <li>
+                    <?php for($i=0; $i<10; $i++){ ?>
+                    <span>2022 일반행정직 합격생 양*환</span>
+                    <span>2023 교육행정직 합격생 노*혁</span>
+                    <span>2022 일반행정직 합격생 박*윤</span>
+                    <span>2023 간호직 합격생 오*정</span>
+                    <span>2022 일반행정직 합격생 이*이</span>
+                    <?php } ?>
+                </li>
+                <li>
+                    <?php for($i=0; $i<10; $i++){ ?>
+                    <span>2022 일반행정직 합격생 이*희</span>
+                    <span>2023 교육행정직 합격생 홍*희</span>
+                    <span>2022 일반행정직 합격생 임*연</span>
+                    <span>2023 일반행정직 합격생 서*엽</span>
+                    <span>2022 세무직 합격생 김*진</span>
+                    <?php } ?>
+                </li>
+                <li>
+                    <?php for($i=0; $i<10; $i++){ ?>
+                    <span>2022 일반행정직 합격생 김*태</span>
+                    <span>2023 일반행정직 합격생 김*민</span>
+                    <span>2022 일반행정직 합격생 이*윤</span>
+                    <span>2023 고용노동직 합격생 수*</span>
+                    <span>2022 출입국관리직 합격생 박*영</span>
+                    <?php } ?>
+                </li>
+                <?php } ?>
+            </ul>
+            <div class="inner">
+                <h4><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/pass_tit.png" alt="공단기의 단기다움으로, 단기합격을 현실로. 이제 여러분에게 기적이 일어날 차례입니다."></h4>
+                <div class="pass_wrap">
+                    <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/pass_img.png" alt="합격 증명서">
+                    <div class="name">김단기님</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 단기다움 텍스트 -->
+        <div class="cont_easy" data-theme="light">
+            <div class="inner">
+                <div class="easy_wrap">
+                    <h4><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/easy_tit.png" alt="누구나 쉽게 단기다움 누구보다 빠르게 단기합격"></h4>
+                    <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/easy_img1.png" alt="#" class="easy_img easy_img1">
+                    <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/easy_img2.png" alt="#" class="easy_img easy_img2">
+                    <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/easy_img3.png" alt="#" class="easy_img easy_img3">
+                    <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/easy_img4.png" alt="#" class="easy_img easy_img4">
+                    <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/easy_img5.png" alt="#" class="easy_img easy_img5">
+                </div>
+            </div>
+        </div>
+    
+        <!-- 이벤트 영역 -->
+        <!-- 페이백 -->
+        <div class="cont_payback" data-theme="light">
+            <div class="inner">
+                <strong>기간 한정, <span>5일동안만</span> 진행</strong>
+                <h4><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/payback_tit.png" alt="프리패스 & 단과 구매하면? 캐시 페이백 EVENT"></h4>
+                <div class="payback_wrap">
+                    <div class="coin">
+                        <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/payback_coin2.png" alt="캐시" style="top: -88px; left: -64px;" class="coin_img">
+                        <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/payback_img.png" alt="프리패스 구매자 10만 캐시 단과 구매자 1만 캐시" class="coin_txt">
+                        <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/payback_coin.png" alt="캐시" class="coin_img">
+                    </div>
+                </div>
+                <a href="javascript:;"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/payback_btn.png" alt="페이백 신청하기"></a>
+            </div>
+        </div>
+    
+        <!-- 래플 -->
+        <div class="cont_raffle" data-theme="dark">
+            <div class="inner">
+                <h4>
+                    <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/raffle_tit.png" alt="EVENT 1 당첨 상품은 바로바로? 힌트를 통해 다음 상품을 예측해보세요! 매일 달라지는 혜택, 기대하는 재미! 래플 EVENT 2024. 06. 26(수) ~ 07.10(수), 평일 진행 ">
+                    <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/raffle_powder.gif" alt="폭죽" class="powder powder1" width="288" height="288">
+                    <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/raffle_powder.gif" alt="폭죽" class="powder powder2" width="434" height="434">
+                </h4>
+                <div class="raffle_wrap">
+                    <ul class="raffle_slider">
+                        <?php for($i=1; $i<12; $i++){ ?>
+                        <li>
+                            <!-- <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/raffle_slide<?=$i;?>.png" alt="상품"> -->
+                            <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/raffle_slide_off<?=$i;?>.png" alt="상품">
+                        </li>
+                        <?php } ?>
+                    </ul>
+                    <ul class="raffle_nav">
+                        <li style="background: url('<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/raffle_nav1.png') no-repeat center center;"><p>06/26<br>수요일</p></li>
+                        <li style="background: url('<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/raffle_nav2.png') no-repeat center center;"><p>06/27<br>목요일</p></li>
+                        <li style="background: url('<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/raffle_nav3.png') no-repeat center center;"><p>06/28<br>금요일</p></li>
+                        <li style="background: url('<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/raffle_nav4.png') no-repeat center center;"><p>07/01<br>월요일</p></li>
+                        <li style="background: url('<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/raffle_nav5.png') no-repeat center center;"><p>07/02<br>화요일</p></li>
+                        <li style="background: url('<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/raffle_nav6.png') no-repeat center center;"><p>07/03<br>수요일</p></li>
+                        <li style="background: url('<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/raffle_nav7.png') no-repeat center center;"><p>07/04<br>목요일</p></li>
+                        <li style="background: url('<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/raffle_nav8.png') no-repeat center center;"><p>07/05<br>금요일</p></li>
+                        <li style="background: url('<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/raffle_nav9.png') no-repeat center center;"><p>07/08<br>월요일</p></li>
+                        <li style="background: url('<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/raffle_nav10.png') no-repeat center center;"><p>07/09<br>화요일</p></li>
+                        <li style="background: url('<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/raffle_nav11.png') no-repeat center center;"><p>07/10<br>수요일</p></li>
+                    </ul>
+                </div>
+                <div class="raffle_btns">
+                    <a href="javascript:;"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/raffle_btn1.png" alt="당첨 여부 확인하기"></a>
+                    <a href="javascript:;">
+                        <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/raffle_label.png" alt="저녁 6시부터 이벤트 참여 가능!" class="raffle_label">
+                        <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/raffle_btn2.png" alt="오늘의 상품 응모하기">
+                    </a>
+                </div>
+    
+                <!-- 개인정보동의 -->
+                <div class="event_wrap">
+                    <div class="agree_box">
+                        <div class="agree_check">
+                            <span><input type="checkbox" id="agreeChk1"></span><label for="agreeChk1">개인정보의 수집 및 이용에 동의합니다.</label>
+                        </div>
+                        <div class="agree_txt">
+                            1. 개인정보의 수집·이용 목적: 이벤트 진행 및 경품 배송<br />
+                            2. 수집하는 개인정보의 항목: 이름, 휴대폰번호<br />
+                            3. 개인정보의 보유·이용 기간: 이벤트 종료 후 즉시 파기<br />
+                            4. 개인정보의 수집 및 이용에 대한 동의를 거부할 수 있으며, 이 경우 이벤트 참여가 제한됩니다.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <!-- 뽑기 -->
+        <div class="cont_draw" data-theme="dark">
+            <div class="draw_bg">
+                <div class="inner">
+                    <h4><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/draw_tit.png" alt="EVENT 2 매일 하루 한번 참여 가능! 100캐시부터 최대 10만 캐시까지! 누구나 꽝 없이 100% 당첨! 캐시 뽑기 EVENT"></h4>
+                    <a href="javascript:;" class="draw_history">누적 캐시 내역 확인하기</a>
+                    <div class="draw_wrap">
+                        <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/draw_btn.png" alt="PUSH" class="draw_btn1">
+                        <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/draw_btn2.png" alt="PUSH" class="draw_btn2">
+                        <a href="javascript:;" class="draw_btn" onclick="$('.draw_wrap').addClass('active');">PUSH</a>
+                        <div class="draw_label"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/draw_cursor.png" alt="Click!"></div>
+                    </div>
+                    <!-- 개인정보동의 -->
+                    <div class="event_wrap">
+                        <div class="agree_box">
+                            <div class="agree_check">
+                                <span><input type="checkbox" id="agreeChk2"></span><label for="agreeChk2">개인정보의 수집 및 이용에 동의합니다.</label>
+                            </div>
+                            <div class="agree_txt">
+                                1. 개인정보의 수집·이용 목적: 이벤트 진행 및 경품 배송<br />
+                                2. 수집하는 개인정보의 항목: 이름, 휴대폰번호<br />
+                                3. 개인정보의 보유·이용 기간: 이벤트 종료 후 즉시 파기<br />
+                                4. 개인정보의 수집 및 이용에 대한 동의를 거부할 수 있으며, 이 경우 이벤트 참여가 제한됩니다.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <!-- 강의 미리 맛보기 -->
+        <div class="cont_prev" data-theme="dark">
+            <div class="inner">
+                <h4><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/prev_tit.png" alt="EVENT 3 과목별 공단기 선생님 25대비 강의 미리 맛보기 오늘의 영상 시청 EVENT 오늘의 2025 강의 영상 시청 & 댓글 남기고 다양한 혜택 받아가세요! 원하는 과목을 클릭하면 오늘의 영상 자동 재생! *1분 이상 영상을 시청해야 이벤트 참여가 인정됩니다"></h4>
+                <ul class="prev_nav">
+                    <li>국어</li>
+                    <li>영어</li>
+                    <li>한국사</li>
+                    <li>행정법</li>
+                    <li>행정학</li>
+                    <li>회계학</li>
+                    <li>교육학</li>
+                    <li>세법</li>
+                    <li>형법/형사소송법</li>
+                </ul>
+                <ul class="prev_tab">
+                    <?php for($i=1; $i<10; $i++){ ?>
+                    <li>
+                        <div class="prev_video">
+                            <video width="876" height="484" controls="" controlslist="nodownload" loop="" poster="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/prev_video<?=$i?>.png">
+                                <source src="<?= VIDEO_URL ?>/2023/L309214_101_800k.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </li>
+                    <?php } ?>
+                </ul>
+                <div class="prev_wrap">
+                    <h5><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/prev_sub.png" alt="오늘의 영상 시청을 했다면? 댓글 쓰고 이벤트 응모하기!" style="margin-top: -20px;"></h5>
+                    <div class="prev_slide_wrap">
+                        <div>
+                            <ul class="prev_slider1">
+                                <?php for($i=0; $i<4; $i++){ ?>
+                                <li><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/prev_slide1.png" alt="#"></li>
+                                <li><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/prev_slide2.png" alt="#"></li>
+                                <li><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/prev_slide3.png" alt="#"></li>
+                                <li><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/prev_slide4.png" alt="#"></li>
+                                <?php } ?>
+                            </ul>
+                        </div>
+                        <div>
+                            <ul class="prev_slider2">
+                                <?php for($i=0; $i<4; $i++){ ?>
+                                <li><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/prev_slide5.png" alt="#"></li>
+                                <li><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/prev_slide6.png" alt="#"></li>
+                                <li><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/prev_slide7.png" alt="#"></li>
+                                <li><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/prev_slide8.png" alt="#"></li>
+                                <li><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/prev_slide9.png" alt="#"></li>
+                                <li><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/prev_slide5.png" alt="#"></li>
+                                <li><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/prev_slide6.png" alt="#"></li>
+                                <li><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/prev_slide7.png" alt="#"></li>
+                                <li><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/prev_slide8.png" alt="#"></li>
+                                <li><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/prev_slide9.png" alt="#"></li>
+                                <li><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/prev_slide5.png" alt="#"></li>
+                                <li><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/prev_slide6.png" alt="#"></li>
+                                <li><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/prev_slide7.png" alt="#"></li>
+                                <li><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/prev_slide8.png" alt="#"></li>
+                                <li><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/prev_slide9.png" alt="#"></li>
+                                <li><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/prev_slide5.png" alt="#"></li>
+                                <li><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/prev_slide6.png" alt="#"></li>
+                                <li><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/prev_slide7.png" alt="#"></li>
+                                <li><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/prev_slide8.png" alt="#"></li>
+                                <li><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/prev_slide9.png" alt="#"></li>
+                                <?php } ?>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="event_wrap">
+                        <strong>2025 강의를 맛본 소감 한줄 댓글을 남겨주세요!</strong>
+    
+                        <!-- 댓글 입력 폼 -->
+                        <div class="event-board-form">
+                            <div class="event-input">
+                                <div class="input-box">
+                                    <input type="text" placeholder="어떤 과목을 선택했는지, 강의는 어땠는지 소감을 남겨주세요!">
+                                </div>
+                                <a href="javascript:void(0);" class="btn-h36"><span>등록하기</span></a>
+                            </div>
+                        </div>
+    
+                        <!-- 개인정보동의 -->
+                        <div class="agree_box">
+                            <div class="agree_check">
+                                <input type="checkbox" id="agreeChk3"><label for="agreeChk3">개인정보의 수집 및 이용에 동의합니다.</label>
+                            </div>
+                            <div class="agree_txt">
+                                1. 개인정보의 수집·이용 목적: 이벤트 진행 및 경품 배송<br />
+                                2. 수집하는 개인정보의 항목: 이름, 휴대폰번호<br />
+                                3. 개인정보의 보유·이용 기간: 이벤트 종료 후 즉시 파기<br />
+                                4. 개인정보의 수집 및 이용에 대한 동의를 거부할 수 있으며, 이 경우 이벤트 참여가 제한됩니다.
+                            </div>
+                        </div>
+                        
+                        <!-- 댓글 리스트 -->
+                        <div class="comment-event">
+                            <div class="event-table event-board">
+                                <ul>
+                                    <li>
+                                        <div>
+                                            <div class="list-content">
+                                                <p class="ico ico_new_label">
+                                                    나는 쉽고 재밌게 알려주기 때문에 선재국어 한다 나는 쉽고 재밌게 알려주기 때문에 선재국어 한다나는 쉽고 재밌습니다. 나는 쉽고 재밌게 알려주기 때문에 선재국어 한다 나는
+                                                    쉽고 재밌게 알려주기 때문에 선재국어 한다나는 쉽고 재밌습니다. 나는 쉽고 재밌게 알려주기 때문에 선재국어 한다
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="list-name">김*기</div>
+                                            <div class="list-date">2022.03.22</div>
+                                        </div>
+                                    </li>
+                                    <?php for($i=0; $i<9; $i++){ ?>
+                                    <li>
+                                        <div>
+                                            <div class="list-content">
+                                                <p>한글 댓글영역입니다. 작성한 모든 내용이 노출됩니다.한글 댓글영역입니다. 작성한 모든 내용이 노출됩니다.</p>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="list-name">김*기</div>
+                                            <div class="list-date">2022.03.22</div>
+                                        </div>
+                                    </li>
+                                    <?php } ?>
+                                </ul>
+                                <!-- paging -->
+                                <div class="paging-wrap">
+                                    <div class="paging-box">
+                                        <a class="active" href="javascript:void(0);">1</a>
+                                        <a href="javascript:void(0);">2</a>
+                                        <a href="javascript:void(0);">3</a>
+                                        <a href="javascript:void(0);">4</a>
+                                        <a href="javascript:void(0);">5</a>
+                                        <a href="javascript:void(0);"><i class="ico ico_arrow_right"></i></a>
+                                    </div>
+                                </div>
+                                <!-- // paging -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- // 이벤트 영역 -->
+    </div>
+
+    <!-- 유의사항 -->
+    <div class="cn-notice active">
+        <strong class="cn-notice-head ico ico_arrow_down_thin">유의사항</strong>
+        <div class="cn-notice-body" style="display: block;">
+            <div class="inner-wrap">
+                <div class="notice-wrap">
+                    <ul class="notice_nav cn-nav">
+                        <li><span>캐시 페이백 이벤트</span></li>
+                        <li><span>래플 이벤트</span></li>
+                        <li><span>캐시 뽑기 이벤트</span></li>
+                        <li><span>오늘의 영상 시청 이벤트</span></li>
+                    </ul>
+                    <ul class="notice_tab cn-tab">
+                        <li><span>캐시 페이백 이벤트</span></li>
+                        <li><span>래플 이벤트</span></li>
+                        <li><span>캐시 뽑기 이벤트</span></li>
+                        <li><span>오늘의 영상 시청 이벤트</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 보이스 모달 -->
+<div class="draw_modal voice_modal">
+    <div class="modal_content">
+        <div class="modal_wrap">
+            <div class="voice_player">
+            </div>
+            <a href="javascript:;" class="voice_modal_close">닫기</a>
+        </div>
+    </div>
+</div>
+
+<!-- 당첨 캐시 모달 -->
+<div class="draw_modal draw_result_modal">
+    <div class="modal_content">
+        <div class="modal_wrap">
+            <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/draw_pop.png" alt="bg" class="bg">
+            <h5>당첨 캐시</h5>
+            <strong>100,000</strong>
+            <a href="javascript:;" class="result_modal_btn">받기</a>
+        </div>
+    </div>
+</div>
+
+<!-- 누적 캐시 내역 확인하기 모달 -->
+<div class="draw_modal draw_history_modal">
+    <div class="modal_content">
+        <div class="modal_wrap">
+            <h5>누적 캐시 내역</h5>
+            <ul>
+                <li>6/27(목) 100 캐시 당첨</li>
+                <li>6/27(목) 100 캐시 당첨</li>
+                <li>6/27(목) 100 캐시 당첨</li>
+                <li>6/27(목) 100 캐시 당첨</li>
+                <li>6/27(목) 100 캐시 당첨</li>
+                <li>6/27(목) 100 캐시 당첨</li>
+            </ul>
+            <a href="javascript:;" class="history_modal_btn">닫기</a>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function(){
+        // 스크롤 애니메이션
+        $(window).cnScroll({
+            targetClass: 'scrollAni',
+            delay: 1,
+        });
+
+        $(window).scroll(function(){
+            const scroll = $(window).scrollTop();
+            const sticky = $('.cont_quick .quick_wrap');
+            const banner = $('.cont_banner');
+            const titHeight = $('.cont_top').outerHeight() + 64
+
+            // 스티키 배너 효과
+            if(scroll > titHeight * 0.6){
+                sticky.removeClass('light').addClass('dark');
+            }else{
+                sticky.removeClass('dark').addClass('light');
+            }
+
+            // 단 별로 스티키 배너 배경 변경
+            $('.event_20240611 div[data-theme]').each(function(index, el){
+                let prev = $(el).data('prev');
+                let theme = $(el).data('theme');
+                let top = $(el).offset().top;
+                let end = $(el).offset().top + $(el).height();
+
+                if((top < scroll && scroll < end) && scroll > titHeight){
+                    sticky.removeClass('light').removeClass('dark');
+                    sticky.addClass(theme)
+                }
+
+                if((top < (scroll + 250) && (scroll + 250) < end)){
+                    banner.removeClass('light').removeClass('dark');
+                    banner.addClass(theme)
+                }
+            })
+        })
+
+        // 스티키 배너
+        $('.cont_quick .quick_wrap').cnStickyBar({
+            offset: false,
+        })
+        $('.cont_banner .banner_wrap').cnStickyBar({
+            offset: false,
+        });
+
+        // 상단 페이드 스크롤
+        gsap.utils.toArray(".cont_top").forEach(section => {
+            let tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: section,
+                    start: "top",
+            // makes the height of the scrolling (while pinning) match the width, thus the speed remains constant (vertical/horizontal)
+                    end: () => "+=" + section.offsetHeight * 0.7, 
+                    scrub: true,
+                    pin: false,
+                    anticipatePin: 1
+                },
+                defaults: {ease: "none"}
+            });
+            // animate the container one way...
+            tl.fromTo(section.querySelector(".bg"), { opacity: 0}, { opacity: 1 })
+            // .to(document.querySelector(".cont_quick .quick_wrap"), { className: 'quick_wrap cn-stickybar dark' }, '-=2')
+            // ...and the image the opposite way (at the same time)
+            // .fromTo(section.querySelector(".beforeImage img"), {opacity: 1}, {opacity: 0}, 0);
+        });
+
+        // 단기다움 스크롤 1
+        gsap.utils.toArray(".cont_text").forEach(section => {
+            let tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: section,
+                    start: "top",
+                    end: () => "+=" + section.offsetHeight * 1.7, 
+                    scrub: true,
+                    pin: true,
+                    anticipatePin: 1
+                },
+                defaults: {ease: "none"}
+            });
+            // animate the container one way...
+            tl.fromTo(section.querySelector(".text1"), { opacity: 1 }, { opacity: 0 })
+            .fromTo(section.querySelector(".text2"), { opacity: 0 }, { opacity: 1 })
+            // ...and the image the opposite way (at the same time)
+            // .fromTo(section.querySelector(".beforeImage img"), {opacity: 1}, {opacity: 0}, 0);
+        });
+
+        // 단기다움 스크롤 2
+        gsap.utils.toArray(".cont_easy").forEach(section => {
+            let tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: section,
+                    start: "top",
+                    end: () => "+=" + section.offsetHeight * 3, 
+                    scrub: true,
+                    pin: true,
+                    anticipatePin: 1
+                },
+                defaults: {ease: "none"}
+            });
+            // translate(200%, 100%) rotate(40deg)
+            // translate(150%, 150%) rotate(20deg)
+            // translate(0%, 230%) rotate(20deg)
+            // translate(-180%, 100%) rotate(-60deg)
+            tl.fromTo(section.querySelector('.easy_img1'), { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: '90%', y: '90%', rotation: 40, opacity: 0 })
+            .fromTo(section.querySelector('.easy_img2'), { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: '120%', y: '200%', rotation: 20, opacity: 0 })
+            .fromTo(section.querySelector('.easy_img3'), { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: '90%', y: '220%', rotation: 20, opacity: 0 })
+            .fromTo(section.querySelector('.easy_img4'), { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: '-170%', y: '90%', rotation: -60, opacity: 0 })
+            .fromTo(section.querySelector('.easy_img5'), { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: '-150%', y: '90%', rotation: -40, opacity: 0 })
+        });
+
+
+        // 성공 스토리 슬라이드
+        const voice_slider = $('.voice_slider').cnSlider({
+            controls: true,
+            controlsClassName: 'event_control ico ico_arrow_left raffle_control',
+            nav: '.voice_nav',
+            swiperOptions: {
+                loop: false,
+                allowTouchMove: true,
+            },
+            navOptions: {
+                slidesPerView: 5,
+                spaceBetween: 18,
+            },
+            thumbOptions: {
+                autoScrollOffset: 0.1
+            }
+        });
+
+        // 성공 스토리 배경 슬라이드
+        $('.cont_voice .voice_list').cnSlider({
+            swiperOptions: {
+                direction: 'vertical',
+                spaceBetween: 100,
+                autoplay: {
+                    delay: 1,
+                    // pauseOnMouseEnter: true
+                },
+                speed: 5000,
+                loop: true,
+                slidesPerView: 'auto',
+                allowTouchMove: false,
+            }
+        })
+
+        // 선생님 리스트
+        $('.cont_teacher .teacher_list .teacher_item').mouseenter(function(){
+            $('.cont_teacher .teacher_list .teacher_item').removeClass('hover');
+            $(this).addClass('hover');
+        })
+        
+        // 콘텐츠 교재 슬라이드
+        $('.cont_contents .contents_slider').cnSlider({
+            swiperOptions: {
+                spaceBetween: 32,
+                autoplay: {
+                    delay: 1,
+                    // pauseOnMouseEnter: true
+                },
+                speed: 8000,
+                loop: true,
+                slidesPerView: 'auto',
+                allowTouchMove: false,
+                loopedSlides: 15
+            }
+        })
+        
+        // 합격생 배경 슬라이드
+        $('.cont_pass .pass_slider').cnSlider({
+            swiperOptions: {
+                direction: 'vertical',
+                spaceBetween: 30,
+                autoplay: {
+                    delay: 1,
+                    // pauseOnMouseEnter: true
+                },
+                speed: 5000,
+                loop: true,
+                slidesPerView: 'auto',
+                allowTouchMove: false,
+            }
+        })
+
+        // 래플 슬라이드
+        const raffle_slider = $('.raffle_slider').cnSlider({
+            controls: true,
+            controlsClassName: 'event_control ico ico_arrow_left_thin raffle_control',
+            nav: '.raffle_nav',
+            swiperOptions: {
+                loop: false,
+                allowTouchMove: true,
+            },
+            navOptions: {
+                direction: "vertical",
+                slidesPerView: 'auto',
+                spaceBetween: 8,
+                // scrollbar: {
+                //     el: '.swiper-scrollbar',
+                //     draggable: true,
+                // },
+            },
+            thumbOptions: {
+                autoScrollOffset: 0.1
+            }
+        });
+
+        // 보이스 모달
+        const voice_modal = $('.voice_btn').cnModal({
+            modalTarget: ".voice_modal",
+            head: false,
+            close: false,
+            // closeOutside: false
+            onBeforeOpen: function(btn){
+                if(btn && btn[0].dataset.audio){
+                    const voiceHTML = `
+                        <audio controls controlsList="nodownload" id="voice_audio">
+                            <source src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/voice/voice${btn[0].dataset.audio}.mp3" type="audio/mp3">
+                            이 브라우저는 audio를 지원하지 않습니다.
+                        </audio>
+                    `;
+    
+                    $('.voice_player').html(voiceHTML);
+                    $('#voice_audio').get(0).volume = 0.5;
+                    $('#voice_audio').get(0).play();
+                }
+            },
+            onClose: function(){
+                $('.voice_player').html('');
+            }
+        });
+
+        // 뽑기 결과 모달
+        const draw_result = $('.draw_btn').cnModal({
+            modalTarget: ".draw_result_modal",
+            head: false,
+            close: false,
+            // closeOutside: false
+        });
+
+        // 당첨 내역 모달
+        const draw_history = $('.draw_history').cnModal({
+            modalTarget: ".draw_history_modal",
+            head: false,
+            close: false,
+        })
+
+        $('.voice_modal_close').click(function(){
+            // 모달 닫기
+            voice_modal.close()
+        })
+
+        $('.result_modal_btn').click(function(){
+            // 모달 닫기
+            draw_result.close()
+        })
+
+        $('.history_modal_btn').click(function(){
+            // 모달 닫기
+            draw_history.close()
+        })
+
+        // 강좌 맛보기 탭
+        $('.prev_nav').cnTab()
+
+        // 강좌 맛보기 슬라이드
+        const prev_slider1 = $('.prev_slider1').cnSlider({
+            swiperOptions: {
+                spaceBetween: 12,
+                autoplay: {
+                    delay: 1,
+                    // pauseOnMouseEnter: true
+                },
+                speed: 8000,
+                loop: true,
+                slidesPerView: 'auto',
+                allowTouchMove: false,
+                // loopedSlides: 16
+            }
+        });
+        const prev_slider2 = $('.prev_slider2').cnSlider({
+            swiperOptions: {
+                spaceBetween: 12,
+                autoplay: {
+                    delay: 1,
+                    reverseDirection: true,
+                },
+                speed: 10000,
+                loop: true,
+                slidesPerView: 'auto',
+                allowTouchMove: false,
+                // loopedSlides: 20
+            }
+        });
+
+        // 유의사항
+        $('.cn-notice .cn-notice-head').click(function(){
+            $(this).parent().toggleClass('active').find('.cn-notice-body').stop().slideToggle()
+        });
+        
+        $('.notice_nav').cnTab()
+    })
+</script>

@@ -1,0 +1,123 @@
+<?php 
+    $parse_url = parse_url("//" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']);
+    $parse_query = parse_str($parse_url['query'], $query);
+    $url_arr = explode('/', $parse_url['path']);
+    $nav = $url_arr[3];
+    $page = $url_arr[4];
+    $menu = $url_arr[5];
+    $tab = $query['tab'] - 1;
+    $isMobile = $_GET['set_view'] == 'mobile' || is_mobile_check();
+    $device = $isMobile ? 'm' : 'pc';
+?>
+
+<link rel="stylesheet" href="/css/guide/<?=$device?>/layouts.css?v=<?=time()?>">
+<!-- <link rel="stylesheet" href="/css/components/<?=$device?>/components.css?v=<?=time()?>"> -->
+<script src="/js/components/<?=$device?>/components.js?v=<?=time()?>"></script>
+
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/highlight.min.js"></script>
+
+<header>
+    <div class="inner">
+        <div class="header_wrap">
+            <?php if($isMobile){ ?>
+            <!-- <a href="javascript:;" class="ico ico_menu menu"></a> -->
+            <?php } ?>
+            <h1><a href="/pub/guide/index<?=$isMobile ? '?set_view=mobile' : '' ?>">DANGI PUB GUIDE</a></h1>
+        </div>
+    </div>
+</header>
+
+<script>
+    let content_nav;
+    $(function(){
+        // 공통 탭
+        let tab = <?=$tab?>;
+        content_nav = $('.content_nav').cnTab({
+            onClick: function(_, index){
+                window.history.replaceState('', '', index == 0  ? `<?=$parse_url["path"]?>` : `<?=$parse_url["path"]?>?tab=${(index+1)}`);
+                // window.history.replaceState('page2', 'Title', '/page2.php');
+            },
+            startIndex: tab ? tab : 0,
+        });
+
+        // 메뉴 토글
+        $('.side_menu .menu strong').click(function(){
+            $(this).parent().toggleClass('active');
+        })
+
+        // 코드
+        document.querySelectorAll('pre code').forEach((element) => {
+            let decodedText = element.innerHTML.replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&quot;/g, '"').replace(/&#039;/g, "'");
+            element.textContent = decodedText;
+            hljs.highlightElement(element);
+            setTimeout(() => {
+                $(element).css('display', 'block')
+            }, 300);
+        });
+
+        // 코드 토글 버튼 생성
+        $('.content_wrap .code_wrap').each(function(){
+            $(this).prepend('<ul class="code_nav"><li><i class="ico ico_eye_line"></i><span>Preview</span></li><li><i class="ico ico_monitor"></i><span>Code</span></li></ul>')
+        })
+
+        $('.code_nav').cnTab();
+
+        // 모바일 LNB 토글
+        $('.header_wrap .menu').click(function(){
+            $('.side_menu').toggleClass('active');
+        })
+    });
+
+    $(document).ready(function () {
+        $("pre code").each(function () {
+            // 현재 코드 블록이 포함된 <pre> 요소 찾기
+            let preBlock = $(this).closest("pre");
+
+            // 복사 버튼 추가 (이미 추가된 경우 중복 방지)
+            if (preBlock.find(".copy_button").length === 0) {
+                preBlock.append('<button class="copy_button">📋 복사</button>');
+            }
+        });
+
+        // 복사 버튼 클릭 이벤트
+        $(".copy_button").click(function () {
+            let codeBlock = $(this).siblings("code"); // 같은 <pre> 안의 <code> 요소 찾기
+            let textToCopy = codeBlock.text().trim(); // 코드 내용 가져오기
+
+            // 클립보드에 복사
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                $(this).text("✔ 복사됨!"); // 버튼 텍스트 변경
+                setTimeout(() => {
+                    $(this).text("📋 복사"); // 원래 상태로 복귀
+                }, 1500);
+            }).catch(err => {
+                console.error("복사 실패:", err);
+            });
+        });
+    });
+
+</script>
+
+<nav>
+    <div class="nav_menu">
+        <div class="menu <?=$nav == 'landing' ? ' selected' : ''?>">
+            <a href="/pub/guide/landing/home<?=$isMobile ? '?set_view=mobile' : '' ?>"><strong><span>Landing</span></strong></a>
+        </div>
+        <div class="menu <?=$nav == 'cnplugin' ? ' selected' : ''?>">
+            <a href="/pub/guide/cnplugin/home<?=$isMobile ? '?set_view=mobile' : '' ?>"><strong><span>cnPlugin</span></strong></a>
+        </div>
+        <div class="menu <?=$nav == 'animation' ? ' selected' : ''?>">
+            <a href="/pub/guide/animation/home<?=$isMobile ? '?set_view=mobile' : '' ?>"><strong><span>Animation</span></strong></a>
+        </div>
+        <div class="menu <?=$nav == 'premium' ? ' selected' : ''?>">
+            <a href="/pub/guide/premium/home<?=$isMobile ? '?set_view=mobile' : '' ?>"><strong><span>Premium</span></strong></a>
+        </div>
+        <div class="menu <?=$nav == 'components' ? ' selected' : ''?>">
+            <a href="/pub/guide/components/home<?=$isMobile ? '?set_view=mobile' : '' ?>"><strong><span>Dangi Components</span></strong></a>
+        </div>
+        <div class="menu <?=$nav == 'gongsoop' ? ' selected' : ''?>">
+            <a href="/pub/guide/gongsoop/home<?=$isMobile ? '?set_view=mobile' : '' ?>"><strong><span>Gongsoop</span></strong></a>
+        </div>
+    </div>
+</nav>
+<main>

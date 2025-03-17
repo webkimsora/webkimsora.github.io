@@ -1,0 +1,742 @@
+<?php include('skin/pub/guide/head.html'); ?>
+<?php include('skin/pub/guide/'.$nav.'/side_menu.html'); ?>
+
+<link rel="stylesheet" href="<?=UN_STATIC?>/css/gongsoop/common.css?<?=time()?>">
+<link rel="stylesheet" href="<?=UN_STATIC?>/css/gongsoop/pc/gongsoop.css?<?=time()?>">
+<style>
+    .example_wrap{display: flex; flex-direction: column; gap: 30px; padding: 30px;}
+    .example_wrap > div{display: flex;}
+
+    .sp__modal .cn-modal-main {border-radius: 12px;}
+    .sp__modal .modal_contents {padding: 20px 24px;}
+
+    .sp__modal1 .cn-modal-main {width: 500px;}
+
+    .sp__modal2 .cn-modal-main {width: 400px;}
+
+    .sp__modal3 .cn-modal-main {width: 600px;}
+
+    .sp__modal3 .notice__area {display: flex; background: var(--bg-alternative); border-radius: var(--border-radius-m, 8px);}
+    .sp__modal3 .notice__area .notice__list {padding: 16px 0 0;}
+    .sp__modal3 .notice__area .notice__list > li {position: relative; padding-left: 10px;}
+    .sp__modal3 .notice__area .notice__list > li::before {display: block; content: '\2022'; position: absolute; left: 0; top: 0;}
+    .sp__modal3 .notice__area b.sp__typo--heading13 {display: flex; gap: 4px;}
+    .sp__modal3 .notice__area i.sp__ico--info {width: 16px; height: 16px;}
+    .sp__modal3 .notice__area i.sp__ico--info::after {background: var(--gray-100); width: 16px; height: 16px;}
+
+    .sp__modal3 .method__area .method__list {padding: 12px 0 0;}
+    .sp__modal3 .method__area .method__list > li {position: relative; padding-left: 10px;}
+    .sp__modal3 .method__area .method__list > li::before {display: block; content: '\2022'; position: absolute; left: 0; top: 0;}
+    .sp__modal3 .form__input--file {border-radius: var(--border-radius-m, 8px);}
+    .sp__modal3 .form__input--file .file--detail{margin-left: 6px;}
+    .sp__modal3 .form__input--file .file__add label {display: flex; align-items: center; gap: 2px;}
+    .sp__modal3 .form__input--file .file__add label i.sp__ico--plus_circle{width: 20px; height: 20px;}
+    .sp__modal3 .form__input--file .file__add label i.sp__ico--plus_circle::after{background: var(--icon-primary); width: 20px; height: 20px;}
+    .sp__modal3 .form__input--file .file__add label > .sp__typo--title14{line-height: 20px;}
+    .sp__modal3 .form__input--file .file__list {background: var(--bg-secondary); border-radius: var(--border-radius-m, 8px);}
+    .sp__modal3 .form__input--file .file__list ul {display: flex; flex-wrap: wrap; gap: 8px 16px;}
+    .sp__modal3 .form__input--file .file__list ul > li {padding-top: 0; display: flex; align-items: center; gap: 0 2px; color: var(--text-secondary); font-size: 13px; font-weight: 400; line-height: 18px; letter-spacing: -0.26px;}
+    .sp__modal3 .form__input--file .file__list .file--del {width: 20px; height: 20px; font-size: 0; color: transparent; cursor: pointer;}
+    .sp__modal3 .form__input--file .file__list .file--del i {width: 20px; height: 20px;}
+    .sp__modal3 .form__input--file .file__list .file--del i:after {background-color: var(--icon-primary);}
+    .sp__modal3 .form__input--file .file__list .file--name > a:hover {text-decoration: underline;}
+    .sp__modal3 table tr > td, .sp__modal3 table tr > th{height: 40px; padding: 0 24px;}
+
+    .sp__modal3 table :is(tbody td, tbody th), table :is(td + td, th + th, th + td) {border: 0;}
+</style>
+<div class="content">
+    <div class="content_tit">
+        <h2>Popup</h2>
+    </div>
+    <ul class="content_nav inner cn-nav cn-auto-index">
+        <li class="active">Examples</li>
+    </ul>
+    <ul class="content_tab cn-tab">
+        <!-- Examples -->
+        <li class="active">
+            <div class="content_wrap">
+                <!-- 기본 사용법 -->
+                <div>
+                    <div class="content_txt">
+                        <h4>팝업1</h4>
+                    </div>
+    
+                    <div class="code_wrap">
+                        <ul class="code_tab cn-tab">
+                            <li class="active">
+                                <div class="example_wrap">
+                                    <div class="popup1">
+                                        <a href="javascript:;" data-target="sp__modal1" class="sp__btn--accent--large sp__modal1_btn">신고하기</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+<pre><code class="language-html">
+<a href="javascript:;" data-target="sp__modal1" class="sp__btn--accent--large sp__modal1_btn">신고하기</a>
+
+<div class="sp__modal sp__modal1">
+	<div class="modal_contents">
+        <div class="sp__layout--column gap-20">
+            <div class="sp__layout--column gap-16">
+                <div class="sp__typo--title14">
+                    신고 사유
+                </div>
+                <div class="sp__chips--gray">
+                    <label class="sp__typo--subtitle14--normal"><input type="checkbox" name="keyword" value="" checked=""><span>스팸/홍보/도배글</span></label>
+                    <label class="sp__typo--subtitle14--normal"><input type="checkbox" name="keyword" value=""><span>음란물/불법정보</span></label>
+                    <label class="sp__typo--subtitle14--normal"><input type="checkbox" name="keyword" value=""><span>욕설/혐오/차별적 표현</span></label>
+                    <label class="sp__typo--subtitle14--normal"><input type="checkbox" name="keyword" value=""><span>개인정보 노출</span></label>
+                    <label class="sp__typo--subtitle14--normal"><input type="checkbox" name="keyword" value=""><span>불법 정보</span></label>
+                    <label class="sp__typo--subtitle14--normal"><input type="checkbox" name="keyword" value=""><span>기타</span></label>
+                </div>
+            </div>
+            <div class="sp__box--border sp__input form__textarea--question px-20 py-20">
+                <textarea name="" id="" class="sp__typo--body14" placeholder="내용을 입력해주세요." style="height: 110px"></textarea>
+            </div>
+            <div class="sp__layout justify-center gap-12">
+                <a href="javascript:;" onclick="modalForm1.close()" class="sp__btn--basic--large sp__typo--title15--normal">취소</a>
+                <a href="javascript:;" class="sp__btn--accent--large sp__typo--title15--normal">신고</a>
+            </div>
+        </div>
+    </div>
+</div>
+&ltscript&gt
+    let modalForm1;
+    $(function(){
+        modalForm1 = $('.sp__modal1_btn').cnModal({
+            head: '신고하기',
+        });
+    })
+&lt/script&gt
+</code></pre>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div>
+                    <div class="content_txt">
+                        <h4>팝업2</h4>
+                    </div>
+    
+                    <div class="code_wrap">
+                        <ul class="code_tab cn-tab">
+                            <li class="active">
+                                <div class="example_wrap">
+                                    <div class="popup1">
+                                        <a href="javascript:;" data-target="sp__modal2" class="sp__btn--accent--large sp__modal2_btn">현직자 라운지</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+<pre><code class="language-html">
+<a href="javascript:;" data-target="sp__modal2" class="sp__btn--accent--large sp__modal2_btn">현직자 라운지</a>
+
+<div class="sp__modal sp__modal2">
+    <div class="modal_contents">
+        <div class="sp__layout--column gap-20">
+            <div class="sp__layout--column gap-16">
+                <div class="sp__typo--title14">
+                    현직자 라운지
+                </div>
+                <div class="sp__chips--gray">
+                    <label class="sp__typo--subtitle14--normal"><input type="checkbox" name="keyword" value="" checked=""><span>스팸/홍보/도배글</span></label>
+                    <label class="sp__typo--subtitle14--normal"><input type="checkbox" name="keyword" value=""><span>음란물/불법정보</span></label>
+                    <label class="sp__typo--subtitle14--normal"><input type="checkbox" name="keyword" value=""><span>욕설/혐오/차별적 표현</span></label>
+                    <label class="sp__typo--subtitle14--normal"><input type="checkbox" name="keyword" value=""><span>개인정보 노출</span></label>
+                    <label class="sp__typo--subtitle14--normal"><input type="checkbox" name="keyword" value=""><span>불법 정보</span></label>
+                    <label class="sp__typo--subtitle14--normal"><input type="checkbox" name="keyword" value=""><span>기타</span></label>
+                </div>
+            </div>
+            <div class="sp__box--border sp__input form__textarea--question px-20 py-20">
+                <textarea name="" id="" class="sp__typo--body14" placeholder="내용을 입력해주세요." style="height: 110px"></textarea>
+            </div>
+            <div class="sp__layout justify-center gap-12">
+                <a href="javascript:;" onclick="modalForm2.close()" class="sp__btn--basic--large sp__typo--title15--normal">취소</a>
+                <a href="javascript:;" class="sp__btn--accent--large sp__typo--title15--normal">신고</a>
+            </div>
+        </div>
+    </div>
+</div>
+&ltscript&gt
+    let modalForm2;
+    $(function(){
+        modalForm2 = $('.sp__modal2_btn').cnModal({
+            head: '신고하기',
+        });
+    })
+&lt/script&gt
+</code></pre>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div>
+                    <div class="content_txt">
+                        <h4>팝업3</h4>
+                    </div>
+    
+                    <div class="code_wrap">
+                        <ul class="code_tab cn-tab">
+                            <li class="active">
+                                <div class="example_wrap">
+                                    <div class="popup1">
+                                        <a href="javascript:;" data-target="sp__modal3" class="sp__btn--accent--large sp__modal3_btn">현직자 라운지</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+<pre><code class="language-html">
+<a href="javascript:;" data-target="sp__modal3" class="sp__btn--accent--large sp__modal3_btn">현직자 라운지</a>
+
+<div class="sp__modal sp__modal3">
+    <div class="modal_contents">
+        <div class="sp__layout--column">
+            <div class="notice__area sp__box--border px-20 py-20">
+                <ol>
+                    <li>
+                        <b class="sp__typo--title14"><i class="sp__ico--info"></i>공무원으로 재직중 혹은 재직했던 이력을 인증해주세요.</b>
+                        <ul class="notice__list sp__typo--body13">
+                            <li>재직증명서, 경력증명서와 같은 공식 서류로만 인증이 가능합니다.</li>
+                            <li>개명 했을 경우, 개명 확인이 가능한 서류를 추가 첨부해 주세요.</li>
+                            <li class="sp__color--negative">서류는 주민등록번호가 보이지 않도록 블라인드 처리 후 업로드해 주세요.</li>
+                            <li class="sp__color--negative">블라인드 처리가 되지 않은 경우 인증이 반려되고 자료는 즉시 파기처리 합니다.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            <div class="sp__layout--colum gap-16">
+                <div class="sp__typo--title14">인증방법</div>
+                <div class="method__area sp__layout--colum gap-16 sp__box--border px-16 py-20" style="width: 100%;">
+                    <div>
+                        <b class="sp__typo--title13">1. 전/현직 공무원 인증서류 제출</b>
+                        <ul class="method__list sp__typo--body13">
+                            <li>증빙대상 : 공채, 경채 포함 임기제, 계약직, 위촉직, 시간선택제 모두 가능</li>
+                            <li>대상기간 : 재직중 or 퇴직후 인증 신청일 기준 1년 이내</li>
+                            <li>증빙서류 : 재직증명서, 경력증명서등 공식 서류 (신분증, 명함, 이메일 인증 불가)</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <b class="sp__typo--title13">2. 인증 심사기간 및 승인</b>
+                        <ul class="method__list sp__typo--body13">
+                            <li>인증 후 3일 이내(공휴일 제외) 인증 결과 안내</li>
+                            <li>인증 조건에 맞지 않는 경우 반려 처리 및 제출서류 파기</li>
+                            <li>인증 결과는 SMS(문자알림)를 통해 안내 드립니다.</li>
+                        </ul>
+                    </div>
+                    <div class="sp__box--bg px-12 py-12" style="width: 100%;">
+                        <p class="sp__typo--body12 sp__color--brand2">
+                            ※ 인증시, 증빙서류와 회원 본인 이름이 반드시 일치해야 합니다.<br/>
+                            ※ 본인이 아닌 타인의 서류 불인정<br/>
+                            ※ 개명시, 개명 여부 확인 가능한 서류 추가 증빙
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="sp__layout--colum gap-16">
+                <div class="sp__typo--title14">
+                    개인정보
+                    <span class="sp__typo--body12 sp__color--secondary" style="margin-left: 8px;">* 이름 및 전화번호 변경은 <span style="text-decoration: underline;">회원정보 수정</span>에서 변경 가능합니다.</span>
+                </div>
+                <div class="sp__box--bg py-8" style="width: 100%;">
+                    <div>
+                        <table>
+                            <colgroup>
+                                <col width="120">
+                                <col width="432">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th class="sp__typo--title14 sp__color--secondary">이름</th>
+                                    <td class="sp__typo--subtitle14">김단기</td>
+                                </tr>
+                                <tr>
+                                    <th class="sp__typo--title14 sp__color--secondary">핸드폰 번호</th>
+                                    <td class="sp__typo--subtitle14">010-1234-5678</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="sp__layout--colum gap-16">
+                <div class="sp__typo--title14">증빙서류 파일 업로드</div>
+                <div class="sp__layout--column sp__box--dash form__input--file px-20 py-16 gap-10">
+                    <div id="addFileForm" class="file__add">
+                        <label onclick="checkFile(this);">
+                            <i class="sp__ico--plus_circle"></i>
+                            <span class="sp__typo--title14--normal sp__color--secondary">파일 첨부</span>
+                            <span class="file--detail sp__typo--body12--normal sp__color--inactive">최대 2개까지만 첨부 가능하며 1개당 20MB, 전체 40MB까지 첨부 가능</span>
+                        </label>
+                    </div>
+                    <div class="file__list px-16 py-10">
+                        <ul id="upload_file_list">
+                            <?php if (!empty($doc_result['files'])) : ?>
+                                <?php foreach ($doc_result['files'] as $key => $val) : ?>
+                                <li class="filebox" id="file<?= $key ?>">
+                                    <i class="sp__ico--plus_circle"></i>
+                                    <span class="file--name sp__typo--body13 sp__color--secondary"><a href="<?= $val['file_link'] ?>" target="_blank"><?= $val['file_name'] ?> (<?= number_format(($val['file_size'] / 1048576), 3) ?>MB)</a></span>
+                                    <span class="file--del" onclick="javascript:deleteFile('<?= $key ?>','<?= $val['file_idx'] ?>')"><i class="sp__ico--close"></i>삭제</span>
+                                </li>
+                                <?php endforeach; ?>
+                            <?php endif; ?>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="sp__layout justify-center gap-12">
+                <a href="javascript:;" onclick="modalForm3.close()" class="sp__btn--basic--large sp__typo--title15--normal">취소</a>
+                <a href="javascript:;" class="sp__btn--accent--large sp__typo--title15--normal">인증</a>
+            </div>
+        </div>
+    </div>
+</div>
+&ltscript&gt
+    let modalForm3;
+    $(function(){
+        modalForm3 = $('.sp__modal3_btn').cnModal({
+            head: '신고하기',
+        });
+    })
+&lt/script&gt
+&ltscript&gt
+    $('.prem__dropdown--topic').cnDropdown({
+        width: 'auto',
+        align: 'left',
+        onMenuClick: function(menuEl, menuIndex, btnEl){
+            const menuHTML = menuEl.find('a').html().trim();
+            btnEl.find('.select').html(menuHTML);
+            $('.select').css('color','var(--text-primary)')
+
+            $('#selectedTopic').val(menuEl.data('value'));
+        }
+    })
+
+    $('.tab--cate').cnTab({
+        useConts:'N',
+    });
+
+    $('.prem__chips > li').click(function(){
+        $(this).toggleClass('active');
+    })
+
+    var _fileNo = 0;
+    var _filesArr = new Array();
+    var _filesDelArr = new Array();
+
+    $('.file__list').hide();
+
+    function checkFile(pObj){
+        let _maxFileCnt = 2;  <?php /* 첨부파일 최대 개수 */ ?>
+
+        if( $(pObj).parents('.prem__file').find('.file__list li').length >= _maxFileCnt ){
+            alert("최대 " + _maxFileCnt + "개 까지만 첨부 가능합니다.\n" + _maxFileCnt + "개 이내로 다시 선택해주세요.");
+            return false;
+        }
+        else{
+            var fileInput = document.createElement('input');
+            fileInput.type = 'file';
+            fileInput.accept = $(pObj).data('accept');
+
+            //console.log(fileInput);
+
+            fileInput.click();
+            // 파일이 선택되면 이벤트 처리
+            fileInput.addEventListener('change', function() {
+                // 파일 첨부 후 처리할 작업을 여기에 추가합니다.
+                addFile(fileInput, _maxFileCnt);
+            });
+
+        }
+    }
+
+    function addFile(obj, pMaxCnt) {
+        var maxFileCnt = pMaxCnt;  <?php /* 첨부파일 최대 개수 */ ?>
+        var attFileCnt = document.querySelectorAll('.filebox').length; <?php /* 추가된 첨부파일 개수 */ ?>
+        var curFileCnt = obj.files.length; <?php /* 현재 선택된 첨부파일 개수 */ ?>
+        var remainFileCnt = maxFileCnt - attFileCnt; <?php /* 추가로 첨부가능한 개수 */ ?>
+
+        if(attFileCnt == 0) {
+            // $('.file__list .none').hide();
+            $('.file__list').show();
+        }
+
+        for(var i = 0; i < Math.min(curFileCnt, remainFileCnt); i++) {
+            const file = obj.files[i];
+            // 첨부파일 검증
+            if (filevalidation(file)) {
+                // 파일 배열에 담기
+                var reader = new FileReader();
+                reader.onload = function () {
+                    _filesArr.push(file);
+                };
+                reader.readAsDataURL(file)
+
+                let tmpPath = '';
+                let fsMB = 0;
+
+                // 첨부파일 사이즈 
+                try{ fsMB = (file.size / (1024 * 1024)).toFixed(3); } catch(e){}
+                // 임시 이미지 경로  
+                try{ tmpPath = URL.createObjectURL(file); } catch(e){}
+                
+                // 파일 내역 추가 
+                let htmlData = '';
+                htmlData += '<li class="filebox" id="file' + _fileNo + '">';
+                htmlData += '   <i class="prem__ico--clip"></i>';
+                htmlData += '   <span class="file--name sp__typo--body13 sp__color--secondary"><a target="_blank" href="' + tmpPath + '">' + file.name + ' (' + fsMB + 'MB)</a></span>';
+                htmlData += '   <span class="file--del" onclick="javascript:deleteFile(' + _fileNo + ');""><i class="sp__ico--close"></i>삭제</span>';
+                htmlData += '</li>';
+
+                $('.file__list ul').append(htmlData);
+
+                _fileNo++;
+            } else {
+                continue;
+            }
+        }
+        $(".btn_file").val("");
+    }
+
+    function filevalidation(obj) {
+        const fileTypes = ['image/gif','image/jpeg','image/jpg','image/png'];
+        if(obj.name.length > 100) {
+            alert("파일명이 100자 이상인 파일은 제외되었습니다.");
+            return false;
+        } else if(obj.size > (2 * 1024 * 1024)) {
+            alert("최대 파일 용량인 2MB를 초과한 파일은 제외되었습니다.");
+            return false;
+        } else if(obj.name.lastIndexOf('.') == -1) {
+            alert("확장자가 없는 파일은 제외되었습니다.");
+            return false;
+        } else if(!fileTypes.includes(obj.type)) {
+            alert("첨부가 불가능한 파일은 제외되었습니다.");
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    function deleteFile(obj, file_idx) {
+        document.querySelector("#file" + obj).remove();
+        if(typeof file_idx == "undefined" || file_idx == null || file_idx == "") {
+            _filesArr[obj].is_delete = true;
+
+            let fileCount = 0;
+            for(var i = 0; i < _filesArr.length; i++) {
+                if(!_filesArr[i].is_delete) {  
+                    fileCount = fileCount + 1;
+                }
+            }
+        } else {
+            _filesDelArr.push(file_idx);
+        }
+
+        if($('.file__list ul li').length == 0) {
+            $('.file__list').hide();
+        }
+    }
+&lt/script&gt
+</code></pre>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+<div class="sp__modal sp__modal1">
+	<div class="modal_contents">
+        <div class="sp__layout--column gap-20">
+            <div class="sp__layout--column gap-16">
+                <div class="sp__typo--title14">
+                    신고 사유
+                </div>
+                <div class="sp__chips--gray">
+                    <label class="sp__typo--subtitle14--normal"><input type="checkbox" name="keyword" value="" checked=""><span>스팸/홍보/도배글</span></label>
+                    <label class="sp__typo--subtitle14--normal"><input type="checkbox" name="keyword" value=""><span>음란물/불법정보</span></label>
+                    <label class="sp__typo--subtitle14--normal"><input type="checkbox" name="keyword" value=""><span>욕설/혐오/차별적 표현</span></label>
+                    <label class="sp__typo--subtitle14--normal"><input type="checkbox" name="keyword" value=""><span>개인정보 노출</span></label>
+                    <label class="sp__typo--subtitle14--normal"><input type="checkbox" name="keyword" value=""><span>불법 정보</span></label>
+                    <label class="sp__typo--subtitle14--normal"><input type="checkbox" name="keyword" value=""><span>기타</span></label>
+                </div>
+            </div>
+            <div class="sp__box--border sp__input form__textarea--question px-20 py-20">
+                <textarea name="" id="" class="sp__typo--body14" placeholder="내용을 입력해주세요." style="height: 110px"></textarea>
+            </div>
+            <div class="sp__layout justify-center gap-12">
+                <a href="javascript:;" onclick="modalForm1.close()" class="sp__btn--basic--large sp__typo--title15--normal">취소</a>
+                <a href="javascript:;" class="sp__btn--accent--large sp__typo--title15--normal">신고</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="sp__modal sp__modal2">
+	<div class="modal_contents">
+        <div class="sp__layout--column gap-20">
+            <div class="sp__layout--column gap-16">
+                <div class="sp__typo--title15" style="text-align: center;">
+                    게시글 열람을 위해 인증이 필요합니다.<br/>더욱 원활한 게시판 이용을 위해 인증을 완료해주세요!
+                </div>
+            </div>
+            <div class="sp__layout justify-center gap-12">
+                <a href="javascript:;" onclick="modalForm2.close()" class="sp__btn--basic--large sp__typo--title15--normal">인증없이 구경하기</a>
+                <a href="javascript:;" class="sp__btn--accent--large sp__typo--title15--normal">현직자 인증하기</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="sp__modal sp__modal3">
+	<div class="modal_contents">
+        <div class="sp__layout--column">
+            <div class="notice__area sp__box--border px-20 py-20">
+                <ol>
+                    <li>
+                        <b class="sp__typo--title14"><i class="sp__ico--info"></i>공무원으로 재직중 혹은 재직했던 이력을 인증해주세요.</b>
+                        <ul class="notice__list sp__typo--body13">
+                            <li>재직증명서, 경력증명서와 같은 공식 서류로만 인증이 가능합니다.</li>
+                            <li>개명 했을 경우, 개명 확인이 가능한 서류를 추가 첨부해 주세요.</li>
+                            <li class="sp__color--negative">서류는 주민등록번호가 보이지 않도록 블라인드 처리 후 업로드해 주세요.</li>
+                            <li class="sp__color--negative">블라인드 처리가 되지 않은 경우 인증이 반려되고 자료는 즉시 파기처리 합니다.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            <div class="sp__layout--colum gap-16">
+                <div class="sp__typo--title14">인증방법</div>
+                <div class="method__area sp__layout--colum gap-16 sp__box--border px-16 py-20" style="width: 100%;">
+                    <div>
+                        <b class="sp__typo--title13">1. 전/현직 공무원 인증서류 제출</b>
+                        <ul class="method__list sp__typo--body13">
+                            <li>증빙대상 : 공채, 경채 포함 임기제, 계약직, 위촉직, 시간선택제 모두 가능</li>
+                            <li>대상기간 : 재직중 or 퇴직후 인증 신청일 기준 1년 이내</li>
+                            <li>증빙서류 : 재직증명서, 경력증명서등 공식 서류 (신분증, 명함, 이메일 인증 불가)</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <b class="sp__typo--title13">2. 인증 심사기간 및 승인</b>
+                        <ul class="method__list sp__typo--body13">
+                            <li>인증 후 3일 이내(공휴일 제외) 인증 결과 안내</li>
+                            <li>인증 조건에 맞지 않는 경우 반려 처리 및 제출서류 파기</li>
+                            <li>인증 결과는 SMS(문자알림)를 통해 안내 드립니다.</li>
+                        </ul>
+                    </div>
+                    <div class="sp__box--bg px-12 py-12" style="width: 100%;">
+                        <p class="sp__typo--body12 sp__color--brand2">
+                            ※ 인증시, 증빙서류와 회원 본인 이름이 반드시 일치해야 합니다.<br/>
+                            ※ 본인이 아닌 타인의 서류 불인정<br/>
+                            ※ 개명시, 개명 여부 확인 가능한 서류 추가 증빙
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="sp__layout--colum gap-16">
+                <div class="sp__typo--title14">
+                    개인정보
+                    <span class="sp__typo--body12 sp__color--secondary" style="margin-left: 8px;">* 이름 및 전화번호 변경은 <span style="text-decoration: underline;">회원정보 수정</span>에서 변경 가능합니다.</span>
+                </div>
+                <div class="sp__box--bg py-8" style="width: 100%;">
+                    <div>
+                        <table>
+                            <colgroup>
+                                <col width="120">
+                                <col width="432">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th class="sp__typo--title14 sp__color--secondary">이름</th>
+                                    <td class="sp__typo--subtitle14">김단기</td>
+                                </tr>
+                                <tr>
+                                    <th class="sp__typo--title14 sp__color--secondary">핸드폰 번호</th>
+                                    <td class="sp__typo--subtitle14">010-1234-5678</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="sp__layout--colum gap-16">
+                <div class="sp__typo--title14">증빙서류 파일 업로드</div>
+                <div class="sp__layout--column sp__box--dash form__input--file px-20 py-16 gap-10">
+                    <div id="addFileForm" class="file__add">
+                        <label onclick="checkFile(this);">
+                            <i class="sp__ico--plus_circle"></i>
+                            <span class="sp__typo--title14--normal sp__color--secondary">파일 첨부</span>
+                            <span class="file--detail sp__typo--body12--normal sp__color--inactive">최대 2개까지만 첨부 가능하며 1개당 20MB, 전체 40MB까지 첨부 가능</span>
+                        </label>
+                    </div>
+                    <div class="file__list px-16 py-10">
+                        <ul id="upload_file_list">
+                            <?php if (!empty($doc_result['files'])) : ?>
+                                <?php foreach ($doc_result['files'] as $key => $val) : ?>
+                                <li class="filebox" id="file<?= $key ?>">
+                                    <i class="sp__ico--plus_circle"></i>
+                                    <span class="file--name sp__typo--body13 sp__color--secondary"><a href="<?= $val['file_link'] ?>" target="_blank"><?= $val['file_name'] ?> (<?= number_format(($val['file_size'] / 1048576), 3) ?>MB)</a></span>
+                                    <span class="file--del" onclick="javascript:deleteFile('<?= $key ?>','<?= $val['file_idx'] ?>')"><i class="sp__ico--close"></i>삭제</span>
+                                </li>
+                                <?php endforeach; ?>
+                            <?php endif; ?>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="sp__layout justify-center gap-12">
+                <a href="javascript:;" onclick="modalForm3.close()" class="sp__btn--basic--large sp__typo--title15--normal">취소</a>
+                <a href="javascript:;" class="sp__btn--accent--large sp__typo--title15--normal">인증</a>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    let modalForm1, modalForm2, modalForm3;
+    $(function(){
+        modalForm1 = $('.sp__modal1_btn').cnModal({
+            head: '신고하기',
+        });
+        modalForm2 = $('.sp__modal2_btn').cnModal({
+            head: '현직자 라운지',
+        });
+        modalForm3 = $('.sp__modal3_btn').cnModal({
+            head: '전/현직자 인증하기',
+        });
+    })
+</script>
+<script>
+    $('.prem__dropdown--topic').cnDropdown({
+        width: 'auto',
+        align: 'left',
+        onMenuClick: function(menuEl, menuIndex, btnEl){
+            const menuHTML = menuEl.find('a').html().trim();
+            btnEl.find('.select').html(menuHTML);
+            $('.select').css('color','var(--text-primary)')
+
+            $('#selectedTopic').val(menuEl.data('value'));
+        }
+    })
+
+    $('.tab--cate').cnTab({
+        useConts:'N',
+    });
+
+    $('.prem__chips > li').click(function(){
+        $(this).toggleClass('active');
+    })
+
+    var _fileNo = 0;
+    var _filesArr = new Array();
+    var _filesDelArr = new Array();
+
+    $('.file__list').hide();
+
+    function checkFile(pObj){
+        let _maxFileCnt = 2;  <?php /* 첨부파일 최대 개수 */ ?>
+
+        if( $(pObj).parents('.prem__file').find('.file__list li').length >= _maxFileCnt ){
+            alert("최대 " + _maxFileCnt + "개 까지만 첨부 가능합니다.\n" + _maxFileCnt + "개 이내로 다시 선택해주세요.");
+            return false;
+        }
+        else{
+            var fileInput = document.createElement('input');
+            fileInput.type = 'file';
+            fileInput.accept = $(pObj).data('accept');
+
+            //console.log(fileInput);
+
+            fileInput.click();
+            // 파일이 선택되면 이벤트 처리
+            fileInput.addEventListener('change', function() {
+                // 파일 첨부 후 처리할 작업을 여기에 추가합니다.
+                addFile(fileInput, _maxFileCnt);
+            });
+
+        }
+    }
+
+    function addFile(obj, pMaxCnt) {
+        var maxFileCnt = pMaxCnt;  // 첨부파일 최대 개수
+        var attFileCnt = document.querySelectorAll('.filebox').length; // 추가된 첨부파일 개수
+        var curFileCnt = obj.files.length; // 현재 선택된 첨부파일 개수
+        var remainFileCnt = maxFileCnt - attFileCnt; // 추가로 첨부가능한 개수
+
+        if(attFileCnt == 0) {
+            // $('.file__list .none').hide();
+            $('.file__list').show();
+        }
+
+        for(var i = 0; i < Math.min(curFileCnt, remainFileCnt); i++) {
+            const file = obj.files[i];
+            // 첨부파일 검증
+            if (filevalidation(file)) {
+                // 파일 배열에 담기
+                var reader = new FileReader();
+                reader.onload = function () {
+                    _filesArr.push(file);
+                };
+                reader.readAsDataURL(file)
+
+                let tmpPath = '';
+                let fsMB = 0;
+
+                // 첨부파일 사이즈 
+                try{ fsMB = (file.size / (1024 * 1024)).toFixed(3); } catch(e){}
+                // 임시 이미지 경로  
+                try{ tmpPath = URL.createObjectURL(file); } catch(e){}
+                
+                // 파일 내역 추가 
+                let htmlData = '';
+                htmlData += '<li class="filebox" id="file' + _fileNo + '">';
+                htmlData += '   <i class="prem__ico--clip"></i>';
+                htmlData += '   <span class="file--name sp__typo--body13 sp__color--secondary"><a target="_blank" href="' + tmpPath + '">' + file.name + ' (' + fsMB + 'MB)</a></span>';
+                htmlData += '   <span class="file--del" onclick="javascript:deleteFile(' + _fileNo + ');""><i class="sp__ico--close"></i>삭제</span>';
+                htmlData += '</li>';
+
+                $('.file__list ul').append(htmlData);
+
+                _fileNo++;
+            } else {
+                continue;
+            }
+        }
+        $(".btn_file").val("");
+    }
+
+    function filevalidation(obj) {
+        const fileTypes = ['image/gif','image/jpeg','image/jpg','image/png'];
+        if(obj.name.length > 100) {
+            alert("파일명이 100자 이상인 파일은 제외되었습니다.");
+            return false;
+        } else if(obj.size > (2 * 1024 * 1024)) {
+            alert("최대 파일 용량인 2MB를 초과한 파일은 제외되었습니다.");
+            return false;
+        } else if(obj.name.lastIndexOf('.') == -1) {
+            alert("확장자가 없는 파일은 제외되었습니다.");
+            return false;
+        } else if(!fileTypes.includes(obj.type)) {
+            alert("첨부가 불가능한 파일은 제외되었습니다.");
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    function deleteFile(obj, file_idx) {
+        document.querySelector("#file" + obj).remove();
+        if(typeof file_idx == "undefined" || file_idx == null || file_idx == "") {
+            _filesArr[obj].is_delete = true;
+
+            let fileCount = 0;
+            for(var i = 0; i < _filesArr.length; i++) {
+                if(!_filesArr[i].is_delete) {  
+                    fileCount = fileCount + 1;
+                }
+            }
+        } else {
+            _filesDelArr.push(file_idx);
+        }
+
+        if($('.file__list ul li').length == 0) {
+            $('.file__list').hide();
+        }
+    }
+</script>

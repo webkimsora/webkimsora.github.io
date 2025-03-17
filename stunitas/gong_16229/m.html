@@ -1,0 +1,223 @@
+<style>
+	.event-contents {position: relative;}
+	.event-contents h3 {text-align: center;margin-bottom: 5rem;}
+	.event-contents h4 {text-align: center;margin-bottom: 3rem;}
+	.event-contents .inner {width: 37.5rem;margin: 0 auto;padding: 0 1.6rem;}
+	.event-contents .inner.no_padding {padding: 0;}
+	.event-contents .btn {display: flex;justify-content: center;gap: 1.2rem;margin-top: 3rem;}
+	.event-contents .sub {border-bottom: none;}
+
+	.event-contents .swiper-container {overflow: hidden;}
+	.event-contents .swiper-pagination {position: static;line-height: 0.6rem;margin-top: 2.4rem;}
+	.event-contents .swiper-pagination .swiper-pagination-bullet {display: inline-block;width: 0.6rem;height: 0.6rem;border-radius: 50%;font-size: 0;background: #000;vertical-align: top;opacity: 0.2;margin: 0 !important;}
+	.event-contents .swiper-pagination .swiper-pagination-bullet + .swiper-pagination-bullet {margin: 0 0 0 0.6rem !important;}
+	.event-contents .swiper-pagination .swiper-pagination-bullet-active {opacity: 1;}
+
+	/* 퀵배너 */
+	.quick_ban {position: sticky;bottom: 0;z-index: 99;background: #212121;height: 5.8rem;}
+	.quick_ban::before {content: '';position: absolute;width: 50%;height: 100%;left: 0;top: 0;background: #000000;}
+	.quick_ban ul {display: flex;justify-content: center;position: relative;}
+
+	/* 컨텐츠 */
+	.cont_top {text-align: center;overflow: hidden;position: relative;}
+	.cont_top .img {position: absolute;left: 50%;top: 22.1rem;margin-left: -18.75rem;width: 37.5rem;animation: stamp 1s 0.5s ease-in-out both;}
+	@keyframes stamp {
+		0% {opacity: 0;transform: scale(1.3);}
+		40% {opacity: 1;transform: scale(1);}
+		100% {opacity: 1;transform: scale(1);}
+	}
+	.cont01 {background: url('<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/m/cont01_bg.png') no-repeat center top/ auto 100%;padding: 5rem 0;position: relative;}
+	.cont01 .link {margin-top: 30.1rem;margin-bottom: 2.8rem;width: 10.85rem;}
+	.cont01 .sub2 {padding-top: 5rem;}
+	.cont01 .sub3 {padding-top: 10rem;}
+	.cont01 .slide_wrap {margin-bottom: 3rem;position: relative;}
+	.cont01 .cont01_slide1 .swiper-slide {position: relative;}
+	.cont01 .cont01_slide1 .gif {width: 34.3rem;height: 21.25rem;position: absolute;left: 0;top: 0;}
+	.cont02 {padding: 5rem 0;background: linear-gradient(180deg, #40A1C9 4.17%, #E9FFEE 29.69%, #FFDCA6 55.73%, #FF9E4A 88.54%), #48ADD8;}
+	.cont02 .sub + .sub {padding-top: 10rem;}
+	.cont02 .video {margin-bottom: 2rem;height: 21.9rem;background: #212121;}
+	.cont02 .slide_wrap {position: relative;width: 750rem;}
+	.cont03 {background: #242424;}
+	.cont04 {padding: 5rem 0;background: #41A1CA url('<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/m/cont04_bg.png') no-repeat center top/ auto 100%;text-align: center;}
+
+	/* 팝업 */
+	.popWrap {justify-content: center;align-items: center;width: 100%;height: 100%;position: fixed;left: 0;top: 0;display: none;z-index: 100;background: rgba(0, 0, 0, 0.6);}
+	.popWrap.on {display: flex;}
+	.popCont {position: relative;}
+	.popCont .popClose {position: absolute;right: 0;top: -5rem;z-index: 10;}
+	.popCont .popClose img {width: 5rem;height: 5rem;}
+	.popCont .swiper-pagination .swiper-pagination-bullet {background: #FFF;}
+
+	#lecture_list {margin: 0 -1.6rem;max-width: 37.5rem;background: #fff;text-align: left;}
+</style>
+<div class="event-contents event_20241226">
+	<div class="cont_top">
+		<div class="inner no_padding">
+			<img src="<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/m/top_tit.png" alt="단원별 모의고사">
+			<div class="img"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/m/top_img.png" alt=""></div>
+		</div>
+	</div>
+	<div class="cont01">
+		<div class="inner">
+			<div class="sub sub1">
+				<h4><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/m/cont01_tit1.png" alt="지금 이 시기,  모든 질문에 대한 명쾌한 해답은 2024 김유경 단원별 모의고사입니다."></h4>
+				<div class="link">
+					<a href="https://gong.conects.com/m2/gong/teacher/home?teacher_id=44" target="_blank"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/m/cont01_link.png" alt="교수님 홈"></a>
+				</div>
+				<img src="<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/m/cont01_img1.png" alt="리뷰">
+			</div>
+			<div class="sub sub2">
+				<h4><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/m/cont01_tit2.png" alt="수많은 합격생들이 사회복지학 김유경 모의고사를 필수로 선택한 이유는 분명합니다."></h4>
+				<div class="slide_wrap">
+					<div class="swiper-container cont01_slide1">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide">
+								<img src="<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/m/cont01_slide1_1.png" alt="">
+								<img src="<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/pc/cont01_slide1_1.gif" alt="" class="gif">
+							</div>
+							<div class="swiper-slide">
+								<img src="<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/m/cont01_slide1_2.png" alt="">
+								<img src="<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/pc/cont01_slide1_2.gif" alt="" class="gif">
+							</div>
+							<div class="swiper-slide">
+								<img src="<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/m/cont01_slide1_3.png" alt="">
+								<img src="<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/pc/cont01_slide1_3.gif" alt="" class="gif">
+							</div>
+						</div>
+						<div class="swiper-pagination"></div>
+					</div>
+				</div>
+				<img src="<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/m/cont01_img2.png" alt="공단기 1위 사회복지학 유경쌤이 실전보다 더 실전같이 만들어낸 모의고사니까!">
+			</div>
+			<div class="sub sub3">
+				<h4><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/m/cont01_tit3.png" alt="무엇보다 확실한 한가지, 결국 2024 시험에서 마주할 문제들만 담겨있으니까!"></h4>
+				<div class="slide_wrap">
+					<div class="swiper-container cont01_slide2">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/m/cont01_slide2_1.png" alt="적중"></div>
+							<div class="swiper-slide"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/m/cont01_slide2_2.png" alt="적중"></div>
+							<div class="swiper-slide"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/m/cont01_slide2_3.png" alt="적중"></div>
+							<div class="swiper-slide"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/m/cont01_slide2_4.png" alt="적중"></div>
+							<div class="swiper-slide"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/m/cont01_slide2_5.png" alt="적중"></div>
+							<div class="swiper-slide"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/m/cont01_slide2_6.png" alt="적중"></div>
+							<div class="swiper-slide"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/m/cont01_slide2_7.png" alt="적중"></div>
+						</div>
+						<div class="swiper-pagination"></div>
+					</div>
+				</div>
+				<div class="btn">
+					<a href="//cafe.naver.com/passwel/5414" target="_blank"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/m/cont01_btn.png" alt="더 많은 적중내역 확인하기"></a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="cont02">
+		<div class="inner">
+			<h3><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/m/cont02_tit.png" alt="파이널 모의고사 SEASON 01. 단원별 모의고사 활용법을 공개합니다."></h3>
+			<div class="sub sub1">
+				<h4><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/m/cont02_sub1.png" alt="STEP 01. 각 회차별 모의고사를 시간을 재면서 실전처럼 풀기!"></h4>
+				<img src="<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/m/cont02_img1.png" alt="교재">
+				<div class="btn">
+					<a href="javascript:alert('링크 전달');"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/m/cont02_btn1.png" alt="교재 자세히 보기"></a>
+					<a href="javascript:alert('링크 전달');"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/m/cont02_btn2.png" alt="교재 구매하기"></a>
+				</div>
+			</div>
+			<div class="sub sub2">
+				<h4><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/m/cont02_sub2.png" alt="STEP 02. 강의와 함께 모의고사 선지 하나하나 파헤치기!"></h4>
+				<div class="video">
+					<a href="javascript:alert('1월 10일 개강 예정입니다. 조금만 기다려주세요 :)');"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/m/cont02_video.png" alt="자세한 풀이로 머리 속에 각인시킬 강의!"></a>
+				</div>
+				<img src="<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/m/cont02_img2.png" alt="" style="margin-left: -1.6rem;margin-top: -1.6rem;max-width: 37.5rem;">
+				<div class="list" id="lecture_list">
+					강의 리스트
+				</div>
+			</div>
+			<div class="sub sub3">
+				<h4><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/m/cont02_sub3.png" alt="STEP 03. 헷갈린다면 꼭 질문하여 완벽하게 해결하기!"></h4>
+				<img src="<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/m/cont02_img3.png" alt="평균 24시간 이내 100% 답변">
+				<div class="btn">
+					<a href="https://cafe.naver.com/passwel/565" target="_blank"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/m/cont02_btn.png" alt="카페 바로가기"></a>
+				</div>
+			</div>
+		</div>
+		<div class="popWrap" id="popup1">
+			<div class="popCont">
+				<a href="javascript:popClose('#popup1');" class="popClose"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/m/btn_popup_close.png" alt="레이어팝업 닫기"></a>
+				<div class="slide_wrap">
+					<div class="swiper-container pop_slide">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/m/pop_book1.png" alt="교재"></div>
+							<div class="swiper-slide"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/m/pop_book2.png" alt="교재"></div>
+							<div class="swiper-slide"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/m/pop_book3.png" alt="교재"></div>
+							<div class="swiper-slide"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/m/pop_book4.png" alt="교재"></div>
+						</div>
+						<div class="swiper-pagination"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="cont03">
+		<div class="inner no_padding">
+			<img src="<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/m/cont03_img.png" alt="편지">
+		</div>
+	</div>
+	<div class="cont04">
+		<div class="inner">
+			<img src="<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/m/cont04_img.png" alt="단기 합격 최적화 커리큘럼 유경쌤의 FINAL SEASON 02. 동형 모의고사 COMING SOON!" style="width: 26.3rem;margin: 0 auto;">
+		</div>
+	</div>
+	<div class="quick_ban">
+		<ul>
+			<li><a href="javascript: goPage('.cont02 .sub2');"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/m/quick1.png" alt="교재 살펴보기"></a></li>
+			<li><a href="javascript: alert('2월 14일 개강합니다 ! 조금만 기다려주세요 :)');"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/12/gong_16229/m/quick2.png" alt="강의 살펴보기"></a></li>
+		</ul>
+	</div>
+</div>
+<script>
+	$(function() {
+		new Swiper('.cont01_slide1', {
+			effect: 'fade',
+			autoplay: {
+				delay: 3000,
+				disableOnInteraction: false,
+				pauseOnMouseEnter: true,
+			},
+			pagination: {
+				el: '.cont01_slide1 .swiper-pagination',
+				clickable: true,
+			},
+			loop: true,
+		});
+		new Swiper('.cont01_slide2', {
+			pagination: {
+				el: '.cont01_slide2 .swiper-pagination',
+				clickable: true,
+			},
+			loop: true,
+		});
+		new Swiper('.pop_slide', {
+			pagination: {
+				el: '.pop_slide .swiper-pagination',
+				clickable: true,
+			},
+			loop: true,
+		});
+	
+		eventLectureListM('event_20240108091454','','lecture_list');
+	});
+
+	// 팝업
+	function popOpen(el) {
+		$(el).addClass('on');
+		$(el).click(function(e){
+			if('#'+ e.target.id == el) {
+				popClose(el);
+			}
+		})
+	}
+
+	function popClose(el) {
+		$(el).removeClass('on');
+	}
+</script>

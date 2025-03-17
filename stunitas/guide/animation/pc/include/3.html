@@ -1,0 +1,42 @@
+<style>
+    .cont_knowhow h4 {margin:33px 0 16px; position:relative; display:inline-block;}
+    .cont_knowhow h4 i {position:absolute; top: -40px; right: -70px;}
+    .cont_knowhow .review_count {color:#fff; display:flex; justify-content: center; align-items: center; gap:7px; font-size: 37px; font-weight: 700; margin-bottom:16px;}
+    .cont_knowhow .review_count .update {display:flex; align-items: center;}
+    .cont_knowhow .review_count .update .update_count {font-size: 20px; font-weight: 700; letter-spacing: -0.8px;}
+    .cont_knowhow .review_count .update i {width:10px; height:10px; margin-right:2px;}
+    .cont_knowhow .review_count .total_count {color: #0A62FF; font-family: 'SUIT'; font-size: 82px; font-weight: 800; letter-spacing: -2.46px;}
+    
+</style>
+
+<section class="cont_knowhow cn-scroll-ani" style="text-align: center; padding: 50px 0; background: #000">
+    <h4>
+        <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_15008/pc/knowhow_tit.png" alt="합격생이 알려주는 노하우만 무려 370만 개 수많은 합격 수기가 가장 올바른 길잡이가 됩니다.">
+        <i><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_15008/pc/knowhow_tit_icon.png" alt=""></i>
+    </h4>
+    <div class="review_count">
+        <div class="update"><i><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_15008/pc/icon_up.png" alt=""></i><span class="update_count">325</span></div>
+        <div class="total_count">0</div>
+        <div>건</div>
+    </div>
+</section>
+
+<script>
+	var graphView = false;
+	$(window).scroll(function(){
+        //카운트
+        if($('.cont_knowhow').hasClass('active') && graphView == false) {
+            $('.total_count').prop('Counter', 0).animate({
+                // Counter: <?=$passing_count?>,
+                Counter: 7287,
+            }, {
+                duration: 2000,
+                easing: 'swing',
+                step: function (now) {
+                    $(this).text(Math.ceil(now).toLocaleString('en'));
+                }
+            });
+            graphView = true;
+        }
+    });
+</script>

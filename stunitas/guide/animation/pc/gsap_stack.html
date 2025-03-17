@@ -1,0 +1,232 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/animation.gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+<style>
+    .cont_scroll {background: #000; display: flex; justify-content: center; flex-direction: column; align-items: center; height: 100vh;}
+    .cont_scroll #scroll_magic {width: 100%; height: 400px; position: relative; margin-top: 30px;}
+    .cont_scroll .panel {position: absolute;top: 0px;left: 0px; right: 0; margin: 0 auto; width: 1140px;height: 389px;text-align: center;color: #fff; box-shadow: 2px 4px 18px 0px #BDD0FF40 inset; border-radius: 20px;}
+</style>
+<div class="content">
+    <div class="content_tit">
+        <h2>Stack Animation</h2>
+        <!-- <p>랜딩페이지 퍼블리싱 가이드</p> -->
+    </div>
+    <ul class="content_nav inner cn-nav cn-auto-index">
+        <li class="active">Examples</li>
+        <li class="">Option</li>
+    </ul>
+    <ul class="content_tab">
+        <li>
+            <div class="content_wrap">
+                <!-- Stack Animation -->
+                <div>
+                    <div class="code_wrap">
+                        <ul class="code_tab">
+                            <li>
+                                <div class="cont_scroll">
+                                    <h4 style="margin-bottom: 30px; text-align: center;"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/05/mkt1_7289/pc/road_tit.png" alt="공단기 법원직 풀서비스는 신속하고 정확한 데이터로 법원직 공무원 합격의 기준이 됩니다." style="width: auto;"></h4>
+                                    <div id="scroll_magic">
+                                        <div class="section-group-2">
+                                            <div class="section-group-1">
+                                                <section class="panel content-panel-1">
+                                                    <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/05/mkt1_7289/pc/road_img01.png" alt="">
+                                                </section>
+                                                <section class="panel content-panel-2">
+                                                    <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/05/mkt1_7289/pc/road_img02.png" alt="">
+                                                </section>
+                                            </div>
+                                            <section class="panel content-panel-3">
+                                                <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/05/mkt1_7289/pc/road_img03.png" alt="">
+                                            </section>
+                                        </div>
+                                        <section class="panel content-panel-4">
+                                            <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/05/mkt1_7289/pc/road_img04.png" alt="">
+                                        </section>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="code html">
+<pre><code class="language-html" style="display: none;">
+&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js"&gt;&lt;/script&gt;
+&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/animation.gsap.min.js"&gt;&lt;/script&gt;
+&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"&gt;&lt;/script&gt;
+&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"&gt;&lt;/script&gt;
+
+<style>
+    .cont_scroll {background: #000; display: flex; justify-content: center; flex-direction: column; align-items: center; height: 100vh;}
+    .cont_scroll #scroll_magic {width: 100%; height: 400px; position: relative; margin-top: 30px;}
+    .cont_scroll .panel {position: absolute;top: 0px;left: 0px; right: 0; margin: 0 auto; width: 1140px;height: 389px;text-align: center;color: #fff; box-shadow: 2px 4px 18px 0px #BDD0FF40 inset; border-radius: 20px;}
+</style>
+
+<div class="cont_scroll">
+    <h4><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/05/mkt1_7289/pc/road_tit.png" alt="공단기 법원직 풀서비스는 신속하고 정확한 데이터로 법원직 공무원 합격의 기준이 됩니다."></h4>
+    <div id="scroll_magic">
+        <div class="section-group-2">
+            <div class="section-group-1">
+                <section class="panel content-panel-1">
+                    <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/05/mkt1_7289/pc/road_img01.png" alt="">
+                </section>
+                <section class="panel content-panel-2">
+                    <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/05/mkt1_7289/pc/road_img02.png" alt="">
+                </section>
+            </div>
+            <section class="panel content-panel-3">
+                <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/05/mkt1_7289/pc/road_img03.png" alt="">
+            </section>
+        </div>
+        <section class="panel content-panel-4">
+            <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/05/mkt1_7289/pc/road_img04.png" alt="">
+        </section>
+    </div>
+</div>
+
+&lt;script type="text/javascript"&gt;
+    $(function(){
+        // scroll 영역 모션
+        var controller = new ScrollMagic.Controller();
+
+        var wipeAnimation = gsap.timeline()
+            .add("step1")
+            .fromTo(".content-panel-1", 1, { scale: 1, y: 0 }, { scale: 0.95, y: -10 }, "step1")
+            .fromTo(".content-panel-2", 1, { y: "300%" }, { y: "10px" }, "step1")
+
+            .add("step2")
+            .fromTo(".section-group-1", 1, { scale: 1, y: 0 }, { scale: 0.95, y: -10 }, "step2")
+            .fromTo(".content-panel-3", 1, { y: "300%" }, { y: "10px" }, "step2")
+
+            .add("step3")
+            .fromTo(".section-group-2", 1, { scale: 1, y: 0 }, { scale: 0.95, y: -10 }, "step3")
+            .fromTo(".content-panel-4", 1, { y: "300%" }, { y: "10px" }, "step3");
+
+        var scene = new ScrollMagic.Scene({
+            triggerElement: ".cont_scroll",
+            triggerHook: 0.1, 
+            duration: "300%"
+        })
+
+        .setPin(".cont_scroll")
+        .setTween(wipeAnimation) 
+        .addTo(controller);
+    })
+&lt;/script&gt;
+</div></code></pre>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+        </li>
+        <li>
+            <div class="content_wrap">
+                <style>
+                    table tr td {width: 50%;}
+                </style>
+                <h4 style="margin: 40px 0; font-size: 20px;">ScrollMagic 주요 옵션 가이드</h4>
+                
+                <div>
+                    <p>📌 Trigger 관련 옵션</p>
+                    기본적으로 trigger은 순차적으로 적용됩니다. add를 사용하여 동시에 실행이 가능합니다. add는 gsap 메서드 뒤에 함께 추가하여 사용가능합니다.
+                </div>
+                
+                <div>
+                    <p>GSAP 애니메이션 메서드</p>
+                    <ul>
+                        <li><code>to()</code> → 현재 상태에서 지정한 값으로 이동</li>
+                        <li><code>from()</code> → 특정 값에서 현재 상태로 이동</li>
+                        <li><code>fromTo()</code> → 특정 시작 값에서 특정 끝 값으로 이동</li>
+                    </ul>
+                </div>
+                
+                <table style="margin: 40px 0;">
+                    <tr>
+                        <th>옵션</th>
+                        <th>역할</th>
+                    </tr>
+                    <tr>
+                        <td><code>triggerElement</code></td>
+                        <td>스크롤이 도달하면 애니메이션을 시작할 <strong>트리거 요소를 설정</strong></td>
+                    </tr>
+                    <tr>
+                        <td><code>triggerHook: 0</code></td>
+                        <td>화면 <strong>상단</strong>에서 효과 발생</td>
+                    </tr>
+                    <tr>
+                        <td><code>triggerHook: 0.5</code></td>
+                        <td>화면 <strong>중앙</strong>에서 효과 발생</td>
+                    </tr>
+                    <tr>
+                        <td><code>triggerHook: 1</code></td>
+                        <td>화면 <strong>하단</strong>에서 효과 발생</td>
+                    </tr>
+                    <tr>
+                        <td><code>triggerHook: "onLeave"</code></td>
+                        <td>요소가 <strong>화면에서 사라질 때</strong> 효과 발생</td>
+                    </tr>
+                    <tr>
+                        <td><code>triggerHook: "onEnter"</code></td>
+                        <td>요소가 <strong>화면에 등장할 때</strong> 효과 발생</td>
+                    </tr>
+                    <tr>
+                        <td><code>duration</code></td>
+                        <td>애니메이션이 지속될 <strong>스크롤 거리(시간)</strong> 설정 (예: <code>300%</code> → 스크롤 길이 3배 지속)</td>
+                    </tr>
+                </table>
+                
+                <h5>🎬 애니메이션 & 동작 관련 옵션</h5>
+                <table>
+                    <tr>
+                        <th>옵션</th>
+                        <th>역할</th>
+                    </tr>
+                    <tr>
+                        <td><code>setPin</code></td>
+                        <td>요소를 스크롤 중 <strong>고정</strong>시켜 배경처럼 보이게 함</td>
+                    </tr>
+                    <tr>
+                        <td><code>setTween</code></td>
+                        <td>GSAP 또는 TweenMax 애니메이션을 <strong>적용</strong></td>
+                    </tr>
+                    <tr>
+                        <td><code>reverse: true</code></td>
+                        <td>스크롤을 <strong>되감으면 애니메이션이 다시 실행</strong>됨 (기본값: <code>true</code>)</td>
+                    </tr>
+                    <tr>
+                        <td><code>reverse: false</code></td>
+                        <td>한 번만 실행하고 <strong>다시 되감아도 애니메이션이 반복되지 않음</strong></td>
+                    </tr>
+                </table>
+            </div>
+        </li>
+    </ul>
+</div>
+<script type="text/javascript">
+    $(function(){
+        // scroll 영역 모션
+        var controller = new ScrollMagic.Controller();
+
+        var wipeAnimation = gsap.timeline()
+            .add("step1")
+            .fromTo(".content-panel-1", 1, { scale: 1, y: 0 }, { scale: 0.95, y: -10 }, "step1")
+            .fromTo(".content-panel-2", 1, { y: "300%" }, { y: "10px" }, "step1")
+
+            .add("step2")
+            .fromTo(".section-group-1", 1, { scale: 1, y: 0 }, { scale: 0.95, y: -10 }, "step2")
+            .fromTo(".content-panel-3", 1, { y: "300%" }, { y: "10px" }, "step2")
+
+            .add("step3")
+            .fromTo(".section-group-2", 1, { scale: 1, y: 0 }, { scale: 0.95, y: -10 }, "step3")
+            .fromTo(".content-panel-4", 1, { y: "300%" }, { y: "10px" }, "step3");
+
+        var scene = new ScrollMagic.Scene({
+            triggerElement: ".cont_scroll",
+            triggerHook: 0, 
+            duration: "300%"
+        })
+
+        .setPin(".cont_scroll")
+        .setTween(wipeAnimation) 
+        .addTo(controller);
+    })
+</script>

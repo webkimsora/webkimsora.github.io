@@ -1,0 +1,740 @@
+<link rel="stylesheet" href="<?=UN_STATIC?>/css/common/event.css">
+
+<style>
+    .tit_wrap{display: flex; align-items: center; gap: 8px;}
+    .tit_wrap > :is(a, span){color: #5C6675; font-size: 14px;}
+    .tit_wrap > a{text-decoration: underline; text-underline-position: under;}
+    .tit_wrap > span::after{content: "개"}
+
+    /* 모의고사 응시 */
+	.mock_nav1 {display: flex;justify-content: center;background: #E8E8E8;padding: 4px;border-radius: 8px;}
+	.mock_nav1 > li {flex: 1;display: flex;justify-content: center;align-items: center;color: #BDBDBD;font-family: 'SUIT';font-size: 18px;font-weight: 700;height: 57px;line-height: 57px;cursor: pointer;text-align: center;}
+	.mock_nav1 > li a{flex: 1;}
+	.mock_nav1 > li.active {color: #FFF;background: #212121;border-radius: 4px;box-shadow: 3px 4px 16px 0px rgba(0, 0, 0, 0.10);}
+	.mock_nav2 {display: flex;justify-content: center;gap: 12px;margin: 30px 0;}
+	.mock_nav2 > li {padding: 6px 12px;border-radius: 60px;border: 1px solid #BDBDBD;color: #BDBDBD;font-family: 'SUIT';font-size: 14px;font-weight: 800;line-height: 1.4;gap: 12px;justify-content: center;}
+	.mock_nav2 > li.active {color: #212121;border-color: #212121;}
+
+    main .content .code_wrap{border: 0; width: 1140px;}
+
+</style>
+<div class="content">
+    <div class="content_tit">
+        <h2>모의고사</h2>
+        <!-- <p>랜딩페이지 퍼블리싱 가이드</p> -->
+    </div>
+    <ul class="content_nav inner cn-nav cn-auto-index">
+        <li class="active">Examples</li>
+        <!-- <li class="">Library</li> -->
+        <!-- <li class="">Methods</li> -->
+    </ul>
+    <ul class="content_tab cn-tab">
+        <!-- Examples -->
+        <li class="active">
+            <div class="content_wrap">
+                <!-- 모의고사 타입 1 -->
+                <div>
+                    <div class="content_txt">
+                        <div class="tit_wrap">
+                            <h4>모의고사 타입 1</h4>
+                        </div>
+                    </div>
+    
+                    <div class="code_wrap">
+                        <ul class="code_tab cn-tab">
+                            <li class="active">
+                                <div class="example_wrap">
+                                    <div class="cont_mock">
+                                        <!-- 모의고사 응시 -->
+                                        <div class="inner">
+                                            <ul class="mock_nav1">
+                                                <li><a href="javascript:;">실전 동형 모의고사 시리즈</a></li>
+                                                <li><a href="javascript:;">하프 모의고사 시리즈</a></li>
+                                            </ul>
+                                            <ul class="mock_tab1">
+                                                <li>
+                                                    <ul class="mock_nav2">
+                                                        <li><a href="javascript:;">실전 동형 모의고사 Season 1</a></li>
+                                                        <li><a href="javascript:;">실전 동형 모의고사 Season 2</a></li>
+                                                    </ul>
+                                                    <ul class="mock_tab2">
+                                                        <li>
+                                                            <div class="mock_wrap">
+                                                                <div class="cnt">
+                                                                    <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/10/gong_15714/pc/mock1_cnt.png" alt="H3 스타일 적용_모의 고사 설명 영역">
+                                                                    <a href="javascript:;"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/10/gong_15714/pc/mock1_btn.png" alt="버튼 이름" style="height: 48px;"></a>
+                                                                </div>
+                                                                <div class="btns">
+                                                                    <button class="btn btnTest complete">
+                                                                        <span>모의고사 1회</span>
+                                                                        <em>응시하기</em>
+                                                                    </button>
+                                                                    <? for($i=2;$i<8;$i++){ ?>
+                                                                    <button class="btn btnTest">
+                                                                        <span>모의고사 <?=$i?>회</span>
+                                                                        <em>응시하기</em>
+                                                                    </button>
+                                                                    <? } ?>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="mock_wrap">
+                                                                <div class="cnt">
+                                                                    <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/10/gong_15714/pc/mock1_cnt.png" alt="H3 스타일 적용_모의 고사 설명 영역">
+                                                                    <a href="javascript:;"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/10/gong_15714/pc/mock1_btn.png" alt="버튼 이름" style="height: 48px;"></a>
+                                                                </div>
+                                                                <div class="btns">
+                                                                    <? for($i=1;$i<5;$i++){ ?>
+                                                                    <button class="btnTest">
+                                                                        <span>모의고사 <?=$i?>회</span>
+                                                                        <em>응시하기</em>
+                                                                    </button>
+                                                                    <? } ?>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <ul class="mock_nav2">
+                                                        <li><a href="javascript:;">하프 모의고사 Season 1</a></li>
+                                                    </ul>
+                                                    <ul class="mock_tab2">
+                                                        <li>
+                                                            <div class="mock_wrap">
+                                                                <div class="cnt">
+                                                                    <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/10/gong_15714/pc/mock1_cnt.png" alt="H3 스타일 적용_모의 고사 설명 영역">
+                                                                    <a href="javascript:;"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/10/gong_15714/pc/mock1_btn.png" alt="버튼 이름" style="height: 48px;"></a>
+                                                                </div>
+                                                                <div class="btns">
+                                                                    <? for($i=1;$i<7;$i++){ ?>
+                                                                    <button class="btnTest">
+                                                                        <span>모의고사 <?=$i?>회</span>
+                                                                        <em>응시하기</em>
+                                                                    </button>
+                                                                    <? } ?>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    
+                                        <!-- 모의고사 결과 -->
+                                        <div class="result_area mock_result_wrap">
+                                            <div class="inner">
+                                                <ul class="tab">
+                                                    <li data-target=".result_tab01" class="on">채점 결과</li>
+                                                    <li data-target=".result_tab02">회차별 누적 성적</li>
+                                                </ul>
+                                                <div class="tab_cont">
+                                                    <div class="result_tab01 on">
+                                                        <div class="select_area">
+                                                            <div class="left">과목과<br>회차를<br>선택하세요</div>
+                                                            <div class="right">
+                                                                <ul class="mock_grade_tab01 mock_table_nav">
+                                                                    <li><button>실전 동형 모의고사 시리즈</button></li>
+                                                                    <li><button>하프 모의고사 시리즈</button></li>
+                                                                </ul>
+                                                                <div class="mock_table_tab cn-tab">
+                                                                    <div class="active">
+                                                                        <ul class="mock_grade_tab02">
+                                                                            <li><button>Season 1</button></li>
+                                                                            <li><button>Season 2</button></li>
+                                                                        </ul>
+                                                                        <ul class="mock_grade_tab03">
+                                                                            <li class="btnTest02" data-idx="1" data-test-idx=""><button>1회차</button></li>
+                                                                            <? for($i=2; $i<8; $i++){ ?>
+                                                                                <li class="btnTest02" data-idx="<?=$i?>" data-test-idx=""><button><?=$i?>회차</button></li>
+                                                                            <? } ?>
+                                                                        </ul>
+                                                                    </div>
+                                                                    <div>
+                                                                        <ul class="mock_grade_tab02">
+                                                                            <li><button>Season 1</button></li>
+                                                                            <li><button>Season 2</button></li>
+                                                                        </ul>
+                                                                        <ul class="mock_grade_tab03">
+                                                                            <li class="btnTest02" data-idx="1" data-test-idx=""><button>1회차</button></li>
+                                                                            <? for($i=2; $i<8; $i++){ ?>
+                                                                                <li class="btnTest02" data-idx="<?=$i?>" data-test-idx=""><button><?=$i?>회차</button></li>
+                                                                            <? } ?>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                        
+                                                        <div class="cover"> <!-- class on 제거 시 커버 삭제됨 -->
+                                                            <div class="result_box">
+                                                                <p>2025 이윤탁 조문 기출 모의고사</p>
+                                                                <div class="result_tit">1회 결과 <strong class="name">공단기</strong>님은 94점, 상위 <strong>12.1%</strong>입니다</div>
+                                                            </div>
+                                                            <div class="result_table">
+                                                                <h4>2025 이윤탁 조문 기출 모의고사</h4>
+                                                                <div class="table">
+                                                                    <div class="mid_info">
+                                                                        <table class="table01">
+                                                                            <caption>시험결과</caption>
+                                                                            <colgroup>
+                                                                                <col style="width:50%;">
+                                                                                <col style="width:50%;">
+                                                                            </colgroup>
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <th>내점수</th><td>##점</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <th>석차(전체)</th><td>###등<br>(전체 ###명)</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <th>백분위</th><td>상위##.#%</td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                        <table class="table02">
+                                                                            <caption>시험통계</caption>
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <th>평균</th><td>##.#점</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <th>상위 20% 평균</th><td>##.#점</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <th>최고/최저점</th><td>##점/##점</td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                        <table class="table03">
+                                                                            <caption>점수별 인원 분포</caption>
+                                                                            <colgroup>
+                                                                                <col style="width:50%;">
+                                                                                <col style="width:50%;">
+                                                                            </colgroup>
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <th>100점</th><td>2%</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <th>95점</th><td>###등<br>(전체 ###명)</td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
+                                                                    <div class="btm_info">
+                                                                        <table class="table04">
+                                                                            <caption>문항별 응답 및 정답률</caption>
+                                                                            <colgroup>
+                                                                                <col style="width:6%">
+                                                                                <col style="width:6%">
+                                                                                <col style="width:6%">
+                                                                                <col style="width:6%">
+                                                                                <col style="width:18%">
+                                                                                <col style="width:7%">
+                                                                                <col style="width:7%">
+                                                                                <col style="width:7%">
+                                                                                <col style="width:7%">
+                                                                                <col style="width:7%">
+                                                                                <col style="width:8%">
+                                                                                <col style="width:11%">
+                                                                            </colgroup>
+                                                                            <thead>
+                                                                                <tr class="line">
+                                                                                    <th>문항</th>
+                                                                                    <th>입력답안</th>
+                                                                                    <th>정답</th>
+                                                                                    <th>정오</th>
+                                                                                    <th>문항분류</th>
+                                                                                    <th>1번 선택률</th>
+                                                                                    <th>2번 선택률</th>
+                                                                                    <th>3번 선택률</th>
+                                                                                    <th>4번 선택률</th>
+                                                                                    <th>정답률</th>
+                                                                                    <th>상위20% 정답률</th>
+                                                                                    <th>난이도</th>
+                                                                                </tr>
+                                                                            </thead>
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <th>1</th>
+                                                                                    <td>1</td>
+                                                                                    <td>1</td>
+                                                                                    <td>O</td>
+                                                                                    <td>##</td>
+                                                                                    <td>1</td>
+                                                                                    <td>1</td>
+                                                                                    <td>1</td>
+                                                                                    <td>1</td>
+                                                                                    <td class="blue">1</td>
+                                                                                    <td>1</td>
+                                                                                    <td>★</td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
+                                                                    <div class="wrong_info">
+                                                                        <table class="table04">
+                                                                            <caption>보충학습이 필요한 문항 및 파트</caption>
+                                                                            <colgroup>
+                                                                                <col style="width:20%">
+                                                                                <col style="width:15%">
+                                                                                <col style="width:65%">
+                                                                            </colgroup>
+                                                                            <thead>
+                                                                                <tr class="line">
+                                                                                    <th>오답 문항 번호</th>
+                                                                                    <th>분류</th>
+                                                                                    <th>유형</th>
+                                                                                </tr>
+                                                                            </thead>
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <th>##</th>
+                                                                                    <td>##</td>
+                                                                                    <td>##</td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                        
+                                                    <div class="result_tab02">
+                                                        <div class="select_area">
+                                                            <div class="left">과목과<br>회차를<br>선택하세요</div>
+                                                            <div class="right">
+                                                                <ul class="mock_grade_tab01">
+                                                                    <li><button>실전 동형 모의고사 시리즈</button></li>
+                                                                    <li><button>하프 모의고사 시리즈</button></li>
+                                                                </ul>
+                                                                <ul class="mock_grade_tab02">
+                                                                    <li><button>Season 1</button></li>
+                                                                    <li><button>Season 2</button></li>
+                                                                </ul>
+                                                                <ul class="mock_grade_tab03">
+                                                                    <li class="btnTest02 on" data-idx="1" data-test-idx=""><button>1회차</button></li>
+                                                                    <? for($i=2; $i<8; $i++){ ?>
+                                                                        <li class="btnTest02" data-idx="<?=$i?>" data-test-idx=""><button><?=$i?>회차</button></li>
+                                                                    <? } ?>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                        
+                                                        <div class="cover on">
+                                                            <div class="graph_area">
+                                                                <div class="graph_tit">2025 이윤탁 조문 기출 모의고사 회차별 모의고사 누적 성적 변화</div>
+                                                                <div id="test_graph">
+                                                                    <img src="<?=UN_STATIC_IMG?>/un_static/img/exam/selection/test_graph.png" alt="" style="display: block;margin: 0 auto;">
+                                                                </div>
+                                                                <div class="info_txt">
+                                                                    ※ 회차별 누적 성적 그래프는 1회차부터 10회 단위로만 확인 가능합니다.<br>
+                                                                    ※ 응시한 시험이 0점인 경우, 0점으로 표시되고, 미응시한 시험은 그래프 표시되지 않습니다.
+                                                                </div>
+                                                            </div>
+                                                            <div class="table_wrap">
+                                                                <table class="graph_table">
+                                                                    <thead>
+                                                                    <tr>
+                                                                        <th>회차</th>
+                                                                        <th>내 점수</th>
+                                                                        <th>백분위</th>
+                                                                    </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td>1회</td>
+                                                                            <td>40</td>
+                                                                            <td>76.3%</td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+            
+                            <li>
+<pre><code class="language-html"><!-- CSS -->
+<link rel="stylesheet" href="&lt;?=UN_STATIC&gt;/css/common/event.css">
+
+<style>
+/* 모의고사 응시 */
+.mock_nav1 {display: flex;justify-content: center;background: #E8E8E8;padding: 4px;border-radius: 8px;}
+.mock_nav1 > li {flex: 1;display: flex;justify-content: center;align-items: center;color: #BDBDBD;font-family: 'SUIT';font-size: 18px;font-weight: 700;height: 57px;line-height: 57px;cursor: pointer;text-align: center;}
+.mock_nav1 > li a{flex: 1;}
+.mock_nav1 > li.active {color: #FFF;background: #212121;border-radius: 4px;box-shadow: 3px 4px 16px 0px rgba(0, 0, 0, 0.10);}
+.mock_nav2 {display: flex;justify-content: center;gap: 12px;margin: 30px 0;}
+.mock_nav2 > li {padding: 6px 12px;border-radius: 60px;border: 1px solid #BDBDBD;color: #BDBDBD;font-family: 'SUIT';font-size: 14px;font-weight: 800;line-height: 1.4;gap: 12px;justify-content: center;}
+.mock_nav2 > li.active {color: #212121;border-color: #212121;}
+</style>
+
+<!-- 모의고사 영역 -->
+<div class="cont_mock">
+    <!-- 모의고사 응시 -->
+    <div class="inner">
+        <ul class="mock_nav1">
+            <li><a href="javascript:;">실전 동형 모의고사 시리즈</a></li>
+            <li><a href="javascript:;">하프 모의고사 시리즈</a></li>
+        </ul>
+        <ul class="mock_tab1">
+            <li>
+                <ul class="mock_nav2">
+                    <li><a href="javascript:;">실전 동형 모의고사 Season 1</a></li>
+                    <li><a href="javascript:;">실전 동형 모의고사 Season 2</a></li>
+                </ul>
+                <ul class="mock_tab2">
+                    <li>
+                        <div class="mock_wrap">
+                            <div class="cnt">
+                                <img src="&lt;?=UN_STATIC_IMG?&gt;/gong/landing/2024/10/gong_15714/pc/mock1_cnt.png" alt="H3 스타일 적용_모의 고사 설명 영역">
+                                <a href="javascript:;"><img src="&lt;?=UN_STATIC_IMG?&gt;/gong/landing/2024/10/gong_15714/pc/mock1_btn.png" alt="버튼 이름" style="height: 48px;"></a>
+                            </div>
+                            <div class="btns">
+                                <button class="btn btnTest complete">
+                                    <span>모의고사 1회</span>
+                                    <em>응시하기</em>
+                                </button>
+                                &lt;? for($i=2;$i<8;$i++){ ?&gt;
+                                <button class="btn btnTest">
+                                    <span>모의고사 &lt;?=$i?&gt;회</span>
+                                    <em>응시하기</em>
+                                </button>
+                                &lt;? } ?&gt;
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="mock_wrap">
+                            <div class="cnt">
+                                <img src="&lt;?=UN_STATIC_IMG?&gt;/gong/landing/2024/10/gong_15714/pc/mock1_cnt.png" alt="H3 스타일 적용_모의 고사 설명 영역">
+                                <a href="javascript:;"><img src="&lt;?=UN_STATIC_IMG?&gt;/gong/landing/2024/10/gong_15714/pc/mock1_btn.png" alt="버튼 이름" style="height: 48px;"></a>
+                            </div>
+                            <div class="btns">
+                                &lt;? for($i=1;$i<5;$i++){ ?&gt;
+                                <button class="btnTest">
+                                    <span>모의고사 &lt;?=$i?&gt;회</span>
+                                    <em>응시하기</em>
+                                </button>
+                                &lt;? } ?&gt;
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <ul class="mock_nav2">
+                    <li><a href="javascript:;">하프 모의고사 Season 1</a></li>
+                </ul>
+                <ul class="mock_tab2">
+                    <li>
+                        <div class="mock_wrap">
+                            <div class="cnt">
+                                <img src="&lt;?=UN_STATIC_IMG?&gt;/gong/landing/2024/10/gong_15714/pc/mock1_cnt.png" alt="H3 스타일 적용_모의 고사 설명 영역">
+                                <a href="javascript:;"><img src="&lt;?=UN_STATIC_IMG?&gt;/gong/landing/2024/10/gong_15714/pc/mock1_btn.png" alt="버튼 이름" style="height: 48px;"></a>
+                            </div>
+                            <div class="btns">
+                                &lt;? for($i=1;$i<7;$i++){ ?&gt;
+                                <button class="btnTest">
+                                    <span>모의고사 &lt;?=$i?&gt;회</span>
+                                    <em>응시하기</em>
+                                </button>
+                                &lt;? } ?&gt;
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <!-- 모의고사 결과 -->
+    <div class="result_area mock_result_wrap">
+        <div class="inner">
+            <ul class="tab">
+                <li data-target=".result_tab01" class="on">채점 결과</li>
+                <li data-target=".result_tab02">회차별 누적 성적</li>
+            </ul>
+            <div class="tab_cont">
+                <div class="result_tab01 on">
+                    <div class="select_area">
+                        <div class="left">과목과<br>회차를<br>선택하세요</div>
+                        <div class="right">
+                            <ul class="mock_grade_tab01 mock_table_nav">
+                                <li><button>실전 동형 모의고사 시리즈</button></li>
+                                <li><button>하프 모의고사 시리즈</button></li>
+                            </ul>
+                            <div class="mock_table_tab cn-tab">
+                                <div class="active">
+                                    <ul class="mock_grade_tab02">
+                                        <li><button>Season 1</button></li>
+                                        <li><button>Season 2</button></li>
+                                    </ul>
+                                    <ul class="mock_grade_tab03">
+                                        <li class="btnTest02" data-idx="1" data-test-idx=""><button>1회차</button></li>
+                                        &lt;? for($i=2; $i<8; $i++){ ?&gt;
+                                            <li class="btnTest02" data-idx="&lt;?=$i?&gt;" data-test-idx=""><button>&lt;?=$i?&gt;회차</button></li>
+                                        &lt;? } ?&gt;
+                                    </ul>
+                                </div>
+                                <div>
+                                    <ul class="mock_grade_tab02">
+                                        <li><button>Season 1</button></li>
+                                        <li><button>Season 2</button></li>
+                                    </ul>
+                                    <ul class="mock_grade_tab03">
+                                        <li class="btnTest02" data-idx="1" data-test-idx=""><button>1회차</button></li>
+                                        &lt;? for($i=2; $i<8; $i++){ ?&gt;
+                                            <li class="btnTest02" data-idx="&lt;?=$i?&gt;" data-test-idx=""><button>&lt;?=$i?&gt;회차</button></li>
+                                        &lt;? } ?&gt;
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="cover"> <!-- class on 제거 시 커버 삭제됨 -->
+                        <div class="result_box">
+                            <p>2025 이윤탁 조문 기출 모의고사</p>
+                            <div class="result_tit">1회 결과 <strong class="name">공단기</strong>님은 94점, 상위 <strong>12.1%</strong>입니다</div>
+                        </div>
+                        <div class="result_table">
+                            <h4>2025 이윤탁 조문 기출 모의고사</h4>
+                            <div class="table">
+                                <div class="mid_info">
+                                    <table class="table01">
+                                        <caption>시험결과</caption>
+                                        <colgroup>
+                                            <col style="width:50%;">
+                                            <col style="width:50%;">
+                                        </colgroup>
+                                        <tbody>
+                                            <tr>
+                                                <th>내점수</th><td>##점</td>
+                                            </tr>
+                                            <tr>
+                                                <th>석차(전체)</th><td>###등<br>(전체 ###명)</td>
+                                            </tr>
+                                            <tr>
+                                                <th>백분위</th><td>상위##.#%</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <table class="table02">
+                                        <caption>시험통계</caption>
+                                        <tbody>
+                                            <tr>
+                                                <th>평균</th><td>##.#점</td>
+                                            </tr>
+                                            <tr>
+                                                <th>상위 20% 평균</th><td>##.#점</td>
+                                            </tr>
+                                            <tr>
+                                                <th>최고/최저점</th><td>##점/##점</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <table class="table03">
+                                        <caption>점수별 인원 분포</caption>
+                                        <colgroup>
+                                            <col style="width:50%;">
+                                            <col style="width:50%;">
+                                        </colgroup>
+                                        <tbody>
+                                            <tr>
+                                                <th>100점</th><td>2%</td>
+                                            </tr>
+                                            <tr>
+                                                <th>95점</th><td>###등<br>(전체 ###명)</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="btm_info">
+                                    <table class="table04">
+                                        <caption>문항별 응답 및 정답률</caption>
+                                        <colgroup>
+                                            <col style="width:6%">
+                                            <col style="width:6%">
+                                            <col style="width:6%">
+                                            <col style="width:6%">
+                                            <col style="width:18%">
+                                            <col style="width:7%">
+                                            <col style="width:7%">
+                                            <col style="width:7%">
+                                            <col style="width:7%">
+                                            <col style="width:7%">
+                                            <col style="width:8%">
+                                            <col style="width:11%">
+                                        </colgroup>
+                                        <thead>
+                                            <tr class="line">
+                                                <th>문항</th>
+                                                <th>입력답안</th>
+                                                <th>정답</th>
+                                                <th>정오</th>
+                                                <th>문항분류</th>
+                                                <th>1번 선택률</th>
+                                                <th>2번 선택률</th>
+                                                <th>3번 선택률</th>
+                                                <th>4번 선택률</th>
+                                                <th>정답률</th>
+                                                <th>상위20% 정답률</th>
+                                                <th>난이도</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th>1</th>
+                                                <td>1</td>
+                                                <td>1</td>
+                                                <td>O</td>
+                                                <td>##</td>
+                                                <td>1</td>
+                                                <td>1</td>
+                                                <td>1</td>
+                                                <td>1</td>
+                                                <td class="blue">1</td>
+                                                <td>1</td>
+                                                <td>★</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="wrong_info">
+                                    <table class="table04">
+                                        <caption>보충학습이 필요한 문항 및 파트</caption>
+                                        <colgroup>
+                                            <col style="width:20%">
+                                            <col style="width:15%">
+                                            <col style="width:65%">
+                                        </colgroup>
+                                        <thead>
+                                            <tr class="line">
+                                                <th>오답 문항 번호</th>
+                                                <th>분류</th>
+                                                <th>유형</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th>##</th>
+                                                <td>##</td>
+                                                <td>##</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="result_tab02">
+                    <div class="select_area">
+                        <div class="left">과목과<br>회차를<br>선택하세요</div>
+                        <div class="right">
+                            <ul class="mock_grade_tab01">
+                                <li><button>실전 동형 모의고사 시리즈</button></li>
+                                <li><button>하프 모의고사 시리즈</button></li>
+                            </ul>
+                            <ul class="mock_grade_tab02">
+                                <li><button>Season 1</button></li>
+                                <li><button>Season 2</button></li>
+                            </ul>
+                            <ul class="mock_grade_tab03">
+                                <li class="btnTest02 on" data-idx="1" data-test-idx=""><button>1회차</button></li>
+                                &lt;? for($i=2; $i<8; $i++){ ?&gt;
+                                    <li class="btnTest02" data-idx="&lt;?=$i?&gt;" data-test-idx=""><button>&lt;?=$i?&gt;회차</button></li>
+                                &lt;? } ?&gt;
+                            </ul>
+                        </div>
+                    </div>
+    
+                    <div class="cover on">
+                        <div class="graph_area">
+                            <div class="graph_tit">2025 이윤탁 조문 기출 모의고사 회차별 모의고사 누적 성적 변화</div>
+                            <div id="test_graph">
+                                <img src="&lt;?=UN_STATIC_IMG?&gt;/un_static/img/exam/selection/test_graph.png" alt="" style="display: block;margin: 0 auto;">
+                            </div>
+                            <div class="info_txt">
+                                ※ 회차별 누적 성적 그래프는 1회차부터 10회 단위로만 확인 가능합니다.<br>
+                                ※ 응시한 시험이 0점인 경우, 0점으로 표시되고, 미응시한 시험은 그래프 표시되지 않습니다.
+                            </div>
+                        </div>
+                        <div class="table_wrap">
+                            <table class="graph_table">
+                                <thead>
+                                <tr>
+                                    <th>회차</th>
+                                    <th>내 점수</th>
+                                    <th>백분위</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1회</td>
+                                        <td>40</td>
+                                        <td>76.3%</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- 모의고사 스크립트 -->
+&lt;script&gt;
+// 모의고사 응시 탭
+$('.mock_nav1, .mock_nav2').cnTab();
+
+// 모의고사 결과 탭
+$('.result_area .tab li').on('click',function(){
+    var $get_tab = $(this).attr('data-target');
+    $(this).addClass('on').siblings().removeClass('on');
+    $($get_tab).addClass('on').siblings().removeClass('on');
+});
+$('.mock_grade_tab01, .mock_grade_tab02, .mock_grade_tab03').cnTab({useConts: 'N'});
+
+// 테이블 탭
+$('.mock_table_nav').cnTab()
+&lt;/script&gt;
+</code></pre>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+
+<script>
+	// 모의고사 응시 탭
+	$('.example_wrap .mock_nav1, .example_wrap .mock_nav2').cnTab();
+
+	// 모의고사 결과 탭
+	$('.example_wrap .result_area .tab li').on('click',function(){
+		var $get_tab = $(this).attr('data-target');
+		$(this).addClass('on').siblings().removeClass('on');
+		$($get_tab).addClass('on').siblings().removeClass('on');
+	});
+	$('.example_wrap .mock_grade_tab01, .example_wrap .mock_grade_tab02, .example_wrap .mock_grade_tab03').cnTab({useConts: 'N'});
+
+    // 테이블 탭
+    $('.example_wrap .mock_table_nav').cnTab()
+</script>

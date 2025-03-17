@@ -1,0 +1,21 @@
+<div class="side_menu">
+    <div class="menu active<?=$page == 'home' ? ' selected' : ''?>">
+        <a href="/pub/guide/<?=$nav?>/home<?=$isMobile ? '?set_view=mobile' : '' ?>"><strong><span>Home</span></strong></a>
+    </div>
+    <div class="menu active<?=strpos($page, 'event') > -1 ? ' selected' : ''?>">
+        <strong><span>이벤트</span><i class="ico <?=$isMobile ? 'ico_arrow _down' : 'ico_arrow_down'?>"></i></strong>
+        <ul>
+            <li class="<?=$page == 'event_basic' ? 'selected' : ''?>"><a href="/pub/guide/<?=$nav?>/event_basic<?=$isMobile ? '?set_view=mobile' : '' ?>"><span>기본형</span></a></li>
+            <li class="<?=$page == 'event_comment' ? 'selected' : ''?>"><a href="/pub/guide/<?=$nav?>/event_comment<?=$isMobile ? '?set_view=mobile' : '' ?>"><span>댓글형</span></a></li>
+            <li class="<?=$page == 'event_distri' ? 'selected' : ''?>"><a href="/pub/guide/<?=$nav?>/event_distri<?=$isMobile ? '?set_view=mobile' : '' ?>"><span>배포형</span></a></li>
+            <li class="<?=$page == 'event_popup' ? 'selected' : ''?>"><a href="/pub/guide/<?=$nav?>/event_popup<?=$isMobile ? '?set_view=mobile' : '' ?>"><span>팝업형</span></a></li>
+        </ul>
+    </div>
+    <div class="menu active<?=$page == 'mock' ? ' selected' : ''?>">
+        <!-- <a href="/pub/guide/<?=$nav?>/mock<?=$isMobile ? '?set_view=mobile' : '' ?>"><strong><span>모의고사</span></strong></a> -->
+        <strong><span>모의고사</span><i class="ico <?=$isMobile ? 'ico_arrow _down' : 'ico_arrow_down'?>"></i></strong>
+        <ul>
+            <li class="<?=$page == 'mock' ? 'selected' : ''?>"><a href="/pub/guide/<?=$nav?>/mock/type1<?=$isMobile ? '?set_view=mobile' : '' ?>"><span>타입 1</span></a></li>
+        </ul>
+    </div>
+</div>

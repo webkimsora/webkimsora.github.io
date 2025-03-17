@@ -1,0 +1,56 @@
+<!-- @ blink -->
+<section style="text-align: center;">
+  <div class="ani_blink">
+    <p>Hello, I'm blinking!</p>
+  </div>
+  <style>
+    @keyframes blink {
+      0% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    .ani_blink {border: 1px solid #000; position: relative; padding: 20px;}
+    .ani_blink:after {content:""; width: calc(100%); height: calc(100%); position: absolute; top: -2px; left: -2px; border: 2px solid orange; animation: blink .5s infinite;}
+    .ani_blink p {animation: blink 1s infinite;}
+  </style>
+</section>
+
+<style>
+  .txt_act_box {padding:80px 0; display:flex; justify-content: center; align-items: center; flex-direction: column;}
+  .txt_act_box ul {display: flex; align-items: center; gap:24px; justify-content: center; margin-bottom:32px;}
+  .txt_act_box ul li {color:rgba(0,0,0,0.2); font-family: 'SUIT'; font-size: 60px; font-weight: 900; letter-spacing: -1.5px; width:auto !important; height:98px;  transition: all .3s ease-in-out; border-radius: 16px; display:flex; align-items: center; justify-content: center;}
+  .txt_act_box ul li.active {color: #025AF6; padding:0 30px; border-radius: 16px; border: 3px solid #025AF6; transition: all .3s ease-in-out;}
+
+</style>
+
+<section>
+  <div class="txt_act_box">
+    <ul class="slide">
+        <li class="intro1 active">강사</li>
+        <li class="intro2">환급</li>
+        <li class="intro3">콘텐츠</li>
+    </ul>
+    <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_15008/pc/intro_txt.png" alt="완벽한 공단기의 방향성은 분명합니다. 전략적인 학습 방향 안내, 그로 인한 수험생들의 쉽고 빠른 합격!">
+  </div>
+</section>
+
+<script>
+  $(document).ready(function() {
+		let currentIndex = 0;
+		const items = $('.txt_act_box .slide li');
+		const totalItems = items.length;
+
+		setInterval(() => {
+			items.eq(currentIndex).removeClass('active');
+			currentIndex = (currentIndex + 1) % totalItems;
+			items.eq(currentIndex).addClass('active');
+		}, 2000);
+	});
+</script>
