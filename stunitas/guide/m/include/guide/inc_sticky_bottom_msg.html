@@ -1,0 +1,54 @@
+<section>
+    <ul class="sticy-msg-ex">
+        <li><button type="button" class="btn-m _txt _btn">버튼 메시지 보기</button></li>
+        <li><button type="button" class="btn-m _txt _normal">기본 메시지 보기</button></li>
+    </ul>
+<pre><xmp>$('현재 호출 하고자 하는 곳').cnStickyMsg({
+    //strShowType:'ani',
+    strMsg: '안녕하세요! 이것은 스티키 메시지입니다.'
+});</xmp></pre>
+    <p>* 옵션들</p>
+    <dl>
+        <dt>$(document.body).cnStickyMsg({});</dt>
+        <dd>
+            { .footer-sticky .sticky-conts } 가 기본 부모임
+        </dd>
+        <dt>strMsg:'{메시지 텍스트}'</dt>
+        <dd>
+            <p><b>(필수)</b></p><p>메시지 박스에 보여줄 텍스트</p>
+        </dd>
+        <dt>strShowType:'ani'</dt>
+        <dd>메시지 띄울 때 스르륵 올라옴 (기본 : 그냥 딱 보여짐)</dd>
+        <dt>intHideTime:'2000'</dt>
+        <dd>
+            <p>자동 닫힘 시간 (기본:2000)</p>
+        </dd>
+        <dt>strBtnTxt: '닫기'</dt>
+        <dd>
+            <p>우측 버튼이 필요할 때 나올 텍스트.</p>
+            <p><b>이 옵션이 있어야 onClick 함수 사용 가능</b></p>
+        </dd>
+        <dt>onClick: function(){ pThis, pParent }</dt>
+        <dd>버튼에 액션을 넣을 때 사용</dd>
+    </dl>
+</section>
+<script>
+    $('.sticy-msg-ex .btn-m._btn').on('click', function() {
+        $(document.body).cnStickyMsg({
+            strShowType:'ani',
+            strMsg: '안녕하세요! 이것은 스티키 메시지입니다.',
+            strBtnTxt: '닫기',
+            //onClick: function() {
+            //    alert('버튼이 클릭되었습니다.');
+            //},
+            //intHideTime:'2000',
+        });
+    });
+
+    $('.sticy-msg-ex .btn-m._normal').on('click', function() {
+        $(document.body).cnStickyMsg({
+            //strShowType:'ani',
+            strMsg: '안녕하세요! 이것은 스티키 메시지입니다.'
+        });
+    });
+</script>

@@ -1,0 +1,282 @@
+<link rel="stylesheet" href="/css/document.css"/>
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/highlight.min.js"></script>
+<script src="/js/document.js"></script>
+
+<?
+    include('skin/pub/layout/pc/document/inc_document_lnb.html');
+?>
+<div class="document" id="html_guide">
+    <main class="css__wrap">
+        <nav>
+            <a href="../index">< 목록</a>
+            <h2>네이밍 규칙</h2>
+            <!-- <ul>
+                <li data-target="#ex"><a href="javascript:;">Example</a></li>
+            </ul> -->
+        </nav>
+
+        <section>
+            <h2><i class="fa-solid fa-file"></i> 커넥츠 HTML/CSS 문서</h2>
+        </section>
+
+        <!-- @ 네이밍 규칙 -->
+        <section>
+            <h3>네이밍 규칙</h3>
+            <div>
+                <div>
+                    BEM은 <em>Block, Element, Modifer</em>의 줄임말로 일종의 네이밍 컨벤션 입니다.<br>
+                    일반적으로 BEM 규칙을 사용하는 경우가 많습니다.<br>
+                    <b>하지만,</b> BEM 규칙은 네이밍 글자가 길어진다는 단점이 있습니다.<br>
+                    따라서 저희는 컴포넌트를 제외한 요소는 모두 언더바(_)를 이용하고자 합니다.
+                </div>
+
+                <dl class="list">
+                    <dt>컴포넌트</dt>
+                    <dd>
+                        독립되어 분리, 재사용 할수 있는 것으로 Block 요소는 물론,<br>
+                        지속적으로 재사용 될 영역과 컨텐츠 모두 컴포넌트로 인식해주시면 됩니다.<br>
+                        ex) header, form, plugin tab, plugin popup, 유의사항, 풀서비스 …
+                        컴포넌트는 기본적으로 하이픈(-)을 사용합니다.<br>
+                                
+<pre><code class="language-html"><header class="main-header">
+    <div class="inner">
+        <div class="cnt">컨텐츠</div>
+    </div>
+</header>
+</code></pre>
+
+                    </dd>
+                    <dt>컨텐츠 내 사용되는 네이밍</dt>
+                    <dd>
+                        <ol>
+                            <li>
+                                시멘틱 구조에 의거하여 컨텐츠 내 <b>Block형태</b>는 <b>(el)__wrap</b>을 사용합니다.<br>
+                                직관적이게 보이기 위해 해당 영역은 <b>언더바(_) 2개</b>를 사용합니다.<br>
+                                다만, <b>컴포넌트</b>에서 wrap을 사용할 경우 <b>하이픈(-)</b>을 사용합니다.<br>
+                                ex) .sub01__wrap , .sub02__wrap …, 컴포넌트 .tab-wrap, .notice-wrap…
+                            </li>
+                            <li>
+                                Block 안에 Element요소가 여럿 나뉘어져 있을 경우에는 wrap 대신 <b>(el)_box, (el)-box</b>를 사용합니다.<br>
+                            </li>
+                            <li>
+                                layout을 잡을땐 <b>.inner</b>를 사용합니다.<br>
+                            </li>
+                            <li>
+                                많이 쓰이는 공통 용어는 축약어를 사용합니다.<br>
+                                <a href="https://docs.emmet.io/cheat-sheet/" target="_blank">축약어 관련 사이트</a>
+                            </li>
+                            <li>
+                                수평 구조를 이용할 때는 css에서 <b>flex</b>를 위주로 이용합니다.<br>
+                                float를 이용시에는 공통 클래스를 사용합니다. <br>
+                                (css/common/common.css에서 확인 가능)
+                            </li>
+                        </ol>
+
+<pre><code class="language-html"><!-- @ 컨텐츠 S -->
+<section class="component-wrap">
+    <div class="inner">
+        <!-- @@ TOP -->
+        <div class="top__wrap">
+            <p>상단</p>
+        </div>
+        <!-- //@@ TOP -->
+
+        <!-- @@ MIDDLE -->
+        <div class="mid__wrap">
+            <div class="a_box">
+                단락A
+            </div>
+            <div class="b_box">
+                단락B
+            </div>
+            <div class="c_box">
+                단락B
+            </div>
+        </div>
+        <!-- //@@ MIDDLE -->
+
+        <!-- @@ BOTTOM -->
+        <div class="bot__wrap">
+            <ul class="list fl">
+                <li class="fl_left">float를 이용한 left</li>
+                <li class="fl_right">float를 이용한 right</li>
+            </ul>
+        </div>
+        <!-- //@@ BOTTOM -->
+    </div>
+</section>
+<!-- //@ 컨텐츠 E -->
+</code></pre>
+
+                        <div class="component-wrap naming_test">
+                            <div class="inner" style="width: calc(100% - 40px);">
+                                <!-- @@ TOP -->
+                                <div class="top__wrap">
+                                    <p>상단</p>
+                                </div>
+                                <!-- //@@ TOP -->
+
+                                <!-- @@ MIDDLE -->
+                                <div class="mid__wrap">
+                                    <div class="a_box">
+                                        단락A
+                                    </div>
+                                    <div class="b_box">
+                                        단락B
+                                    </div>
+                                    <div class="c_box">
+                                        단락B
+                                    </div>
+                                </div>
+                                <!-- //@@ MIDDLE -->
+
+                                <!-- @@ BOTTOM -->
+                                <div class="bot__wrap">
+                                    <ul class="list fl">
+                                        <li class="fl_left">float를 이용한 left</li>
+                                        <li class="fl_right">float를 이용한 right</li>
+                                    </ul>
+                                </div>
+                                <!-- //@@ BOTTOM -->
+                            </div>
+                        </div>
+
+                    </dd>
+                </dl>
+            </div>
+
+            
+        </section>
+        <!-- //@ 네이밍 규칙 -->
+
+        <!-- @ 폴더 규칙 -->
+        <section>
+            <h3>폴더 규칙</h3>
+            <div>
+
+                <table>
+                    <colgroup>
+                        <col width="20%" />
+                        <col width="30%" />
+                        <col width="50%" />
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>HTML 생성</th>
+                            <td>YYYY > MM > pc 지라 주소 > pc.html / m.html</td>
+                            <td>
+                                전체 소문자로 사용 바랍니다.<br>
+                                ex) landing / 2023 / 05 / gong_12778 / pc.html<br>
+                                landing /2023 / 05 / gong_12778 / m.html
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>이미지폴더</th>
+                            <td>
+                                landing > YYYY > MM > pc 지라 주소 폴더 : pc와 모바일 공통 이미지<br>
+                                landing > YYYY > MM > pc 지라 주소 폴더 > pc : pc이미지<br>
+                                landing > YYYY > MM > pc 지라 주소 폴더 > m : 모바일 이미지
+                            </td>
+                            <td>
+                                ex ) 
+                                landing > 2023 > 05 > gong_12778 > 공용 이미지들(ex.소문내기이미지)<br>
+                                landing > 2023 > 05 > gong_12778 > pc > PC 이미지<br>
+                                landing > 2023 > 05 > gong_12778 > m > 모바일 이미지<br>
+                                landing > 2023 > 05 > gong_12778 > 230501 > 수정 이미지들
+                        
+                                수정 작업 시 각 폴더 밑에 YYMMDD 로 폴더 만들어서 수정할 이미지 저장 후 작업
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>이미지폴더 - 유지보수</th>
+                            <td>
+                                landing > YYYY > MM > pc 지라 주소 폴더 > 폴더별 > YYMMDD 폴더생성
+                            </td>
+                            <td>
+                                수정 작업 시 각 폴더 밑에 YYMMDD로 (연도 포함 총 6자) 해당 폴더 내에서 유지보수 이미지 업로드<br>
+                                ex ) landing > 2023 > 05 > gong_12778 > 230501 > 수정 이미지들
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>이미지폴더 - 메인배너</th>
+                            <td>
+                                banner > YYYY > MM > 배너명_YYMMDD.png
+                            </td>
+                            <td>
+                                수정 작업 시 각 폴더 밑에 YYMMDD로 (연도 포함 총 6자) 해당 폴더 내에서 유지보수 이미지 업로드<br>
+                                ex ) landing > 2023 > 05 > gong_12778 > 230501 > 수정 이미지들
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <!-- //@ 폴더 규칙 -->
+
+        <!-- @ 파일명 규칙 -->
+        <section>
+            <h3>파일명 규칙</h3>
+            <div>
+
+                <table>
+                    <colgroup>
+                        <col width="20%" />
+                        <col width="30%" />
+                        <col width="50%" />
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>숫자형식</th>
+                            <td>el01 or el1</td>
+                            <td>
+                                직관적을 위해 한자리수는 0n을 사용하지만, php 혹은 js로 숫자명을 로드할 경우 한자리수 앞에 0을 제외한 1부터 사용합니다. <br>
+                                <div style="border: 2px solid #000; background: #000; color: #fff; padding: 10px; font-size: 12px;">
+                                    &lt;? for($num=1;$num<21;$num++){ ?><br>
+                                    src="main_txt&lt;?=$num?>.png" ☞ main_txt1.png~main_txt20.png<br>
+                                    &lt;? } ?>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>아이콘</th>
+                            <td>ico_(el name)</td>
+                            <td>
+                                아이콘 형태는 파일명 앞에 ico_를 붙이고 네임을 설정해준다.<br>
+                                다만, 공통 아이콘 경우 화살표만 arrow_방향 으로 지정해준다.<br>
+                                ex) ico_search.png                      
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <th>네이밍 축약어 사용</th>
+                            <td>
+                                title -> tit<br>
+                                bottom -> bt
+                            </td>
+                            <td>
+                                태그 및 속성 공통 요소들은 축약어를 사용한다.<br>
+                                <a href="https://docs.emmet.io/cheat-sheet/" target="_blank">축약어 관련 사이트</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <!-- //@ 파일명 규칙 -->
+    </main>
+</div>

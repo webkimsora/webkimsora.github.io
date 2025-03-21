@@ -1,0 +1,196 @@
+<style>
+    .sec-menu{z-index: 10000;position: fixed;width: 100%;top: 0;bottom: 0;left: -100%;transform: translateX(-100%);transition: all .5s;background: var(--white);overflow: auto;-webkit-overflow-scrolling: touch;}
+    .sec-menu.show{width: 100%;transform: translateX(0);left: 0;}
+
+    .cls-btn{padding: 1.3rem 0;border-bottom: 0.1rem solid var(--gray-20);}
+    .cls-btn button{width: 2.4rem;height: 2.4rem;display: block;}
+    .cls-btn button::before{background: var(--black);}
+
+    .state-wrap{padding:2rem 0;}
+    .state-wrap .l-btn{gap: 0 0.2rem;}
+    .state-wrap .l-btn span{font-size: var(--fz-18);font-weight: var(--fw-bold);line-height: 150%;}
+    .state-wrap .l-btn .ico{width: 2rem;height: 2rem;display:inline-flex;}
+    .state-wrap .r-btn{color: var(--gray-60);font-size: var(--fz-13);line-height: 140%;}
+
+    .menu-wrap{overflow: hidden;position: relative;}
+    .menu-wrap aside{width: 39.5%;background: #F5F5F9;}
+    .menu-wrap aside li{height:4.4rem;padding: 0.8rem 1.6rem;}
+    .menu-wrap aside li a{display: flex;align-items: center;justify-content: space-between;}
+    .menu-wrap aside li a span{padding: 0.3rem 0 0.5rem;font-size: var(--fz-14);line-height: 140%;letter-spacing: -0.042rem;}
+    .menu-wrap aside li a span .ico{display: inline-flex;width: 1.6rem;height: 1.6rem;margin: 0.3rem 0 0 0.4rem;vertical-align: text-top;}
+    .menu-wrap aside li .ico{display: inline-flex;width: 2.4rem;height: 2.4rem;}
+    .menu-wrap aside li .ico::before{background: var(--gray-70);}
+    .menu-wrap aside li a span.c-blue{color: var(--blue-80);font-weight: var(--fw-bold);}
+    .menu-wrap aside li.on{background: var(--gray-70);color: var(--white);}
+    .menu-wrap aside li.on .ico::before{background: var(--white);}
+    .menu-wrap main{width: 60.5%;overflow-y: auto;}
+    .menu-wrap main .menu{display: none;}
+    .menu-wrap main .menu strong{display: block;padding: 0.8rem 1.6rem;color: var(--gray-60);font-size: var(--fz-13);font-weight: var(--fw-bold);}
+    .menu-wrap main .menu li a{padding: 1.1rem 1.6rem 1.3rem;height: 4.4rem;font-size: var(--fz-14);line-height: 140%;display: flex;align-items: center;justify-content: space-between;}
+    .menu-wrap main .menu li a .ico{display: inline-flex;width: 2.4rem;height: 2.4rem;}
+    .menu-wrap main .menu li a .ico:before{background: var(--gray-70);transition: all .3s;}
+    .menu-wrap main .menu .menu-depth ul{display: none;background: var(--gray-10);}
+    .menu-wrap main .menu .menu-depth ul li a{display: block;color: var(--gray-60);}
+</style>
+
+<section class="sec-menu">
+    <div class="cls-btn">
+        <div class="inner-wrap">
+            <button class="ico ico_close" onclick="$('.sec-menu').removeClass('show');"><span class="skip">닫기</span></button>
+        </div>
+    </div>
+    <div class="state-wrap inner-wrap flex _row_between _col_center">
+        <a class="l-btn flex _col_center" href="javascript:;"><span>로그인해 주세요</span><i class="ico ico_arrow_thin _right"></i></a>
+        <a class="r-btn txt-line" href="javascript:;">회원가입</a>
+    </div>
+    <hr class="_row_10">
+
+    <div class="menu-wrap flex">
+        <aside>
+            <ul>
+                <li>
+                    <a href="javascript:;" data-depthidx="1">
+                        <span>선생님</span>
+                        <i class="ico ico_arrow _right"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;"><span>수강신청</span></a>
+                </li>
+                <li>
+                    <a href="javascript:;"><span>기출문제</span></a>
+                </li>
+                <li>
+                    <a href="javascript:;"><span>수험정보</span></a>
+                </li>
+                <li>
+                    <a href="javascript:;"><span>이벤트</span></a>
+                </li>
+                <li>
+                    <a href="javascript:;">
+                        <span>교재<i class="ico ico_link"></i></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;"><span class="c-blue">프리패스</span></a>
+                </li>
+                <li>
+                    <a href="javascript:;"><span>학습지원센터</span></a>
+                </li>
+                <li>
+                    <a href="javascript:;"data-depthidx="2">
+                        <span>단기전체보기</span>
+                        <i class="ico ico_arrow _right"></i>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+        <main>
+            <div class="menu">
+                <ul>
+                    <li><a href="javascript:;">국어</a></li>
+                    <li><a href="javascript:;">영어</a></li>
+                    <li><a href="javascript:;">한국사</a></li>
+                    <li><a href="javascript:;">PSAT</a></li>
+                    <li><a href="javascript:;">전공</a></li>
+                    <li><a href="javascript:;">사서</a></li>
+                    <li><a href="javascript:;">군무원</a></li>
+                    <li><a href="javascript:;">검정제</a></li>
+                    <li><a href="javascript:;">면접</a></li>
+                    <li><a href="javascript:;">마인드코칭</a></li>
+                </ul>
+            </div>
+            <div class="menu">
+                <strong>인강</strong>
+                <ul>
+                    <li><a href="javascript:;">공단기</a></li>
+                    <li><a href="javascript:;">기술단기</a></li>
+                    <li><a href="javascript:;">경단기</a></li>
+                    <li><a href="javascript:;">소방단기</a></li>
+                </ul>
+                <strong>학원</strong>
+                <ul>
+                    <li class="menu-depth">
+                        <a href="javascript:;">
+                            <span>노량진</span>
+                            <i class="ico ico_arrow _down"></i>
+                        </a>
+                        <ul>
+                            <li><a href="javascript:;">공단기학원</a></li>
+                            <li><a href="javascript:;">경단기학원</a></li>
+                            <li><a href="javascript:;">소방단기학원</a></li>
+                            <li><a href="javascript:;">공단기 법원직</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-depth">
+                        <a href="javascript:;">
+                            <span>대구</span>
+                            <i class="ico ico_arrow _down"></i>
+                        </a>
+                        <ul>
+                            <li><a href="javascript:;">공단기학원</a></li>
+                            <li><a href="javascript:;">소방단기학원</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-depth">
+                        <a href="javascript:;">
+                            <span>부산</span>
+                            <i class="ico ico_arrow _down"></i>
+                        </a>
+                        <ul>
+                            <li><a href="javascript:;">공단기학원</a></li>
+                            <li><a href="javascript:;">경단기학원</a></li>
+                            <li><a href="javascript:;">소방단기학원</a></li>
+                            <li><a href="javascript:;">공무원 독학관</a></li>
+                            <li><a href="javascript:;">경찰 독학관</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-depth">
+                        <a href="javascript:;">
+                            <span>프랩</span>
+                            <i class="ico ico_arrow _down"></i>
+                        </a>
+                        <ul>
+                            <li><a href="javascript:;">공시관</a></li>
+                            <li><a href="javascript:;">수능관</a></li>
+                            <li><a href="javascript:;">독서실&스터디카페</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </main>
+    </div>
+</section>
+
+<script>
+    $(function(){
+        $('.toolbar-menu div:eq(0)').click(function(){
+            $('.sec-menu').addClass('show');
+        });
+
+        var menuHeight = $(window).height() - $('.cls-btn').outerHeight() - $('.state-wrap').outerHeight() - 10;
+        $('.menu-wrap').css('height', menuHeight);
+
+        // depth1(좌측메뉴)
+        $('.menu-wrap aside li:not(.on)').click(function(){
+            if( $(this).children('a').is("[data-depthIdx]") ){
+                $(this).addClass('on').siblings().removeClass('on');
+
+                var idx = $(this).children('a').attr('data-depthIdx') - 1;
+                $('.menu-wrap main').children('.menu').hide().eq(idx).show();
+            }
+        });
+        $('.menu-wrap aside li:eq(0)').click();
+
+        // depth2(우측메뉴-하위메뉴)
+        $('.menu-depth > a').click(function(){
+            $(this).next('ul').slideToggle();
+
+            if($(this).find('.ico').hasClass('_down')){
+                $(this).find('.ico').removeClass('_down');
+            }else{
+                $(this).find('.ico').addClass('_down');
+            }
+        });
+    });
+</script>

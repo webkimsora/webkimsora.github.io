@@ -1,0 +1,78 @@
+/* 포스트 영역 */
+.sp__view .view__post .post__top{border-bottom: 1px solid var(--stroke-divider); margin: 0 24px; width: auto; padding-bottom: 20px;}
+.sp__view .view__post .post__top .top__cate{display: flex; align-items: center;}
+.sp__view .view__post .post__top .top__cate i.sp__ico--bar{width: 15px; height: 15px;}
+.sp__view .view__post .post__top .top__cate i.sp__ico--bar::after{background-color: var(--surface-inactive)}
+.sp__view .view__post .post__top .top__title{font-size: 0;}
+.sp__view .view__post .post__top .top__title span:not(:last-child){margin-right: 6px;}
+.sp__view .view__post .post__top .top__meta{display: flex; align-items: center; gap: 8px;}
+.sp__view .view__post .post__top .top__meta .meta__author{display: flex; align-items: center; gap: 4px;}
+.sp__view .view__post .post__top .top__meta .meta__date{display: flex; align-items: center; gap: 2px;}
+.sp__view .view__post .post__top .top__meta .meta__date i.sp__ico--dot::after{background-color: var(--surface-inactive)}
+.sp__view .view__post .post__body .body__img img{max-width: 100%;}
+.sp__view .view__post .post__body .body__file{justify-content: start; border-radius: var(--border-radius-m);}
+.sp__view .view__post .post__body .body__file a:hover{text-decoration: underline;}
+.sp__view .view__post .post__reaction{padding-bottom: 30px;}
+.sp__view .view__post .post__reaction label{height: 38px; gap: 2px; padding: 0 16px;}
+.sp__view .view__post .post__reaction label i{width: 16px; height: 16px;}
+.sp__view .view__post .post__reaction label i::after{background-color: var(--icon-secondary);}
+.sp__view .view__post .post__reaction label:has(input[type=checkbox]:checked) i::after{background-color: var(--text-brand)}
+.sp__view .view__comment{border-top: 1px solid var(--stroke-divider)}
+.sp__view .view__comment .comment__refresh{width: 20px; height: 20px;}
+.sp__view .view__comment .comment__refresh .sp__ico--refresh{width: 20px; height: 20px; border-radius: 100%; border: 1px solid var(--stroke-border);}
+.sp__view .view__comment .comment__refresh .sp__ico--refresh::after{width: 14px; height: 14px;}
+.sp__view .view__comment .comment__sort{display: flex; align-items: center;}
+.sp__view .view__comment .comment__sort label input[type=radio]{width: 0; height: 0; opacity: 0;}
+.sp__view .view__comment .comment__sort label:has(input[type=radio]:checked){color: var(--text-brand)}
+.sp__view .view__comment .comment__sort i{width: 16px; height: 16px;}
+.sp__view .view__comment .comment__write{border: 1px solid var(--stroke-border); overflow: hidden; display: flex; flex-direction: column;}
+.sp__view .view__comment .comment__write textarea{width: 100%; height: 74px; overflow-y: auto; border: none; background: none;}
+.sp__view .view__comment .comment__write textarea::placeholder{color: var(--text-inactive)}
+
+/* 커리큘럼 테이블 */
+.sp__view .sp__table--container {justify-content: flex-end !important;}
+.sp__view .sp__table--container .form__table--subject, 
+.sp__view .sp__table--container .form__table--date {border-radius: 8px; overflow: hidden; border: 1px solid var(--stroke-border); display: inline-block;}
+
+.sp__view [class*=form__table] .sp__table {border-collapse: collapse; width: 100%; display: table;}
+.sp__view [class*=form__table] .sp__table th, .sp__view [class*=form__table] .sp__table td {height: 46px; padding: 8px; border: 1px solid var(--stroke-border);}
+.sp__view [class*=form__table] .sp__table thead {background: #EAFAEB;}
+.sp__view [class*=form__table] .sp__table thead tr th{color: #121212;}
+.sp__view [class*=form__table] .sp__table thead tr th:first-child {border-top-left-radius: 8px;}
+.sp__view [class*=form__table] .sp__table thead tr th:last-child {border-top-right-radius: 8px;}
+.sp__view [class*=form__table] .sp__table tbody tr:last-child td:first-child {border-bottom-left-radius: 8px;}
+.sp__view [class*=form__table] .sp__table tbody tr:last-child td:last-child {border-bottom-right-radius: 8px;}
+.sp__view [class*=form__table] .sp__table th:first-child, .sp__view [class*=form__table] .sp__table td:first-child {border-left: none;}
+.sp__view [class*=form__table] .sp__table th:last-child, .sp__view [class*=form__table] .sp__table td:last-child {border-right: none;}
+.sp__view [class*=form__table] .sp__table thead tr:first-child th {border-top: none;}
+.sp__view [class*=form__table] .sp__table tr:last-child th:first-child, .sp__view [class*=form__table] .sp__table tbody tr:last-child td {border-bottom: none;}
+.sp__view [class*=form__table] .sp__table td input{background: transparent; width: 100%; height: 100%;}
+.sp__view [class*=form__table] .sp__table tr th label{display: flex; align-items: center; justify-content: center; width: 100%; height: 100%;}
+
+/* 시간표 */
+.sp__view .form__table--date thead tr .saturday{background: var(--brand-secondary-10);}
+.sp__view .form__table--date thead tr .sunday{background: var(--etc-red-10);}
+.sp__view .form__table--date tbody tr .saturday{background: rgba(231, 239, 253, 0.30);}
+.sp__view .form__table--date tbody tr .sunday{background: rgba(253, 231, 231, 0.30);}
+
+
+
+/* 댓글 리스트 */
+.comment__list li{border-top: 1px solid var(--stroke-divider); position: relative; padding: 20px 0;}
+.comment__list li .comment__dropdown--btn{position: absolute; top: 16px; right: 0; width: 20px; height: 20px;}
+.comment__list li .comment__meta{display: flex; align-items: center; gap: 2px;}
+.comment__list li .comment__reaction label{gap: 2px;}
+.comment__list li .comment__reaction label i{width: 16px; height: 16px;}
+.comment__list li .comment__reaction label i::after{background-color: var(--icon-secondary);}
+.comment__list li .comment__reaction label:has(input[type=checkbox]:checked) i::after{background-color: var(--text-brand)}
+
+.sp__view .view__btns{margin-top: 16px;}
+.sp__view .view__btns a{min-width: 55px; width: auto;}
+
+/* QNA 답변하기 영역 */
+.sp__answer .answer__dropdown--btn{width: 20px; height: 20px;}
+.sp__answer .answer__top{width: auto; margin: 0 24px; padding-bottom: 20px; border-bottom: 1px solid var(--stroke-divider)}
+.sp__answer .answer__reaction label{height: 38px; gap: 2px; padding: 0 16px;}
+.sp__answer .answer__reaction label i{width: 16px; height: 16px;}
+.sp__answer .answer__reaction label i::after{background-color: var(--icon-secondary);}
+.sp__answer .answer__reaction label:has(input[type=checkbox]:checked) i::after{background-color: var(--text-brand)}

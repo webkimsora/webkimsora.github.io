@@ -1,0 +1,69 @@
+<link rel="stylesheet" href="/css/document.css"/>
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/highlight.min.js"></script>
+<script src="/js/document.js"></script>
+
+<style>
+    .document main{min-height: 200vh}
+    .quick_ban{position: sticky; top: 0; }
+    .quick_ban ul{position: absolute; top: 116px; right: -145px; width: 100px;}
+    .quick_ban ul > li{background: #fff; height: 80px; line-height: 80px; text-align: center; border: 1px solid #eee}
+    .quick_ban ul > li + li{margin-top: 10px;}
+    .quick_ban ul > li > a{display: block;}
+
+</style>
+<?
+    include('skin/pub/layout/pc/document/inc_document_lnb.html');
+?>
+<div class="document">
+    <main>
+        <div class="quick_ban">
+            <ul>
+                <li><a href="javascript:;">배너1</a></li>
+                <li><a href="javascript:;">배너2</a></li>
+                <li><a href="javascript:;">배너3</a></li>
+            </ul>
+        </div>
+
+        <nav>
+            <a href="../index">< 목록</a>
+            <h2>퀵 배너 <span>사용하기</span></h2>
+        </nav>
+    
+        <section>
+            <h3>기본 사용법</h3>
+            <p>
+                퀵배너는 스크립트를 사용하지 않고 <span>position: sticky</span>를 사용합니다. 배너의 부모가 되는 영역에 sticky 속성울 주고, 안에 배너에게 absolute 속성을 주어 위치를 조정합니다.
+            </p>
+<pre><code class="language-html"><style>
+    .quick_banner{position: sticky;}
+    .quick_banner ul{position: absolute; right: -100px; top: 10px; /* 각각 위치에 맞게 수정 */ }
+    ...
+</style>
+
+<main>
+    <div class="quick_banner">
+        <ul>
+            <li><a href="javascript:;">배너1</a></li>
+            <li><a href="javascript:;">배너2</a></li>
+            <li><a href="javascript:;">배너3</a></li>
+        </ul>
+    </div>
+
+    ...
+</main>
+</code></pre>
+        </section>
+    </main>
+</div>
+<script>
+    $(function(){
+        $('.scroll_box2 .top_bar').cnStickyBar({
+            target: '.scroll_box2',
+        });
+
+        $('.scroll_box3 .top_bar').cnStickyBar({
+            target: '.scroll_box3',
+            progress: true,
+        })
+    })
+</script>

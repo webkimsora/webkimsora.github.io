@@ -1,0 +1,475 @@
+<?
+$col = isset($_GET['col'])?$_GET['col'] : 3;
+?>
+<style>
+h2{font-size: var(--text-title); margin-bottom: 12px;}
+</style>
+<main class="contents_wrap">
+	<div class="sub-conts-wrap type_column_box">
+		<div>
+			<h2>영상 / 이미지 - 단독 사용 01 (부모 박스 기준 100%)</h2>
+			<div style="display:flex;gap:20px;">
+				<div style="width:33%;">
+					<div class="video-box">
+						<div class="img_area">
+							<a class="btn_dim_view" data-title="영상 타이틀" data-autoplay="true" data-movie="<?=VIDEO_URL?>/2022/220526_tcc_ljw_01_800k.mp4" href="javascript:void(0);">
+								<figure>
+									<img src="//placehold.co/560x345" alt="영상썸네일">
+
+									<span class="item_time">10:32</span>
+								</figure>
+							</a>
+						</div>
+						<div class="conts_area">
+							<div class="item_info">
+								<p><b>학습전략</b> <span><a href="javascript:alert('각 선생님 홈으로 이동');">국어 이선재</a></span></p>
+							</div>
+							
+							<div class="btn_dim_view item_tit txt_hide more" data-title="영상 타이틀" data-autoplay="true" data-movie="<?=VIDEO_URL?>/2022/220526_tcc_ljw_01_800k.mp4">최대글자수최대글자수최</div>
+
+							<div class="item_etc">
+								<span>2023.05.18</span>
+								<span><i class="ico ico_play"></i>242</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div style="width:33%;">
+					<div class="image-box">
+						<div class="img_area">
+							<a href="javascript:void(0);">
+								<figure>
+									<img src="//placehold.co/302x142" alt=" ">
+									<span class="sticker-area">D-7</span>
+								</figure>
+							</a>
+							<i class="ico ico_heart" onclick="$(this).toggleClass('ico_heart_fill')"></i>
+						</div>
+						<div class="conts_area">
+							<!-- 제목 높이 고정 하려면 .style_h42 추가 -->
+							<div class="item_tit txt_hide more"><a href="javascript:void(0);">최대글자수</a></div>
+
+							<div class="item_etc style_none">
+								<span>이벤트 기간</span>
+								<span>22.22.22 - 22.22.22</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div style="background-color:#F0F0F0;padding:10px;border-radius:12px;">
+					<p>아이콘 예제</p>
+					<div>
+						<p>sticker-area의 기본색인 #000</p>
+					</div>
+					<dl>
+						<dt style="font-size:11px;">영상</dt>
+						<dd><span class="sticker-area" style="--sticker-color:#C3716C;">커리큘럼</span></dd>
+						<dd><span class="sticker-area" style="--sticker-color:#5281D1;">학습전략</span></dd>
+						<dd><span class="sticker-area" style="--sticker-color:#58A6AA;">기출해설</span></dd>
+						<dd><span class="sticker-area" style="--sticker-color:#7B5FC0;">특별영상</span></dd>
+						<dt style="font-size:11px;">이벤트/기획전</dt>
+						<dd><span class="sticker-area">이벤트 진행중</span></dd>
+						<dd><span class="sticker-area">D-00</span></dd>
+						<dd>
+							<span class="sticker-area type_today">이벤트 오늘 마감</span>
+							<p style="font-size:10px;">.type_today 만 별도 지정</p>
+						</dd>
+
+						<dt style="font-size:11px;">전체강좌 / 이벤트기간</dt>
+						<dd><span class="sticker-area type_s" style="--sticker-color:#7B5FC0;">재시추천</span></dd>
+						<dd><span class="sticker-area type_s" style="--sticker-color:#55A76E;">재시추천</span></dd>
+						<dd><span class="sticker-area type_s" style="--sticker-color:#C160E3;">재시추천</span></dd>
+						<dd><span class="sticker-area type_s" style="--sticker-color:#DD972F;">재시추천</span></dd>
+						<dd><span class="sticker-area type_s" style="--sticker-color:#58A6AA;">재시추천</span></dd>
+						<dd><span class="sticker-area type_s" style="--sticker-color:#C3716C;">재시추천</span></dd>
+						<dd><span class="sticker-area type_s" style="--sticker-color:#5281D1;">재시추천</span></dd>
+						<dd><span class="sticker-area type_s" style="--sticker-color:#fff;--txt-color:#7E8B9A;">EVENT__6/10-7/30</span></dd>
+					</dl>
+
+					<div style="width:100px;">
+						<div class="circle_img"><img src="//placehold.co/302x142" alt=" "></div>
+
+						<div class="circle_img" style="background-image:url('//placehold.co/100x186');"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div>
+			<h2>영상 박스 - 단독 사용 02 (부모 박스 기준 100%)</h2>
+
+			<div style="width:520px;">
+				<div class="video-box">
+					<div class="img_area">
+						<a class="btn_dim_view" data-title="영상 타이틀" data-autoplay="true" data-movie="<?=VIDEO_URL?>/2022/220526_tcc_ljw_01_800k.mp4" href="javascript:void(0);">
+							<figure>
+								<img src="//placehold.co/286x100" alt="영상썸네일">
+								<figcaption>
+									<div class="txt_hide more">최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수</div>
+									<p class="txt_hide more">최대글자최대글자최대글자최대글자 최대글자최대글자최대글자</p>
+								</figcaption>
+								<span class="item_time">10:32</span>
+								<? if(true){ ?>
+								<span class="sticker-area">이벤트 진행중</span>
+								<? } else { // 관리자에서 지정한 색을 사용 (--sticker-color:#58A6AA;) ?>
+								<span class="sticker-area" style="--sticker-color:#58A6AA;">이벤트 진행중</span>
+								<? } ?>
+							</figure>
+						</a>
+						<i class="ico ico_heart" onclick="$(this).toggleClass('ico_heart_fill')"></i>
+					</div>
+					<div class="conts_area">
+						<div class="item_info">
+							<p><b>학습전략</b> <span><a href="javascript:alert('각 선생님 홈으로 이동');">국어 이선재</a></span></p>
+						</div>
+
+						<!-- .style_h42 사용하면 두줄 높이 고정 -->
+						<div class="btn_dim_view item_tit style_h42 txt_hide more" data-title="영상 타이틀" data-autoplay="true" data-movie="<?=VIDEO_URL?>/2022/220526_tcc_ljw_01_800k.mp4">최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수</div>
+
+						<div class="item_etc">
+							<span>2023.05.18</span>
+							<span><i class="ico ico_play"></i>242</span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div style="width:420px;margin-top:20px;">
+				<div class="video-box">
+					<div class="img_area">
+						<a class="btn_dim_view" data-title="영상 타이틀" data-autoplay="true" data-movie="<?=VIDEO_URL?>/2022/220526_tcc_ljw_01_800k.mp4" href="javascript:void(0);">
+							<figure>
+								<img src="//placehold.co/286x100" alt="영상썸네일">
+								<figcaption>
+									<div class="txt_hide more">최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수</div>
+									<p class="txt_hide more">최대글자최대글자최대글자최대글자 최대글자최대글자최대글자</p>
+								</figcaption>
+								<span class="sticker-area" style="--sticker-color:#58A6AA;">이벤트 진행중</span>
+							</figure>
+						</a>
+						<i class="ico ico_heart" onclick="$(this).toggleClass('ico_heart_fill')"></i>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div>
+			<h2>리스트 1 - 930 꽉 찬</h2>
+			<div style="background-color:beige;">
+				<!-- S:리스트 영역 -->
+				<!--
+				.box-list-wrap 에 선언해서 변경 가능 기본은 3개 컬럼.
+				style="
+					--col-num:3; (컬럼 갯수)
+					--gap-w:12px; (col 사이 여백)
+					--gap-h:30px; (row 사이 여백)
+				"
+
+				<div class="box-list-wrap"> // 기본
+				<div class="box-list-wrap" style="--col-num:4;--gap-w:10px;--gap-h:10px;"> // 속성 변경
+				-->
+				<div class="box-list-wrap" style="--col-num:<?= $col ?>;--gap-w:10px;--gap-h:10px;">
+					<ul class="list-wrap">
+						<li>
+							<div class="video-box">
+								<div class="img_area">
+									<a class="btn_dim_view" data-title="영상 타이틀" data-autoplay="true" data-movie="<?=VIDEO_URL?>/2022/220526_tcc_ljw_01_800k.mp4" href="javascript:void(0);">
+										<figure>
+											<img src="//placehold.co/560x345" alt="영상썸네일">
+										</figure>
+									</a>
+								</div>
+								<div class="conts_area">
+									<div class="item_info">
+										<p><b>학습전략</b> <span><a href="javascript:alert('각 선생님 홈으로 이동');">국어 이선재</a></span></p>
+									</div>
+									
+									<div class="btn_dim_view item_tit style_h42 txt_hide more" data-title="영상 타이틀" data-autoplay="true" data-movie="<?=VIDEO_URL?>/2022/220526_tcc_ljw_01_800k.mp4">최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수</div>
+
+									<div class="item_etc">
+										<span>2023.05.18</span>
+										<span><i class="ico ico_play"></i>242</span>
+									</div>
+								</div>
+							</div>
+						</li>
+
+						<li>
+							<div class="video-box">
+								<div class="img_area">
+									<a class="btn_dim_view" data-title="영상 타이틀" data-autoplay="true" data-movie="<?=VIDEO_URL?>/2022/220526_tcc_ljw_01_800k.mp4" href="javascript:void(0);">
+										<figure>
+											<img src="//placehold.co/560x345" alt="영상썸네일">
+											<figcaption>
+												<div class="txt_hide more">최대글자수최대</div>
+												<p class="txt_hide more">최대글자최</p>
+											</figcaption>
+										</figure>
+									</a>
+								</div>
+								<div class="conts_area">
+									<div class="item_info">
+										<p><b>학습전략</b> <span><a href="javascript:alert('각 선생님 홈으로 이동');">국어 이선재</a></span></p>
+									</div>
+									
+									<div class="btn_dim_view item_tit style_h42 txt_hide more" data-title="영상 타이틀" data-autoplay="true" data-movie="<?=VIDEO_URL?>/2022/220526_tcc_ljw_01_800k.mp4">최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수</div>
+
+									<div class="item_etc">
+										<span>2023.05.18</span>
+										<span><i class="ico ico_play"></i>242</span>
+									</div>
+								</div>
+							</div>
+						</li>
+
+						<li>
+							<div class="video-box">
+								<div class="img_area">
+									<a class="btn_dim_view" data-title="영상 타이틀" data-autoplay="true" data-movie="<?=VIDEO_URL?>/2022/220526_tcc_ljw_01_800k.mp4" href="javascript:void(0);">
+										<figure>
+											<img src="//placehold.co/560x345" alt="영상썸네일">
+											<figcaption>
+												<div class="txt_hide more">최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수</div>
+												<p class="txt_hide more">최대글자최대글자최대글자최대글자 최대글자최대글자최대글자</p>
+											</figcaption>
+											<span class="sticker-area">보급</span>
+										</figure>
+									</a>
+									<i class="ico ico_heart" onclick="$(this).toggleClass('ico_heart_fill')"></i>
+								</div>
+								<div class="conts_area">
+									<div class="item_info">
+										<p><b>학습전략</b> <span><a href="javascript:alert('각 선생님 홈으로 이동');">국어 이선재</a></span></p>
+									</div>
+									
+									<div class="btn_dim_view item_tit style_h42 txt_hide more" data-title="영상 타이틀" data-autoplay="true" data-movie="<?=VIDEO_URL?>/2022/220526_tcc_ljw_01_800k.mp4">최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수</div>
+
+									<div class="item_etc">
+										<span>2023.05.18</span>
+										<span><i class="ico ico_play"></i>242</span>
+									</div>
+								</div>
+							</div>
+						</li>
+
+						<li>
+							<div class="video-box">
+								<div class="img_area">
+									<a class="btn_dim_view" data-title="영상 타이틀" data-autoplay="true" data-movie="<?=VIDEO_URL?>/2022/220526_tcc_ljw_01_800k.mp4" href="javascript:void(0);">
+										<figure>
+											<img src="//placehold.co/560x345" alt="영상썸네일">
+											<span class="sticker-area" style="--sticker-color:#C160E3;">텍스트</span>
+										</figure>
+									</a>
+									<i class="ico ico_heart" onclick="$(this).toggleClass('ico_heart_fill')"></i>
+								</div>
+								<div class="conts_area style_num"><!-- style_num : 숫자 사용시 -->
+									<span class="item_num"><i class="ico ico_num1"><!-- 숫자 1~10 --></i></span>
+
+									<div class="item_info">
+										<p><b>학습전략</b> <span><a href="javascript:alert('각 선생님 홈으로 이동');">국어 이선재</a></span></p>
+									</div>
+									
+									<div class="btn_dim_view item_tit style_h42 txt_hide more" data-title="영상 타이틀" data-autoplay="true" data-movie="<?=VIDEO_URL?>/2022/220526_tcc_ljw_01_800k.mp4">최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수</div>
+
+									<div class="item_etc">
+										<span>2023.05.18</span>
+										<span><i class="ico ico_play"></i>242</span>
+									</div>
+								</div>
+							</div>
+						</li>
+					<? for($i=1; $i<=10; $i++){ ?>
+						<li>
+							<div class="video-box">
+								<div class="img_area">
+									<a class="btn_dim_view" data-title="영상 타이틀" data-autoplay="true" data-movie="<?=VIDEO_URL?>/2022/220526_tcc_ljw_01_800k.mp4" href="javascript:void(0);">
+										<figure>
+											<img src="//placehold.co/286x162" alt="영상썸네일">
+											<span class="sticker-area" style="--sticker-color:#DD972F;">관리자 색상변경 가능</span>
+										</figure>
+									</a>
+									<i class="ico ico_heart" onclick="$(this).toggleClass('ico_heart_fill')"></i>
+								</div>
+								<div class="conts_area style_num"><!-- style_num : 숫자 사용시 -->
+									<span class="item_num"><i class="ico ico_num<?= $i ?>"><!-- 숫자 1~10 --></i></span>
+
+									<div class="item_info">
+										<p><b>학습전략</b> <span><a href="javascript:alert('각 선생님 홈으로 이동');">국어 이선재</a></span></p>
+									</div>
+									
+									<div class="btn_dim_view item_tit style_h42 txt_hide more" data-title="영상 타이틀" data-autoplay="true" data-movie="<?=VIDEO_URL?>/2022/220526_tcc_ljw_01_800k.mp4">최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수</div>
+
+									<div class="item_etc">
+										<span>2023.05.18</span>
+										<span><i class="ico ico_play"></i>242</span>
+									</div>
+								</div>
+							</div>
+						</li>
+					<? } ?>
+					</ul>
+				</div>
+				<!-- E:리스트 영역 -->
+			</div>
+		</div>
+
+		<div>
+			<h2>리스트 1 - 930 박스</h2>
+			<div class="conts-box style_bd_p">
+				<!-- S:리스트 영역  style="--col-num:<?= $col ?>;"- 갯수 변경 (기본 삭제) -->
+				<div class="box-list-wrap" style="--col-num:<?= $col ?>;">
+					<ul class="list-wrap">
+						<li>
+							<div class="video-box">
+								<div class="img_area">
+									<a class="btn_dim_view" data-title="영상 타이틀" data-autoplay="true" data-movie="<?=VIDEO_URL?>/2022/220526_tcc_ljw_01_800k.mp4" href="javascript:void(0);">
+										<figure>
+											<img src="//placehold.co/560x345" alt="영상썸네일">
+										</figure>
+									</a>
+								</div>
+								<div class="conts_area">
+									<div class="item_info">
+										<p><b>학습전략</b> <span><a href="javascript:alert('각 선생님 홈으로 이동');">국어 이선재</a></span></p>
+									</div>
+									
+									<div class="btn_dim_view item_tit txt_hide more" data-title="영상 타이틀" data-autoplay="true" data-movie="<?=VIDEO_URL?>/2022/220526_tcc_ljw_01_800k.mp4">최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수</div>
+
+									<div class="item_etc">
+										<span>2023.05.18</span>
+										<span><i class="ico ico_play"></i>242</span>
+									</div>
+								</div>
+							</div>
+						</li>
+
+						<li>
+							<div class="video-box">
+								<div class="img_area">
+									<a class="btn_dim_view" data-title="영상 타이틀" data-autoplay="true" data-movie="<?=VIDEO_URL?>/2022/220526_tcc_ljw_01_800k.mp4" href="javascript:void(0);">
+										<figure>
+											<img src="//placehold.co/560x345" alt="영상썸네일">
+											<figcaption>
+												<div class="txt_hide more">최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수</div>
+												<p class="txt_hide more">최대글자최대글자최대글자최대글자 최대글자최대글자최대글자</p>
+											</figcaption>
+										</figure>
+									</a>
+								</div>
+								<div class="conts_area">
+									<div class="item_info">
+										<p><b>학습전략</b> <span><a href="javascript:alert('각 선생님 홈으로 이동');">국어 이선재</a></span></p>
+									</div>
+									
+									<div class="btn_dim_view item_tit txt_hide more" data-title="영상 타이틀" data-autoplay="true" data-movie="<?=VIDEO_URL?>/2022/220526_tcc_ljw_01_800k.mp4">최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수</div>
+
+									<div class="item_etc">
+										<span>2023.05.18</span>
+										<span><i class="ico ico_play"></i>242</span>
+									</div>
+								</div>
+							</div>
+						</li>
+
+						<li>
+							<div class="video-box">
+								<div class="img_area">
+									<a class="btn_dim_view" data-title="영상 타이틀" data-autoplay="true" data-movie="<?=VIDEO_URL?>/2022/220526_tcc_ljw_01_800k.mp4" href="javascript:void(0);">
+										<figure>
+											<img src="//placehold.co/560x345" alt="영상썸네일">
+											<figcaption>
+												<div class="txt_hide more">최대글자수</div>
+												<p class="txt_hide more">최대글자최</p>
+											</figcaption>
+											<span class="sticker-area">보급</span>
+										</figure>
+									</a>
+									<i class="ico ico_heart" onclick="$(this).toggleClass('ico_heart_fill')"></i>
+								</div>
+								<div class="conts_area">
+									<div class="item_info">
+										<p><b>학습전략</b> <span><a href="javascript:alert('각 선생님 홈으로 이동');">국어 이선재</a></span></p>
+									</div>
+									
+									<div class="btn_dim_view item_tit txt_hide more" data-title="영상 타이틀" data-autoplay="true" data-movie="<?=VIDEO_URL?>/2022/220526_tcc_ljw_01_800k.mp4">최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수</div>
+
+									<div class="item_etc">
+										<span>2023.05.18</span>
+										<span><i class="ico ico_play"></i>242</span>
+									</div>
+								</div>
+							</div>
+						</li>
+
+						<li>
+							<div class="video-box">
+								<div class="img_area">
+									<a class="btn_dim_view" data-title="영상 타이틀" data-autoplay="true" data-movie="<?=VIDEO_URL?>/2022/220526_tcc_ljw_01_800k.mp4" href="javascript:void(0);">
+										<figure>
+											<img src="//placehold.co/560x345" alt="영상썸네일">
+											<span class="sticker-area" style="--sticker-color:#55A76E;">관리자 색상 변경</span>
+										</figure>
+									</a>
+									<i class="ico ico_heart" onclick="$(this).toggleClass('ico_heart_fill')"></i>
+								</div>
+								<div class="conts_area style_num"><!-- style_num : 숫자 사용시 -->
+									<span class="item_num"><i class="ico ico_num1"><!-- 숫자 1~10 --></i></span>
+
+									<div class="item_info">
+										<p><b>학습전략</b> <span><a href="javascript:alert('각 선생님 홈으로 이동');">국어 이선재</a></span></p>
+									</div>
+									
+									<div class="btn_dim_view item_tit txt_hide more" data-title="영상 타이틀" data-autoplay="true" data-movie="<?=VIDEO_URL?>/2022/220526_tcc_ljw_01_800k.mp4">최대글자수</div>
+
+									<div class="item_etc">
+										<span>2023.05.18</span>
+										<span><i class="ico ico_play"></i>242</span>
+									</div>
+								</div>
+							</div>
+						</li>
+					<? for($i=1; $i<=10; $i++){ ?>
+						<li>
+							<div class="video-box">
+								<div class="img_area">
+									<a class="btn_dim_view" data-title="영상 타이틀" data-autoplay="true" data-movie="<?=VIDEO_URL?>/2022/220526_tcc_ljw_01_800k.mp4" href="javascript:void(0);">
+										<figure>
+											<img src="//placehold.co/286x162" alt="영상썸네일">
+											<span class="sticker-area" style="--sticker-color:#D7C100;">관리자 색상 변경</span>
+										</figure>
+									</a>
+									<i class="ico ico_heart" onclick="$(this).toggleClass('ico_heart_fill')"></i>
+								</div>
+								<div class="conts_area style_num"><!-- style_num : 숫자 사용시 -->
+									<span class="item_num"><i class="ico ico_num<?= $i ?>"><!-- 숫자 1~10 --></i></span>
+
+									<div class="item_info">
+										<p><b>학습전략</b> <span><a href="javascript:alert('각 선생님 홈으로 이동');">국어 이선재</a></span></p>
+									</div>
+									
+									<div class="btn_dim_view item_tit txt_hide more" data-title="영상 타이틀" data-autoplay="true" data-movie="<?=VIDEO_URL?>/2022/220526_tcc_ljw_01_800k.mp4">최대글자수최대글자수최대글자수최대글자수최대글자수최대글자수</div>
+
+									<div class="item_etc">
+										<span>2023.05.18</span>
+										<span><i class="ico ico_play"></i>242</span>
+									</div>
+								</div>
+							</div>
+						</li>
+					<? } ?>
+					</ul>
+				</div>
+				<!-- E:리스트 영역 -->
+			</div>
+		</div>
+	</div>
+</main>
+<script>
+	$(function(){
+		$('.btn_dim_view').cnModal({
+			modalType:'video',
+			modalTarget: '.cn-movie-modal'
+		});
+	});
+</script>

@@ -1,0 +1,53 @@
+<style>
+.ani_stamp_zoom1 {opacity: 0;}
+.ani_stamp_zoom2 {opacity: 0;}
+.active .ani_stamp_zoom1 {animation: stamp_zoom1 0.5s 0.5s linear both;}
+.active .ani_stamp_zoom2 {animation: stamp_zoom2 .5s 1s ease-in-out forwards;}
+
+.active .stamp_box {margin-top: 30px; position: relative;}
+.active .stamp_box .cur_stamp{position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 0;}
+.active.active .stamp_box .cur_stamp{animation: stamp .3s .3s ease-in-out both;}
+
+@keyframes stamp_zoom1 {
+		0% {opacity: 0;transform: scale(0.7);}
+		70% {transform: scale(1.05);}
+		100% {opacity: 1;transform: scale(1);}
+}
+
+@keyframes stamp_zoom2 {
+  0% {
+      opacity: 0;
+      transform: scale(3);
+  }
+
+  100% {
+      opacity: 1;
+      transform: scale(1);
+  }
+}
+
+@keyframes stamp {
+    0%{opacity: 0; transform-origin: 50% 50%; transform: translate(-50%, -50%) rotate(15deg) scale(5); transition: all .3s cubic-bezier(0.6, 0.04, 0.98, 0.335);}
+    100%{opacity: 1; transform: translate(-50%, -50%) rotate(0) scale(1);}
+}
+
+/* 제외 */
+.stamp_all {display: flex; gap: 10px; flex-wrap: wrap;}
+.stamp_all .row img {width: 500px;}
+</style>
+
+<!-- @ 본문 -->
+<section class="stamp_all cn-scroll-ani">
+  <div class="ani_stamp_zoom1 row">
+    <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/09/gong_15595/pc/series_tit.png" alt="">
+  </div>
+  <div class="ani_stamp_zoom2 row">
+    <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/09/gong_15595/pc/series_tit.png" alt="">
+  </div>
+
+  <!-- -->
+  <div class="stamp_box">
+    <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/08/mkt1_7384/pc/cur_img.png" alt="유형별 최다 합격 커리큘럼 ➀ 대학생  ➁ 초시생 ➂ 타사 환승생..">
+    <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/08/mkt1_7384/pc/cur_stamp.png" alt="TOP SECRET" class="cur_stamp">
+</div>
+</section>

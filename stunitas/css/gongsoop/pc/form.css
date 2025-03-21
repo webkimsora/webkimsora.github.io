@@ -1,0 +1,72 @@
+/* 공통 스타일 */
+.sp__form .sp__table colgroup col {min-width: auto;}
+.sp__form .sp__table--form {justify-content: flex-end !important;}
+.sp__form .sp__table--form .form__table--subject, 
+.sp__form .sp__table--form .form__table--date {border-radius: 8px; overflow: hidden; border: 1px solid var(--stroke-border); display: inline-block;}
+.sp__form .sp__table--form input[type=checkbox] {width: 20px; height: 20px; background-image: url('/gongsoop/img/icon/icon_checkbox_off2.svg');}
+.sp__form .sp__table--form input[type=checkbox]:checked {background-image: url('/gongsoop/img/icon/icon_checkbox_on.svg');}
+
+.sp__form .sp__table--form .sp__table--btn {display: flex; gap: 8px;}
+.sp__form .sp__table--form .sp__table--btn a i{width: 13px; height: 13px;}
+.sp__form .sp__table--form .sp__table--btn a i::after{background: var(--icon-secondary); width: 13px; height: 13px;}
+
+.sp__form [class*=form__table] .sp__table {border-collapse: collapse; width: 100%; display: table;}
+.sp__form [class*=form__table] .sp__table th, .sp__form [class*=form__table] .sp__table td {height: 46px; padding: 8px; border: 1px solid var(--stroke-border);}
+.sp__form [class*=form__table] .sp__table thead {background: #EAFAEB;}
+.sp__form [class*=form__table] .sp__table thead tr th:first-child {border-top-left-radius: 8px;}
+.sp__form [class*=form__table] .sp__table thead tr th:last-child {border-top-right-radius: 8px;}
+.sp__form [class*=form__table] .sp__table tbody tr:last-child td:first-child {border-bottom-left-radius: 8px;}
+.sp__form [class*=form__table] .sp__table tbody tr:last-child td:last-child {border-bottom-right-radius: 8px;}
+.sp__form [class*=form__table] .sp__table th:first-child, .sp__form [class*=form__table] .sp__table td:first-child {border-left: none;}
+.sp__form [class*=form__table] .sp__table th:last-child, .sp__form [class*=form__table] .sp__table td:last-child {border-right: none;}
+.sp__form [class*=form__table] .sp__table thead tr:first-child th {border-top: none;}
+.sp__form [class*=form__table] .sp__table tr:last-child th:first-child, .sp__form [class*=form__table] .sp__table tbody tr:last-child td {border-bottom: none;}
+.sp__form [class*=form__table] .sp__table td input{background: transparent; width: 100%; height: 100%;}
+.sp__form [class*=form__table] .sp__table tr th label{display: flex; align-items: center; justify-content: center; width: 100%; height: 100%;}
+.sp__form .form__table--date .sp__table td {height: 64px;}
+
+/* 공지사항 영역 */
+.sp__form .notice__area {display: flex; background: var(--bg-alternative); border-radius: var(--border-radius-l, 12px);}
+.sp__form .notice__area .notice__list {padding: 16px 0 0;}
+.sp__form .notice__area .notice__list > li {position: relative; padding-left: 10px;}
+.sp__form .notice__area .notice__list > li::before {display: block; content: '\2022'; position: absolute; left: 0; top: 0;}
+.sp__form .notice__area b.sp__typo--title14--normal {display: flex; align-items: center; gap: 4px;}
+.sp__form .notice__area i.sp__ico--info {width: 16px; height: 16px;}
+.sp__form .notice__area i.sp__ico--info::after {background: var(--gray-100); width: 16px; height: 16px;}
+
+/* 탭 타입 */
+.sp__form .form__type {align-items: center; justify-content: flex-start; width: auto;}
+
+/* 시간 선택 테이블 */
+.sp__form .form__table--date tbody a.sp__select--box{width: 63px;}
+.sp__form .form__table--date tbody a.sp__select--box .select{width: 63px;}
+.sp__form .form__table--date .time__select--area{display: flex; align-items: center; gap: 10px;}
+.sp__form .form__table--date .time__select--area > div{display: flex; align-items: center; gap: 6px;}
+.sp__form .form__table--date thead tr .saturday{background: var(--brand-secondary-10);}
+.sp__form .form__table--date thead tr .sunday{background: var(--etc-red-10);}
+.sp__form .form__table--date tbody tr .saturday{background: rgba(231, 239, 253, 0.30);}
+.sp__form .form__table--date tbody tr .sunday{background: rgba(253, 231, 231, 0.30);}
+
+/* 텍스트 입력 박스 */
+.sp__form .form__input--textarea {border-radius: var(--border-radius-m, 8px);}
+.sp__form .form__input--file {border-radius: var(--border-radius-m, 8px);}
+.sp__form .form__input--file .file--detail{margin-left: 6px;}
+.sp__form .form__input--file .file__add label {display: flex; align-items: center; gap: 2px;}
+.sp__form .form__input--file .file__add label i.sp__ico--plus_circle{width: 20px; height: 20px;}
+.sp__form .form__input--file .file__add label i.sp__ico--plus_circle::after{background: var(--icon-primary); width: 20px; height: 20px;}
+.sp__form .form__input--file .file__add label > .sp__typo--title14{line-height: 20px;}
+
+/* 파일 리스트 */
+.sp__form .form__input--file .file__list {background: var(--bg-secondary); border-radius: var(--border-radius-m, 8px);}
+.sp__form .form__input--file .file__list ul {display: flex; flex-wrap: wrap; gap: 8px 16px;}
+.sp__form .form__input--file .file__list ul > li {padding-top: 0; display: flex; align-items: center; gap: 0 2px; color: var(--text-secondary); font-size: 13px; font-weight: 400; line-height: 18px; letter-spacing: -0.26px;}
+.sp__form .form__input--file .file__list .file--del {width: 20px; height: 20px; font-size: 0; color: transparent; cursor: pointer;}
+.sp__form .form__input--file .file__list .file--del i {width: 20px; height: 20px;}
+.sp__form .form__input--file .file__list .file--del i:after {background-color: var(--icon-primary);}
+.sp__form .form__input--file .file__list .file--name > a:hover {text-decoration: underline;}
+
+/* 버튼 */
+.sp__form .form__btn {display: flex; align-items: center; justify-content: flex-end; gap: 8px;}
+.sp__form .form__btn a {width: 160px;}
+
+.drop__menu--hour, .drop__menu--minute {min-width: 63px !important;}

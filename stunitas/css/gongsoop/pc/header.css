@@ -1,0 +1,13 @@
+/* 공숲 헤더 */
+.sp__inner{width: 1140px; margin: 0 auto;}
+.sp__header{border-bottom: 1px solid var(--stroke-divider);}
+.sp__header .sp__header--layout{display: flex; justify-content: space-between; height: 70px; align-items: center;}
+.sp__header [class*=header__menu]{display: flex; font-family: var(--font-fr);}
+.sp__header [class*=header__menu] > li{position: relative;}
+.sp__header .header__menu--nav > li > a{display: block; font-size: 18px; font-weight: 700; padding: 0 26px; height: 70px; line-height: 70px;}
+.sp__header .header__menu--nav > li > a:hover{color: var(--text-secondary);}
+.sp__header .header__menu--user{gap: 23px;}
+.sp__header .header__menu--user > li{position: relative;}
+.sp__header .header__menu--user > li > a{display: block; font-size: 14px; font-weight: 600; line-height: 70px; color: var(--text-secondary);}
+.sp__header .header__menu--user > li > a:hover{color: var(--color-primary)}
+.sp__header .header__menu--user > li + li::before{content: ""; background: var(--stroke-border); width: 1px; height: 8px; position: absolute; left: -12px; top: 50%; margin-top: -4px;}

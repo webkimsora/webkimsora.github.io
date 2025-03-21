@@ -1,0 +1,233 @@
+<div class="cont_event" id="">
+	<div class="top" style="padding: 5rem 0;background: linear-gradient(180deg, #E9E9E9 0%, #FFF 100%);">
+		<div class="inner pd-0">
+			<h3>
+				<img src="<?=UN_STATIC_IMG?>/gong/landing/2024/10/gong_15714/m/event_comment1_tit.png" alt="">
+				<div class="pd-between">
+					<div class="event_info">
+						<img src="<?=UN_STATIC_IMG?>/gong/landing/2024/10/gong_15714/m/event_comment1_img.png" alt="">
+					</div>
+				</div>
+			</h3>
+		</div>
+	</div>
+	<div class="inner">
+		<div class="event_box_wrap">
+			<!-- 개인정보 수집 동의 -->
+			<section class="event_toggle_box toggle-box">
+				<div class="agree_check_box toggle-tit flex">
+					<label class="agree_check">
+						<input type="checkbox">
+						<span class="ico ico_check">개인정보의 수집 및 이용에 동의합니다.</span>
+					</label>
+					<button type="button" class="ico ico_arrow toggle-btn _view">보기</button>
+				</div>
+				<div class="info_conts toggle-conts active">
+					<ul>
+						<li>개인정보의 수집·이용 목적: 이벤트 진행 및 경품 배송</li>
+						<li>수집하는 개인정보의 항목: 이름, 휴대폰번호</li>
+						<li>개인정보의 보유·이용 기간: 이벤트 종료 후 즉시 파기</li>
+						<li>개인정보의 수집 및 이용에 대한 동의를 거부할 수 있으며, 이 경우 이벤트 참여가 제한됩니다.</li>
+					</ul>
+				</div>
+			</section>
+			<!-- 버튼 리스트 -->
+			<div class="event_btn_box btn_flex_none">
+				<div>
+					<a href="javascript:void(0);" class="btn_l style_dark modal_form_btn" data-target="modal_form">버튼 이름</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- 인증팝업 -->
+<div class="modal_form cn-modal-wrap">
+	<div class="modal_contents">
+		<div class="pop_head">
+			<div class="_tit">타사 결제 이력 인증하기 <br><span>추가 타이틀</span></div>
+		</div>
+		<div class="pop_cnt">
+			<dl>
+				<dt>개인 정보입력</dt>
+				<dd>
+					<div class="flex">
+						<p><input type="text" name="username" id="username" placeholder="이름" value="김단기" readonly=""></p>
+						<p><input type="text" name="phone" id="phone" placeholder="휴대폰 번호" value="01012345678" class="phone number"></p>
+					</div>
+				</dd>
+				<dd><input type="text" id="username" name="username" value="" readonly placeholder="이름"></dd>
+				<dd><input type="text" id="phone1" name="phone" value="" readonly placeholder="핸드폰 번호"></dd>
+				<dd>
+					<input type="text" value="" readonly placeholder="구매이력 첨부" class="file_dir1_txt file_dir_txt">
+					<input type="file" name="file_dir1" id="file_dir1" class="file_dir">
+					<label for="file_dir1"><img src="<?=UN_STATIC?>/img/common/icon/ico_camera.png" alt="파일 업로드"></label>
+				</dd>
+				<dd>
+					<input type="text" value="" readonly placeholder="구매이력 첨부" class="file_dir_txt">
+					<input type="file" name="file_dir2" id="file_dir2" class="file_dir">
+					<label for="file_dir2"><img src="<?=UN_STATIC?>/img/common/icon/ico_camera.png" alt="파일 업로드"></label>
+				</dd>
+				<dd class="inp">
+					<span>응시 경험</span>
+					<div class="check">
+						<label for="test_y"><input type="radio" name="test" id="test_y" value="Y"> 있음</label>
+						<label for="test_n"><input type="radio" name="test" id="test_n" value="N"> 없음</label>
+					</div>
+				</dd>
+				<dd class="inp">
+					<span>준비 직렬</span>
+					<input type="text" id="" name="" value="" placeholder="직렬을 입력해주세요.">
+				</dd>
+			</dl>
+			<dl>
+				<dt>타사 결제 이력 정보 입력</dt>
+				<dd><input type="text" id="title" name="title" placeholder="업체명"></dd>
+				<dd><input type="text" id="productname" name="productname" placeholder="상품명"></dd>
+				<dd><input type="text" id="buydate" name="buydate" class="datepicker" placeholder="구매일자 예) 2021년 2월 1일"></dd>
+				<dd><input type="text" id="price" name="price" class="number" placeholder="결제금액"></dd>
+			</dl>
+			<dl>
+				<dt>타사 결제 이력 정보 입력</dt>
+				<dd><input type="text" id="title" name="title" placeholder="업체명"></dd>
+				<dd><input type="text" id="productname" name="productname" placeholder="상품명"></dd>
+				<dd><input type="text" id="buydate" name="buydate" class="datepicker" placeholder="구매일자 예) 2021년 2월 1일"></dd>
+				<dd><input type="text" id="price" name="price" class="number" placeholder="결제금액"></dd>
+			</dl>
+			<dl>
+				<dt>개인 정보입력</dt>
+				<dd>
+					<div class="flex">
+						<p><input type="text" id="username" name="username" value="김단기" readonly=""></p>
+						<p><input type="text" id="phone1" name="phone" value="01012345678" readonly=""></p>
+					</div>
+				</dd>
+			</dl>
+			<dl>
+				<dt>관심직렬</dt>
+				<dd>
+					<div class="flex">
+						<p class="ico ico_arrow _down">
+							<select name="" id="" class="nomalSelect">
+								<option value="">행정직</option>
+								<option value="">경찰직</option>
+								<option value="">소방직</option>
+								<option value="">법원직</option>
+								<option value="">군무원</option>
+								<option value="">기타직렬</option>
+							</select>
+						</p>
+						<p class="ico ico_arrow _down">
+							<select name="" id="" class="nomalSelect">
+								<option value="">일반행정</option>
+								<option value="">우정</option>
+								<option value="">노동</option>
+								<option value="">선거</option>
+								<option value="">세무</option>
+								<option value="">관세</option>
+								<option value="">교육</option>
+								<option value="">사회복지</option>
+								<option value="">검찰</option>
+								<option value="">교정</option>
+								<option value="">보호</option>
+								<option value="">마약</option>
+								<option value="">출관</option>
+								<option value="">통계</option>
+								<option value="">기술직</option>
+							</select>
+							<!-- <select name="" id="">
+								<option value="">공채</option>
+								<option value="">경채</option>
+								<option value="">101단</option>
+							</select> -->
+							<!-- <select name="" id="">
+								<option value="">공채</option>
+								<option value="">경채</option>
+							</select> -->
+							<!-- <select name="" id="">
+								<option value="">법원사무직</option>
+								<option value="">등기사무직</option>
+							</select> -->
+						</p>
+					</div>
+				</dd>
+			</dl>
+			<dl>
+				<dt>동반 인원</dt>
+				<dd>
+					<div class="check">
+						<label for="person_0"><input type="radio" name="person" id="person_0" value="없음" checked="checked">없음</label>
+						<label for="person_1"><input type="radio" name="person" id="person_1" value="1명">1명</label>
+						<label for="person_2"><input type="radio" name="person" id="person_2" value="2명">2명</label>
+						<label for="person_3"><input type="radio" name="person" id="person_3" value="3명 이상">3명 이상</label>
+					</div>
+				</dd>
+			</dl>
+			<dl class="_row">
+				<dt>선생님께 궁금한 것을 물어보세요.</dt>
+				<dd>
+					<a href="javascript:;">작성하기</a>
+				</dd>
+			</dl>
+			<dl>
+				<dt>
+					<div class="_row">
+						개인정보 수집/이용 동의(필수)
+						<div class="check">
+							<label for="agree1_y"><input type="radio" name="agree1" id="agree1_y" value="Y" checked="checked">동의</label>
+							<label for="agree1_n"><input type="radio" name="agree1" id="agree1_n" value="N">비동의</label>
+						</div>
+					</div>
+				</dt>
+				<dd class="privacy">
+					<b>㈜에스티유니타스는 본 이벤트를 위해 다음과 같이 참여자의 개인정보를 수집 및 이용합니다.</b><br>
+					-수집 및 이용 목적: 행사/이벤트 참석 예약<br>
+					-수집 항목: 이름, 전화번호, 관심 직렬<br>
+					-보유 및 이용 기간: 행사 종료 후 12개월<br>
+					귀하는 개인정보 수집 및 이용에 동의하지 않으실 수 있으나, 동의하지 않으실 경우 참여가 제한됩니다. <br>
+					위 내용을 충분히 이해하였으며 개인정보 수집 이용에 동의합니다.
+				</dd>
+			</dl>
+			<dl>
+				<dt>개인정보 수집 및 활용 동의 안내</dt>
+				<dd class="privacy">
+					<p>[필수] 참여 게시글 저작재산권 이용 허락</p>
+					<b>1.개인정보 수집 이용 목적</b><br>
+					이벤트 참여자 대상 공단기 2025 사경인 회계학 공타기출 온라인 강의 무료 수강권 지급<br>
+					<b>2.개인정보 수집 항목 </b><br>
+					신청인들의 이름, 전화번호, 타사 결제 이력<br>
+					<b>3.개인정보 이용기간 및 보유기간</b> <br>
+					개인정보 수집 및 이용 목적 달성 후 30일 이내 파기<br>
+					<b>4.개인정보 제공 동의 거부 권리 및 동의 거부에 따른 불이익</b><br>
+					개인 정보 제공 동의를 거부할 권리가 있으며 동의 거부에 따른 불이익은 없으나, 타사 결제 이력이 인증된 회원을 대상으로 발급되는 할인 쿠폰 지급 대상에서는 제외됨<br>
+					<b>5.쿠폰 지급 안내를 위한 문자 수신에 동의</b><br>
+					문자 수신 동의를 거부할 권리가 있으며 동의 거부에 따른 불이익은 없으나 문자 수신에 동의하지 않을 경우, 타사 결제 이력이 인증된 회원을 대상으로 발급되는 할인 쿠폰 지급 시, 안내 문자가 발송되지 않음을 알려드립니다.
+				</dd>
+			</dl>
+			<div class="agree">
+				위의 내용을 이해하였으며 위와 같은 개인정보 수집 이용에
+				<div class="check">
+					<label for="agree1_y"><input type="radio" name="agree1" id="agree1_y" checked="checked" value="Y"> 동의</label>
+					<label for="agree1_n"><input type="radio" name="agree1" id="agree1_n" value="N"> 비동의</label>
+				</div>
+			</div>
+		</div>
+		<div class="pop_btn">
+			<a href="javascript:;" onclick="modalForm.close()" class="modal_close style_grey">취소</a>
+			<a href="javascript:;" class="style_blue">인증하기</a>
+		</div>
+	</div>
+</div>
+<script>
+	// 인증 팝업
+	let modalForm = $('.modal_form_btn').cnModal({
+		head: false,
+		close: false,
+	});
+	// 인증 팝업 파일
+	$('.file_dir').on('click',function(){
+		$(this).on('change', function(){
+			var fileName = $(this).val().split('/').pop().split('\\').pop();
+			$(this).siblings('.file_dir_txt').val(fileName);
+		})
+	});
+</script>

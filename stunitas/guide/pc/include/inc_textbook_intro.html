@@ -1,0 +1,105 @@
+<div class="detail_book style_p">
+    <div class="prev_list_tit">
+        <strong>
+            교재 소개
+        </strong>
+        <a href="javascript:;" class="ico ico_arrow_right">e-교재/필기앱 안내</a>
+    </div>
+    <div class="book_wrap">
+        <div class="book_type">
+            <select class="sel-box">
+                <option value="">2023 신용한 행정학 약점공략 공부하는 기출변형 모의고사 (전 2권)</option>
+            </select>
+        </div>
+        <div class="book_info">
+            <div class="book_img">
+                <figure>
+                    <img src="//placehold.co/930x1012/" alt="2023 신용한 행정학 약점공략 공부하는 기출변형 모의고사 (전 2권)">
+                    <figcaption class="skip">2023 신용한 행정학 약점공략 공부하는 기출변형 모의고사 (전 2권)</figcaption>
+                </figure>
+                <a href="javascript:void(0);" class="btn-h30"><span>미리보기</span></a>
+            </div>
+            <div class="book_data">
+                <div class="label_wrap">
+                    <span>교재</span>
+                    <span class="green">e-교재</span>
+                </div>
+                <dl>
+                    <dt>2023 신용한 행정학 약점공략 공부하는 기출변형 모의고사 (전 2권)2023 신용한 행정학 약점공략 공부하는 기출변형 모의고사 (전 2권)</dt>
+                    <dd>《선재국어 수능형 문학 문제 정복하기》는 복합 지문을 바탕으로 한 실전 문학 문제들로 구성하고, 작품마다 상세한 해설을 수록하였습니다. 변화하는 시험 유형에 대비할 수 있으며 일반행정직 고득점을 목표로 하는 수험생, 교육행정직, 법원직 등 특수 직렬을 준비하는 수험생들에게 적합한 교재입니다.</dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+
+    <ul class="lecture_group lecture_info">
+        <!-- 목차 -->
+        <li>
+            <div class="list_head">
+                <strong>목차</strong>
+                <div class="ico ico_arrow_down"></div>
+            </div>
+            <div class="list_body">
+                <div class="body_left">
+                    <span>약력</span>
+                    <div class="body_ct">[1일차 1강] key 01 정치와 행정 （합격노트 p.17~25 / 비행기 p.16~38)</div>
+                </div>
+            </div>
+        </li>
+        <li class="active">
+            <div class="list_head">
+                <strong>품목정보</strong>
+                <div class="ico ico_arrow_down"></div>
+            </div>
+            <div class="list_body">
+                <ul>
+                    <li>
+                        <div class="body_left">
+                            <span>저자</span>
+                            <div class="body_ct">이선재</div>
+                        </div>
+                        <div class="body_left">
+                            <span>출간일</span>
+                            <div class="body_ct">2023.07.05</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="body_left">
+                            <span>페이지</span>
+                            <div class="body_ct">232쪽</div>
+                        </div>
+                        <div class="body_left">
+                            <span>업데이트 현황</span>
+                            <div class="body_ct">공부서점에서 렌더링</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="body_left">
+                            <span>판형</span>
+                            <div class="body_ct">규외 225 X 300 X 12 mm</div>
+                        </div>
+                        <div class="body_left">
+                            <span>ISBN</span>
+                            <div class="body_ct">9791168340855</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </li> 
+    </ul>
+    <!-- // 약력/품목정보 -->
+</div>
+
+<? if($inc_textbook_script): ?>
+<script>
+    $(function(){
+        // 강의 목차 열기/닫기
+        $('.lecture_group').on('click', 'li > .list_head', function(){
+            const el = $(this);
+            $(this).parent().parent().find('li').not($(this).parent()).removeClass('active');
+            $(this).parent().parent().find('li .list_body').not($(this).next()).slideUp(300);
+            $(this).next().stop().slideToggle(300).parent().toggleClass('active');
+        });
+    })
+</script>
+<? endIf; ?>

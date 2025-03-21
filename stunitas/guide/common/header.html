@@ -1,0 +1,102 @@
+<?php  
+    $common = $this->common_meta->getConfig(); 
+    $now_time = $common['now_time'];            
+?><!doctype html>
+<html dir="ltr" lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, user-scalable=yes">
+	<meta name="google-site-verification" content="kmw8p9tpZyE_ca3NXlELzFOHCdismodIZ2PxZrkmYlc" />                
+	<?php // 오픈그래프 Start ?>
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="<?=($common['header']['title']) ? $common['header']['title'] : '공무원 인강 | 공단기 합격자 수 1위'?>" />
+	<meta property="og:site_name" content="<?=($common['header']['title']) ? $common['header']['title'] : '공무원 인강 | 공단기 합격자 수 1위'?>" />
+	<meta name="keywords" content="<?=$common['header']['keywords']?>">  
+	<meta name="description" content="<?=$common['header']['description']?>">
+	<meta property="og:description" content="<?=$common['header']['description']?>">
+	<meta property="og:image" content="<?=$common['header']['og_image']?>">    
+	<meta property="og:url" content="<?=$common['header']['og_url']?>"> 
+	<?php // 오픈그래프 End ?> 
+	<?php // favicon Start ?>
+	<meta name="msapplication-TileColor" content="#681e20">
+	<meta name="msapplication-square70x70logo" content="<?=CONECTS_STATIC_HOST?>/common/img/favicon/CONECTS_150x150.png?<?=time()?>">
+	<meta name="msapplication-square150x150logo" content="<?=CONECTS_STATIC_HOST?>/common/img/favicon/CONECTS_150x150.png?<?=time()?>">    
+	<link rel="apple-touch-icon-precomposed" href="<?=CONECTS_STATIC_HOST?>/common/img/favicon/CONECTS_180x180.png?<?=time()?>">
+	<link rel="shortcut icon" href="<?=CONECTS_STATIC_HOST?>/common/img/favicon/CONECTS_32x32.ico?<?=time()?>">    
+	<?php // favicon End ?>
+
+	<title><?=($common['header']['title']) ? $common['header']['title'] : '공무원 인강 | 공단기 합격자 수 1위'?></title>
+
+<!-- /////// CSS 호출 S -->
+	<link type="text/css" rel="stylesheet" href="<?= UN_STATIC ?>/css/common/reset.css">
+	<link type="text/css" rel="stylesheet" href="<?= UN_STATIC ?>/css/lib/cn.plugins.css?<?=time()?>">
+	<link type="text/css" rel="stylesheet" href="<?= UN_STATIC ?>/css/lib/swiper-bundle.min.css">
+	<link type="text/css" rel="stylesheet" href="<?= UN_STATIC ?>/css/common/layout.css?<?=time()?>">
+	<link type="text/css" rel="stylesheet" href="<?= UN_STATIC ?>/css/common/common.css?<?=time()?>">
+	<link type="text/css" rel="stylesheet" href="<?= UN_STATIC ?>/css/common/board.css?<?=time()?>">
+	<!-- /////// CSS 호출 E -->
+
+	<!-- /////// JS 호출 S -->
+	<script type="text/javascript" src="<?= UN_STATIC ?>/js/lib/jquery-3.6.4.min.js"></script>
+	<script type="text/javascript" src="<?= UN_STATIC ?>/js/lib/jquery-ui-1.13.2/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="<?= UN_STATIC ?>/js/lib/swiper-bundle.min.js"></script>
+	<script type="text/javascript" src="<?= UN_STATIC ?>/js/lib/cn.plugins.js?<?=time()?>"></script>
+	<!-- /////// JS 호출 E -->
+
+	<script type="text/javascript" src="/js/lib/st/pr_admin/pr_admin.js?<?=time()?>"></script>
+	<script type="text/javascript" src="/js/lib/st/common/common.js?<?=time()?>"></script>
+	
+	<script type="text/javascript">
+		$(function(){
+			$('header .header_slide_box').cnSlider({
+				swiperOptions: {
+					loop:true,
+					centeredSlides:true,
+					slidesPerView:1,
+					direction: 'vertical',
+					autoplay: {
+						delay: 2500,
+						disableOnInteraction:false,
+						pauseOnMouseEnter:true,
+					}
+				}
+			});
+		})
+	</script>
+</head>
+
+<body>
+<?
+// gnb타입 (N:티져)
+$gnbType = $this->input->get_post("gnbType");
+if ($gnbType == '') {
+    $gnbType = 'Y';
+}
+// //gnb타입 (N:티져)
+
+// GNB타입
+if ($gnbType == 'N') {
+?>
+	<div id="container_normal">
+<?
+} else {
+	if(strpos(URL_FOLDER_NAME[count(URL_FOLDER_NAME)-1], 'popup_') === false ){ // 팝업은 공통 header, footer 사용 안함. ?>
+	<!-- S: #container_all -->
+	<div id="container_all">
+		<!-- S: #header -->
+		<header id="union-header">
+			<?php include('skin/pub/layout/common/header_common.html');?>
+
+			<?php include('skin/pub/layout/common/header_site.html');?>
+		</header>
+		<!-- // E: #header -->
+
+		<!-- S: #container -->
+		<div id="container">
+			<? // 페이지별 lnb ?>
+			<?php include('skin/pub/layout/common/lnb.html');?>
+	<? } else { ?>
+	<!-- S: #container_normal -->
+	<div id="container_normal">
+	<? } ?>
+<? } // //GNB타입 ?>

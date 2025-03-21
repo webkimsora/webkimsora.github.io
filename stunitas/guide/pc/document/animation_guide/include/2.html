@@ -1,0 +1,25 @@
+<style>
+.graph_box {position:relative; width: 500px; height: 330px; padding-top: 19px; background: #000;}
+.graph_box .graph_w {width:0; overflow: hidden; display: block;}
+.graph_box.active .graph_w {width:444px; transition:width 1s ease-in-out;}
+.graph_box .ani_ping {width:77px; height: 75px; position:absolute; top: 0; right: 27px;}
+.graph_box .ani_ping .ani {position:absolute; top:50%; left:50%; transform: translate(-50%, -50%) scale(.3); opacity: 0;}
+.active .ani_ping .ping1 {animation:ping .2s 1s ease-in-out forwards}
+.active .ani_ping .ping2 {animation:ping 1s 1s ease-in-out infinite}
+.active .ani_ping .ping3 {animation:ping 1s 1s ease-in-out infinite}
+
+@keyframes ping{
+    0% {opacity: 0; transform: translate(-50%, -50%) scale(.3);}
+    100% {opacity: 1; transform: translate(-50%, -50%) scale(1);}
+}
+</style>
+
+<!-- @ 본문 -->
+<section class="graph_box cn-scroll-ani">
+    <span class="graph_w"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_15008/pc/upgrade_cnt02_ani1.png" alt=""></span>
+    <div class="ani_ping">
+        <span class="ani ping1"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_15008/pc/upgrade_cnt02_ani3.png" alt=""></span>
+        <span class="ani ping2"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_15008/pc/upgrade_cnt02_ani4.png" alt=""></span>
+        <span class="ani ping3"><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_15008/pc/upgrade_cnt02_ani5.png" alt=""></span>
+    </div>
+</section>

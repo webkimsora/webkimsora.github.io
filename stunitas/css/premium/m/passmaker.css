@@ -1,0 +1,269 @@
+/* 공통 */
+.prem__tit{display: flex; justify-content: space-between; align-items: center;}
+.prem__tit p{font-size: 1.4rem; line-height: 1.9rem; color: var(--text-secondary);}
+.prem__tit > div:not(.tit__col):first-child{display: flex; flex-direction: column; gap: .6rem;}
+.prem__tit .tit__col{display: flex; align-items: center; gap: .8rem;}
+.prem__tit i[class*=prem__ico]{background: linear-gradient(105deg, #6101D9 -14.14%, #C800FF 183.02%); width: 2.8rem; height: 2.8rem; border-radius: 2.8rem;}
+.prem__tit i[class*=prem__ico]::after{width: 1.68rem; height: 1.68rem; background: #fff;}
+.prem__guide li{display: flex; gap: 1rem; font-size: 1.3rem; color: #121212; line-height: 1.8rem; letter-spacing: -0.026rem;}
+.prem__guide li::before{content: ""; display: inline-block; background: #121212; width: .3rem; height: .3rem; border-radius: 5rem; margin-top: .8rem; margin-left: .8rem; flex-shrink: 0;}
+
+.premium_service .prem__exam {padding-bottom: 6.4rem;}
+
+.premium_service table.result__table{width: 100%; table-layout: fixed; text-align: center;}
+.premium_service table.result__table :is(th, td){font-size: 1.6rem; height: 4.8rem;}
+.premium_service table.result__table thead th{color: var(--text-secondary); font-weight: 700;}
+.premium_service table.result__table tbody th{color: var(--text-primary); font-weight: 600;}
+.premium_service table.result__table tbody > tr > *:first-child{border-radius: .8rem 0 0 .8rem;}
+.premium_service table.result__table tbody > tr > *:last-child{border-radius: 0 .8rem .8rem 0;}
+.premium_service table.result__table tbody > tr:nth-child(odd) :is(th, td){background: var(--gray-10);}
+.premium_service table.result__table tbody > tr.highlight :is(th, td){background: var(--prem-background);}
+.premium_service table.result__table tbody > tr.point td{color: var(--prem-secondary) !important;}
+.premium_service table.result__table tbody > tr.point td :is(.up, .down){display: inline-flex ;align-items: center;gap: .2rem;}
+.premium_service table.result__table tbody > tr.point td .down{color: var(--blue-60)}
+.premium_service table.result__table tbody > tr.point td .up:before{content: ""; display: inline-block; border: .4rem solid var(--prem-secondary); border-right-color: transparent; border-left-color: transparent; border-top-width: 0; border-bottom-width: .7rem;}
+.premium_service table.result__table tbody > tr.point td .down:before{content: ""; display: inline-block; border: .4rem solid var(--blue-60); border-right-color: transparent; border-left-color: transparent; border-bottom-width: 0; border-top-width: .7rem;}
+.premium_service table.subject__table tbody > tr > td{font-size: 1.5rem;}
+.premium_service .prem__exam--chart table.result__table tbody > tr > th{padding: 0 40px;}
+
+/* 기출 진단 평가 메인 */
+.premium_service .exam__user .user__info{display: flex; justify-content: space-between; align-items: center; height: 6rem;}
+.premium_service .exam__user .user__info .info__data{display: flex; align-items: center; gap: 1.4rem;}
+.premium_service .exam__user .user__info .info__data .avatar{border-radius: 50px; overflow: hidden;  width: 6rem; height: 6rem; flex-shrink: 0;}
+.premium_service .exam__user .user__info .info__data .avatar img{width: 100%;}
+.premium_service .exam__user .user__info .info__data .nickname{width: auto; height: auto; line-height: 2.4rem; font-size: 1.6rem; font-weight: 600; color: var(--text-primary); word-break: break-all;}
+.premium_service .exam__user .user__info .info__data .nickname::after{position: static; width: 1.7rem; height: 1.7rem; vertical-align: -0.3rem; margin-left: .3rem;}
+.premium_service .exam__user .user__info .info__txt{font-size: 1.5rem; color: var(--text-secondary);}
+.premium_service .exam__user .user__history{display: flex; justify-content: center; align-items: center; background: var(--gray-10); border-radius: 8px; text-align: center; padding: 2rem 0;}
+.premium_service .exam__user .user__history p{display: block; font-size: 1.8rem; font-weight: 700; color: var(--text-primary); line-height: 2.6rem;}
+.premium_service .exam__user .user__history span{display: block; font-size: 1.4rem; color: var(--text-secondary); line-height: 1.9rem;}
+.premium_service .exam__user .user__history .empty p{font-size: 1.4rem; color: var(--text-secondary); line-height: 2rem;}
+.premium_service .exam__user .user__history .empty span{color: var(--gray-50);}
+
+.premium_service .exam__user .user__history:has(ul){justify-content: start; padding: 1.6rem;}
+.premium_service .exam__user .user__history ul{display: flex; flex-direction: column; gap: .6rem;}
+.premium_service .exam__user .user__history ul li{display: flex; text-align: left;}
+.premium_service .exam__user .user__history ul li > span{flex: 1; display: flex; align-items: center; gap: .6rem; font-size: 1.4rem; line-height: 1.9rem; color: var(--text-secondary); margin: 0;}
+.premium_service .exam__user .user__history ul li > span:first-child{flex: none; flex-shrink: 0; width: 4rem; font-weight: 600; font-weight: 600; color: var(--text-primary)}
+.premium_service .exam__user .user__history ul li > span a{display: inline-flex; align-items: center; gap: .2rem; text-decoration: underline; text-underline-position: under; color: var(--prem-primary); font-weight: 500;}
+.premium_service .exam__user .user__history ul li > span i{width: 1.5rem; height: 1.5rem;}
+.premium_service .exam__user .user__history ul li > span i::after{background: var(--prem-primary);}
+.premium_service .exam__user .user__history ul li > span > div{display: flex; align-items: center; gap: .2rem;}
+
+.premium_service .exam__user .user__btns{display: flex; gap: .8rem;}
+.premium_service .exam__user .user__btns a{flex: 1;}
+.premium_service .exam__list .list__item{display: flex; justify-content: space-between; align-items: center; width: 100%; height: 7rem;}
+.premium_service .exam__list .list__item .item__info{display: flex; flex-direction: column;}
+.premium_service .exam__list .list__item .item__info span{font-size: 1.2rem; color: var(--text-secondary); letter-spacing: -0.012rem; line-height: 1.8rem;}
+.premium_service .exam__list .list__item .item__btns{display: flex; gap: .6rem; flex-shrink: 0;}
+.premium_service .exam__list .list__item .item__btns a{width: 8rem; padding: 0; font-weight: 400;}
+
+/* 기출 진단 평가 결과 */
+.premium_service .exam__result .result__info{background: var(--gray-10);}
+.premium_service .exam__result .result__info .info__wrap{display: flex; justify-content: space-between; align-items: center; height: 5.4rem;}
+.premium_service .exam__result .result__info .info__wrap p{font-size: 1.4rem; font-weight: 600;}
+.premium_service .exam__result .result__info .info__wrap span{font-size: 1.3rem; color: var(--text-secondary);}
+.premium_service .exam__result .result__review{margin-top: 2rem;}
+.premium_service .exam__result .result__review .review__graph .graph__wrap{position: relative;}
+.premium_service .exam__result .result__review .review__graph .graph__wrap .graph{background: var(--gray-10); width: 26rem; height: 13rem; position: relative; margin: 0 auto; -webkit-mask-image: url('/un_static/img/common/premium/passmaker/graph_mask.svg'); mask-image: url('/un_static/img/common/premium/passmaker/graph_mask.svg'); mask-size: 100%;}
+.premium_service .exam__result .result__review .review__graph .graph__wrap .graph::after{content: ""; position: absolute; top: 100%; left: 0; transform-origin: center top; width: 100%; height: 100%; background: linear-gradient(-105deg, #6101D9 -14.14%, #C800FF 183.02%); mask-image: url('/un_static/img/common/premium/passmaker/graph_mask_flip.svg'); mask-size: 100%; animation: graph__rotate .5s .5s forwards; pointer-events: none;}
+.premium_service .exam__result .result__review .review__graph .graph__wrap .graph__cover{position: absolute; bottom: -.4rem; left: 0; width: 100%; text-align: center;}
+.premium_service .exam__result .result__review .review__graph .graph__wrap .graph__cover span{display: inline-block; background: var(--gray-10); color: var(--prem-primary); height: 2.6rem; line-height: 2.6rem; padding: 0 1.2rem; font-size: 1.2rem; font-weight: 700; letter-spacing: -0.012rem; border-radius: 5rem; margin-bottom: 0.6rem; word-spacing: -0.05rem;}
+.premium_service .exam__result .result__review .review__graph .graph__wrap .graph__cover strong{display: block; color: var(--text-primary); font-size: 4.2rem; font-weight: 700; height: 5rem; line-height: 5rem; letter-spacing: -0.042rem;}
+.premium_service .exam__result .result__review .review__graph .graph__wrap .graph__cover strong::after{content: "점"; color: var(--text-primary); font-size: 2rem; font-weight: 700; margin-left: .2rem; vertical-align: .2rem;}
+.premium_service .exam__result .review__status{margin: 2.4rem 0 1.2rem;}
+.premium_service .exam__result .review__status > li{display: flex; justify-content: space-between; align-items: center; height: 5.6rem;}
+.premium_service .exam__result .review__status > li + li{border-top: .1rem solid var(--gray-20);}
+.premium_service .exam__result .review__status > li > span{font-size: 1.4rem; font-weight: 700; color: var(--text-secondary);}
+.premium_service .exam__result .review__status > li > p{font-size: 1.6rem; color: var(--text-secondary);}
+.premium_service .exam__result .review__status > li > p > span{color: var(--text-primary); font-weight: 600;}
+.premium_service .exam__result .review_detail{background: var(--prem-background); font-size: 1.5rem; color: var(--text-primary); line-height: 2.3rem;}
+.premium_service .exam__result .review_detail span{color: var(--prem-primary); font-weight: 700;}
+.premium_service .exam__result .result__chart{margin-top: 1.4rem; overflow: hidden;}
+.premium_service .exam__result .result__chart .chart__nav{margin: 1rem 0 1.6rem; overflow: unset;}
+.premium_service [class*=result__guide]{background: linear-gradient(105deg, #6101D9 -14.14%, #C800FF 183.02%); position: relative;}
+.premium_service [class*=result__guide] .guide__tit{display: flex; align-items: center; gap: .6rem; color: #fff; margin-bottom: 1.8rem;}
+.premium_service [class*=result__guide] .guide__tit *{color: inherit;}
+.premium_service [class*=result__guide] .guide__tit .guide__label{display: flex; align-items: center; gap: .3rem; background: var(--gray-100); color: #fff; height: 2.4rem; padding: 0 .7rem; border-radius: var(--border-radius-s); font-size: 1.2rem;}
+.premium_service [class*=result__guide] .guide__tit .guide__label i{width: 1.3rem; height: 1.3rem;}
+.premium_service [class*=result__guide] .guide__tit .guide__label i::after{background: #fff;}
+.premium_service [class*=result__guide] .guide__content{color: #fff;}
+.premium_service [class*=result__guide] .guide__content strong{font-weight: 700; color: #fff; display: block; margin-bottom: .8rem;}
+.premium_service [class*=result__guide] .guide__content p{color: #fff;}
+.premium_service [class*=result__guide] .level__list{display: flex; background: rgba(0, 0, 0, 0.12); border-radius: 1.2rem; height: 3.2rem; line-height: 3.2rem; margin-top: 7.4rem;}
+.premium_service [class*=result__guide] .level__list > li{flex: 1; font-size: 1.3rem; color: #fff; text-align: center; position: relative; letter-spacing: -0.026rem;}
+.premium_service [class*=result__guide] .level__list > li > div{display: inline-block; position: relative; z-index: 1; width: 100%; height: 100%;}
+.premium_service [class*=result__guide] .level__list > li > div > span{position: relative; z-index: 1; opacity: .4;}
+.premium_service [class*=result__guide] .level__list > li + li > div::before{content: ""; position: absolute; left: 0; top: 50%; margin-top: -.7rem; background: rgba(255, 255, 255, 0.25); width: .1rem; height: 1.4rem;}
+.premium_service [class*=result__guide] .level__list > li.active::before{content: ""; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); background: radial-gradient(41.71% 42.71% at 50% 50%, rgba(202, 58, 255, 0.6) -10.5%, rgba(150, 0, 255, 0) 91%); width: 135%; height: 5.8rem; border-radius: 33rem; z-index: 0; pointer-events: none;}
+.premium_service [class*=result__guide] .level__list > li.active::after{content: ""; position: absolute; left: 50%; top: -5rem; transform: translateX(-50%); background: url('/un_static/img/common/premium/passmaker/m/level_label4.png') no-repeat center top / 100% auto; width: 5rem; height: 5.4rem; z-index: 2;}
+.premium_service [class*=result__guide] .level__list > li:nth-child(2).active::after{background: url('/un_static/img/common/premium/passmaker/m/level_label3.png') no-repeat center top / 100% auto;;}
+.premium_service [class*=result__guide] .level__list > li:nth-child(3).active::after{background: url('/un_static/img/common/premium/passmaker/m/level_label2.png') no-repeat center top / 100% auto;;}
+.premium_service [class*=result__guide] .level__list > li:nth-child(4).active::after{background: url('/un_static/img/common/premium/passmaker/m/level_label1.png') no-repeat center top / 100% auto;;}
+
+/* 진단 */
+.premium_service .exam__result [class*=result__guide] .level__list > li:nth-child(1).active::after{background: url('/un_static/img/common/premium/passmaker/m/level_label1.png') no-repeat center top / 100% auto;;}
+.premium_service .exam__result [class*=result__guide] .level__list > li:nth-child(2).active::after{background: url('/un_static/img/common/premium/passmaker/m/level_label2.png') no-repeat center top / 100% auto;;}
+.premium_service .exam__result [class*=result__guide] .level__list > li:nth-child(3).active::after{background: url('/un_static/img/common/premium/passmaker/m/level_label3.png') no-repeat center top / 100% auto;;}
+.premium_service .exam__result [class*=result__guide] .level__list > li:nth-child(4).active::after{background: url('/un_static/img/common/premium/passmaker/m/level_label4.png') no-repeat center top / 100% auto;;}
+
+.premium_service [class*=result__guide] .level__list > li.active{font-weight: 700;}
+.premium_service [class*=result__guide] .level__list > li.active:after{top: -4.7rem}
+.premium_service [class*=result__guide] .level__list > li.active > div > span{opacity: 1;}
+.premium_service [class*=result__guide][class*=--mock]{padding-bottom: 13.1rem !important;}
+.premium_service [class*=result__guide][class*=--mock] .guide__content p span{font-weight: 700;}
+.premium_service [class*=result__guide][class*=--mock] .level__list{position: absolute; bottom: 0; left: 0; width: 100%; margin-top: 0; height: auto; border-radius: 0 0 1.2rem 1.2rem; line-height: normal;}
+.premium_service [class*=result__guide][class*=--mock] .level__list > li{padding: 1.2rem 0;}
+.premium_service [class*=result__guide][class*=--mock] .level__list > li > div{opacity: .4; line-height: 1.8rem;}
+.premium_service [class*=result__guide][class*=--mock] .level__list > li > div > span{display: block; opacity: 1;}
+.premium_service [class*=result__guide][class*=--mock] .level__list > li.active::before{height: 7rem;}
+.premium_service [class*=result__guide][class*=--mock] .level__list > li.active > div{font-weight: 700; opacity: 1;}
+.premium_service [class*=result__guide][class*=--mock] .level__list > li.active > div > span{font-weight: 400;}
+.premium_service .chart__diff .diff__graph{display: flex; justify-content: center; gap: 2.2rem; margin-top: 2.2rem; position: relative;}
+.premium_service .chart__diff .diff__graph:not(:has(.graph__average))::before{content: ""; position: absolute; top: -0.2rem; left: 0; border-top: .2rem dashed #02BFE4; width: calc(50% + 7.2rem); pointer-events: none; z-index: 1;}
+.premium_service .chart__diff .diff__graph:not(:has(.graph__average))::after,
+.premium_service .chart__diff .diff__graph .graph__average::after{content: "합격자 평균"; position: absolute; top: -1.4rem; left: 0; background: #fff; color: #02BFE4; font-size: 1.2rem; font-weight: 700; height: 2.6rem; line-height: 2.4rem; padding: 0 .7rem; border: 0.2rem solid #02BFE4; border-radius: .8rem; box-sizing: border-box; pointer-events: none; z-index: 2;}
+.premium_service .chart__diff .diff__graph .graph__average{position: absolute; border-top: .2rem dashed #02BFE4; width: calc(50% + 7.2rem); left: 0; bottom: calc((130rem * (var(--average, 100) / 1000)) + 5.3rem); z-index: 1;}
+.premium_service .chart__diff .diff__graph .graph__average::after{top: 50%; left: 0; transform: translateY(-50%);}
+.premium_service .chart__diff .diff__graph .graph__stick{display: flex; gap: 2.2rem;}
+.premium_service .chart__diff .diff__graph .graph__stick > li:nth-child(1) .stick > div{background: var(--prem-secondary);}
+.premium_service .chart__diff .diff__graph .graph__stick > li:nth-child(2) .stick > div{background: var(--prem-primary);}
+.premium_service .chart__diff .diff__graph .graph__stick > li.small .stick > div{display: flex; justify-content: center; align-items: center; align-items: center;}
+.premium_service .chart__diff .diff__graph .graph__stick > li:has(div[style*='height: 0']) .stick > div{background: transparent; align-items: center; color: rgba(0, 0, 0, 0.60); padding: 1.3rem 0; bottom: auto; top: .4rem;}
+.premium_service .chart__diff .diff__graph .graph__stick > li:has(div[style*='height: 0']) .stick > div span{color: #121212;}
+
+.premium_service .chart__diff .diff__graph .graph__stick > li .stick{display: flex; align-items: end; background: var(--gray-20); border-radius: .8rem; width: 6.1rem; height: 13rem; position: relative; overflow: hidden;}
+.premium_service .chart__diff .diff__graph .graph__stick > li .stick > div{padding: 1.2rem 0; position: absolute; bottom: 0; left: 0; width: 100%; height: 70%; font-size: 1.7rem; color: rgba(255, 255, 255, 0.60); line-height: 2.3rem; letter-spacing: -0.028rem; text-align: center; border-radius: .8rem;}
+.premium_service .chart__diff .diff__graph .graph__stick > li .stick > div > span{color: #fff; font-weight: 700;}
+.premium_service .chart__diff .diff__graph .graph__stick > li .stick > div > span{color: #fff; font-weight: 700;}
+.premium_service .chart__diff .diff__graph .graph__stick > li .stick_txt{margin-top: 1.2rem; text-align: center;}
+.premium_service .chart__diff .diff__graph .graph__stick > li .stick_txt span{display: block; font-size: 1.3rem; font-weight: 700; color: var(--text-secondary); line-height: 1.8rem;}
+.premium_service .chart__diff .diff__graph .graph__stick > li .stick_txt p{display: block; font-size: 1.6rem; font-weight: 700; color: var(--text-primary); line-height: 2.3rem;}
+.premium_service .chart__diff .diff__graph .graph__stick > li .stick_txt.highlight p{color: var(--prem-primary);}
+
+.premium_service .chart__diff .result__table{margin-top: 2rem;}
+.premium_service .chart__diff .result__table th{color: var(--text-primary); text-align: left; padding: 0 2rem 0 1.2rem; font-size: 1.5rem; font-weight: 400;}
+.premium_service .chart__diff .result__table td{color: var(--text-primary); text-align: right; padding: 0 2rem 0 1.2rem; font-size: 1.6rem;}
+
+/* 기출 모의고사 */
+.premium_service .prem__contents .prem__monthly{overflow: hidden; background: var(--gray-10);}
+.premium_service .prem__contents .prem__monthly .monthly__slider:not(.swiper){display: flex; gap: 1.2rem;}
+.premium_service .prem__contents .prem__monthly .monthly__slider{overflow: unset;}
+.premium_service .prem__contents .prem__monthly .monthly__slider li{width: 21.3rem;}
+.premium_service .prem__contents .prem__monthly .monthly__slider .monthly__item{display: flex; align-items: center; background: #fff; width: 20.1rem; height: auto; padding: 2rem 1.6rem; border-radius: var(--border-radius-l, 1.2rem); overflow: hidden; position: relative; box-shadow: 0px .6rem 1.2rem 0px rgba(97, 1, 217, 0.12); padding-bottom: 1.6rem !important;}
+.premium_service .prem__contents .prem__monthly .monthly__slider .monthly__item > div{display: flex; flex-direction: column; gap: 2rem;}
+.premium_service .prem__contents .prem__monthly .monthly__slider .monthly__item .item__month{display: block; font-size: 1.6rem; font-weight: 600; line-height: 2.4rem; letter-spacing: -0.016rem; color: var(--text-primary);}
+.premium_service .prem__contents .prem__monthly .monthly__slider .monthly__item .item__tit{display: flex; flex-direction: column; align-items: start; gap: .8rem;}
+.premium_service .prem__contents .prem__monthly .monthly__slider .monthly__item .item__tit strong{font-size: 3rem; font-weight: 700; line-height: 3.4rem; color: var(--prem-primary); letter-spacing: -0.03rem;}
+.premium_service .prem__contents .prem__monthly .monthly__slider .monthly__item .item__label{background: var(--prem-background); color: var(--prem-primary); font-size: 1.3rem; height: 2.6rem; line-height: 2.6rem; padding: 0 1rem; border-radius: 5rem;}
+.premium_service .prem__contents .prem__monthly .monthly__slider .monthly__item .item__txt{font-size: 1.3rem; line-height: 1.8rem; letter-spacing: -0.026rem; word-break: keep-all; min-height: 5.4rem;}
+.premium_service .prem__contents .prem__monthly .monthly__slider .monthly__item .item__txt br{display: none;}
+.premium_service .prem__contents .prem__monthly .monthly__slider .monthly__item .item__status{display: flex; flex-direction: column; background: var(--gray-10); border-radius: var(--border-radius-m, .8rem); padding: .2rem 1.6rem;}
+.premium_service .prem__contents .prem__monthly .monthly__slider .monthly__item .item__status > div{display: flex; justify-content: center; align-items: center; height: 3.4rem; gap: .4rem; text-align: center; font-size: 1.2rem; color: var(--text-primary); position: relative;}
+.premium_service .prem__contents .prem__monthly .monthly__slider .monthly__item .item__status > div + div{border-top: .1rem solid var(--gray-20);}
+.premium_service .prem__contents .prem__monthly .monthly__slider .monthly__item .item__status > div > p{color: var(--prem-primary);}
+.premium_service .prem__contents .prem__monthly .monthly__slider .monthly__item .item__status > div > span{color: var(--text-secondary)}
+.premium_service .prem__contents .prem__monthly .monthly__slider .monthly__item.now:before{content: ""; position: absolute; top: 0; right: 0; background: url('/un_static/img/common/premium/passmaker/item_label.svg') no-repeat center top / 5.4rem 5.4rem; width: 5.4rem; height: 5.4rem;}
+.premium_service .prem__contents .prem__monthly .monthly__slider .monthly__item.now:after{content: "NOW"; position: absolute; top: 1rem; right: 0.3rem; transform: rotate(45deg) translateZ(0); color: #fff; font-size: 1.3rem; line-height: 1.9rem; font-weight: 700; letter-spacing: 0; backface-visibility: hidden; -webkit-font-smoothing: subpixel-antialiased; text-shadow: 0px .2rem .3rem rgba(0, 0, 0, 0.24);}
+.premium_service .prem__contents .prem__mock {padding-bottom: 6rem;}
+.premium_service .prem__contents .prem__mock .mock__nav{padding-top: 2rem;}
+.premium_service .prem__contents .prem__mock .mock__tab .prem__dropdown--mock{width: auto;}
+.premium_service .prem__contents .prem__mock .mock__list{display: flex; flex-direction: column; gap: 1.2rem;}
+.premium_service .prem__contents .prem__mock .mock__list .list__item{border: .1rem solid var(--gray-30); border-radius: var(--border-radius-l, 1.2rem); padding: 2rem;}
+.premium_service .prem__contents .prem__mock .mock__list .list__item strong::after{position: static; display: inline-block; margin: 0; width: 1.2rem; height: 1.2rem; margin-left: .4rem;}
+.premium_service .prem__contents .prem__mock .mock__list .list__item .item__btns{display: flex; gap: .6rem; flex-wrap: nowrap; white-space: nowrap;}
+.premium_service .prem__contents .prem__mock .mock__list .list__item .item__btns a{flex: 1;}
+.premium_service .prem__contents .prem__mock .mock__list.soon .list__item .item__btns .disabled{background: var(--gray-30); color: var(--gray-50);}
+.premium_service .prem__contents .prem__mock .chart__diff .result__table{margin-top: 1rem;}
+.premium_service .prem__contents .mock__label{display: flex; align-items: center; gap: .8rem;}
+.premium_service .prem__contents .mock__label > span{display: inline-block; background: var(--gray-10); color: var(--text-secondary); height: 2.6rem; line-height: 2.6rem; font-size: 1.3rem; letter-spacing: -0.026rem; padding: 0 .7rem; border-radius: var(--border-radius-s, .4rem);}
+.premium_service .prem__contents .prem__grade .grade__level{display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 2rem;}
+.premium_service .prem__contents .prem__grade .grade__level .level__graph{width: 26rem; padding: 1.2rem 0 1.8rem;}
+.premium_service .prem__contents .prem__grade .grade__level .level__graph img{width: 100%;}
+.premium_service .prem__contents .prem__grade .grade__level .level__list{background: var(--gray-10); width: 100%; border-radius: 1.2rem;}
+.premium_service .prem__contents .prem__grade .grade__level .level__list > li{display: flex; align-items: center; gap: 1.6rem; height: 6.1rem; border-radius: 1.2rem; padding: 0 1.6rem; font-size: 1.4rem; font-weight: 500; opacity: .5; color: #333; position: relative;}
+.premium_service .prem__contents .prem__grade .grade__level .level__list > li > img{width: 3.4rem; height: 3rem; flex-shrink: 0;}
+.premium_service .prem__contents .prem__grade .grade__level .level__list > li span{font-weight: 700; color: #121212; margin-right: .4rem;}
+.premium_service .prem__contents .prem__grade .grade__level .level__list > li.active{background: var(--prem-background, #F6F0FF); opacity: 1;}
+.premium_service .prem__contents .prem__grade .grade__level .level__list > li.active::before{content: ""; display: inline-block; position: absolute; left: 0; top: 0; width: 100%; height: 100%; z-index: 1; border: .2rem solid var(--prem-primary, #6101D9); border-radius: 1.2rem; box-sizing: border-box; pointer-events: none;}
+.premium_service .prem__contents .prem__grade .grade__level .level__list > li.active::after{content: "내 위치"; position: absolute; top: 50%; right: 1.6rem; transform: translateY(-50%); display: inline-block; background: linear-gradient(105deg, #6101D9 -14.14%, #C800FF 183.02%); height: 2.2rem; line-height: 2.2rem; padding: 0 0.6rem; font-size: 1.2rem; font-weight: 600; color: #fff; letter-spacing: -0.012px; border-radius: .4rem;}
+
+/* 기출 모의고사 결과보기 팝업 */
+.mock__result .mock__info{padding: 1.6rem; border-radius: var(--border-radius-m, .8rem); border: .1rem solid var(--prem-primary, #6101D9); background: var(--prem-Background, #F6F0FF);}
+
+/* 기출 진단 답안 입력 팝업 */
+.prem__popup .exam__tit{display: flex; justify-content: center; align-items: center; background: var(--prem-background); color: var(--prem-primary); font-size: 1.4rem; font-weight: 600; height: 4.4rem; line-height: 4.4rem; border-radius: var(--border-radius-m, .8rem); border: .1rem solid var(--prem-primary); text-align: center; margin-bottom: 1.6rem; padding: 0 1.6rem;}
+.prem__popup .exam__tit:has(table tr:nth-child(2)){justify-content: start; height: auto; padding: 1.6rem; line-height: 2rem; margin-bottom: 2.4rem;}
+.prem__popup .exam__tit table{width: 100%; text-align: left;}
+.prem__popup .exam__tit table tr > th{width: 1px; white-space: nowrap; font-weight: 600;}
+.prem__popup .exam__tit table tr > td > div{display: flex; align-items: center; font-weight: 400;}
+.prem__popup .exam__tit table tr > td > div::before{content: ""; display: inline-block; width: .1rem; height: 1.4rem; background: var(--prem-teritary); margin: 0 .8rem;}
+.prem__popup .exam__tit table tr + tr > *{padding-top: .8rem}
+
+.prem__popup .exam__item > strong{display: block; margin-bottom: 1.2rem;}
+.prem__popup .exam__table{position: relative;}
+.prem__popup .exam__table:after{content: ""; position: absolute; top: 0; left: 0; display: block; width: 100%; height: 100%; border: .1rem solid var(--gray-20); border-radius: var(--border-radius-m); overflow: hidden; pointer-events: none;}
+.prem__popup .exam__table table{width: 100%; table-layout: fixed; border-radius: var(--border-radius-m); overflow: hidden;}
+.prem__popup .exam__table table :is(th, td){border: .1rem solid var(--gray-20); height: 4rem; text-align: center;}
+.prem__popup .exam__table table :is(th, thead td){background: var(--prem-background);}
+.prem__popup .exam__table table :is(td, tbody th){font-size: 1.4rem; font-weight: 400;}
+.prem__popup .exam__table table thead th{font-size: 1.4rem; font-weight: 600;}
+.prem__popup .exam__table table td input{all: unset; appearance: none; background: #fff; width: 100%; height: 100%; border: 0;}
+.prem__popup .exam__table table td.point{color: #C800FF;}
+.prem__popup .exam__table table thead .highlight{background: rgba(232, 214, 255, 0.60); border-color: #E0E3EB !important;}
+.prem__popup .exam__table table tbody .highlight{background: #F6F6F9;}
+.prem__popup .exam__table table tbody tr:first-child .highlight{border-top-color: #E0E3EB !important;}
+.prem__popup .exam__table.result table thead th{font-size: 1.3rem; font-weight: 700;}
+.prem__popup .exam__table.result table tbody th{font-size: 1.3rem; background: #fff; font-weight: 700;}
+
+/* 기출 진단 정오표 팝업 */
+.prem__popup{overflow: hidden;}
+.prem__popup [class*=__nav]{overflow: unset; margin-bottom: 1.6rem;}
+
+@keyframes graph__rotate{
+    from {transform: rotate(0)}
+    to {transform: rotate(var(--graph-rotate, 140deg))}
+}
+
+/* 다시보는 모의고사 */
+.premium_service .prem__contents .prem__mock--replay .mock__list .list__item .item__btns a{padding: 0; font-weight: 400;}
+.premium_service .prem__contents .prem__mock--replay{overflow: hidden;}
+.premium_service .prem__contents .prem__mock--replay :is(.personal__nav, .average__nav){overflow: visible;}
+
+.premium_service .prem__mock--replay .chart__diff .diff__graph .graph__average{display: none;}
+.premium_service .prem__mock--replay .chart__diff .diff__graph:not(:has(.graph__average))::before,
+.premium_service .prem__mock--replay .chart__diff .diff__graph:not(:has(.graph__average))::after{display: none;}
+.premium_service .prem__mock--replay .chart__diff .diff__graph .graph__stick > li .stick{background: none; ;border-radius: .8rem .8rem 0 0;}
+
+.premium_service .prem__mock--replay .chart__diff.personal__chart .diff__graph{margin-top: 1.6rem; margin-bottom: 1.6rem;}
+.premium_service .prem__mock--replay .chart__diff.personal__chart .diff__graph .graph__stick{gap: 1.2rem;}
+.premium_service .prem__mock--replay .chart__diff.personal__chart .diff__graph .graph__stick > li .stick{width:3.2rem; height: 14rem; margin: 0 .55rem; padding-top: 2.2rem; box-sizing: content-box; overflow: visible;}
+.premium_service .prem__mock--replay .chart__diff.personal__chart .diff__graph .graph__stick > li .stick > div{border-radius: .8rem .8rem 0 0; background: var(--gray-50); position: relative;}
+.premium_service .prem__mock--replay .chart__diff.personal__chart .diff__graph .graph__stick > li .stick > div .percentile{position: absolute; top: -2.2rem; left: 50%; transform: translateX(-50%); text-align: center; color: var(--text-secondary); font-family: 'Pretendard'; font-size: 1.2rem; font-weight: 400; line-height: 150%; letter-spacing: -0.12px; width: 4rem;}
+.premium_service .prem__mock--replay .chart__diff.personal__chart .diff__graph .graph__stick > li.active .stick > div{background: var(--prem-primary);}
+.premium_service .prem__mock--replay .chart__diff.personal__chart .diff__graph .graph__stick > li:nth-child(1) .stick > div {background: var(--prem-secondary);}
+.premium_service .prem__contents .prem__mock--replay .chart__diff .result__table{margin-top: 0rem;}
+.premium_service .prem__mock--replay table.result__table :is(th, td){font-size: 1.5rem; font-weight: 400; letter-spacing: -0.3px; height: 4.9rem;}
+.premium_service .prem__mock--replay table.result__table th{text-align: left; padding-left: 1.2rem;}
+.premium_service .prem__mock--replay table.result__table td{text-align: right; padding-right: 2rem;}
+
+.prem__mock--replay .mock__date[class*=prem__label]{background-color: var(--gray-10); width: fit-content}
+.prem__mock--replay .explanation__list li .list__item {align-items: center;}
+.prem__mock--replay .explanation__list li .item__btns{display: flex; gap:.6rem;}
+.prem__mock--replay .explanation__list li .item__btns > a{width: 8rem; padding:0; line-height: 100%; font-weight: 400;}
+
+.premium_service .popup--exam .exam__timer{text-align: center; color: var(--red-60)}
+
+.prem__mock--info .input__label{display: flex; gap: .4rem; align-items: center;}
+
+/* 다시보는 모의고사 해설강의 팝업 */
+.prem__modal--explanation_video .prem__modal .label__check.bar__txt div i.prem__ico--play_circle::after{background-color: var(--icon-secondary)}
+.prem__modal--explanation_video .prem__modal a.label__check:hover > div i.prem__ico--play_circle::after {background-color: var(--prem-primary);}
+
+/* 재응시 컨펌모달 */
+.prem__modal--confirm.cn-modal-mobile{background: rgba(0,0,0,.4)}
+.prem__modal--confirm .cn-modal-main{width: 29.5rem; border-radius: .8rem;}
+.prem__modal--confirm .cn-modal-main .prem__modal--wrap{padding: 2rem 0 .4rem; text-align: center; }
+.prem__modal--confirm .cn-modal-main .modal__txt > div:first-of-type{color: #121212; font-size: 1.5rem; font-weight: 700; line-height: 2.3rem; letter-spacing: -0.045rem;}
+.prem__modal--confirm .cn-modal-main .modal__btns{display: flex; border: 1px solid #EDEDF3; border-width: .1rem 0;}
+.prem__modal--confirm .cn-modal-main .modal__btns a {height: 4.4rem; flex: 1;}

@@ -1,0 +1,38 @@
+/* table */
+[class*=sp__table] .w-70{width: 70px;}
+[class*=sp__table] .w-160{width: 70px;}
+[class*=sp__table] .center{text-align: center;}
+[class*=sp__table] .shrink{flex-shrink: 0;}
+[class*=sp__table] table{table-layout: fixed; width: 100%;}
+[class*=sp__table] table [class*=sp__typo]{line-height: normal !important;}
+[class*=sp__table] table tr th{color: var(--text-secondary); font-size: 13px; font-weight: 400;}
+[class*=sp__table] table thead > tr > th{padding: 11px 0; text-align: center; line-height: 18.2px; font-weight: 600;}
+[class*=sp__table] table tbody > tr > td > a > i{width: 12px; height: 12px; flex-shrink: 0;}
+[class*=sp__table] table tbody > tr > td > a > i::after{background: var(--text-secondary); width: 100%; height: 100%;}
+[class*=sp__table] table tbody > tr > td > a > .table_txt{flex-shrink: 0; line-height: 11px;}
+[class*=sp__table] table tbody > tr > :is(th, td){border-bottom: 1px solid var(--stroke-divider); padding: 12.5px 8px;}
+
+/* 게시판형 테이블 */
+.sp__table--list table thead tr > :is(th, td){background: var(--bg-alternative);}
+.sp__table--list table tbody tr > td > a{display: flex; align-items: center; gap: 3px;}
+
+/* 게시판 테이블 헤더 */
+.sp__table--header{display: flex; align-items: center; height: 52px;}
+.sp__table--header .table__header--left .sp__select--box{width: 120px;}
+.sp__table--header .table__header--right{display: flex; align-items: center; gap: 6px; margin-left: auto;}
+.sp__table--header .table__header--title{display: flex; align-items: center; gap: 4px;}
+
+/* 게시판 테이블 푸터 */
+.sp__table--footer{display: flex; flex-direction: column; gap: 20px;}
+.sp__table--footer .footer__col{display: flex; justify-content: center; align-items: center; position: relative; height: 64px;}
+.sp__table--footer .footer__btns{display: flex; align-items: center; gap: 4px; position: absolute; right: 0; top: 0; height: 100%; width: auto;}
+.sp__table--footer .footer__search{display: flex; justify-content: center; gap: 8px;}
+.sp__table--footer .footer__search .sp__select--box{width: 80px;}
+
+/* 리스트형 테이블 */
+.sp__table--board table{border-top: 1px solid var(--stroke-accent);}
+.sp__table--board table thead > tr > :is(th, td){border-bottom: 1px solid var(--stroke-divider);}
+.sp__table--board table tbody > tr > td > a{display: flex; align-items: center; gap: 4px;}
+.sp__table--board table tbody > tr > td > a:hover > p{text-decoration: underline; text-underline-position: auto;}
+.sp__table--board table tbody > tr.highlight > :is(th, td){background: var(--bg-alternative);}
+.sp__table--board table tbody > tr > td .table__type{padding-right: 4px;}

@@ -1,0 +1,78 @@
+<!-- 기존 모달 타입 -->
+<div id="default_modal">
+    <!-- 모달 버튼 -->
+    <button type="button" class="btn-m _color_blue _line btn-modal-open1" style="width: 100%">기존 모달</button>
+
+    <!-- 모달 내용 -->
+    <div class="modal-type1">
+        <strong>기존 버튼 팝업 내용</strong><br />
+        기존 팝업은 하단 버튼이 자동으로 추가되지만 버튼이 하나만 있습니다.
+    </div>
+</div>
+<!-- // 모달 기본 버튼 타입 -->
+
+<!-- 커스텀 버튼 모달 타입 -->
+<div id="custom_modal">
+    <!-- 모달 버튼 -->
+    <button type="button" class="btn-m _color_blue _line btn-modal-open2" style="width: 100%; margin-top: 5px;">커스텀 버튼 모달</button>
+
+    <!-- 모달 내용 -->
+    <div class="modal-type2">
+        <strong>커스텀 버튼 팝업 내용</strong><br />
+        커스텀 버튼 팝업은 버튼을 만들어 하단에 추가시킬 수 있습니다.
+        <? for( $i=1; $i<=10; $i++ ){ ?>
+        <div><?= $i ?> asdfasf</div>
+        <? } ?>
+    </div>
+    
+    <!-- 커스텀 버튼 -->
+    <div class="customBtnClass" style="display: grid; grid-template-columns: 48px 1fr; width: 100%; gap: 8px;">
+        <button class="btn-l _ico_only custom-btn1"><i class="ico ico_reload"></i></button>
+        <button class="btn-l _color_blue _fill custom-btn2">적용</button>
+    </div>
+</div>
+<!-- // 모달 커스텀 버튼 타입 -->
+
+<script>
+$(function(){
+    // 기존 모달
+    const bottomModal1 = $('.btn-modal-open1').cnBottomModal({
+        modalBody: '.modal-type1',
+        onClickBtn: function(_modal, _modalBottom){
+            _modalBottom.cnStickyMsg({
+                //strShowType:'ani',
+                strBottom:'.4rem', // 기본 1.6rem 띄우는걸 변경할때 단위까지 쓰기
+                strMsg: '안녕하세요! 이것은 스티키 메시지입니다.',
+                strBtnTxt: '닫기',
+                /* onClickClose:function(pThis, pParent){
+                    console.log( 'pThis - ',  pThis, 'pParent - ',  pParent );
+                }*/
+            });
+            // 팝업 닫기 메소드
+            // bottomModal.close()
+        }
+    });
+
+    // 커스텀 버튼 모달
+    const bottomModal2 = $('.btn-modal-open2').cnBottomModal({
+        modalBody: '.modal-type2',
+        customBtnClass: '.customBtnClass',
+    });
+
+    $('.customBtnClass .custom-btn1').click(function(){
+        $(this).parent().cnStickyMsg({
+            strBottom:'.4rem',
+            strMsg: '리셋이 완료되었습니다.',
+            strBtnTxt: '닫기',
+        });
+    })
+
+    $('.customBtnClass .custom-btn2').click(function(){
+        $(this).parent().cnStickyMsg({
+            strBottom:'.4rem',
+            strMsg: '커스텀 버튼 모달입니다.',
+            strBtnTxt: '닫기',
+        });
+    })
+})
+</script>

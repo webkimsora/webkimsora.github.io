@@ -1,0 +1,239 @@
+				<!-- @@ 선생님홈 TOP -->
+				<aside class="tea_top-wrap fl">
+					<div class="bookmark_box fl_right btn_modal_bookmark" data-target="modal_t_bookmark">
+						<i class="ico ico_heart_fill"></i>
+						<label>
+							<span>관심 선생님 바로가기</span>
+							<i class="ico ico_arrow_down"></i>
+						</label>
+					</div>
+				</aside>
+				<!-- //@@ 선생님홈 TOP -->
+
+<!-- S:즐겨찾기 모달 -->
+<?
+$type = $_GET['type'] ?? '';
+?>
+<aside class="modal_t_bookmark">
+	<div class="modal_content scroll-box">
+		<section class="modal_t_list">
+			<? if( $type == 'no' ){ //데이터 없을 때 ?>
+				<div class="no_data">자주 찾는 선생님을<br>즐겨찾기 추가해보세요</div>
+			<? } elseif( $type == 'logout' ) {  //로그아웃일 때 ?>
+				<div class="no_data">
+					로그인 후 이용 가능합니다.<br>
+					<a href="javascript:void(0);">로그인</a>
+				</div>
+			<? } elseif( $type == 'scroll' ) {  // 선생님이 4명 초과일때 ?>
+				<? for($i=1; $i<=5; $i++){ ?>
+				<div class="list_item">
+					<div class="data_teacher">
+						<a href="./home">
+							<div class="circle_img" style="background-image:url('//static.conects.com/cdm_conects/data/adm/teacher/info/v1/71df2498e77d428882502c0a447c6c92.png');"></div>
+							<span>TOEIC/G-TELP, 직업상담·심리학</span>
+						</a>
+					</div>
+					<a href="javascript:void(0);" onclick="alert('목록에서 아예 삭제');" class="data_ico"><i class="ico ico_heart ico_heart_fill"></i></a>
+				</div>
+				<? } ?>
+			<? } else { ?>
+				<div class="list_item">
+					<div class="data_teacher">
+						<a href="./home">
+							<div class="circle_img" style="background-image:url('//static.conects.com/cdm_conects/data/adm/teacher/info/v1/210319/f7dc5f360e4e539b115dd6412e34876c.png');"></div>
+							<span>행정학 신용한</span>
+						</a>
+					</div>
+					<a href="javascript:void(0);" onclick="alert('목록에서 아예 삭제');" class="data_ico"><i class="ico ico_heart ico_heart_fill"></i></a>
+				</div>
+				<div class="list_item">
+					<div class="data_teacher">
+						<a href="./home">
+							<div class="circle_img" style="background-image:url('//static.conects.com/cdm_conects/data/adm/teacher/info/v1/71df2498e77d428882502c0a447c6c92.png');"></div>
+							<span>TOEIC/G-TELP, 직업상담·심리학</span>
+						</a>
+					</div>
+					<a href="javascript:void(0);" onclick="alert('목록에서 아예 삭제');" class="data_ico"><i class="ico ico_heart ico_heart_fill"></i></a>
+				</div>
+			<? } ?>
+		</section>
+	</div>
+</aside>
+<script type="text/javascript">
+	$('.btn_modal_bookmark').cnModal({  head: '즐겨찾기' });
+</script>
+<!-- E:즐겨찾기 모달 -->
+			
+				<!-- @@ LNB : 선생님홈 taecher 클래스 추가 -->
+				<aside class="lnb-wrap teacher">
+					<!-- @@@ 페이지명 -->
+					<div class="lnb_tit_box style_bg">
+						<div class="tea_img">
+							<div class="circle_img" style="background-image:url('//static.conects.com/cdm_conects/data/adm/teacher/info/v1/71df2498e77d428882502c0a447c6c92.png');"></div>
+							<!-- 좋아요 클릭시 a태그에 active 클래스 추가 -->
+							<a class="ico ico_heart" href="javascript:void(0);" onclick="$(this).toggleClass('active')">좋아요</a>
+						</div>
+			<?
+				// 선생님 메인에서만 나옴
+				if(strpos(URL_FOLDER_NAME[count(URL_FOLDER_NAME)-1], 'home') !== false ){
+			?>	
+						<!-- 위 내용은 sub메뉴에선 삭제 됩니다 s -->
+						<div class="tea_class">자료조직개론<br>두번째과목<br>세번째 과목</div>
+						<p class="tea_name">선생님 이름</p>
+
+						<? if(false){ ?>
+						<div class="introduce">
+							<span class="txt_hide">선생님 소개를 입력하세요</span>
+							<div class="info">
+								<i class="ico ico_info"></i>
+								<div class="bubble">
+									최대일곱자생성
+								</div>
+							</div>
+						</div>
+						<? } ?>
+
+						<a class="btn_profile" data-target="modal_profile" href="javascript:void(0);">프로필 보기</a>
+						<ul class="sns_list">
+							<li><a href="javascript:void(0);"><img src="/un_static/img/common/lnb/tea_sns_insta.png" alt="인스타그램"></a></li>
+							<li><a href="javascript:void(0);"><img src="/un_static/img/common/lnb/tea_sns_cafe.png" alt="카페"></a></li>
+							<li><a href="javascript:void(0);"><img src="/un_static/img/common/lnb/tea_sns_youtube.png" alt="유튜브"></a></li>
+						</ul>
+
+						<!-- 모달 -->
+						<div id="modal_profile">
+							<div class="modal_content">
+								<div>
+									선생님 내용 
+								</div>
+							</div>
+						</div>
+
+						<script>
+							$('.btn_profile').cnModal({
+								head: '프로필 보기'
+							})
+						</script>
+
+						<!-- //위 내용은 sub메뉴에선 삭제 됩니다 e -->
+			<? } ?>
+					</div>
+					<!-- 
+						@@@ menu list
+						새로운 메뉴 : <i class="ico ico_new"></i> 추가
+						활성화 페이지 : a태그에 active 클래스 추가
+					-->
+					<nav class="lnb_list_box">
+						<ul>
+							<li>
+								<div class="main_menu">
+									<a href="./home"><span>홈</span><i class="ico ico_new"></i></a>
+								</div>
+							</li>
+							<li>
+								<div class="main_menu">
+									<a class="new" href="javascript:void(0);"><span>커리큘럼</span></a>
+								</div>
+							</li>
+							<li>
+								<div class="main_menu">
+									<a class="new" href="./lecture_list"><span>개설강좌</span></a>
+								</div>
+							</li>
+							<li>
+								<div class="main_menu">
+									<a href="./review_list"><span>수강후기</span></a>
+								</div>
+							</li>
+							<li>
+								<div class="main_menu">
+									<a href="./notice_list"><span>공지사항</span></a>
+								</div>
+							</li>
+							<li>
+								<div class="main_menu">
+									<a href="./qna_list"><span>학습질문</span></a>
+								</div>
+							</li>
+							<li>
+								<div class="main_menu">
+									<a href="./library_list"><span>자료실</span></a>
+								</div>
+							</li>
+							<li>
+								<div class="main_menu">
+									<a href="./free_lecture"><span>무료강좌&T캐스트</span></a>
+								</div>
+							</li>
+							<li>
+								<div class="main_menu">
+									<a href="./event_list"><span>기획전</span><i class="ico ico_new"></i></a>
+								</div>
+								<div class="sub_menu">
+									<ul>
+										<li><a href="javascript:void(0);"><span>기본이론</span><i class="ico ico_new"></i></a></li>
+										<li><a href="javascript:void(0);"><span>압축이론</span></a></li>
+										<li><a href="javascript:void(0);"><span>기출문풀</span></a></li>
+										<li><a href="javascript:void(0);"><span>압축요약</span></a></li>
+										<li><a href="javascript:void(0);"><span>매일문풀</span></a></li>
+									</ul>
+								</div>
+							</li>
+						</ul>
+					</nav>
+
+					<!-- 스페셜쿠폰 배너 추가 s -->
+					<div class="lnb_coupon_box">
+						<a href="javascript:void(0);">
+							<img src="https://placehold.co/180x120?text=width:180+coupon" alt="쿠폰배너">
+						</a>
+					</div>
+					<!-- 스페셜쿠폰 배너 추가 e -->
+
+					<?
+						// 선생님 메인에서만 나옴
+						if(strpos(URL_FOLDER_NAME[count(URL_FOLDER_NAME)-1], 'home') !== false ){
+					?>	
+							<!-- 선생님 개별홈 배너 추가 s -->
+							<div class="lnb_ban_box">
+								<div class="lnb_ban_slider">
+									<div>
+										<a href="javascript:void(0);">
+											<div><img src="https://placehold.co/180x120" alt="배너 썸네일"></div>
+											<div class="item_tit">
+												<span class="txt_hide type_more">2023 선재국어 나침반<br>기출 변형 모의고사</span>
+												<p>자세히 보기</p>
+											</div>
+										</a>
+									</div>
+									<div>
+										<a href="javascript:void(0);">
+											<div><img src="https://placehold.co/180x120" alt="배너 썸네일"></div>
+											<div class="item_tit">
+												<span class="txt_hide type_more">2. 2023 선재국어 나침반<br>기출 변형 모의고사</span>
+												<p>자세히 보기</p>
+											</div>
+										</a>
+									</div>
+								</div>
+								<div class="lnb_ban_pager"></div>
+							</div>
+							<!-- //선생님 개별홈 배너 추가 e -->
+
+							<script>
+								if($('.lnb_ban_slider > div').length > 1) {
+									$('.lnb_ban_slider').cnSlider({
+										pager: true,
+										pagerClassName: 'lnb_ban_pager', 
+										swiperOptions: {
+											loop: true,
+											autoplay: {
+												delay: 5000,
+											}
+										}
+									});
+								}
+							</script>
+					<? } ?>
+				</aside>
+				<!-- //@@ LNB -->

@@ -1,0 +1,318 @@
+<?php  
+    $common = $this->common_meta->getConfig(); 
+    $now_time = $common['now_time'];            
+?><!doctype html>
+<html dir="ltr" lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=yes">
+    <meta name="google-site-verification" content="kmw8p9tpZyE_ca3NXlELzFOHCdismodIZ2PxZrkmYlc" />                
+    <?php // 오픈그래프 Start ?>
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="<?=($common['header']['title']) ? $common['header']['title'] : '공무원 인강 | 공단기 합격자 수 1위'?>" />
+    <meta property="og:site_name" content="<?=($common['header']['title']) ? $common['header']['title'] : '공무원 인강 | 공단기 합격자 수 1위'?>" />
+    <meta name="keywords" content="<?=$common['header']['keywords']?>">  
+    <meta name="description" content="<?=$common['header']['description']?>">
+    <meta property="og:description" content="<?=$common['header']['description']?>">
+    <meta property="og:image" content="<?=$common['header']['og_image']?>">    
+    <meta property="og:url" content="<?=$common['header']['og_url']?>"> 
+    <?php // 오픈그래프 End ?> 
+    <?php // favicon Start ?>
+    <meta name="msapplication-TileColor" content="#681e20">
+    <meta name="msapplication-square70x70logo" content="<?=CONECTS_STATIC_HOST?>/common/img/favicon/CONECTS_150x150.png?<?=time()?>">
+    <meta name="msapplication-square150x150logo" content="<?=CONECTS_STATIC_HOST?>/common/img/favicon/CONECTS_150x150.png?<?=time()?>">    
+    <link rel="apple-touch-icon-precomposed" href="<?=CONECTS_STATIC_HOST?>/common/img/favicon/CONECTS_180x180.png?<?=time()?>">
+    <link rel="shortcut icon" href="<?=CONECTS_STATIC_HOST?>/common/img/favicon/CONECTS_32x32.ico?<?=time()?>">    
+    <?php // favicon End ?>
+
+    <title><?=($common['header']['title']) ? $common['header']['title'] : '공무원 인강 | 공단기 합격자 수 1위'?></title>
+
+    <!-- /////// CSS 호출 S -->
+    <link type="text/css" rel="stylesheet" href="<?= UN_STATIC ?>/css/m/common/reset.css?<?=time()?>">
+    <link type="text/css" rel="stylesheet" href="<?= UN_STATIC ?>/css/lib/cn.plugins.css?<?=time()?>">
+    <link type="text/css" rel="stylesheet" href="<?= UN_STATIC ?>/css/lib/swiper-bundle.min.css">
+
+    <link type="text/css" rel="stylesheet" href="<?= UN_STATIC ?>/css/m/common/common.css?<?=time()?>">
+    <link type="text/css" rel="stylesheet" href="<?= UN_STATIC ?>/css/m/common/layout.css?<?=time()?>">
+    <link type="text/css" rel="stylesheet" href="<?= UN_STATIC ?>/css/m/common/board.css?<?=time()?>">
+    <!-- /////// CSS 호출 E -->
+
+    <!-- /////// JS 호출 S -->
+    <script type="text/javascript" src="<?= UN_STATIC ?>/js/lib/jquery-3.6.4.min.js"></script>
+    <script type="text/javascript" src="<?= UN_STATIC ?>/js/lib/jquery-ui-1.13.2/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="<?= UN_STATIC ?>/js/lib/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="<?= UN_STATIC ?>/js/lib/cn.plugins.js?<?=time()?>"></script>
+    <!-- /////// JS 호출 E -->
+</head>
+<body>
+<!-- S: #container-all -->
+<div id="container-all">
+<?
+// gnb타입 (N:티져)
+$gnbType = $this->input->get_post("gnbType");
+if ($gnbType == '') {
+    $gnbType = 'Y';
+}
+// //gnb타입 (N:티져)
+
+$gnb_explode = explode('||', $gnb_type);
+
+$folderName = strtolower(URL_FOLDER_NAME[count(URL_FOLDER_NAME)-2]);
+$fileName = explode('?', strtolower(URL_FOLDER_NAME[count(URL_FOLDER_NAME)-1]))[0];
+
+if(
+    (strpos($fileName, '_view') > -1 || strpos($fileName, '_write') > -1
+    || $fileName == 'view' || $fileName == 'write'
+    || $fileName == 'popup' || strpos($fileName, '_popup') > -1 || strpos($fileName, 'popup_') > -1) || $folderName == 'popup'
+){
+    $gnb_explode[0] = 'popup';
+}
+
+// GNB타입
+if ($gnbType == 'N') {
+?>
+    <header class="header-gnb-wrap">
+        <section class="sec-gnb-tit scroll_ani _gnb_depth01">
+            <div class="inner-wrap">
+                <div class="gnb-tit"><a href="/"><i class="ico_bi"></i><h1>공단기</h1></a></div>
+
+                <!-- <div class="btn-wrap _right">
+                    <button type="button" class="ico ico_home"><span class="skip">홈</span></button>
+                    <button type="button" class="ico ico_cart"><span class="skip">카트</span></button>
+                </div> -->
+            </div>
+        </section>
+    </header>
+<?
+} else {
+
+    if($gnb_explode[0] !== 'popup'){
+        // 경우의 수가 많아서 얼추 분배함
+    ?>
+    <header class="header-gnb-wrap">
+    <? 
+        switch ($folderName) {
+            case "board": // 게시판유형
+            case "teacher": // 선생님
+            case "customer": // 학습지원센터
+            case "exam_info": // 수험정보
+            case "event": // 이벤트
+            case "lab": // 기출문제
+            case "lecture": // 수강신청
+                include('skin/pub/layout/m/include/gnb/inc_'.$folderName.'.html');
+            break;
+        default : // S: 기본 gnb 스타일 분기 
+    ?>
+        <? if($gnb_explode[0] == 'main_btn'){ //메인에 우측 버튼 있을때 ?>
+        <section class="sec-gnb-tit scroll_ani _gnb_depth01">
+            <div class="inner-wrap">
+                <div class="gnb-tit"><a href="/"><i class="ico_bi"></i><h1>공단기</h1></a></div>
+
+                <div class="btn-wrap _right">
+                    <button type="button" class="ico ico_home"><span class="skip">홈</span></button>
+                    <button type="button" class="ico ico_cart"><span class="skip">카트</span></button>
+                </div>
+            </div>
+        </section>
+        <? } else if($gnb_explode[0] == 'tit_ico'){ // 타이틀에 더보기 있을때 ?>
+        <section class="sec-gnb-tit scroll_ani _gnb_depth01 _type_side">
+            <div class="inner-wrap">
+                <div class="btn-wrap _left">
+                    <button type="button" class="ico ico_arrow_line _left"><span class="skip">이전</span></button>
+                </div>
+
+                <div class="gnb-tit">
+                    <button type="button" class="btn _more" id="tit_btn"><h2>타이틀</h2><i class="ico ico_arrow _down"></i></button>
+
+                    <!-- 타이틀 모달 -->
+                    <ul class="tit-menu" style="display: none;">
+                        <li><a href="javascript:void(0);">선생님</a></li>
+                        <li><a href="javascript:void(0);">프리패스_tab</a></li>
+                        <li><a href="javascript:void(0);">기획전</a></li>
+                        <li><a href="javascript:void(0);">수강신청</a></li>
+                        <li><a href="javascript:void(0);">기출문제</a></li>
+                        <li><a href="javascript:void(0);">수험정보</a></li>
+                        <li><a href="javascript:void(0);">이벤트</a></li>
+                        <li><a href="javascript:void(0);">교재</a></li>
+                    </ul>
+                </div>
+
+                <div class="btn-wrap _right">
+                    <button type="button" class="ico ico_home"><span class="skip">홈</span></button>
+                    <button type="button" class="ico ico_cart"><span class="skip">카트</span></button>
+                </div>
+            </div>
+        </section>
+
+        <script>
+            $('#tit_btn').cnBottomModal({
+                position: 'top',
+                modalBody: '.tit-menu',
+                headVisible: false,
+                btnVisible: false,
+                toggleMode: true,
+                onOpenEvent: function(){
+                    $('.gnb-tit').addClass('open');
+                },
+                onCloseEvent: function(){
+                    $('.gnb-tit').removeClass('open');
+                }
+            })
+        </script>
+        <? } else if($gnb_explode[0] == 'tit_only'){ // 타이틀에 더보기 없을때 ?>
+        <section class="sec-gnb-tit scroll_ani _gnb_depth01 _type_side">
+            <div class="inner-wrap">
+                <div class="btn-wrap _left">
+                    <button type="button" class="ico ico_arrow_line _left"><span class="skip">이전</span></button>
+                </div>
+
+                <div class="gnb-tit">
+                    <h2>이선재 선생님</h2>
+                </div>
+
+                <div class="btn-wrap _right">
+                    <button type="button" class="ico ico_home"><span class="skip">홈</span></button>
+                    <button type="button" class="ico ico_liked"><span class="skip">즐겨찾기</span></button>
+                </div>
+            </div>
+        </section>
+        <? } else if($gnb_explode[0] == 'tit_none'){ // 타이틀에 없을때 ?>
+        <section class="sec-gnb-tit scroll_ani _gnb_depth01 _type_side">
+            <div class="inner-wrap">
+                <div class="btn-wrap _left">
+                    <button type="button" class="ico ico_arrow_line _left"><span class="skip">이전</span></button>
+                </div>
+                <div class="btn-wrap _right">
+                    <button type="button" class="ico ico_home"><span class="skip">홈</span></button>
+                    <button type="button" class="ico ico_cart"><span class="skip">카트</span></button>
+                </div>
+            </div>
+        </section>
+        <? } else if($gnb_explode[0] == 'tit_btn_txt'){ // 타이틀에 닫기 있을때 ?>
+        <section class="sec-gnb-tit scroll_ani _gnb_depth01 _type_side">
+            <div class="inner-wrap">
+                <div class="btn-wrap _left">
+                    <button type="button" class="ico ico_close"><span class="skip">닫기</span></button>
+                </div>
+                <div class="gnb-tit">
+                    <h2>타이틀</h2>
+                </div>
+                <div class="btn-wrap _right">
+                    <button type="button" class="txt"><span>등록</span></button>
+                </div>
+            </div>
+        </section>
+        <? } else { // 젤 기본?>
+        <section class="sec-gnb-tit scroll_ani">
+            <div class="inner-wrap">
+                <div class="gnb-tit"><a href="/"><i class="ico_bi"></i><h1>공단기</h1></a></div>
+            </div>
+        </section>
+        <? } ?>
+
+        <aside class="header-sticky">
+            <? if( $gnb_explode[1] == 'depth2' ||  $gnb_explode[1] == 'depth3'){ ?>
+            <nav class="gnb-nav _gnb_depth02">
+                <ul class="gnb-nav-slider _line" data-index="0">
+                    <li><a href="#x">홈</a></li>
+                    <li><a href="#x">커리큘럼</a></li>
+                    <li><a href="#x">개설강좌</a></li>
+                    <li><a href="#x">선생님 새소식</a></li>
+                    <li><a href="#x">학습질문</a></li>
+                    <li><a href="#x">자료실</a></li>
+                </ul>
+            </nav>
+            <? } ?>
+            <? if( $gnb_explode[1] == 'depth3'){ ?>
+            <nav class="gnb-nav _gnb_depth03">
+                <ul class="gnb-nav-slider" data-index="7">
+                <? for( $i=1; $i<=10; $i++){ ?>
+                    <li><a href="#x"><?= $i ?>짧은 메뉴 이름</a></li>
+                <? } ?>
+                </ul>
+            </nav>
+            <? } ?>
+        </aside>
+    <? 
+            break; // E: 기본 gnb 스타일 분기
+        }  
+    ?>
+    </header>
+
+    <script>
+    $('.gnb-nav .gnb-nav-slider').cnTabSwiper();
+    /* S:스크롤 애니 - footer_m.html에 있음 */
+    </script>
+    <? } else {  // 팝업일때 
+        if(strpos($fileName, '_view') > -1 || $fileName == 'view' ){ // 보기
+    ?>
+    <header class="popup-gnb-wrap">
+        <section class="sec-gnb-tit _type_side">
+            <div class="inner-wrap">
+                <div class="btn-wrap _left">
+                    <button type="button" onclick="window.close();" class="ico ico_close"><span class="skip">닫기</span></button>
+                </div>
+                <div class="gnb-tit">
+                    <h2>글 보기</h2>
+                </div>
+                <div class="btn-wrap _right">
+                    <button type="button" class="ico ico_share"><span class="skip">공유</span></button>
+                </div>
+            </div>
+        </section>
+    </header>
+    <?
+        }
+        elseif( strpos($fileName, '_write') > -1 || $fileName == 'write' ){ // 쓰기
+    ?>
+    <header class="popup-gnb-wrap">
+        <section class="sec-gnb-tit _type_side">
+            <div class="inner-wrap">
+                <div class="btn-wrap _left">
+                    <button type="button" onclick="window.close();" class="ico ico_close"><span class="skip">닫기</span></button>
+                </div>
+                <div class="gnb-tit">
+                    <h2>작성하기</h2>
+                </div>
+                <div class="btn-wrap _right">
+                    <button type="button" class="txt"><span>등록</span></button>
+                </div>
+            </div>
+        </section>
+    </header>
+    <?
+        }
+        else{
+            
+    ?>
+    <header class="popup-gnb-wrap">
+        <section class="sec-gnb-tit _type_side">
+            <div class="inner-wrap">
+                <div class="btn-wrap _left">
+                    <button type="button" onclick="window.close();" class="ico ico_close"><span class="skip">닫기</span></button>
+                </div>
+                <div class="gnb-tit">
+                    <h2><? 
+                    if($fileName == "explanation_lecture"){
+                        ?>해설강의<? 
+                    } else if($fileName == "liked_video"){
+                        ?>찜한영상<? 
+                    } else if($fileName == "lecture_notice"){
+                        ?>e-교재/필기앱 이용권 유의사항<? 
+                    } else if($fileName == "lecture_notice_buy"){
+                        ?>필기앱 이용권 안내<? 
+                    } else if($fileName == "lecture_preview"){
+                        ?>이 강좌의 핵심 내용 미리보기<? 
+                    } else {
+                        ?>상품 구매하기<? 
+                    } 
+                    ?></h2>
+                </div>
+            </div>
+        </section>
+    </header>
+<? 
+        }
+    } 
+} // //GNB타입
+?>

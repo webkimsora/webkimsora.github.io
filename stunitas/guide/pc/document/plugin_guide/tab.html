@@ -1,0 +1,297 @@
+<link rel="stylesheet" href="/css/document.css"/>
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/highlight.min.js"></script>
+<script src="/js/document.js"></script>
+
+<style>
+    .nav > li{list-style: none; text-align: center; border-bottom: 2px solid #ddd; padding: 15px 0; color: #bbb; font-weight: 700; flex: 1;}
+    .nav > li.active{border-color: #000; color: #000;}
+    .tab{margin-top: 15px;}
+    .tab li video{background: #111; width: 100%; border-radius: 10px; overflow: hidden;}
+    .tab > li{text-align: center;}
+    .tab > li > ul.c-nav > li{width: auto !important; height: 40px; line-height: 40px; font-size: 14px; padding: 0 12px; border: 0; background: #f6f6f6; border-radius: 5px;}
+    .tab > li > ul.c-nav > li.active{background: #000; color: #fff;}
+    .tab > li > ul.c-nav > li + li{margin-left: 10px;}
+    .tab > li > .nav{display: inline-flex; gap: 10px; width: auto;}
+    .tab > li > .nav > li{height: 38px; line-height: 38px; padding: 0 14px; width: auto; flex: none; background: #eee; color: #aaa; border-radius: 50px; font-size: 15px; border: 0;}
+    .tab > li > .nav > li.active{background: #000; color: #fff;}
+</style>
+<?
+    include('skin/pub/layout/pc/document/inc_document_lnb.html');
+?>
+<div class="document">
+    <main>
+        <nav>
+            <a href="../index">< 목록</a>
+            <h2>탭 <span>사용하기</span></h2>
+            <ul>
+                <li data-target="#ex"><a href="javascript:;">Example</a></li>
+                <li data-target="#options"><a href="javascript:;">Options</a></li>
+            </ul>
+        </nav>
+    
+        <section id="ex">
+            <section>
+                <h3>기본 사용법</h3>
+                <p>
+                    스크립트 적용시 탭을 자동으로 인식하여 탭 영역으로 지정됩니다.<br />
+                    태그 종류와는 상관 없이 <span>div > span, div > div, ul > li</span>와 같은 모든 구조에서도 동작합니다.<br/>
+                </p>
+                <ul class="nav">
+                    <li>메뉴1</li>
+                    <li>메뉴2</li>
+                    <li>메뉴3</li>
+                </ul>
+                <ul class="tab">
+                    <li><img src="https://picsum.photos/1000/200" alt="탭 이미지1" width="1000" height="200"></li>
+                    <li><img src="https://picsum.photos/1000/200?random=1" alt="탭 이미지2" width="1000" height="200"></li>
+                    <li><img src="https://picsum.photos/1000/200?random=2" alt="탭 이미지3" width="1000" height="200"></li>
+                </ul>
+<pre><code class="language-html"><!-- 버튼 영역 -->
+<ul class="nav">
+    <li>메뉴1</li>
+    <li>메뉴2</li>
+    <li>메뉴3</li>
+</ul>
+
+<!-- 탭 영역 -->
+<ul class="tab">
+    <li><img src="https://picsum.photos/1000/200" alt="탭 이미지1" width="1000" height="200"></li>
+    <li><img src="https://picsum.photos/1000/200?random=1" alt="탭 이미지2" width="1000" height="200"></li>
+    <li><img src="https://picsum.photos/1000/200?random=2" alt="탭 이미지3" width="1000" height="200"></li>
+</ul>
+
+<script>
+    $(function(){
+        $('.nav').cnTab();
+    });
+</script>
+</code></pre>
+            </section>
+    
+            <section>
+                <h3>비디오 태그</h3>
+                <p>기본적으로 탭 변경시 내부에 있는 비디오는 <span>리셋</span>됩니다.</p>
+                <ul class="nav">
+                    <li>비디오1</li>
+                    <li>비디오2</li>
+                </ul>
+                <ul class="tab">
+                    <li>
+                        <video muted="" playsinline="" controls="" poster="//s3.ap-northeast-2.amazonaws.com/st.dangidata/gong_dangicokr/img/gong/landing/2023/04/gong_12627/pc/head_video.png">
+                            <source src="<?= VIDEO_URL ?>/2023media/2023gong_cheerup.mp4" type="video/mp4">
+    
+                            <img src="//s3.ap-northeast-2.amazonaws.com/st.dangidata/gong_dangicokr/img/gong/landing/2023/01/gong_11996/pc/cont02_video.png" alt=" ">
+                        </video>
+                    </li>
+                    <li>
+                        <video muted="" playsinline="" controls="" poster="//s3.ap-northeast-2.amazonaws.com/st.dangidata/gong_dangicokr/img/gong/landing/2023/04/gong_12627/pc/head_video.png">
+                            <source src="<?= VIDEO_URL ?>/2023media/2023gong_cheerup.mp4" type="video/mp4">
+    
+                            <img src="//s3.ap-northeast-2.amazonaws.com/st.dangidata/gong_dangicokr/img/gong/landing/2023/01/gong_11996/pc/cont02_video.png" alt=" ">
+                        </video>
+                    </li>
+                </ul>
+            </section>
+    
+            <section>
+                <h3>탭 중첩</h3>
+                <p>
+                    탭 안에 탭이 있는 이중 구조의 경우에는 동일 클래스로 만들어 스크립트를 적용시킵니다.<br />
+                    하위 탭은 상위 탭 변경시 자동으로 첫번째 탭으로 변경(trigger)됩니다.<br>
+                    <span>startIndex 적용시 하위 탭이 초기화 되지 않습니다.</span>
+                </p>
+                <ul class="nav">
+                    <li>과목1</li>
+                    <li>과목2</li>
+                </ul>
+                <ul class="tab">
+                    <li>
+                        <ul class="nav">
+                            <li>홍길동 선생님</li>
+                            <li>길동이 선생님</li>
+                        </ul>
+                        <ul class="tab">
+                            <li>홍길동 선생님 탭</li>
+                            <li>길동이 선생님 탭</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul class="nav">
+                            <li>선생님 1</li>
+                            <li>선생님 2</li>
+                            <li>선생님 3</li>
+                        </ul>
+                        <ul class="tab">
+                            <li>선생님 탭 1</li>
+                            <li>선생님 탭 2</li>
+                            <li>선생님 탭 3</li>
+                        </ul>
+                    </li>
+                </ul>
+<pre><code class="language-html"><ul class="two_nav">
+    <li>과목1</li>
+    <li>과목2</li>
+</ul>
+<ul class="two_tab">
+    <li>
+        <ul class="two_nav">
+            <li>홍길동 선생님</li>
+            <li>길동이 선생님</li>
+        </ul>
+        <ul class="two_tab">
+            <li>홍길동 선생님 탭</li>
+            <li>길동이 선생님 탭</li>
+        </ul>
+    </li>
+    <li>
+        <ul class="two_nav">
+            <li>선생님 1</li>
+            <li>선생님 2</li>
+            <li>선생님 3</li>
+        </ul>
+        <ul class="two_tab">
+            <li>선생님 탭 1</li>
+            <li>선생님 탭 2</li>
+            <li>선생님 탭 3</li>
+        </ul>
+    </li>
+</ul>
+<script>
+    $(function(){
+        $('.two_nav').cnTab();
+    });
+</script>
+</code></pre>
+            </section>
+        </section>
+
+        <section id="options">
+            <h3>Options</h3>
+            <table>
+                <colgroup>
+                    <col width="16.6666%" />
+                    <col width="16.6666%" />
+                    <col width="16.6666%" />
+                    <col width="50%" />
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Default</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr id="tab">
+                        <th>tab</th>
+                        <td>string</td>
+                        <td>-</td>
+                        <td>
+                            <p>버튼 다음에 탭이 위치할 수 없거나, 구조가 복잡해질 경우 아래 옵션을 사용하여 탭을 지정할 수 있습니다.</p>
+<pre><code class="language-html"><!-- 버튼 영역 -->
+<ul class="nav_type2">...</ul>
+
+<div class="something"></div>
+
+<!-- 탭 영역 -->
+<div class="tab_box">
+    <ul class="tab">...</ul>
+</div>
+<script>
+    $(function(){
+        $('.nav_type2').cnTab({
+            tab: '.tab' // className
+        });
+    });
+</script>
+</code></pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>width</th>
+                        <td>string</td>
+                        <td>'auto', '100px', '50%', 'css'</td>
+                        <td>
+                            <p>각 버튼의 너비를 설정합니다. (단위와 함께 입력 예: '100px')<br />이 옵션을 넣지 않으면 탭 갯수에 따라 자동으로 너비가 조정됩니다. <br>'css' 옵션은 밑에 사용자가 설정한 css의 넓이 및 여백을 사용합니다.<br>'css' 로 설정하면 gap 옵션은 무시 됩니다. <br><b>탭은 display:flex 로 되어 있습니다.</b></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>spaceTab</th>
+                        <td>number</td>
+                        <td>n</td>
+                        <td>
+                            <p>각 탭 사이의 공백 숫자로 입력해야 하며 뒤에 px이 자동 붙습니다.<br>기본 - 설정안함</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>startIndex</th>
+                        <td>number</td>
+                        <td>0, 'auto'</td>
+                        <td>
+                            <p>시작 탭을 설정합니다.<br>'auto'로 설정하면 탭 갯수에 맞춰 랜덤으로 노출됩니다.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>activeClass</th>
+                        <td>string</td>
+                        <td>'active'</td>
+                        <td>
+                            <p>활성화된 버튼과 탭 영역에 추가되는 클래스를 변경합니다.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>useConts</th>
+                        <td>string</td>
+                        <td>'Y', 'N'</td>
+                        <td>
+                            <p>'Y'로 설정하면 탭을 버튼으로만 사용합니다.<br>하위 탭이 지정되지 탭이 작동하지 않습니다.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>onClick</th>
+                        <td>function</td>
+                        <td>-</td>
+                        <td>
+                            <p>
+                                버튼을 클릭했을 때 이벤트를 추가하며 클릭한 엘리먼트와 인덱스를 반환합니다.<br />
+                                이미 활성화된 버튼을 다시 클릭할 경우 중복해서 실행되지 않습니다.
+
+                            </p>
+<pre><code class="language-js">$('.custom_nav').cnTab({
+    onClick: function(el, index, tabs){
+        console.log(index + '번째 메뉴 클릭');
+        el.addClass('clicked'); // 클릭한 영역에 클래스 추가
+    };
+});
+</code></pre>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th>onInit</th>
+                        <td>function</td>
+                        <td>-</td>
+                        <td>
+                            <p>
+                                맨 처음에 로드되고 실행 되는 함수
+
+                            </p>
+<pre><code class="language-js">$('.custom_nav').cnTab({
+    onInit: function(el, index, tabs){
+        console.log('로드 되고 처음으로 시작할때');
+    };
+});
+</code></pre>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+</div>
+<script>
+    $(function(){
+        $('.nav').cnTab()
+    })
+</script>

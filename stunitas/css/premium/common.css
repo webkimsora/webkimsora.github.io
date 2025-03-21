@@ -1,0 +1,75 @@
+/* 아이콘 */
+@import url('icons.css');
+
+/* @ css 변수 */
+:root{
+    --font-no: 'Noto Sans KR', sans-serif;
+    --font-su: 'SUIT', sans-serif;
+    --font-pr: 'Pretendard', sans-serif;
+    
+    --white: #fff;
+    --black: #000;
+
+	/* figma 기준 색상 */
+    --prem-primary: #6101D9;
+    --prem-secondary: #C800FF;
+    --prem-teritary: #E8D6FF;
+    --prem-background: #F6F0FF;
+    --prem-special: linear-gradient(104deg, #6101D9 -14.06%, #C800FF 123.22%);
+    --prem-bg-hover:#FAFAFC;
+
+    --icon-inverse:#FFFFFF;
+	--icon-primary: #121212;
+	--icon-secondary: #5C6675;
+	--icon-accent: #025AF6;
+	--icon-disabled: #E0E3EB; 
+
+	/* 
+    단기 공통..
+	--text-brand: #025AF6;
+
+	--bd-primary: #EDEDF3;
+	--bd-brand: #025AF6;
+    */
+}
+/* //@ css 변수 */
+
+.premium_service,
+.prem__modal{
+    --text-primary:#121212;
+	--text-secondary: #5C6675;
+    --text-disabled: #C2CAD6;
+
+    --gray-100: #121212;
+    --gray-70: #5C6675;
+    --gray-60: #7E8B9A;
+    --gray-50: #A4B1C1;
+    --gray-30: #E0E3EB;
+    --gray-20: #EDEDF3;
+    --gray-10: #F6F6F9;
+    --gray-5: #FAFAFC;
+    --gray-0: #ffffff;
+}
+
+.premium_service *{font-family: var(--font-pr), sans-serif;}
+
+.prem__color--primary{color: var(--text-primary) !important}
+.prem__color--secondary{color: var(--text-secondary) !important}
+.prem__color--teritary{color: var(--gray-50) !important}
+.prem__color--brand{color: var(--prem-primary) !important}
+.prem__color--brand2{color: var(--prem-secondary) !important}
+.prem__color--brand3{color: var(--prem-teritary) !important}
+.prem__color--white{color: var(--white) !important}
+
+.prem__color--g100{color: var(--gray-100) !important;}
+.prem__color--g70{color: var(--gray-70) !important;}
+.prem__color--g60{color: var(--gray-60) !important;}
+.prem__color--g50{color: var(--gray-50) !important;}
+.prem__color--g30{color: var(--gray-30) !important;}
+.prem__color--g20{color: var(--gray-20) !important;}
+.prem__color--g10{color: var(--gray-10) !important;}
+.prem__color--g5{color: var(--gray-5) !important;}
+.prem__color--g0{color: var(--gray-0) !important;}
+
+textarea,
+input{outline: none;}

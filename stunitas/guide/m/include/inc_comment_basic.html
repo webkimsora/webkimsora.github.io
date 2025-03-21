@@ -1,0 +1,82 @@
+    <!-- S:댓글 -->
+    <article class="comment-area inner-wrap flex">
+        <h3 class="skip">게시판 댓글</h3>
+        <!-- <div class="item-comment-cnt flex">
+            <i class="ico ico_comment"></i>
+            <span>댓글</span>
+            <b>1</b>
+        </div> -->
+
+        <section class="area-box _comment_input">
+            <div class="label-group-box flex"><!-- ._error 에러일때 -->
+                <div class="label-box flex _textarea _line"> <!-- {_textarea} 바이트 수 표시 때문에 div 넣음-->
+                    <p class="label-name">공*기</p>
+                    
+                    <textarea class="_no_line" placeholder="주제와 무관한 댓글이나 비속어 등은 경고 조치 없이 삭제될 수 있습니다."></textarea>
+
+                    <div class="flex _col_center">
+                        <p class="txt-byte">0/500</p>
+                        <button class="btn-s _color_black _line" onclick="$('body').cnStickyMsg({strMsg:'댓글이 등록되었습니다.'});">등록</button>
+                    </div>
+                </div>
+                <div class="label-msg">내용을 입력해주세요.</div>
+            </div>
+        </section>
+
+        <ul class="area-box _comment_list">
+            <? for($i=0; $i<2; $i++){ ?>
+                <li class="box-item flex _column">
+                    <div class="item-head flex">
+						<div class="flex">
+							<b class="data-name">공*기</b>
+							<div class="item-etc flex _circle">
+								<span>2023.12.20</span>
+							</div>
+						</div>
+                        <button class="btn_dropdown ico ico_more" data-dropdown="dropdown">더보기</button>
+                    </div>
+                    <div class="item-conts">텍스트 노출 영역입니다.댓글영역은 말줄임표가 사용되지 않습니다.</div>
+
+                    <!-- ////////// 드롭다운 수정 버튼 클릭시 댓글 수정 글쓰기 창 노출 S //////////  -->
+                    <section class="area-box _comment_input _modify">
+                        <div class="label-group-box flex"><!-- ._error 에러일때 -->
+                            <div class="label-box flex _textarea _line"> <!-- {_textarea} 바이트 수 표시 때문에 div 넣음-->
+                                <p class="label-name">공*기</p>
+                                
+                                <textarea class="_no_line" placeholder="주제와 무관한 댓글이나 비속어 등은 경고 조치 없이 삭제될 수 있습니다."></textarea>
+
+                                <div class="flex _col_center">
+                                    <p class="txt-byte">0/500</p>
+                                    <button class="btn-s _color_black _line" onclick="$('body').cnStickyMsg({strMsg:'댓글이 등록되었습니다.'});">등록</button>
+                                </div>
+                            </div>
+                            <div class="label-msg">내용을 입력해주세요.</div>
+                        </div>
+                    </section>
+                    <!-- ////////// 드롭다운 수정 버튼 클릭시 댓글 수정 글쓰기 창 노출 E //////////  -->
+                </li>
+            <? } ?>
+        </ul>
+    </article>
+
+    <ul class="dropdown">
+        <li class="drop_modify"><a class="btn_modify" href="javascript:void(0);">수정</a></li>
+        <li class="drop_del"><a href="javascript:void(0);">삭제</a></li>
+    </ul>
+    <script>
+    $(function(){
+        $('.btn_dropdown').cnDropdown({
+            onMenuClick:function(pEl, pIndex, pParent){
+                //console.log('개발에서 쓸 데이터 각 버튼', pParent.data('test') );
+
+                $(pParent).closest('._comment_list').find('._comment_input._modify').hide().siblings('div').show();
+                const _parent = $(pParent).closest('.box-item');
+                _parent.find('._comment_input')
+                .show()
+                .find('textarea').html(_parent.find('.item-conts').text()).focus();
+                _parent.find('._comment_input').siblings('div').hide();
+            }
+        });
+    });
+    </script>
+    <!-- E:댓글 -->

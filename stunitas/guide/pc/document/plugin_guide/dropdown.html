@@ -1,0 +1,230 @@
+<link rel="stylesheet" href="/css/document.css"/>
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/highlight.min.js"></script>
+<script src="/js/document.js"></script>
+
+<style>
+    .ex_box{background: #eee; border-radius: 10px; text-align: center; height: 300px; box-sizing: border-box; padding: 100px 0}
+    .ex_box a, .btn{display: inline-block; width: 24px; height: 24px; margin: 0 10px;}
+    .ex_box a i, .btn i{width: 100%; height: 100%; display: block;}
+    .ex_box a:hover, .btn:hover{}
+    .ex_modal{}
+    .ex_modal .modal_content{padding: 200px 0;}
+</style>
+<?
+    include('skin/pub/layout/pc/document/inc_document_lnb.html');
+?>
+<div class="document">
+    <main>
+        <nav>
+            <a href="../index">< 목록</a>
+            <h2>드롭다운 사용하기</h2>
+            <ul>
+                <li data-target="#ex"><a href="javascript:;">Example</a></li>
+                <li data-target="#options"><a href="javascript:;">Options</a></li>
+                <!-- <li data-target="#methods"><a href="javascript:;">Methods</a></li> -->
+            </ul>
+        </nav>
+    
+        <section id="ex">
+            <section>
+                <h3>기본 사용법</h3>
+                <p>
+                    버튼에 <span>data-dropdown</span>을 추가하여 드롭다운을 지정해주세요.<br />
+                    드롭다운의 구조는 아래의 코드와 같아야 정상적으로 동작합니다.
+                </p>
+    
+                <div class="ex_box">
+                    <div>
+                        <a href="javascript:;" class="dropdown_btn1" data-dropdown="dropdown1"><i class="ico ico_more"></i></a>
+                        <a href="javascript:;" class="dropdown_btn1" data-dropdown="dropdown1"><i class="ico ico_more"></i></a>
+                        <a href="javascript:;" class="dropdown_btn1" data-dropdown="dropdown1"><i class="ico ico_more"></i></a>
+                        <ul class="dropdown1">
+                            <li><a href="javascript:;">드롭메뉴1</a></li>
+                            <li><a href="javascript:;">드롭메뉴2</a></li>
+                            <li><a href="javascript:;">드롭메뉴3</a></li>
+                        </ul>
+                    </div>
+                </div>
+    
+<pre><code class="language-html"><!-- 드롭다운 버튼 -->
+<a href="javascript:;" id="btn " data-dropdown="dropdown">클릭</a>
+
+<!-- 드롭다운 -->
+<ul class="dropdown">
+    <li><a href="javascript:;">드롭메뉴 1</a></li>
+    <li><a href="javascript:;">드롭메뉴 2</a></li>
+    <li><a href="javascript:;">드롭메뉴 3</a></li>
+</ul>
+
+<script>
+    $('#btn').cnDropdown()
+</script>
+</code></pre>
+            </section>
+
+            <section>
+                <h3>드롭다운 열어두기</h3>
+                <p>
+                    메뉴 클릭시 드롭다운을 닫히지 않게 설정합니다.
+                </p>
+    
+                <div class="ex_box">
+                    <div>
+                        <a href="javascript:;" class="dropdown_btn2" data-dropdown="dropdown2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 13 4" fill="none">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M2.85263 1.84712C2.85263 2.50986 2.31537 3.04712 1.65263 3.04712C0.989894 3.04712 0.452637 2.50986 0.452637 1.84712C0.452637 1.18438 0.989894 0.647125 1.65263 0.647125C2.31537 0.647125 2.85263 1.18438 2.85263 1.84712ZM7.4998 1.84712C7.4998 2.50986 6.96254 3.04712 6.2998 3.04712C5.63706 3.04712 5.09981 2.50986 5.09981 1.84712C5.09981 1.18438 5.63706 0.647125 6.2998 0.647125C6.96254 0.647125 7.4998 1.18438 7.4998 1.84712ZM10.947 3.04712C11.6097 3.04712 12.147 2.50986 12.147 1.84712C12.147 1.18438 11.6097 0.647125 10.947 0.647125C10.2842 0.647125 9.74698 1.18438 9.74698 1.84712C9.74698 2.50986 10.2842 3.04712 10.947 3.04712Z" fill="#7E8B9A"/>
+                            </svg>
+                        </a>
+                        <ul class="dropdown2">
+                            <li><a href="javascript:;">드롭메뉴1</a></li>
+                            <li><a href="javascript:;">드롭메뉴2</a></li>
+                            <li><a href="javascript:;">드롭메뉴3</a></li>
+                        </ul>
+                    </div>
+                </div>
+    
+<pre><code class="language-js">$('#btn').cnDropdown({
+    closeOutside: false,
+    autoMenuClose: false,
+})
+</code></pre>
+            </section>
+        </section>
+
+        <section id="options">
+            <h3>Options</h3>
+            <table>
+                <colgroup>
+                    <col width="16.6666%" />
+                    <col width="16.6666%" />
+                    <col width="16.6666%" />
+                    <col width="50%" />
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Default</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>width</th>
+                        <td>number</td>
+                        <td>94</td>
+                        <td>
+                            <p>드롭가운의 가로 사이즈를 설정합니다.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>closeOutside</th>
+                        <td>boolean</td>
+                        <td>true</td>
+                        <td>
+                            <p>바깥 영역 클릭시 드롭다운의 닫힘 여부를 정합니다.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>autoMenuClose</th>
+                        <td>boolean</td>
+                        <td>true</td>
+                        <td>
+                            <p>이 설정을 끄면 드롭메뉴 버튼 클릭시 드롭메뉴가 자동으로 사라지지 않습니다.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>offset</th>
+                        <td>object</td>
+                        <td>{x: 2, y: 4}</td>
+                        <td>
+                            <p>드롭다운 생성시 버튼과의 여백을 조정합니다.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>onMenuClick</th>
+                        <td>function</td>
+                        <td>-</td>
+                        <td>
+                            <p>드롭다운 버튼 클릭시 이벤트를 실행하며, 각 버튼의 인덱스를 반환합니다.<br>
+							pEl : 현재 드롭다운메뉴<br>
+							pIndex : 클릭한 드롭다운메뉴 인덱스<br>
+							pParent : 드롭다운메뉴를 펼치기 위해 클릭한 버튼(여기에 각 아이템 고유 속성 data-로 지정해서 접근 가능)</p>
+<pre><code class="language-js">$('.modal').cnDropdown({
+    onMenuClick: function(pEl, pIndex, pParent){
+        console.log(pIndex);
+        console.log('개발에서 쓸 데이터 각 버튼', pParent.data('test') );
+    },
+})
+</code></pre>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- <section id="methods">
+            <h3>Methods & Properties</h3>
+            <table>
+                <colgroup>
+                    <col width="16.6666%" />
+                    <col width="16.6666%" />
+                    <col width="16.6666%" />
+                    <col width="50%" />
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th colspan="4">Properties</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th colspan="2">modal.close()</th>
+                        <td colspan="2">
+                            <p>모달을 닫습니다.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th colspan="2">modal.modalMode(<span>effect</span>)</th>
+                        <td colspan="2">
+                            <p>모달의 효과를 변경하거나 적용 효과의 이름을 가져옵니다.</p>
+<pre><code class="language-js">const modal = $('#modal').cnModal();
+
+modal.modalMode('fade'); // 효과 변경
+modal.modalMode(); // 'fade'
+</code></pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th colspan="2">modal.modalTitle(<span>title</span>)</th>
+                        <td colspan="2">
+                            <p>모달의 타이틀을 변경합니다.</p>
+<pre><code class="language-js">modal.modalTitle('타이틀 변경');
+</code></pre>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section> -->
+    </main>
+</div>
+<script>
+    $(function(){
+        $('.dropdown_btn1').cnDropdown({
+            width: 100,
+            onMenuClick: function(pEl, pIndex, pParent){
+				console.log('개발에서 쓸 데이터 각 버튼', pParent.data('test') );
+                alert(pIndex+'번 버튼 클릭')
+            }
+        })
+
+        $('.dropdown_btn2').cnDropdown({
+            closeOutside: false,
+            autoMenuClose: false,
+            onMenuClick: function(pEl, pIndex, pParent){
+				console.log('개발에서 쓸 데이터 각 버튼', pParent.data('test') );
+                alert(pIndex+'번 버튼 클릭')
+            }
+        })
+    })
+</script>

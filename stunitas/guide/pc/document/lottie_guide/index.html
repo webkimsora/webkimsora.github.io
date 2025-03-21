@@ -1,0 +1,126 @@
+<link rel="stylesheet" href="/css/document.css"/>
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/highlight.min.js"></script>
+<script src="/js/document.js"></script>
+
+<style>
+	.nav > li{list-style: none; text-align: center; border-bottom: 2px solid #ddd; padding: 15px 0; color: #bbb; font-weight: 700; flex: 1;}
+	.nav > li.active{border-color: #000; color: #000;}
+	.tab{margin-top: 15px;}
+	.tab li video{background: #111; width: 100%; border-radius: 10px; overflow: hidden;}
+	.tab > li{text-align: center;}
+	.tab > li > ul.c-nav > li{width: auto !important; height: 40px; line-height: 40px; font-size: 14px; padding: 0 12px; border: 0; background: #f6f6f6; border-radius: 5px;}
+	.tab > li > ul.c-nav > li.active{background: #000; color: #fff;}
+	.tab > li > ul.c-nav > li + li{margin-left: 10px;}
+	.tab > li > .nav{display: inline-flex; gap: 10px; width: auto;}
+	.tab > li > .nav > li{height: 38px; line-height: 38px; padding: 0 14px; width: auto; flex: none; background: #eee; color: #aaa; border-radius: 50px; font-size: 15px; border: 0;}
+	.tab > li > .nav > li.active{background: #000; color: #fff;}
+	
+	h2 {margin-bottom: 20px !important;}
+	.document .menu {margin-top: 0;}
+
+	.btn_link > a {display: inline-block;}
+	.btn_link > a + a {margin-left: 10px;}
+
+	main {padding: 50px 0 35vh !important;}
+</style>
+<div class="document">
+	<main>
+		<nav>
+			<a href="../index">< 목록</a>
+			<h2 style="display: flex;column-gap: 20px;align-items: baseline;">Lottie.js 적용하기 <a href="https://airbnb.io/lottie/#/web?id=usage" target="_blank" style="font-size: 11px;display: inline-block;padding: 1.5px 5px;border-radius: 2px;background-color: #E7EFFD;color: #025AF6;">링크</a></h2>
+		</nav>
+		
+		<section>
+			<h3>1) 기본 사용</h3>
+			<p>아래 코드를 복사하여 html 상단에 붙여넣기 합니다.</p>
+<pre><code class="language-html"><script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+</code></pre>
+			<p>영역을 잡아주고 자바스크립트로 json파일을 연결해줍니다.</p>
+<pre><code class="language-html"><div id="lottie"></div>
+<script>
+	var anim1 = lottie.loadAnimation({
+		container : document.querySelector('#lottie'),
+		path: '/이미지폴더명/파일명.json',
+		renderer : 'svg',
+		loop : true,
+		autoplay : true,
+	});
+</script>
+</code></pre>
+			<p>예시: </p>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+			<div class="cont_example">
+				<div class="inner">
+					<div id="lottie1" style="width: 300px;height: 300px;"></div>
+				</div>
+			</div>
+			<script>
+				var anim1 = lottie.loadAnimation({
+					container: document.querySelector('#lottie1'),
+					path: '<?=UN_STATIC_IMG?>/un_static/img/event/json/loop-ex.json',
+					renderer: 'svg',
+					loop: true,
+					autoplay: true,
+				})
+			</script>
+		</section>
+
+		<section>
+			<h3>2) 클릭 애니메이션</h3>
+			<p>아래 코드를 복사하여 html 상단에 붙여넣기 합니다.</p>
+<pre><code class="language-html"><script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+</code></pre>
+			<p>영역을 잡아주고 json파일을 연결해줍니다.</p>
+<pre><code class="language-html">
+</code></pre>
+			<p>예시: </p>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+			<style>
+				.ex_nav {max-width: 640px;padding: 16px;display: flex;justify-content: space-around;background-color: #fff;box-shadow: 0 4px 16px rgba(0,0,0,0.1);border-radius: 20px;margin-bottom: 20px;}
+				.ex_nav li {width: 20%;padding: 20px;}
+				.ex_nav .icon {width: 48px;height: 48px;margin: auto;cursor: pointer;}
+			</style>
+			<ul class="ex_nav">
+				<li>
+					<div class="icon ani-click" data-file="icon-home"></div>
+				</li>
+				<li>
+					<div class="icon ani-click" data-file="icon-video"></div>
+				</li>
+				<li>
+					<div class="icon ani-click" data-file="icon-report"></div>
+				</li>
+				<li>
+					<div class="icon ani-click" data-file="icon-heart"></div>
+				</li>
+				<li>
+					<div class="icon ani-click" data-file="icon-explore"></div>
+				</li>
+			</ul>
+			<script>
+				let clickAni = document.querySelectorAll('.ani-click');
+				// 클릭시 애니메이션 재생
+				Array.prototype.forEach.call(clickAni, icon => {
+					var anim = bodymovin.loadAnimation({
+						container: icon,
+						path: `<?=UN_STATIC_IMG?>/un_static/img/event/json/${icon.dataset.file}.json`,
+						renderer: 'svg',
+						loop: false,
+						autoplay: false
+					})
+					icon.addEventListener('click', () => {
+						anim.setDirection(1);
+						anim.play();
+					})
+				});
+			</script>
+		</section>
+
+		<section>
+			<h3>3) 애니메이션 모션</h3>
+			<h3 style="display: flex;column-gap: 20px;align-items: baseline;">LottieInteractivity 플러그인 <a href="https://lottiefiles.com/interactivity" target="_blank" style="font-size: 11px;display: inline-block;padding: 1.5px 5px;border-radius: 2px;background-color: #E7EFFD;color: #025AF6;">링크</a></h3>
+			<p></p>
+		</section>
+
+	</main>
+</div>

@@ -1,0 +1,149 @@
+/* 공통 */
+.prem__live .prem__dropdown--btn.dropdown--sort {display:flex; align-items: center; gap:0 .5rem; justify-content: end;}
+.prem__live .prem__dropdown--btn.dropdown--sort span {color:var(--text-secondary)}
+.prem__live .prem__dropdown--btn.dropdown--sort i{width: 1.2rem; height: 2.4rem;}
+.prem__live .prem__dropdown--btn.dropdown--sort i:after {background-color:var(--gray-70)}
+
+.prem__guide li{display: flex; gap: 1rem; font-size: 1.4rem; color: #121212; line-height: 1.9rem; letter-spacing: -0.014rem;}
+.prem__guide li::before{content: ""; display: inline-block; background: #121212; width: .3rem; height: .3rem; border-radius: 5rem; margin-top: .8rem; margin-left: .8rem; flex-shrink: 0;}
+
+i[class*=prem__ico].prem__ico--dot {width:.6rem; height:1.2rem;}
+i[class*=prem__ico].prem__ico--dot:after { background-color:var(--gray-70); width:100%;}
+
+/* 게릴라 라이브 */
+.prem__live .area__live .live__list {margin-top: 1.6rem; margin-bottom:2rem; height: 19.8rem;}
+.prem__live .area__live .live__list li {position: relative; background: var(--prem-special); border-radius: var(--border-radius-l); box-shadow: 0 .6rem 1.2rem 0 rgba(97, 1, 217, 0.12);}
+.prem__live .area__live .live__list li > * {color: #fff !important;}
+.prem__live .area__live .live__list li div {display: inline-flex; align-items: center; gap: .2rem; padding: .5rem .6rem; margin-bottom: .8rem; background: rgba(255,255,255,0.2); font-weight: 700;}
+.prem__live .area__live .live__list li div i {width: 1.6rem; height: 1.6rem; }
+.prem__live .area__live .live__list li div i::after {background-color: #fff;}
+.prem__live .area__live .live__list li p {word-break: keep-all; height: 5.2rem; margin-bottom: 1.2rem;}
+.prem__live .area__live .live__list li a.disabled {background: transparent; border: .1rem solid #fff;}
+.prem__live .area__live .live__list .swiper-pagination {width: auto; top: 1.2rem; right: 1.2rem;bottom: auto; left: auto; border: .1rem solid rgba(255, 255, 255, 0.20); border-radius: var(--border-radius-m); padding: .5rem .9rem; color: rgba(255, 255, 255, 0.40);}
+.prem__live .area__live .live__list .swiper-pagination .swiper-pagination-current{color: rgba(255, 255, 255, 1);}
+
+.prem__live .area__live .live__box {background: var(--prem-background);}
+.prem__live .area__live .live__box > div > * {border-radius: var(--border-radius-m);}
+.prem__live .area__live .movie_box {display: flex; flex-direction: column; justify-content: center; align-items: center; min-width: 80%; min-height: 423px; text-align: center; background: url('<?=UN_STATIC_IMG?>/un_static/img/common/premium/background/live_bg.png')  var(--gray-100) center center no-repeat; text-transform: uppercase;}
+.prem__live .area__live .movie_box p {padding-bottom: 10px;}
+.prem__live .area__live .movie_box.coming {background-position: center bottom 45px; justify-content: start; padding-top: 50px;}
+.prem__live .area__live .chat_box {min-width: calc(20% - 12px);}
+
+.prem__live .area__replay .filter {align-items: center;}
+.prem__live .replay__list > li + li {border-top: .1rem solid var(--gray-30, #E0E3EB);}
+.prem__live .replay__list .prem__img--full {width: 12.8rem; height: 7.2rem; border-radius: .8rem !important;}
+.prem__live .replay__list .explain {flex:1;}
+
+.prem__live .area__notice .main_notice {align-items: center; gap: 1.5rem;}
+.prem__live .area__notice .main_notice .icon {display: flex; align-items: center; gap: .4rem;}
+.prem__live .area__notice .main_notice .slideup_box {flex: 1; width: calc(100% - 10rem); }
+.prem__live .area__notice .main_notice .slideup_slider { height: 2.4rem ;}
+.prem__live .area__notice .main_notice .slideup_slider li a {line-height: 2.4rem; display: flex; align-items: center; justify-content: space-between;}
+.prem__live .area__notice .main_notice .slideup_slider li .tit {width: 72%;}
+.prem__live .area__notice .main_notice .slideup_slider li span {white-space: nowrap;}
+
+.prem__live .area__vote h4 {padding-bottom: .6rem;}
+.prem__live .area__vote h4 em {color: var(--prem-primary);}
+.prem__live .area__vote .vote_all_box {background: #fff;}
+.prem__live .area__vote .vote_box {padding-top: 2rem;}
+.prem__live .area__vote .vote_box .total {display: flex; align-items: center; gap: .2rem; color: var(--prem-primary);}
+.prem__live .area__vote .vote_box .total i {width: 2.2rem; height: 2.2rem; }
+.prem__live .area__vote .vote_box .total i::after {background-color: var(--prem-primary);}
+.prem__live .area__vote .vote_box .list label {min-height: 10.8rem; position: relative; display: flex; gap: 1.2rem; align-items: center; border-radius: var(--border-radius-l); background: var(--icon-disabled); border: .2rem solid var(--icon-disabled);}
+.prem__live .area__vote .vote_box .list label:has(input:checked) {background: var(--prem-background); border-color: var(--prem-primary); }
+.prem__live .area__vote .vote_box .list input {position: absolute; top: 0; left: 0; width: .1rem; height: .1rem; opacity: 0; visibility: hidden;}
+.prem__live .area__vote .vote_box .list input:is([type=checkbox],[type=radio]):checked + i::after {background-color: var(--prem-primary);}
+.prem__live .area__vote .vote_box .list i::after {background-color: var(--gray-50); }
+.prem__live .area__vote .vote_box .list span {flex: 1;}
+.prem__live .area__vote .vote_box .list.result label {flex-direction: column; align-items: flex-start; justify-content: center; gap: .6rem; background-color: var(--prem-background); border: none;  cursor: default;}
+.prem__live .area__vote .vote_box .list.result p {padding: .3rem .8rem; border-radius: 3rem; background: var(--prem-teritary); color: var(--prem-primary);}
+.prem__live .area__vote .vote_box .list.result span {flex: none;}
+.prem__live .area__vote .vote_box .list.result label.active {background: var(--prem-special);}
+.prem__live .area__vote .vote_box .list.result label.active span {color: #fff;}
+.prem__live .area__vote .vote_box .list.result label.active p {background-color: #fff;}
+.prem__live .area__vote .vote_box .vote_btn {margin-top: .8rem;}
+.prem__live .area__vote .vote_box .vote_btn.disabled {background-color: var(--gray-50); color: #fff;}
+.prem__live .live__banner a{display: flex; align-items: center; font-size: 1.6rem; font-weight: 600; line-height: 2.4rem; letter-spacing: -0.016rem; height: 8.8rem; overflow: hidden; padding: 0 2.4rem;}
+
+.prem__modal--live_schedule .cn-modal-head {background: #121212; color: #fff;}
+.prem__modal--live_schedule .cn-modal-main {height: 100%; border-radius: 0 !important; overflow: hidden;}
+.prem__modal--live_schedule .cn-modal-close i::before {background: #fff !important;}
+.prem__modal--live_schedule .schedule_box {position: relative;}
+.prem__modal--live_schedule .timetable {max-height: calc(100vh - 8rem) ;}
+.prem__modal--live_schedule .timetable li + li {padding-top: 2rem; border-top: .1rem solid var(--gray-20);}
+.prem__modal--live_schedule .timetable .date {width: 6.8rem; display: flex; justify-content: space-between;}
+.prem__modal--live_schedule .timetable .date .day {width: 2.4rem; height: 2.4rem; text-align: center; font-size: 1.4rem; background: var(--gray-10); border-radius: var(--border-radius-s); color: var(--text-secondary);}
+.prem__modal--live_schedule .timetable .detail {flex: 1; padding-bottom: 2rem; }
+.prem__modal--live_schedule .timetable .today {width: 5.2rem; height: 2.2rem; line-height: 2.2rem; display: inline-block; font-size: 1.2rem; font-weight: 700; margin-right: .6rem; text-align: center; border-radius: var(--border-radius-l); border: .14rem solid var(--prem-primary); color: var(--prem-primary);}
+.prem__modal--live_schedule .timetable li.end * {color: var(--gray-50) !important;}
+
+/* 최애 선생님 */
+.premium_service .prem__fav{overflow: hidden;}
+.premium_service .prem__fav .fav__rank{padding: 4rem 0 1rem;}
+.premium_service .prem__fav .fav__rank .rank__list{display: flex; flex-direction: column; background: var(--gray-10, #F6F6F9); border-radius: var(--border-radius-l, 1.2rem); overflow: hidden;}
+.premium_service .prem__fav .fav__rank .rank__list .list__item{display: flex; align-items: center; gap: 1.2rem; height: 7.8rem; padding: 0 2rem 0 1.6rem; position: relative; overflow: hidden;}
+.premium_service .prem__fav .fav__rank .rank__list .list__item img{width: 5rem; height: 5rem; flex-shrink: 0; border-radius: var(--border-radius-m, .8rem); overflow: hidden;}
+.premium_service .prem__fav .fav__rank .rank__list .list__item > div{display: flex; flex-direction: column;}
+.premium_service .prem__fav .fav__rank .rank__list .list__item .item__like{display: flex; flex-shrink: 0; flex-direction: row-reverse; align-items: center; color: var(--text-secondary); font-size: 1.3rem; font-style: normal; width: auto; gap: .2rem; margin-left: auto; letter-spacing: -0.026rem;}
+.premium_service .prem__fav .fav__rank .rank__list .list__item .item__like::after{background: var(--prem-primary); position: relative; top: -.1rem; width: 1.4rem; height: 1.4rem; flex-shrink: 0;}
+.premium_service .prem__fav .fav__rank .rank__list .list__item + .list__item:not(:nth-child(2))::after{content: ""; display: block; position: absolute; top: 0; left: 50%; transform: translateX(-50%); background: var(--gray-20, #EDEDF3); width: calc(100% - 3.2rem); height: .1rem;}
+.premium_service .prem__fav .fav__rank .rank__list .list__item:first-child{background: var(--prem-background); height: 9.6rem; gap: 1.6rem;}
+.premium_service .prem__fav .fav__rank .rank__list .list__item:first-child::after{content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: .2rem solid var(--prem-primary); border-radius: var(--border-radius-l, 1.2rem); pointer-events: none;}
+.premium_service .prem__fav .fav__rank .rank__list .list__item:first-child img{width: 6.8rem; height: 6.8rem; border-radius: var(--border-radius-l, 1.2rem);}
+.premium_service .prem__fav .fav__rank .rank__list .list__item:first-child .item__like{color: var(--prem-primary); font-size: 1.6rem; letter-spacing: -0.048rem;}
+.premium_service .prem__fav .fav__rank .rank__list .list__item:first-child .item__like::after{width: 1.8rem; height: 1.8rem;}
+.premium_service .prem__fav .fav__board .board__filter{display: flex; flex-direction: column; gap: 2.4rem;}
+.premium_service .prem__fav .fav__board .board__filter .filter__wrap{display: flex; justify-content: space-between;}
+.premium_service .prem__fav .fav__board .board__filter .filter__wrap > div{display: flex; align-items: center; gap: .8rem;}
+.premium_service .prem__fav .fav__board .board__filter .filter__slider__wrap{position: relative;}
+.premium_service .prem__fav .fav__board .board__filter .filter__slider__wrap::after{content: ""; position: absolute; top: 0; right: -1.6rem; background: linear-gradient(270deg, #FFF 30%, rgba(255, 255, 255, 0.00) 113%); width: 5.4rem; height: 3.8rem; z-index: 2;}
+.premium_service .prem__fav .fav__board .board__filter .filter__slider__wrap .filter__slider{width: 100%; padding-right: 4.6rem; overflow: unset;}
+.premium_service .prem__fav .fav__board .board__filter .filter__slider__wrap .filter__slider li{width: auto; margin-right: .8rem; height: 3.8rem; padding: 0 1.2rem 0 .7rem; gap: .6rem}
+.premium_service .prem__fav .fav__board .board__filter .filter__slider__wrap .filter__slider li .tab--thumb{width: 2.4rem; height: 2.4rem;}
+.premium_service .prem__fav .fav__board .board__filter .filter__slider__wrap .filter__slider li:last-child{margin-right: 0;}
+.premium_service .prem__fav .fav__board .board__filter .filter__slider__wrap .filter__all{display: inline-block; width: 3.8rem; height: 3.8rem; border-radius: 5rem; border: .1rem solid var(--gray-30, #E0E3EB); background: #fff; position: absolute; top: 0; right: 0; z-index: 3; overflow: hidden; box-shadow: 0px 5.5px 6.6px 0px rgba(0, 0, 0, 0.07);}
+.premium_service .prem__fav .fav__board .board__filter .filter__slider__wrap .filter__all::after{background: var(--gray-70, #5C6675); width: 2rem; height: 2rem;}
+.premium_service .prem__fav .fav__board .board__list .list__item{display: flex; flex-direction: column; gap: 1.6rem; border-bottom: .1rem solid var(--gray-20, #EDEDF3); padding: 2rem 0;}
+.premium_service .prem__fav .fav__board .board__list .list__item .item__top{display: flex; flex-direction: column; gap: .8rem;}
+.premium_service .prem__fav .fav__board .board__list .list__item .item__top .top__txt{display: flex; justify-content: space-between; align-items: center;}
+.premium_service .prem__fav .fav__board .board__list .list__item .item__top .top__txt strong{font-weight: 700;}
+.premium_service .prem__fav .fav__board .board__list .list__item .item__top .top__txt .item__delete{text-decoration: underline; text-underline-position: under; font-size: 1.3rem;}
+.premium_service .prem__fav .fav__board .board__list .list__item .item__btm{display: flex; justify-content: space-between; align-items: center;}
+.premium_service .prem__fav .fav__board .board__list .list__item .item__btm .item__tag{display: flex; align-items: center; gap: .5rem;}
+.premium_service .prem__fav .fav__board .board__list .list__item .item__btm .item__tag [class*=dot]{width: .6rem; height: 1.2rem;}
+.premium_service .prem__fav .fav__board .board__list .list__item .item__btns{flex-shrink: 0; display: flex; align-items: center; gap: 1.6rem;}
+.premium_service .prem__fav .fav__board .board__list .list__item .item__btns .btn__item{flex-shrink: 0; display: flex; flex-direction: row-reverse; align-items: center; gap: .2rem; color: var(--gray-50, #A4B1C1); font-size: 1.3rem; line-height: 1.8rem; letter-spacing: -0.026rem;}
+.premium_service .prem__fav .fav__board .board__list .list__item .item__btns .btn__item > span{margin-top: .2rem; font-size: 1.3rem;}
+.premium_service .prem__fav .fav__board .board__list .list__item .item__btns .btn__item::after{background: var(--gray-50, #A4B1C1); width: 2.4rem; height: 2.4rem; position: relative;}
+.premium_service .prem__fav .fav__board .board__list .list__item .item__btns .btn__item.active{color: var(--prem-primary);}
+.premium_service .prem__fav .fav__board .board__list .list__item .item__btns .btn__item.active::after{background: var(--prem-primary);}
+.premium_service .prem__fav .fav__board .board__list .list__item.my__item .item__top .top__txt strong{display: flex; align-items: center; gap: .6rem;}
+.premium_service .prem__fav .fav__board .board__list .list__item.my__item .item__top .top__txt strong::after{content: "내가 쓴 글"; display: inline-block; color: var(--prem-primary); font-size: 1.1rem; font-weight: 600; letter-spacing: -0.044rem; height: 2.2rem; line-height: 2.2rem; border: .1rem solid var(--prem-primary); border-radius: 5rem; padding: 0 .7rem; box-sizing: border-box;}
+.premium_service .prem__fav .fav__board .board__list .list__item [class*=prem__tooltip] .tooltip__label{text-align: center;}
+
+/* 만남 신청하기 모달 */
+.premium_service .prem__fav .fav__pop .write__tab > li{display: none;}
+.premium_service .prem__fav .fav__pop .write__tab > li.active{display: block;}
+.premium_service .prem__fav .fav__pop .fav__write .write__tit{display: flex; justify-content: space-between; align-self: center;}
+.premium_service .prem__fav .fav__pop .fav__write .write__tit > h4{display: flex; align-items: center; gap: .6rem;}
+.premium_service .prem__fav .fav__pop .fav__write .write__tit img{flex-shrink: 0; width: 2.4rem; height: 2.4rem;}
+.premium_service .prem__fav .fav__pop .fav__write .write__tit a{font-weight: 400;}
+.premium_service .prem__fav .fav__pop .fav__write .write__input{height: 42rem;}
+.premium_service .prem__fav .fav__pop .fav__write .write__input textarea{height: 100%;}
+
+.teacher__list--radio{display: flex; flex-wrap: wrap; gap: 2rem 0; max-width: none; margin: 0 -.7rem; width: auto !important;}
+.teacher__list--radio .radio__item{display: flex; flex-direction: column; gap: 1rem; width: 33.3333%; text-align: center; padding: 0 .7rem}
+.teacher__list--radio .radio__item .item__thumb{position: relative; border-radius: var(--border-radius-l, 1.2rem); overflow: hidden;}
+.teacher__list--radio .radio__item .item__thumb .radio{display: none;}
+.teacher__list--radio .radio__item .item__thumb img{width: 100%;}
+.teacher__list--radio .radio__item .item__thumb + p {font-weight: 400;}
+.teacher__list--radio .radio__item .item__thumb:has(.checkbox:checked)::after{content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: var(--border-radius-l, 1.2rem); box-sizing: border-box; border: .2rem solid var(--prem-primary);}
+.teacher__list--radio .radio__item .item__thumb:has(.checkbox:checked) + p{color: var(--prem-primary); font-weight: 600;}
+
+.prem__modal--write .cn-modal-head {background: #121212; color: #fff;}
+.prem__modal--write .cn-modal-main {height: 100%; border-radius: 0 !important; overflow: hidden;}
+.prem__modal--write .cn-modal-close i::before {background: #fff !important;}
+
+@media (min-width: 876px){
+    .teacher__list--radio .radio__item{width: 25%;}
+}

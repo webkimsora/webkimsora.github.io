@@ -1,0 +1,34 @@
+/* 무료특강 */
+.prem__replay--free .free__list{display: flex; gap:30px 24px; flex-wrap: wrap;}
+.prem__replay--free .free__list > li{width:364px;}
+.prem__replay--free .free__list > li .list--thumbnail{height: 186px;}
+.prem__replay--free .free__list > li .list--thumbnail img{width: 100%; height: 100%; object-fit: cover; object-position: center;}
+.prem__replay--free .free__list > li .list--tit{max-height: 60px; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2;}
+.prem__replay--free .free__list > li .list--keyword{display: flex; gap: 8px; flex-wrap: wrap;}
+.prem__replay--free .free__list > li .list--keyword li{display: flex; justify-content: center; align-items: center; padding: 5px 8px; border-radius: var(--border-radius-m); border: 1px solid var(--gray-30); color: var(--text-secondary); font-size: 14px; font-weight: 400; line-height: 19px; letter-spacing: -0.14px;}
+
+/* 설명회 */
+.prem__replay--presentaion .filter__year{flex-wrap: wrap;}
+.prem__replay--presentaion .presentation__list{display: flex; flex-direction: column; gap: 20px 0;}
+.prem__replay--presentaion .presentation__list .presentation__thumb{width: 342px; max-width: 342px; height: 192px;}
+.prem__replay--presentaion .presentation__list .presentation__thumb a{display: block;  position:relative; height: 100%;}
+.prem__replay--presentaion .presentation__list .presentation__thumb a:after{content:''; display: block; width: 100%; height:100%; background:rgba(0,0,0,0.4) url('/un_static/img/common/premium/replay/icon_play.png') no-repeat center / 60px 60px; position: absolute; top: 0; left: 0;}
+.prem__replay--presentaion .presentation__list .presentation__thumb img{width: 100%; height: 100%; object-fit: cover; object-position: center;}
+.prem__replay--presentaion .presentation__list .presentation__txt{flex: 1;}
+.prem__replay--presentaion .presentation__list .presentation__teacher{margin-top: 11px; justify-content: left;}
+.prem__replay--presentaion .presentation__list .presentation__teacher span:last-child{flex: 1;}
+
+/* 설명회 다시보기 모달 */
+.replay__presentation--modal .cn-modal-main{border-radius: var(--border-radius-l); width: 800px;}
+.replay__presentation--modal .modal__tit{display: flex; gap: 8px; flex-direction: column; margin-bottom: 24px; padding-top: 16px;}
+.replay__presentation--modal .filter__teacher{flex-wrap: wrap;}
+.replay__presentation--modal .filter__teacher.prem__tab--thumb > li{padding: 8px 12px;}
+.replay__presentation--modal .filter__teacher--tab .filter__video{margin-top: 12px; height: 46px; display: flex; align-items: center;}
+.replay__presentation--modal .filter__teacher--tab .filter__video > li{color: var(--text-secondary);font-size: 13px; font-weight: 400; line-height: 20px;  letter-spacing: -0.39px; cursor: pointer;}
+.replay__presentation--modal .filter__teacher--tab .filter__video > li.active{color: var(--prem-primary); font-weight: 700;}
+.replay__presentation--modal .filter__teacher--tab .filter__video > li i.prem__ico--dot{width: 6px; height: 12px; margin: 0 8px;}
+.replay__presentation--modal .filter__teacher--tab .filter__video > li i.prem__ico--dot::after{background-color: #7B8A9D}
+.replay__presentation--modal .filter__teacher--tab [class*=prem__box]{background: #000; width: 100%; display: flex; align-items: center; position: relative;}
+.replay__presentation--modal .filter__teacher--tab [class*=prem__box] .mask{ display: block; width: 100%; height:100%; background:rgba(0,0,0,0.4) url('/un_static/img/common/premium/replay/icon_play.png') no-repeat center / 80px 80px; position: absolute; top: 0; left: 0; pointer-events: none;}
+.replay__presentation--modal video{background: #000; width: 100%;}
+.replay__presentation--modal:not(.cn-modal){display: none;}

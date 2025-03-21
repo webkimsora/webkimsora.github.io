@@ -1,0 +1,59 @@
+    <?
+    $fileName = explode('?', strtolower(URL_FOLDER_NAME[count(URL_FOLDER_NAME)-1]))[0];
+    ?>
+    
+    <link type="text/css" rel="stylesheet" href="<?= UN_STATIC ?>/css/m/lecture/layout.css?<?=time()?>">
+    
+    <? if( $fileName === 'lecture_detail' || $fileName === 'lecture_detail'){ ?>
+    <section class="sec-gnb-tit scroll_ani _gnb_depth01 _type_side">
+        <div class="inner-wrap">
+            <div class="btn-wrap _left">
+                <button type="button" class="ico ico_arrow_line _left"><span class="skip">이전</span></button>
+            </div>
+
+            <div class="gnb-tit">
+                <? if( $fileName === 'lecture_detail'){ ?>
+                <h2>강좌정보</h2>
+                <? } else { ?>
+                <h2>패키지 정보</h2>
+                <? } ?>
+            </div>
+
+            <div class="btn-wrap _right">
+                <button type="button" class="ico ico_home"><span class="skip">홈</span></button>
+                <button type="button" class="ico ico_cart"><span class="skip">카트</span></button>
+            </div>
+        </div>
+    </section>
+    <? } else { ?>
+    <section class="sec-gnb-tit scroll_ani _gnb_depth01 _type_side">
+        <div class="inner-wrap">
+            <div class="btn-wrap _left">
+                <button type="button" class="ico ico_arrow_line _left"><span class="skip">이전</span></button>
+            </div>
+
+            <div class="gnb-tit">
+                <button type="button" class="btn _more" id="tit_btn"><h2>수강신청</h2><i class="ico ico_arrow _down"></i></button>
+
+                <? include('skin/pub/layout/m/include/gnb/inc_gnb_list.html'); ?>
+            </div>
+
+            <div class="btn-wrap _right">
+                <button type="button" class="ico ico_cart"><span class="skip">카트</span></button>
+            </div>
+        </div>
+    </section>
+    <aside class="header-sticky">
+        <nav class="gnb-nav _gnb_depth02">
+            <ul class="gnb-nav-slider _line" data-index="0">
+                <li><a href="./event_list">기획전</a></li>
+                <li><a href="./lecture_list">전체강좌</a></li>
+                <li><a href="./free_lecture">무료강좌</a></li>
+                <li><a href="./cast_list">T캐스트</a></li>
+                <li><a href="#x">검정제 강좌</a></li>
+                <li><a href="#x">실무 대비 강좌</a></li>
+                <li><a href="#x">마인드코칭 강좌</a></li>
+            </ul>
+        </nav>
+    </aside>
+    <? } ?>

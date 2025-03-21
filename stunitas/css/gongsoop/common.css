@@ -1,0 +1,101 @@
+/* 아이콘 */
+@import url('icons.css');
+
+/* @ css 변수 */
+:root{
+    --font-no: 'Noto Sans KR', sans-serif;
+    --font-su: 'SUIT', sans-serif;
+    --font-pr: 'Pretendard', sans-serif;
+    
+    --white: #fff;
+    --black: #000;
+    
+    --gray-100: #121212;
+    --gray-80: #363D48;
+    --gray-70: #5C6675;
+    --gray-60: #7E8B9A;
+    --gray-50: #A4B1C1;
+    --gray-40: #C2CAD6;
+    --gray-30: #E0E3EB;
+    --gray-20: #EDEDF3;
+    --gray-10: #F6F6F9;
+    --gray-5: #FAFAFC;
+    --gray-0: #ffffff;
+    
+    --bg-primary: #fff;
+    --bg-secondary: var(--gray-10);
+    --bg-tertiary: var(--gray-20);
+    --bg-inverse: var(--gray-100);
+    --bg-alternative: var(--gray-5);
+    --bg-backdrop: rgba(0, 0, 0, 0.40);
+    
+    --icon-primary: #7b8a9d;
+    --icon-secondary: var(--gray-80);
+    --icon-disabled: var(--gray-30); 
+    
+    --surface-hover: rgba(0, 0, 0, .04);
+    --surface-inactive: var(--gray-40);
+    
+    --brand-primary: #0eba5c;
+    --brand-primary-10: #D5F6D6;
+    --brand-primary-5: #EAFAEB;
+    --brand-secondary: #1FBAFF;
+    --brand-secondary-5: #E6E5FF;
+    --brand-secondary-10: #CCEFFF;
+    --brand-inverse: #0cef67;
+
+    --text-primary: var(--gray-100);
+	--text-secondary: var(--gray-70);
+
+    --text-inverse: #fff;
+    --text-inactive: #A3B1C2;
+    --text-brand: #09af4b;
+    --text-negative: #ff4542;
+
+    --stroke-accent: var(--gray-70);
+    --stroke-border: var(--gray-30);
+    --stroke-divider: var(--gray-20);
+
+    --etc-red-10: #FDE7E7;
+    --etc-blue-10: #e7effd;
+    --etc-blue-70: #025af6;
+    --etc-gradient: linear-gradient(90deg, #2EEA83 -13.29%, #00ECD9 50.75%, #036BFB 117.38%);
+    --etc-premium: #6101d9;
+}
+/* //@ css 변수 */
+
+.gongsoop__container *{font-family: var(--font-pr), sans-serif;}
+
+.sp__color--primary{color: var(--text-primary) !important}
+.sp__color--secondary{color: var(--text-secondary) !important}
+.sp__color--teritary{color: var(--gray-50) !important}
+.sp__color--brand{color: var(--text-brand) !important}
+.sp__color--brand2{color: var(--brand-primary) !important}
+.sp__color--brand3{color: var(--brand-inverse) !important}
+.sp__color--white{color: var(--white) !important}
+.sp__color--inactive{color: var(--text-inactive) !important}
+.sp__color--negative{color: var(--text-negative) !important;}
+
+.sp__color--premium{color: var(--etc-premium) !important;}
+.sp__color--b70{color: var(--etc-blue-70) !important;}
+.sp__color--b10{color: var(--etc-blue-10) !important;}
+.sp__color--g100{color: var(--gray-100) !important;}
+.sp__color--g70{color: var(--gray-70) !important;}
+.sp__color--g60{color: var(--gray-60) !important;}
+.sp__color--g50{color: var(--gray-50) !important;}
+.sp__color--g30{color: var(--gray-30) !important;}
+.sp__color--g20{color: var(--gray-20) !important;}
+.sp__color--g10{color: var(--gray-10) !important;}
+.sp__color--g5{color: var(--gray-5) !important;}
+.sp__color--g0{color: var(--gray-0) !important;}
+
+.justify-start{justify-content: flex-start !important;}
+.justify-end{justify-content: flex-end !important;}
+.justify-center{justify-content: center !important;}
+.justify-between{justify-content: space-between !important;}
+.items-start{align-items: flex-start !important;}
+.items-end{align-items: flex-end !important;}
+.items-center{align-items: center !important;}
+
+textarea,
+input{outline: none;}

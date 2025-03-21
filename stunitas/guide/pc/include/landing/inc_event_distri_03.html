@@ -1,0 +1,109 @@
+<div class="cont_event" id="">
+	<div class="top" style="padding: 100px 0;background: linear-gradient(180deg, #E9E9E9 0%, #FFF 100%);">
+		<div class="inner">
+			<h3><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/10/gong_15714/pc/event_distri3_tit.png" alt=""></h3>
+			<div class="distri_slider_wrap">
+				<ul class="distri_slider">
+					<?php for($i=0; $i<5; $i++){ ?>
+					<li>
+						<img src="<?=UN_STATIC_IMG?>/gong/landing/2024/10/gong_15714/pc/event_distri3_slide.png" alt="상품">
+					</li>
+					<?php } ?>
+				</ul>
+				<ul class="distri_nav">
+					<li style="background-image: url('<?=UN_STATIC_IMG?>/gong/landing/2024/10/gong_15714/pc/event_distri3_nav.png');">
+						<span>7/9 (화)</span>
+						<p>2025 이동기 선생님<br>All in One 교재</p>
+					</li>
+					<li style="background-image: url('<?=UN_STATIC_IMG?>/gong/landing/2024/10/gong_15714/pc/event_distri3_nav.png');">
+						<span>7/9 (화)</span>
+						<p>2025 이동기 선생님<br>All in One 교재</p>
+					</li>
+					<li style="background-image: url('<?=UN_STATIC_IMG?>/gong/landing/2024/10/gong_15714/pc/event_distri3_nav.png');">
+						<span>7/9 (화)</span>
+						<p>2025 이동기 선생님<br>All in One 교재</p>
+					</li>
+					<li style="background-image: url('<?=UN_STATIC_IMG?>/gong/landing/2024/10/gong_15714/pc/event_distri3_nav.png');">
+						<span>7/9 (화)</span>
+						<p>2025 이동기 선생님<br>All in One 교재</p>
+					</li>
+					<li style="background-image: url('<?=UN_STATIC_IMG?>/gong/landing/2024/10/gong_15714/pc/event_distri3_nav.png');">
+						<span>7/9 (화)</span>
+						<p>2025 이동기 선생님<br>All in One 교재</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="inner">
+		<div class="event_box_wrap event_distri">
+			<!-- 배포 카운트 -->
+			<div class="distri_count">
+				<strong>오늘 남은 수량</strong>
+				<ul>
+					<li>0</li>
+					<li>0</li>
+					<li>0</li>
+					<li>0</li>
+				</ul>
+			</div>
+			<!-- 배포 리스트 -->
+			<div class="distri_list">
+				<ul>
+					<li class="_off">
+						<div>
+							<span>날짜와 선생님을 <br>입력해주세요.</span>
+							<strong>1,000명</strong>
+						</div>
+					</li>
+					<? for($i=0; $i<5; $i++){ ?>
+					<li>
+						<div>
+							<span>날짜와 선생님을 <br>입력해주세요.</span>
+							<strong>1,000명</strong>
+						</div>
+					</li>
+					<? } ?>
+				</ul>
+			</div>
+			<!-- 개인정보 수집 동의 -->
+			<div class="event_agree_box">
+				<label><input type="checkbox">개인정보의 수집 및 이용에 동의합니다.</label>
+				<ul>
+					<li>1. 개인정보의 수집·이용 목적: 이벤트 진행 및 경품 배송<br /></li>
+					<li>2. 수집하는 개인정보의 항목: 이름, 휴대폰번호<br /></li>
+					<li>3. 개인정보의 보유·이용 기간: 이벤트 종료 후 즉시 파기<br /></li>
+					<li>4. 개인정보의 수집 및 이용에 대한 동의를 거부할 수 있으며, 이 경우 이벤트 참여가 제한됩니다.</li>
+				</ul>
+			</div>
+			<!-- 버튼 리스트 -->
+			<div class="event_btn_box btn_flex_none">
+				<div>
+					<a href="javascript:void(0);" class="btn_l style_dark">신청하기</a>
+					<a href="javascript:void(0);" class="btn_l style_dark_outline">당첨 내역 확인하기</a>
+					<a href="javascript:void(0);" class="btn_l style_dark_outline">회원가입</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+	const distri_slider = $('.distri_slider').cnSlider({
+		controls: true,
+		controlsClassName: 'event_control ico ico_arrow_left_thin distri_control',
+		nav: '.distri_nav',
+		swiperOptions: {
+			loop: false,
+			allowTouchMove: true,
+		},
+		navOptions: {
+			direction: 'vertical',
+			slidesPerView: 'auto',
+			spaceBetween: 8,
+		},
+		thumbOptions: {
+			autoScrollOffset: 0.1
+		}
+	});
+</script>

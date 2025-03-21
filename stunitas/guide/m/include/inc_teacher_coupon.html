@@ -1,0 +1,97 @@
+<!-- 모달 내용 -->
+<div class="modal_coupon">
+    <div class="modal_coupon_cnt">
+        <div>
+            <h2><strong>단과 강좌</strong></h2>
+            <ul class="list coupon_list">
+                <!-- 발급완료 쿠폰 : complete 클래스 추가 -->
+                <li class="flex complete">
+                    <a style="cursor: default;">
+                        <div class="txt">
+                            <strong>이론 단과 12% 할인</strong>
+                            <dl>
+                                <dt>사용기간</dt>
+                                <dd>~2023.12.31</dd>
+                            </dl>
+                        </div>
+                        <div class="download">
+                            <span>발급<br>완료</span>
+                        </div>
+                    </a>
+                </li>
+                
+                <li class="flex">
+                    <a href="javascript:alert('쿠폰 개발');">
+                        <div class="txt">
+                            <strong>이론 단과 12% 할인</strong>
+                            <dl>
+                                <dt>사용기간</dt>
+                                <dd>~2023.12.31</dd>
+                            </dl>
+                        </div>
+                        <div class="download">
+                            <i class="ico ico_download_arrow"></i>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div>
+            <h2><strong>프리패스</strong></h2>
+            <ul class="list">
+                <? for($i=1; $i<=8; $i++){ ?>
+                <li class="flex">
+                    <a href="javascript:alert('쿠폰 개발');">
+                        <div class="txt">
+                            <strong>이론 단과 12% 할인</strong>
+                            <dl>
+                                <dt>사용기간</dt>
+                                <dd>~2023.12.31</dd>
+                            </dl>
+                        </div>
+                        <div class="download">
+                            <i class="ico ico_download_arrow"></i>
+                        </div>
+                    </a>
+                </li>
+                <? } ?>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- 커스텀 버튼 -->
+<div class="modal_coupon_btn">
+	<section class="toggle-box sec-info-wrap _box">
+		<h4 class="toggle-tit flex">
+			<span class="flex"><i class="ico ico_info"></i>쿠폰 사용 유의사항</span>
+		</h4>
+		<div class="toggle-conts info-conts active">
+			<ul class="_disc">
+				<li>쿠폰 사용기간 내에 할인 받고 구매하세요.</li>
+				<li>발급/ 사용 가능한 쿠폰 개수를 확인해 주세요.</li>
+				<li>일부 쿠폰은 조기 소진될 수 있습니다.</li>
+			</ul>
+		</div>
+	</section>
+    <button class="btn-l _color_blue _fill w100p">쿠폰 모두 받기</button>
+</div>
+
+<script>
+    
+    $('#modal_teacher_coupon').cnBottomModal({
+        modalBody: '.modal_coupon',
+        customBtnClass: '.modal_coupon_btn',
+        strModalTit:'쿠폰',
+        onClickBtn: function(pModal, pClickBtn){
+            fnSetFilter(pModal, pClickBtn);
+        },
+        onResetBtn: function(pModal, pClickBtn){
+            fnResetFilter(pModal, pClickBtn);
+        },
+        onOpenEvent:function(pModal, pClickBtn){
+            fnInitFilter(pModal, pClickBtn);
+        }
+    });
+</script>

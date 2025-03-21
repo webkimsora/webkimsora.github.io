@@ -1,0 +1,94 @@
+<style>
+
+</style>
+
+<dl>
+    <dt class="inner-wrap">아이콘 탭</dt>
+    <dd class="flex _column inner-wrap" style="padding-bottom: .5rem;">
+        <div class="tab-nav-wrap flex">
+            <nav class="tab-nav _circle _outline _icon">
+                <button type="button" class="reset">
+                    <i class="ico ico_reload"></i>
+                </button>
+                <button type="button" id="btn_lecture_modal">
+                    <span class="txt_hide">[9급] [기본심화] 2024 2.0 [9급] [기본심화] 2024 2.0 ...</span>
+                    <i class="ico ico_arrow_thin _down"></i>
+                </button>
+                <button type="button" id="btn_tag_modal" class="selected">
+                    <i class="ico ico_tag"></i>
+                    <span class="txt_hide">태그</span>
+                    <i class="ico ico_arrow_thin _down"></i>
+                </button>
+            </nav>
+        </div>
+    </dd>
+    <dt class="inner-wrap">탭 스왑</dt>
+    <dd class="flex _column" style="gap:2rem 0;">
+        <div class="tab-nav-wrap flex">
+            <nav class="tab-nav _swipe _circle" data-index="0">
+                <button type="button">ON</button>
+                <? for( $i=1; $i<=10; $i++){ ?>
+                <button type="button"><?= $i ?> OFF</button>
+                <? } ?>
+            </nav>
+            <div class="tab-search-box">
+                <button type="button" onclick="fnSearchActive($(this));" class="search-btn ico ico_search">검색</button>
+                <!-- 우선 임시로 데이터 없음으로 가게 해둠 -->
+                <div class="search-input-box">
+                    <div class="flex relative">
+                        <i class="ico ico_search"></i>
+                        <input type="search" class="search-input">
+                        <button type="button" class="btn-m _txt _color_black search-cancle">취소</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-nav-wrap flex">
+            <nav class="tab-nav _swipe _circle" data-index="0">
+                <button type="button">ON</button>
+                <? for( $i=1; $i<=10; $i++){ ?>
+                <button type="button"><?= $i ?> OFF</button>
+                <? } ?>
+            </nav>
+        </div>
+
+        <div class="tab-nav-wrap flex">
+            <nav class="tab-nav _swipe _txt" data-index="0">
+                <button type="button">ON</button>
+                <? for( $i=1; $i<=10; $i++){ ?>
+                <button type="button"><?= $i ?> OFF</button>
+                <? } ?>
+            </nav>
+        </div>
+    </dd>
+    <dt class="inner-wrap" style="padding:2rem 0;">100% 탭</dt>
+    <dd class="inner-wrap flex _column" style="gap:2rem 0;">
+        <div class="tab-nav-wrap flex">
+            <nav class="tab-nav flex _txt_box">
+                <button type="button" class="active">ON</button>
+                <? for( $i=1; $i<=4; $i++){ ?>
+                <button type="button"><?= $i ?> OFF</button>
+                <? } ?>
+            </nav>
+        </div>
+
+        <div class="tab-nav-wrap flex">
+            <nav class="tab-nav flex _line_box">
+                <button type="button" class="active">ON</button>
+                <? for( $i=1; $i<=3; $i++){ ?>
+                <button type="button"><?= $i ?> OFF</button>
+                <? } ?>
+            </nav>
+        </div>
+
+    </dd>
+</dl>
+
+<script>
+$('.tab-nav-wrap .tab-nav._circle:not(._icon)').cnTabSwiper({});
+$('.tab-nav-wrap .tab-nav._txt').cnTabSwiper();
+$('.tab-nav-wrap ._txt_box').cnTab({});
+$('.tab-nav-wrap ._line_box').cnTab({});
+/* S:스크롤 애니 - footer_m.html에 있음 */
+</script>

@@ -1,0 +1,67 @@
+@charset "utf-8";
+
+:root{
+    --var-transition-time: .25s;
+}
+
+body.cn-scroll-block{overflow: hidden;}
+body.cn-scroll-block-2{overflow: hidden; padding-right: 17px;}
+body.cn-dropdown-opened{position: relative;}
+.cn-scroll-box{position: relative;}
+
+.cn-nav, .cn-tab{margin: 0; padding: 0;}
+.cn-nav{width: 100%;display:flex;}
+/* .cn-nav:after{content: ""; display: block; width: 100%; clear: both; float: none;} */
+.cn-nav > *{user-select: none; cursor: pointer; box-sizing: border-box;}
+.cn-tab > *{display: none;} 
+.cn-tab > *.active{display: block;} 
+
+.cn-stickybar{position: relative; z-index: 10;}
+.cn-stickybar:not(.cn-stickybar-btm){position: sticky; top: 0;}
+
+.cn-dropdown{position: absolute; list-style: none; background: #FFFFFF; width: 94px; border: 1px solid #E3E6EC; box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.04); border-radius: 2px; margin: 0; padding: 0; display: block !important; opacity: 0 !important; transition: 0s; pointer-events: none;}
+.cn-dropdown > li{height: 34px; line-height: 34px;}
+.cn-dropdown > li > a{display: block; text-align: left; width: 100%; height: 100%; color: #121212; font-size: 12px; padding: 0 10px; box-sizing: border-box;}
+.cn-dropdown > li > a:hover{background: #FAFAFC; text-decoration: underline;}
+.cn-dropdown.active{opacity: 1 !important; pointer-events: all;}
+
+.cn-modal{background: rgba(0, 0, 0, .45); opacity: 0; pointer-events: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; display:inline-block;text-align:center;font-size:0; z-index: 100; overflow: auto;
+	--modal-width:750px;
+}
+.cn-modal.active{opacity: 1; pointer-events: all;}
+.cn-modal-fade{transition: var(--var-transition-time);}
+.cn-modal-scale{transition: var(--var-transition-time);}
+.cn-modal-scale .cn-modal-main{transform: scale(.9); transition: var(--var-transition-time);}
+.cn-modal-scale.active .cn-modal-main{transform: scale(1);}
+.cn-modal-close{width: 50px; height: 50px; line-height: 50px; display: inline-block; position: absolute; top: 0; right: 0;}
+.cn-modal-close i{display: inline-block; width:24px; height: 24px;}
+.cn-modal-span{display: inline-block; vertical-align: middle; height: 100%}
+.cn-modal-main{display: inline-block; width: var(--modal-width, 750px); vertical-align: middle; background: #fff; margin: 100px 0;}
+.cn-modal-main .cn-modal-head{height: 50px; line-height: 50px; font-size: 18px; font-weight: 700; color: #121212; text-align: center; position: relative; user-select: none;display:inline-flex;max-width:100%;width:100%;}
+.cn-modal-main .cn-modal-head strong{font-size: 16px;width:90%;margin:0 auto;}
+.cn-modal-main .cn-modal-body{position: relative;text-align:left;font-size:13px;}
+
+.cn-modal .modal_info{padding:20px 16px 30px;background: var(--color-g10, #FAFAFC);display:flex;flex-direction: column;gap:10px 0;}
+.cn-modal .modal_info .info_box p{color: var(--color-g60, #7E8B9A);font-size: 12px;font-weight: 700;line-height: 140%;letter-spacing: -0.24px;margin-bottom:6px;}
+.cn-modal .modal_info li{color: var(--color-g60, #7E8B9A);font-size: 12px;line-height: 150%;letter-spacing: -0.36px;display:flex;gap:0 4px;}
+.cn-modal .modal_conts{margin:26px auto 30px;padding:0 16px;}
+.cn-modal .type_column_cont{gap:20px 0;}
+
+.cn-modal .type_input .label_txt{color: var(--color-g100, #121212);font-size: 14px;font-weight: 500;line-height: 150%;letter-spacing: -0.56px;margin-bottom:8px;}
+.cn-modal .type_input label select{width:100%;height:50px;}
+.cn-modal .type_input input[type="text"]{border: 1px solid var(--color-g30, #E3E6EC);width:100%;height:50px;padding:15px 20px;}
+.cn-modal .type_input textarea{width:100%;border: 1px solid var(--color-g30, #E3E6EC);width:100%;height:150px;padding:15px 20px;}
+.cn-modal .type_input textarea::placeholder{font-size:13px;}
+.cn-modal .type_input .file-box{border:0 none; padding:0;}
+.cn-modal .type_input .file-box .add_file{padding:10px 12px;}
+.cn-modal .type_input .file-box .add_file span{font-size:12px;}
+.cn-modal .type_input .file-box .add_file label{background-size:16px 16px;padding-left: 20px;}
+.cn-modal .type_input .upload_list ul{display:flex;flex-direction:column;}
+.cn-modal .type_input .upload_list ul li{flex:1;}
+.cn-modal .type_input .upload_list ul li i{width:22px;}
+.cn-modal .type_input .upload_list ul li .del{float:none;margin-left:8px;}
+.cn-modal .type_input .upload_list ul li .vol{text-align:right;width:58px;}
+.cn-modal .type_input .upload_list ul li .file_name{display:inline-flex;width:80%;}
+.cn-modal .type_input .upload_list ul li .file_name a{width:100%;padding-left:0;}
+.cn-modal .modal_btn{display:flex;flex-wrap: wrap;gap:8px;}
+.cn-modal .modal_btn a{flex:1;}

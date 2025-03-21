@@ -1,0 +1,1050 @@
+<link rel="stylesheet" href="<?=UN_STATIC?>/css/m/common/event.css">
+<link href="https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/static/woff2/SUIT.css" rel="stylesheet">
+<link href="https://jhammann.github.io/sakura/dist/sakura.css" rel="stylesheet">
+<script src="https://jhammann.github.io/sakura/dist/sakura.js" text="text/javascript"></script>
+
+<style>
+    /* 공통 */
+    area {outline: none;}
+    video {width: 100%; height: 100%; outline: none; background: #000; cursor: pointer;}
+    button {outline: none;}
+    .ani{opacity: 0;opacity:1 /IE9;}
+    .no_padding {padding: 0 !important;}
+    .spacer {width: 100%; height: 100%;}
+    .event-contents {position: relative;}
+    .event-contents .inner {max-width: 37.5rem;margin: 0 auto;padding: 0 1.6rem;}
+    .event-contents .inner.no_padding {padding: 0;}
+    .event-contents [class^="cont_"]:not([class^="cont_notice"]) {text-align: center;}
+
+    @keyframes scrollBottom {
+        0% { transform: translateY(-2%); }
+        100% { transform: translateY(2%); }
+    }
+
+    @keyframes ani_translate {
+        0% {opacity: 0;}
+        100%{transform: translate(0);opacity: 1;}
+    }
+
+    @keyframes bounce {
+        0%   {transform: translateY(0); }
+        50%  {transform: translateY(-10px);}
+        100% {transform: translateY(0); }
+    }
+
+    @keyframes stamp {
+        0%{opacity: 0; transform: scale(4);}
+        40%{opacity: 1; transform: scale(1);}
+        100%{opacity: 1; transform: scale(1);}
+    }
+
+    @keyframes blink {
+        0% {
+            opacity: 0;
+        }
+        50% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+
+    @keyframes shake {
+        0%, 100% {-webkit-transform: rotate(0deg);transform: rotate(0deg);-webkit-transform-origin: 50% 100%;transform-origin: 50% 100%;}
+        10% {-webkit-transform: rotate(2deg);transform: rotate(2deg);}
+        20%, 40%, 60% {-webkit-transform: rotate(-4deg);transform: rotate(-4deg);}
+        30%, 50%, 70% {-webkit-transform: rotate(4deg);transform: rotate(4deg);}
+        80% {-webkit-transform: rotate(-2deg);transform: rotate(-2deg);}
+        90% {-webkit-transform: rotate(2deg);transform: rotate(2deg);}
+    }
+
+    /* 메인 */
+    .event_20250312 .slide_box {position: relative;}
+    .event_20250312 .swiper-pagination {position: static;line-height: 0;margin-top: 1.2rem;}
+    .event_20250312 .swiper-pagination-bullet {background: #000; width: 1rem; height: 1rem;}
+
+    .top_bnr {background: url('<?=UN_STATIC_IMG?>/gong/landing/2025/03/gong_16653/m/top_bnr_bg.png') #DB828E center top / auto 100% no-repeat;}
+    .top_bnr .inner {position: relative;}
+
+    .cont_visual {padding-top: 1rem; height: 66.2rem; background: url('<?=UN_STATIC_IMG?>/gong/landing/2025/03/gong_16653/m/main_bg.jpg') center top / auto 100%;}
+    .cont_visual .inner {position: relative;}
+    .cont_visual .book {animation: bounce 2s ease-in-out infinite; width: 17.8rem; margin-top: 1rem; }
+    .cont_visual .book .stamp {position: absolute; top: 0; left: 0; animation: stamp .2s .5s ease-in-out both;}
+    .cont_visual .btns {position: relative; width: 17.3rem;}
+    .cont_visual .btns a {position: absolute; font-size: 0; color: transparent; opacity: 0; z-index: 2;}
+    .cont_visual .btns a:nth-child(1) {top: 0; left: 0; width: 100%; height: 4rem;}
+    .cont_visual .btns a:nth-child(2) {bottom: 0; left: 0; width: 10rem; height: 4rem;}
+    .cont_visual .btns a:nth-child(3) {bottom: 0; right: 0; width: 7.3rem; height: 4rem;}
+
+    .cont_intro {padding: 5rem 0;  background: #E56273;} 
+    .cont_intro h4 {padding-bottom: 1.6rem; position: relative;}
+    .cont_intro h4 .cha {position: absolute; top: 0.5rem; left: -2rem; width: 9.6rem; } 
+    .cont_intro.active h4 .cha { animation: shake 1.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) 3 both;} 
+    .cont_intro .slide_box {margin-bottom: 1.6rem;}
+    .cont_intro .swiper-pagination-bullet {background-color: #fff !important;}
+
+    .cont_curri {padding-top: 5rem; overflow: hidden;}
+    .cont_curri .cnt {position: relative;}
+    .cont_curri .scroll_img {overflow-x: scroll; width: 34.3rem; position: absolute; top: 3rem; left: 4rem;}
+    .cont_curri .scroll_img img {width: 50.2rem; max-width: none;}
+
+    .cont_detail {padding: 5rem 0; overflow: hidden; background:url('<?=UN_STATIC_IMG?>/gong/landing/2025/03/gong_16653/m/detail_bg.png') #fef2f2 center top / 34.4rem auto no-repeat;}
+    .cont_detail h4 {padding-bottom: 3rem;}
+    .cont_detail .detail_slide {overflow: visible;}
+    .cont_detail .detail_slide li {width: 33rem !important;}
+
+    .cont_lecture {padding: 5rem 0;}
+    .cont_lecture h4 {padding-bottom: 1rem;}
+    .cont_lecture .cnt {position: relative;}
+    .cont_lecture .cnt p {margin-top: 1.6rem;}
+    .cont_lecture .lecture_box {margin-top: 1.6rem;}
+
+    .cont_book {padding: 5rem 0; background: linear-gradient(180deg, #DAFBFF 0%, #FFF 23.64%);}
+    .cont_book h4 {margin-bottom: 2rem; padding: 0 1.6rem; }
+    .cont_book .cnt {padding-bottom: 3rem; position: relative;}
+    .cont_book .cnt .powder1{position: absolute; top: -4rem; right: 1.6rem; max-width: 16rem;}
+    .cont_book .cnt a {position: absolute; top: 14.5rem; right: 3rem; width: 12.8rem; height: 4rem; font-size: 0; opacity: 0; color: transparent;}
+    .cont_book .book_nav li {position: relative; flex: 1; padding: 1.2rem 0; color: #D1D1D1; border-bottom: 2px solid #D1D1D1; font-family: Pretendard; font-size: 16px; font-weight: 700; line-height: 140%;}
+    .cont_book .book_nav li.active {color: #212121; border-color: #212121;}
+    .cont_book .book_nav li:nth-child(3):after {content:""; display: block; width: 10rem; height: 2.8rem; position: absolute; top: -1.5rem; right: .5rem; animation: bounce 2s ease-in-out infinite; background: url('<?=UN_STATIC_IMG?>/gong/landing/2025/03/gong_16653/m/book_bb.png') center top / auto 100%;}
+    .cont_book .book_nav li:nth-child(3).active:after { background: url('<?=UN_STATIC_IMG?>/gong/landing/2025/03/gong_16653/m/book_bb_on.png') center top / auto 100%;}
+    .cont_book .book_tab {margin-top: 3rem;}
+    .cont_book .book_slide {position: static;}
+
+    .cont_letter {height: 59rem; background:url('<?=UN_STATIC_IMG?>/gong/landing/2025/03/gong_16653/m/letter_bg.jpg') #D9F2F7 center top / auto 100%;}
+    .cont_letter h4 {font-size: 0; color: transparent; }
+
+    /* 이벤트 */
+    .event_bar {background: #101010;position: sticky;top: 0;z-index: 9;}
+    .event_bar .event_nav li {position: relative;}
+    .event_bar .event_nav li .on {position: absolute;left: 0;top: 0;opacity: 0;}
+    .event_bar .event_nav li.active .on {opacity: 1;}
+
+    .event_toggle_box .toggle-conts ul {text-align: left;}
+
+    .event_box {padding-bottom: 5rem; overflow-x: hidden;}
+
+    .event01 {background: linear-gradient(180deg, #FFE6FB 11.25%, #FFF 32.59%), #FFF;}
+    .event01 .distri_list > ul > li {font-family: Pretendard;}
+    .event01 .distri_list > ul > li span b {display: block; font-weight: 700;}
+    .event01_bonus {background: linear-gradient(180deg, #DDFFD3 11.25%, #FFF 32.59%), #FFF;}
+    .event02 {background: linear-gradient(180deg, #D3DDFF 11.25%, #FFF 32.59%), #FFF;}
+    .event03 {background: linear-gradient(180deg, #E5C9FF 11.25%, #FFF 32.59%), #FFF;}
+    .event03_bonus {background: linear-gradient(180deg, #C9FFFE 11.25%, #FFF 32.59%), #FFF;}
+
+    .event_btn_box a {position: relative;}
+    .event01 .event_btn_box .bb {width: 19.3rem; position: absolute; top: -1.5rem; left: 50%; margin-left: -9.6rem;  animation: bounce 2s ease-in-out infinite;}
+    .event01_bonus .go_sns {flex-direction: row; gap: .8rem; flex-wrap: wrap;}
+    .event01_bonus .go_sns > a {width: calc(25% - .8rem);}
+    .event03 h4 {position: relative;}
+    .event03 h4 a {position: absolute; top: 40.8rem; left: 1.6rem; width: 34.3rem; height: 19.2rem; font-size: 0; color: transparent;}
+
+    .event_quick {background: #333; display: none;}
+
+    .modal_form .cn-modal-main {min-height: 100%;}
+    .cn-modal-close {z-index: 10;}
+
+    .cont_wallpaper {padding: 5rem 0; background: url('<?=UN_STATIC_IMG?>/gong/landing/2025/03/gong_16653/m/wallpaper_bg.jpg') center top / auto 100%;}
+    .cont_wallpaper h4 {padding-bottom: 3rem;}
+    .cont_wallpaper .btn_box .event_form:first-child {flex-direction: row;}
+    .cont_wallpaper .btn_box .event_form + .event_form {margin-top: 1.2rem; margin-bottom: 1.2rem;}
+    .cont_wallpaper .btn_box .btn {display: flex; gap: 1.2rem; justify-content: center; flex-direction: column;}
+
+    .event_form .event_textarea{position: relative;}
+    .cont_wallpaper .event_textarea .char_count {position: absolute;bottom: 5px;right: 5px;font-size: 12px;color: #aaa;}
+
+    /* 배경화면 */
+    .wallpaper_total .m_type {position: relative; width: fit-content; }
+    .wallpaper_total .m_type .cover {position: relative; z-index: 5;}
+    .wallpaper_total .m_type .cnt { width: 100%; height: 100%; max-width: 100%; max-height: 100%;}
+    .wallpaper_total .preview {margin: 0 auto; position: absolute;}
+    .wallpaper_total .preview .pre_txt {font-family: "SUIT", sans-serif !important; font-weight: 700; line-height: 145%; }
+    .wallpaper_total .preview .pre_img {display: none;}
+    .wallpaper_total .edition .preview .pre_img {display: block; padding-bottom: 40px;}
+    .wallpaper_total .edition .preview .pre_img img{display: inline-block;}
+    .wallpaper_total .preview .pre_calander table {width: 100%; border-collapse: separate; table-layout: fixed;}
+    .wallpaper_total .preview .pre_calander .month {font-family: "SUIT", sans-serif !important; font-weight: 800;}
+    .wallpaper_total .cnt {background-color: #FEF8E6; }
+    .wallpaper_total .preview .pre_txt,
+    .wallpaper_total .preview .pre_calander .holiday {color: #DB6300; }
+    .wallpaper_total .preview .pre_calander .inactive {color: #7E8B9A; }
+
+    .wallpaper_total{display: flex; justify-content: center;}
+    .wallpaper_total .phone .cnt {width: 1080px; height: 2280px;}
+    .wallpaper_total .phone .edition.cnt {background: url('/css/wallpaper_edition_phone_bg.png') center top no-repeat !important; background-size: cover !important;}
+    .wallpaper_total .phone .edition .preview .pre_txt,
+    .wallpaper_total .phone .edition .preview .pre_calander .holiday {color: #E56273; }
+
+    .cont_wallpaper .wallpaper_total{position: absolute; z-index: 0; left: 3299px;}
+    .cont_wallpaper .wallpaper_total .phone .preview {width: 870px;  bottom: 250px;  left: 50%; transform: translateX(-50%); }
+    .cont_wallpaper .wallpaper_total .phone .preview .pre_txt {padding-bottom: 60px; font-size: 40px; letter-spacing: 7px;}
+    .cont_wallpaper .wallpaper_total .phone .preview .pre_calander {display: flex; font-size: 39px;}
+    .cont_wallpaper .wallpaper_total .phone .preview .pre_calander table {border-spacing: 0 10px;}
+    .cont_wallpaper .wallpaper_total .phone .preview .pre_calander .month th {font-size: 55px; padding-bottom: 30px; height: 69px; line-height: 69px;}
+    .cont_wallpaper .wallpaper_total .phone .preview .pre_calander .week th {padding-bottom: 30px; height: 58px; line-height: 58px;}
+    .cont_wallpaper .wallpaper_total .phone .preview .pre_calander tbody td {padding-bottom: 20px; height: 58px; line-height: 58px;}
+
+    .wallpaper_total .pad .cnt {min-width: 2732px; min-height: 2048px;}
+    .wallpaper_total .pad .cnt {overflow: hidden;}
+    .wallpaper_total .pad .edition.cnt {background: url('/css/wallpaper_edition_pad_bg.png') center top no-repeat !important; background-size: cover !important;}
+    .wallpaper_total .pad .edition .preview .pre_txt,
+    .wallpaper_total .pad .edition .preview .pre_calander .holiday {color: #E56273 !important; }
+    .wallpaper_total .pad .preview {width: 840px;  bottom: 280px; right: 225px; }
+    .wallpaper_total .pad .preview .pre_txt {padding-bottom: 80px; font-size: 45px;}
+    .wallpaper_total .pad .preview .pre_img {padding-bottom: 80px; }
+    .wallpaper_total .pad .preview .pre_calander {font-size: 40px;}
+    .wallpaper_total .pad .preview .pre_calander table {border-spacing: 0 15px;}
+    .wallpaper_total .pad .preview .pre_calander .month th {font-size: 70px; padding-bottom: 40px; height: 110px; line-height: 110px;}
+    .wallpaper_total .pad .preview .pre_calander .week th{height: 80px; line-height: 80px;}
+    .wallpaper_total .pad .preview .pre_calander tbody td {height: 80px; line-height: 80px;}
+
+    .preview_container canvas {
+        width: 100%; /* 또는 원하는 화면상의 크기 */
+        height: auto;
+    }
+</style>
+
+<div class="event_20250312 event-contents">
+    <!-- @ -->
+    <div class="top_bnr">
+        <div class="inner pd-0">
+            <img src="<?=UN_STATIC_IMG?>/gong/landing/2025/03/gong_16653/m/top_bnr.png" alt="">
+        </div>
+    </div>
+
+    <!-- @ main -->
+    <section class="cont_visual scrollAni">
+        <div class="inner">
+            <h3><img src="<?=UN_STATIC_IMG?>/gong/landing/2025/03/gong_16653/m/main_tit.png" alt="2026 입문 영어 기초 싹쓸이"></h3>
+            <div class="book">
+                <img class="bb" src="<?=UN_STATIC_IMG?>/gong/landing/2025/03/gong_16653/m/main_bb.png" alt="2026 입문 영어 기초 싹쓸이">
+                <img class="stamp" src="<?=UN_STATIC_IMG?>/gong/landing/2025/03/gong_16653/m/main_stamp.png" alt="2026 NEW">
+            </div>
+            <div class="btns">
+                <a href="https://gong.conects.com/teacher/home?teacher_id=swc01" target="_blank">선생님 홈</a>
+                <a href="https://cafe.naver.com/shimson2000" target="_blank">네이버 카페</a>
+                <a href="https://www.youtube.com/@shimson2000" target="_blank">유튜브</a>
+                <img src="<?=UN_STATIC_IMG?>/gong/landing/2025/03/gong_16653/m/main_btn.png" alt="링크영역">
+            </div>
+        </div>
+    </section>
+    
+    <!-- @ -->
+    <section class="cont_intro scrollAni">
+        <div class="inner">
+            <h4>
+                <img src="<?=UN_STATIC_IMG?>/gong/landing/2025/03/gong_16653/m/intro_tit.png" alt="초시·재시 막론하고 노베이스까지 모두 합격시키는 공무원 영어 전문가">
+                <img class="cha" src="<?=UN_STATIC_IMG?>/gong/landing/2025/03/gong_16653/m/intro_cha.png" alt="캐릭터">
+            </h4>
+            <div class="slide_box">
+				<ul class="intro_slide">
+					<li>
+                        <a href="https://cafe.naver.com/shimson2000/835911">
+                            <img src="<?=UN_STATIC_IMG?>/gong/landing/2025/03/gong_16653/m/intro_slide1.png" alt="합격수기 자세히보기">
+                        </a>
+                    </li>
+					<li>
+                        <a href="https://cafe.naver.com/shimson2000/837391">
+                            <img src="<?=UN_STATIC_IMG?>/gong/landing/2025/03/gong_16653/m/intro_slide2.png" alt="합격수기 자세히보기">
+                        </a>
+                    </li>
+					<li>
+                        <a href="https://cafe.naver.com/shimson2000/837578">
+                            <img src="<?=UN_STATIC_IMG?>/gong/landing/2025/03/gong_16653/m/intro_slide3.png" alt="합격수기 자세히보기">
+                        </a>
+                    </li>
+					<li>
+                        <a href="https://cafe.naver.com/shimson2000/837823">
+                            <img src="<?=UN_STATIC_IMG?>/gong/landing/2025/03/gong_16653/m/intro_slide4.png" alt="합격수기 자세히보기">
+                        </a>
+                    </li>
+				</ul>
+			</div>
+            <p><img src="<?=UN_STATIC_IMG?>/gong/landing/2025/03/gong_16653/m/intro_txt.png" alt="공무원 영어, 심우철로 시작해야 하는 이유는 명확합니다"></p>
+        </div>
+    </section>
+
+    <!-- @ -->
+    <section class="cont_curri">
+        <div class="inner">
+            <h4><img src="<?=UN_STATIC_IMG?>/gong/landing/2025/03/gong_16653/m/curri_tit.png" alt="영어가 싫었던 과거, 영어가 낯선 지금 걱정하지 마세요. 이제 ‘심’우철 선생님 봤으니까!"></h4>
+        </div>
+        <div class="inner pd-0">
+            <div class="cnt">
+                <img src="<?=UN_STATIC_IMG?>/gong/landing/2025/03/gong_16653/m/curri_cnt.png" alt="커리큘럼">
+                <div class="scroll_img">
+                    <img src="<?=UN_STATIC_IMG?>/gong/landing/2025/03/gong_16653/m/curri_curri.png" alt="커리큘럼 표">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- @ -->
+    <section class="cont_detail">
+        <div class="inner">
+            <h4><img src="<?=UN_STATIC_IMG?>/gong/landing/2025/03/gong_16653/m/detail_tit.png" alt="2026 영기싹, “완벽 그 자체의 입문서”"></h4>
+            <div class="slide_box">
+				<ul class="detail_slide">
+                    <? for($num=1;$num<=3;$num++){ ?>
+					<li><img src="<?=UN_STATIC_IMG?>/gong/landing/2025/03/gong_16653/m/detail_slide<?=$num?>.png" alt="슬라이드"></li>
+                    <? } ?>
+				</ul>
+			</div>
+        </div>
+    </section>
+
+    <!-- @ 강의 개발 -->
+    <section class="cont_lecture">
+        <div class="inner">
+            <h4><img src="<?=UN_STATIC_IMG?>/gong/landing/2025/03/gong_16653/m/lecture_tit.png" alt="문법+구문 그리고 독해까지 입문 강좌 하나로 ALL IN ONE이 가능합니다."></h4>
+            <div class="cnt">
+                <img src="<?=UN_STATIC_IMG?>/gong/landing/2025/03/gong_16653/m/lecture_cnt1.png" alt="영기싹 수강 대상" usemap="#lecture_cnt">
+                <a class="cn-pop-movie5" href="javascript:alert('Coming soon!')" data-movie="<?=VIDEO_URL?>" data-title=" " data-autoplay="true">
+                    <img src="<?=UN_STATIC_IMG?>/gong/landing/2025/03/gong_16653/m/lecture_movie.png" alt="영기싹 OT영상">
+                </a>
+                <p><img src="<?=UN_STATIC_IMG?>/gong/landing/2025/03/gong_16653/m/lecture_cnt2.png" alt="왕초보도 가능한 눈높이 입문 콘텐츠"></p>
+            </div>
+            <div id="lecture_list1" class="lecture_box"></div>
+        </div>
+    </section>
+
+    <!-- @ -->
+    <section class="cont_book">
+        <div class="inner pd-0r">
+            <h4><img src="<?=UN_STATIC_IMG?>/gong/landing/2025/03/gong_16653/m/book_tit.png" alt="누구나 부담 없이 이해할 수 있도록 초심자의 눈높이에 맞춘 최적의 입문서"></h4>
+            <div class="cnt">
+                <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/06/gong_14999/pc/raffle_powder.gif" alt="폭죽" class="powder powder1">
+                <img style="position: relative; z-index: 2;" src="<?=UN_STATIC_IMG?>/gong/landing/2025/03/gong_16653/m/book_cnt.png" alt="영기싹 교재">
+                <a href="javascript:alert('Coming soon!');">교재 구매하기</a>
+            </div>
+        </div>
+        <div class="inner">
+            <ul class="book_nav cn-nav">
+                <li class="active">문법</li>
+                <li>구문</li>
+                <li>독해</li>
+            </ul>
+            <ul class="book_tab cn-tab">
+                <li class="active">
+                    <div class="slide_box">
+                        <ul class="book_slide1 book_slide">
+                            <? for($num=1;$num<=2;$num++){ ?>
+                            <li><img src="<?=UN_STATIC_IMG?>/gong/landing/2025/03/gong_16653/m/book_slide1_<?=$num?>.png" alt="슬라이드"></li>
+                            <? } ?>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <div class="slide_box">
+                        <ul class="book_slide2 book_slide">
+                            <? for($num=1;$num<=2;$num++){ ?>
+                            <li><img src="<?=UN_STATIC_IMG?>/gong/landing/2025/03/gong_16653/m/book_slide2_<?=$num?>.png" alt="슬라이드"></li>
+                            <? } ?>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <div class="slide_box">
+                        <ul class="book_slide3 book_slide">
+                            <? for($num=1;$num<=2;$num++){ ?>
+                            <li><img src="<?=UN_STATIC_IMG?>/gong/landing/2025/03/gong_16653/m/book_slide3_<?=$num?>.png" alt="슬라이드"></li>
+                            <? } ?>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- @ -->
+    <section class="cont_letter">
+        <h4>선생님 자필편지</h4>
+    </section>
+
+    <!-- @ 배경화면 -->
+    <div class="cont_wallpaper scrollAni">
+        <div class="inner">
+            <h4><img src="<?=UN_STATIC_IMG?>/gong/landing/2025/03/gong_16653/m/wallpaper_tit.png" alt="본인이 원하는 문구를 넣어 달력을 만들어 보세요. 말하는 대로 다 이루어질 거예요."></h4>
+            <!-- @@ 배경화면 선택 버튼 -->
+            <div class="btn_box">
+                <div class="event_form">
+                    <select class="event_select ico ico_arrow_down background-color" href="javascript:void(0);">
+                        <option value="">배경 선택</option>
+                        <option value="ivory">아이보리</option>
+                        <option value="pink">핑크</option>
+                        <option value="green">그린</option>
+                        <option value="purple">퍼플</option>
+                        <option value="suc">심우철 에디션</option>
+                    </select>
+                    <select class="event_select ico ico_arrow_down month" href="javascript:void(0);">
+                        <option value="">달</option>
+                        <? for($num=1;$num<=12;$num++){ ?>
+                            <option value="<?=$num?>"><?=$num?>월</option>
+                        <? } ?>
+                    </select>
+                    <select class="event_select ico ico_arrow_down device" href="javascript:void(0);">
+                        <option value="">기종 선택</option>
+                        <option value="phone">폰</option>
+                        <option value="pad">태블릿</option>
+                    </select>
+                </div>
+                <div class="event_form">
+                    <div class="event_textarea">
+                        <textarea class="txt" placeholder="원하는 문구를 20자 이내로 작성해 주세요." maxlength="20"></textarea>
+                        <div class="char_count">0 / 20</div>
+                    </div>
+                </div>
+                <div class="btn">
+                    <!-- <a href="javascript:void(0);"><img src="<?=UN_STATIC_IMG?>/gong/landing/2025/03/gong_16653/m/wallpaper_btn1.png" alt="미리보기"></a> -->
+                    <a href="javascript:void(0);" class="calendarBtn"><img src="<?=UN_STATIC_IMG?>/gong/landing/2025/03/gong_16653/m/wallpaper_btn2.png" alt="이미지 다운받기"></a>
+                </div>
+
+                <!--- 이미지 작업 코드 -->
+                <div class="wallpaper_total" style="display:none;">
+                    <!-- @@ 폰  -->
+                    <div class="m_type">
+                        <div class="cnt edition">
+                            <div class="preview">
+                                <div class="pre_txt"></div>
+                                <div class="pre_img">
+                                    <img src="/css/wallpaper_edition_phone.png" alt="">
+                                </div>
+                                <div class="pre_calander">
+                                    <table>
+                                        <thead>
+                                        <tr class="month">
+                                            <th colspan="7"></th>
+                                        </tr>
+                                        <tr class="week">
+                                            <th class="holiday">Sun</th>
+                                            <th>Mon</th>
+                                            <th>Tue</th>
+                                            <th>Wed</th>
+                                            <th>Thu</th>
+                                            <th>Fri</th>
+                                            <th>Sat</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody></tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="cont_event" id="cont_event">
+        <!-- @ 이벤트 nav -->
+        <div class="event_bar">
+            <div class="inner pd-0">
+                <ul class="event_nav cn-nav">
+                    <li class="active" onclick="goPage('#cont_event')">
+                        <img class="off" src="<?=UN_STATIC_IMG?>/gong/landing/2025/03/gong_16653/m/event_bar1_off.png" alt="2026 영기싹 교재배포 EVENT. 1">
+                        <img class="on" src="<?=UN_STATIC_IMG?>/gong/landing/2025/03/gong_16653/m/event_bar1_on.png" alt="2026 영기싹 교재배포 EVENT. 1">
+                    </li>
+                    <li onclick="goPage('#cont_event')">
+                        <img class="off" src="<?=UN_STATIC_IMG?>/gong/landing/2025/03/gong_16653/m/event_bar2_off.png" alt="영기싹 수강인증 EVENT. 2">
+                        <img class="on" src="<?=UN_STATIC_IMG?>/gong/landing/2025/03/gong_16653/m/event_bar2_on.png" alt="영기싹 수강인증 EVENT. 2">
+                    </li>
+                    <li onclick="goPage('#cont_event')">
+                        <img class="off" src="<?=UN_STATIC_IMG?>/gong/landing/2025/03/gong_16653/m/event_bar3_off.png" alt="학습계획 짜기 댓글 EVENT. 3">
+                        <img class="on" src="<?=UN_STATIC_IMG?>/gong/landing/2025/03/gong_16653/m/event_bar3_on.png" alt="학습계획 짜기 댓글 EVENT. 3">
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- @ 이벤트 -->
+        <ul class="event_tab">
+            <!-- @@ 이벤트1 -->
+            <li class="active">
+                <!-- @@@ 배포이벤트 -->
+                <div class="event01 event_box <?=$now_time < strtotime('2025-04-05 00:00:00') ? '' : 'event_end'?>" id="event01">
+                    <div class="inner pd-0">
+                        <h4><img src="<?=UN_STATIC_IMG?>/gong/landing/2025/03/gong_16653/m/event01.png" alt="단 5일간, 매일 오후 6시부터 2026 심우철 영기싹 500부 교재 배포"></h4>
+                    </div>
+                    <div class="inner">
+                        <!-- @@ 배포 리스트 -->
+                        <div class="event_box_wrap event_distri">
+                            <div class="distri_list">
+                                <ul>
+                                    <?php foreach ($today_event_data[$key[0]]['day_remain_count'] as $i => $item) : ?>
+                                        <?php if ($now_time > strtotime($i . ' 23:59:59') || $i == $today_date && ($today_event_data[$key[0]]['remain_count'] < 1 || $now_time > strtotime($today_event_data[$key[0]]['end_date']))) {
+                                            $class = 'off';
+                                        } else if ($i == $today_date) {
+                                            $class = 'today';
+                                        } else {
+                                            $class = '';
+                                        } ?>
+                                        <li id="event_<?= date('Ymd', strtotime($i)) ?>" class="<?= $class ?>">
+                                            <div>
+                                                <span><?= date('m월 d일', strtotime($i)) ?> (<?= $weekdays[date('w', strtotime($i))] ?>)</span>
+                                                <strong>100부</strong>
+                                            </div>
+                                        </li>
+                                    <?php endforeach; ?>
+                                </ul>
+                            </div>
+                            <!-- 개인정보 수집 동의 -->
+                            <section class="event_toggle_box toggle-box">
+                                <div class="agree_check_box toggle-tit flex">
+                                    <label class="agree_check">
+                                        <input type="checkbox" id="agreeChk1">
+                                        <span class="ico ico_check">개인정보의 수집 및 이용에 동의합니다.</span>
+                                    </label>
+                                    <button type="button" class="ico ico_arrow toggle-btn _view">보기</button>
+                                </div>
+                                <div class="info_conts toggle-conts active">
+                                    <ul>
+                                        <li>개인정보의 수집·이용 목적: 이벤트 진행 및 경품 배송</li>
+                                        <li>수집하는 개인정보의 항목: 이름, 휴대폰번호</li>
+                                        <li>개인정보의 보유·이용 기간: 이벤트 종료 후 즉시 파기</li>
+                                        <li>개인정보의 수집 및 이용에 대한 동의를 거부할 수 있으며, 이 경우 이벤트 참여가 제한됩니다.</li>
+                                    </ul>
+                                </div>
+                            </section>
+                            <!-- 버튼 리스트 -->
+                            <div class="event_btn_box">
+                                <div>
+                                    <a href="javascript:void(0);" id="participate_event" class="btn_l style_dark"><img class="bb" src="<?=UN_STATIC_IMG?>/gong/landing/2025/03/gong_16653/m/event01_bb.png" alt="매일 저녁 6시-자정까지 응모 가능">교재 응모하기</a>
+                                    <a href="javascript:void(0);" id="check_win_btn" class="btn_l style_dark_outline">당첨 내역 확인하기</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- @@@ 교재후기 한줄댓글 이벤트 -->
+                <div class="event01_bonus event_box <?=$now_time < strtotime('2025-05-05 00:00:00') ? '' : 'event_end'?>" id="event01_01">
+                    <div class="inner pd-0">
+                        <h4><img src="<?=UN_STATIC_IMG?>/gong/landing/2025/03/gong_16653/m/event01_bonus.png" alt="영기싹 교재 배포 이벤트 당첨자라면 교재 후기 쓰고 네이버 페이 받자!"></h4>
+                    </div>
+                    <div class="inner">
+                        <!-- 버튼 -->
+                        <div class="event_btn_box" style="margin-bottom: 3rem;">
+                            <div class="go_sns">
+                                <a href="https://gall.dcinside.com/mini/board/lists/?id=gongsistudy" target="_blank" class="btn_s">DC 갤러리</a>
+                                <a href="http://section.blog.naver.com/BlogHome.naver" target="_blank" class="btn_s">네이버 블로그</a>
+                                <a href="https://cafe.naver.com/gugrade" target="_blank" class="btn_s">공드림</a>
+                                <a href="https://cafe.naver.com/m2school" target="_blank" class="btn_s">독공사</a>
+                            </div>
+                        </div>
+                        <div id="eventComment1"></div>
+                    </div>
+                </div>
+            </li>
+            <!-- @@ 이벤트2 -->
+            <li>
+                <div class="event02 event_box <?=$now_time < strtotime('2025-05-05 00:00:00') ? '' : 'event_end'?>" id="event02">
+                    <div class="inner pd-0">
+                        <h4><img src="<?=UN_STATIC_IMG?>/gong/landing/2025/03/gong_16653/m/event02.png" alt="영기싹 수강 인증하면 영어 실력 향상에 부스터가 되어 줄 2026 심슨 VOCA를 드립니다."></h4>
+                    </div>
+                    <div class="inner">
+                        <div id="eventComment2"></div>
+                    </div>
+                </div>
+            </li>
+            <!-- @@ 이벤트3 -->
+            <li>
+                <!-- @@@ 학습계획 한줄댓글 이벤트-->
+                <div class="event03 event_box <?=$now_time < strtotime('2025-05-05 00:00:00') ? '' : 'event_end'?>" id="event03">
+                    <div class="inner pd-0">
+                        <h4>
+                            <img src="<?=UN_STATIC_IMG?>/gong/landing/2025/03/gong_16653/m/event03.png" alt="나만의 영어 학습계획 짜고 2025 심우철 연력 받아가세요.">
+                            <a class="cn-pop-movie" href="javascript:void(0)" data-movie="<?=VIDEO_URL?>/2025/250306_tcc_swc_800k.mp4" data-title=" " data-autoplay="true">2026 입문 학습 가이드 영상</a>
+                        </h4>
+                    </div>
+                    <div class="inner">
+                        <div id="eventComment3"></div>
+                    </div>
+                </div>
+                <!-- @@@ 인스타 인증 이벤트-->
+                <div class="event03_bonus event_box <?=$now_time < strtotime('2025-05-05 00:00:00') ? '' : 'event_end'?>" id="event03_bonus">
+                    <div class="inner pd-0">
+                        <h4><img src="<?=UN_STATIC_IMG?>/gong/landing/2025/03/gong_16653/m/event03_bonus.png" alt="2026 입문 학습 가이드 영상 인스타에 소문 내고 배민 상품권 받자!"></h4>
+                    </div>
+                    <div class="inner">
+                        <!-- 버튼 -->
+                        <div class="event_btn_box" style="margin-bottom: 3rem;">
+                            <div>
+                                <a href="<?=$base_uri?>/download" class="btn_m style_dark">소문내기 이미지 다운로드</a>
+                                <a href="javascript:copyURL();" class="btn_m style_dark_outline">해시태그+URL 복사</a>
+                            </div>
+                        </div>
+                        <div id="eventComment4"></div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </section>
+
+    <!-- @ 퀵배너 -->
+    <div class="event_quick">
+        <ul class="inner pd-0">
+            <li><a href="javascript:void(0);" onclick="$('.event_nav > li').eq(0).trigger('click');goPage('#cont_event');"><img src="<?=UN_STATIC_IMG?>/gong/landing/2025/03/gong_16653/m/quick01.png" alt="영기싹 교재배포 EVENT"></a></li>
+            <li><a href="javascript:void(0);" onclick="$('.event_nav > li').eq(1).trigger('click');goPage('#cont_event');"><img src="<?=UN_STATIC_IMG?>/gong/landing/2025/03/gong_16653/m/quick02.png" alt="영기싹 수강인증 EVENT"></a></li>
+            <li><a href="javascript:void(0);" onclick="$('.event_nav > li').eq(2).trigger('click');goPage('#cont_event');"><img src="<?=UN_STATIC_IMG?>/gong/landing/2025/03/gong_16653/m/quick03.png" alt="학습계획 댓글 EVENT"></a></li>
+        </ul>
+    </div>
+
+    <!-- @ 유의사항 -->
+    <section class="cont_notice">
+        <div id="use_guide"></div>
+    </section>
+
+    <script type="text/javascript">use_guide.html('<?= $base_uri ?>','#use_guide','','');</script>
+</div>
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+<script type="text/javascript">
+    $(function(){
+        const today = new Date();
+        const t_year = today.getFullYear();
+        const t_month = today.getMonth() + 1;
+        const t_date = today.getDate();
+
+        // popup
+        $('.cn-pop-movie').cnModal({
+            modalType:'video',
+            modalTarget: '#cn-movie-modal',
+            head: false
+        });
+
+        // scroll
+        $(window).cnScroll({
+            targetClass: 'scrollAni',
+            //once: true
+        });
+        
+        $(window).scroll(function(){
+            if($('.cont_wallpaper').hasClass('active')){
+                $('.event_quick').hide();
+            } else {
+                $('.event_quick').show();
+            }
+        });
+
+        //
+        $('.intro_slide').cnSlider({
+            pager: true,
+            swiperOptions: {
+                spaceBetween: 8,
+                loop:true,
+                slidesPerView : 'auto',
+                centeredSlides: true,
+                autoplay: {
+                    delay: 4000,
+                    disableOnInteraction: false,
+                }
+            }
+        });
+
+        //
+        $('.detail_slide').cnSlider({
+            swiperOptions: {
+                slidesPerView: 'auto',
+                loop: false,
+                allowTouchMove: true,
+                spaceBetween: 10,
+            }
+        });
+
+        // 교재 탭
+        $('.book_nav').cnTab({
+            onClick: function(_, index){
+                setTimeout(() => {
+                    book_slides[index].slideToLoop(0, 0);
+                    book_slides[index].autoplay.start();
+                    book_slides[index].autoplay.resume();
+                }, 100);
+            }
+        });
+        // 교재 슬라이드
+        const book_slide1 = $('.book_slide1').cnSlider({
+            pager: true,
+            swiperOptions: {
+                spaceBetween: 8,
+                slidesPerView: 1,
+                autoplay: {
+                    delay: 4000,
+                },
+                loop: true,
+                observer: true,
+                observeParents: true,
+                observeSlideChildren: true,
+            },
+        });
+        const book_slide2 = $('.book_slide2').cnSlider({
+            pager: true,
+            swiperOptions: {
+                spaceBetween: 8,
+                slidesPerView: 1,
+                autoplay: {
+                    delay: 4000,
+                },
+                loop: true,
+                observer: true,
+                observeParents: true,
+                observeSlideChildren: true,
+            },
+        });
+        const book_slide3 = $('.book_slide3').cnSlider({
+            pager: true,
+            swiperOptions: {
+                spaceBetween: 8,
+                slidesPerView: 1,
+                autoplay: {
+                    delay: 4000,
+                },
+                loop: true,
+                observer: true,
+                observeParents: true,
+                observeSlideChildren: true,
+            },
+        });
+        const book_slides = [book_slide1, book_slide2, book_slide3];
+
+        // 이벤트
+        $('.event_nav').cnTab({        
+            tab: '.event_tab',
+        });
+
+        $('.txt').on('input', function() {
+            var len = $(this).val().length;
+            $(this).siblings('.char_count').text(len + ' / 20');
+        });
+
+        $('.previewBtn').click(function () {
+            var color = {
+                'ivory': {bg: '#fff8e6', txt: '#dc6300'},
+                'pink': {bg: '#fde8e8', txt: '#c70e0b'},
+                'green': {bg: '#e9fce6', txt: '#17a603'},
+                'purple': {bg: '#f8e7fe', txt: '#9a00d0'}
+            };
+
+            var background = $('.event_form .background-color').val();
+            var month = $('.event_form .month').val();
+            var device = $('.event_form .device').val();
+            var txt = $('.event_form .event_textarea textarea').val();
+
+            if (!background){
+                alert('배경을 선택해주세요!');
+                return;
+            }else if (background == 'suc'){
+                $('.pop_wallpaper .m_type .cnt').addClass('edition');
+                $('.pop_wallpaper .m_type .pre_img').show();
+            }else{
+                $('.pop_wallpaper .m_type .cnt').removeClass('edition');
+                $('.pop_wallpaper .m_type .pre_img').hide();
+            }
+
+            if(month) {
+                var selectedYear = new Date().getFullYear();
+                var calHTML = generateCalendar(selectedYear, parseInt(month));
+                $('.pop_wallpaper .preview .pre_calander').html(calHTML);
+
+                if (background && background != 'suc') {
+                    // 선택한 색상에 맞게 변경
+                    $('.pop_wallpaper .poplist > div .cnt').css('background-color', color[background].bg);
+                    $('.pop_wallpaper .pre_txt, .pop_wallpaper .pre_calander .holiday').css('color', color[background].txt);
+                }
+            }else{
+                alert('달을 선택해주세요!');
+                return;
+            }
+
+            if (!device){
+                alert('기종을 선택해주세요.');
+                return;
+            }
+
+            if (txt){
+                $('.pop_wallpaper .m_type .pre_txt').html(txt.replace(/\n/g, '<br>'));
+            }else{
+                $('.pop_wallpaper .m_type .pre_txt').html('');
+            }
+
+            $('.pop_wallpaper .m_type').addClass(device);
+            $('.pop_wallpaper .m_type .cover').attr('src', "<?=UN_STATIC_IMG?>/gong/landing/2025/03/gong_16653/pc/wallpaper_" + device + ".png");
+
+            var parent = $('.pop_wallpaper')
+
+            parent.show();
+            parent.find('.' + device).show().siblings().hide();
+        });
+
+        $('.calendarBtn').click(function(){
+            $('.cont_wallpaper .wallpaper_total .m_type').removeClass('phone').removeClass('pad');
+
+            var color = {
+                'ivory': {bg: '#fff8e6', txt: '#dc6300', tit: '아이보리'},
+                'pink': {bg: '#fde8e8', txt: '#c70e0b', tit: '핑크'},
+                'green': {bg: '#e9fce6', txt: '#17a603', tit: '그린'},
+                'purple': {bg: '#f8e7fe', txt: '#9a00d0', tit: '퍼플'},
+                'suc': {bg: '#e4ebff', txt: '#123bd4', tit: '심우철 에디션'}
+            };
+
+            var background = $('.event_form .background-color').val();
+            var month = $('.event_form .month').val();
+            var device = $('.event_form .device').val();
+            var txt = $('.event_form .event_textarea textarea').val();
+
+            if (!background){
+                alert('배경을 선택해주세요!');
+                return;
+            }else if (background == 'suc'){
+                $('.cont_wallpaper .m_type .cnt').addClass('edition');
+                $('.cont_wallpaper .m_type .pre_img').show();
+            }else{
+                $('.cont_wallpaper .m_type .cnt').removeClass('edition');
+                $('.cont_wallpaper .m_type .pre_img').hide();
+            }
+
+            if(month) {
+                var selectedYear = new Date().getFullYear();
+                var calHTML = generateCalendar(selectedYear, parseInt(month));
+                $('.cont_wallpaper .preview .pre_calander').html(calHTML);
+
+                // 선택한 색상에 맞게 변경
+                $('.cont_wallpaper .wallpaper_total .cnt').css('background-color', color[background].bg);
+                $('.cont_wallpaper .pre_txt, .cont_wallpaper .pre_calander .holiday').css('color', color[background].txt);
+            }else{
+                alert('달을 선택해주세요!');
+                return;
+            }
+
+            if (!device){
+                alert('기종을 선택해주세요.');
+                return;
+            }
+
+            if (txt){
+                $('.cont_wallpaper .m_type .pre_txt').html(txt.replace(/\n/g, '<br>'));
+            }else{
+                $('.cont_wallpaper .m_type .pre_txt').html('');
+            }
+
+            $('.cont_wallpaper .m_type').addClass(device);
+            $('.cont_wallpaper .m_type .cover').attr('src', "<?=UN_STATIC_IMG?>/gong/landing/2025/03/gong_16653/pc/wallpaper_" + device + ".png");
+            $('.cont_wallpaper .wallpaper_total').show();
+
+            html2canvas(document.querySelector('.cont_wallpaper .wallpaper_total .m_type'), {
+                useCORS: true,
+                allowTaint: true,
+                scale: 2
+            }).then(function(canvas) {
+                // device 값에 따른 다운로드 해상도 결정
+                var targetWidth, targetHeight;
+                if(device === "phone"){
+                    targetWidth = 1080;
+                    targetHeight = 2280;
+                } else if(device === "pad"){
+                    targetWidth = 2732;
+                    targetHeight = 2048;
+                } else {
+                    targetWidth = canvas.width;
+                    targetHeight = canvas.height;
+                }
+
+                // 다운로드용 canvas 생성 및 스케일링
+                var downloadCanvas = document.createElement('canvas');
+                downloadCanvas.width = targetWidth;
+                downloadCanvas.height = targetHeight;
+                var downloadCtx = downloadCanvas.getContext('2d');
+                downloadCtx.drawImage(canvas, 0, 0, canvas.width, canvas.height, 0, 0, targetWidth, targetHeight);
+
+                // PNG 파일로 다운로드 처리
+                var link = document.createElement('a');
+
+                var filename = month + '월' + ' ' + color[background].tit + ' ';
+
+                if (device === "phone"){
+                    filename = filename + '스마트폰 달력.png';
+                }else{
+                    filename = filename + '패드 달력.png';
+                }
+
+                link.download = filename;
+                link.href = downloadCanvas.toDataURL('image/png').replace('image/png', 'image/octet-stream');
+                link.click();
+
+                $('.cont_wallpaper .wallpaper_total').hide()
+            });
+        });
+
+        // URL에서 파라미터 추출
+        const urlParams = new URLSearchParams(window.location.search);
+        const target = urlParams.get('target');
+
+        // 페이지가 로드된 후 한 번만 실행되도록 ajaxStop 이벤트 설정
+        $(document).one('ajaxStop', function() {
+            let index = null;
+
+            if (target === 'event1') {
+                index = 0;
+            } else if (target === 'raffle') {
+                index = 1;
+            } else if (target === 'class') {
+                index = 2;
+            } else if (target === 'challenge') {
+                index = 3;
+            }
+
+            if (index !== null) {
+                // 첫 실행
+                $('.event_nav > li').eq(index).trigger('click');
+                goPage('#cont_event');
+
+                // 1초 뒤 재실행
+                setTimeout(function () {
+                    $('.event_nav > li').eq(index).trigger('click');
+                    goPage('#cont_event');
+                }, 1000); // 1초 뒤 실행
+            }
+        });
+
+        $('#participate_event').click(function () {
+            if (login_check('회원가입 및 로그인 후 참여 가능합니다.')) {
+                if (!$('#agreeChk1').is(':checked')) {
+                    alert('개인정보 수집 이용에 동의하셔야 이벤트에 참여하실 수 있습니다.');
+                    return false;
+                } else {
+                    $.ajax({
+                        type: 'post',
+                        url: '<?=$base_uri?>/ax_set_participate_event<?=$_GET['time_check'] ? '?time_check='.$_GET['time_check'] : ''?>',
+                        async: true,
+                        dataType: 'json',
+                        beforeSend: function () {
+                            $('.loading-container').addClass('d-flex');
+                        },
+                        success: function (ret) {
+                            if (ret.count['str'] === 0) {
+                                $('#event_' + t_year + pad(t_month, 2) + pad(t_date, 2)).addClass('off');
+                            }
+
+                            alert(ret.systemMsg);
+                        },
+                        complete: function () {
+                            $('.loading-container').removeClass('d-flex');
+                        },
+                        error: function (xhr, status, error) {
+                            alert("에러사유 : " + error);
+                        }
+                    });
+                }
+            }
+        });
+
+        $('#check_win_btn').click(function () {
+            if (login_check('회원가입 및 로그인 후 참여 가능합니다.')) {
+                $.ajax({
+                    type: 'post',
+                    url: '<?=$base_uri?>/ax_check_winner_user<?=$_GET['time_check'] ? '?time_check='.$_GET['time_check'] : ''?>',
+                    async: true,
+                    dataType: 'json',
+                    beforeSend: function () {
+                        $('.loading-container').addClass('d-flex');
+                    },
+                    success: function (ret) {
+                        alert(ret.systemMsg);
+                    },
+                    complete: function () {
+                        $('.loading-container').removeClass('d-flex');
+                    },
+                    error: function (xhr, status, error) {
+                        alert("에러사유 : " + error);
+                    }
+                });
+            }
+        });
+
+        initEventLists();
+        eventLectureListM('event_20250317103031', '', 'lecture_list1', '<?=USER_ID?>');
+
+        /* 숫자 자리수 맞추기 EX) pad(5, 2) = 반환 = 05 */
+        function pad(n, width) {
+            n = n + '';
+            return n.length >= width ? n : new Array(width - n.length + 1).join('0') + n;
+        }
+    });
+
+    // 해당 영역으로 이동하기
+    function goPage(el) {
+        $('html, body').stop().animate({ scrollTop: $(el).offset().top }, 'slow');
+        return false;
+    };
+
+    function copyURL() {
+        const url = "http://bit.ly/4im0bld";
+        const hashtags = "#2026공무원영어 #심우철영어 #공무원입문 #영기싹";
+        const textToCopy = `${url}\n${hashtags}`;
+
+        navigator.clipboard.writeText(textToCopy)
+            .then(() => alert("URL과 해시태그가 복사되었습니다!"))
+            .catch(err => console.error("복사 실패:", err));
+    }
+
+    function generateCalendar(year, month) {
+        var holiday = JSON.parse('<?=json_encode($holiday)?>');
+
+        var weekdayNames = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+        var monthNames = ["January", "February", "March", "April", "May", "June",
+            "July", "August", "September", "October", "November", "December"];
+        var firstDay = new Date(year, month - 1, 1).getDay();
+        var daysInMonth = new Date(year, month, 0).getDate();
+        var daysInPrevMonth = new Date(year, month - 1, 0).getDate();
+
+        var headerHTML = '<table><thead><tr class="month"><th colspan="7">' + monthNames[month - 1] + '</th></tr>';
+        headerHTML += '<tr class="week">';
+        for(var i = 0; i < 7; i++) {
+            if(i === 0 || i === 6) {
+                headerHTML += '<th class="holiday">' + weekdayNames[i] + '</th>';
+            } else {
+                headerHTML += '<th>' + weekdayNames[i] + '</th>';
+            }
+        }
+        headerHTML += '</tr></thead>';
+
+        var bodyHTML = '<tbody>';
+        var date = 1;
+        for(var week = 0; week < 6; week++) {
+            bodyHTML += '<tr>';
+            for(var day = 0; day < 7; day++) {
+                if(week === 0 && day < firstDay) {
+                    var prevDate = daysInPrevMonth - (firstDay - day - 1);
+                    bodyHTML += '<td class="inactive">' + prevDate + '</td>';
+                } else if(date > daysInMonth) {
+                    var nextDate = date - daysInMonth;
+                    bodyHTML += '<td class="inactive">' + nextDate + '</td>';
+                    date++;
+                } else {
+                    var tdClass = '';
+                    if (day === 0 || day === 6) {
+                        tdClass = 'holiday';
+                    }
+                    var dayStr = date < 10 ? '0' + date : date;
+                    var monthStr = month < 10 ? '0' + month : month;
+                    var currentDateStr = year + '-' + monthStr + '-' + dayStr;
+                    // Check the holiday JSON array for a matching date
+                    for (var i = 0; i < holiday.length; i++) {
+                        if (holiday[i].date === currentDateStr) {
+                            // If not already marked as holiday, add the class
+                            if (tdClass.indexOf('holiday') === -1) {
+                                tdClass = tdClass ? tdClass + ' holiday' : 'holiday';
+                            }
+                            break;
+                        }
+                    }
+                    bodyHTML += '<td' + (tdClass ? ' class="' + tdClass + '"' : '') + '>' + date + '</td>';
+                    date++;
+                }
+            }
+            bodyHTML += '</tr>';
+            if(date > daysInMonth) break;
+        }
+        bodyHTML += '</tbody></table>';
+        return headerHTML + bodyHTML;
+    }
+</script>
+

@@ -1,0 +1,45 @@
+<div class="distri-event">
+    <!-- 배포 카운트 -->
+    <div class="distri-count">
+        <strong>오늘 남은 수량</strong>
+        <ul>
+            <li>3</li>
+            <li>3</li>
+            <li>3</li>
+            <li>3</li>
+        </ul>
+    </div>
+
+    <!-- 개인정보 수집 동의 -->
+    <div class="event-agree-box">
+        <label><input type="checkbox">개인정보의 수집 및 이용에 동의합니다.</label>
+        <ul>
+            <li>1. 개인정보의 수집·이용 목적: 이벤트 진행 및 경품 배송<br /></li>
+            <li>2. 수집하는 개인정보의 항목: 이름, 휴대폰번호<br /></li>
+            <li>3. 개인정보의 보유·이용 기간: 이벤트 종료 후 즉시 파기<br /></li>
+            <li>4. 개인정보의 수집 및 이용에 대한 동의를 거부할 수 있으며, 이 경우 이벤트 참여가 제한됩니다.</li>
+        </ul>
+    </div>
+
+    <!-- 버튼 리스트 -->
+    <div class="event-btn-box">
+        <div>
+            <a href="javascript:void(0);" class="btn-h48 style_dark"><span>신청하기</span></a>
+            <a href="javascript:void(0);" class="btn-h48 style_dark_outline"><span>신청 내역 확인하기</span></a>
+        </div>
+    </div>
+
+    <!-- 배포 리스트 -->
+    <div class="distri-list">
+        <ul>
+            <? for($i=0; $i<10; $i++): ?>
+            <li class="<?=$i===0 ? 'off' : ''?>">
+                <div>
+                    <span>1월 1일 (화)</span>
+                    <strong>100권</strong>
+                </div>
+            </li>
+            <? endFor; ?>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,346 @@
+<section style="text-align: center; padding: 80px 0; background: #121212;">
+  <div style="display: inline-flex; flex-direction: row; align-items: center; gap: 50px;">
+    <!-- @ 1. rotate -->
+    <a href="javascript:void(0);" class="ani_rt_circle">
+      <svg viewBox='0 0 200 200' width='200' height='200' xmlns='http://www.w3.org/2000/svg' aria-labelledby="ani_rt_circle1-title ani_rt_circle1-desc">
+        <path id="ani_rt_circle-circle" class="path" d="M 20, 100 a 80,80 0 1,1 160,0 a 80,80 0 1,1 -160,0" stroke="none" fill="none" />
+        <path class="arrow" d="M 75 100 L 125 100 L 110 85 M 125 100 L 110 115"  fill="none" />
+        <text class="text">
+          <textPath href="#ani_rt_circle-circle" stroke="none">
+            돌아가는 텍스트 입니다 DUMMY TEXT 
+          </textPath>
+        </text>
+      </svg>
+    </a>
+
+    <style>
+      .ani_rt_circle {
+        width: 100px;
+        height: 100px;
+        display: inline-block;
+        font-size: 24px;
+        text-transform: uppercase;
+        letter-spacing: 0.1175em;
+        word-spacing: 0.3em;
+        text-decoration: none;
+      }
+      .ani_rt_circle svg {
+        width: 100%;
+        height: auto;
+        transform-box: fill-box;
+        fill: #fff;
+        stroke: #fff;
+        stroke-width: 0.05em;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+      .ani_rt_circle .arrow {
+        transform-origin: 50% 50%;
+        transition: transform 0.15s cubic-bezier(0.32, 0, 0.67, 0);
+      }
+      .ani_rt_circle:hover .ani_rt_circle .arrow {
+        transform: scale(1.1);
+        transition: transform 0.3s cubic-bezier(0.33, 1, 0.68, 1);
+      }
+      .ani_rt_circle .arrow {
+        stroke-width: 0.075em;
+      }
+      .ani_rt_circle .text {
+        -webkit-animation: rotateReverse normal infinite 20s linear;
+                animation: rotateReverse normal infinite 20s linear;
+        transform-origin: 50% 50%;
+      }
+      .ani_rt_circle:hover .text {
+        -webkit-animation-play-state: paused;
+                animation-play-state: paused;
+      }
+
+      @-webkit-keyframes rotate {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      @keyframes rotate {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      @-webkit-keyframes rotateReverse {
+        to {
+          transform: rotate(-360deg);
+        }
+      }
+      @keyframes rotateReverse {
+        to {
+          transform: rotate(-360deg);
+        }
+      }
+    </style>
+
+    <!-- @ 2. loading circle -->
+    <div class="ani_loading_circle">
+      <div class="f_circleG" id="frotateG_01"></div>
+      <div class="f_circleG" id="frotateG_02"></div>
+      <div class="f_circleG" id="frotateG_03"></div>
+      <div class="f_circleG" id="frotateG_04"></div>
+      <div class="f_circleG" id="frotateG_05"></div>
+      <div class="f_circleG" id="frotateG_06"></div>
+      <div class="f_circleG" id="frotateG_07"></div>
+      <div class="f_circleG" id="frotateG_08"></div>
+    </div>
+
+    <style>
+      .ani_loading_circle {
+        position: relative;
+        width: 80px;
+        height: 80px;
+        margin: auto;
+        transform: scale(0.6);
+        -o-transform: scale(0.6);
+        -ms-transform: scale(0.6);
+        -webkit-transform: scale(0.6);
+        -moz-transform: scale(0.6);
+      }
+      .ani_loading_circle .f_circleG {
+        position: absolute;
+        background-color: white;
+        height: 14px;
+        width: 14px;
+        border-radius: 7px;
+        -o-border-radius: 7px;
+        -ms-border-radius: 7px;
+        -webkit-border-radius: 7px;
+        -moz-border-radius: 7px;
+        animation-name: f_fadeG;
+        -o-animation-name: f_fadeG;
+        -ms-animation-name: f_fadeG;
+        -webkit-animation-name: f_fadeG;
+        -moz-animation-name: f_fadeG;
+        animation-duration: 0.672s;
+        -o-animation-duration: 0.672s;
+        -ms-animation-duration: 0.672s;
+        -webkit-animation-duration: 0.672s;
+        -moz-animation-duration: 0.672s;
+        animation-iteration-count: infinite;
+        -o-animation-iteration-count: infinite;
+        -ms-animation-iteration-count: infinite;
+        -webkit-animation-iteration-count: infinite;
+        -moz-animation-iteration-count: infinite;
+        animation-direction: normal;
+        -o-animation-direction: normal;
+        -ms-animation-direction: normal;
+        -webkit-animation-direction: normal;
+        -moz-animation-direction: normal;
+      }
+      .ani_loading_circle #frotateG_01 {
+        left: 0;
+        top: 32px;
+        animation-delay: 0.2495s;
+        -o-animation-delay: 0.2495s;
+        -ms-animation-delay: 0.2495s;
+        -webkit-animation-delay: 0.2495s;
+        -moz-animation-delay: 0.2495s;
+      }
+      .ani_loading_circle #frotateG_02 {
+        left: 9px;
+        top: 9px;
+        animation-delay: 0.336s;
+        -o-animation-delay: 0.336s;
+        -ms-animation-delay: 0.336s;
+        -webkit-animation-delay: 0.336s;
+        -moz-animation-delay: 0.336s;
+      }
+      .ani_loading_circle #frotateG_03 {
+        left: 32px;
+        top: 0;
+        animation-delay: 0.4225s;
+        -o-animation-delay: 0.4225s;
+        -ms-animation-delay: 0.4225s;
+        -webkit-animation-delay: 0.4225s;
+        -moz-animation-delay: 0.4225s;
+      }
+      .ani_loading_circle #frotateG_04 {
+        right: 9px;
+        top: 9px;
+        animation-delay: 0.509s;
+        -o-animation-delay: 0.509s;
+        -ms-animation-delay: 0.509s;
+        -webkit-animation-delay: 0.509s;
+        -moz-animation-delay: 0.509s;
+      }
+      .ani_loading_circle #frotateG_05 {
+        right: 0;
+        top: 32px;
+        animation-delay: 0.5955s;
+        -o-animation-delay: 0.5955s;
+        -ms-animation-delay: 0.5955s;
+        -webkit-animation-delay: 0.5955s;
+        -moz-animation-delay: 0.5955s;
+      }
+      .ani_loading_circle #frotateG_06 {
+        right: 9px;
+        bottom: 9px;
+        animation-delay: 0.672s;
+        -o-animation-delay: 0.672s;
+        -ms-animation-delay: 0.672s;
+        -webkit-animation-delay: 0.672s;
+        -moz-animation-delay: 0.672s;
+      }
+      .ani_loading_circle #frotateG_07 {
+        left: 32px;
+        bottom: 0;
+        animation-delay: 0.7585s;
+        -o-animation-delay: 0.7585s;
+        -ms-animation-delay: 0.7585s;
+        -webkit-animation-delay: 0.7585s;
+        -moz-animation-delay: 0.7585s;
+      }
+      .ani_loading_circle #frotateG_08 {
+        left: 9px;
+        bottom: 9px;
+        animation-delay: 0.845s;
+        -o-animation-delay: 0.845s;
+        -ms-animation-delay: 0.845s;
+        -webkit-animation-delay: 0.845s;
+        -moz-animation-delay: 0.845s;
+      }
+
+      @keyframes f_fadeG {
+        0% {
+          background-color: black;
+        }
+        100% {
+          background-color: white;
+        }
+      }
+      @-webkit-keyframes f_fadeG {
+        0% {
+          background-color: black;
+        }
+        100% {
+          background-color: white;
+        }
+      }
+    </style>
+
+    <!-- @ 3. loading text -->
+    <div class="ani_loading_txt">
+      <div id="fountainTextG_1" class="fountainTextG">L</div>
+      <div id="fountainTextG_2" class="fountainTextG">o</div>
+      <div id="fountainTextG_3" class="fountainTextG">a</div>
+      <div id="fountainTextG_4" class="fountainTextG">d</div>
+      <div id="fountainTextG_5" class="fountainTextG">i</div>
+      <div id="fountainTextG_6" class="fountainTextG">n</div>
+      <div id="fountainTextG_7" class="fountainTextG">g</div>
+    </div>
+
+    <style>
+      .ani_loading_txt {margin: auto;}
+      .ani_loading_txt .fountainTextG {
+        color: black;
+        font-family: Arial;
+        font-size: 31px;
+        text-decoration: none;
+        font-weight: normal;
+        font-style: normal;
+        float: left;
+        animation-name: bounce_fountainTextG;
+        -o-animation-name: bounce_fountainTextG;
+        -ms-animation-name: bounce_fountainTextG;
+        -webkit-animation-name: bounce_fountainTextG;
+        -moz-animation-name: bounce_fountainTextG;
+        animation-duration: 2.09s;
+        -o-animation-duration: 2.09s;
+        -ms-animation-duration: 2.09s;
+        -webkit-animation-duration: 2.09s;
+        -moz-animation-duration: 2.09s;
+        animation-iteration-count: infinite;
+        -o-animation-iteration-count: infinite;
+        -ms-animation-iteration-count: infinite;
+        -webkit-animation-iteration-count: infinite;
+        -moz-animation-iteration-count: infinite;
+        animation-direction: normal;
+        -o-animation-direction: normal;
+        -ms-animation-direction: normal;
+        -webkit-animation-direction: normal;
+        -moz-animation-direction: normal;
+        transform: scale(0.5);
+        -o-transform: scale(0.5);
+        -ms-transform: scale(0.5);
+        -webkit-transform: scale(0.5);
+        -moz-transform: scale(0.5);
+      }
+      .ani_loading_txt #fountainTextG_1 {
+        animation-delay: 0.75s;
+        -o-animation-delay: 0.75s;
+        -ms-animation-delay: 0.75s;
+        -webkit-animation-delay: 0.75s;
+        -moz-animation-delay: 0.75s;
+      }
+      .ani_loading_txt #fountainTextG_2 {
+        animation-delay: 0.9s;
+        -o-animation-delay: 0.9s;
+        -ms-animation-delay: 0.9s;
+        -webkit-animation-delay: 0.9s;
+        -moz-animation-delay: 0.9s;
+      }
+      .ani_loading_txt #fountainTextG_3 {
+        animation-delay: 1.05s;
+        -o-animation-delay: 1.05s;
+        -ms-animation-delay: 1.05s;
+        -webkit-animation-delay: 1.05s;
+        -moz-animation-delay: 1.05s;
+      }
+      .ani_loading_txt #fountainTextG_4 {
+        animation-delay: 1.2s;
+        -o-animation-delay: 1.2s;
+        -ms-animation-delay: 1.2s;
+        -webkit-animation-delay: 1.2s;
+        -moz-animation-delay: 1.2s;
+      }
+      .ani_loading_txt #fountainTextG_5 {
+        animation-delay: 1.35s;
+        -o-animation-delay: 1.35s;
+        -ms-animation-delay: 1.35s;
+        -webkit-animation-delay: 1.35s;
+        -moz-animation-delay: 1.35s;
+      }
+      .ani_loading_txt #fountainTextG_6 {
+        animation-delay: 1.5s;
+        -o-animation-delay: 1.5s;
+        -ms-animation-delay: 1.5s;
+        -webkit-animation-delay: 1.5s;
+        -moz-animation-delay: 1.5s;
+      }
+      .ani_loading_txt #fountainTextG_7 {
+        animation-delay: 1.64s;
+        -o-animation-delay: 1.64s;
+        -ms-animation-delay: 1.64s;
+        -webkit-animation-delay: 1.64s;
+        -moz-animation-delay: 1.64s;
+      }
+      
+      @keyframes bounce_fountainTextG {
+        0% {
+          transform: scale(1);
+          color: black;
+        }
+        100% {
+          transform: scale(0.5);
+          color: white;
+        }
+      }
+      @-webkit-keyframes bounce_fountainTextG {
+        0% {
+          -webkit-transform: scale(1);
+          color: black;
+        }
+        100% {
+          -webkit-transform: scale(0.5);
+          color: white;
+        }
+      }
+      </style>
+  </div>
+</section>

@@ -1,0 +1,270 @@
+<link rel="stylesheet" href="/css/document.css"/>
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/highlight.min.js"></script>
+<script src="/js/document.js"></script>
+
+<?
+    include('skin/pub/layout/pc/document/inc_document_lnb.html');
+?>
+<div class="document">
+    <main>
+        <nav>
+            <a href="../index">< 목록</a>
+            <h2>탭 <span>사용하기</span></h2>
+            <ul>
+                <li data-target="#ex"><a href="javascript:;">Example</a></li>
+                <li data-target="#options"><a href="javascript:;">Options</a></li>
+            </ul>
+        </nav>
+    
+        <section id="ex">
+            <section>
+                <h3>기본 사용법</h3>
+                <p>
+                    스크립트 적용시 탭을 자동으로 인식하여 탭 영역으로 지정됩니다.<br />
+                    태그 종류와는 상관 없이 <span>div > span, div > div, ul > li</span>와 같은 모든 구조에서도 동작합니다. (cnTab 하고 동일한데 그저 탭만 동작. 밑에 컨텐츠 없을 때 사용. only active.)<br/>
+                </p>
+                <ul class="tab_menu_bar">
+                    <li>메뉴1</li>
+                    <li>메뉴2</li>
+                    <li>메뉴3</li>
+                </ul>
+<pre><code class="language-html"><!-- 버튼 영역 -->
+<ul class="nav">
+    <li>메뉴1</li>
+    <li>메뉴2</li>
+    <li>메뉴3</li>
+</ul>
+
+<script>
+    $(function(){
+        $('.nav').cnTab({useConts:'N'});
+    });
+</script>
+</code></pre>
+            </section>
+        </section>
+
+        <section id="options">
+            <h3>Options</h3>
+            <table>
+                <colgroup>
+                    <col width="16.6666%" />
+                    <col width="16.6666%" />
+                    <col width="16.6666%" />
+                    <col width="50%" />
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Default</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>width</th>
+                        <td>string</td>
+                        <td>'auto', '100px', '50%', 'css'</td>
+                        <td>
+                            <p>각 버튼의 너비를 설정합니다. (단위와 함께 입력 예: '100px')<br />이 옵션을 넣지 않으면 탭 갯수에 따라 자동으로 너비가 조정됩니다. <br>'css' 옵션은 밑에 사용자가 설정한 css의 넓이 및 여백을 사용합니다.<br>'css' 로 설정하면 gap 옵션은 무시 됩니다. <br><b>탭은 display:flex 로 되어 있습니다.</b></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>spaceTab</th>
+                        <td>number</td>
+                        <td>n</td>
+                        <td>
+                            <p>각 탭 사이의 공백 숫자로 입력해야 하며 뒤에 px이 자동 붙습니다.<br>기본 - 설정안함</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>startIndex</th>
+                        <td>number</td>
+                        <td>n</td>
+                        <td>
+                            <p>시작 탭 설정(제로베이스) <br>기본 - 0 </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>activeClass</th>
+                        <td>string</td>
+                        <td>'active'</td>
+                        <td>
+                            <p>활성화된 버튼과 탭 영역에 추가되는 클래스를 변경합니다.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>onClick</th>
+                        <td>function</td>
+                        <td>-</td>
+                        <td>
+                            <p>
+                                버튼을 클릭했을 때 이벤트를 추가하며 클릭한 엘리먼트와 인덱스를 반환합니다.<br />
+                                이미 활성화된 버튼을 다시 클릭할 경우 중복해서 실행되지 않습니다.
+
+                            </p>
+<pre><code class="language-js">$('.custom_nav').cnTab({
+    onClick: function(el, index){
+        console.log(index + '번째 메뉴 클릭');
+        el.addClass('clicked'); // 클릭한 영역에 클래스 추가
+    };
+});
+</code></pre>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th>onInit</th>
+                        <td>function</td>
+                        <td>-</td>
+                        <td>
+                            <p>
+                                맨 처음에 로드되고 실행 되는 함수
+
+                            </p>
+<pre><code class="language-js">$('.custom_nav').cnTab({
+    onInit: function(el, index){
+        console.log('로드 되고 처음으로 시작할때');
+    };
+});
+</code></pre>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+		<section>
+			<p> class="tab_menu_bar"</p>
+			<p> 기본 사이값 gap:16px;</p>
+			<p> 기본 사이값 변경 (함수 로딩시 옵션으로 주거나 아니면 각 css 에서 적용가능)</p>
+			<div>
+				<div class="tab_menu_bar">
+					<a href="javascript:void(0);">tab01</a>
+					<a href="javascript:void(0);">tab02</a>
+					<a href="javascript:void(0);">tab03</a>
+					<a href="javascript:void(0);">tab04</a>
+				</div>
+			</div>
+			<div>
+				<ul class="tab_menu_bar">
+					<li>tab01</li>
+					<li>tab02</li>
+					<li>tab03</li>
+					<li>tab04</li>
+				</ul>
+			</div>
+			<div>
+				<ul class="tab_menu_bar">
+					<li><a href="javascript:void(0);">tab01</a></li>
+					<li><a href="javascript:void(0);">tab02</a></li>
+					<li><a href="javascript:void(0);">tab03</a></li>
+					<li><a href="javascript:void(0);">tab04</a></li>
+				</ul>
+			</div>
+		</section>
+
+		<section>
+			<p> class="tab_menu_circle"</p>
+			<p> 기본 사이값 gap:8px;</p>
+			<p> 기본 사이값 변경 (함수 로딩시 옵션으로 주거나 아니면 각 css 에서 적용가능)</p>
+
+			<div class="tab_menu_circle">
+				<a href="javascript:void(0);">tab01</a>
+				<a href="javascript:void(0);">tab02tab02</a>
+				<a href="javascript:void(0);">tab03tab03tab03</a>
+				<a href="javascript:void(0);">tab04</a>
+			</div>
+
+			<div>
+				<ul class="tab_menu_circle">
+					<li>tab01</li>
+					<li>tab02</li>
+					<li>tab03tab03tab03</li>
+					<li>tab04</li>
+				</ul>
+			</div>
+
+			<div>
+				<ul class="tab_menu_circle">
+					<li><a href="javascript:void(0);">tab01</a></li>
+					<li><a href="javascript:void(0);">tab02</a></li>
+					<li><a href="javascript:void(0);">tab03</a></li>
+					<li><a href="javascript:void(0);">tab04</a></li>
+				</ul>
+			</div>
+		</section>
+
+		<section class="sub-conts-wrap">
+			<p> class="tab_menu_box"</p>
+			<p> 기본 사이값 지정 없음</p>
+
+			<div class="type_column_cont">
+				<div class="conts-box style_bd">
+					<div class="tab_menu_box">
+						<a href="javascript:void(0);">tab01</a>
+						<a href="javascript:void(0);">tab02</a>
+						<a href="javascript:void(0);">tab03</a>
+						<a href="javascript:void(0);">tab04</a>
+					</div>
+
+					<div>자체 박스는 없음.</div>
+				</div>
+
+				<div class="conts-box style_bd">
+					<ul class="tab_menu_box">
+						<li>tab01</li>
+						<li>tab02</li>
+						<li>tab03</li>
+						<li>tab04</li>
+					</ul>
+					<div>내용...</div>
+				</div>
+			</div>
+
+			<p>박스 없는 곳에서 사용시 - class="tab_menu_box style_bd"</p>
+			<ul class="tab_menu_box style_bd">
+				<li><a href="javascript:void(0);">tab01</a></li>
+				<li><a href="javascript:void(0);">tab02</a></li>
+				<li><a href="javascript:void(0);">tab03</a></li>
+				<li><a href="javascript:void(0);">tab04</a></li>
+			</ul>
+		</section>
+
+		<section class="sub-conts-wrap">
+			<p> class="tab_menu_txt"</p>
+			<p> 기본 사이값 gap:8px;</p>
+			<p> 기본 사이값 변경 (함수 로딩시 옵션으로 주거나 아니면 각 css 에서 적용가능)</p>
+			
+			<div class="tab_menu_txt style_right">
+				<a href="javascript:void(0);">tab01</a>
+				<a href="javascript:void(0);">tab02</a>
+				<a href="javascript:void(0);">tab03</a>
+				<a href="javascript:void(0);">tab04</a>
+			</div>
+
+			<div>
+				<span>이것은 텍스트 옆에도 나옴 </span>
+				<ul class="tab_menu_txt">
+					<li><a href="javascript:void(0);">tab01</a></li>
+					<li><a href="javascript:void(0);">tab02</a></li>
+					<li><a href="javascript:void(0);">tab03</a></li>
+					<li><a href="javascript:void(0);">tab04</a></li>
+				</ul>
+			</div>
+
+			<ul class="tab_menu_txt style_center">
+				<li>tab01</li>
+				<li>tab02</li>
+				<li>tab03</li>
+				<li>tab04</li>
+			</ul>
+		</section>
+    </main>
+</div>
+<script>
+    $(function(){
+        $('.tab_menu_bar, .tab_menu_circle, .tab_menu_box, .tab_menu_txt').cnTab({useConts:'N'});
+    })
+</script>

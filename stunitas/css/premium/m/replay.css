@@ -1,0 +1,26 @@
+/* 무료특강 */
+.prem__replay--free .free__list > li{padding: 1.6rem 0;}
+.prem__replay--free .free__list > li .list--thumbnail{height: 19.2rem; display: flex; justify-content: center; align-items: center;}
+.prem__replay--free .free__list > li .list--thumbnail img{width: 100%; height: 100%; object-fit: cover; object-position: center;}
+.prem__replay--free .free__list > li .list--tit{max-height: 5.2rem; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2;}
+.prem__replay--free .free__list > li .list--keyword{display: flex; gap: .8rem; flex-wrap: wrap; margin-top: -.4rem;}
+.prem__replay--free .free__list > li .list--keyword li{display: flex; justify-content: center; align-items: center; padding: .5rem .8rem; border-radius: var(--border-radius-m); border: .1rem solid var(--gray-30); color: var(--text-secondary); font-size: 1.3rem; font-weight: 400; line-height: 138%; letter-spacing: -0.26px;}
+
+/* 설명회 */
+.prem__replay--presentaion .filter__year .swiper{padding: 0 1.6rem; box-sizing: unset; margin: 0 -1.6rem;}
+.prem__replay--presentaion .filter__year ul li{width: auto !important; border-radius: 3rem; border: .1rem solid var(--gray-30); padding: 0 1.2rem; font-size: 1.4rem; font-weight: 600; letter-spacing: -0.14px;  height: 3.4rem; display: flex; justify-content: center; align-items: center;}
+.prem__replay--presentaion .filter__year ul li.active{background: var(--gray-100); color: var(--white); border-color: var(--gray-100)}
+.prem__replay--presentaion .filter__year ul li + li{margin-left: .8rem;}
+.prem__replay--presentaion .presentation__list .presentation__thumb{width: 100%; height: 18.4rem;}
+.prem__replay--presentaion .presentation__list .presentation__thumb a{display: block;  position:relative; height: 100%;}
+.prem__replay--presentaion .presentation__list .presentation__thumb a:after{content:''; display: block; width: 100%; height:100%; background:rgba(0,0,0,0.4) url('/un_static/img/common/premium/replay/icon_play.png') no-repeat center / 5rem 5rem; position: absolute; top: 0; left: 0;}
+.prem__replay--presentaion .presentation__list .presentation__thumb img{width: 100%; height: 100%; object-fit: cover; object-position: center;}
+.prem__replay--presentaion .presentation__list .presentation__txt{flex: 1;}
+.prem__replay--presentaion .presentation__list .presentation__teacher{margin-top: 1.6rem;}
+
+.prem__replay--presentaion--view .filter__teacher{padding: 0 1.6rem; box-sizing: unset; margin: 0 -1.6rem;}
+.prem__replay--presentaion--view .filter__teacher ul li{width: auto !important; padding: .8rem 1.2rem;}
+.prem__replay--presentaion--view .filter__teacher ul li + li{margin-left: .8rem;}
+.prem__replay--presentaion--view video{background: #000; width: 100%;}
+.prem__replay--presentaion--view .prem__box:has(iframe){position: relative; width: 100%; padding-top: 56.25%; /*16:9 비율로 일정하게 크기 조절*/ overflow: hidden;}
+.prem__replay--presentaion--view iframe{position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; border: none;}

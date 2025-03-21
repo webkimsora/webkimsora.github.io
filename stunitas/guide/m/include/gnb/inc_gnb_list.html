@@ -1,0 +1,26 @@
+    <!-- 타이틀 모달 -->
+    <ul class="tit-menu" style="display: none;">
+        <li><a href="/pub/layout/m/teacher/index">선생님</a></li>
+        <li><a href="javascript:void(0);">프리패스</a></li>
+        <li><a href="javascript:void(0);">기획전</a></li>
+        <li><a href="/pub/layout/m/lecture/event_list">수강신청</a></li>
+        <li><a href="/pub/layout/m/lab/previous_exam">기출문제</a></li>
+        <li><a href="/pub/layout/m/exam_info/index">수험정보</a></li>
+        <li><a href="/pub/layout/m/event/event_list">이벤트</a></li>
+        <li><a href="javascript:void(0);">교재</a></li>
+    </ul>
+    <script>
+        $('#tit_btn').cnBottomModal({
+            position: 'top',
+            modalBody: '.tit-menu',
+            headVisible: false,
+            btnVisible: false,
+            toggleMode: true,
+            onOpenEvent: function(){
+                $('.gnb-tit').addClass('open');
+            },
+            onCloseEvent: function(){
+                $('.gnb-tit').removeClass('open');
+            }
+        })
+    </script>

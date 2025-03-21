@@ -1,0 +1,32 @@
+                <!-- @@@ paging -->
+                <div class="paging-wrap">
+                    <div class="paging-box">
+						<? if(false){ // 1 이상일때만 나옴 ?>
+                        <a href="javascript:void(0);"><i class="ico ico_arrow_left"></i></a>
+						<? } ?>
+                        <a class="active" href="javascript:void(0);">1</a>
+                        <a href="javascript:void(0);">2</a>
+                        <a href="javascript:void(0);">3</a>
+                        <a href="javascript:void(0);">4</a>
+                        <a href="javascript:void(0);">5</a>
+                        <a href="javascript:void(0);"><i class="ico ico_arrow_right"></i></a>
+                    </div>
+                </div>
+                <!-- //@@@ paging -->
+
+				<? if($is_search == 'Y'){ ?>
+                <!-- @@@ 검색창 -->
+                <div class="search-wrap">
+					<? if($is_search_gbn == 'Y'){ ?>
+					<select class="sel-box">
+						<option value="">전체</option>
+					</select>
+					<? } ?>
+
+                    <div class="search-box">
+                        <input type="search" placeholder="검색어 입력">
+                        <button class="icon search"></button>
+                    </div>
+                </div>
+                <!-- //@@@ 검색창 -->
+				<? }  ?>
