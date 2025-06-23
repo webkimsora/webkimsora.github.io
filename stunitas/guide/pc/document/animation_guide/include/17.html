@@ -1,0 +1,177 @@
+<!-- @ 1. active scale -->
+<section style="text-align: center; padding: 20px 0;">
+  <h4>1. scale swiper </h4>
+  <p>
+    <a href="https://ctrlcccv.github.io/ctrlcccv-demo/2023-12-10-swiper-center2/" target="_blank">☞ Link 이동</a>
+  </p>
+  <style>
+    /* 슬라이더 기본 스타일 */
+    .scale_slider { position: relative; margin: 0 auto; } 
+    .scale_slider .detail { overflow: hidden; width: 100%; margin: 0 auto; } 
+
+    /* 슬라이더 내 각 슬라이드 아이템 스타일 */
+    .scale_slider .slide_list > li { position: relative; width: 25%; transform: scale(0.7); transition: all 0.3s; opacity: 0.5; } 
+    .scale_slider .slide_list > li a { display: block; } 
+    .scale_slider .slide_list > li .img { overflow: hidden; display: block; position: relative; padding-bottom: 60%; border-radius: 10px; } 
+    .scale_slider .slide_list > li .img img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; } 
+
+    /* 현재 활성화된 슬라이드 스타일 */
+    .scale_slider .slide_list > li.swiper-slide-active,
+    .scale_slider .slide_list > li.swiper-slide-duplicate-active { transform: scale(1); opacity: 1; } 
+
+    /* 이전 및 다음 슬라이드의 여백 조정 */
+    .scale_slider .slide_list > li.swiper-slide-prev { margin-right: 2%; margin-left: -2%; transform: scale(0.85);} 
+    .scale_slider .slide_list > li.swiper-slide-next { margin-right: -2%; margin-left: 2%; transform: scale(0.85);} 
+
+    /* 화면상 첫 번째 및 마지막 슬라이드의 여백 조정 */
+    .scale_slider .slide_list > li.first { margin-right: -4%; margin-left: 4%; } 
+    .scale_slider .slide_list > li.last { margin-right: 4%; margin-left:-4%; } 
+
+    /* 슬라이더 이동 버튼 스타일 */
+    .scale_slider .btn { position: absolute; top: 50%; width:3%; font-size: 0; z-index: 10; transform: translate(0,-50%); cursor: pointer; } 
+    .scale_slider .btn img { width: 100%; } 
+    .scale_slider .btn.btn_prev { right: 50%; margin-right: 17%; } 
+    .scale_slider .btn.btn_next { left: 50%; margin-left: 17%; } 
+    .scale_slider .btn.btn_prev img { transform: rotateY(180deg); } 
+  </style>
+
+  <div class="scale_slider">
+    <div class="detail">
+        <ul class="swiper-wrapper slide_list">
+            <li class="swiper-slide"><span class="img"><img src="https://picsum.photos/id/10/1000/600" alt="썸네일 이미지"></span></li>
+            <li class="swiper-slide"><span class="img"><img src="https://picsum.photos/id/20/1000/600" alt="썸네일 이미지"></span></li>
+            <li class="swiper-slide"><span class="img"><img src="https://picsum.photos/id/30/1000/600" alt="썸네일 이미지"></span></li>
+            <li class="swiper-slide"><span class="img"><img src="https://picsum.photos/id/40/1000/600" alt="썸네일 이미지"></span></li>
+            <li class="swiper-slide"><span class="img"><img src="https://picsum.photos/id/50/1000/600" alt="썸네일 이미지"></span></li>
+            <li class="swiper-slide"><span class="img"><img src="https://picsum.photos/id/60/1000/600" alt="썸네일 이미지"></span></li>
+        </ul>
+    </div>
+    <span class="btn btn_prev"><img src="https://ctrlcccv.github.io/ctrlcccv-demo/2023-12-10-swiper-center2/images/arrow.png" alt="이젼"></span>
+    <span class="btn btn_next"><img src="https://ctrlcccv.github.io/ctrlcccv-demo/2023-12-10-swiper-center2/images/arrow.png" alt="다음"></span>
+  </div>
+
+  <script>
+    // 슬라이더 요소 선택 및 변수 초기화
+    const $scSlider = $('.scale_slider');
+    let scSwiper = undefined;
+    let slideNum = $scSlider.find('.swiper-slide').length; // 슬라이드 총 개수
+    let slideInx = 0; // 현재 슬라이드 인덱스
+
+    sliderAct(); // 슬라이더 활성화
+
+    // 슬라이더 실행 및 설정 함수
+    function sliderAct() {
+        // 슬라이더 초기화 (이미 존재하는 경우)
+        if (scSwiper != undefined) {
+            scSwiper.destroy();
+            scSwiper = undefined;
+        }
+
+
+        // 슬라이더 클래스 업데이트 함수
+        function updateClass() {
+            // 화면상 첫 번째 및 마지막 슬라이드에 클래스 추가 및 제거
+            $scSlider.find('.swiper-slide-prev').prev().addClass('first').siblings().removeClass('first');
+            $scSlider.find('.swiper-slide-next').next().addClass('last').siblings().removeClass('last');
+        }
+    }
+
+    
+        // 슬라이더 구성 및 옵션 설정
+        scSwiper = new Swiper(('.scale_slider .detail'), {
+            slidesPerView: "auto",
+            initialSlide: slideInx,
+            loop: true,
+            centeredSlides: true,
+            navigation: {
+                prevEl: $('.scale_slider').find('.btn_prev')[0],
+                nextEl: $('.scale_slider').find('.btn_next')[0],
+            },
+            on: {
+                slideChangeTransitionStart: function() {
+                    slideInx = this.realIndex; // 현재 슬라이드 인덱스 갱신
+                    updateClass();
+                },
+                init: function() {
+                    updateClass();
+                },
+            },
+        });
+  </script>
+
+</section>
+
+<!-- @ 2-1. coverflow type1 -->
+<section style="text-align: center; padding: 20px 0;">
+  <h4>2-1. coverflow-type1 (NO TOUCH) </h4>
+  <p>
+    <a href="https://st-event-gong.conects.com/gong/aws/promotion/2024/award_scholarship_v4" target="_blank">☞ Link 이동</a>
+  </p>
+
+  <style>
+    .square_slide {width: 100%; position: relative;}
+    .square_slide:before {content:""; display: block; width: 120%; height: 140px; top: -80px; left: -10%; position: absolute; border-radius: 90%; background: #fff; z-index: 10;}
+    .square_slide:after {content:""; display: block; width: 120%; height: 140px; bottom: -115px; left: -10%; position: absolute; border-radius: 90%; background: #fff; z-index: 10;}
+    .square_slide .swiper-slide {width: 346px !important; height: 300px !important; }
+  </style>
+  <div class="swiper square_slide">
+    <div class="swiper-wrapper">
+        <? for($i=1; $i<=15; $i++){ ?>
+        <div class="swiper-slide"><img src="<?=OLD_IMG_DIR?>/gong/landing/2024/04/mkt1_7208/pc/top_slide<?= $i ?>.png" /></div>
+        <? } ?>
+    </div>
+  </div>
+  <script>
+    var square_slider = new Swiper(".square_slide", {
+        centeredSlides: true,
+        slidesPerView: "auto",
+        spaceBetween: 34,
+        loop: true,
+        loopedSlides: 8,
+        allowTouchMove: false,
+        speed: 800,
+        autoplay: {
+            delay: 3000,
+        },
+    });
+  </script>
+</section>
+
+<!-- @.2-2. coverflow type2 -->
+<section style="text-align: center; padding: 20px 0;">
+  <h4>2-2. coverflow-type2 </h4>
+
+  <style>
+    .square_slide_type2 {width: 100%; padding: 50px 0;}
+    .square_slide_type2 .swiper-slide {width: 346px !important; height: 300px !important; background-position: center; background-size: cover;}
+    .square_slide_type2 .swiper-slide img {display: block; width: 100%; height: 100%; object-fit: cover; }
+  </style>
+  <div class="swiper square_slide_type2">
+    <div class="swiper-wrapper">
+        <? for($i=1; $i<=15; $i++){ ?>
+        <div class="swiper-slide"><img src="<?=OLD_IMG_DIR?>/gong/landing/2024/04/mkt1_7208/m/top_slide<?= $i ?>.png" /></div>
+        <? } ?>
+    </div>
+  </div>
+
+  <script>
+    var swiper = new Swiper(".square_slide_type2", {
+        effect: "coverflow",
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: "auto",
+        spaceBetween: 34,
+        loop: true,
+        loopedSlides: 8,
+        coverflowEffect: {
+            rotate: 80,
+            depth: -100,
+            modifier: .2,
+            scale: 1.2,
+        },
+        autoplay: {
+            delay: 3000,
+        },
+    });
+  </script>
+</section>

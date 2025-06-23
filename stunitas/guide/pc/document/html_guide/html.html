@@ -1,0 +1,271 @@
+<link rel="stylesheet" href="/css/document.css"/>
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/highlight.min.js"></script>
+<script src="/js/document.js"></script>
+
+<?
+    include('skin/pub/layout/pc/document/inc_document_lnb.html');
+?>
+<div class="document" id="html_guide">
+    <main class="css__wrap">
+        <nav>
+            <a href="../index">< 목록</a>
+            <h2>HTML 가이드</h2>
+            <!-- <ul>
+                <li data-target="#ex"><a href="javascript:;">Example</a></li>
+            </ul> -->
+        </nav>
+
+        <section>
+            <h2><i class="fa-solid fa-file"></i> 커넥츠 HTML/CSS 문서</h2>
+        </section>
+
+        <!-- @ HTML -->
+        <section>
+            <h3>HTML 가이드</h3>
+            <div>
+                <dl class="list">
+                    <dt>변수처리</dt>
+                    <dd>
+                        <table>
+                            <colgroup>
+                                <col width="30%" />
+                                <col width="70%" />
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th>&lt;?=IMG_DIR?&gt;</th>
+                                    <td>
+                                        이미지 로드할때 사용합니다.<br>
+                                        이미지 경로: //s3.ap-northeast-2.amazonaws.com/st.dev.dangidata/mgong_conects/img 
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <th>&lt;?=VIDEO_URL?&gt;</th>
+                                    <td>
+                                        비디오 로드시 업로드 경로<br>
+                                        비디오 경로: //d2j2rcmrtco9nl.cloudfront.net/gongdangipmp/FLV
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </dd>
+
+                    <dt>주석처리</dt>
+                    <dd>
+                        컨텐츠 내에 Block 구분시 주석을 <b>'@ 내용'</b> 로 표시합니다.<br>
+                        전체를 감싸는 Block은 @ 한개로 시작, Block 내부 Element는 @@ 두개,<br>
+                        요소 안에 별도의 컨텐츠가 있을 경우는 @@@ 3개를 표시하면 됩니다.<br><br>
+                        매번 주석 처리를 하는 것이 아닌 페이지 소스코드가 길 경우,<br>
+                        혹은 개발이 필요할 경우 해당 단락을 직관적이게 표시하기 위해 주석처리를 합니다.<br>
+                        또한 단락이 끝났을 경우엔 골뱅이 옆에 <b>//</b>표시를 하여 끝남 표시를 처리 합니다. (<b>'//@ 내용'</b>)<br>
+                        <small>(단, 특별한 경우를 제외하고선 @ 4개 이상 처리는 지양 합니다.)</small>
+                                
+<pre><code class="language-html">
+    <section class="event__20230512">
+        <!-- @ sub01  -->
+        <div class="sub01">
+            <p>컨텐츠</p>
+        </div>
+        <!-- //@ sub01 -->
+
+        <!-- @@ sub02 -->
+        <div class="sub02">
+            <!-- @@ -->
+            <div class="a_box">단락A</div>
+            <!-- //@@ -->
+
+            <!-- @@ 강좌리스트 -->
+            <div class="b_box">
+                <div>단락B-1</div>
+                <!-- @@@ 강좌 개발영역 -->
+                <div>단락B-2</div>
+                <!-- //@@@ 강좌 개발영역 -->
+            </div>
+            <!-- //@@ 강좌리스트 -->
+        </div>
+        <!-- //@@ sub02 -->
+    </section>
+</code></pre>
+                    </dd>
+                </dl>
+            </div>
+        </section>
+        <!-- @ HTML -->
+
+
+        <!-- @ HTML 컴포넌트영역 -->
+        <section>
+            <h3>HTML 컴포넌트</h3>
+            <div>
+                <dl class="list">
+                    <dt>SELECT BOX</dt>
+                    <dd>
+                        <select class="sel-box">
+                            <option value="option01">option01</option>
+                            <option value="option01">option02</option>
+                            <option value="option01">option03</option>
+                        </select>
+
+                        <select class="sel-box" disabled>
+                            <option value="option01">option01</option>
+                            <option value="option01">option02</option>
+                            <option value="option01">option03</option>
+                        </select>
+                    </dd>
+
+                    <dt>TAG</dt>
+                    <dd>
+                        <label class="tag-box">
+                            <input type="checkbox">
+                            <span>TAG NAME</span>
+                        </label>
+                    </dd>
+
+                    <dt>Input Text</dt>
+                    <dd>
+                        <div class="search-box">
+                            <input type="search" placeholder="검색어를 입력하세요">
+                            <!-- <button class="icon txt_del"></button> -->
+                            <button class="icon search"></button>
+                        </div>
+
+                        <input class="inp-txt" type="text" placeholder="검색어를 입력하세요">
+                    </dd>
+
+                    <dt>dropbox</dt>
+                    <dd>
+                        <div class="drop-box">
+							<a class="btn_more" href="javascript:void(0);">더보기</a>
+							<ul class="drop-menu">
+								<li><a href="javascript:void(0);">주교재</a></li>
+								<li><a href="javascript:void(0);">부교재</a></li>
+								<li><a href="javascript:void(0);">다운로드</a></li>
+							</ul>
+                        </div>
+                    </dd>
+
+                    <dt>paging</dt>
+                    <dd>
+                        <div class="paging-box">
+                            <a href="javascript:void(0);"><i class="ico ico_arrow_left"></i></a>
+                            <a class="active" href="javascript:void(0);">1</a>
+                            <a href="javascript:void(0);">2</a>
+                            <a href="javascript:void(0);">3</a>
+                            <a href="javascript:void(0);">4</a>
+                            <a href="javascript:void(0);">5</a>
+                            <a href="javascript:void(0);"><i class="ico ico_arrow_right"></i></a>
+                        </div>
+                    </dd>
+
+					<dt>기본 버튼</dt>
+					<dd>
+						<div style="margin-bottom:20px;">
+							<a class="btn-h30" href="javascript:void(0);"><span>자주 묻는 질문 전체보기</span></a>
+
+							<a class="btn-h30 style_blue" href="javascript:void(0);"><span>한 개 색 있는 버튼</span></a>
+
+							<a class="btn-h30" href="javascript:void(0);"><span class="ico ico_thumbs_up">도움됐어요</span></a>
+						</div>
+
+						<div style="margin-bottom:20px;">
+							<a class="btn-h36" href="javascript:void(0);"><span>자주 묻는 질문 전체보기</span></a>
+
+							<a class="btn-h36 style_blue" href="javascript:void(0);"><span>한 개 색 있는 버튼</span></a>
+
+							<a class="btn-h36" href="javascript:void(0);"><span class="ico ico_arrow_up">TOP</span></a>
+						</div>
+
+						<div style="margin-bottom:20px;">
+							<div class="btn-box style_blue">
+								<a class="btn-h36" href="javascript:void(0);"><span>취소</span></a>
+								<a class="btn-h36" href="javascript:void(0);"><span>등록</span></a>
+							</div>
+						</div>
+
+						<div style="margin-bottom:20px;">
+							<a class="btn-h48" href="javascript:void(0);"><span>1:1 문의하기</span></a>
+
+							<a class="btn-h48" href="javascript:void(0);"><span class="ico ico_pencil">1:1 문의하기</span></a>
+
+							<a class="btn-h48 style_blue" href="javascript:void(0);"><span class="ico ico_pencil_line">질문 작성하기</span></a>
+						</div>
+					</dd>
+
+					<dt>기본 상단 안내 문구</dt>
+					<dd>
+						<div class="common-info-wrap">
+							<div class="info_box">
+								<p class="info_tit">1:1문의 이용 방법</p>
+								<ul>
+									<li>문의하시기 전에 <a href="javascript:void(0);">자주 묻는 질문</a>에 궁금하신 내용이 있는지 확인해 주세요.</li>
+									<li>선생님 강의 및 학습에 대한 문의는 <b>각 선생님의 Q&A 게시판</b>에 문의해 주세요.</li>
+								</ul>
+							</div>
+							<div class="info_btn btn-box">
+								<a class="btn-h48 style_blue" href="./qna_write"><span class="ico ico_pencil_line">1:1 문의하기</span></a>
+							</div>
+						</div>
+					</dd>
+
+					<dt>토글 슬라이드 아이콘</dt>
+					<dd>
+                        <div style="margin-bottom:20px;">
+							<label class="ico-toggle-switch">
+                                <em>input 이용하기</em>
+                                
+                                <input type="checkbox">
+                                <span class="ico-switch"><i class="ico-switch-move"></i></span>
+                            </label>
+						</div>
+                        <div>
+                            <label class="ico-toggle-switch" onclick="$(this).toggleClass('active');">
+                                <em>class 이용하기</em>
+                                <span class="ico-switch"><i class="ico-switch-move"></i></span>
+                            </label>
+                        </div>
+					</dd>
+
+					<dt>기본 정렬</dt>
+					<dd>
+                        <div style="margin-bottom:20px;">
+
+							<ul class="tab_menu_txt">
+								<li class="active"><a href="javascript:void(0);">최신순</a></li>
+								<li><a href="javascript:void(0);">추천순</a></li>
+								<li><a href="javascript:void(0);">조회순</a></li>
+							</ul>
+
+							<script type="text/javascript">
+							$(function(){
+								// 옵션이 같은 경우만 이리 사용
+								$('.tab_menu_txt').cnTab({useConts:'N'});
+							});
+							</script>
+						
+                        </div>
+					</dd>
+
+					<dt>동그란 사진</dt>
+					<dd>
+                        <div style="margin-bottom:20px;width:200px;">
+							<p>이미지 사용 - 50% 50%</p>
+							<div class="circle_img"><img src="//placehold.co/302x142" alt=" "></div>
+
+							<p style="margin-top:10px;">배경 사용 - 50% 0%</p>
+							<div class="circle_img" style="background-image:url('//placehold.co/100x186');"></div>
+						
+                        </div>
+					</dd>
+                </dl>
+            </div>
+        </section>
+        <!-- //@ HTML 컴포넌트영역 -->
+    </main>
+</div>

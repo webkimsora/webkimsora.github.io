@@ -1,0 +1,64 @@
+.prem__guide--box{border-radius: 8px;}
+.prem__guide li{display: flex; gap: 10px; font-size: 15px; color: #121212; line-height: 23px;}
+.prem__guide li::before{content: ""; display: inline-block; background: #121212; width: 3px; height: 3px; border-radius: 50px; margin-top: 8px; margin-left: 8px; flex-shrink: 0;}
+
+.premium_service .prem__consulting .consulting__step .step__wrap{background: var(--prem-background);}
+.premium_service .prem__consulting .consulting__step .step__list{display: flex; align-items:  center; gap: 20px;}
+.premium_service .prem__consulting .consulting__step .step__list .step__item{flex: 1; display: flex; justify-content: center; align-items: center; background: #fff; height: 156px; border-radius: var(--border-radius-l, 12px); text-align: center;}
+.premium_service .prem__consulting .consulting__step .step__list .step__item > div{display: flex; flex-direction: column; justify-content: center; gap: 8px;}
+.premium_service .prem__consulting .consulting__step .step__list .step__item span{align-self: center; background: var(--prem-primary); color: #fff; font-size: 13px; font-weight: 600; width: auto; height: 26px; line-height: 27px; padding: 0 10px; border-radius: 40px;}
+.premium_service .prem__consulting .consulting__main .consulting__filter [class*=filter__tit]{display: flex; align-items: center; align-items: center; gap: 24px;}
+.premium_service .prem__consulting .consulting__main .consulting__filter [class*=filter__tit] [class*=tit__box]{display: flex; align-items: center; gap: 12px;}
+.premium_service .prem__consulting .consulting__main .consulting__filter [class*=filter__tit] [class*=tit__box][class*=--col]{flex-direction: column; align-items: start; text-align: left; gap: 2px;}
+.premium_service .prem__consulting .consulting__main .consulting__filter [class*=filter__tit][class*=--center]{justify-content: center;}
+.premium_service .prem__consulting .consulting__main .consulting__filter .filter__item{display: flex; gap: 20px;}
+.premium_service .prem__consulting .consulting__main .consulting__filter .filter__item .filter__type{flex-shrink: 0; height: 30px; line-height: 30px;}
+.premium_service .prem__consulting .consulting__main .consulting__filter p.filter__item{justify-content: end; margin-top: -4px;}
+.premium_service .prem__consulting .consulting__main .consulting__filter .filter__input{display: flex; align-items: center; gap: 10px; width: 100px;}
+.premium_service .prem__consulting .consulting__main .consulting__filter .filter__input::after{content: "점"; font-size: 20px; font-weight: 700;}
+.premium_service .prem__consulting .consulting__main .consulting__filter .filter__input input{text-align: center; width: 100px;}
+.premium_service .prem__consulting .consulting__main .consulting__filter .filter__btn a{margin: 0 auto;}
+.premium_service .prem__consulting .consulting__main .consulting__filter .filter__btn a i{width: 24px; height: 24px;}
+.premium_service .prem__consulting .consulting__main .consulting__cover{overflow: hidden; position: relative;}
+.premium_service .prem__consulting .consulting__main .consulting__cover::after{content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 1px solid var(--gray-30, #E0E3EB); border-radius: var(--border-radius-l, 12px); box-sizing: border-box; pointer-events: none; z-index: 1;}
+.premium_service .prem__consulting .consulting__main .consulting__cover img{width: 100%;}
+.premium_service .prem__consulting .consulting__main .consulting__cover p{position: absolute; top: 191px; text-align: center; width: 100%; font-weight: 400;}
+.premium_service .prem__consulting .consulting__main .consulting__result .result__chart .chart__tit{display: flex; justify-content: space-between; align-items: center;}
+.premium_service .prem__consulting .consulting__main .consulting__result .result__chart [class*=chart__wrap]{justify-content: start; height: auto;}
+.premium_service .prem__consulting .consulting__main .consulting__result .result__chart [class*=chart__wrap] .chart__point{display: flex; align-items: center; gap: 6px; font-size: 18px; font-weight: 700; line-height: 26px; letter-spacing: -0.18px;}
+.premium_service .prem__consulting .consulting__main .consulting__result .result__chart [class*=chart__wrap] .chart__point > span{display: inline-block; font-size: 14px; height: 26px; line-height: 24px; padding: 0 7.5px 0 6.5px; border: 1px solid #025AF6; border-radius: 40px;}
+.premium_service .prem__consulting .consulting__main .consulting__result .result__chart [class*=chart__wrap] .chart__list{display: flex; flex-wrap: wrap; border-radius: var(--border-radius-m, 8px); overflow: hidden;}
+.premium_service .prem__consulting .consulting__main .consulting__result .result__chart [class*=chart__wrap] .chart__list > .list__item{background: #fff; width: 20%; border-top: 1px solid var(--gray-20, #EDEDF3); margin-top: -1px; justify-content: space-between;}
+.premium_service .prem__consulting .consulting__main .consulting__result .result__chart [class*=chart__wrap] .chart__list > .list__item > ul > li{display: flex; justify-content: space-between; align-items: center; font-size: 14px; height: 35px;}
+.premium_service .prem__consulting .consulting__main .consulting__result .result__chart [class*=chart__wrap] .chart__list > .list__item > ul > li:first-child{height: 43px; border-bottom: 1px solid var(--gray-70, #5C6675);}
+.premium_service .prem__consulting .consulting__main .consulting__result .result__chart [class*=chart__wrap] .chart__list > .list__item > ul > li:not(:first-child) > div:last-child{color: var(--gray-70, #5C6675);}
+.premium_service .prem__consulting .consulting__main .consulting__result .result__chart [class*=chart__wrap] .chart__list > .list__item > ul > li.highlight{color: var(--prem-primary) !important; font-weight: 600;}
+.premium_service .prem__consulting .consulting__main .consulting__result .result__chart [class*=chart__wrap] .chart__list > .list__item > ul > li.highlight > div{color: inherit !important;}
+.premium_service .prem__consulting .consulting__main .consulting__result .result__chart [class*=chart__wrap] .chart__list > .list__item + .list__item{border-left: 1px solid var(--gray-20, #EDEDF3);}
+.premium_service .prem__consulting .consulting__main .consulting__result .result__chart [class*=chart__wrap] .chart__list.hide > .list__item:nth-child(n + 6){display: none;}
+.premium_service .prem__consulting .consulting__main .consulting__result .result__chart [class*=chart__wrap] .chart__more{display: none; justify-content: center; align-items: center; gap: 2px; text-align: center; color: var(--gray-70, #5C6675); font-size: 14px; font-weight: 600; margin-top: -8px;}
+.premium_service .prem__consulting .consulting__main .consulting__result .result__chart [class*=chart__wrap] .chart__more i{width: 15px; height: 15px;}
+.premium_service .prem__consulting .consulting__main .consulting__result .result__chart [class*=chart__wrap] .chart__more i::after{background: var(--gray-70, #5C6675);}
+.premium_service .prem__consulting .consulting__main .consulting__result .result__chart [class*=chart__wrap]:has(.chart__list.hide) .chart__more{display: flex;}
+.premium_service .prem__consulting .consulting__main .consulting__result .result__chart [class*=chart__wrap][class*=--blue]{background: #E7EFFD;}
+.premium_service .prem__consulting .consulting__main .consulting__result .result__chart [class*=chart__wrap][class*=--blue] .chart__list{background: #DBE8FF;}
+.premium_service .prem__consulting .consulting__main .consulting__result .result__chart [class*=chart__wrap][class*=--blue] .chart__point{color: #025AF6;}
+.premium_service .prem__consulting .consulting__main .consulting__result .result__chart [class*=chart__wrap][class*=--blue] .chart__point > span{border-color: #025AF6;}
+.premium_service .prem__consulting .consulting__main .consulting__result .result__chart [class*=chart__wrap][class*=--pink]{background: #FEE6F9;}
+.premium_service .prem__consulting .consulting__main .consulting__result .result__chart [class*=chart__wrap][class*=--pink] .chart__list{background: #FBDFF5;}
+.premium_service .prem__consulting .consulting__main .consulting__result .result__chart [class*=chart__wrap][class*=--pink] .chart__point{color: #E70DB8;}
+.premium_service .prem__consulting .consulting__main .consulting__result .result__chart [class*=chart__wrap][class*=--pink] .chart__point > span{border-color: #E70DB8;}
+.premium_service .prem__consulting .consulting__main .consulting__result .result__chart [class*=chart__wrap][class*=--empty]{background: #F6F6F9 !important;}
+.premium_service .prem__consulting .consulting__main .consulting__result .result__chart [class*=chart__wrap][class*=--empty]::after{content: "합격 가능 직렬이 없습니다."; color: var(--gray-70, #5C6675); font-size: 14px; letter-spacing: -0.14px; height: 287px; line-height: 287px; text-align: center;}
+.premium_service .prem__consulting .consulting__main .consulting__result .result__series{background: var(--prem-background);}
+.premium_service .prem__consulting .consulting__main .consulting__result .result__series .series__table{border-radius: var(--border-radius-l, 12px); overflow: hidden;}
+.premium_service .prem__consulting .consulting__main .consulting__result .result__series .series__table th{background: var(--prem-teritary); font-size: 15px; font-weight: 700; width: 180px;}
+.premium_service .prem__consulting .consulting__main .consulting__result .result__series .series__table td{background: #fff;}
+.premium_service .prem__consulting .consulting__main .consulting__result .result__series .series__table :is(th, td){padding: 20px;}
+.premium_service .prem__consulting .consulting__main .consulting__result .result__series .series__table :is(th, td) span{display: inline-block; background: #fff; color: var(--prem-secondary); font-size: 12px; height: 22px; line-height: 22px; min-width: 37px; padding: 0 6px; border-radius: 50px; vertical-align: 1px; margin-right: 6px; text-align: center;}
+.premium_service .prem__consulting .consulting__main .consulting__result .result__series .series__table tr + tr :is(th, td){border-top: 1px solid var(--gray-20, #EDEDF3);}
+.premium_service .prem__consulting .consulting__main .consulting__result .result__series .series__table .series__col{display: flex; flex-wrap: wrap; gap: 5px 0;}
+.premium_service .prem__consulting .consulting__main .consulting__result .result__series .series__table .series__col > div{width: 33.3333%;}
+.premium_service .prem__consulting .consulting__main .consulting__result .result__series .series__row{display: flex; gap: 16px;}
+.premium_service .prem__consulting .consulting__main .consulting__result .result__series .series__row > div{flex: 1;}
+.premium_service .prem__consulting .consulting__main .consulting__result .result__series .series__txt{background: #fff; flex: 1;}

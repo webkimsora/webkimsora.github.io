@@ -1,0 +1,380 @@
+/* 공통 */
+.premium_service .prem__tit strong{color: var(--prem-primary);}
+.premium_service .prem__tit > div{display: flex; align-items: center;}
+.premium_service .prem__tit > div > p{margin-left: 8px}
+.premium_service .prem__tit p{font-size: 14px; color: var(--text-secondary)}
+.premium_service .prem__tit .prem__tit--split{display: inline-block; background: var(--gray-30); width: 2px; height: 16px; border: 0; margin: 0 14px;}
+.premium_service .prem__tit{display: flex; justify-content: space-between; align-items: center;}
+.prem__guide--box{border-radius: 8px;}
+.prem__guide li{display: flex; gap: 10px; font-size: 15px; color: #121212; line-height: 23px;}
+.prem__guide li::before{content: ""; display: inline-block; background: #121212; width: 3px; height: 3px; border-radius: 50px; margin-top: 8px; margin-left: 8px; flex-shrink: 0;}
+
+/* 기출 진단 평가 메인 */
+.premium_service .rank__area{padding: 30px 0 20px;}
+.premium_service .exam__list{display: flex; flex-direction: column;}
+.premium_service .exam__list > li + li{border-top: 1px solid var(--gray-20);}
+.premium_service .exam__list .list__item{display: flex; justify-content: space-between; align-items: center; height: 80px; gap: 6px;}
+.premium_service .exam__list .list__item .item__info{display: flex; align-items: center; gap: 10px;}
+.premium_service .exam__list .list__item .item__info > strong{display: inline-block; font-size: 16px; font-weight: 700; color: var(--text-primary); flex-shrink: 0;}
+.premium_service .exam__list .list__item .item__info > span{display: inline-block; font-size: 14px; color: var(--text-secondary);}
+.premium_service .exam__list .list__item .item__btns{display: flex; align-items: center; gap: 8px;}
+.premium_service .exam__list .list__item .item__btns > span{font-size: 13px; color: var(--text-secondary); margin-right: 8px; flex-shrink: 0;}
+.premium_service .exam__user .user__info{display: flex; justify-content: space-between; align-items: center; height: 50px;}
+.premium_service .exam__user .user__info .info__data{display: flex; align-items: center; gap: 14px;}
+.premium_service .exam__user .user__info .info__data .avatar{border-radius: 50px; overflow: hidden; flex-shrink: 0; width: 50px; height: 50px;}
+.premium_service .exam__user .user__info .info__data .nickname{width: auto; height: auto; font-size: 15px; font-weight: 700; color: var(--text-primary); word-break: break-all;}
+.premium_service .exam__user .user__info .info__data .nickname::after{position: static; width: 17px; height: 17px; vertical-align: -3px; margin-left: 3px;}
+.premium_service .exam__user .user__info .info__txt{font-size: 14px; color: var(--text-secondary); flex-shrink: 0;}
+.premium_service .exam__side .exam__user .user__history{justify-content: left;}
+.premium_service .exam__user .user__history{display: flex; justify-content: center; align-items: center; background: var(--gray-10); border-radius: 8px; height: 97px; text-align: center;}
+.premium_service .exam__user .user__history.auto{height: auto; padding: 40px 20px;}
+.premium_service .exam__user .user__history p{display: block; font-size: 20px; font-weight: 700; color: var(--text-primary); line-height: 30px;}
+.premium_service .exam__user .user__history span{display: block; font-size: 15px; color: var(--text-secondary); margin-top: 4px; line-height: 23px;}
+.premium_service .exam__user .user__history .empty p{font-size: 16px; line-height: 24px;}
+.premium_service .exam__user .user__history ul{display: flex; flex-direction: column; gap: 7px;}
+.premium_service .exam__user .user__history ul li{display: flex; gap: 8px; text-align: left;}
+.premium_service .exam__user .user__history ul li > span{flex: 1; font-size: 14px; line-height: 19px; color: var(--text-primary); margin: 0;}
+.premium_service .exam__user .user__history ul li > span:first-child{flex: none; flex-shrink: 0; width: 40px; font-weight: 600; color: var(--text-secondary); font-weight: 600;}
+.premium_service .exam__user .user__history ul li > span > a{display: inline-flex; align-items: center; gap: 2px; text-decoration: underline; text-underline-position: under; color: var(--prem-primary); font-weight: 500; margin-left: 6px;}
+.premium_service .exam__user .user__history ul li > span > a i{width: 15px; height: 15px;}
+.premium_service .exam__user .user__history ul li > span > a i::after{background: var(--prem-primary);}
+.premium_service .exam__user .user__btns{display: flex; gap: 10px;}
+.premium_service .exam__user .user__btns a{flex: 1;}
+.premium_service .exam__rank{display: flex; flex-direction: column; gap: 4px;}
+.premium_service .exam__rank .rank__list > li + li{border-top: 1px solid var(--gray-20);}
+.premium_service .exam__rank .rank__list .list__item{display: flex; justify-content: space-between; align-items: center; height: 52px; cursor: default;}
+.premium_service .exam__rank .rank__list .list__item p{font-size: 16px; font-weight: 600; color: var(--text-primary);}
+.premium_service .exam__rank .rank__list .list__item .count{font-size: 15px; color: var(--text-primary);}
+.premium_service .exam__rank .rank__list .list__item > div{display: flex; align-items: center; gap: 10px;}
+.premium_service .exam__rank .rank__list .list__item :is(.rank.up, .rank.down):after{content: ""; display: inline-block; border: 4px solid var(--prem-primary); border-right-color: transparent; border-left-color: transparent; border-top-width: 0; border-bottom-width: 7px;}
+.premium_service .exam__rank .rank__list .list__item .rank{display: flex; justify-content: space-between; align-items: center; font-size: 16px; width: 11px; font-weight: 600; color: var(--prem-primary);}
+.premium_service .exam__rank .rank__list .list__item .rank:is(.up, .down, .keep){width: 27px;}
+.premium_service .exam__rank .rank__list .list__item .rank.up::after{content: "";}
+.premium_service .exam__rank .rank__list .list__item .rank.down:after{transform: rotate(180deg); border-bottom-color: var(--gray-50);}
+.premium_service .exam__rank .rank__list .list__item .rank.keep:after{content: ""; display: inline-block; background: var(--gray-50); width: 6px; height: 2px; margin-top: 2px; margin-right: 1px;}
+
+/* 기출 진단 평가 결과 */
+.premium_service table.prem__chart--result{width: 100%; table-layout: fixed;}
+.premium_service table.prem__chart--result :is(th, td){font-size: 15px; height: 50px;}
+.premium_service table.prem__chart--result th{font-weight: 700;}
+.premium_service table.prem__chart--result :is(thead th, tbody td){padding: 0 24px;}
+.premium_service table.prem__chart--result tbody > tr > *:first-child{border-radius: 8px 0 0 8px;}
+.premium_service table.prem__chart--result tbody > tr > *:last-child{border-radius: 0 8px 8px 0;}
+.premium_service table.prem__chart--result tbody > tr:nth-child(odd) :is(th, td){background: var(--gray-10);}
+.premium_service table.prem__chart--result tbody > tr.highlight :is(th, td){background: var(--prem-background);}
+.premium_service table.prem__chart--result tbody > tr.point td,
+.premium_service table.prem__chart--result tbody > tr td.point{color: var(--prem-secondary) !important;}
+.premium_service table.prem__chart--result tbody > tr td .none{color: var(--gray-50) !important;}
+.premium_service table.prem__chart--result tbody > tr > td :is(.up, .down){display: inline-block; display: flex; align-items: center; gap: 2px;}
+.premium_service table.prem__chart--result tbody > tr > td .down{color: var(--blue-60)}
+.premium_service table.prem__chart--result tbody > tr > td .up:before{content: ""; display: inline-block; border: 4px solid var(--prem-secondary); border-right-color: transparent; border-left-color: transparent; border-top-width: 0; border-bottom-width: 7px;}
+.premium_service table.prem__chart--result tbody > tr > td .down:before{content: ""; display: inline-block; border: 4px solid var(--blue-60); border-right-color: transparent; border-left-color: transparent; border-bottom-width: 0; border-top-width: 7px;}
+.premium_service .prem__exam--chart table.prem__chart--result tbody > tr > th{padding: 0 0 0 40px; width: 170px;}
+.premium_service .prem__exam--result{width: 100%; padding: 32px 24px 32px 10px !important;}
+.premium_service .prem__exam--result h4{margin-bottom: 11px; padding-left: 14px;}
+.premium_service .prem__exam--result .result__review{display: flex; justify-content: space-between; align-items: center; gap: 24px;}
+.premium_service .prem__exam--subject table.prem__chart--result tbody > tr > *:last-child{color: var(--text-secondary, #5C6675);}
+
+.premium_service .prem__exam--result .result__review .review__graph{width: 332px; flex-shrink: 0;}
+.premium_service .prem__exam--result .result__review .review__graph .graph__wrap{position: relative;}
+.premium_service .prem__exam--result .result__review .review__graph .graph__wrap .graph{background: var(--gray-10); width: 242px; height: 121px; position: relative; margin: 0 auto; -webkit-mask-image: url('/un_static/img/common/premium/passmaker/graph_mask.svg'); mask-image: url('/un_static/img/common/premium/passmaker/graph_mask.svg');}
+.premium_service .prem__exam--result .result__review .review__graph .graph__wrap .graph::after{content: ""; position: absolute; top: 100%; left: 0; transform-origin: center top; width: 100%; height: 100%; background: linear-gradient(-105deg, #6101D9 -14.14%, #C800FF 183.02%); mask-image: url('/un_static/img/common/premium/passmaker/graph_mask_flip.svg'); animation: graph__rotate .5s .5s forwards; pointer-events: none;}
+.premium_service .prem__exam--result .result__review .review__graph .graph__wrap .graph__cover{position: absolute; bottom: -5px; left: 0; width: 100%; text-align: center;}
+.premium_service .prem__exam--result .result__review .review__graph .graph__wrap .graph__cover span{display: inline-block; background: var(--prem-background); color: var(--prem-primary); height: 24px; line-height: 24px; padding: 0 8px; font-size: 12px; font-weight: 500; letter-spacing: -0.36px; border-radius: 50px; margin-bottom: 8px;}
+.premium_service .prem__exam--result .result__review .review__graph .graph__wrap .graph__cover strong{display: block; color: var(--text-primary); font-size: 38px; font-weight: 700; height: 46px; line-height: 45.6px; letter-spacing: -0.38px;}
+.premium_service .prem__exam--result .result__review .review__graph .graph__wrap .graph__cover strong::after{content: "점"; color: var(--text-primary); font-size: 18px; font-weight: 600; vertical-align: 3px; margin-left: 2px;}
+.premium_service .prem__exam--result .result__review .review__graph .graph__status{display: flex; align-items: center; margin-top: 25px;}
+.premium_service .prem__exam--result .result__review .review__graph .graph__status > div{flex: auto; text-align: center;}
+.premium_service .prem__exam--result .result__review .review__graph .graph__status > div + div{border-left: 1px solid var(--gray-10);}
+.premium_service .prem__exam--result .result__review .review__graph .graph__status > div > span{font-size: 12px; color: var(--text-secondary); line-height: 18px; letter-spacing: -0.12px;}
+.premium_service .prem__exam--result .result__review .review__graph .graph__status > div > p{font-size: 15px; color: var(--text-secondary); line-height: 23px; letter-spacing: -0.3px; font-weight: 700; color: var(--text-primary); font-weight: 700;}
+.premium_service .prem__exam--result .result__review .review__graph .graph__status > div > p:has(span){color: var(--text-secondary); font-weight: 400;}
+.premium_service .prem__exam--result .result__review .review__graph .graph__status > div > p > span{color: var(--text-primary); font-weight: 700;}
+.premium_service .prem__exam--result .result__review .review__detail{display: flex; gap: 16px; width: 700px;}
+.premium_service .prem__exam--result .result__review .review__detail .detail__card{display: flex; align-items: center; width: 360px; min-height: 184px;}
+.premium_service .prem__exam--result .result__review .review__detail .detail__card > ul{display: flex; flex-direction: column; gap: 10px;}
+.premium_service .prem__exam--result .result__review .review__detail .detail__card > ul > li{font-size: 15px; line-height: 23px;}
+.premium_service .prem__exam--result .result__review .review__detail .detail__card > ul > li > span{font-weight: 700; color: var(--prem-primary);}
+.premium_service .prem__exam--result .result__review .review__detail .detail__card > ul > li > strong{font-weight: 700; color: var(--text-primary);}
+.premium_service .prem__exam--result .result__review .review__detail .detail__guide{flex: 1;}
+.premium_service .prem__exam--result .result__review .review__detail .detail__guide > li{display: flex; justify-content: space-between; align-items: center; height: 46px; gap: 16px;}
+.premium_service .prem__exam--result .result__review .review__detail .detail__guide > li > span{font-size: 14px; color: var(--text-primary); letter-spacing: -0.14px; line-height: 19px;}
+.premium_service .prem__exam--result .result__review .review__detail .detail__guide > li > p{flex-shrink: 0;}
+.premium_service .prem__exam--result .result__review .review__detail .detail__guide > li > p:not(.gray){font-size: 15px; font-weight: 700; background: linear-gradient(105deg, #6101D9 -14.14%, #C800FF 183.02%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; letter-spacing: -0.3px;}
+.premium_service .prem__exam--result .result__review .review__detail .detail__guide > li > p.gray{font-size: 15px; font-weight: 700; color: var(--gray-50);}
+.premium_service .prem__exam--result .result__review .review__detail .detail__guide > li + li{border-top: 1px solid var(--gray-20);}
+.premium_service .prem__exam--chart{width: 100%;}
+.premium_service .prem__exam--chart .prem__tit{margin-bottom: 40px;}
+
+.premium_service .prem__exam--chart .chart__diff{display: flex; align-items: end; gap: 49px; height: 124px; position: relative;}
+.premium_service .prem__exam .prem__exam--chart .chart__diff::before{content: ""; position: absolute; bottom: 100%; left: 0; border-top: 2px dashed #02BFE4; width: 100%; pointer-events: none;}
+.premium_service .prem__exam .prem__exam--chart .chart__diff::after{content: "합격자 평균"; position: absolute; bottom: 100%; left: 0; background: #fff; color: #02BFE4; font-size: 15px; font-weight: 700; height: 33px; line-height: 31px; padding: 0 10px; border: 2px solid #02BFE4; border-radius: 8px; margin-bottom: -16px; box-sizing: border-box; pointer-events: none;}
+.premium_service .prem__exam--chart .chart__diff > div:first-child{flex-shrink: 0;}
+.premium_service .prem__exam--chart .chart__diff .diff__type > li{display: flex; align-items: center; font-size: 15px; color: var(--text-primary); height: 23px; gap: 5px;}
+.premium_service .prem__exam--chart .chart__diff .diff__type > li::before{content: ""; display: inline-block; width: 16px; height: 16px; border-radius: 2px;}
+.premium_service .prem__exam--chart .chart__diff .diff__type > li:nth-child(1)::before{background: var(--prem-secondary);}
+.premium_service .prem__exam--chart .chart__diff .diff__type > li:nth-child(2)::before{background: var(--prem-primary);}
+.premium_service .prem__exam--chart .chart__diff .diff__type > li + li{margin-top: 8px;}
+.premium_service .prem__exam--chart .chart__diff .diff__graph{display: flex; justify-content: space-around; gap: 60px; width: 830px;}
+.premium_service .prem__exam--chart .chart__diff .diff__graph .graph__stick{display: flex; gap: 14px;}
+.premium_service .prem__exam--chart .chart__diff .diff__graph .graph__stick > li{display: flex; align-items: end; background: var(--gray-20); border-radius: 8px; width: 52px; height: 124px; position: relative; overflow: hidden;}
+.premium_service .prem__exam--chart .chart__diff .diff__graph .graph__stick > li:nth-child(1) > div{background: var(--prem-secondary);}
+.premium_service .prem__exam--chart .chart__diff .diff__graph .graph__stick > li:nth-child(2) > div{background: var(--prem-primary);}
+.premium_service .prem__exam--chart .chart__diff .diff__graph .graph__stick > li > div{display: flex; justify-content: center; align-items: start; padding: 13px 0; position: absolute; bottom: 0; left: 0; width: 100%; height: 70%; color: rgba(255, 255, 255, 0.60); line-height: 23px; letter-spacing: -0.28px; text-align: center; border-radius: 8px; font-size: 14px;}
+.premium_service .prem__exam--chart .chart__diff .diff__graph .graph__stick > li > div > span{color: #fff; font-weight: 700;}
+.premium_service .prem__exam--chart .chart__diff .diff__graph .graph__stick > li.small > div{align-items: center;}
+.premium_service .prem__exam--chart .chart__diff:not(.analytics) .diff__graph .graph__stick > li:has(div[style*='height: 0']) > div{background: transparent; align-items: center; color: rgba(0, 0, 0, 0.60); padding: 13px 0;}
+.premium_service .prem__exam--chart .chart__diff:not(.analytics) .diff__graph .graph__stick > li:has(div[style*='height: 0']) > div span{color: #121212;}
+
+.premium_service .prem__exam--chart .chart__diff.analytics{gap: 54px;}
+.premium_service .prem__exam--chart .chart__diff.analytics .diff__graph{gap: 34px; width: auto;}
+.premium_service .prem__exam--chart .chart__diff.analytics .diff__graph .graph__stick{gap: 12px;}
+.premium_service .prem__exam--chart .chart__diff.analytics .diff__graph .graph__stick > li{background: transparent; width: 40px; border-radius: 8px 8px 0 0;}
+.premium_service .prem__exam--chart .chart__diff.analytics .diff__graph .graph__stick > li > div{border-radius: 8px 8px 0 0;}
+.premium_service .prem__exam--chart .chart__diff.analytics .diff__type > li:nth-child(1)::before{background: var(--prem-teritary);}
+.premium_service .prem__exam--chart .chart__diff.analytics .diff__type > li:nth-child(2)::before{background: var(--prem-secondary);}
+.premium_service .prem__exam--chart .chart__diff.analytics .diff__type > li:nth-child(3)::before{background: var(--prem-primary);}
+.premium_service .prem__exam--chart .chart__diff.analytics .diff__graph .graph__stick > li:nth-child(1) > div{background: var(--prem-teritary);}
+.premium_service .prem__exam--chart .chart__diff.analytics .diff__graph .graph__stick > li:nth-child(2) > div{background: var(--prem-secondary);}
+.premium_service .prem__exam--chart .chart__diff.analytics .diff__graph .graph__stick > li:nth-child(3) > div{background: var(--prem-primary);} 
+.premium_service .prem__exam--chart .chart__diff.analytics.graph-4{gap: 35px;}
+.premium_service .prem__exam--chart .chart__diff.analytics.graph-4 .diff__graph{gap: 30px;}
+.premium_service .prem__exam--chart .chart__diff.analytics.graph-4 .diff__graph .graph__stick{gap: 8px;}
+.premium_service .prem__exam--chart .chart__diff.analytics.graph-4 .diff__graph .graph__stick > li{width: 32px;}
+.premium_service .prem__exam--chart .chart__diff.analytics.graph-2,
+.premium_service .prem__exam--chart .chart__diff.analytics.graph-1{gap: 110px;}
+.premium_service .prem__exam--chart .chart__diff.analytics.graph-2 .diff__graph,
+.premium_service .prem__exam--chart .chart__diff.analytics.graph-1 .diff__graph{gap: 98px;}
+.premium_service .prem__exam--chart .chart__diff.analytics.graph-2 + .chart__table tr th:first-child,
+.premium_service .prem__exam--chart .chart__diff.analytics.graph-1 + .chart__table tr th:first-child{width: 210px;}
+
+.premium_service .prem__exam--guide{background: linear-gradient(105deg, #6101D9 -14.14%, #C800FF 183.02%);}
+.premium_service .prem__exam--guide h4{color: #fff;}
+.premium_service .prem__exam--guide .guide__nav{margin: 20px 0 16px;}
+.premium_service [class*=guide__level]{background: rgba(0, 0, 0, 0.12); border-radius: 12px;}
+.premium_service [class*=guide__level] h4{color: #fff;}
+.premium_service [class*=guide__level] .prem__tit > div{gap: .6rem;}
+.premium_service [class*=guide__level] .prem__tit .guide__label{display: flex; align-items: center; gap: 3px; background: #121212; height: 28px; padding: 0 7px; border-radius: 4px; color: #fff; font-weight: 700;}
+.premium_service [class*=guide__level] .prem__tit .guide__label i{width: 15px; height: 15px;}
+.premium_service [class*=guide__level] .prem__tit .guide__label i::after{background: #fff;}
+.premium_service [class*=guide__level] .level__wrap{margin-top: 20px;}
+.premium_service [class*=guide__level] .level__wrap strong{display: block; font-size: 16px; line-height: 25px; font-weight: 700; color: #fff; letter-spacing: -0.48px;}
+.premium_service [class*=guide__level] .level__wrap p{display: block; font-size: 15px; line-height: 23px; color: #fff; letter-spacing: -0.3px; margin-bottom: 8px;}
+.premium_service [class*=guide__level] .level__wrap p > span{font-weight: 700;}
+.premium_service [class*=guide__level] .level__wrap .level__list{display: flex; background: rgba(0, 0, 0, 0.12); border-radius: 12px; height: 40px; line-height: 40px; margin-top: 16px; margin-top: 46px;}
+.premium_service [class*=guide__level] .level__wrap .level__list > li{flex: 1; font-size: 15px; color: #fff; text-align: center; position: relative;}
+.premium_service [class*=guide__level] .level__wrap .level__list > li > div{display: inline-block; position: relative; z-index: 1; width: 100%; height: 100%; overflow: hidden;}
+.premium_service [class*=guide__level] .level__wrap .level__list > li > div > span{position: relative; z-index: 1; opacity: .4;}
+.premium_service [class*=guide__level] .level__wrap .level__list > li + li::before{content: ""; position: absolute; left: 0; top: 50%; transform: translateY(-50%); background: rgba(255, 255, 255, 0.25); width: 1px; height: 20px;}
+.premium_service [class*=guide__level]:not([class*=--bg]) .level__wrap .level__list > li.active > div::before{content: ""; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); background: radial-gradient(41.71% 42.71% at 50% 50%, rgba(202, 58, 255, 0.6) -7.5%, rgba(150, 0, 255, 0) 91%); width: 330px; height: 104px; border-radius: 330px; z-index: 0; pointer-events: none;}
+.premium_service [class*=guide__level] .level__wrap .level__list > li.active::after{content: ""; position: absolute; left: 50%; top: -46px; transform: translateX(-50%); background: url('/un_static/img/common/premium/passmaker/level_label4.png') no-repeat center top / 100% auto; width: 50px; height: 54.5px; z-index: 2;}
+.premium_service [class*=guide__level] .level__wrap .level__list > li:nth-child(2).active::after{background: url('/un_static/img/common/premium/passmaker/level_label3.png') no-repeat center top / 100% auto;}
+.premium_service [class*=guide__level] .level__wrap .level__list > li:nth-child(3).active::after{background: url('/un_static/img/common/premium/passmaker/level_label2.png') no-repeat center top / 100% auto;}
+.premium_service [class*=guide__level] .level__wrap .level__list > li:nth-child(4).active::after{background: url('/un_static/img/common/premium/passmaker/level_label1.png') no-repeat center top / 100% auto;}
+
+/* 진단 */
+.premium_service .prem__exam--guide [class*=guide__level] .level__wrap .level__list > li:nth-child(1).active::after{background: url('/un_static/img/common/premium/passmaker/level_label1.png') no-repeat center top / 100% auto;}
+.premium_service .prem__exam--guide [class*=guide__level] .level__wrap .level__list > li:nth-child(2).active::after{background: url('/un_static/img/common/premium/passmaker/level_label2.png') no-repeat center top / 100% auto;}
+.premium_service .prem__exam--guide [class*=guide__level] .level__wrap .level__list > li:nth-child(3).active::after{background: url('/un_static/img/common/premium/passmaker/level_label3.png') no-repeat center top / 100% auto;}
+.premium_service .prem__exam--guide [class*=guide__level] .level__wrap .level__list > li:nth-child(4).active::after{background: url('/un_static/img/common/premium/passmaker/level_label4.png') no-repeat center top / 100% auto;}
+
+.premium_service [class*=guide__level] .level__wrap .level__list > li.active{font-weight: 700;}
+.premium_service [class*=guide__level] .level__wrap .level__list > li.active > div > span{opacity: 1;}
+.premium_service [class*=guide__level][class*=--bg]{background: linear-gradient(105deg, #6101D9 -14.14%, #C800FF 183.02%);}
+.premium_service [class*=guide__level][class*=--bg] .level__wrap{margin-top: 16px;}
+.premium_service [class*=guide__level][class*=--bg] .level__wrap .level__list{height: 59px;}
+.premium_service [class*=guide__level][class*=--bg] .level__wrap .level__list > li{height: 59px; line-height: normal;}
+.premium_service [class*=guide__level][class*=--bg] .level__wrap .level__list > li > div{display: flex; justify-content: center; align-items: center;}
+.premium_service [class*=guide__level][class*=--bg] .level__wrap .level__list > li > div > div{opacity: .4; position: relative;}
+.premium_service [class*=guide__level][class*=--bg] .level__wrap .level__list > li > div > div > span{display: block; font-size: 13px; font-weight: 400; line-height: 18px;}
+.premium_service [class*=guide__level][class*=--bg] .level__wrap .level__list > li + li::before{height: 39px;}
+.premium_service [class*=guide__level][class*=--bg] .level__wrap .level__list > li.active > div > div{opacity: 1;}
+.premium_service [class*=guide__level][class*=--bg] .level__wrap .level__list > li.active > div::before{content: ""; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); background: radial-gradient(41.71% 42.71% at 50% 50%, rgba(202, 58, 255, 0.6) -27.5%, rgba(150, 0, 255, 0) 91%); width: 280px; height: 104px; border-radius: 330px; z-index: 0; pointer-events: none;}
+
+.premium_service .prem__exam--subject{display: flex; gap: 16px;}
+.premium_service .prem__exam--subject > li{flex: 1;}
+.premium_service .prem__exam--subject > li p{margin-bottom: 16px; font-size: 16px; font-weight: 600; letter-spacing: -0.16px;}
+.premium_service .prem__exam--subject > li table thead th{color: var(--text-secondary);}
+.premium_service .prem__exam--subject > li table :is(th, td){text-align: center;}
+
+/* 기출 모의고사 메인 */
+.premium_service .prem__contents .prem__mock .mock__monthly{overflow: visible;}
+.premium_service .prem__contents .prem__mock .mock__monthly .monthly__tit{margin-bottom:20px; display: flex;align-items: center; gap:0 6px;} 
+.premium_service .prem__contents .prem__mock .mock__monthly .monthly__tit i{width: 28px; height: 28px; border-radius: 100%; background: var(--prem-special);}
+.premium_service .prem__contents .prem__mock .mock__monthly .monthly__tit i:after{background-color:var(--white); width:16.8px; height:16.8px;}
+.premium_service .prem__contents .prem__mock .mock__monthly .monthly__wrap{position:relative; display:inline-block; width:100%;}
+.premium_service .prem__contents .prem__mock .mock__monthly .monthly__slider:not(.swiper){display: flex; gap: 20px; flex-wrap: wrap; overflow: hidden; height: 235px;}
+.premium_service .prem__contents .prem__mock .mock__monthly .monthly__slider:not(.swiper) li{width: 346.6px;}
+.premium_service .prem__contents .prem__mock .mock__monthly .monthly__slider{position: static;}
+.premium_service .prem__contents .prem__mock .mock__monthly .monthly__slider [class*=prem__carousel]::after{background: var(--gray-70);}
+.premium_service .prem__contents .prem__mock .mock__monthly .monthly__slider [class*=prem__carousel][class*=-prev]{left: -51px;}
+.premium_service .prem__contents .prem__mock .mock__monthly .monthly__slider [class*=prem__carousel][class*=-next]{right: -51px;}
+.premium_service .prem__contents .prem__mock .mock__monthly .monthly__slider .monthly__item{display: flex; align-items: center; background: #fff; padding: 0 20px; height: 235px; border-radius: var(--border-radius-l, 12px); overflow: hidden; position: relative; cursor: default;}
+.premium_service .prem__contents .prem__mock .mock__monthly .monthly__slider .monthly__item > div{width: 100%;}
+.premium_service .prem__contents .prem__mock .mock__monthly .monthly__slider .monthly__item .item__month{display: block; font-size: 16px; font-weight: 700; line-height: 19px; letter-spacing: -0.16px; color: var(--text-primary);}
+.premium_service .prem__contents .prem__mock .mock__monthly .monthly__slider .monthly__item .item__tit{display: flex; align-items: center; gap: 2px; margin: 8px 0 16px;}
+.premium_service .prem__contents .prem__mock .mock__monthly .monthly__slider .monthly__item .item__tit strong{font-size: 36px; font-weight: 700; line-height: 43.2px; color: var(--prem-primary); letter-spacing: -0.36px;}
+.premium_service .prem__contents .prem__mock .mock__monthly .monthly__slider .monthly__item .item__label{background: var(--prem-background); color: var(--prem-primary); font-size: 13px; height: 26px; line-height: 26px; padding: 0 10px; border-radius: 50px;}
+.premium_service .prem__contents .prem__mock .mock__monthly .monthly__slider .monthly__item .item__txt{font-size: 15px; line-height: 23px; letter-spacing: -0.3px;}
+.premium_service .prem__contents .prem__mock .mock__monthly .monthly__slider .monthly__item .item__status{display: flex; align-items: center; background: var(--gray-10); height: 47px; border-radius: var(--border-radius-m, 8px); margin-top: 16px; width: 100%;}
+.premium_service .prem__contents .prem__mock .mock__monthly .monthly__slider .monthly__item .item__status > div{flex: 1; display: flex; justify-content: center; align-items: center; gap: 4px; text-align: center; font-size: 14px; color: var(--text-primary); position: relative;}
+.premium_service .prem__contents .prem__mock .mock__monthly .monthly__slider .monthly__item .item__status > div + div:after{content: ""; position: absolute; top: 50%; left: 0; margin-top: -8px; background: var(--gray-30); width: 1px; height: 16px;}
+.premium_service .prem__contents .prem__mock .mock__monthly .monthly__slider .monthly__item .item__status > div > p{color: var(--prem-primary);}
+.premium_service .prem__contents .prem__mock .mock__monthly .monthly__slider .monthly__item .item__status > div > span{color: var(--text-secondary)}
+.premium_service .prem__contents .prem__mock .mock__monthly .monthly__slider .monthly__item.now:before{content: ""; position: absolute; top: 0; right: 0; background: url('/un_static/img/common/premium/passmaker/item_label.svg') no-repeat center top / 54px 54px; width: 54px; height: 54px;}
+.premium_service .prem__contents .prem__mock .mock__monthly .monthly__slider .monthly__item.now:after{content: "NOW"; position: absolute; top: 12px; right: 3px; transform: rotate(45deg) translateZ(0); color: #fff; font-size: 13px; font-weight: 600; letter-spacing: 0; backface-visibility: hidden; -webkit-font-smoothing: subpixel-antialiased; text-shadow: 0px 2px 3px rgba(0, 0, 0, 0.24);}
+.premium_service .prem__contents .exam__side .user__status li + li{border-top: 1px solid var(--gray-20);}
+.premium_service .prem__contents .exam__side .prem__paging{margin-top: 16px;}
+.premium_service .prem__contents .prem__grade .grade__level{display: flex; justify-content: space-between; align-items: center;}
+.premium_service .prem__contents .prem__grade .grade__level .level__graph{width: 278px;}
+.premium_service .prem__contents .prem__grade .grade__level .level__graph img{width: 100%;}
+.premium_service .prem__contents .prem__grade .grade__level .level__list{width: 356px;}
+.premium_service .prem__contents .prem__grade .grade__level .level__list > li{display: flex; align-items: center; gap: 16px; height: 64px; border-radius: 8px; padding: 0 16px; font-size: 14px; font-weight: 500; opacity: .5; color: #333; position: relative;}
+.premium_service .prem__contents .prem__grade .grade__level .level__list > li > img{width: 34px; height: 30px;}
+.premium_service .prem__contents .prem__grade .grade__level .level__list > li span{font-weight: 700; color: #121212; margin-right: 8px;}
+.premium_service .prem__contents .prem__grade .grade__level .level__list > li.active{background: var(--prem-background, #F6F0FF); opacity: 1;}
+.premium_service .prem__contents .prem__grade .grade__level .level__list > li.active::before{content: ""; display: inline-block; position: absolute; left: 0; top: 0; width: 100%; height: 100%; z-index: 1; border: 2px solid var(--prem-primary, #6101D9); border-radius: 8px; box-sizing: border-box; pointer-events: none;}
+.premium_service .prem__contents .prem__grade .grade__level .level__list > li.active::after{content: "내 위치"; display: inline-block; background: linear-gradient(105deg, #6101D9 -14.14%, #C800FF 183.02%); height: 18px; line-height: 19px; padding: 0 5px; font-size: 11px; font-weight: 600; color: #fff; letter-spacing: -0.33px; border-radius: 3px; margin-left: -10px;}
+
+.premium_service .prem__contents .prem__mock .mock__list{display: flex; flex-direction: column; gap: 16px;}
+.premium_service .prem__contents .prem__mock .mock__list .list__item{display: flex; justify-content: space-between; align-items: center; height: 108px; border: 1px solid var(--gray-30); border-radius: var(--border-radius-m, 8px); padding: 0 24px;}
+.premium_service .prem__contents .prem__mock .mock__list .list__item .item__info{display: flex; flex-direction: column; gap: 4px;}
+.premium_service .prem__contents .prem__mock .mock__list .list__item .item__info strong{display: block; width: 100%; height: auto; color: var(--text-primary); font-size: 18px; font-weight: 700; line-height: 26px; letter-spacing: -0.18px;}
+.premium_service .prem__contents .prem__mock .mock__list .list__item .item__info strong::after{position: static; display: inline-block; width: 16px; height: 16px; vertical-align: -2px; margin-left: 4px;}
+.premium_service .prem__contents .prem__mock .mock__list .list__item .item__info p{color: var(--text-primary); font-size: 13px; line-height: 18px; letter-spacing: -0.26px;}
+.premium_service .prem__contents .prem__mock .mock__list .list__item .item__btns{display: flex; align-items: center; gap: 8px;}
+.premium_service .prem__contents .prem__mock .mock__list .list__item .item__btns .btn__auto{width: auto; padding: 0 24px;}
+.premium_service .prem__contents .prem__mock .mock__list.soon .list__item .item__btns .disabled{font-weight: 400; background: var(--gray-30); color: var(--gray-50)}
+.premium_service .prem__contents .prem__mock .mock__notice{background: var(--prem-background);}
+.premium_service .prem__contents .prem__mock .mock__notice p{display: flex; align-items: center; gap: 4px; font-size: 16px; font-weight: 600; letter-spacing: -0.16px; line-height: 24px;}
+.premium_service .prem__contents .prem__mock .mock__notice p i{width: 16px; height: 16px;}
+
+/* 모달 공통 */
+[class*=prem__modal] .cn-modal-main{border-radius: 12px; overflow: hidden;}
+[class*=prem__modal] .cn-modal-close i::after{background: var(--gray-60);}
+[class*=prem__modal] .prem__modal--wrap{font-family: var(--font-pr), sans-serif; padding: 20px 32px 40px;}
+[class*=prem__modal] h4 > span{color: var(--prem-primary);}
+
+/* 기출 진단평가 모달 */
+:is(.prem__modal--exam, .prem__modal--result) .cn-modal-main{width: 1200px;}
+.prem__modal--exam .modal__wrap{display: flex; justify-content: space-between; margin-top: 30px;}
+.prem__modal--exam .modal__wrap .modal__viewer{width: 764px; height: 976px;}
+.prem__modal--exam .modal__wrap .modal__viewer iframe{width: 100%; height: 100%;}
+.prem__modal--exam .modal__wrap .modal__side{width: 348px;}
+.prem__modal--exam .modal__wrap .modal__side .side__btns{display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-top: 20px;}
+.prem__modal--exam .exam__table{border: 1px solid var(--gray-30); border-radius: 8px; overflow: hidden;}
+.prem__modal--exam table{width: 100%; table-layout: fixed; user-select: none;}
+.prem__modal--exam table :is(th, td){border: 1px solid var(--gray-30); text-align: center; height: 44px;}
+.prem__modal--exam table :is(th, td):first-child{border-left: 0;}
+.prem__modal--exam table :is(th, td):last-child{border-right: 0;}
+.prem__modal--exam table thead tr:first-child :is(th, td){border-top: 0;}
+.prem__modal--exam table tbody tr:last-child :is(th, td){border-bottom: 0;}
+.prem__modal--exam table th{font-size: 13px; font-weight: 700; color: #121212;}
+.prem__modal--exam table td{user-select: all;}
+.prem__modal--exam table td > label{display: inline-flex; justify-content: center; align-items: center; width: 100%; height: 100%;}
+
+/* 모의고사 선택 모달 */
+.prem__modal--mock .cn-modal-main{width: 600px;}
+.prem__modal--mock .cn-modal-close{width: 60px; height: 60px;}
+.prem__modal--mock .cn-modal-close i{width: 29px; height: 29px;}
+.prem__modal--mock .cn-modal-close i::after{background: var(--gray-60); width: 100%;}
+.prem__modal--mock .mock__form .mock__col{display: flex; flex-direction: column; gap: 12px;}
+.prem__modal--mock .mock__form .mock__col > div{flex: 1;}
+.prem__modal--mock .mock__form .mock__row{display: flex; gap: 20px;}
+.prem__modal--mock .mock__form > div > strong,
+.prem__modal--mock .mock__form > div > div> strong{color: var(--text-primary, #121212); font-size: 18px; font-weight: 700; line-height: 26px; letter-spacing: -0.18px;}
+.prem__modal--mock .mock__form .prem__layout{flex-wrap: nowrap;}
+.prem__modal--mock .input__label{display: flex; align-items: center; gap: 4px; user-select: none;}
+.prem__modal--mock .modal__scroll{height: 72px; overflow: auto; font-size: 12px; font-weight: 500; color: var(--text-secondary, #5C6675); line-height: 18px;}
+.prem__modal--mock .modal__scroll strong{font-weight: 700;}
+.prem__modal--mock .mock__btn a{width: 180px; margin: 0 auto;}
+
+/* 모의고사 결과 모달 */
+.prem__modal--result  table.prem__chart--mock{width: 100%; table-layout: fixed; text-align: center; border: 1px solid #EDEDF3; border-radius: 8px; overflow: hidden; border-collapse: separate;}
+.prem__modal--result  table.prem__chart--mock thead th{background: #F6F0FF;}
+.prem__modal--result  table.prem__chart--mock thead tr + tr > th{font-size: 14px;}
+.prem__modal--result  table.prem__chart--mock :is(th, td){font-size: 15px; color: #121212; border-left: 1px solid #EDEDF3; border-top: 1px solid #EDEDF3}
+.prem__modal--result  table.prem__chart--mock th{height: 40px;}
+.prem__modal--result  table.prem__chart--mock td{height: 50px;}
+.prem__modal--result  table.prem__chart--mock td.point{color: #C800FF;}
+.prem__modal--result  table.prem__chart--mock thead tr:first-child > *{border-top: 0;}
+.prem__modal--result  table.prem__chart--mock :is(thead, tbody) tr > *:first-child{border-left: 0;}
+.prem__modal--result  table.prem__chart--mock tr:has(th[rowspan]) + tr *:first-child{border-left: 1px solid #EDEDF3;}
+.prem__modal--result  table.prem__chart--mock thead .highlight{background: rgba(232, 214, 255, 0.60); border-color: #E0E3EB !important;}
+.prem__modal--result  table.prem__chart--mock tbody .highlight{background: #F6F6F9;}
+.prem__modal--result  table.prem__chart--mock tbody tr:first-child .highlight{border-top-color: #E0E3EB !important;}
+
+/* 다운로드 모달 */
+.prem__modal--download .cn-modal-main{width: 600px;}
+.prem__modal--download .exam__sheet{display: flex; flex-direction: column; gap: 16px;}
+.prem__modal--download .exam__sheet li a{display: flex; justify-content: space-between; align-items: center; height: 66px; padding: 0 20px; font-size: 18px; font-weight: 700; color: #121212; text-decoration: none !important;}
+.prem__modal--download .exam__sheet li a::after{position: static; background: var(--gray-70); width: 24px; height: 24px; margin: 0;}
+
+/* 애니메이션 */
+@keyframes graph__rotate{
+    from {transform: rotate(0)}
+    to {transform: rotate(var(--graph-rotate, 140deg))}
+}
+
+
+/* 다시보는 모의고사 */
+.premium_service .prem__mock--retry table.prem__chart--result{table-layout: auto;}
+
+.premium_service .prem__mock--retry .prem__exam--chart .chart__diff .diff__type > li:nth-child(1)::before{background: var(--prem-secondary);}
+.premium_service .prem__mock--retry .prem__exam--chart .chart__diff .diff__type > li:nth-child(2)::before{background: var(--prem-primary);}
+
+/* 성적 분석 그래프 .area__personal // 기존 모의고사 그래프에서 css추가 */
+.premium_service .prem__mock--retry .prem__exam--chart .area__personal .chart__diff.analytics{gap:0;}
+.premium_service .prem__mock--retry .prem__exam--chart .area__personal .chart__diff .diff__type{width: 143px; padding: 0 0 0 24px;}
+.premium_service .prem__mock--retry .prem__exam--chart .area__personal .chart__diff.analytics.graph-5 .diff__graph{ gap: 0;}
+.premium_service .prem__mock--retry .prem__exam--chart .area__personal .chart__diff.analytics.graph-5 .diff__graph > div{width: 143px;}
+.premium_service .prem__mock--retry .prem__exam--chart .area__personal .chart__diff.analytics.graph-5 .diff__graph .graph__stick{justify-content: center;}
+.premium_service .prem__mock--retry .prem__exam--chart .area__personal .chart__diff.analytics.graph-5 .diff__graph .graph__stick > li{width: 64px;}
+.premium_service .prem__mock--retry .prem__exam--chart .area__personal .chart__diff.analytics.graph-5 .diff__graph .graph__stick > li > div{background: var(--prem-primary)}
+.premium_service .prem__mock--retry .prem__exam--chart .area__personal .chart__diff.analytics.graph-5 .diff__graph .graph__stick.total > li > div{background: var(--prem-secondary)}
+.premium_service .prem__mock--retry .prem__exam--chart .area__personal table.prem__chart--result tbody > tr > th{width: 143px; padding: 0 0 0 24px;}
+.premium_service .prem__mock--retry .prem__exam--chart .area__personal table.prem__chart--result tbody > tr > td:not(:last-child){width: 143px;}
+.premium_service .prem__mock--retry .prem__exam--chart .area__personal table.prem__chart--result :is(thead th, tbody td){text-align: center; padding: 0;}
+.premium_service .prem__mock--retry .prem__exam--chart .area__personal table.prem__chart--result :is(thead th, tbody td):last-child{padding-right: 30px;}
+
+/* 과목별 평균 그래프 .area__average // 기존 모의고사 그래프에서 css추가 */
+.premium_service .prem__mock--retry .prem__exam--chart .area__average .chart__diff .diff__type{width: 167px; padding: 0 0 0 24px;}
+.premium_service .prem__mock--retry .prem__exam--chart .area__average .chart__diff.analytics.graph-5 {gap: 0;}
+.premium_service .prem__mock--retry .prem__exam--chart .area__average .chart__diff.analytics.graph-5 .diff__graph{gap: 0;}
+.premium_service .prem__mock--retry .prem__exam--chart .area__average .chart__diff.analytics.graph-5 .diff__graph > div{width: 167px;}
+.premium_service .prem__mock--retry .prem__exam--chart .area__average .chart__diff.analytics.graph-5 .diff__graph .graph__stick{justify-content: center;}
+.premium_service .prem__mock--retry .prem__exam--chart .area__average .chart__diff.analytics.graph-5 .diff__graph .graph__stick{gap: 14px;}
+.premium_service .prem__mock--retry .prem__exam--chart .area__average .chart__diff.analytics.graph-5 .diff__graph .graph__stick > li{width: 52px;}
+.premium_service .prem__mock--retry .prem__exam--chart .area__average table.prem__chart--result tbody > tr > th{width: 167px; padding: 0 0 0 24px;}
+.premium_service .prem__mock--retry .prem__exam--chart .area__average table.prem__chart--result tbody > tr > td:not(:last-child){width: 167px;}
+.premium_service .prem__mock--retry .prem__exam--chart .area__average table.prem__chart--result :is(thead th, tbody td){text-align: center; padding: 0;}
+.premium_service .prem__mock--retry .prem__exam--chart .area__average table.prem__chart--result :is(thead th, tbody td):last-child{padding-right: 30px;}
+.premium_service .prem__mock--retry .prem__exam--chart .area__average .chart__diff.analytics .diff__type > li:nth-child(1)::before{background: var(--prem-secondary);}
+.premium_service .prem__mock--retry .prem__exam--chart .area__average .chart__diff.analytics .diff__type > li:nth-child(2)::before{background: var(--prem-primary);}
+.premium_service .prem__mock--retry .prem__exam--chart .area__average .chart__diff.analytics .diff__graph .graph__stick > li:nth-child(1) > div{background: var(--prem-secondary);}
+.premium_service .prem__mock--retry .prem__exam--chart .area__average .chart__diff.analytics .diff__graph .graph__stick > li:nth-child(2) > div{background: var(--prem-primary);} 
+
+.prem__mock--retry .explanation__list .explanation__download{display: flex; align-items: center; gap: 2px}
+.prem__mock--retry .explanation__list .explanation__download i.prem__ico--download_line{width: 16px; height: 16px;}
+.prem__mock--retry .explanation__list .explanation__download i.prem__ico--download_line::after{background-color: var(--prem-primary)}
+.prem__mock--retry .explanation__list .explanation__teacher{display: flex; flex-wrap: wrap; gap: 10px;}
+.prem__mock--retry .explanation__list .explanation__teacher li{border-radius: var(--border-radius-m, 8px); border: 1px solid var(--gray-30, #E0E3EB); background: var(--white, #FFF); width: calc((100% - 30px)/ 4)}
+.prem__mock--retry .explanation__list .explanation__teacher li a{display: flex; width: 100%; height:50px; justify-content: center; align-items: center;}
+
+/* 재응시 모달 // 기존 모달에서 css 추가*/
+.prem__modal--exam.exam__retry .modal__wrap .modal__viewer{height: 960px;}
+.prem__modal--exam.exam__retry .exam__timer{border-radius: var(--border-radius-m, 8px); border: 1px solid var(--red-60, #E81A17); background: var(--red-10, #FDE7E7); display: flex; justify-content: center; align-items: center; gap: 8px; height: 44px; margin-bottom: 12px;  color: var(--red-60, #E81A17)}
+.prem__modal--exam.exam__retry table :is(th, td){height: 40px;}
+.prem__modal--exam.exam__retry table input[type=radio]{width: 18px; height: 18px;}
+
+/* 다운로드 모달 */
+.prem__modal--explanation .cn-modal-main{width: 600px;}
+.prem__modal--explanation .exam__sheet{display: flex; flex-direction: column; gap: 16px;}
+.prem__modal--explanation .exam__sheet li a{display: flex; justify-content: space-between; align-items: center; height: 66px; padding: 0 20px; font-size: 18px; font-weight: 700; color: #121212; text-decoration: none !important;}
+.prem__modal--explanation .exam__sheet li a::after{position: static; background: var(--gray-70); width: 24px; height: 24px; margin: 0;}
+
+/* 재응시 컨펌모달 */
+.prem__modal--confirm .cn-modal-main{width: 316px;}
+.prem__modal--confirm .cn-modal-main .prem__modal--wrap{padding: 20px 0 4px; text-align: center;}
+.prem__modal--confirm .cn-modal-main .modal__btns{display: flex; border: 1px solid #EDEDF3; border-width: 1px 0;}
+.prem__modal--confirm .cn-modal-main .modal__btns a {height: 50px; flex: 1;}

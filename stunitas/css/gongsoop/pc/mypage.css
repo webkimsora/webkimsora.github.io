@@ -1,0 +1,6 @@
+.sp__mypage .mypage__tit{padding-top: 20px;}
+.sp__mypage .mypage__info{display: flex; flex-wrap: wrap;}
+.sp__mypage .mypage__info > div{display: flex; width: 50%;}
+.sp__mypage .mypage__info > div > span{padding: 10px 24px;}
+.sp__mypage .mypage__info > div > span:first-child{width: 120px; flex-shrink: 0;}
+.sp__mypage .mypage__info > div > span:last-child{flex: 1;}

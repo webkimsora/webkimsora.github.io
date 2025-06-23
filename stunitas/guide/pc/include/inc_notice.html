@@ -1,0 +1,38 @@
+<div class="cn-notice active">
+    <strong class="cn-notice-head ico ico_arrow_down_thin">유의사항</strong>
+    <div class="cn-notice-body" style="display: block;">
+        <div class="inner-wrap">
+            <div class="notice-wrap">
+                <ul class="notice_nav">
+                    <li class="active"><span>[공단기]<br />9급 24대비 0원<br />프리패스</span></li>
+                    <li><span>[공단기]<br />9급 24대비 0원<br />프리패스[공단기]<br />9급 24대비 0원<br />프리패스[공단기]<br />9급 24대비 0원<br />프리패스</span></li>
+                    <li><span>Tab 2</span></li>
+                    <li><span>Tab 3</span></li>
+                    <li><span>Tab 4</span></li>
+                    <li><span>Tab 5</span></li>
+                    <li><span>Tab 6</span></li>
+                    <li><span>Tab 7</span></li>
+                </ul>
+                <ul class="notice_tab">
+                    <li class="active"><span>[공단기]<br />9급 24대비 0원<br />프리패스</span></li>
+                    <li><span>Tab 1</span></li>
+                    <li><span>Tab 2</span></li>
+                    <li><span>Tab 3</span></li>
+                    <li><span>Tab 4</span></li>
+                    <li><span>Tab 5</span></li>
+                    <li><span>Tab 6</span></li>
+                    <li><span>Tab 7</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(function(){
+        $('.cn-notice .cn-notice-head').click(function(){
+            $(this).parent().toggleClass('active').find('.cn-notice-body').stop().slideToggle()
+        });
+        
+        $('.notice_nav').cnTab()
+    })
+</script>

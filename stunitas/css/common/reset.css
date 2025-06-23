@@ -1,0 +1,30 @@
+@charset "utf-8";
+
+/* Reset */
+body, button, code, dd, div, dl, dt, fieldset, form, h1, h2, h3, h4, h5, h6, input, legend, li, ol, p, pre, select, td, textarea, th, blockquote, ul{margin:0;padding:0}
+h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:700; text-transform: none;}
+body{text-align:left; word-break:break-word;}
+img,fieldset,iframe{border:0 none}
+li{list-style:none}
+input,select,button{vertical-align:middle}
+img{vertical-align:top}
+i,em,address{font-style:normal}
+label,button{cursor:pointer}
+a{text-decoration:none; color: inherit; }
+a:hover, a:active{text-decoration:underline;text-underline-position:under; }
+/* input:checked[type=checkbox] {-webkit-appearance:checkbox} */
+/* html input[type=button], input[type=email], input[type=password], input[type=reset], input[type=submit], input[type=tel], input[type=text] {-webkit-appearance:none;border-radius:0; border: none;} */
+input {-webkit-appearance:none;border-radius:0; border: none;}
+input::placeholder, textarea::placeholder {color: #C5CBD3;}
+table{border-collapse:collapse;border-spacing:0}
+caption{font-size:0; line-height:0; height:0}
+textarea{resize:none;}
+summary{display:list-item;}
+video {display: block;}
+* {box-sizing:border-box;}
+*:focus {outline: none;}
+
+button {border:none; appearance:none; -webkit-appearance:none; background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;}
+button, button:focus,button:active{padding: 0;}
+address, caption, cite, code, dfn, em, var {font-style:normal;}
+

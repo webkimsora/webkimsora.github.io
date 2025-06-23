@@ -1,0 +1,22 @@
+<?
+$index = $_GET["index"]; 
+?>
+<section class="sec-gnb-tit scroll_ani _gnb_depth01 _type_side">
+    <div class="inner-wrap">
+        <div class="btn-wrap _left">
+            <button type="button" class="ico ico_arrow_line _left"><span class="skip">이전</span></button>
+        </div>
+
+        <div class="gnb-tit"><h2>이벤트</h2></div>
+    </div>
+</section>
+
+<aside class="header-sticky">
+    <nav class="gnb-nav _gnb_depth02">
+        <ul class="gnb-nav-slider _line" data-index="<?= $index ?>">
+            <li><a href="?index=0">진행중인 이벤트</a></li>
+            <li><a href="?index=1">찜한 이벤트</a></li>
+            <li><a href="?index=2">종료된 이벤트</a></li>
+        </ul>
+    </nav>
+</aside>

@@ -1,0 +1,407 @@
+<link rel="stylesheet" href="/css/document.css"/>
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/highlight.min.js"></script>
+<script src="/js/document.js"></script>
+
+<style>
+    .ex_slider .swiper-slide{background: #eee; text-align: center; padding: 50px 0;}
+    .thumbnail_slide{position: relative;}
+    .thumbnail_slide .ex_slider .swiper-slide{padding: 0; font-size: 0;}
+    .thumbnail_slide .thumbnail{position: absolute; left: 0; bottom: 0; width: 100%; padding: 10px 0; background: rgba(0, 0, 0, .6); z-index: 1; text-align: center;}
+    .thumbnail_slide .thumbnail .nav{display: inline-block;}
+    .thumbnail_slide .nav ul > li{padding: 0; width: 70px; height: 70px; border: 0; opacity: .5; margin: 0 5px; filter: grayscale(1);}
+    .thumbnail_slide .nav ul > li.active{opacity: 1; filter: none;}
+
+    .nav ul{margin: 0; padding: 0;}
+    .nav ul > li{list-style: none; text-align: center; border-bottom: 2px solid #ddd; padding: 15px 0; color: #bbb; font-weight: 700; width: 33.3333%; float: left; user-select: none; cursor: pointer;}
+    .nav ul > li.active{border-color: #000; color: #000;}
+    .nav2 ul > li{width: auto !important; padding: 15px;}
+    .document .flex_box .ico:after{height: 100%;}
+
+</style>
+<?
+    include('skin/pub/layout/pc/document/inc_document_lnb.html');
+?>
+<div class="document">
+    <main>
+        <nav>
+            <a href="../index">< 목록</a>
+            <h2>슬라이더 <span>사용하기</span></h2>
+            <ul>
+                <li data-target="#ex"><a href="javascript:;" onClick="goPage('#ex', null, 100)">Example</a></li>
+                <li data-target="#options"><a href="javascript:;" onClick="goPage('#options', null, 100)">Options</a></li>
+            </ul>
+        </nav>
+    
+        <section>
+            <h3>기본 사용법</h3>
+            <p>
+                슬라이드는 기본적으로 <a href="https://swiperjs.com/swiper-api" target="_blank">swiper</a>를 사용하기 때문에 CSS와 스크립트 파일을 불러오는 것은 필수 입니다.<br />
+
+				<b>현재 기본 header 에 적용되어 있습니다.</b><br>
+				클래스로 제어해야함.<br>
+				같은 속성으로 사용하면 같은 클래스로 연결
+            </p>
+<del>
+<pre><code class="language-html"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+</code></pre></del>
+        </section>
+
+        <section id="ex">
+            <section>
+                <h3>슬라이더 사용하기</h3>
+                <p>
+                    슬라이더 플러그인을 적용하면 자동으로 swiper구조를 생성하여 슬라이드를 적용합니다.
+                    아래 예제를 보고 필요한 기본 구조를 확인해주세요.
+                </p>
+                <div class="ex_slider ex_slider1">
+                    <div>슬라이드 1</div>
+                    <div>슬라이드 2</div>
+                    <div>슬라이드 3</div>
+                </div>
+
+                <div class="flex_box">
+                    <div>
+<pre><code class="language-html"><!-- 필수 기본 구조 -->
+<div class="ex_slider ">
+    <div>슬라이드 1</div>
+    <div>슬라이드 2</div>
+    <div>슬라이드 3</div>
+</div>
+</code></pre>
+<pre><code class="language-js">$ ('.ex_slider').cnSlider();</code></pre>
+                    </div>
+                    <div class="ico ico_new_arrow_right"></div>
+                    <div>
+<pre><code class="language-html"><!-- 구조 자동 생성 -->
+<div class="swiper ex_slider">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">슬라이드 1</div>
+        <div class="swiper-slide">슬라이드 2</div>
+        <div class="swiper-slide">슬라이드 3</div>
+    </div>
+</div>
+
+...
+</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h3>컨트롤과 함께 사용하기</h3>
+                <p>
+                    컨트롤을 추가하려면 따로 html을 추가할 필요 없이 옵션에서 활성화만 하면 자동으로 추가됩니다. <span>pager: true</span>와 <span>controls: true</span> 옵션을 이용해보세요.<br />
+                    컨트롤에 클래스를 추가해야할 경우 <span>pagerClassName</span>과 <span>controlsClassName</span> 설정으로 추가할 수 있습니다.
+                </p>
+
+                <div class="ex_slider ex_slider5">
+                    <div>슬라이드 1</div>
+                    <div>슬라이드 2</div>
+                    <div>슬라이드 3</div>
+                </div>
+<pre><code class="language-js">$ ('#ex_slider').cnSlider({
+    pager: true,
+    pagerClassName: 'custom-pager', 
+    controls: true, 
+    controlsClassName: 'custom-control' // 각각 [custom-control]-prev와 [custom-control]-next가 추가됨
+});
+</code></pre>
+            </section>
+
+            <section>
+                <h3>탭과 함께 사용하기</h3>
+                <p>
+                    nav속성을 사용하면 탭과 함께 사용할 수 있으며, 이 속성은 스와이퍼의 <a href="https://swiperjs.com/swiper-api#thumbs" target="_blank">thumbs</a>속성을 사용합니다.<br />
+                    nav로 지정한 엘리먼트 또한 자동으로 구조가 변경됩니다. 또한 각 버튼은 네이게이션 갯수에 맞추어 자동으로 너비가 맞추어집니다. <br />
+                </p>
+
+                <ul class="nav nav1">
+                    <li>메뉴1</li>
+                    <li>메뉴2</li>
+                    <li>메뉴3</li>
+                </ul>
+
+                <div class="ex_slider ex_slider2">
+                    <div>슬라이드 1</div>
+                    <div>슬라이드 2</div>
+                    <div>슬라이드 3</div>
+                </div>
+
+<pre><code class="language-html"><!-- 네비게이션 기본 구조 -->
+<ul class="slide_nav ">
+    <li>메뉴1</li>
+    <li>메뉴2</li>
+    <li>메뉴3</li>
+</ul>
+
+<!-- 슬라이드 영역 -->
+<div class="ex_slider ">
+    <div>슬라이드 1</div>
+    <div>슬라이드 2</div>
+    <div>슬라이드 3</div>
+</div>
+</code></pre>
+<pre><code class="language-js">$ ('.ex_slider').cnSlider({
+    nav: '.slide_nav',
+});
+</code></pre>
+            </section>
+
+            <section>
+                <h3>슬라이드 메뉴 사용하기</h3>
+                <p>
+                    nav 속성을 사용하면 스와이프(allowTouchMove)가 비활성화되기 때문에 이 속성을 활성화 해주어야 스와이프가 동작합니다.<br />
+                    네이게이션 버튼 또한 자동으로 너비가 맞추어지기 때문에 slidesPerView 속성을 'auto'로 변경하고 간격을 CSS로 조정합니다.
+                </p>
+
+                <ul class="nav nav2">
+                    <li>엄청 많이 긴 메뉴 이름</li>
+                    <li>짧은 메뉴 이름</li>
+                    <li>중간 길이 메뉴 이름</li>
+                    <li>엄청 많이 긴 메뉴 이름</li>
+                    <li>짧은 메뉴 이름</li>
+                    <li>중간 길이 메뉴 이름</li>
+                    <li>엄청 많이 긴 메뉴 이름</li>
+                    <li>짧은 메뉴 이름</li>
+                    <li>중간 길이 메뉴 이름</li>
+                </ul>
+
+                <div class="ex_slider ex_slider3">
+                    <li>엄청 많이 긴 메뉴 탭</li>
+                    <li>짧은 메뉴 탭</li>
+                    <li>중간 길이 메뉴 탭</li>
+                    <li>엄청 많이 긴 메뉴 탭</li>
+                    <li>짧은 메뉴 탭</li>
+                    <li>중간 길이 메뉴 탭</li>
+                    <li>엄청 많이 긴 메뉴 탭</li>
+                    <li>짧은 메뉴 탭</li>
+                    <li>중간 길이 메뉴 탭</li>
+                </div>
+
+<pre><code class="language-html"><!-- 네비게이션 기본 구조 -->
+<ul class="slide_nav ">
+    <li>엄청 많이 긴 메뉴 이름</li>
+    <li>짧은 메뉴 이름</li>
+    <li>중간 길이 메뉴 이름</li>
+    ...
+</ul>
+
+<!-- 슬라이드 영역 -->
+<div class="ex_slider ">
+    <li>엄청 많이 긴 메뉴 탭</li>
+    <li>짧은 메뉴 탭</li>
+    <li>중간 길이 메뉴 탭</li>
+    ...
+</div>
+</code></pre>
+<pre><code class="language-js">$('.ex_slider').cnSlider({
+    nav: '.slide_nav',
+    navOptions: {
+        slidesPerView: 'auto'
+    },
+    swiperOptions: {
+        allowTouchMove: true
+    }
+});
+</code></pre>
+            </section>
+
+            <section>
+                <h3 style="margin-bottom: 1em;">썸네일 슬라이드 사용하기</h3>
+
+                <div class="thumbnail_slide">
+                    <div class="ex_slider ex_slider4">
+                        <li><img src="https://picsum.photos/1000/450?random=1" alt="" width="1000" height="450"></li>
+                        <li><img src="https://picsum.photos/1000/450?random=2" alt="" width="1000" height="450"></li>
+                        <li><img src="https://picsum.photos/1000/450?random=3" alt="" width="1000" height="450"></li>
+                        <li><img src="https://picsum.photos/1000/450?random=4" alt="" width="1000" height="450"></li>
+                    </div>
+                    <div class="thumbnail">
+                        <ul class="nav nav3">
+                            <li style="background: url('https://picsum.photos/1000/450?random=1') no-repeat center center / cover"></li>
+                            <li style="background: url('https://picsum.photos/1000/450?random=2') no-repeat center center / cover"></li>
+                            <li style="background: url('https://picsum.photos/1000/450?random=3') no-repeat center center / cover"></li>
+                            <li style="background: url('https://picsum.photos/1000/450?random=4') no-repeat center center / cover"></li>
+                        </ul>
+                    </div>
+                </div>
+
+<pre><code class="language-html"><style>...</style>
+
+<div class="thumbnail_slider_wrap">
+    <div class="main_slider">
+        <li>...</li>
+    </div>
+
+    <div class="thumbnail">
+        <ul class="nav thumb_slider">
+            <li>...</li>
+        </ul>
+    </div>
+</div>
+
+<script>
+    $('#main_slider').cnSlider({
+        nav: '.thumb_slider',
+        navOptions: {
+            slidesPerView: 'auto'
+        },
+        swiperOptions: {
+            allowTouchMove: true,
+            loop: true
+        }
+    });
+</script>
+</code></pre>
+            </section>
+            
+        </section>
+
+        <section id="options">
+            <h3>Options</h3>
+            <table>
+                <colgroup>
+                    <col width="16.6666%" />
+                    <col width="16.6666%" />
+                    <col width="16.6666%" />
+                    <col width="50%" />
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Default</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr id="mode">
+                        <th>swiperOptions</th>
+                        <td>objects</td>
+                        <td>{}</td>
+                        <td>
+                            <p>
+                                기존 swiper의 옵션을 설정합니다. 옵션은 <a href="https://swiperjs.com/swiper-api" target="_blank">여기</a>에서 확인 가능합니다.
+                            </p>
+<pre><code class="language-js">$('#ex_slider').cnSlider({
+    swiperOptions: {
+        // swiper options
+        autoplay: {
+            delay: 5000,
+        },
+        loop: true,
+    }
+})
+</code></pre>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th>pager</th>
+                        <td>boolean</td>
+                        <td>false</td>
+                        <td>페이징 사용 여부를 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <th>pagerClassName</th>
+                        <td>string</td>
+                        <td>-</td>
+                        <td>페이징 버튼에 커스텀 클래스를 추가할 수 있습니다.</td>
+                    </tr>
+                    <tr>
+                        <th>controls</th>
+                        <td>boolean</td>
+                        <td>false</td>
+                        <td>컨트롤 사용 여부를 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <th>controlsClassName</th>
+                        <td>string</td>
+                        <td>
+                            [className]-prev,<br />
+                            [className]-next,
+                        </td>
+                        <td>
+                            컨트롤 버튼에 커스텀 클래스를 추가할 수 있습니다.
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>nav</th>
+                        <td>string</td>
+                        <td>-</td>
+                        <td>
+                            <p>스와이퍼의 <a href="https://swiperjs.com/swiper-api#thumbs" target="_blank">thumbs</a>속성을 클래스명만 입력하여 간단하게 설정할 수 있습니다.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>navOptions</th>
+                        <td>objects</td>
+                        <td>{}</td>
+                        <td>
+                            <p>
+                                스와이퍼의 thumbs 속성을 여기에서 추가할 수 있습니다.
+                            </p>
+<pre><code class="language-js">$('#ex_slider').cnSlider({
+    nav: '.ex_nav',
+    navOptions: {
+        // nav(thumbs) options
+        slidesPerView: 'auto'
+    }
+})
+</code></pre>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+</div>
+
+<script>
+    $(function(){
+        $('.ex_slider1').cnSlider({
+            swiperOptions: {
+                loop: true,
+            }
+        });
+
+        $('.ex_slider2').cnSlider({
+            nav: '.nav1',
+            swiperOptions: {
+                loop: true,
+            }
+        });
+
+        $('.ex_slider3').cnSlider({
+            nav: '.nav2',
+            navOptions: {
+                slidesPerView: 'auto'
+            },
+            swiperOptions: {
+                allowTouchMove: true,
+            }
+        });
+
+        $('.ex_slider4').cnSlider({
+            nav: '.nav3',
+            navOptions: {
+                slidesPerView: 'auto'
+            },
+            swiperOptions: {
+                allowTouchMove: true,
+                loop: true
+            }
+        });
+
+        $('.ex_slider5').cnSlider({
+            pager: true,
+            controls: true,
+            controlsClassName: 'custom-control',
+            pagerClassName: 'custom-pager',
+            swiperOptions: {
+                allowTouchMove: true,
+                loop: true
+            },
+        });
+    })
+</script>

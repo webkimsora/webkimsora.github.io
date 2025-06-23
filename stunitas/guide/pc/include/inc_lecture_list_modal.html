@@ -1,0 +1,151 @@
+<!-- 강좌 스타일 -->
+<link rel="stylesheet" href="<?= UN_STATIC ?>/css/common/lecture.css?<?=time()?>">
+
+<!-- 강좌/교재명 클릭 모달 -->
+<div class="prev_modal lecture">
+    <div class="modal_content">
+        <!-- 목자 리스트 -->
+        <div class="lecture_group_wrap">
+            <ul class="lecture_group lecture_prev">
+                <li>
+                    <div class="list_head"><strong>강좌</strong></div>
+                    <div class="list_body">
+                        <ul>
+                            <li>
+                                <div class="body_left">
+                                    <div class="body_ct">[이론압축] 2023 신용한 행정학 STEP3.압축정리:[합격의 24시간][이론압축] 2023 신용한 행정학 STEP3.압축정리:[합격의 24시간][이론압축] 2023 신용한 행정학 STEP3.압축정리:[합격의 24시간] </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="body_left">
+                                    <div class="body_ct">[파이널] 2023 신용한 행정학 STEP 4:(1)약점공략 기출변형 모의고사 </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="body_left">
+                                    <div class="body_ct">[파이널] 2023 신용한 행정학 STEP 5:지방직 모의고사[지9모]</div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </li> 
+                <li>
+                    <div class="list_head"><strong>교재</strong></div>
+                    <div class="list_body">
+                        <ul>
+                            <? for($j=1; $j < 4; $j++){ ?>
+                            <li>
+                                <div class="body_left">
+                                    <div class="body_ct">
+                                        <div class="label_wrap">
+                                            <span>교재set</span>
+                                            <span>교재</span>
+                                        </div>
+                                        2023 이유진 국어 백일기도 모의고사 ① (기본유형)
+                                    </div>
+                                </div>
+                            </li>
+                            <? } ?>
+                        </ul>
+                    </div>
+                </li> 
+            </ul>
+        </div>
+        <!-- // 목자 리스트 -->
+        <div class="prev_btn">
+            <a href="javascript:void(0);" class="btn-h48"><span>강좌 상세 바로가기</span></a>
+        </div>
+    </div>
+</div>
+<!-- // 강좌/교재명 클릭 모달 -->
+
+<!-- 강좌 OT/맛보기 모달 -->
+<div class="prev_modal ot">
+    <div class="modal_content">
+        <!-- 목자 리스트 -->
+        <div class="lecture_group_wrap">
+            <ul class="lecture_group">
+                <li>
+                    <div class="list_head"><strong>OT</strong></div>
+                    <div class="list_body">
+                        <ul>
+                            <li>
+                                <a href="javascript:void(0);">
+                                    <div class="body_left">
+                                        <span>1강</span>
+                                        <div class="body_ct">[1일차 1강] key 01 정치와 행정 （합격노트 p.17~25 / 비행기 p.16~38）</div>
+                                    </div>
+                                    <div class="body_right">
+                                        <span>74분 21초</span>
+                                        <span class="ico ico_circle_play"></span>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li> 
+                <li>
+                    <div class="list_head"><strong>맛보기</strong></div>
+                    <div class="list_body">
+                        <ul>
+                            <? for($j=1; $j < 3; $j++){ ?>
+                            <li>
+                                <a href="javascript:void(0);">
+                                    <div class="body_left">
+                                        <span><?=$j?>강</span>
+                                        <div class="body_ct">[1일차 1강] key 01 정치와 행정 （합격노트 p.17~25 / 비행기 p.16~38）</div>
+                                    </div>
+                                    <div class="body_right">
+                                        <span>74분 21초</span>
+                                        <span class="ico ico_circle_play"></span>
+                                    </div>
+                                </a>
+                            </li>
+                            <? } ?>
+                        </ul>
+                    </div>
+                </li> 
+            </ul>
+        </div>
+        <!-- // 목자 리스트 -->
+    </div>
+</div>
+<!-- // 강좌 OT/맛보기 모달 -->
+
+<!-- 구매하기 모달 -->
+<div class="cart_modal">
+    <div class="modal_content">
+        <?php 
+            $isModal = true;
+            include('skin/pub/layout/pc/include/inc_cart.html');
+        ?>
+    </div>
+</div>
+<!-- // 구매하기 모달 -->
+
+
+<script>
+    // 강좌/교재 미리보기 모달
+    $('.btn_prev_lec').cnModal({
+        modalTarget: '.prev_modal.lecture',
+        head: '강좌/교재 미리보기'
+    });
+
+    // OT/맛보기 모달
+    $('.btn_prev_ot').cnModal({
+        modalTarget: '.prev_modal.ot',
+        head: '이 강좌의 핵심 내용 미리 보기'
+    });
+
+    // 내 강의실 담기 모달
+    // const addModal = $('.btn_add').cnModal({
+    //     modalTarget: '.add_modal',
+    //     head: '내 강의실담기'
+    // });
+
+    // 상품 구매하기 모달
+    const cardModal = $('.btn_cart').cnModal({
+        modalTarget: '.cart_modal',
+        head: '상품 구매하기'
+    });
+</script>

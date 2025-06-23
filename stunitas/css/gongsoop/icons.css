@@ -1,0 +1,40 @@
+/* @ svg아이콘 */
+[class*=sp__ico--]{position: relative; display: inline-block;}
+[class*=sp__ico--]::after, [class*=sp__level]::after{content: ""; position: absolute; left: 0; right: 0; top: 0; bottom: 0; margin: auto; display: inline-block; background-color: var(--icon-primary); width: 100%; height: 100%; -webkit-mask-size: 100%; mask-repeat: no-repeat; -webkit-mask-repeat: no-repeat; mask-position: center; -webkit-mask-position: center;}
+.sp__ico--static::after{position: static; width: 12px; height: 12px; margin: 0; flex-shrink: 0;}
+i[class*=sp__ico--]{width: 24px; height: 24px;}
+i.sp__ico--dot{width: 6px; height: 12px;}
+
+.sp__ico--new::after{background: transparent url('/gongsoop/img/icon/icon_new_label.png') no-repeat center center / 100% 100% !important;}
+.sp__ico--formation::after{-webkit-mask-image: url('/gongsoop/img/icon/icon_formation.svg'); mask-image: url('/gongsoop/img/icon/icon_formation.svg');}
+.sp__ico--comment::after{-webkit-mask-image: url('/gongsoop/img/icon/icon_comment.svg'); mask-image: url('/gongsoop/img/icon/icon_comment.svg');}
+.sp__ico--submenu::after{-webkit-mask-image: url('/gongsoop/img/icon/icon_sub.svg'); mask-image: url('/gongsoop/img/icon/icon_sub.svg');}
+.sp__ico--arrow_up::after{-webkit-mask-image: url('/gongsoop/img/icon/icon_arrow_up.svg'); mask-image: url('/gongsoop/img/icon/icon_arrow_up.svg');}
+.sp__ico--arrow_down::after{-webkit-mask-image: url('/gongsoop/img/icon/icon_arrow_down.svg'); mask-image: url('/gongsoop/img/icon/icon_arrow_down.svg');}
+.sp__ico--arrow_left::after{-webkit-mask-image: url('/gongsoop/img/icon/icon_arrow_left.svg'); mask-image: url('/gongsoop/img/icon/icon_arrow_left.svg');}
+.sp__ico--arrow_right::after{-webkit-mask-image: url('/gongsoop/img/icon/icon_arrow_right.svg'); mask-image: url('/gongsoop/img/icon/icon_arrow_right.svg');}
+.sp__ico--arrow_up_s::after{-webkit-mask-image: url('/gongsoop/img/icon/icon_arrow_up_s.svg'); mask-image: url('/gongsoop/img/icon/icon_arrow_up_s.svg');}
+.sp__ico--arrow_down_s::after{-webkit-mask-image: url('/gongsoop/img/icon/icon_arrow_down_s.svg'); mask-image: url('/gongsoop/img/icon/icon_arrow_down_s.svg');}
+.sp__ico--arrow_left_s::after{-webkit-mask-image: url('/gongsoop/img/icon/icon_arrow_left_s.svg'); mask-image: url('/gongsoop/img/icon/icon_arrow_left_s.svg');}
+.sp__ico--arrow_right_s::after{-webkit-mask-image: url('/gongsoop/img/icon/icon_arrow_right_s.svg'); mask-image: url('/gongsoop/img/icon/icon_arrow_right_s.svg');}
+
+.sp__ico--refresh::after{-webkit-mask-image: url('/gongsoop/img/icon/icon_refresh.svg'); mask-image: url('/gongsoop/img/icon/icon_refresh.svg');}
+.sp__ico--search::after{-webkit-mask-image: url('/gongsoop/img/icon/icon_search.svg'); mask-image: url('/gongsoop/img/icon/icon_search.svg');}
+.sp__ico--close::after{-webkit-mask-image: url('/gongsoop/img/icon/icon_close.svg'); mask-image: url('/gongsoop/img/icon/icon_close.svg');}
+.sp__ico--plus::after{-webkit-mask-image: url('/gongsoop/img/icon/icon_plus.svg'); mask-image: url('/gongsoop/img/icon/icon_plus.svg');}
+.sp__ico--plus_circle::after{-webkit-mask-image: url('/gongsoop/img/icon/icon_plus_circle.svg'); mask-image: url('/gongsoop/img/icon/icon_plus_circle.svg');}
+.sp__ico--info::after{-webkit-mask-image: url('/gongsoop/img/icon/icon_info.svg'); mask-image: url('/gongsoop/img/icon/icon_info.svg');}
+.sp__ico--thumbsdown::after{-webkit-mask-image: url('/gongsoop/img/icon/icon_thumbsdown.svg'); mask-image: url('/gongsoop/img/icon/icon_thumbsdown.svg');}
+.sp__ico--mail::after{-webkit-mask-image: url('/gongsoop/img/icon/icon_mail.svg'); mask-image: url('/gongsoop/img/icon/icon_mail.svg');}
+.sp__ico--thumbsup::after{-webkit-mask-image: url('/gongsoop/img/icon/icon_thumbsup.svg'); mask-image: url('/gongsoop/img/icon/icon_thumbsup.svg');}
+.sp__ico--premium::after{-webkit-mask-image: url('/gongsoop/img/icon/icon_premium.svg'); mask-image: url('/gongsoop/img/icon/icon_premium.svg');}
+.sp__ico--book::after{-webkit-mask-image: url('/gongsoop/img/icon/icon_book.svg'); mask-image: url('/gongsoop/img/icon/icon_book.svg');}
+.sp__ico--monitor::after{-webkit-mask-image: url('/gongsoop/img/icon/icon_monitor.svg'); mask-image: url('/gongsoop/img/icon/icon_monitor.svg');}
+.sp__ico--dot::after{-webkit-mask-image: url('/gongsoop/img/icon/icon_dot.svg'); mask-image: url('/gongsoop/img/icon/icon_dot.svg');}
+.sp__ico--dots::after{-webkit-mask-image: url('/gongsoop/img/icon/icon_dots.svg'); mask-image: url('/gongsoop/img/icon/icon_dots.svg');}
+.sp__ico--minus::after{-webkit-mask-image: url('/gongsoop/img/icon/icon_minus.svg'); mask-image: url('/gongsoop/img/icon/icon_minus.svg');}
+.sp__ico--bar::after{-webkit-mask-image: url('/gongsoop/img/icon/icon_bar.svg'); mask-image: url('/gongsoop/img/icon/icon_bar.svg');}
+.sp__ico--bar_s::after{-webkit-mask-image: url('/gongsoop/img/icon/icon_bar_s.svg'); mask-image: url('/gongsoop/img/icon/icon_bar_s.svg');}
+.sp__ico--menu::after{-webkit-mask-image: url('/gongsoop/img/icon/icon_menu.svg'); mask-image: url('/gongsoop/img/icon/icon_menu.svg');}
+.sp__ico--home::after{-webkit-mask-image: url('/gongsoop/img/icon/icon_home.svg'); mask-image: url('/gongsoop/img/icon/icon_home.svg');}
+.sp__ico--pencil::after{-webkit-mask-image: url('/gongsoop/img/icon/icon_pencil_line.svg'); mask-image: url('/gongsoop/img/icon/icon_pencil_line.svg');}

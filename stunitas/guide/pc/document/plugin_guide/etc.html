@@ -1,0 +1,125 @@
+<link rel="stylesheet" href="/css/document.css"/>
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/highlight.min.js"></script>
+<script src="/js/document.js"></script>
+
+<?
+    include('skin/pub/layout/pc/document/inc_document_lnb.html');
+?>
+<div class="document">
+    <main>
+        <nav>
+            <a href="../index">< 목록</a>
+            <h2>기타 함수 <span>사용하기</span></h2>
+        </nav>
+    
+        <section id="options">
+            <h3>cnAniCounter</h3>
+            <table>
+                <colgroup>
+                    <col span="3" width="16.6666%" />
+                    <col width="50%" />
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Default</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr id="tab">
+                        <th>countClass</th>
+                        <td>string</td>
+                        <td>-</td>
+                        <td>
+                            <p>카운트 액션이 들어갈 클래스 or 아이디 이름<br>(설정을 안하면 ani_count 로 셋팅)</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>speed</th>
+                        <td>number</td>
+                        <td>n</td>
+                        <td>
+                            <p>실행 속도 ( 기본 : 1000)</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>exclude</th>
+                        <td>number</td>
+                        <td>n</td>
+                        <td>
+                            <p>소숫점 자리수 ( 기본 : 1)<br>data-num 의 값이 소수일때 사용됨</p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="3">
+							<p>실행 예제</p>
+							<div>
+								<p class="count_ex">
+									<span class="ani_count" data-num="5326"></span>명<br>
+									<span class="ani_count" data-num="999999">999,999</span>명<br>
+									<span class="ani_count03" data-num="532.796">532.796</span>명<br>
+									<span id="ani_count_id" data-num="532.796">532.796</span>
+								</p>
+
+								<p class="count_ex02">
+									<span class="ani_count02" data-num="10">5,326</span>명<br>
+									<span class="ani_count02" data-num="10000">999,999</span>명
+								</p>
+
+								<script>
+								$('.count_ex').cnAniCounter({});
+								$('.count_ex02').cnAniCounter({
+									'countClass':'.ani_count02',
+									'speed':5000
+								});
+								$('.count_ex').cnAniCounter({
+									'countClass':'.ani_count03',
+									'exclude': 3
+								});
+								$('.count_ex').cnAniCounter({
+									'countClass':'#ani_count_id'
+								});
+								</script>
+								</div>
+						</td>
+                        <td>
+<pre><code class="language-html"><!-- 버튼 영역 -->
+<p class="count_ex">
+	<span class="ani_count" data-num="5326"></span>명<br>
+	<span class="ani_count" data-num="999999">999,999</span>명<br>
+	<span class="ani_count03" data-num="532.796">532.796</span>명<br>
+	<span id="ani_count_id" data-num="532.796">532.796</span>
+</p>
+
+<p class="count_ex02">
+	<span class="ani_count02" data-num="10">5,326</span>명<br>
+	<span class="ani_count02" data-num="10000">999,999</span>명
+</p>
+</code></pre>
+<pre><code class="language-js">
+$('.count_ex').cnAniCounter({});
+
+$('.count_ex02').cnAniCounter({
+	'countClass':'ani_count02',
+	'speed':1000
+});
+
+$('.count_ex').cnAniCounter({
+	'countClass':'.ani_count03',
+	'exclude': 3
+});
+
+$('.count_ex').cnAniCounter({
+	'countClass':'#ani_count_id'
+});
+</code></pre>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+</div>

@@ -1,0 +1,82 @@
+<div class="lecture_list_wrap">
+    <ul class="lecture_list">
+        <? for($i=1; $i<5; $i++){ ?>
+        <li>
+            <div class="lecture_name"><span>보카<br />바이블</span></div>
+            <div class="lecture_info">
+                <div>
+                    <div class="lec_label">
+                        <span>NEW</span>
+                        <span class="label_update">UPDATE</span>
+                        <span class="label_best">BEST</span>
+                    </div>
+                    <a href="javascript:void(0);" class="info_tit"><?= $i % 2 == 0 ? '[기본+기본/심화+법령+압축+문제풀이][경력 특채 대비]' : '[기본+기본/심화+법령+압축+문제풀이][경력 특채 대비] 2023 김지훈 정도교정학 패키지 김지훈 정도 교정학 패키지' ?></a>
+                    <div class="info_txt">
+                        <p>2022년 합격을 위한 소방간부 해설특강</p>
+                        <a href="javascript:;" class="btn_prev_ot"><span>OT/맛보기</span></a>
+                    </div>
+                    <? if($i != 4){ ?>
+                    <ul class="info_data">
+                        <? if($i % 2 == 1){ ?>
+                        <li>
+                            <span>강좌</span>
+                            <a href="javascript:void(0);" class="btn_prev_lec"><span>2023 신용한 행정학 실전과 가장 유사한 지방직 9급 모의고사 2023 신용한 행정학 실전과 가장 유사한 지방직 9급 모의고사</span><span>외 2개</span></a>
+                        </li>
+                        <? } ?>
+                        <li>
+                            <span>교재</span>
+                            <a href="javascript:void(0);" class="btn_prev_lec"><span>선재국어 술술 한자 외 2권</span></a>
+                        </li>
+                        
+                    </ul>
+                    <? } ?>
+                </div>
+            </div>
+            <div class="lecture_price">
+                <ul>
+                    <li>
+                        <span>강좌(3)</span>
+                        <div class="price_wrap">
+                            <em>128,000 원</em>
+                            <span>70%</span>
+                            <strong>83,700원</strong>
+                        </div>
+                        <? if($i != 4){ ?>
+                        <li>
+                            <span>교재(3)</span>
+                            <div class="price_wrap">
+                                <em>24,000원</em>
+                                <span>50%</span>
+                                <strong>61,000원</strong>
+                            </div>
+                        </li>
+                        <? } ?>
+                        <? if($i % 2 == 1){ ?>
+                        <li>
+                            <span>e-교재(3)</span>
+                            <div class="price_wrap">
+                                <em>24,000원</em>
+                                <span>50%</span>
+                                <strong>61,000원</strong>
+                            </div>
+                        </li>
+                        <li>
+                            <span>교재set(2)</span>
+                            <div class="price_wrap">
+                                <em>35,000원</em>
+                                <span>7%</span>
+                                <strong>32,500원</strong>
+                            </div>
+                        </li>
+                        <? } ?>
+                    </li>
+                </ul>
+                <div class="info_btns">
+                    <a href="javascript:void(0);" class="btn-h36 btn_add"><span>내 강의실담기</span></a>
+                    <a href="javascript:void(0);" class="btn-h36 style_blue btn_cart"><span>구매하기</span></a>
+                </div>
+            </div>
+        </li>
+        <? } ?>
+    </ul>
+</div>

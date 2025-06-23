@@ -1,0 +1,465 @@
+<link rel="stylesheet" href="/css/document.css"/>
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/highlight.min.js"></script>
+<script src="/js/document.js"></script>
+
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+<style>
+    .ex_box{background: #eee; border-radius: 10px; text-align: center; box-sizing: border-box; padding: 100px 0}
+    .ex_box a, .btn{display: inline-block; padding: 0 10px; font-size: 40px; fill: red}
+    .ex_box a.active{color: blue !important}
+    .ex_box figure figcaption{display: inline-block; background: #2c2c2c; padding: 1px 4px 2px; color: #fff; font-size: 15px; border-radius: 2px; margin-bottom: 15px;}
+
+    .ico_search_input{display: block; width: 700px; margin: 0 auto; background: transparent; border-bottom: 2px solid var(--color-primary); height: 40px; font-size: var(--fz-16); margin-bottom: 50px;}
+    .ico_menu{display: inline-flex; width: 800px; gap: 100px 0; flex-wrap: wrap; padding-bottom: 30px;}
+    .ico_menu > li{width: 25%; height: 30px; cursor: pointer;}
+    .ico_menu > li:after{width: 24px; height: 24px; left: 50%; margin-left: -9px; top: 0; transition: .1s}
+    .ico_menu > li.ico_lg:after{width: 30px; margin-left: -15px;}
+    .ico_menu > li > span{position: absolute; top: 100%; left: 0%; width: 100%; transition: .2s; padding-top: 10px; text-align: center;}
+    .ico_menu > li:not(.png):hover:after{background-color: var(--color-highlight);}
+    .ico_menu > li:hover > span{color: var(--color-highlight);}
+</style>
+<?
+    include('skin/pub/layout/pc/document/inc_document_lnb.html');
+?>
+<div class="document">
+    <main>
+        <nav>
+            <a href="../index">< 목록</a>
+            <h2>아이콘 사용하기</h2>
+            <!-- <ul>
+                <li data-target="#ex"><a href="javascript:;">Example</a></li>
+            </ul> -->
+        </nav>
+        
+        <section>
+            <h3>아이콘</h3>
+            <p>
+                아이콘을 추가하려면 icon icon_name 클래스 이름을 추가합니다. 아이콘은 :after 영역에 생성되며, 가로 세로값이 필수입니다. background-color값을 변경하여 색을 변경합니다.<br>
+                :after 영역에 배경색을 지정하여 아이콘의 색상을 변경합니다.
+            </p>
+            <!-- <div class="common-info-wrap">
+                <div class="info_box">
+                    <p class="info_tit">업데이트 노트</p>
+                    <ul>
+                        <li>24.04.19 - new_ 아이콘이 추가되었습니다.</li>
+                    </ul>
+                </div>
+            </div> -->
+
+<pre><code class="language-html"><style>
+    .ico_arrow_down{background-color: blue; width: 24px; height: 24px;}
+    .ico_arrow_down:hover:after{background-color: red}
+</style>
+
+<span class="ico ico_arrow_down"></span>
+</code></pre>
+
+            <div class="ex_box ico_box">
+                <div>
+                    <input type="text" class="ico_search_input" placeholder="아이콘 검색">
+                    <ul class="ico_menu">
+                        <!-- 신규 아이콘 -->
+                        <li class="ico ico_home"><span>ico_home</span></li>
+                        <li class="ico ico_menu"><span>ico_menu</span></li>
+                        <li class="ico ico_search"><span>ico_search</span></li>
+                        <li class="ico ico_cart"><span>ico_cart</span></li>
+                        <li class="ico ico_download_arrow"><span>ico_download_arrow</span></li>
+                        <li class="ico ico_filter"><span>ico_filter</span></li>
+                        <li class="ico ico_plus"><span>ico_plus</span></li>
+                        <li class="ico ico_plus_circle"><span>ico_plus_circle</span></li>
+                        <li class="ico ico_stack_line"><span>ico_stack_line</span></li>
+                        <li class="ico ico_finance_circle"><span>ico_finance_circle</span></li>
+                        <li class="ico ico_clock"><span>ico_clock</span></li>
+                        <li class="ico ico_clock_speed"><span>ico_clock_speed</span></li>
+                        <li class="ico ico_compass"><span>ico_compass</span></li>
+                        <li class="ico ico_people_circle"><span>ico_people_circle</span></li>
+                        <li class="ico ico_people_rectangle"><span>ico_people_rectangle</span></li>
+                        <li class="ico ico_info"><span>ico_info</span></li>
+                        <li class="ico ico_help"><span>ico_help</span></li>
+                        <li class="ico ico_like_t"><span>ico_like_t</span></li>
+                        <li class="ico ico_speed"><span>ico_speed</span></li>
+                        <li class="ico ico_reload"><span>ico_reload</span></li>
+                        <li class="ico ico_circle_play"><span>ico_circle_play</span></li>
+                        <li class="ico ico_play"><span>ico_play</span></li>
+                        <li class="ico ico_play2"><span>ico_play2</span></li>
+                        <li class="ico ico_close"><span>ico_close</span></li>
+                        <li class="ico ico_close_sm"><span>ico_close_sm</span></li>
+                        <li class="ico ico_close_circle"><span>ico_close_circle</span></li>
+                        <li class="ico ico_wallet"><span>ico_wallet</span></li>
+                        <li class="ico ico_comment"><span>ico_comment</span></li>
+                        <li class="ico ico_comment_off"><span>ico_comment_off</span></li>
+                        <li class="ico ico_monitor"><span>ico_monitor</span></li>
+                        <li class="ico ico_bag"><span>ico_bag</span></li>
+                        <li class="ico ico_share"><span>ico_share</span></li>
+                        <li class="ico ico_link"><span>ico_link</span></li>
+                        <li class="ico ico_siren"><span>ico_siren</span></li>
+                        <li class="ico ico_pencil_line"><span>ico_pencil_line</span></li>
+                        <li class="ico ico_clip"><span>ico_clip</span></li>
+                        <li class="ico ico_pushpin"><span>ico_pushpin</span></li>
+                        <li class="ico ico_stack"><span>ico_stack</span></li>
+                        <li class="ico ico_academy"><span>ico_academy</span></li>
+                        <li class="ico ico_login"><span>ico_login</span></li>
+                        <li class="ico ico_logout"><span>ico_logout</span></li>
+                        <li class="ico ico_book"><span>ico_book</span></li>
+                        <li class="ico ico_ebook"><span>ico_ebook</span></li>
+                        <li class="ico ico_tag"><span>ico_tag</span></li>
+                        <li class="ico ico_phone"><span>ico_phone</span></li>
+                        <li class="ico ico_calendar"><span>ico_calendar</span></li>
+                        <li class="ico ico_link_m"><span>ico_link_m</span></li>
+                        <li class="ico ico_globe"><span>ico_globe</span></li>
+                        <li class="ico ico_desk"><span>ico_desk</span></li>
+                        <li class="ico ico_graduation_cap"><span>ico_graduation_cap</span></li>
+                        <li class="ico ico_albem"><span>ico_albem</span></li>
+                        <li class="ico ico_flag"><span>ico_flag</span></li>
+                        <li class="ico ico_flag2"><span>ico_flag2</span></li>
+                        <li class="ico ico_teacher"><span>ico_teacher</span></li>
+                        <li class="ico ico_device"><span>ico_device</span></li>
+                        <li class="ico ico_location"><span>ico_location</span></li>
+                        <li class="ico ico_fire"><span>ico_fire</span></li>
+                        <li class="ico ico_bell"><span>ico_bell</span></li>
+                        <li class="ico ico_mail"><span>ico_mail</span></li>
+                        <li class="ico ico_mail_speed"><span>ico_mail_speed</span></li>
+                        <li class="ico ico_parcel"><span>ico_parcel</span></li>
+                        <li class="ico ico_parcel_speed"><span>ico_parcel_speed</span></li>
+                        <li class="ico ico_config"><span>ico_config</span></li>
+                        <li class="ico ico_smile"><span>ico_smile</span></li>
+                        <li class="ico ico_rocket"><span>ico_rocket</span></li>
+                        <li class="ico ico_copy"><span>ico_copy</span></li>
+                        <li class="ico ico_msg_block"><span>ico_msg_block</span></li>
+                        <li class="ico ico_star"><span>ico_star</span></li>
+                        <li class="ico ico_trash"><span>ico_trash</span></li>
+                        <li class="ico ico_coupon"><span>ico_coupon</span></li>
+                        <li class="ico ico_coupon_fill"><span>ico_coupon_fill</span></li>
+                        <li class="ico ico_arrow_left"><span>ico_arrow_left</span></li>
+                        <li class="ico ico_arrow_up"><span>ico_arrow_up</span></li>
+                        <li class="ico ico_arrow_right"><span>ico_arrow_right</span></li>
+                        <li class="ico ico_arrow_down"><span>ico_arrow_down</span></li>
+                        <li class="ico ico_arrow_left_thin"><span>ico_arrow_left_thin</span></li>
+                        <li class="ico ico_arrow_up_thin"><span>ico_arrow_up_thin</span></li>
+                        <li class="ico ico_arrow_right_thin"><span>ico_arrow_right_thin</span></li>
+                        <li class="ico ico_arrow_down_thin"><span>ico_arrow_down_thin</span></li>
+                        <li class="ico ico_arrow_line_left"><span>ico_arrow_line_left</span></li>
+                        <li class="ico ico_arrow_line_up"><span>ico_arrow_line_up</span></li>
+                        <li class="ico ico_arrow_line_right"><span>ico_arrow_line_right</span></li>
+                        <li class="ico ico_arrow_line_down"><span>ico_arrow_line_down</span></li>
+                        <li class="ico ico_arrow_left_s"><span>ico_arrow_left_s</span></li>
+                        <li class="ico ico_arrow_up_s"><span>ico_arrow_up_s</span></li>
+                        <li class="ico ico_arrow_right_s"><span>ico_arrow_right_s</span></li>
+                        <li class="ico ico_arrow_down_s"><span>ico_arrow_down_s</span></li>
+                        <li class="ico ico_double_arrow_left"><span>ico_double_arrow_left</span></li>
+                        <li class="ico ico_double_arrow_right"><span>ico_double_arrow_right</span></li>
+                        <li class="ico ico_lock"><span>ico_lock</span></li>
+                        <li class="ico ico_unlock"><span>ico_unlock</span></li>
+                        <li class="ico ico_eye_line"><span>ico_eye_line</span></li>
+                        <li class="ico ico_visible"><span>ico_visible</span></li>
+                        <li class="ico ico_invisible"><span>ico_invisible</span></li>
+                        <li class="ico ico_more_ho"><span>ico_more_ho</span></li>
+                        <li class="ico ico_more_ver"><span>ico_more_ver</span></li>
+
+                        <!-- 기존 아이콘 -->
+                        <li class="ico ico_thumbs_up"><span>ico_thumbs_up</span></li>
+                        <li class="ico ico_thumbs_down"><span>ico_thumbs_down</span></li>
+                        <li class="ico ico_thumbs_up_fill"><span>ico_thumbs_up_fill</span></li>
+                        <li class="ico ico_thumbs_down_fill"><span>ico_thumbs_down_fill</span></li>
+                        <li class="ico ico_heart"><span>ico_heart</span></li>
+                        <li class="ico ico_heart_fill"><span>ico_heart_fill</span></li>
+                        <li class="ico ico_more"><span>ico_more</span></li>
+                        <li class="ico ico_fav"><span>ico_fav</span></li>
+                        <li class="ico ico_filter"><span>ico_filter</span></li>
+                        <li class="ico ico_new"><span>ico_new</span></li>
+                        <li class="ico ico_new_label"><span>ico_new_label</span></li>
+                        <li class="ico ico_event_label"><span>ico_event_label</span></li>
+                        <li class="ico ico_file_upload"><span>ico_file_upload</span></li>
+                        <li class="ico ico_magic_wand"><span>ico_magic_wand</span></li>
+                        <li class="ico ico_stack"><span>ico_stack</span></li>
+                        <li class="ico ico_shield"><span>ico_shield</span></li>
+                        <li class="ico ico_shield_star"><span>ico_shield_star</span></li>
+                        <li class="ico ico_download_cloud"><span>ico_download_cloud</span></li>
+                        <li class="ico ico_plus"><span>ico_plus</span></li>
+                        <li class="ico ico_plus_folder"><span>ico_plus_folder</span></li>
+                        <li class="ico ico_check_big"><span>ico_check_big</span></li>
+                        <li class="ico ico_gift"><span>ico_gift</span></li>
+                        <li class="ico ico_alarm"><span>ico_alarm</span></li>
+                        <li class="ico ico_step"><span>ico_step</span></li>
+
+
+                        <!-- <li class="ico ico_new_home"><span>ico_new_home</span></li>
+                        <li class="ico ico_new_arrow_left"><span>ico_new_arrow_left</span></li>
+                        <li class="ico ico_new_arrow_up"><span>ico_new_arrow_up</span></li>
+                        <li class="ico ico_new_arrow_right"><span>ico_new_arrow_right</span></li>
+                        <li class="ico ico_new_arrow_down"><span>ico_new_arrow_down</span></li>
+                        <li class="ico ico_new_arrow_left_sm"><span>ico_new_arrow_left_sm</span></li>
+                        <li class="ico ico_new_arrow_up_sm"><span>ico_new_arrow_up_sm</span></li>
+                        <li class="ico ico_new_arrow_right_sm"><span>ico_new_arrow_right_sm</span></li>
+                        <li class="ico ico_new_arrow_down_sm"><span>ico_new_arrow_down_sm</span></li>
+                        <li class="ico ico_new_arrow_line_left"><span>ico_new_arrow_line_left</span></li>
+                        <li class="ico ico_new_arrow_line_up"><span>ico_new_arrow_line_up</span></li>
+                        <li class="ico ico_new_arrow_line_right"><span>ico_new_arrow_line_right</span></li>
+                        <li class="ico ico_new_arrow_line_down"><span>ico_new_arrow_line_down</span></li>
+                        <li class="ico ico_new_coupon"><span>ico_new_coupon</span></li>
+                        <li class="ico ico_new_coupon_fill"><span>ico_new_coupon_fill</span></li>
+                        <li class="ico ico_new_help_circle"><span>ico_new_help_circle</span></li>
+                        <li class="ico ico_new_alert"><span>ico_new_alert</span></li>
+                        <li class="ico ico_new_bag"><span>ico_new_bag</span></li>
+                        <li class="ico ico_new_book"><span>ico_new_book</span></li>
+                        <li class="ico ico_new_calendar"><span>ico_new_calendar</span></li>
+                        <li class="ico ico_new_cart"><span>ico_new_cart</span></li>
+                        <li class="ico ico_new_circle_play"><span>ico_new_circle_play</span></li>
+                        <li class="ico ico_new_clip"><span>ico_new_clip</span></li>
+                        <li class="ico ico_new_clock"><span>ico_new_clock</span></li>
+                        <li class="ico ico_new_clock_speed"><span>ico_new_clock_speed</span></li>
+                        <li class="ico ico_new_close_circle"><span>ico_new_close_circle</span></li>
+                        <li class="ico ico_new_comment"><span>ico_new_comment</span></li>
+                        <li class="ico ico_new_compass"><span>ico_new_compass</span></li>
+                        <li class="ico ico_new_config"><span>ico_new_config</span></li>
+                        <li class="ico ico_new_copy"><span>ico_new_copy</span></li>
+                        <li class="ico ico_new_desk"><span>ico_new_desk</span></li>
+                        <li class="ico ico_new_device"><span>ico_new_device</span></li>
+                        <li class="ico ico_new_download"><span>ico_new_download</span></li>
+                        <li class="ico ico_new_ebook"><span>ico_new_ebook</span></li>
+                        <li class="ico ico_new_edit_pencil"><span>ico_new_edit_pencil</span></li>
+                        <li class="ico ico_new_filter"><span>ico_new_filter</span></li>
+                        <li class="ico ico_new_finance"><span>ico_new_finance</span></li>
+                        <li class="ico ico_new_finance_circle"><span>ico_new_finance_circle</span></li>
+                        <li class="ico ico_new_fire"><span>ico_new_fire</span></li>
+                        <li class="ico ico_new_flag"><span>ico_new_flag</span></li>
+                        <li class="ico ico_new_flag2"><span>ico_new_flag2</span></li>
+                        <li class="ico ico_new_formation"><span>ico_new_formation</span></li>
+                        <li class="ico ico_new_globe"><span>ico_new_globe</span></li>
+                        <li class="ico ico_new_graduation_cap"><span>ico_new_graduation_cap</span></li>
+                        
+                        <li class="ico ico_new_iexternal_link"><span>ico_new_iexternal_link</span></li>
+                        <li class="ico ico_new_like_t"><span>ico_new_like_t</span></li>
+                        <li class="ico ico_new_link"><span>ico_new_link</span></li>
+                        <li class="ico ico_new_location"><span>ico_new_location</span></li>
+                        <li class="ico ico_new_login"><span>ico_new_login</span></li>
+                        <li class="ico ico_new_logout"><span>ico_new_logout</span></li>
+                        <li class="ico ico_new_mail"><span>ico_new_mail</span></li>
+                        <li class="ico ico_new_mail_speed"><span>ico_new_mail_speed</span></li>
+                        <li class="ico ico_new_menu"><span>ico_new_menu</span></li>
+                        <li class="ico ico_new_monitor"><span>ico_new_monitor</span></li>
+                        <li class="ico ico_new_msg_block"><span>ico_new_msg_block</span></li>
+                        <li class="ico ico_new_parcel"><span>ico_new_parcel</span></li>
+                        <li class="ico ico_new_parcel_speed"><span>ico_new_parcel_speed</span></li>
+                        <li class="ico ico_new_people_circle"><span>ico_new_people_circle</span></li>
+                        <li class="ico ico_new_people_rectangle"><span>ico_new_people_rectangle</span></li>
+                        <li class="ico ico_new_phone"><span>ico_new_phone</span></li>
+                        <li class="ico ico_new_play"><span>ico_new_play</span></li>
+                        <li class="ico ico_new_play2"><span>ico_new_play2</span></li>
+                        <li class="ico ico_new_plus"><span>ico_new_plus</span></li>
+                        <li class="ico ico_new_plus_circle"><span>ico_new_plus_circle</span></li>
+                        <li class="ico ico_new_pushpin"><span>ico_new_pushpin</span></li>
+                        <li class="ico ico_new_refresh"><span>ico_new_refresh</span></li>
+                        <li class="ico ico_new_rocket"><span>ico_new_rocket</span></li>
+                        <li class="ico ico_new_search"><span>ico_new_search</span></li>
+                        <li class="ico ico_new_share"><span>ico_new_share</span></li>
+                        <li class="ico ico_new_siren"><span>ico_new_siren</span></li>
+                        <li class="ico ico_new_smile"><span>ico_new_smile</span></li>
+                        <li class="ico ico_new_speed"><span>ico_new_speed</span></li>
+                        <li class="ico ico_new_star"><span>ico_new_star</span></li>
+                        <li class="ico ico_new_tag"><span>ico_new_tag</span></li>
+                        <li class="ico ico_new_teacher"><span>ico_new_teacher</span></li>
+                        <li class="ico ico_new_trash"><span>ico_new_trash</span></li>
+                        <li class="ico ico_new_wallet"><span>ico_new_wallet</span></li>
+                        <li class="ico ico_new_academy"><span>ico_new_academy</span></li>
+                        <li class="ico ico_new_albem"><span>ico_new_albem</span></li>
+
+                        <li class="ico ico_new_lock"><span>ico_new_lock</span></li>
+                        <li class="ico ico_new_lock_off"><span>ico_new_lock_off</span></li>
+                        <li class="ico ico_visible"><span>ico_visible</span></li>
+                        <li class="ico ico_invisible"><span>ico_invisible</span></li>
+
+                        <li class="ico ico_close "><span>ico_close</span></li>
+                        <li class="ico ico_arrow_down "><span>ico_arrow_down</span></li>
+                        <li class="ico ico_arrow_down_thin "><span>ico_arrow_down_thin</span></li>
+                        <li class="ico ico_arrow_up "><span>ico_arrow_up</span></li>
+                        <li class="ico ico_arrow_up_thin "><span>ico_arrow_up_thin</span></li>
+                        <li class="ico ico_arrow_left"><span>ico_arrow_left</span></li>
+                        <li class="ico ico_arrow_left_thin"><span>ico_arrow_left_thin</span></li>
+                        <li class="ico ico_arrow_right"><span>ico_arrow_right</span></li>
+                        <li class="ico ico_arrow_right_thin"><span>ico_arrow_right_thin</span></li>
+
+                        <li class="ico ico_arrow_line_up"><span>ico_arrow_line_up</span></li>
+                        <li class="ico ico_arrow_line_down"><span>ico_arrow_line_down</span></li>
+                        <li class="ico ico_arrow_line_left"><span>ico_arrow_line_left</span></li>
+                        <li class="ico ico_arrow_line_right"><span>ico_arrow_line_right</span></li>
+
+                        <li class="ico ico_thumbs_up "><span>ico_thumbs_up</span></li>
+                        <li class="ico ico_thumbs_up_fill "><span>ico_thumbs_up_fill</span></li>
+                        <li class="ico ico_thumbs_down "><span>ico_thumbs_down</span></li>
+                        <li class="ico ico_thumbs_down_fill "><span>ico_thumbs_down_fill</span></li>
+                        <li class="ico ico_heart "><span>ico_heart</span></li>
+                        <li class="ico ico_heart_fill "><span>ico_heart_fill</span></li>
+                        <li class="ico ico_lock "><span>ico_lock</span></li>
+                        <li class="ico ico_unlock "><span>ico_unlock</span></li>
+                        <li class="ico ico_eye_line "><span>ico_eye_line</span></li>
+                        <li class="ico ico_comment "><span>ico_comment</span></li>
+                        <li class="ico ico_link "><span>ico_link</span></li>
+                        <li class="ico ico_info "><span>ico_info</span></li>
+                        <li class="ico ico_search "><span>ico_search</span></li>
+                        <li class="ico ico_clip "><span>ico_clip</span></li>
+                        <li class="ico ico_more "><span>ico_more</span></li>
+                        <li class="ico ico_pencil "><span>ico_pencil</span></li>
+						<li class="ico ico_pencil_line "><span>ico_pencil_line</span></li>
+                        <li class="ico ico_bell "><span>ico_bell</span></li>
+                        <li class="ico ico_home "><span>ico_home</span></li>
+                        <li class="ico ico_play "><span>ico_play</span></li>
+                        <li class="ico ico_circle_play "><span>ico_circle_play</span></li>
+                        <li class="ico ico_fav "><span>ico_fav</span></li>
+                        <li class="ico ico_coupon "><span>ico_coupon</span></li>
+                        <li class="ico ico_cart "><span>ico_cart</span></li>
+                        <li class="ico ico_filter "><span>ico_filter</span></li>
+                        <li class="ico ico_share "><span>ico_share</span></li>
+                        <li class="ico ico_book "><span>ico_book</span></li>
+                        <li class="ico ico_monitor "><span>ico_monitor</span></li>
+                        <li class="ico ico_new"><span>ico_new</span></li>
+                        <li class="ico ico_new_label png"><span>ico_new_label</span></li>
+                        <li class="ico ico_magic_wand"><span>ico_magic_wand</span></li>
+                        <li class="ico ico_shield"><span>ico_shield</span></li>
+                        <li class="ico ico_stack"><span>ico_stack</span></li>
+                        <li class="ico ico_stack_line"><span>ico_stack_line</span></li>
+                        <li class="ico ico_calendar"><span>ico_calendar</span></li>
+                        <li class="ico ico_download_cloud"><span>ico_download_cloud</span></li>
+                        <li class="ico ico_download_arrow"><span>ico_download_arrow</span></li>
+                        <li class="ico ico_plus_folder"><span>ico_plus_folder</span></li>
+                        <li class="ico ico_check_big"><span>ico_check_big</span></li>
+                        <li class="ico ico_gift"><span>ico_gift</span></li>
+						<li class="ico ico_reload"><span>ico_reload</span></li>
+						<li class="ico ico_siren"><span>ico_siren</span></li>
+						<li class="ico ico_watch"><span>ico_watch</span></li>
+						<li class="ico ico_alarm"><span>ico_alarm</span></li> -->
+
+						<? for($i=1;$i<=10;$i++){ ?>
+						<li class="ico ico_num<?= $i ?>"><span>ico_num<?= $i ?></span></li>
+						<? } ?>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!--
+        <section id="ex">
+            <section>
+                <h3>커스텀 아이콘 사용법</h3>
+                <p>
+                    아이콘은 <a href="https://ionic.io/ionicons/usage" target="_blank">ionicons</a>을 사용하기 때문에 SVG를 불러오기 위해서 아래 스크립트를 붙여넣기 해주세요.
+                </p>
+<pre><code class="language-html"><script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</code></pre>
+            </section>
+
+             <section>
+                <h3>SVG 파일 저장하기</h3>
+                <p>
+                    피그마에서 아이콘 이미지를 SVG로 저장하면 색상 정보까지 포함되기 때문에 color 속성이 적용되지 않습니다.<br />
+                    그래서 <a href="https://www.figma.com/community/plugin/814345141907543603/SVG-Export" target="_blank">SVG Export</a>플러그인을 이용하여 색상 정보를 제거 후에 저장합니다.<br />
+                </p>
+
+                <div class="ex_box ex_box2" style="padding: 50px 0;">
+                    <div>
+                        <ul class="ex_slider">
+                            <li>
+                                <figure>
+                                    <figcaption>1. 피그마 메뉴 > 플러그인 > Find more plugins... 메뉴를 선택해여 플러그인 검색창을 엽니다.</figcaption>
+                                    <div><img src="<?=IMG_DIR?>/common/document/icon/export_step1.png" alt=""></div>
+                                </figure>
+                            </li>
+                            <li>
+                                <figure>
+                                    <figcaption>2. 플러그인 검색창에서 svg export를 검색하여 피그마에 추가 후 Run을 클릭합니다.</figcaption>
+                                    <div><img src="<?=IMG_DIR?>/common/document/icon/export_step2.png" alt=""></div>
+                                </figure>
+                            </li>
+                            <li>
+                                <figure>
+                                    <figcaption>3. 저장할 아이콘을 선택합니다. (플러그인 실행 전 아이콘 선택)</figcaption>
+                                    <div><img src="<?=IMG_DIR?>/common/document/icon/export_step3.png" alt=""></div>
+                                </figure>
+                            </li>
+                            <li>
+                                <figure>
+                                    <figcaption>4. 아이콘을 선택하면 svg코드가 나오고 우측 하단에 Eidt Preset버튼을 눌러 설정에 들어갑니다.</figcaption>
+                                    <div><img src="<?=IMG_DIR?>/common/document/icon/export_step4.png" alt=""></div>
+                                </figure>
+                            </li>
+                            <li>
+                                <figure>
+                                    <figcaption>5. Remove all fills 부분을 활성화 해주면 색상 부분이 모두 제거됩니다. 이제 다시 뒤로 돌아가 저장하면 준비가 완료됩니다.</figcaption>
+                                    <div><img src="<?=IMG_DIR?>/common/document/icon/export_step5.png" alt=""></div>
+                                </figure>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h3>SVG 파일 불러오기</h3>
+                <p>
+                    ion-icon태그 안에 svg파일의 src를 입력하면 태그 내부에 svg파일이 생성되며, 아이콘 폰트로 사용이 가능합니다.<br/> 
+                    즉, 폰트 사이즈와 컬러로 크기와 색상을 변경할 수 있습니다.
+                </p>
+
+                <div class="ex_box ex_box1">
+                    <div>
+                        <a href="javascript:;" style="color: red"><ion-icon src="<?=IMG_DIR?>/common/icon/svg/heart.svg"></ion-icon></a>
+                        <a href="javascript:;" style="color: red"><ion-icon src="<?=IMG_DIR?>/common/icon/svg/heart_fill.svg"></ion-icon></a>
+                        <a href="javascript:;" style="color: orange"><ion-icon src="<?=IMG_DIR?>/common/icon/svg/thumbs_up.svg"></ion-icon></a>
+                        <a href="javascript:;" style="color: green"><ion-icon src="<?=IMG_DIR?>/common/icon/svg/thumbs_up_fill.svg"></ion-icon></a>
+                    </div>
+                </div>
+
+                <div class="flex_box">
+                    <div>
+<pre><code class="language-html" style="height: 325px;"><ion-icon src="/common/icon/svg/thumbsup.svg"></ion-icon>
+</code></pre>
+                    </div>
+                    <div class="ico ico_arrow_right_thin"></div>
+                    <div>
+<pre><code class="language-html"><ion-icon src="/common/icon/svg/thumbsup.svg">
+    <div class="icon-inner">
+        <svg xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#a)">
+                <path
+                    d="...">
+                </path>
+            </g>
+            <defs>
+                <clipPath id="a">
+                    <path d="..."></path>
+                </clipPath>
+            </defs>
+        </svg>
+    </div>
+</ion-icon>
+</code></pre>
+                    </div>
+                </div>
+            </section> -->
+        </section>
+    </main>
+</div>
+<script>
+    $(function(){
+        // $('.ex_box1 a').click(function(){
+        //     $(this).toggleClass('active');
+        // });
+
+        // $('.ex_slider').cnSlider()
+
+        $('.ico_search_input').keyup(function(){
+            const value = $(this).val();
+            $('.ico_menu > li').each(function(){
+                let name = $(this).find('span').text().trim();
+                if(name.toLowerCase().indexOf(value) > -1){
+                    $(this).show();
+                }else{
+                    $(this).hide();
+                }
+            })
+        })
+    })
+</script>

@@ -1,0 +1,55 @@
+<link rel="stylesheet" href="<?= UN_STATIC ?>/css/common/lecture.css">
+
+<div class="contents_wrap lecture_view">
+    <div class="inner-wrap">
+        <? if(true){ // 이 부분은 전체적으로 삭제될 수 있음. ?>
+        <link rel="stylesheet" href="<?= UN_STATIC ?>/css/teacher/layout.css">
+        <!-- @@ 선생님홈 TOP -->
+        <aside class="tea_top-wrap fl">
+            <div class="loca_box fl_left">
+                선생님 <i class="ico ico_arrow_right_thin"></i> 국어 <i class="ico ico_arrow_right_thin"></i> 이선재 <i class="ico ico_arrow_right_thin"></i> 강좌 정보
+            </div>
+            <div class="bookmark_box fl_right">
+                <i class="ico ico_heart_fill"></i>
+                <label>
+                    <select>
+                        <option value="">즐겨찾기 바로가기</option>
+                    </select>
+                    <i class="ico ico_arrow_down"></i>
+                </label>
+            </div>
+        </aside>
+        <!-- //@@ 선생님홈 TOP -->
+		<? } ?>
+        
+        <!-- @@ contents -->
+        <main class="lecture_wrap">
+            <section class="sub-conts-wrap">
+                <div class="conts-box style_bd">        
+                    <div class="lec_detail" style="border-top: 0;">
+                        <div class="detail_ct">        
+                            <!-- 교재 소개 -->
+                            <?php 
+                                $inc_textbook_script = true;
+                                include('skin/pub/layout/pc/include/inc_textbook_intro.html');
+                            ?>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <!-- //@@ contents -->
+    
+        <!-- @@ side -->
+        <aside class="side_wrap lecture_side_wrap">
+            <div class="sub-conts-wrap">
+                <div class="conts-box style_bd_p">
+                    <?php 
+                        include('skin/pub/layout/pc/include/inc_cart.html');
+                    ?>
+                </div>
+            </div>
+        </aside>
+        <!-- //@@ side -->
+    </div>
+</div>

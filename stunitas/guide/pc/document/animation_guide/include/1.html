@@ -1,0 +1,44 @@
+<style>
+.ani_opacity {margin: 50px 0;}
+.ani_opacity img{opacity: 0;}
+.ani_opacity img:nth-child(1){animation:fadeIn .5s ease-in-out forwards}
+.ani_opacity img:nth-child(2){animation:fadeIn .5s .3s ease-in-out forwards}
+.ani_opacity img:nth-child(3){animation:fadeIn .5s .6s ease-in-out forwards}
+
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+
+.ani_trans{display: flex; margin:0 auto; width: 1050px; justify-content: space-between; align-items: center;}
+.ani_trans > li:not(:nth-child(3)) {opacity: 0;}
+.active .ani_trans > li:nth-child(1){animation: aniTrans 0.3s 0.6s ease-in-out both; transform: translateX(50%);}
+.active .ani_trans > li:nth-child(2){margin-top: 14px; animation: aniTrans 0.3s 0.3s ease-in-out both; transform: translateX(50%);}
+.active .ani_trans > li:nth-child(4){margin-top: 14px; animation: aniTrans 0.3s 0.9s ease-in-out both; transform: translateX(-50%);}
+.active .ani_trans > li:nth-child(5){animation: aniTrans 0.3s 1.2s ease-in-out both; transform: translateX(-50%);}
+@keyframes aniTrans {
+    0% {opacity: 0;}
+    100%{transform: translate(0);opacity: 1;}
+} 
+</style>
+
+<!-- @ 본문 -->
+<section>
+    <div class="ani_opacity">
+        <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/08/gong_15483/pc/problem_img1.png" alt="#">
+        <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/08/gong_15483/pc/240913/problem_img2.png" alt="#">
+        <img src="<?=UN_STATIC_IMG?>/gong/landing/2024/08/gong_15483/pc/problem_img3.png" alt="#">
+    </div>
+</section>
+
+
+<section class="cn-scroll-ani" style="text-align: center; padding: 50px 0; background: #000">
+    <ul class="ani_trans">
+        <li><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/08/gong_15499/pc/ani_txt1.png" alt="공단기 수강생이 가장 많이 선택한 행정학 기출 강좌 1위 1)"></li>
+        <li><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/08/gong_15499/pc/ani_line1.png" alt="#"></li>
+        <li><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/08/gong_15499/pc/visual_txt.png" alt="이미 당연한 선택을 고민할 이유가 있나요?"></li>
+        <li><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/08/gong_15499/pc/ani_line2.png" alt="#"></li>
+        <li><img src="<?=UN_STATIC_IMG?>/gong/landing/2024/08/gong_15499/pc/ani_txt2.png" alt="공단기 수강생 최종합격자 중 2명 중 1명은 선행정학 수강 2)"></li>
+    </ul>
+</section>

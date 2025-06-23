@@ -1,0 +1,138 @@
+<div class="comment-event">
+    <!-- 개인정보 수집 동의 -->
+    <div class="event-agree-box">
+        <label><input type="checkbox">개인정보의 수집 및 이용에 동의합니다.</label>
+        <ul>
+            <li>1. 개인정보의 수집·이용 목적: 이벤트 진행 및 경품 배송<br /></li>
+            <li>2. 수집하는 개인정보의 항목: 이름, 휴대폰번호<br /></li>
+            <li>3. 개인정보의 보유·이용 기간: 이벤트 종료 후 즉시 파기<br /></li>
+            <li>4. 개인정보의 수집 및 이용에 대한 동의를 거부할 수 있으며, 이 경우 이벤트 참여가 제한됩니다.</li>
+        </ul>
+    </div>
+    
+    <!-- 버튼 리스트 -->
+    <div class="event-btn-box">
+        <div>
+            <a href="javascript:void(0);" class="btn-h48 style_dark"><span>소문내기 이미지 다운로드</span></a>
+            <a href="javascript:void(0);" class="btn-h48 style_dark_outline"><span>URL 복사</span></a>
+        </div>
+        <div>
+            <a href="javascript:void(0);" class="btn-h36"><span>네이버 공드림</span></a>
+            <a href="javascript:void(0);" class="btn-h36"><span>네이버 공드림</span></a>
+            <a href="javascript:void(0);" class="btn-h36"><span>네이버 공드림</span></a>
+            <a href="javascript:void(0);" class="btn-h36"><span>네이버 공드림</span></a>
+            <a href="javascript:void(0);" class="btn-h36"><span>네이버 공드림</span></a>
+            <a href="javascript:void(0);" class="btn-h36"><span>네이버 공드림</span></a>
+            <a href="javascript:void(0);" class="btn-h36"><span>네이버 공드림</span></a>
+        </div>
+    </div>
+    
+    <!-- 댓글 입력 폼 -->
+    <div class="event-board-form">
+        <div>
+            <select class="event-select btn-h48 ico ico_arrow_down sel-box" href="javascript:void(0);">
+                <option value="">선생님 선택</option>
+                <option value="">선생님1</option>
+                <option value="">선생님2</option>
+                <option value="">선생님3</option>
+                <option value="">선생님4</option>
+            </select>
+    
+            <? /* ?>
+            <a class="event-select btn-h48 ico ico_arrow_down" href="javascript:void(0);" data-dropdown="event-dropdown"><span>선생님 선택</span></a>
+            <!-- 드롭다운 -->
+            <ul class="dropdown_menu event-dropdown">
+                <li><a href="javascript:void(0);">국어 이선재</a></li>
+                <li><a href="javascript:void(0);">권규호</a></li>
+                <li><a href="javascript:void(0);">김병태</a></li>
+                <li><a href="javascript:void(0);">국어 이선재</a></li>
+                <li><a href="javascript:void(0);">권규호</a></li>
+                <li><a href="javascript:void(0);">김병태</a></li>
+            </ul>
+            <? */ ?>
+        </div>
+        <div class="event-input">
+            <div class="input-box">
+                <input type="text" placeholder="댓글을 입력 해주세요.">
+                <div class="input-file">
+                    <input type="file" id="event-file" onchange="$('#event-file + label').addClass('selected')">
+                    <label for="event-file" class="ico ico_clip"></label>
+                </div>
+            </div>
+            <a href="javascript:void(0);" class="btn-h36"><span>등록하기</span></a>
+        </div>
+    </div>
+    
+    <!-- 댓글 리스트 -->
+    <div class="event-table event-board">
+        <div class="event-filter" href="javascript:void(0);">
+            <div class="filter-right">
+                <label class="ico-toggle-switch">
+                    <em>나의 댓글 확인하기</em>
+                    <input type="checkbox">
+                    <span class="ico-switch"><i class="ico-switch-move"></i></span>
+                </label>
+            </div>
+        </div>
+        <ul>
+            <? for($i=0; $i<10; $i++): ?>
+            <li>
+                <div>
+                    <? if($i < 7): ?>
+                    <div class="list-avatar">
+                        <? if($i < 5): ?>
+                        <div class="circle_img"><img src="//placehold.co/40x40" alt=""></div>
+                        <? endIf; ?>
+                        <span class="type_name">김덕관 선생님</span>
+                    </div>
+                    <? endIf; ?>
+                    <div class="list-content">
+                        <p>
+                            <?= $i === 0 ? 
+                            '나는 쉽고 재밌게 알려주기 때문에 선재국어 한다 나는 쉽고 재밌게 알려주기 때문에 선재국어 한다나는 쉽고 재밌습니다. 나는 쉽고 재밌게 알려주기 때문에 선재국어 한다 나는 쉽고 재밌게 알려주기 때문에 선재국어 한다나는 쉽고 재밌습니다. 나는 쉽고 재밌게 알려주기 때문에 선재국어 한다 나는 쉽고 재밌게 알려주기 때문에 선재국어 한다나는 쉽고 재밌습니다.' 
+                            :
+                            '나는 쉽고 재밌게 알려주기 때문에 선재국어 한다 나는 쉽고 재밌게 알려주기 때문에 선재국어 한다나는 쉽고 재밌습니다.'
+                            ?>
+                        </p>
+                        <a class="event-delete-btn ico ico_close" href="javascript:void(0);"></a>
+                    </div>
+                </div>
+                <div>
+                    <div class="list-name">김단기(abcdefghijklmno)</div>
+                    <div class="list-date">2022.03.22</div>
+                </div>
+            </li>
+            <? endFor; ?>
+        </ul>
+        <!-- paging -->
+        <div class="paging-wrap">
+            <?php
+                include('skin/pub/layout/pc/include/inc_paging.html');
+            ?>
+        </div>
+        <!-- // paging -->
+    </div>
+</div>
+<script>
+    $(function(){
+        // 이펜트 폼 드롭다운
+        // $('.event-select').cnDropdown({
+        //     offset: {
+        //         x: -42, 
+        //         y: 4
+        //     },
+        //     width: 170,
+        //     onMenuClick: function(btn, index, dropdown){
+        //         $(dropdown).addClass('selected').find('span').text(btn[0].innerText)
+        //     }
+        // })
+        
+        // 인풋 포커싱
+        $('.event-board-form .event-input input').focus(function(){
+            $('.event-board-form .event-input').addClass('focus');
+        })
+        $('.event-board-form .event-input input').blur(function(){
+            $('.event-board-form .event-input').removeClass('focus');
+        })
+    });
+</script>

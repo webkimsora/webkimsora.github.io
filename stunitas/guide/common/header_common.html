@@ -1,0 +1,69 @@
+<? $site_url = "/pub/layout/pc"; ?>
+		<!-- @@ header TOP -->
+		<section class="top-wrap">
+			<div class="inner-wrap">
+				<!-- @@@ 단기이동 -->
+				<div class="dangi_box">
+					<div class="dday-wrap">
+						<div class="header-slide header_slide_box">
+							<div>
+								<dl class="fl">
+									<dt class="fl_left">국가직 7급 1차</dt>
+									<dd class="fl_left">D-267</dd>
+								</dl>
+							</div>
+							<div>
+								<dl class="fl">
+									<dt class="fl_left">국가직 7급 2차</dt>
+									<dd class="fl_left">D-267</dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+					<div class="go_tech go_col">
+						<a href="javascript:void(0);">기술단기</a>
+					</div>
+					<div class="go_sobang go_col">
+						<a href="javascript:void(0);">소방단기</a>
+					</div>
+					<div class="all_dangi">
+						<div class="btn_all">
+							<a href="javascript:void(0);">단기 전체보기</a>  
+						</div>
+					</div>
+				</div>
+
+				<!-- @@@ 로그인영역 -->
+				<? if(!$this->session->userdata('ss_mb_id')): ?>
+				<ul class="login_box fl">
+					<li><a href="javascript:void(0);">로그인</a></li>
+					<li><a href="javascript:void(0);">회원가입</a></li>
+					<li><a href="javascript:void(0);">장바구니</a></li>
+					<li><a href="<?= $site_url ?>/customer/faq_list">학습지원센터</a></li>
+					<li><a href="javascript:void(0);">내강의실</a></li>
+				</ul>
+				<? else: ?>
+				<!-- @@@ 로그인영역 : 유저 로그인시 -->
+				<ul class="login_box fl">
+					<li>
+						<div class="drop-box">
+							<a class="user_name ico ico_arrow_down">김단기 님</a>
+							<ul class="drop-menu">
+								<li><a href="javascript:void(0);">내정보</a></li>
+								<li><a href="javascript:void(0);">주문배송내역</a></li>
+								<li><a href="javascript:void(0);">활동내역</a></li>
+								<li><a href="javascript:void(0);">수강내역</a></li>
+								<li><a href="javascript:void(0);">로그아웃</a></li>
+							</ul>
+                        </div>
+					</li>
+					<li><a class="new" href="javascript:void(0);">쪽지</a></li>
+					<li><a href="javascript:void(0);">장바구니</a></li>
+					<li><a href="<?= $site_url ?>/customer/faq_list">학습지원센터</a></li>
+					<li><a href="javascript:void(0);">내강의실</a></li>
+				</ul>
+				<? endif; ?>
+				<!-- //@@@ 로그인영역 -->
+			</div>
+		</section>
+		<!-- //@@ header TOP -->

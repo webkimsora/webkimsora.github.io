@@ -1,0 +1,44 @@
+<link type="text/css" rel="stylesheet" href="<?= UN_STATIC ?>/css/m/exam_info/layout.css?<?=time()?>">
+<section class="sec-gnb-tit scroll_ani _gnb_depth01 _type_side">
+    <div class="inner-wrap">
+        <div class="btn-wrap _left">
+            <button type="button" class="ico ico_arrow_line _left"><span class="skip">이전</span></button>
+        </div>
+
+        <div class="gnb-tit">
+            <button type="button" class="btn _more" id="tit_btn"><h2>수험정보</h2><i class="ico ico_arrow _down"></i></button>
+
+            <? include('skin/pub/layout/m/include/gnb/inc_gnb_list.html'); ?>
+        </div>
+    </div>
+</section>
+
+<? $depth2 = $_GET["depth2"]; ?>
+<? $depth3 = $_GET["depth3"]; ?>
+<aside class="header-sticky">
+    <nav class="gnb-nav _gnb_depth02">
+        <ul class="gnb-nav-slider _line" data-index="<?= $depth2 ?>">
+            <li><a href='./index'">수험정보 홈</a></li>
+            <li><a href='#x'">수험정보</a></li>
+            <li><a href='#x'">공무원가이드</a></li>
+            <li><a href='./list?depth2=3'">시험공고&뉴스</a></li>
+            <li><a href='./list?depth2=4'">합격자 통계</a></li>
+            <li><a href='#x'">합격전략</a></li>
+        </ul>
+    </nav>
+<? if($depth2 == 3){ ?>
+    <nav class="gnb-nav _gnb_depth03">
+        <ul class="gnb-nav-slider" data-index="<?= $depth3 ?>">
+            <li><a href="./list?depth2=<?= $depth2 ?>&depth3=0">시험공고</a></li>
+            <li><a href="./list?depth2=<?= $depth2 ?>&depth3=1">수험뉴스</a></li>
+        </ul>
+    </nav>
+<? } else if($depth2 == 4){?>
+    <nav class="gnb-nav _gnb_depth03">
+        <ul class="gnb-nav-slider" data-index="<?= $depth3 ?>">
+            <li><a href="./list?depth2=<?= $depth2 ?>&depth3=0">단기합격전략</a></li>
+            <li><a href="./list?depth2=<?= $depth2 ?>&depth3=1">합격수기&영상</a></li>
+        </ul>
+    </nav>
+<? } ?>
+</aside>

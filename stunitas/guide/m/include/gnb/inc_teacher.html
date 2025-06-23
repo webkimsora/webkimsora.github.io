@@ -1,0 +1,85 @@
+<link type="text/css" rel="stylesheet" href="<?= UN_STATIC ?>/css/m/teacher/index.css?<?=time()?>">
+    <? 
+    $index = $_GET["index"];
+
+    $fileName = explode('?', strtolower(URL_FOLDER_NAME[count(URL_FOLDER_NAME)-1]))[0];
+    ?>
+    <? if($fileName == "index"){ ?>
+        <section class="sec-gnb-tit scroll_ani _gnb_depth01 _type_side">
+            <div class="inner-wrap">
+                <div class="btn-wrap _left">
+                    <button type="button" class="ico ico_arrow_line _left"><span class="skip">이전</span></button>
+                </div>
+    
+                <div class="gnb-tit">
+                    <h2>선생님</h2>
+                </div>
+    
+                <div class="btn-wrap _right">
+                    <button type="button" class="ico ico_home"><span class="skip">홈</span></button>
+                    <button type="button" class="ico ico_liked"><span class="skip">즐겨찾기</span></button>
+                </div>
+            </div>
+        </section>
+    <? } else if($fileName == "my_box"){ ?>
+        <section class="sec-gnb-tit scroll_ani _gnb_depth01 _type_side">
+            <div class="inner-wrap">
+                <div class="btn-wrap _left">
+                    <button type="button" class="ico ico_arrow_line _left"><span class="skip">이전</span></button>
+                </div>
+    
+                <div class="gnb-tit">
+                    <h2>즐겨찾는 선생님</h2>
+                </div>
+            </div>
+        </section>
+        <aside class="header-sticky">    
+            <nav class="gnb-nav _gnb_depth02">
+                <ul class="gnb-nav-slider _line" data-index="<?= $index ?>">
+                    <li><a href="./my_box">즐겨찾기</a></li>
+                    <li><a href="./my_box?index=1">새소식 (3)</a></li>
+                </ul>
+            </nav>
+        </aside>
+    <? } else { ?>
+        <section class="sec-gnb-tit scroll_ani _gnb_depth01 _type_side">
+            <div class="inner-wrap">
+                <div class="btn-wrap _left">
+                    <button type="button" class="ico ico_arrow_line _left"><span class="skip">이전</span></button>
+                </div>
+
+                <div class="gnb-tit">
+                    <h2>이선재 선생님</h2>
+                </div>
+
+                <div class="btn-wrap _right">
+                    <button type="button" class="ico ico_home"><span class="skip">홈</span></button>
+                    <button type="button" class="ico ico_liked"><span class="skip">즐겨찾기</span></button>
+                </div>
+            </div>
+        </section>
+        <aside class="header-sticky">
+            <nav class="gnb-nav _gnb_depth02">
+                <ul class="gnb-nav-slider _line" data-index="<?= $index ?>">
+                    <li><button type="button" onclick="window.location='./main';">홈</button></li>
+                    <li><button type="button">커리큘럼</button></li>
+                    <li><button type="button">개설강좌</button></li>
+                    <li><button type="button" href="./notice_list?index=3">선생님 새소식</button></li>
+                    <li><button type="button" onclick="window.location='./qna_list?index=4';">학습질문</button></li>
+                    <li><button type="button" onclick="window.location='./library_list?index=5';">자료실</button></li>
+                    <li><button type="button" onclick="window.location='./review_list?index=6';">수강후기</button></li>
+                    <li><button type="button" onclick="window.location='./free_lecture?index=7';">무료강좌&T캐스트</button></li>
+                    <li><button type="button" onclick="window.location='./event_list?index=8';">기획전</button></li>
+                </ul>
+            </nav>
+
+            <? if($fileName == 'free_lecture' || $fileName == 'cast_list'){ ?>
+            <nav class="gnb-nav _gnb_depth03">
+                <ul class="gnb-nav-slider" data-index="<?= ( $fileName == 'cast_list' ? '1' : '0' ) ?>">
+                    <li><a href="./free_lecture?index=7">무료강좌</a></li>
+                    <li><a href="./cast_list?index=7">T캐스트</a></li>
+                </ul>
+            </nav>
+            <? } ?>
+        </aside>
+    <? } ?>

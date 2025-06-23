@@ -1,0 +1,31 @@
+<!-- 상품 선택 모달 -->
+<aside class="modal_goods_select hide">
+    <div class="modal_col flex">
+        <div class="label-group-box flex">
+            <div class="label-box radio-box flex">
+                <label class="radio-check">
+                    <input type="radio" name="lecture_type">
+                    <div class="ico ico_radio"><span>[9급] [특강] 2024 전한길 한국사 필기노트 강해</span></div>
+                </label>
+                <label class="radio-check">
+                    <input type="radio" name="lecture_type">
+                    <div class="ico ico_radio"><span>[9급] [특강] 2024 전한길 한국사 필기노트 강해 2024 전한길 한국사 필기노트 강해</span></div>
+                </label>
+            </div>
+            <div class="label-msg">error text ( {.label-group-box flex ._error} 일 때만 보임)</div>
+        </div>
+    </div>
+</aside>
+<script>
+    const $dim_goods = $('.lec-list-area [data-dim-goods]').cnBottomModal({
+        modalBody: '.modal_goods_select',
+        strModalTit:'어떤 상품에 담으시겠습니까?',
+        strBtnTxt:'담기',
+        onClickBtn: function(pModal, pClickBtn){
+            console.log('그 후 수행할 부분');
+
+            // 팝업 닫기
+            $dim_goods.close();
+        }
+    });
+</script>

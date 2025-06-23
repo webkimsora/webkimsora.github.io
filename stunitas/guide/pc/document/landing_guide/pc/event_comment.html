@@ -1,0 +1,54 @@
+<link rel="stylesheet" href="<?=UN_STATIC?>/css/common/event.css">
+<style>
+	/* 공통 */
+	.event-contents {position: relative;}
+	.event-contents .inner {width: 1140px;margin: 0 auto;}
+	.event-contents img {max-width: 100%;}
+	.event-contents a:hover {text-decoration: none;}
+	
+	.event-contents [class^="cont_"] {padding-bottom: 100px;}
+	.cont_mock {padding: 100px 0;}
+</style>
+<div class="contents_wrap">
+	<div class="event-contents">
+		<div class="cont_event" id="">
+			<div class="top" style="padding: 100px 0;background: linear-gradient(180deg, #E9E9E9 0%, #FFF 100%);">
+				<div class="inner">
+					<h3>
+						<img src="<?=UN_STATIC_IMG?>/gong/landing/2024/10/gong_15714/pc/event_comment1_tit.png" alt="">
+						<div class="event_info">
+							<img src="<?=UN_STATIC_IMG?>/gong/landing/2024/10/gong_15714/pc/event_comment1_img.png" alt="">
+						</div>
+					</h3>
+				</div>
+			</div>
+			<div class="inner">
+				<div class="event_comment">
+					<!-- 버튼 리스트 -->
+					<div class="event_btn_box" style="margin-bottom: 40px;">
+						<div>
+							<a href="javascript:void(0);" class="btn_m style_dark">소문내기 이미지 다운로드</a>
+							<a href="javascript:void(0);" class="btn_m style_dark_outline">URL 복사</a>
+						</div>
+						<div>
+							<a href="javascript:void(0);" class="btn_s">네이버 공드림</a>
+							<a href="javascript:void(0);" class="btn_s">네이버 공드림</a>
+							<a href="javascript:void(0);" class="btn_s">네이버 공드림</a>
+							<a href="javascript:void(0);" class="btn_s">네이버 공드림</a>
+							<a href="javascript:void(0);" class="btn_s">네이버 공드림</a>
+							<a href="javascript:void(0);" class="btn_s">네이버 공드림</a>
+						</div>
+					</div>
+
+					<div id="eventComment">
+						<?php include('skin/pub/layout/pc/include/landing/inc_event_comment_form.html');?>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+	// 가이드라인에서만 쓰이는 스크립트
+	$('.event_reply ul > li').eq(0).children('.reply_content').show();
+</script>

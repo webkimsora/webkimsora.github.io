@@ -1,0 +1,340 @@
+<style>
+    .grid_caption_type1 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 17rem); /*삭제유무 가로세로*/
+    gap: 12px;
+    }
+
+    .grid_caption_type1 > .item {
+    position: relative;
+    height: 19rem;
+    background-color: lightGrey;
+    overflow-y: hidden;
+    box-shadow: 0.1rem 0.1rem 1rem rgba(0, 0, 0, 0.1);
+    }
+    .grid_caption_type1 > .item h3 {
+    margin: 0;
+    display: block;
+    background-color: turquoise;
+    padding: 1rem;
+    }
+    .grid_caption_type1 > .item a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    }
+    .grid_caption_type1 > .item a:hover ~ .item_overlay, 
+    .grid_caption_type1 > .item a:focus ~ .item_overlay {
+    transform: translate3d(0, 0, 0);
+    }
+
+    .grid_caption_type1 img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    }
+
+    .grid_caption_type1 .item_overlay {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    transition: transform 300ms;
+    background-color: #82ebe0;
+    transform: translate3d(0, calc(100% - 3.5rem), 0);
+    }
+
+    .grid_caption_type1 .txt {
+    flex-grow: 1;
+    padding: 1rem;
+    }
+    .grid_caption_type1 .txt p {
+    margin: 0;
+    }
+</style>
+    
+<!-- @ 본문 -->
+<section>
+    <div class="grid_caption_type1">
+        <? for($i=1;$i<=3;$i++){ ?>
+        <div class="item">
+            <a href="javascript:void(0);"></a>
+            <img src="https://placehold.co/600x400" alt=''>
+            <div class="item_overlay">
+                <h3>Person <?=$i?></h3>
+                <div class="txt">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+            </div>
+        </div>
+        <? } ?>
+    </div>
+</section>
+
+
+<!-- @ 2. 하단 hover  -->
+
+<style>
+    .grid_caption_type2  {
+      display: flex;
+      flex-wrap: wrap;
+      align-content: center;
+    }
+    .grid_caption_type2  .card {
+      position: relative;
+      background-color: #f1f5fb;
+      box-shadow: 0 2px 4px 0 #ccd0d9;
+      border-radius: 4px;
+      margin: 0 20px 16px 0;
+      padding: 32px;
+      cursor: pointer;
+      will-change: transform;
+      transition: all 0.3s ease;
+    }
+    .grid_caption_type2  .card_top {
+      position: relative;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+    }
+    .grid_caption_type2  .card_top:after {
+      content: "";
+      display: block;
+      position: absolute;
+      right: 0;
+      width: 24px;
+      height: 24px;
+      background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/945546/cards-arrow.svg") no-repeat;
+      background-size: 16px;
+      background-position: center;
+      transform: translatex(-50%);
+      transition: all 0.2s ease-in-out;
+      opacity: 0;
+    }
+    .grid_caption_type2  .card_top h4 {
+      font-weight: 400;
+      margin-left: 12px;
+      font-size: 18px;
+      color: #ffffff;
+      transform: translatex(-8%);
+      transition: all 0.2s ease-out;
+      opacity: 0;
+    }
+    .grid_caption_type2  .card_bt {
+      position: relative;
+      margin-top: 24px;
+    }
+    .grid_caption_type2  .card_bt h4 {
+      margin-top: 50px;
+      margin-bottom: 20px;
+      font-size: 18px;
+      color: #292f3a;
+      transition: all 0.2s ease-out;
+    }
+    .grid_caption_type2  .card_bt h4:before {
+      content: "";
+      display: block;
+      position: relative;
+      top: 30px;
+      width: 100%;
+      height: 1px;
+      background-color: #d8dde6;
+    }
+    .grid_caption_type2  .card_bt p {
+      transition: all 0.2s ease-out;
+    }
+    .grid_caption_type2  .card_bt p:nth-of-type(1) {
+      opacity: 0.7;
+      font-size: 14px;
+      color: #292f3a;
+      letter-spacing: 0;
+      line-height: 21px;
+    }
+    .grid_caption_type2  .card_bt p:nth-of-type(2) {
+      opacity: 0;
+      font-size: 13px;
+      font-weight: 300;
+      color: #c3d5ff;
+      letter-spacing: 0;
+      line-height: 19px;
+      position: absolute;
+      top: -30px;
+      transform: translateY(-10px);
+    }
+    .grid_caption_type2  .card:hover {
+      transform: scale3d(0.985, 0.985, 0.985) translateX(0);
+      background-color: #3973ff;
+      box-shadow: none;
+    }
+    .grid_caption_type2  .card:hover .card_top:after {
+      opacity: 1;
+      transform: translatex(0);
+    }
+    .grid_caption_type2  .card:hover .card_top h4 {
+      opacity: 1;
+      transform: translatex(0);
+    }
+    .grid_caption_type2  .card:hover .card_bt h4 {
+      transform: translateY(16px);
+      opacity: 0;
+    }
+    .grid_caption_type2  .card:hover .card_bt p:nth-of-type(1) {
+      transform: translateY(16px);
+      opacity: 0;
+    }
+    .grid_caption_type2  .card:hover .card_bt p:nth-of-type(2) {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    .grid_caption_type2  .card:hover span {
+      opacity: 1;
+      transform: scale(1);
+    }
+    .grid_caption_type2  .card span {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/945546/bg-222.png") no-repeat;
+      background-size: contain;
+      background-position: left;
+      opacity: 0;
+      transition-delay: 0.3s;
+      transform-origin: left;
+      transform: scale(0.9);
+      transition: all 0.4s ease;
+    }
+    
+    .grid_caption_type2 .card.preShow {
+      -webkit-animation-delay: 0.3s;
+              animation-delay: 0.3s;
+    }
+    .grid_caption_type2 .card.preShow::before {
+      -webkit-animation-delay: 0.3s;
+              animation-delay: 0.3s;
+    }
+    .grid_caption_type2 .card.preShow .card_bt h4:after {
+      content: "New";
+      padding: 2px 8px;
+      font-size: 12px;
+      font-weight: 300;
+      border-radius: 16px;
+      color: #3973ff;
+      letter-spacing: 0;
+      vertical-align: middle;
+      line-height: 12px;
+      background-color: #d8e4ff;
+      margin-left: 12px;
+    }
+    
+    .preShow {
+      position: relative;
+      opacity: 0;
+      will-change: transform;
+      transform: translateX(-30px);
+      -webkit-animation: preShow 1.8s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+              animation: preShow 1.8s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+    }
+    .preShow::before {
+      content: "";
+      z-index: 999;
+      position: absolute;
+      left: 0;
+      top: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      background-color: #fff;
+      transform-origin: right;
+      will-change: transform;
+      -webkit-animation-delay: 1s;
+              animation-delay: 1s;
+      -webkit-animation: preShowMove 1.8s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+              animation: preShowMove 1.8s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+    }
+    
+    @-webkit-keyframes preShowMove {
+      to {
+        transform: scaleX(0);
+      }
+    }
+    
+    @keyframes preShowMove {
+      to {
+        transform: scaleX(0);
+      }
+    }
+    @-webkit-keyframes preShow {
+      0% {
+        box-shadow: none;
+      }
+      60% {
+        box-shadow: none;
+        opacity: 1;
+        transform: translateX(0);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+        box-shadow: 0 2px 4px 0 #ccd0d9;
+      }
+    }
+    @keyframes preShow {
+      0% {
+        box-shadow: none;
+      }
+      60% {
+        box-shadow: none;
+        opacity: 1;
+        transform: translateX(0);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+        box-shadow: 0 2px 4px 0 #ccd0d9;
+      }
+    }
+</style>
+        
+    <!-- @ 본문 -->
+    <section>
+        <div class="grid_caption_type2">
+            <div class="card preShow">
+                <div class="card_top">
+                    <h4>CAPTCHA</h4>
+                </div>
+                <div class="card_bt">
+                    <h4>CAPTCHA</h4>
+                    <p>
+                        Human Machine Verification 3.0 Universal Solution 
+                    </p>
+                    <p>
+                        Using AI to dynamically determine the current attack situation of the website, combined with the multi-dimensional data combination of each request, AI can use different defense capability combinations for each request
+                    </p>
+                </div>
+            </div>
+            <div class="card preShow">
+                <div class="card_top">
+                    <h4>DeepKnow</h4>
+                </div>
+                <div class="card_bt">
+                    <h4>DeepKnow</h4>
+                    <p>
+                    Interactive safety autoimmune system based on full link
+                    </p>
+                    <p>
+                    The security of Internet assets is protected from the perspective of interactive security. Through systematic global analysis of the full link of the website or app, a systematic defense mode is constructed
+                    </p>
+                </div>
+            </div>
+        </div>
+    
+    </section>

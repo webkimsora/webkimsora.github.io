@@ -1,0 +1,97 @@
+@charset "utf-8";
+
+@keyframes giftAni {
+    0% {opacity: 0.8;}
+    50% {opacity: 0.3;}
+    80% {opacity: 0.96;}
+    100% {opacity: 0.66;}
+}
+@keyframes slideInLeft {
+    0% {opacity: 0;}
+    100%{transform: translateX(0);opacity: 1;}
+}
+@keyframes slideInUp {
+    0% {opacity: 0;}
+    100%{transform: translateY(0);opacity: 1;}
+}
+/* 둥실둥실 animation: scrollBottom 1.2s both infinite alternate; */
+@keyframes scrollBottom {
+    0% { transform: translateY(-3%); }
+    100% { transform: translateY(3%); }
+}
+@keyframes stamp {
+        0%{opacity: 0; transform: scale(9);}
+        100%{opacity: 1; transform: scale(1);}
+    }
+@keyframes scaleDeco {
+    0% { transform: scale(1); opacity: 1;}
+    20% {transform: scale(1.1); opacity: 1; }
+    60% {transform: scale(0.9); opacity: 1; }
+    70% {transform: scale(1.2); opacity: 1; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes showto-right{
+    0%{width:0;}
+    100%{width:100%;}
+}
+
+@keyframes bounce-in-top {
+    0% {
+        -webkit-transform: translateY(-500px);
+                transform: translateY(-500px);
+        -webkit-animation-timing-function: ease-in;
+                animation-timing-function: ease-in;
+        opacity: 0;
+    }
+    38% {
+        -webkit-transform: translateY(0);
+                transform: translateY(0);
+        -webkit-animation-timing-function: ease-out;
+                animation-timing-function: ease-out;
+        opacity: 1;
+    }
+    55% {
+        -webkit-transform: translateY(-65px);
+                transform: translateY(-65px);
+        -webkit-animation-timing-function: ease-in;
+                animation-timing-function: ease-in;
+    }
+    72% {
+        -webkit-transform: translateY(0);
+                transform: translateY(0);
+        -webkit-animation-timing-function: ease-out;
+                animation-timing-function: ease-out;
+    }
+    81% {
+        -webkit-transform: translateY(-28px);
+                transform: translateY(-28px);
+        -webkit-animation-timing-function: ease-in;
+                animation-timing-function: ease-in;
+    }
+    90% {
+        -webkit-transform: translateY(0);
+                transform: translateY(0);
+        -webkit-animation-timing-function: ease-out;
+                animation-timing-function: ease-out;
+    }
+    95% {
+        -webkit-transform: translateY(-8px);
+                transform: translateY(-8px);
+        -webkit-animation-timing-function: ease-in;
+                animation-timing-function: ease-in;
+    }
+    100% {
+        -webkit-transform: translateY(0);
+                transform: translateY(0);
+        -webkit-animation-timing-function: ease-out;
+                animation-timing-function: ease-out;
+    }
+}
+
+@keyframes neon_twinkle {
+    
+    0%,60%,100% {opacity: 1;}
+    25% {opacity: 0.5;}
+    70% {opacity: 0.8;}
+}

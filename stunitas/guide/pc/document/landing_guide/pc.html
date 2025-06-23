@@ -1,0 +1,65 @@
+<link rel="stylesheet" href="<?=UN_STATIC?>/css/common/event.css">
+<style>
+	/* 공통 */
+	.event-contents {position: relative;}
+	.event-contents .inner {width: 1140px;margin: 0 auto;}
+	.event-contents img {max-width: 100%;}
+	.event-contents a:hover {text-decoration: none;}
+	.event-contents [class^="cont_"] {padding-bottom: 100px;}
+
+	.cont_mock {padding: 100px 0;}
+</style>
+<div class="contents_wrap">
+	<!-- ## 랜딩페이지 시작 -->
+	<div class="event-contents event_20241015">
+		<!-- 퀵배너 -->
+		<?php include('skin/pub/layout/pc/include/landing/inc_event_quick.html');?>
+		
+		<!-- 스티키배너 카운트 -->
+		<?php include('skin/pub/layout/pc/include/landing/inc_event_sticky.html');?>
+
+		<!-- 스티키배너 하단 -->
+		<?php include('skin/pub/layout/pc/include/landing/inc_event_sticky_btm.html');?>
+		
+		<!-- 강사단독 PR 상단 -->
+		<?php include('skin/pub/layout/pc/include/landing/inc_cont_visual_01.html');?>
+
+		<!-- 모의고사 -->
+		<?php include('skin/pub/layout/pc/include/landing/inc_cont_mock_01.html');?>
+		
+		<?php include('skin/pub/layout/pc/include/landing/inc_cont_mock_02.html');?>
+
+		<!-- 배포 이벤트 -->
+		<?php include('skin/pub/layout/pc/include/landing/inc_event_distri_01.html');?>
+		
+		<?php include('skin/pub/layout/pc/include/landing/inc_event_distri_02.html');?>
+		
+		<?php include('skin/pub/layout/pc/include/landing/inc_event_distri_03.html');?>
+		
+		<?php include('skin/pub/layout/pc/include/landing/inc_event_distri_04.html');?>
+
+		<!-- 팝업 이벤트 -->
+		<?php include('skin/pub/layout/pc/include/landing/inc_event_popup.html');?>
+
+		<!-- 댓글 이벤트 -->
+		<?php include('skin/pub/layout/pc/include/landing/inc_event_comment_01.html');?>
+		
+		<?php include('skin/pub/layout/pc/include/landing/inc_event_comment_02.html');?>
+		
+		<?php include('skin/pub/layout/pc/include/landing/inc_event_comment_03.html');?>
+
+		<!-- 카드 이벤트 -->
+		<?php include('skin/pub/layout/pc/include/landing/inc_event_card_01.html');?>
+		
+		<!-- 이벤트 종료 -->
+		<?php include('skin/pub/layout/pc/include/landing/inc_event_end.html');?>
+	</div>
+</div>
+<!-- 유의사항 -->
+<div id="use_guide"></div>
+<script type="text/javascript">use_guide.html('<?= $base_uri ?>','#use_guide','','');</script>
+
+<script>
+	// 가이드라인에서만 쓰이는 스크립트
+	$('.event_reply ul > li').eq(0).children('.reply_content').show();
+</script>

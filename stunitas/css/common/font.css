@@ -1,0 +1,149 @@
+@charset "utf-8";
+
+/* 기본 폰트 선언 */
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 100;
+    src: url('/un_static/font/Noto_Sans_KR/NotoSansKR-Thin.woff2') format('woff2'), url('/un_static/font/Noto_Sans_KR/NotoSansKR-Thin.woff') format('woff'), url('/un_static/font/Noto_Sans_KR/NotoSansKR-Thin.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 300;
+    src: url('/un_static/font/Noto_Sans_KR/NotoSansKR-Light.woff2') format('woff2'), url('/un_static/font/Noto_Sans_KR/NotoSansKR-Light.woff') format('woff'), url('/un_static/font/Noto_Sans_KR/NotoSansKR-Light.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/un_static/font/Noto_Sans_KR/NotoSansKR-Regular.woff2') format('woff2'), url('/un_static/font/Noto_Sans_KR/NotoSansKR-Regular.woff') format('woff'), url('/un_static/font/Noto_Sans_KR/NotoSansKR-Regular.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 500;
+    src: url('/un_static/font/Noto_Sans_KR/NotoSansKR-Medium.woff2') format('woff2'), url('/un_static/font/Noto_Sans_KR/NotoSansKR-Medium.woff') format('woff'), url('/un_static/font/Noto_Sans_KR/NotoSansKR-Medium.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 700;
+    src: url('/un_static/font/Noto_Sans_KR/NotoSansKR-Bold.woff2') format('woff2'), url('/un_static/font/Noto_Sans_KR/NotoSansKR-Bold.woff') format('woff'), url('/un_static/font/Noto_Sans_KR/NotoSansKR-Bold.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 900;
+    src: url('/un_static/font/Noto_Sans_KR/NotoSansKR-Black.woff2') format('woff2'), url('/un_static/font/Noto_Sans_KR/NotoSansKR-Black.woff') format('woff'), url('/un_static/font/Noto_Sans_KR/NotoSansKR-Black.otf') format('opentype');
+}
+
+
+/* Pretendard  */
+@font-face{
+    font-family:'Pretendard';
+    font-weight:900;
+    font-display:swap;
+    src: url('/un_static/font/Pretendard/Pretendard-Black.woff2') format('woff2'),url('/un_static/font/Pretendard/Pretendard-Black.woff') format('woff'), url('/un_static/font/Pretendard/NotoSansKR-Black.otf') format('opentype');
+}
+@font-face{
+    font-family:'Pretendard';
+    font-weight:800;
+    font-display:swap;
+    src: url('/un_static/font/Pretendard/Pretendard-ExtraBold.woff2') format('woff2'),url('/un_static/font/Pretendard/Pretendard-ExtraBold.woff') format('woff'), url('/un_static/font/Pretendard/NotoSansKR-Black.otf') format('opentype');
+}
+@font-face{
+    font-family:'Pretendard';
+    font-weight:700;
+    font-display:swap;
+    src: url('/un_static/font/Pretendard/Pretendard-Bold.woff2') format('woff2'),url('/un_static/font/Pretendard/Pretendard-Bold.woff') format('woff'), url('/un_static/font/Pretendard/NotoSansKR-Black.otf') format('opentype');
+}
+@font-face{
+    font-family:'Pretendard';
+    font-weight:600;
+    font-display:swap;
+    src: url('/un_static/font/Pretendard/Pretendard-SemiBold.woff2') format('woff2'),url('/un_static/font/Pretendard/Pretendard-SemiBold.woff') format('woff'), url('/un_static/font/Pretendard/NotoSansKR-Black.otf') format('opentype');
+}
+@font-face{
+    font-family:'Pretendard';
+    font-weight:500;
+    font-display:swap;
+    src: url('/un_static/font/Pretendard/Pretendard-Medium.woff2') format('woff2'),url('/un_static/font/Pretendard/Pretendard-Medium.woff') format('woff'), url('/un_static/font/Pretendard/NotoSansKR-Black.otf') format('opentype');
+}
+@font-face{
+    font-family:'Pretendard';
+    font-weight:400;
+    font-display:swap;
+    src: url('/un_static/font/Pretendard/Pretendard-Regular.woff2') format('woff2'),url('/un_static/font/Pretendard/Pretendard-Regular.woff') format('woff'), url('/un_static/font/Pretendard/NotoSansKR-Black.otf') format('opentype');
+}
+@font-face{
+    font-family:'Pretendard';
+    font-weight:300;
+    font-display:swap;
+    src: url('/un_static/font/Pretendard/Pretendard-Light.woff2') format('woff2'),url('/un_static/font/Pretendard/Pretendard-Light.woff') format('woff'), url('/un_static/font/Pretendard/NotoSansKR-Black.otf') format('opentype');
+}
+@font-face{
+    font-family:'Pretendard';
+    font-weight:200;
+    font-display:swap;
+    src: url('/un_static/font/Pretendard/Pretendard-ExtraLight.woff2') format('woff2'),url('/un_static/font/Pretendard/Pretendard-ExtraLight.woff') format('woff'), url('/un_static/font/Pretendard/NotoSansKR-Black.otf') format('opentype');
+}
+@font-face{
+    font-family:'Pretendard';
+    font-weight:100;
+    font-display:swap;
+    src: url('/un_static/font/Pretendard/Pretendard-Thin.woff2') format('woff2'),url('/un_static/font/Pretendard/Pretendard-Thin.woff') format('woff'), url('/un_static/font/Pretendard/NotoSansKR-Black.otf') format('opentype');
+}
+
+/* SUIT */
+
+@font-face {
+	font-family: 'SUIT';
+	font-weight: 100;
+	src: url('/un_static/font/SUIT/SUIT-Thin.woff2') format('woff2'), url('/un_static/font/SUIT/SUIT-Thin.woff') format('woff'),url('/un_static/font/SUIT/SUIT-Thin.otf') format('opentype');
+}
+@font-face {
+	font-family: 'SUIT';
+	font-weight: 200;
+	src: url('/un_static/font/SUIT/SUIT-ExtraLight.woff2') format('woff2'), url('/un_static/font/SUIT/SUIT-ExtraLight.woff') format('woff'),url('/un_static/font/SUIT/SUIT-ExtraLight.otf') format('opentype');
+}
+@font-face {
+	font-family: 'SUIT';
+	font-weight: 300;
+	src: url('/un_static/font/SUIT/SUIT-Light.woff2') format('woff2'), url('/un_static/font/SUIT/SUIT-Light.woff') format('woff'),url('/un_static/font/SUIT/SUIT-Light.otf') format('opentype');
+}
+@font-face {
+	font-family: 'SUIT';
+	font-weight: 400;
+	src: url('/un_static/font/SUIT/SUIT-Regular.woff2') format('woff2'), url('/un_static/font/SUIT/SUIT-Regular.woff') format('woff'),url('/un_static/font/SUIT/SUIT-Regular.otf') format('opentype');
+}
+@font-face {
+	font-family: 'SUIT';
+	font-weight: 500;
+	src: url('/un_static/font/SUIT/SUIT-Medium.woff2') format('woff2'), url('/un_static/font/SUIT/SUIT-Medium.woff') format('woff'),url('/un_static/font/SUIT/SUIT-Medium.otf') format('opentype');
+}
+@font-face {
+	font-family: 'SUIT';
+	font-weight: 600;
+	src: url('/un_static/font/SUIT/SUIT-SemiBold.woff2') format('woff2'), url('/un_static/font/SUIT/SUIT-SemiBold.woff') format('woff'),url('/un_static/font/SUIT/SUIT-SemiBold.otf') format('opentype');
+}
+@font-face {
+	font-family: 'SUIT';
+	font-weight: 700;
+	src: url('/un_static/font/SUIT/SUIT-Bold.woff2') format('woff2'), url('/un_static/font/SUIT/SUIT-Bold.woff') format('woff'),url('/un_static/font/SUIT/SUIT-Bold.otf') format('opentype');
+}
+@font-face {
+	font-family: 'SUIT';
+	font-weight: 800;
+	src: url('/un_static/font/SUIT/SUIT-ExtraBold.woff2') format('woff2'), url('/un_static/font/SUIT/SUIT-ExtraBold.woff') format('woff'),url('/un_static/font/SUIT/SUIT-ExtraBold.otf') format('opentype');
+}
+@font-face {
+	font-family: 'SUIT';
+	font-weight: 900;
+	src: url('/un_static/font/SUIT/SUIT-Heavy.woff2') format('woff2'), url('/un_static/font/SUIT/SUIT-Heavy.woff') format('woff'),url('/un_static/font/SUIT/SUIT-Heavy.otf') format('opentype');
+}

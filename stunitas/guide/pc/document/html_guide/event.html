@@ -1,0 +1,130 @@
+<link rel="stylesheet" href="/css/document.css"/>
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/highlight.min.js"></script>
+<script src="/js/document.js"></script>
+
+<?
+    include('skin/pub/layout/pc/document/inc_document_lnb.html');
+?>
+<div class="document" id="html_guide">
+    <main class="css__wrap">
+        <nav>
+            <a href="../index">< 목록</a>
+            <h2>이벤트 페이지 가이드</h2>
+            <!-- <ul>
+                <li data-target="#ex"><a href="javascript:;">Example</a></li>
+            </ul> -->
+        </nav>
+
+        <section>
+            <h2><i class="fa-solid fa-file"></i> 커넥츠 HTML/CSS 문서</h2>
+        </section>
+
+        
+
+        <!-- @ 클래스 규칙 -->
+        <section>
+            <h3>클래스 규칙</h3>
+            <div>
+                <dl class="list">
+                    <dd>
+                        <ol>
+                            <li>
+                                이벤트 페이지 시작시 클래스에 pc지라주소, 모바일 경우 pc지라주소_m 클래스로 각 고유성 확보<br>
+<pre><code class="language-html">/* PC */
+<div class="event-contents gong_11111"></div>
+/* Mobile */
+<div class="event-contents gong_11111_m"></div>
+</code></pre>
+                            </li>
+                            <li>
+                                .inner-wrap 클래스는 --layout-width 변수에 정의된 통 inner 일때 사용하고<br>
+                                페이지 내에서는 .inner 로 기존과 동일하게 사용 바랍니다.
+                            </li>
+                            <li>
+                                layout을 잡을땐 <b>.inner</b> 를 사용합니다.<br>
+                            </li>
+                            <li>
+                                퀵 배너는 position:sticky 를 사용 해야 하므로 전체 overflow:hidden; 은 사용하지 않습니다.<br>
+                                overflow:hidden; 가 필요하면 각 단에서 사용바랍니다.<br>
+                                <b>특히,</b> swiper 작업 후 확인 바랍니다.
+                            </li>
+                        </ol>
+                    </dd>
+                </dl>
+            </div>
+
+            
+        </section>
+        <!-- //@ 네이밍 규칙 -->
+
+        <!-- @ 폴더 규칙 -->
+        <section>
+            <h3>폴더 규칙</h3>
+            <div>
+
+                <table>
+                    <colgroup>
+                        <col width="20%" />
+                        <col width="30%" />
+                        <col width="50%" />
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>HTML 생성</th>
+                            <td>YYYY > MM > pc 지라 주소 > pc.html / m.html</td>
+                            <td>
+                                전체 소문자로 사용 바랍니다.<br><br>
+                                ex) landing / 2023 / 05 / gong_12778 / pc.html<br>
+                                landing /2023 / 05 / gong_12778 / m.html
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>이미지폴더</th>
+                            <td>
+                                landing > YYYY > MM > pc 지라 주소 폴더 : pc와 모바일 공통 이미지<br>
+                                landing > YYYY > MM > pc 지라 주소 폴더 > pc : pc이미지<br>
+                                landing > YYYY > MM > pc 지라 주소 폴더 > m : 모바일 이미지
+                            </td>
+                            <td>
+                                ex ) 
+                                landing > 2023 > 05 > gong_12778 > 공용 이미지들(ex.소문내기이미지)<br>
+                                landing > 2023 > 05 > gong_12778 > pc > PC 이미지<br>
+                                landing > 2023 > 05 > gong_12778 > m > 모바일 이미지<br>
+                                landing > 2023 > 05 > gong_12778 > 230501 > 수정 이미지들
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>이미지폴더 - 유지보수</th>
+                            <td>
+                                landing > YYYY > MM > pc 지라 주소 폴더 > 폴더별 > YYMMDD 폴더생성
+                            </td>
+                            <td>
+                                수정 작업 시 각 폴더 밑에 YYMMDD로 (연도 포함 총 6자) 해당 폴더 내에서 유지보수 이미지 업로드<br><br>
+                                ex ) landing > 2023 > 05 > gong_12778 > 230501 > 수정 이미지들
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>이미지폴더 - 배너</th>
+                            <td>
+                                banner > YYYY > MM > YYMMDD_배너명.png
+                            </td>
+                            <td>
+                                이벤트 페이지를 제외한 페이지 내 배너는 banner 폴더에서 이용합니다.<br>
+                                ex)메인배너, 선생님홈 배너<br><br>
+                                ex ) banner > 2023 > 05 > 230501_main_banner.png
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <!-- //@ 폴더 규칙 -->
+    </main>
+</div>

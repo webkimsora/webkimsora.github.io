@@ -1,0 +1,348 @@
+<div class="event_box_wrap">
+	<!-- 개인정보 수집 동의 -->
+	<div class="event_agree_box">
+		<label><input type="checkbox">개인정보의 수집 및 이용에 동의합니다.</label>
+		<ul>
+			<li>1. 개인정보의 수집·이용 목적: 이벤트 진행 및 경품 배송<br /></li>
+			<li>2. 수집하는 개인정보의 항목: 이름, 휴대폰번호<br /></li>
+			<li>3. 개인정보의 보유·이용 기간: 이벤트 종료 후 즉시 파기<br /></li>
+			<li>4. 개인정보의 수집 및 이용에 대한 동의를 거부할 수 있으며, 이 경우 이벤트 참여가 제한됩니다.</li>
+		</ul>
+	</div>
+
+	<!-- 댓글 작성자 총 인원수 -->
+	<div class="event_total_reply">
+		<span><img src="<?=UN_STATIC_IMG?>/un_static/img/event/event_count_cha.png" alt="공단이"></span>
+		<p class="txt">지금 <span id="comment_count" data-num="">0,000</span>명 댓글 작성 중!</p>
+	</div>
+
+	<!-- 댓글 입력 폼1 -->
+	<div class="event_form">
+		<select class="event_select ico ico_arrow_down" href="javascript:void(0);">
+			<option value="">선생님 선택</option>
+			<option value="">선생님1</option>
+			<option value="">선생님2</option>
+			<option value="">선생님3</option>
+			<option value="">선생님4</option>
+		</select>
+		<div>
+			<input type="text" placeholder="회원 ID" class="event_name">
+		</div>
+		<div class="event_input">
+			<div class="input_box">
+				<input type="text" placeholder="인증 url을 입력해주세요.">
+				<div class="input_file">
+					<input type="file" id="event_file" onchange="$('#event_file + label').addClass('selected')">
+					<label for="event_file" class="ico ico_clip"></label>
+				</div>
+			</div>
+			<a href="javascript:void(0);">등록하기</a>
+		</div>
+	</div>
+	<!-- 댓글 입력 폼2 -->
+	<div class="event_form _col">
+		<ul class="event_card_select">
+			<li>
+				<label>
+					<div class="select_avatar"><div class="circle_img"><img src="//placehold.co/80x80" alt=""></div></div>
+					<div class="select_name"><input type="radio" name="list_radio"><input type="text" placeholder="닉네임 입력" onfocus="$(this).prev().prop('checked', true)"></div>
+				</label>
+			</li>
+			<li>
+				<label>
+					<div class="select_avatar"><div class="circle_img"><img src="//placehold.co/80x80" alt=""></div></div>
+					<div class="select_name"><input type="radio" name="list_radio"><span>이선재 선생님</span></div>
+				</label>
+			</li>
+			<li>
+				<label>
+					<div class="select_avatar"><div class="circle_img"><img src="//placehold.co/80x80" alt=""></div></div>
+					<div class="select_name"><input type="radio" name="list_radio"><span>이선재 선생님</span></div>
+				</label>
+			</li>
+		</ul>
+		<div class="event_textarea">
+			<textarea name="" placeholder="이곳에 내용을 입력해주세요."></textarea>
+			<div class="input_btns">
+				<label href="javascript:void(0);" class="btn-h36">
+					<input type="file" onchange="$(this).next().addClass('selected')">
+					<span class="ico ico_clip">파일 업로드</span>
+				</label>
+				<a href="javascript:void(0);" class="style_dark"><span>등록하기</span></a>
+			</div>
+		</div>
+	</div>
+
+	<div>
+		<!-- 댓글 필터 -->
+		<div class="event_filter" style="display: flex;justify-content: space-between;align-items: center;">
+			<div style="width: 100%;">
+				<ul class="filter_box">
+					<li class="active"><a href="javascript:;">전 체</a></li>
+					<li><a href="javascript:;">학습관리</a></li>
+					<li><a href="javascript:;">성적관리</a></li>
+					<li><a href="javascript:;">일상기록</a></li>
+				</ul>
+				<!-- 필터 토글 스크립트 -->
+				<script>
+					$(document).on('click','.filter_box li a', function(){
+						$('.filter_box li').removeClass('active');
+						$(this).parent('li').addClass('active');
+					});
+				</script>
+			</div>
+			<div>
+				<label class="ico-toggle-switch">
+					<em>나의 댓글 확인하기</em>
+					<input type="checkbox">
+					<span class="ico-switch"><i class="ico-switch-move"></i></span>
+				</label>
+			</div>
+			<div>
+				<div class="search_wrap">
+					<select class="sel_box">
+						<option value="">제목</option>
+						<option value="">내용</option>
+						<option value="">작성자</option>
+					</select>
+					<div class="search_box">
+						<input type="search" placeholder="검색어 입력">
+						<button class="icon search"></button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 댓글 리스트(기본) -->
+		<div class="event_list_wrap event_board">
+			<ul>
+				<li>
+					<div>
+						<div class="list_avatar">
+							<div class="circle_img"><img src="//placehold.co/40x40" alt=""></div>
+							<span class="type_name">김덕관 선생님</span>
+						</div>
+						<div class="list_content">
+							<p>
+								나는 쉽고 재밌게 알려주기 때문에 선재국어 한다 나는 쉽고 재밌게 알려주기 때문에 선재국어 한다나는 쉽고 재밌습니다. 
+							</p>
+							<a class="event_delete_btn ico ico_close" href="javascript:void(0);"></a>
+						</div>
+					</div>
+					<div>
+						<div class="list_name">김단기(abcdefghijklmno)</div>
+						<div class="list_date">2022.03.22</div>
+					</div>
+				</li>
+			</ul>
+			<!-- paging -->
+			<div class="paging_wrap">
+				<div class="paging_box">
+					<a class="active" href="javascript:void(0);">1</a>
+					<a href="javascript:void(0);">2</a>
+					<a href="javascript:void(0);">3</a>
+					<a href="javascript:void(0);">4</a>
+					<a href="javascript:void(0);">5</a>
+					<a href="javascript:void(0);"><i class="ico ico_arrow_right"></i></a>
+				</div>
+			</div>
+			<!-- // paging -->
+		</div>
+		<!-- 댓글 리스트(좋아요) -->
+		<div class="event_list_wrap event_board event_like">
+			<ul>
+				<li>
+					<div>
+						<div class="ca_badge"><span class="type_best">BEST</span></div>
+						<div class="list_name">김단기(abcijklmno)</div>
+					</div>
+					<div>
+						<div class="list_content">
+							<p>댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글</p>
+							<a class="event_delete_btn ico ico_close" href="javascript:void(0);">삭제</a>
+						</div>
+					</div>
+					<div>
+						<div class="list_like"><i class="ico ico_heart" onclick="$(this).toggleClass('_fill')"></i> <span>99</span></div>
+					</div>
+				</li>
+				<li>
+					<div>
+						<div class="ca_badge"></div>
+						<div class="list_name">김단기(abcdefghijklmno)</div>
+					</div>
+					<div>
+						<div class="list_content">
+							<p>댓글댓글댓글댓글댓글댓글댓글댓글</p>
+							<a class="event_delete_btn ico ico_close" href="javascript:void(0);"></a>
+						</div>
+					</div>
+					<div>
+						<div class="list_like"><i class="ico ico_heart" onclick="$(this).toggleClass('_fill')"></i> <span>5</span></div>
+					</div>
+				</li>
+			</ul>
+			<!-- paging -->
+			<div class="paging_wrap">
+				<div class="paging_box">
+					<a class="active" href="javascript:void(0);">1</a>
+					<a href="javascript:void(0);">2</a>
+					<a href="javascript:void(0);">3</a>
+					<a href="javascript:void(0);">4</a>
+					<a href="javascript:void(0);">5</a>
+					<a href="javascript:void(0);"><i class="ico ico_arrow_right"></i></a>
+				</div>
+			</div>
+			<!-- // paging -->
+		</div>
+		<!-- 댓글 리스트(리플) -->
+		<div class="event_list_wrap event_board event_reply">
+			<ul>
+				<li>
+					<div class="basic_content">
+						<div>
+							<div class="list_content">
+								<p>
+									<a onclick="$(this).parents('.basic_content').siblings('.reply_content').show();" href="javascript:void(0);">나는 쉽고 재밌게 알려주기 때문에 선재국어 한다 나는 쉽고 재밌게 알려주기 때문에 선재국어 한다나는 쉽고 재밌습니다. 나는 쉽고 재밌게 알려주기 때문에 선재국어 한다 나는 쉽고 재밌게 알려주기 때문에 선재국어 한다나는 쉽고 재밌습니다. 나는 쉽고 재밌게 알려주기 때문에 선재국어 한다 나는 쉽고 재밌게 알려주기 때문에 선재국어 한다나는 쉽고 재밌습니다.</a>
+								</p>
+								<span class="event_reply_count">[1]</span>
+								<a class="event_delete_btn ico ico_close" href="javascript:void(0);"></a>
+							</div>
+						</div>
+						<div class="right_content">
+							<div class="list_name">김단기(abcdefghijklmno)</div>
+							<div class="list_date">2022.03.22</div>
+						</div>
+					</div>
+					<!-- @@@ 댓글 -->
+					<div class="reply_content">
+						<ul>
+							<li>
+								<div>
+									<div class="list_content">
+										<p>나는 쉽고 재밌게 알려주기 때문에 선재국어 한다 나는 쉽고 재밌게 알려주기 때문에 선재국어 한다나는 쉽고 재밌습니다. 나는 쉽고 재밌게 알려주기 때문에 선재국어 한다 나는 쉽고 재밌게 알려주기 때문에 선재국어 한다나는 쉽고 재밌습니다. 나는 쉽고 재밌게 알려주기 때문에 선재국어 한다 나는 쉽고 재밌게 알려주기 때문에 선재국어 한다나는 쉽고 재밌습니다.</p>
+										<a class="event_delete_btn ico ico_close" href="javascript:void(0);"></a>
+									</div>
+								</div>
+								<div>
+									<div class="list_name">김단기(abcdefghijklmno)</div>
+									<div class="list_date">2022.03.22</div>
+								</div>
+							</li>
+						</ul>
+						<div class="event_form">
+							<div class="event_input">
+								<div class="input_box">
+									<input type="text" placeholder="의견을 남겨주세요! (최대 50자)">
+								</div>
+								<a href="javascript:void(0);">등록하기</a>
+							</div>
+						</div>
+						<div class="reply_button" onclick="$(this).parent('.reply_content').hide();">답글 접기 <i class="ico ico_arrow_up"></i></div>
+					</div>
+				</li>
+			</ul>
+			<!-- paging -->
+			<div class="paging_wrap">
+				<div class="paging_box">
+					<a class="active" href="javascript:void(0);">1</a>
+					<a href="javascript:void(0);">2</a>
+					<a href="javascript:void(0);">3</a>
+					<a href="javascript:void(0);">4</a>
+					<a href="javascript:void(0);">5</a>
+					<a href="javascript:void(0);"><i class="ico ico_arrow_right"></i></a>
+				</div>
+			</div>
+			<!-- // paging -->
+		</div>
+
+		<!-- 카드 리스트 -->
+		<div class="event_list_wrap event_list">
+			<ul>
+				<li>
+					<a class="event_delete_btn ico ico_close" href="javascript:void(0);"></a>
+					<div class="list_avatar">
+						<div class="circle_img"><img src="//placehold.co/40x40" alt=""></div>
+						<span class="type_name">김덕관 선생님</span>
+					</div>
+					<img src="//placehold.co/300x178" alt="">
+					<div class="list_content">4줄까지만 노출 5줄 이상시 스크롤/4줄까지만 노출 5줄 이상시 스크롤/4줄까지만 노출 5줄 이상시 스크롤/4줄까지만 노출 5줄 이상시 스크롤/4줄까지만 노출 5줄 이상시 스크롤/4줄까지만 노출</div>
+					<div class="list_info">
+						<span>김단기(abcdefghijklmno)</span>
+						<span>2023.07.04</span>
+					</div>
+				</li>
+			</ul>
+			<!-- paging -->
+			<div class="paging_wrap">
+				<div class="paging_box">
+					<a class="active" href="javascript:void(0);">1</a>
+					<a href="javascript:void(0);">2</a>
+					<a href="javascript:void(0);">3</a>
+					<a href="javascript:void(0);">4</a>
+					<a href="javascript:void(0);">5</a>
+					<a href="javascript:void(0);"><i class="ico ico_arrow_right"></i></a>
+				</div>
+			</div>
+			<!-- // paging -->
+		</div>
+
+		<!-- 카드 리스트 팝업 -->
+		<div class="event_list_wrap event_list event_pop">
+			<ul>
+				<li>
+					<a class="event_delete_btn ico ico_close" href="javascript:void(0);"></a>
+					<div class="list_avatar">
+						<div class="circle_img"><img src="//placehold.co/40x40" alt=""></div>
+						<span class="type_name">김덕관 선생님</span>
+					</div>
+					<div class="list_img btn-modal-zoom" data-target="modal-zoom">
+						<img src="//placehold.co/300x178" alt="">
+						<div class="icon_zoom"><i class="ico ico_plus"></i></div>
+					</div>
+					<div class="list_content">4줄까지만 노출 5줄 이상시 스크롤/4줄까지만 노출 5줄 이상시 스크롤/4줄까지만 노출 5줄 이상시 스크롤/4줄까지만 노출 5줄 이상시 스크롤/4줄까지만 노출 5줄 이상시 스크롤/4줄까지만 노출</div>
+					<div class="list_info">
+						<span>김단기(abcdefghijklmno)</span>
+						<span>2023.07.04</span>
+					</div>
+				</li>
+			</ul>
+			<!-- paging -->
+			<div class="paging_wrap">
+				<div class="paging_box">
+					<a class="active" href="javascript:void(0);">1</a>
+					<a href="javascript:void(0);">2</a>
+					<a href="javascript:void(0);">3</a>
+					<a href="javascript:void(0);">4</a>
+					<a href="javascript:void(0);">5</a>
+					<a href="javascript:void(0);"><i class="ico ico_arrow_right"></i></a>
+				</div>
+			</div>
+			<!-- // paging -->
+		</div>
+	</div>
+</div>
+
+<!-- 카드 리스트 팝업 타입 모달-->
+<div class="modal-zoom">
+	<div class="modal_content">
+		<div class="img_detail"><img src="" alt=""></div>
+	</div>
+</div>
+
+<!-- 카드 리스트 팝업 타입 스크립트-->
+<script>
+	const zoomModal = $('.btn-modal-zoom').cnModal({
+		mode: 'scale', // fade or scale
+		head: false,
+		onBeforeOpen: function(el) {
+			// 클릭된 요소 내부의 이미지 src 가져오기
+			const clickedImageSrc = el.find('img').attr('src');
+
+			// 모달 내부의 img 태그 src 변경
+			$('.modal-zoom .img_detail img').attr('src', clickedImageSrc);
+		},
+		onOpen: function(){
+			$('.cn-modal-close').appendTo('.modal-zoom.active'); //닫기버튼 위치 이동
+		},
+	})
+</script>

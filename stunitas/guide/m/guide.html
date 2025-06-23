@@ -1,0 +1,176 @@
+<style>
+.guide-layout{display:flex;flex-direction:column;gap:3rem;margin-top:3rem;padding-bottom:3rem;font-size:var(--fz-13);}
+.guide-layout > section{display:flex;flex-direction:column;gap:3rem;}
+.guide-layout h2{display:flex;align-items:center;font-size:1.6rem}
+.guide-layout h2::before{content:'';display:inline-flex;width:.4rem;height:1.4rem; background-color:var(--green-deep);margin-right:.4rem;position:relative;top:.2rem;}
+.guide-layout h2 button{margin-left:auto;width:2.4rem;margin-right:1rem;}
+.guide-layout h2 + .tit_info{line-height:var(--ls-2p);margin-top:.2rem;margin-bottom:.5rem;font-size:var(--fz-13);border-bottom:.1rem dashed var(--gray-40);padding-bottom:.5rem;margin-bottom:.5rem;}
+.guide-layout h3{font-size:1.4rem;}
+.guide-layout h4{font-size:1.2rem;}
+.guide-layout .ico_list{display:grid;grid-template-columns:repeat(auto-fill, minmax(10rem, 1fr));margin-top:1rem;gap:2rem;max-width:100%;}
+.guide-layout .ico_list > li{text-align:center;}
+.guide-layout .ico_list .ico{display:inline-flex;width:2.4rem;border:.1rem dashed var(--gray-40);}
+.guide-layout .ico_list > li p{font-size:var(--fz-13);}
+
+.guide-layout .conts > dl{font-size:1.3rem;}
+.guide-layout .conts > dl > dt:not(:first-of-type){border-top:.1rem dotted darkcyan;}
+.guide-layout .toggle-box .conts:has(section).action{display:flex;}
+.guide-layout pre {margin-top:1rem;background-color:#f4f4f4;padding:.5rem;border:.1rem solid #ccc;border-radius: .4rem;font-size:1.3rem;}
+.guide-layout .conts > ul > li{margin:.8rem 0;}
+.guide-layout .conts > ul > li.flex{flex-wrap:wrap;gap:.8rem;}
+.guide-layout .conts > ul > li.flex > *{flex-grow:1; width:calc(50% - .4rem);}
+.guide-layout .conts > dl.flex._column,
+.guide-layout .conts > div.flex._col_center{gap:.8rem;}
+
+.guide-layout .conts > section > ul > li{margin:.8rem 0;}
+.guide-layout .conts > section > ul > li.flex{flex-wrap:wrap;gap:.8rem;}
+.guide-layout .conts > section > ul > li.flex > *{flex-grow:1; width:calc(50% - .4rem);}
+.guide-layout .conts > section > dl.flex._column,
+.guide-layout .conts > section > div.flex._col_center{gap:.8rem;}
+
+
+/*====================================================*/
+
+
+
+</style>
+<main class="guide-layout">
+    <section>
+        <article class="toggle-box ">
+            <h2 class="toggle-btn inner-wrap">탭 요소
+                <button type="button" class="ico ico_arrow_thin _down"></button>
+            </h2>
+
+            <div class="toggle-conts conts">
+                <?php
+                include('./include/guide/inc_tabs.html');
+                ?>
+            </div>
+        </article>
+    </section>
+    <section class="inner-wrap">
+        <hr>
+        <article class="toggle-box">
+            <h2 class="toggle-btn">공통 사항 <button type="button" class="ico ico_arrow_thin _down"></button></h2>
+            <div class="tit_info"></div>
+            <div class="toggle-conts conts hide">
+                <dl>
+                    <dt>
+                        <p>폰트 기본</p>
+                    </dt>
+                    <dd>
+                        font-size:1.5rem;<br>
+                        color:var(--gray-100, #121212);<br>
+                        font-weight:var(--fw-regualr, 400);<br>
+                        letter-spacing:var(--ls-3p, -3%);<br>
+                        line-height:150%;
+                    </dd>
+                    <dt>
+                        <p>?set_view=mobile&gnb_type=main_bt||depth2</p>
+                    </dt>
+                    <dd>↳ set_view=mobile == 모바일 모드 ( /pup 밑에 /m/ 폴더 밑에 있으면 자동 모바일 header footer 붙음 )</dd>
+                    <dd>↳ gnb_type[0] == main_btn / tit_ico / tit_only / tit_none / tit_btn_txt </dd>
+                    <dd>↳ gnb_type[1] == depth1 / depth2 / depth3 </dd>
+                    <dd>↳ set_view=mobile&gnb_type=popup == 모바일 모드 이면서 팝업</dd>
+                </dl>
+            </div>
+        </article>
+        <hr>
+        <article class="toggle-box">
+            <h2 class="toggle-btn">svg 아이콘 모음 
+                <button type="button" class="ico ico_arrow_thin _down"></button>
+            </h2>
+            <div class="tit_info">.ico {해당 클래스 명} {_속성} - 1/1</div>
+            <div class="toggle-conts conts hide">
+                <?php
+                include('./include/guide/inc_ico.html');
+                ?>
+            </div>
+        </article>
+        <hr>
+        <article class="toggle-box">
+            <h2 class="toggle-btn">유의사항
+                <button type="button" class="ico ico_arrow_thin _down"></button>
+            </h2>
+            <div class="tit_info"></div>
+            <div class="toggle-conts conts hide">
+                <?php
+                include('./include/guide/inc_toggle_box.html');
+                ?>
+            </div>
+        </article>
+        <hr>
+        <article class="toggle-box">
+            <h2 class="toggle-btn">버튼들
+                <button type="button" class="ico ico_arrow_thin _down"></button>
+            </h2>
+            <div class="tit_info"></div>
+            <div class="toggle-conts conts hide">
+                <?php
+                include('./include/guide/inc_button.html');
+                ?>
+            </div>
+        </article>
+        <hr>
+        <article class="toggle-box">
+            <h2 class="toggle-btn">스티키 하단 메시지 사용
+                <button type="button" class="ico ico_arrow_thin _down"></button>
+            </h2>
+            <div class="tit_info"></div>
+            <div class="toggle-conts conts hide">
+                <?php
+                include('./include/guide/inc_sticky_bottom_msg.html');
+                ?>
+            </div>
+        </article>
+        <hr>
+        <article class="toggle-box">
+            <h2 class="toggle-btn">하단 레이어
+                <button type="button" class="ico ico_arrow_thin _down"></button>
+            </h2>
+            <div class="tit_info"></div>
+            <div class="toggle-conts conts hide">
+                <?php
+                    //하단 레이어 부분임...
+                    include('./include/guide/inc_modal_bottom.html');
+                ?>
+            </div>
+        </article>
+        <hr>
+        <article class="toggle-box">
+            <h2 class="toggle-btn">공통 폼 요소
+                <button type="button" class="ico ico_arrow_thin _down"></button>
+            </h2>
+            <div class="tit_info"></div>
+            <div class="toggle-conts conts hide">
+                <?php
+                include('./include/guide/inc_fieldset.html');
+                ?>
+            </div>
+        </article>
+        <hr>
+        <article class="toggle-box">
+            <h2 class="toggle-btn">데이터 없음
+                <button type="button" class="ico ico_arrow_thin _down"></button>
+            </h2>
+            <div class="tit_info"></div>
+            <div class="toggle-conts conts hide">
+                <?php
+                include('./include/guide/inc_empty.html');
+                ?>
+            </div>
+        </article>
+        <hr>
+        <article class="toggle-box">
+            <h2 class="toggle-btn">영상 or 이미지 박스
+                <button type="button" class="ico ico_arrow_thin _down"></button>
+            </h2>
+            <div class="tit_info"></div>
+            <div class="toggle-conts conts hide">
+                <?php
+                include('./include/guide/inc_video_img.html');
+                ?>
+            </div>
+        </article>
+    </section>
+</main>

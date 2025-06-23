@@ -1,0 +1,254 @@
+<link rel="stylesheet" href="/css/document.css"/>
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/highlight.min.js"></script>
+<script src="/js/document.js"></script>
+
+<style>
+    .scroll_box{border-top: 1px solid #eee; position: relative;}
+    .scroll_box .header{padding: 0 30px; height: 120px; line-height: 120px; font-size: 0; border-bottom: 1px solid #eee;}
+    .scroll_box .header strong{display: inline-block; vertical-align: middle; font-size: 32px; color: #172C8D; font-weight: 900; margin-left: 7px;}
+    .scroll_box .header img{vertical-align: middle;}
+    .scroll_box .top_bar{background: #000; color: #fff; height: 70px; line-height: 70px; padding: 0 30px; overflow: hidden; position: sticky; top: 0;}
+    .scroll_box .top_bar.btm_bar{top: auto; bottom: 0;}
+    .scroll_box .top_bar strong{font-size: 20px; font-weight: 700;}
+    .scroll_box .top_bar .btn{float: right; font-size: 0;}
+    .scroll_box .top_bar .btn > a{display: inline-block; background: #747474; color: #000; font-size: 14px; width: auto; height: 30px; line-height: 30px; padding: 0 10px; text-align: center; border-radius: 5px; font-weight: 700; vertical-align: middle;}
+    .scroll_box:not(.scroll_box3) .top_bar .btn > a.active{background: #fff;}
+    .scroll_box .top_bar .btn a + a{margin-left: 7px;}
+    .scroll_box .cont_top{background: url('https://s3.ap-northeast-2.amazonaws.com/st.dangidata/gong_dangicokr/img/gong/landing/2023/04/gong_12627/pc/head_bg.jpg') no-repeat center top; padding: 80px 0; text-align: center;}
+    .scroll_box .cont_top h3{padding: 0; margin: 0; text-align: center;}
+    .scroll_box .cont_content{background: #eee; height: 500px;}
+    .scroll_box h4{margin: 0; padding: 0; text-align: center; padding: 100px 0 30px; font-size: 60px;}
+    .scroll_box h5{margin: 0; padding: 0; text-align: center; font-size: 40px; padding-top: 20px;}
+
+    .scroll_box .scrollAni{opacity: 0;}
+    .scroll_box .scrollAni.active{animation: slideUp .3s ease-in-out both;}
+
+    .scroll_box3{text-align: center;}
+    .scroll_box3 p{display: block; padding: 0 20px; text-align: center;}
+    .scroll_box3 .btn{display: inline-block; background: #333; color: #fff; width: 100px; height: 42px; line-height: 42px; border-radius: 5px; margin: 0 5px; user-select: none; text-align: center;}
+
+
+    @keyframes slideUp {
+        0%{transform: translateY(30px); opacity: 0;}
+        100%{transform: translateY(0); opacity: 1;}
+    }
+
+</style>
+<?
+    include('skin/pub/layout/pc/document/inc_document_lnb.html');
+?>
+<div class="document">
+    <main>
+        <nav>
+            <a href="../index">< 목록</a>
+            <h2>스크롤 이벤트 <span>사용하기</span></h2>
+            <ul>
+                <li data-target="#ex"><a href="javascript:;">Example</a></li>
+                <li data-target="#options"><a href="javascript:;">Options</a></li>
+            </ul>
+        </nav>
+        
+        <section>
+            <h3>기본 사용법</h3>
+            <p>
+                스크롤 이벤트나 애니메이션을 추가합니다. 스크롤 되는 엘리먼트를 지정하여 스크립트를 적용시키고, 애니메이션 대상에게 클래스 추가 후에 <span>targetClass</span>로 지정합니다.<br />
+                targetClass로 지정한 엘리먼트는 각 위치에 도달했을 때 active클래스가 추가됩니다.
+            </p>
+<pre><code class="language-js">$(window).cnScroll({
+    targetClass: 'scrollAni'
+});
+</code></pre>
+        </section>
+
+        <section id="ex">
+            <section>
+                <h3>스크롤 애니메이션 사용하기</h3>
+                <p>
+                    기본적으로 스크롤 영역의 중간 부분에 도달하면 클래스가 추가됩니다.
+                </p>
+    
+                <div class="scroll_box scroll_box1">
+                    <div class="header">
+                        <img src="//static.conects.com/gong_dangicokr/img/renew/header/conects_logo.png"> <strong>공단기</strong>
+                    </div>
+                    <div class="cont_top">
+                        <div class="inner">
+                            <h3 class="scrollAni"><img src="//s3.ap-northeast-2.amazonaws.com/st.dangidata/gong_dangicokr/img/gong/landing/2023/04/gong_12627/pc/head_ttl.png" width="700"></h3>
+                        </div>
+                    </div>
+                    <div class="cont_content">
+                        <h4 class="scrollAni">타이틀 타이틀 타이틀</h4>
+                        <h5 class="scrollAni">서브 타이틀 서브 타이틀</h5>
+                    </div>
+                    <div class="cont_content cont_event" style="background: yellow">
+                        <h4 class="scrollAni">타이틀 타이틀 타이틀</h4>
+                        <h5 class="scrollAni">서브 타이틀 서브 타이틀</h5>
+                    </div>
+                    <div class="cont_content cont_event" style="background: green">
+                        <h4 class="scrollAni">타이틀 타이틀 타이틀</h4>
+                        <h5 class="scrollAni">서브 타이틀 서브 타이틀</h5>
+                    </div>
+                </div>
+<pre><code class="language-html"><style>
+    .scrollAni{opacity: 0;}
+    .scrollAni.active{animation: slideUp .3s ease-in-out both;}
+</style>
+
+<div class="scroll">
+    <div class="cont_top">
+        <div class="inner">
+            <h3 class="scrollAni"><img src="..."></h3>
+        </div>
+    </div>
+</div>
+
+<script>
+    $('.scroll').cnScroll({
+        targetClass: 'scrollAni',
+    })
+</script>
+</code></pre>
+            </section>
+
+            <section>
+                <h3>한번만 실행하기</h3>
+                <p>
+                    기본적으로 스크롤을 올렸다 내리면 클래스가 초기화되어 애니메이션이 다시 동작하지만 once설정을 주면 처음 한번만 실행됩니다.
+                </p>
+    
+                <div class="scroll_box scroll_box2">
+                    <div class="header">
+                        <img src="//static.conects.com/gong_dangicokr/img/renew/header/conects_logo.png"> <strong>공단기</strong>
+                    </div>
+                    <div class="cont_top">
+                        <div class="inner">
+                            <h3 class="scrollAni"><img src="//s3.ap-northeast-2.amazonaws.com/st.dangidata/gong_dangicokr/img/gong/landing/2023/04/gong_12627/pc/head_ttl.png" width="700"></h3>
+                        </div>
+                    </div>
+                    <div class="cont_content">
+                        <h4 class="scrollAni">타이틀 타이틀 타이틀</h4>
+                        <h5 class="scrollAni">서브 타이틀 서브 타이틀</h5>
+                    </div>
+                    <div class="cont_content cont_event" style="background: yellow">
+                        <h4 class="scrollAni">타이틀 타이틀 타이틀</h4>
+                        <h5 class="scrollAni">서브 타이틀 서브 타이틀</h5>
+                    </div>
+                    <div class="cont_content cont_event" style="background: green">
+                        <h4 class="scrollAni">타이틀 타이틀 타이틀</h4>
+                        <h5 class="scrollAni">서브 타이틀 서브 타이틀</h5>
+                    </div>
+                </div>
+<pre><code class="language-html"><style>
+    .scrollAni{opacity: 0;}
+    .scrollAni.active{animation: slideUp .3s ease-in-out both;}
+</style>
+
+<div class="scroll">
+    <div class="cont_top">
+        <div class="inner">
+            <h3 class="scrollAni"><img src="..."></h3>
+        </div>
+    </div>
+</div>
+
+<script>
+    $('.scroll').cnScroll({
+        targetClass: 'scrollAni',
+    })
+</script>
+</code></pre>
+            </section>
+
+            <section>
+                <h3>data 속성 사용하기</h3>
+                <p>
+                    스크립트에 once 옵션을 사용하면 모든 애니메이션이 한번만 실행되지만 태그에 <span>data-once</span>속성을 사용하면 개별적으로 조절이 가능합니다.<br />
+                    아래 예제에서는 타이틀만 초기화 되지 않고 한번만 실행되게 하는 예제입니다.
+                </p>
+    
+                <div class="scroll_box scroll_box3">
+                    <div class="header">
+                        <img src="//static.conects.com/gong_dangicokr/img/renew/header/conects_logo.png"> <strong>공단기</strong>
+                    </div>
+                    <div class="cont_top">
+                        <div class="inner">
+                            <h3 class="scrollAni"><img src="//s3.ap-northeast-2.amazonaws.com/st.dangidata/gong_dangicokr/img/gong/landing/2023/04/gong_12627/pc/head_ttl.png" width="700"></h3>
+                        </div>
+                    </div>
+                    <div class="cont_content">
+                        <h4 class="scrollAni" data-once="true">타이틀 타이틀 타이틀</h4>
+                        <h5 class="scrollAni">서브 타이틀 서브 타이틀</h5>
+                    </div>
+                    <div class="cont_content cont_event" style="background: yellow">
+                        <h4 class="scrollAni" data-once="true">타이틀 타이틀 타이틀</h4>
+                        <h5 class="scrollAni">서브 타이틀 서브 타이틀</h5>
+                    </div>
+                    <div class="cont_content cont_event" style="background: green">
+                        <h4 class="scrollAni" data-once="true">타이틀 타이틀 타이틀</h4>
+                        <h5 class="scrollAni">서브 타이틀 서브 타이틀</h5>
+                    </div>
+                </div>
+<pre><code class="language-html"><h3 class="scrollAni" data-once="true">...</h3>
+</code></pre>
+            </section>
+        </section>
+
+        <section id="options">
+            <h3>Options</h3>
+            <table>
+                <colgroup>
+                    <col width="16.6666%" />
+                    <col width="16.6666%" />
+                    <col width="16.6666%" />
+                    <col width="50%" />
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Default</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>targetClass</th>
+                        <td>string</td>
+                        <td>-</td>
+                        <td>
+                            <p>스크롤시 이벤트를 적용할 엘리먼트의 클래스를 작성합니다.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>once</th>
+                        <td>boolean</td>
+                        <td>false</td>
+                        <td>
+                            <p>활성화시 스크롤 트리거를 처음 한번만 실행합니다.</p>
+<pre><code class="language-js">$('.nav_type2').cnTab({
+    once: true
+})
+</code></pre>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+</div>
+<script>
+    $(function(){
+        $('.scroll_box1').cnScroll({
+            targetClass: 'scrollAni',
+        })
+
+        $('.scroll_box2').cnScroll({
+            targetClass: 'scrollAni',
+            once: true,
+        })
+
+        $('.scroll_box3').cnScroll({
+            targetClass: 'scrollAni',
+        })
+    })
+</script>

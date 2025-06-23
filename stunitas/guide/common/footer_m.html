@@ -1,0 +1,183 @@
+<? 
+$gnb_explode = explode('||', $gnb_type); 
+$folderName = strtolower(URL_FOLDER_NAME[count(URL_FOLDER_NAME)-2]);
+$fileName = explode('?', strtolower(URL_FOLDER_NAME[count(URL_FOLDER_NAME)-1]))[0];
+
+if(
+    (strpos($fileName, '_view') > -1 || strpos($fileName, '_write') > -1
+    || $fileName == 'view' || $fileName == 'write' || $fileName == 'popup' || strpos($fileName, '_popup') > -1 || strpos($fileName, 'popup_') > -1) || $folderName == 'popup'
+){
+    $gnb_explode[0] = 'popup';
+}
+?>
+
+
+<?
+// gnb타입 (N:티져)
+$gnbType = $this->input->get_post("gnbType");
+if ($gnbType == '') {
+    $gnbType = 'Y';
+}
+// //gnb타입 (N:티져)
+
+// GNB타입
+if ($gnbType == 'N') {
+?>
+    <footer class="footer-fnb-wrap">
+        <? if($gnb_explode[0] !== 'popup'){ // 팝업 형식에선 하단이 없음?>
+        <section class="footer-area"> <?// 팝업 하단 따라다니는 거 때문에 넣어줌 ?>
+            <nav class="fnb-nav flex">
+                <a href="javascript:void(0);" target="_blank">회사소개</a>
+                <a href="javascript:void(0);" target="_blank">이용약관</a>
+                <a href="javascript:void(0);" target="_blank"><b class="txt-line">개인정보처리방침</b></a>
+                <a href="javascript:void(0);" target="_blank">강사모집</a>
+            </nav>
+
+            <article class="fnb-family">
+                <select class="sel-box _small">
+                    <option value="">패밀리 사이트</option>
+                </select>
+            </article>
+
+            <section class="fnb-company">
+                <p class="company-name"><b>(주)에스티유니타스</b></p>
+                <ul>
+                    <li>
+                        <span>전화번호 : 02-501-8604</span>
+                        <span>이메일주소 : STunitas_cs@stunitas.com</span>
+                    </li>
+                    <li>주소 : 서울특별시 구로구 경인로 662, 타워동 30층/31층(신도림동, 디큐브시티)</li>
+                    <li>
+                        <span>대표이사 : 김정택</span>
+                        <span>사업자 등록번호 : 119-86-27573</span>
+                    </li>
+                    <li>
+                        통신판매업신고 : 2022-서울구로-2373
+                        <a class="txt-line" href="#x" target="_blank">사용자 정보확인</a>
+                    </li>
+                    <li>호스팅제공자 : © 2022, Amazon Web Services, Inc</li>
+                </ul>
+            </section>
+        </section>
+        <? } ?>
+    </footer>
+<?
+} else {
+?>
+    <footer class="footer-fnb-wrap">
+        <? if($gnb_explode[0] !== 'popup'){ // 팝업 형식에선 하단이 없음?>
+        <section class="footer-area"> <?// 팝업 하단 따라다니는 거 때문에 넣어줌 ?>
+            <nav class="fnb-nav flex">
+                <a href="javascript:void(0);" target="_blank">회사소개</a>
+                <a href="javascript:void(0);" target="_blank">이용약관</a>
+                <a href="javascript:void(0);" target="_blank"><b>개인정보처리방침</b></a>
+                <a href="javascript:void(0);" target="_blank">강사모집</a>
+            </nav>
+
+            <article class="fnb-family">
+                <select class="sel-box _small">
+                    <option value="">패밀리 사이트</option>
+                </select>
+            </article>
+
+            <section class="fnb-company">
+                <p class="company-name"><b>(주)에스티유니타스</b></p>
+                <ul>
+                    <li>
+                        <span>전화번호 : 02-501-8604</span>
+                        <span>이메일주소 : STunitas_cs@stunitas.com</span>
+                    </li>
+                    <li>주소 : 서울특별시 구로구 경인로 662, 타워동 30층/31층(신도림동, 디큐브시티)</li>
+                    <li>
+                        <span>대표이사 : 김정택</span>
+                        <span>사업자 등록번호 : 119-86-27573</span>
+                    </li>
+                    <li>
+                        통신판매업신고 : 2022-서울구로-2373
+                        <a class="txt-line" href="#x" target="_blank">사용자 정보확인</a>
+                    </li>
+                    <li>호스팅제공자 : © 2022, Amazon Web Services, Inc</li>
+                </ul>
+            </section>
+        </section>
+        <? } ?>
+    </footer>
+
+    <aside class="footer-sticky">
+        <!-- S:하단 기준 -->
+        <div class="sticky-conts">
+            <aside class="btn-wrap">
+            <!-- -->
+                <button type="button" id="modal_teacher_coupon" class="btn-coupon _color" data-dim-coupon="선생님쿠폰"><i class="ico ico_coupon">쿠폰받기</i></button>
+                <!-- S:강좌 딤팝업 -->
+                <? include('skin/pub/layout/m/include/inc_teacher_coupon.html'); ?>
+                <!-- E:강좌 딤팝업 -->
+
+            <? if($fileName === 'cast_list'){ ?>
+                <a href="/pub/layout/m/popup/liked_video" target="_blank" class="btn-liked _circle"><i class="ico ico_heart _fill">찜한 영상</i></a>
+            <? } else { ?>
+                <? if( strpos($fileName, 'list') > -1 ){ ?>
+                <a href="./<?= str_replace("list", "write", $fileName); ?>" target="_blank" class="btn-write _color"><i class="ico ico_pencil">글쓰기</i></a>
+                <? } ?>
+            <? } ?>
+
+            <? if($fileName != "explanation_lecture"){ ?>
+                <button type="button" class="btn-top" onclick="goPage('body');"><i class="ico ico_arrow_line">Top</i></button>
+            <? } ?>
+            </aside>
+
+            <? if(false) { ?>
+            <!--
+            <div class="sticky-msg">텍스트를 입력해주세요</div>
+            <div class="sticky-msg _btn">
+                텍스트를 입력해주세요
+                <button>버튼S</button>
+            </div>
+            -->
+            <? } ?>
+        </div>
+        <!-- E:하단 기준 -->
+
+    <? if($gnb_explode[0] !== 'popup'){ // 팝업 형식에선 하단이 없음?>
+        <aside class="footer-toolbar scroll_ani">
+            <nav class="toolbar-menu">
+                <div>
+                    <button>
+                        <i class="ico ico_menu"></i>
+                        <p>전체메뉴</p>
+                    </button>
+                </div>
+                <div>
+                    <button>
+                        <i class="ico ico_people"></i>
+                        <p>선생님</p>
+                    </button>
+                </div>
+                <div>
+                    <button>
+                        <i class="ico ico_home"></i>
+                        <p>홈</p>
+                    </button>
+                </div>
+                <div>
+                    <button>
+                        <i class="ico ico_people _circle"></i>
+                        <p>MY</p>
+                    </button>
+                </div>
+                <div>
+                    <button>
+                        <i class="ico ico_play _circle"></i>
+                        <p>내강의실</p>
+                    </button>
+                </div>
+            </nav>
+        </aside>
+    <? } ?>
+    </aside>
+
+    </div>
+    <!-- E: #container-all -->
+<? } // //GNB타입?>
+</body>
+</html>

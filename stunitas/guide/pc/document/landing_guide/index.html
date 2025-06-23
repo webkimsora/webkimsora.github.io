@@ -1,0 +1,133 @@
+<link rel="stylesheet" href="/css/document.css"/>
+<script src="/js/document.js"></script>
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/highlight.min.js"></script>
+
+<style>
+    .nav > li{list-style: none; text-align: center; border-bottom: 2px solid #ddd; padding: 15px 0; color: #bbb; font-weight: 700; flex: 1;}
+    .nav > li.active{border-color: #000; color: #000;}
+    .tab{margin-top: 15px;}
+    .tab li video{background: #111; width: 100%; border-radius: 10px; overflow: hidden;}
+    .tab > li{text-align: center;}
+    .tab > li > ul.c-nav > li{width: auto !important; height: 40px; line-height: 40px; font-size: 14px; padding: 0 12px; border: 0; background: #f6f6f6; border-radius: 5px;}
+    .tab > li > ul.c-nav > li.active{background: #000; color: #fff;}
+    .tab > li > ul.c-nav > li + li{margin-left: 10px;}
+    .tab > li > .nav{display: inline-flex; gap: 10px; width: auto;}
+    .tab > li > .nav > li{height: 38px; line-height: 38px; padding: 0 14px; width: auto; flex: none; background: #eee; color: #aaa; border-radius: 50px; font-size: 15px; border: 0;}
+    .tab > li > .nav > li.active{background: #000; color: #fff;}
+	
+    h2 {margin-bottom: 20px !important;}
+	.document .menu {margin-top: 0;}
+
+    .btn_link > a {display: inline-block;}
+    .btn_link > a + a {margin-left: 10px;}
+
+    main {padding: 50px 0 35vh !important;}
+</style>
+<?
+    include('skin/pub/layout/pc/document/inc_document_lnb.html');
+?>
+<div class="document">
+    <main>
+        <nav>
+            <a href="../index">< 목록</a>
+            <h2>랜딩페이지 <span>Layout</span></h2>
+        </nav>
+
+        <section id="event_page">
+			<h2>랜딩페이지 전체</h2>
+            <section>
+                <ul class="menu">
+					<li><a href="./pc"><div><strong>PC</strong></div></a></li>
+					<li><a href="./m?set_view=mobile"><div><strong>M</strong></div></a></li>
+				</ul>
+            </section>
+		</section>
+    
+        <section id="event_distri">
+			<h2>배포 이벤트</h2>
+            <section>
+                <h3>PC</h3>
+                <ul class="menu">
+					<li><a href="./pc/event_distri_01"><div><strong>배포1(기본)</strong></div></a></li>
+					<li><a href="./pc/event_distri_02"><div><strong>배포2(상품 강조)</strong></div></a></li>
+					<li><a href="./pc/event_distri_03"><div><strong>배포3(상품 복수)</strong></div></a></li>
+					<li><a href="./pc/event_distri_04"><div><strong>배포4(상품 부가설명)</strong></div></a></li>
+				</ul>
+
+                <h3>M</h3>
+                <ul class="menu">
+					<li><a href="./m/event_distri_01"><div><strong>배포1(기본)</strong></div></a></li>
+					<li><a href="./m/event_distri_02"><div><strong>배포2(상품 강조)</strong></div></a></li>
+					<li><a href="./m/event_distri_03"><div><strong>배포3(상품 복수)</strong></div></a></li>
+					<li><a href="./m/event_distri_04"><div><strong>배포4(상품 부가설명)</strong></div></a></li>
+				</ul>
+            </section>
+		</section>
+
+		<section id="event_comment">
+			<h2>댓글 이벤트</h2>
+            <section>
+                <h3>PC</h3>
+                <ul class="menu">
+					<li><a href="./pc/event_comment_01"><div><strong>댓글1(기본)</strong></div></a></li>
+					<li><a href="./pc/event_comment_02"><div><strong>댓글2(좋아요)</strong></div></a></li>
+					<li><a href="./pc/event_comment_03"><div><strong>댓글3(리플)</strong></div></a></li>
+				</ul>
+
+                <h3>M</h3>
+                <ul class="menu">
+					<li><a href="./m/event_comment_01"><div><strong>댓글1(기본)</strong></div></a></li>
+					<li><a href="./m/event_comment_02"><div><strong>댓글2(좋아요)</strong></div></a></li>
+					<li><a href="./m/event_comment_03"><div><strong>댓글3(리플)</strong></div></a></li>
+				</ul>
+            </section>
+		</section>
+
+		<section id="event_card">
+			<h2>카드 이벤트</h2>
+            <section>
+                <h3>PC</h3>
+                <ul class="menu">
+					<li><a href="./pc/event_card_01"><div><strong>카드1(기본)</strong></div></a></li>
+				</ul>
+
+                <h3>M</h3>
+                <ul class="menu">
+					<li><a href="./m/event_card_01"><div><strong>카드1(기본)</strong></div></a></li>
+				</ul>
+            </section>
+		</section>
+
+		<section id="event_popup">
+			<h2>팝업 이벤트</h2>
+            <section>
+                <h3>PC</h3>
+                <ul class="menu">
+					<li><a href="./pc/event_popup"><div><strong>팝업</strong></div></a></li>
+				</ul>
+
+                <h3>M</h3>
+                <ul class="menu">
+					<li><a href="./m/event_popup"><div><strong>팝업</strong></div></a></li>
+				</ul>
+            </section>
+		</section>
+
+		<section id="event_popup">
+			<h2>모의고사</h2>
+            <section>
+                <h3>PC</h3>
+                <ul class="menu">
+					<li><a href="./pc/cont_mock_01"><div><strong>모의고사1(Basic)</strong></div></a></li>
+					<li><a href="./pc/cont_mock_02"><div><strong>모의고사2(System)</strong></div></a></li>
+				</ul>
+
+                <h3>M</h3>
+                <ul class="menu">
+					<li><a href="./m/cont_mock_01"><div><strong>모의고사1(Basic)</strong></div></a></li>
+					<li><a href="./m/cont_mock_02"><div><strong>모의고사2(System)</strong></div></a></li>
+				</ul>
+            </section>
+		</section>
+    </main>
+</div>

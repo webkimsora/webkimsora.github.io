@@ -1,0 +1,137 @@
+<?
+    // S : left메뉴 - 레프트 강제로 지정
+    if ($lnb_menu_open_folder_fix == 'N') {
+        $lnb_menu_open_folder_fix = 'N';
+    } else {
+        if ($lnb_menu_open_folder_fix != '') {
+            $lnb_menu_open_folder_fix = $lnb_menu_open_folder_fix;
+        } else {
+            // 첫번째 폴더명을 가져와서 레프트에 들어가는 것인지 확인
+            $lnb_menu_open_folder_fix = URL_FOLDER_NAME[4];
+        };
+    };
+    // E : left메뉴
+?>
+<?
+// lnb폴더별 메뉴 리스트
+	// 해당 변수는 footer.html에서도 사용됨 (union-contents / inner-warp)
+$lnb_menu_open_folder_fix = strtolower($lnb_menu_open_folder_fix);
+if(strtolower($show_lnb) == 'n'){ // --layout-width: 1140px; 및 gnb와 content 사이 기본 여백 유지
+	?>
+			<!-- S: union-contents -->
+			<div class="union-contents type_padding">
+				<!-- S: inner-wrap -->
+				<div class="inner-wrap">
+	<?
+} else {
+	switch ($lnb_menu_open_folder_fix) {
+		case "teacher": // 선생님 - 완전 예외 케이스 ?>
+		<? if(strpos(URL_FOLDER_NAME[count(URL_FOLDER_NAME)-1], 'index') === false ){ // 선생님 폴더에 있으면서 메인이 아닌 경우 ?>
+			<link rel="stylesheet" href="<?= UN_STATIC ?>/css/<?= $lnb_menu_open_folder_fix ?>/layout.css?<?=time()?>"/>
+			<!-- S: union-contents -->
+			<div class="union-contents type_lnb sub_teacher">
+				<!-- S: inner-wrap -->
+				<div class="inner-wrap">
+
+					<?php include('skin/pub/layout/pc/include/lnb/lnb_'.$lnb_menu_open_folder_fix.'.html');?>
+		<? } else { // 선생님 폴더에 있는데 index 만 lnb가 없고 rnb 가 있음 ?>
+			<!-- S: union-contents -->
+			<div class="union-contents type_padding">
+				<!-- S: inner-wrap -->
+				<div class="inner-wrap">
+		<? } ?>
+		<? break;
+		//각 기본 css가 있는 경우
+		case "lecture": // 수강신청
+		case "exam_info": // 수험정보
+		case "customer": // 학습지원센터
+		?>
+			<link rel="stylesheet" href="<?= UN_STATIC ?>/css/<?= $lnb_menu_open_folder_fix ?>/layout.css?<?=time()?>"/>
+			<!-- S: union-contents -->
+			<div class="union-contents type_lnb">
+				<!-- S: inner-wrap -->
+				<div class="inner-wrap">
+
+					<?php include('skin/pub/layout/pc/include/lnb/lnb_'.$lnb_menu_open_folder_fix.'.html');?>
+		<? break; 
+		case "lab": // 기출문제
+		case "event": // 이벤트 리스트
+		case "books": // 교재
+		case "freepass": // 프리패스
+		case "customer": // 학습지원센터
+		case "board": // 게시판유형 ?>
+			<!-- S: union-contents -->
+			<div class="union-contents type_lnb">
+				<!-- S: inner-wrap -->
+				<div class="inner-wrap">
+
+					<?php include('skin/pub/layout/pc/include/lnb/lnb_'.$lnb_menu_open_folder_fix.'.html');?>
+		<? break; 
+		default : // 기본은 레프트 메뉴가 없음 (기본 gnb와 contenct 간의 여백도 적용 안되는 full page)  ?>
+			<? if(strtolower($show_lnb) == 'y'){ ?>
+			<!-- S: union-contents -->
+			<div class="union-contents type_lnb">
+				<!-- S: inner-wrap -->
+				<div class="inner-wrap">
+					<?php include('skin/pub/layout/pc/include/lnb/lnb_basic.html');?>
+			<? } else { ?>
+			<!-- S: union-contents -->
+			<div class="union-contents">
+<? 			
+			}
+		break; 
+	}
+}
+?>
+<script type="text/javascript">
+(function() {
+    const _file_name = $(location).attr('pathname').split('/').slice(-1)[0];
+	const _file_search_arr = $(location).attr('search').split('?');
+	const _file_search = ( _file_search_arr.length > 1 ?  _file_search_arr[1] : null );
+	const _item_href = $('.lnb_list_box a[href*="'+_file_name+'"]');
+
+	if( _item_href.length > 0 ){  // 같은 링크가 있을 때
+		_lnb_href_check( _file_name );
+
+	} else{ // 같은 링크가 없울 때  (board_view
+		const _file_name_arr = _file_name.split('_').slice(-1)[0];
+		const _file_txt = _file_name.replace(_file_name_arr, '');
+
+		_lnb_href_check( _file_txt );
+	}
+
+	function _lnb_active(pMenu){
+		if( pMenu.hasClass('active') ) return false;
+		pMenu.addClass('active');
+		const _item_parent = pMenu.parents('[class*="_menu"]');
+		if(_item_parent.hasClass('sub_menu')){
+			_item_parent.prevAll('.main_menu').addClass('active').siblings().removeClass('active');
+		}
+		else{ // 메인 메뉴
+			_item_parent.addClass('active').siblings().removeClass('active');
+		}
+	}
+
+	function _lnb_href_check(pSerTxt){
+		const _item_href = $('.lnb_list_box a[href*="'+ pSerTxt +'"]');
+
+		if( _item_href.length == 1 ){  // 딱 떨어지는 경우
+			_lnb_active( $(_item_href) );
+		} 
+		else { // 같은 링크가 여러 개 (board_list?type=1)
+			_item_href.each(function(pIndex, pItem,){
+				const _item_name = $(pItem).attr('href').split('/').slice(-1)[0];
+				const _item_search_arr = _item_name.split('?');
+				const _item_search = ( _item_search_arr.length > 1 ?  _item_search_arr[1] : [] );
+
+				const _result = _file_search.split('&').filter(it => _item_search_arr.includes(it));
+
+				if(_result.length > 0 ){
+					_lnb_active( $(pItem) );
+					return false;
+				}
+			});
+		}
+	}
+}());
+</script>

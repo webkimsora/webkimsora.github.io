@@ -1,0 +1,113 @@
+<div class="filter_wrap active">
+    <div class="filter_head">
+        <div class="filter_col">
+            <strong onclick="$('.filter_wrap').toggleClass('active');">태그 <span>닫기</span><span class="closed">열기</span><i class="ico ico_arrow_down"></i></strong>
+            <div class="filter_scroll active">
+                <div class="filter_selected">
+                    <ul class="filter_label">
+                        <li class="label">자세한 설명<a href="javascript:void(0);"><i class="ico ico_close"></i></a></li>
+                        <li class="label">적절한 예시<a href="javascript:void(0);"><i class="ico ico_close"></i></a></li>
+                        <li class="label">입문자 추천<a href="javascript:void(0);"><i class="ico ico_close"></i></a></li>
+                        <li class="label">여러 유형 대비 가능<a href="javascript:void(0);"><i class="ico ico_close"></i></a></li>
+                    </ul>
+                </div>
+                <a href="javascript:void(0);" class="filter_reset">전체 초기화</a>
+            </div>
+        </div>
+    </div>
+    <div class="filter_body">
+        <div class="filter_col">
+            <strong><i class="ico ico_magic_wand"></i>수업 방식</strong>
+            <ul>
+                <li><label><input type="checkbox" checked><span class="label">자세한 설명</span></label></li>
+                <li><label><input type="checkbox" checked><span class="label">적절한 예시</span></label></li>
+                <li><label><input type="checkbox"><span class="label">재미있는 강의</span></label></li>
+                <li><label><input type="checkbox"><span class="label">유용한 암기법</span></label></li>
+                <li><label><input type="checkbox"><span class="label">높은 적중률</span></label></li>
+                <li><label><input type="checkbox"><span class="label">회독 효과 보장</span></label></li>
+                <li><label><input type="checkbox"><span class="label">높은 보충자료 활용도</span></label></li>
+            </ul>
+        </div>
+        <div class="filter_col">
+            <strong><i class="ico ico_magic_wand yellow"></i>선생님</strong>
+            <ul>
+                <li><label><input type="checkbox"><span class="label">빠른 피드백</span></label></li>
+                <li><label><input type="checkbox"><span class="label">남다른 소통력</span></label></li>
+                <li><label><input type="checkbox"><span class="label">열정적인 선생님</span></label></li>
+                <li><label><input type="checkbox"><span class="label">강의력 보장</span></label></li>
+            </ul>
+        </div>
+        <div class="filter_col">
+            <strong><i class="ico ico_shield green"></i>난이도</strong>
+            <ul>
+                <li><label><input type="checkbox"><span class="label">적절한 난이도</span></label></li>
+                <li><label><input type="checkbox" checked><span class="label">입문자 추천</span></label></li>
+                <li><label><input type="checkbox"><span class="label">고난도 문제 대비</span></label></li>
+            </ul>
+        </div>
+        <div class="filter_col">
+            <strong><i class="ico ico_stack purple"></i>구성 및 분량</strong>
+            <ul>
+                <li><label><input type="checkbox"><span class="label">부담없는 학습량</span></label></li>
+                <li><label><input type="checkbox"><span class="label">적절한 이론과 문제 비율</span></label></li>
+                <li><label><input type="checkbox"><span class="label">높은 문제 퀄리티</span></label></li>
+                <li><label><input type="checkbox"><span class="label">짜임새 있는 구성</span></label></li>
+                <li><label><input type="checkbox" checked><span class="label">여러 유형 대비 가능</span></label></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script>
+    let filter_slider;
+    $(function(){
+        // 필터 태그 스크롤 슬라이드
+        filter_slider = $('.filter_selected .filter_label').cnSlider({
+            swiperOptions: {
+				slidesPerView: 'auto',
+				spaceBetween:8,
+				observer: true,
+				observeParents: true
+                // freeMode: {
+                //     enabled: true,
+                //     momentum: false,
+                // },
+            }
+        })
+
+        // 태그 추가
+        $('.filter_body .filter_col input').change(function(){
+            let label = $(this).parent().text();
+            if($('.filter_scroll ul > li').length === 0){
+                $('.filter_scroll').addClass('active');
+            }
+            if($(this).prop('checked')){
+                filter_slider.appendSlide('<li class="label swiper-slide">'+ label +'<a href="javascript:void(0);"><i class="ico ico_close"></i></a></li>');
+            }else{
+                const index = $('.filter_selected ul li:contains('+label+')').index();
+                deleteFilterTag(index)
+            }
+        })
+
+        // 태그 삭제
+        $('.filter_head .filter_col').on('click', '.label > a', function(){
+            let index = $(this).parent().index();
+            let label = $(this).parent().text();
+            $('.filter_body .filter_col li label:contains('+label+')').parent().find('input').prop('checked', false);
+            deleteFilterTag(index)
+        })
+
+        // 태그 전체 삭제
+        $('.filter_head .filter_reset').on('click', function(){
+            filter_slider.removeAllSlides();
+            $('.filter_body .filter_col input').prop('checked', false);
+            $('.filter_scroll').removeClass('active');
+        })
+    });
+
+    function deleteFilterTag(index){
+        filter_slider.removeSlide(index);
+        if($('.filter_scroll ul > li').length === 0){
+            $('.filter_scroll').removeClass('active');
+        }
+    }
+</script>

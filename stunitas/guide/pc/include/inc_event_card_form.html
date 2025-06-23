@@ -1,0 +1,113 @@
+<div class="card-event">
+    <!-- 카드 입력 폼 -->
+    <div class="event-list-form">
+        <strong>Dear. Text 영역</strong>
+        <ul class="event-select">
+            <li>
+                <label>
+                    <div class="select-avatar"><div class="circle_img"><img src="//placehold.co/80x80" alt=""></div></div>
+                    <div class="select-name"><input type="radio" name="list-radio"><input type="text" placeholder="닉네임 입력" onfocus="$(this).prev().prop('checked', true)"></div>
+                </label>
+            </li>
+            <li>
+                <label>
+                    <div class="select-avatar"><div class="circle_img"><img src="//placehold.co/80x80" alt=""></div></div>
+                    <div class="select-name"><input type="radio" name="list-radio"><span>이선재 선생님</span></div>
+                </label>
+            </li>
+            <li>
+                <label>
+                    <div class="select-avatar"><div class="circle_img"><img src="//placehold.co/80x80" alt=""></div></div>
+                    <div class="select-name"><input type="radio" name="list-radio"><span>이선재 선생님</span></div>
+                </label>
+            </li>
+            <li>
+                <label>
+                    <div class="select-avatar"><div class="circle_img"><img src="//placehold.co/80x80" alt=""></div></div>
+                    <div class="select-name"><input type="radio" name="list-radio"><span>이선재 선생님</span></div>
+                </label>
+            </li>
+            <li>
+                <label>
+                    <div class="select-avatar"><div class="circle_img"><img src="//placehold.co/80x80" alt=""></div></div>
+                    <div class="select-name"><input type="radio" name="list-radio"><span>이선재 선생님</span></div>
+                </label>
+            </li>
+            <li>
+                <label>
+                    <div class="select-avatar"><div class="circle_img"><img src="//placehold.co/80x80" alt=""></div></div>
+                    <div class="select-name"><input type="radio" name="list-radio"><span>이선재 선생님</span></div>
+                </label>
+            </li>
+        </ul>
+        <div class="event-input">
+            <textarea name="" placeholder="이곳에 내용을 입력해주세요."></textarea>
+            <div class="input-btns">
+                <label href="javascript:void(0);" class="btn-h36">
+                    <input type="file" onchange="$(this).next().addClass('selected')">
+                    <span class="ico ico_clip">파일 업로드</span>
+                </label>
+                <a href="javascript:void(0);" class="btn-h36 style_dark"><span>등록하기</span></a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 카드 리스트 -->
+    <div class="event-table event-list">
+        <div class="event-filter" href="javascript:void(0);">
+            <div class="filter-right">
+                <label class="ico-toggle-switch">
+                    <em>나의 댓글 확인하기</em>
+                    <input type="checkbox">
+                    <span class="ico-switch"><i class="ico-switch-move"></i></span>
+                </label>
+            </div>
+        </div>
+        <ul>
+            <? for($i=0; $i<6; $i++): ?>
+            <li>
+                <a class="event-delete-btn ico ico_close" href="javascript:void(0);"></a>
+                <? if($i < 3): ?>
+                <div class="list-avatar">
+                    <? if($i === 0): ?>
+                    <div class="circle_img"><img src="//placehold.co/40x40" alt=""></div>
+                    <? endIf; ?>
+                    <span class="type_name">김덕관 선생님</span>
+                </div>
+                <? endIf; ?>
+                <? if($i < 3): ?>
+                <img src="//placehold.co/300x178" alt="">
+                <? endIf; ?>
+                <div class="list-content">4줄까지만 노출 5줄 이상시 스크롤/4줄까지만 노출 5줄 이상시 스크롤/4줄까지만 노출 5줄 이상시 스크롤/4줄까지만 노출 5줄 이상시 스크롤/4줄까지만 노출 5줄 이상시 스크롤/4줄까지만 노출</div>
+                <div class="list-info">
+                    <span>김단기(abcdefghijklmno)</span>
+                    <span>2023.07.04</span>
+                </div>
+            </li>
+            <? endFor; ?>
+        </ul>
+        <!-- paging -->
+        <div class="paging-wrap">
+            <?php
+                include('skin/pub/layout/pc/include/inc_paging.html');
+            ?>
+        </div>
+        <!-- // paging -->
+    </div>
+</div>
+<script>
+    $(function(){
+        // 이벤트 리스트 라디오
+        $('.event-list-form > ul > li:first-child label').click(function(){
+            $(this).find('input[type="text"]').focus();
+        });
+
+        // 인풋 포커싱
+        $('.event-list-form .event-input textarea').focus(function(){
+            $('.event-list-form .event-input').addClass('focus');
+        })
+        $('.event-list-form .event-input textarea').blur(function(){
+            $('.event-list-form .event-input').removeClass('focus');
+        })
+    })
+</script>

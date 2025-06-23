@@ -1,0 +1,82 @@
+
+<div>
+    <div class="event_wrap comment-event">
+        <!-- 개인정보 수집 동의 -->
+        <div class="event-agree-box">
+            <label><input type="checkbox">개인정보의 수집 및 이용에 동의합니다.</label>
+            <ul>
+                <li>1. 개인정보의 수집·이용 목적: 이벤트 진행 및 경품 배송<br /></li>
+                <li>2. 수집하는 개인정보의 항목: 이름, 휴대폰번호<br /></li>
+                <li>3. 개인정보의 보유·이용 기간: 이벤트 종료 후 즉시 파기<br /></li>
+                <li>4. 개인정보의 수집 및 이용에 대한 동의를 거부할 수 있으며, 이 경우 이벤트 참여가 제한됩니다.</li>
+            </ul>
+        </div>
+        <!-- 댓글 입력 폼 -->
+        <div class="event-board-form mt20">
+            <div class="event-input">
+                <div class="input-box">
+                    <input type="text" placeholder="김종우 선생님의 암기팁 추천 댓글을 남겨주세요 :)">
+                </div>
+                <a href="javascript:void(0);" class="btn-h36"><span>등록하기</span></a>
+            </div>
+        </div>
+        <!-- 댓글 리스트 -->
+        <div class="comment-event">
+            <div class="event-table event-board event-like">
+                <ul>
+                    <? for($i=1; $i<=3; $i++){ ?>
+                    <li>
+                        <div>
+                            <div class="ca_badge"><span class="type_best">BEST</span></div>
+                            <div class="list-name">김단기(abcijklmno)</div>
+                        </div>
+                        <div>
+                            <div class="list-content">
+                                <p>댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글</p>
+                                <a class="event-delete-btn ico ico_close" href="javascript:void(0);">삭제</a>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="list-like"><i class="ico ico_heart" onclick="$(this).toggleClass('_fill')"></i> <span>99</span></div>
+                        </div>
+                    </li>
+                    <? } ?>
+                    <? for($i=4; $i<=10; $i++){ ?>
+                    <li>
+                        <div>
+                            <div class="ca_badge"></div>
+                            <div class="list-name">김단기(abcdefghijklmno)</div>
+                        </div>
+                        <div>
+                            <div class="list-content">
+                                <p>댓글댓글댓글댓글댓글댓글댓글댓글</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="list-like"><i class="ico ico_heart" onclick="$(this).toggleClass('_fill')"></i> <span>5</span></div>
+                        </div>
+                    </li>
+                    <? } ?>
+                </ul>
+                <!-- paging -->
+                <div class="paging-wrap">
+                    <div class="paging-box">
+                        <a class="active" href="javascript:void(0);">1</a>
+                        <a href="javascript:void(0);">2</a>
+                        <a href="javascript:void(0);">3</a>
+                        <a href="javascript:void(0);">4</a>
+                        <a href="javascript:void(0);">5</a>
+                        <a href="javascript:void(0);"><i class="ico ico_arrow_right"></i></a>
+                    </div>
+                </div>
+                <!-- // paging -->
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    // 가이드라인에서만 쓰이는 스크립트
+    $('.total-reply > li').eq(0).children('.reply-content').show();
+</script>

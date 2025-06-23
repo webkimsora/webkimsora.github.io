@@ -1,0 +1,90 @@
+					<div class="reply-basic-wrap">
+						<!-- <div class="reply_total">
+							<i class="ico ico_comment"></i> 댓글 <b>999</b>
+						</div> -->
+
+						<? if(true){ ?>
+						<div class="reply_list_box">
+							<ul class="reply_list">
+							<? for($i=0;$i<10;$i++){ ?>
+								<li class="list_item">
+									<div class="item_etc">
+										<div class="etc_data">
+											<b>공*기</b>
+											<span>2021.12.20</span>
+											<span>12:34:56</span>
+										</div>
+										<div class="etc_btn">
+											<!-- 드롭다운 버튼 -->
+											<a href="javascript:void(0);" class="btn_dropdown ico ico_more_ver" data-dropdown="dropdown" data-test="<?=  $i ?>"><span class="skip">더보기</span></a>
+											<!-- 드롭다운 -->
+										</div>
+									</div>
+									<div class="item_conts">참여하고 싶어요. 댓글 내용입니다~참여하고 싶어요. 댓글 내용입니다~참여하고 싶어요. 댓글 내용입니다~참여하고 싶어요. 댓글 내용입니다~참여하고 싶어요. 댓글 내용입니다~참여하고 싶어요. 댓글 내용입니다~ 참여하고용입니다~
+									</div>
+
+									<!-- ////////// 드롭다운 수정 버튼 클릭시 댓글 수정 글쓰기 창 노출 S //////////  -->
+									<div class="reply_write state_modify">
+										<p class="name">공*기</p>
+										<textarea placeholder="주제와 무관한 댓글이나 비속어 등은 경고 조치 없이 삭제될 수 있습니다." cols="30" rows="10"></textarea>
+										<div class="bt_area">
+											<span class="counter">0/500</span>
+											<a class="btn-h30" href="javascript:void(0);" onclick="$(this).parents('.reply_write').hide().siblings('div').show();">등록</a>
+										</div>
+									</div>
+									<!-- ////////// 드롭다운 수정 버튼 클릭시 댓글 수정 글쓰기 창 노출 E //////////  -->
+								</li>
+							<? } ?>
+							</ul>
+							<ul class="dropdown">
+								<li class="drop_modify"><a class="btn_modify" href="javascript:void(0);">수정</a></li>
+								<li class="drop_del"><a href="javascript:void(0);">삭제</a></li>
+							</ul>
+							<script>
+								$(function(){
+									$('.btn_dropdown').cnDropdown({
+										onMenuClick:function(pEl, pIndex, pParent){
+											console.log('개발에서 쓸 데이터 각 버튼', pParent.data('test') );
+
+											$(pParent).parents('.reply_list').find('.reply_write.state_modify').hide().siblings('div').show();
+											const _parent = $(pParent).parents('.list_item');
+											_parent.find('.reply_write')
+											.show()
+											.find('textarea').html(_parent.find('.item_conts').text());
+											_parent.find('.reply_write').siblings('div').hide();
+										}
+									});
+
+									// 수정버튼 클릭시
+									/*
+									$('.dropdown .btn_modify').on('click', function(){
+										var activeReply = 
+										$('.reply_list').find('.btn_dropdown.active').parents('.list_item')
+
+										replyCnt = activeReply.find('.item_conts')
+										
+										replyModify = activeReply.find('.state_modify');
+
+										replyModify.siblings('div').hide();
+										replyModify.find('textarea').html(replyCnt.html());
+										replyModify.show();
+									});
+									*/
+								})
+							</script>
+
+							<?php 
+							include('skin/pub/layout/pc/include/inc_paging.html');
+							?>
+						</div>
+						<? } ?>
+
+						<div class="reply_write">
+							<p class="name">공*기</p>
+							<textarea placeholder="주제와 무관한 댓글이나 비속어 등은 경고 조치 없이 삭제될 수 있습니다." cols="30" rows="10"></textarea>
+							<div class="bt_area">
+								<span class="counter">0/500</span>
+								<a class="btn-h30" href="javascript:void(0);">등록</a>
+							</div>
+						</div>
+					</div>

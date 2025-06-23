@@ -1,0 +1,52 @@
+<? $site_url = "/pub/layout/pc"; ?>
+		<!-- @@ header TITLE -->
+		<section class="tit-wrap">
+			<div class="inner-wrap">
+				<h1><a href="/">공단기</a></h1>
+				<ul class="list fl">
+					<li>
+						<a href="javascript:void(0);">
+							<i class="icon aca01"></i>
+							<p>기술단기</p>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:void(0);">
+							<i class="icon aca01"></i>
+							<p>공단기학원</p>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</section>
+		<!-- //@@ header TITLE -->
+
+		<!-- @@ header NAVI MENU -->
+		<section class="nav-wrap">
+			<div class="inner-wrap">
+				<!-- @@@ 메뉴 -->
+				<nav class="menu_box">
+					<a href="<?= $site_url ?>/teacher/index">선생님</a>
+					<a class="class" href="<?= $site_url ?>/lecture/lecture_list"><i class="bubble">무료강의</i>수강신청</a>
+					<a href="<?= $site_url ?>/lab/previous_exam">기출문제</a>
+					<a href="<?= $site_url ?>/exam_info/index">수험정보</a>
+					<a href="<?= $site_url ?>/event/event_list">이벤트</a>
+					<a href="javascript:void(0);">교재</a>
+					<a class="special" href="javascript:void(0);">프리패스</a>
+				</nav>
+				<!-- //@@@ 메뉴 -->
+
+				<!-- @@@ 공지사항 -->
+				<div class="notice_box">
+					<strong>공지사항</strong>
+
+					<div class="header_slide_box">
+					<? for($i=1; $i<=3; $i++){ ?>
+						<div><a class="txt_hide" href="javascript:void(0);"><?= $i ?> 지방직 9급 원서 접수 중지방직 9급 원서 접수 실시</a></div>
+					<? } ?>
+					</div>
+				</div>
+				<!-- //@@@ 공지사항 -->
+			</div>
+		</section>
+		<!-- //@@ header NAVI MENU -->

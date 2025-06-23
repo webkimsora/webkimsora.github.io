@@ -1,0 +1,266 @@
+<dl style="display:flex;flex-direction: column;gap:2rem;">
+    <dt>- 유의사항</dt>
+    <dd>
+        <div class="agree-check-box flex"><!-- {_no_line} 라인을 없애려면 클래스 사용-->
+            <label class="agree-check">
+                <input type="checkbox">
+                <span class="ico ico_check">유의사항을 모두 확인했으며, 동의합니다.</span>
+            </label>
+        </div>
+        <div class="agree-check-box flex">
+            <label class="agree-check">
+                <input type="checkbox">
+                <span class="ico ico_check">유의사항을 모두 확인했으며, 동의합니다.</span>
+            </label>
+            <button type="button" class="_view txt-line">보기</button>
+        </div>
+    </dd>
+    <dt>- 셀렉트박스</dt>
+    <dd>
+        <div class="label-group-box flex _error">
+            <div class="label-box flex">
+                <select class="sel-box" disabled>
+                    <option value="">Enabled</option>
+                </select>
+                <select class="sel-box">
+                    <option value="">Enabled 1</option>
+                    <option value="">Enabled 2</option>
+                    <option value="">Enabled 3</option>
+                </select>
+            </div>
+            <div class="label-msg">error text ( {.label-group-box flex ._error} 일 때만 보임)</div>
+        </div>
+    </dd>
+    <dt>- 셀렉트박스 기타유형</dt>
+    <dd>
+        <p>텍스트만</p>
+        <div>
+            <select class="sel-box _txt">
+                <option value="">Enabled 1</option>
+                <option value="">Enabled 2</option>
+                <option value="">Enabled 3</option>
+            </select>
+
+            <select class="sel-box _txt" disabled>
+                <option value="">Enabled 1</option>
+                <option value="">Enabled 2</option>
+                <option value="">Enabled 3</option>
+            </select>
+        </div>
+        <p class="mg-t16">div로 사용 가능 (쓸일이 없을 듯?)</p>
+        <div class="sel-box">
+            <span class="txt_hide">Enabled</span>
+        </div>
+    </dd>
+    <dt>- 라인 옵션박스</dt>
+    <dd>
+        <div class="label-group-box flex">
+            <div class="label-tit">
+                <h5>공개설정</h5>
+            </div>
+            <div class="label-box flex _col _full _check_line">
+                <label class="label-check-line">
+                    <input type="radio" name="radio01">
+                    <div>공개글</div>
+                </label>
+                <label class="label-check-line">
+                    <input type="radio" name="radio01">
+                    <div>공개글</div>
+                </label>
+                <label class="label-check-line">
+                    <input type="radio" name="radio01" checked>
+                    <div>비밀글</div>
+                </label>
+            </div>
+            <div class="label-msg">error text ( {.label-group-box flex ._error} 일 때만 보임)</div>
+        </div>
+    </dd>
+
+    <dt>- 체크박스</dt>
+    <dd>
+        <div class="label-group-box flex _error">
+            <div class="label-tit">
+                <h5>title</h5>
+                <p>sub textsub textsub textsub textsub textsub textsub textsub textsub textsub textsub textsub textsub textsub textsub textsub textsub textsub textsub textsub text</p>
+            </div>
+            <div class="label-box flex _col">
+                <label class="label-check">
+                    <input type="checkbox">
+                    <div>checkbox</div>
+                </label>
+            <? for( $i=1;$i<=10; $i++ ){ ?>
+                <label class="label-check">
+                    <input type="checkbox">
+                    <div><span class="ico ico_check">checkbox</span></div>
+                </label>
+            <? } ?>
+            </div>
+            <div class="label-msg">error text ( {.label-group-box flex ._error} 일 때만 보임)</div>
+        </div>
+    </dd>
+    <dt>- 라디오버튼</dt>
+    <dd>
+        <div class="label-group-box flex">
+            <div class="label-tit">
+                <h5>title</h5>
+            </div>
+            <div class="label-box flex _col">
+                <label class="label-check">
+                    <input type="radio" name="radio01">
+                    <div>radio</div>
+                </label>
+            <? for( $i=1;$i<=10; $i++ ){ ?>
+                <label class="label-check">
+                    <input type="radio" name="radio01">
+                    <div><span class="ico ico_check">radio</span></div>
+                </label>
+            <? } ?>
+            </div>
+            <div class="label-msg">error text ( {.label-group-box flex ._error} 일 때만 보임)</div>
+        </div>
+    </dd>
+    <dt>- 라디오 동그란 버튼</dt>
+    <dd>
+        <div class="label-group-box flex">
+            <div class="label-box radio-box flex">
+                <label class="radio-check">
+                    <input type="radio" name="radio" checked>
+                    <div class="ico ico_radio"><span>전체</span></div>
+                </label>
+                <label class="radio-check">
+                    <input type="radio" name="radio">
+                    <div class="ico ico_radio"><span>[9급] [특강] 2024 전한길 한국사 필기노트 강해</span></div>
+                </label>
+                <label class="radio-check">
+                    <input type="radio" name="radio">
+                    <div class="ico ico_radio"><span>[9급] [특강] 2024 전한길 한국사 필기노트 강해 2024 전한길 한국사 필기노트 강해</span></div>
+                </label>
+            </div>
+            <div class="label-msg">error text ( {.label-group-box flex ._error} 일 때만 보임)</div>
+        </div>
+    </dd>
+    <dd>
+        <div class="label-group-box flex">
+            <div class="label-tit">
+                <h5>title</h5>
+            </div>
+            <div class="label-box flex _col">
+            <? for( $i=1;$i<=10; $i++ ){ ?>
+                <label class="label-check _txt">
+                    <input type="checkbox">
+                    <span class="ico ico_check">radio</span>
+                </label>
+            <? } ?>
+            </div>
+            <div class="label-msg">error text ( {.label-group-box flex ._error} 일 때만 보임)</div>
+        </div>
+    </dd>
+
+    <dt>- 한 곳에 여러 박스</dt>
+    <dd>
+        <div class="label-group-box flex _error">
+            <div class="label-tit">
+                <h5>강의 시간</h5>
+            </div>
+            <div class="label-box flex _col _full _time">
+                <label><input type="text" placeholder="시"></label>
+                <label><input type="text" placeholder="분"></label>
+                <label><input type="text" placeholder="초"></label>
+            </div>
+            <div class="label-msg">error text ( {.label-group-box flex ._error} 일 때만 보임)</div>
+        </div>
+    </dd>
+
+    <dt>- 일반 input</dt>
+    <dd>
+        <div class="label-group-box flex _error">
+            <div class="label-tit">
+                <h5>Title</h5>
+            </div>
+            <div class="label-box flex">
+                <input type="text" placeholder="이것은 일반 여러개">
+                <input type="text" placeholder="이것은 일반 여러개">
+            </div>
+            <div class="label-msg">error text ( {.label-group-box flex ._error} 일 때만 보임)</div>
+        </div>
+    </dd>
+    <dt>- 라인 input</dt>
+    <dd>
+        <div class="label-group-box flex">
+            <div class="label-tit">
+                <h5>Title</h5>
+            </div>
+            <div class="label-box flex">
+                <input type="text" class="_line" placeholder="제목을 입력해주세요.*">
+            </div>
+            <div class="label-msg">제목을 입력해주세요.</div>
+        </div>
+    </dd>
+    <dt>- textarea</dt>
+    <dd>
+        <p>** 바이트 수 있을 때</p>
+        <div class="label-group-box flex">
+            <div class="label-box flex _textarea"> <!-- {_textarea} 바이트 수 표시 때문에 div 넣음-->
+                <textarea placeholder="내용을 입력해주세요.*"></textarea>
+                <p class="txt-byte">0/500</p>
+            </div>
+            <div class="label-msg">내용을 입력해주세요.</div>
+        </div>
+        <p>** 바이트 수 없을 때</p>
+        <div class="label-group-box flex">
+            <div class="label-tit">
+                <h5>문의 내용</h5>
+            </div>
+            <div class="label-box flex">
+                <textarea placeholder="내용을 입력해주세요.*"></textarea>
+            </div>
+            <div class="label-msg">내용을 입력해주세요.</div>
+        </div>
+    </dd>
+
+    <dt>- 파일첨부 및 보기</dt>
+    <dd>
+        <div class="attach-file-box flex">
+            <label class="attach-btn" for="file-input">
+                <input type="file" accept=".jpg, .jpeg, .png" id="file-input">
+                <button type="button" onclick="$(this).closest('.attach-btn').click();" class="btn-l _color_gray _dashed"><i class="ico ico_clip"></i>파일 업로드</button>
+            </label>
+
+            <div class="attach-list">
+                <ul class="flex">
+                <? for($i=1; $i<=3; $i++){ ?>
+                    <li class="flex">
+                        <div class="file-name">
+                            <i class="ico ico_clip"></i>
+                            <button class="txt_hide">첨부한 파일명이 노출됩니다.첨부한 파일명이 노출됩니다.</button>
+                        </div>
+                        <div class="file-size">4000MB</div>
+                        <button type="button" class="file-btn ico ico_close">삭제</button>
+                    </li>
+                <? } ?>
+                </ul>
+            </div>
+
+            <div class="attach-info">*파일은 최대 5개, 개당 최대 20MB, 전체 40MB까지 첨부 가능합니다.두줄이상일경우</div>
+        </div>
+    </dd>
+    <dd>
+        <div class="attach-file-box flex">
+            <div class="attach-list">
+                <ul class="flex">
+                <? for($i=1; $i<=3; $i++){ ?>
+                    <li class="flex">
+                        <div class="file-name">
+                            <i class="ico ico_clip"></i>
+                            <button class="txt_hide">첨부한 파일명이 노출됩니다.첨부한 파일명이 노출됩니다.</button>
+                        </div>
+                        <div class="file-size">100MB</div>
+                    </li>
+                <? } ?>
+
+                </ul>
+            </div>
+        </div>
+    </dd>
+
+</dl>

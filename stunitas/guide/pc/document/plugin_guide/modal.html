@@ -1,0 +1,595 @@
+<link rel="stylesheet" href="/css/document.css"/>
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/highlight.min.js"></script>
+<script src="/js/document.js"></script>
+
+<style>
+    .ex_box{background: #eee; padding: 70px 0; text-align: center; border-radius: 10px;}
+    .ex_box a, .btn{display: inline-block; background: #333; color: #fff; width: 100px; height: 42px; line-height: 42px; border-radius: 5px; margin: 0 5px; user-select: none; text-decoration: none;}
+    .ex_box a:hover, .btn:hover{background: #000;}
+    .ex_modal .modal_content{padding: 200px 0; text-align: center;}
+</style>
+<?
+    include('skin/pub/layout/pc/document/inc_document_lnb.html');
+?>
+<div class="document">
+    <main>
+        <nav>
+            <a href="../index">< 목록</a>
+            <h2>Modal 사용하기</h2>
+            <ul>
+                <li data-target="#ex"><a href="javascript:;">Example</a></li>
+                <li data-target="#options"><a href="javascript:;">Options</a></li>
+                <li data-target="#methods"><a href="javascript:;">Methods</a></li>
+            </ul>
+        </nav>
+    
+        <section id="ex">
+            <section>
+                <h3>기본 사용법</h3>
+                <p>
+                    모달은 스크립트와 html도 함께 추가해야 작동합니다. 아래 예제에서 확인해보세요.
+                </p>
+    
+                <div class="ex_box">
+                    <a href="javascript:;" class="modal_btn1" data-target="ex_modal1">클릭</a>
+                </div>
+    
+                <div class="ex_modal ex_modal1">
+                    <div class="modal_content">
+                        내용
+                    </div>
+                </div>
+    
+<pre><code class="language-html"><!-- 모달 버튼 -->
+<a href="javascript:;" id="modal_btn " data-target="ex_modal">클릭</a>
+
+<!-- 모달 -->
+<div class="ex_modal">
+    <div class="modal_content">
+        모달
+    </div>
+</div>
+
+<script>
+    $('#modal_btn').cnModal()
+</script>
+</code></pre>
+            </section>
+
+        </section>
+
+            <section>
+                <h3>스크립트 미사용(비동기)</h3>
+                <p>
+                    스크립트 없이 사용하려면 <u>열기, 닫기, 열었을 때 스크롤 숨김, 닫았을 때 스크롤 노출, 모달 바깥쪽 클릭시 닫기</u> 스크립트를 꼭 넣어야합니다.<br>
+                    cnBodyOverflow 함수를 사용하면 body의 스크롤 노출 여부를 설정할 수 있습니다.(body태그에 스크롤 클래스 추가 및 제거)
+                </p>
+    
+                <div class="ex_box">
+                    <a href="javascript:;" class="no_plugin_open">열기</a>
+                </div>
+    
+                <div class="no_plugin_modal cn-modal cn-modal-scale">
+                    <div class="cn-modal-main">
+                        <div class="cn-modal-head">
+                            <strong class="txt_hide">타이틀</strong>
+                            <a href="javascript:;" class="cn-modal-close no_plugin_close"><i class="ico ico_close"></i></a>
+                        </div>
+                        <div class="modal_content cn-modal-body">
+                            <!-- head 없을 경우 body안에 닫기 버튼 추가 -->
+                            <!-- <a href="javascript:;" class="cn-modal-close no_plugin_close"><i class="ico ico_close"></i></a> -->
+                            <div style="padding: 100px; text-align: center; font-size: 15px;">
+                                내용
+                            </div>
+                        </div>
+                    </div>
+                    <span class="cn-modal-span"></span>
+                </div>
+                <script>
+                    function open(){
+                        $('.no_plugin_modal').addClass('active');
+
+                        // 스크롤 숨김
+                        cnBodyOverflow('hidden')
+                    }
+
+                    function close(){
+                        $('.no_plugin_modal').removeClass('active');
+
+                        // 스크롤 노출
+                        cnBodyOverflow('scroll')
+                    }
+
+                    // 열기 버튼
+                    $(document).on('click', '.no_plugin_open', function(){
+                        open();
+                    });
+
+                    // 닫기 버튼
+                    $(document).on('click', '.no_plugin_close', function(){
+                        close();
+                    });
+
+                    // 모달 바깥쪽 클릭시 닫기
+                    $(document).on('click', '.no_plugin_modal', function(e){
+                        if (e.target !== this)
+                            return;
+
+                        close();
+                    });
+                </script>
+    
+<pre><code class="language-html"><!-- 버튼 HTML -->
+<a href="javascript:;" class="btn_modal_open">열기</a>
+
+<!-- 모달 HTML -->
+<div class="noplugin_modal cn-modal cn-modal-scale">
+    <div class="cn-modal-main">
+        <div class="cn-modal-head">
+            <strong class="txt_hide">타이틀</strong>
+            <a href="javascript:;" class="cn-modal-close btn_modal_close"><i class="ico ico_close"></i></a>
+        </div>
+        <div class="modal_content cn-modal-body">
+            <!-- head 없을 경우 body안에 닫기 버튼 추가 -->
+            <!-- <a href="javascript:;" class="cn-modal-close no_plugin_close"><i class="ico ico_close"></i></a> -->
+            <div>내용</div>
+        </div>
+    </div>
+    <span class="cn-modal-span"></span>
+</div>
+
+<script>
+    // 모달 오픈 함수
+    function modal_open(){
+        $('.noplugin_modal').addClass('active');
+
+        // 스크롤 숨김
+        cnBodyOverflow('hidden')
+    }
+
+    // 모달 닫기 함수
+    function modal_close(){
+        $('.noplugin_modal').removeClass('active');
+
+        // 스크롤 노출
+        cnBodyOverflow('scroll')
+    }
+
+    // 열기 버튼
+    $(document).on('click', '.btn_modal_open', function(){
+        modal_open();
+    });
+
+    // 닫기 버튼
+    $(document).on('click', '.btn_modal_close', function(){
+        modal_close();
+    });
+
+    // 모달 바깥쪽 클릭시 닫기
+    $(document).on('click', '.noplugin_modal', function(e){
+        if (e.target !== this)
+            return;
+
+        modal_close();
+    });
+</script>
+</code></pre>
+            </section>
+
+            <section>
+                <h3>효과 변경하기</h3>
+                <p>
+                    mode 옵션을 사용하여 등장 효과를 변경할 수 있으며, 기본 값은 <span>스케일(scale)</span>입니다.
+                    아래 예제에서 확인해보세요.
+                </p>
+    
+                <div class="ex_box">
+                    <a href="javascript:;" class="modal_btn2" data-target="ex_modal2" onclick="onClickModeBtn('default', '노멀 모달')">노멀</a>
+                    <a href="javascript:;" class="modal_btn2" data-target="ex_modal2" onclick="onClickModeBtn('fade', '페이드 모달')">페이드</a>
+                    <a href="javascript:;" class="modal_btn2" data-target="ex_modal2" onclick="onClickModeBtn('scale', '스케일 모달')">스케일</a>
+                </div>
+    
+                <div class="ex_modal ex_modal2">
+                    <div class="modal_content">
+                        내용
+                    </div>
+                </div>
+    
+<pre><code class="language-html"><!-- 모달 버튼 -->
+<a href="javascript:;" id="modal_btn " data-target="ex_modal">클릭</a>
+
+<!-- 모달 -->
+<div class="ex_modal">
+    <div class="modal_content">
+        모달
+    </div>
+</div>
+
+<script>
+    $('#modal_btn').cnModal({
+        mode: 'scale' // fade or scale
+    })
+</script>
+</code></pre>
+            </section>
+
+            <section>
+                <h3>타이틀 커스텀하기</h3>
+                <p>
+                    head 옵션을 사용하여 타이틀을 제거하거나 커스텀 할 수 있습니다.
+                </p>
+    
+                <div class="ex_box">
+                    <a href="javascript:;" class="modal_btn3" data-target="ex_modal3" onclick="onClickModeBtn('default')">버튼</a>
+                </div>
+    
+                <div class="ex_modal ex_modal3">
+                    <div class="modal_content">
+                        내용
+                    </div>
+                </div>
+    
+<pre><code class="language-js">$('#modal_btn').cnModal({
+    head: false,
+    // head: '커스텀 타이틀 입력'
+})
+</code></pre>
+            </section>
+
+            <section>
+                <h3>닫기 버튼 커스텀하기</h3>
+                <p>
+                    <span>modal.close()</span> 메소드를 사용하여 닫기 버튼을 커스텀 할 수 있습니다.
+                </p>
+    
+                <div class="ex_box">
+                    <a href="javascript:;" class="modal_btn4" data-target="ex_modal4">열기</a>
+                </div>
+    
+                <div class="ex_modal ex_modal4">
+                    <div class="modal_content">
+                        <a href="javascript:;" class="btn" onclick="modal2.close()">닫기</a>
+                    </div>
+                </div>
+    
+<pre><code class="language-html"><!-- 모달 버튼 -->
+<a href="javascript:;" id="modal_btn " data-target="ex_modal">열기</a>
+
+<!-- 모달 -->
+<div class="ex_modal">
+    <div class="modal_content">
+        <a href="javascript:;" onclick="modal.close()">닫기</a>
+    </div>
+</div>
+
+<script>
+    const modal = $('#modal_btn').cnModal({
+        close: false
+    })
+</script>
+</code></pre>
+            </section>
+
+            <section>
+                <h3>모달 내용 커스텀하기</h3>
+                <p>
+                    <span>modal.html()</span> 메소드를 사용하여 모달의 내용을 변경할 수 있습니다.<br />하나의 모달을 사용하여 내용을 노출해야 한다면 예제를 참고해주세요.
+                </p>
+    
+                <div class="ex_box">
+                    <a href="javascript:;" class="modal_btn5" data-target="ex_modal5" onclick="modal5.html('<div style=\'font-size: 20px; color: red\'>내용 1</div>')">내용 1</a>
+                    <a href="javascript:;" class="modal_btn5" data-target="ex_modal5" onclick="modal5.html('<div style=\'font-size: 20px; color: blue\'>내용 2</div>')">내용 2</a>
+                    <a href="javascript:;" class="modal_btn5" data-target="ex_modal5" onclick="modal5.html('<div style=\'font-size: 20px; color: purple\'>내용 3</div>')">내용 3</a>
+                </div>
+    
+                <div class="ex_modal ex_modal5">
+                    <div class="modal_content">
+                    </div>
+                </div>
+    
+<pre><code class="language-html"><!-- 모달 버튼 -->
+<a href="javascript:;" id="modal_btn " data-target="ex_modal">열기</a>
+
+<!-- 모달 -->
+<div class="ex_modal">
+    <div class="modal_content">
+
+    </div>
+</div>
+
+<script>
+    modal.html('<div>내용 변경하기</div>');
+</script>
+</code></pre>
+            </section>
+
+            <section>
+                <h3>비디오 영상 추가하기</h3>
+                <p>
+                    이전에 있던 popMovie를 그대로 이용할 수 있습니다. 별도의 html 추가 없이 자동으로 모달이 추가되며, data속성으로 타이틀, 영상, 자동재생을 설정할 수 있습니다.
+                </p>
+    
+                <div class="ex_box">
+                    <a href="javascript:;" class="modal_btn6 cn-pop-movie" data-title="2023년 세무직 수험전략" data-autoplay="false" data-movie="<?= VIDEO_URL ?>/2022/220526_tcc_ljw_01_800k.mp4">영상 보기1</a>
+                    <a href="javascript:;" class="modal_btn6 cn-pop-movie" data-title="노베이스 공팀장이 공무원 도전을?😬" data-autoplay="false" data-movie="https://www.youtube.com/embed/xzYRfTygcqg">영상 보기2</a>
+                </div>
+
+    
+<pre><code class="language-html"><!-- 모달 버튼 -->
+<a href="javascript:;" class="cn-pop-movie" data-title="2023년 세무직 수험전략" data-autoplay="false" data-movie="<?=VIDEO_URL?>/2022/220526_tcc_ljw_01_800k.mp4">영상 열기1</a>
+
+<script>
+    $('.modal').cnModal({
+        modalType:'video',
+        modalTarget: '#cn-movie-modal',
+    })
+</script>
+</code></pre>
+            </section>
+        </section>
+
+        <section id="options">
+            <h3>Options</h3>
+            <table>
+                <colgroup>
+                    <col width="16.6666%" />
+                    <col width="16.6666%" />
+                    <col width="16.6666%" />
+                    <col width="50%" />
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Default</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>mode</th>
+                        <td>string</td>
+                        <td>-</td>
+                        <td>
+                            <p>모달의 등장 효과를 설정합니다.</p>
+<pre><code class="language-js">$('.modal_button').cnModal({
+    mode: 'fade'
+})
+</code></pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>modalTarget</th>
+                        <td>string</td>
+                        <td>-</td>
+                        <td>
+                            <p>버튼 클릭시 열릴 모달을 지정합니다. 아래 예시를 참고하여 모달 코드 작성 후<br />클래스명으로 지정하면 모달이 적용됩니다.</p>
+<pre><code class="language-html"><div class="modal">
+    <div class="modal_content">
+        모달 내용...
+    </div>
+</div>
+</code></pre>
+<pre><code class="language-js">$('.modal_button').cnModal({
+    modalTarget: '.modal'
+})
+</code></pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>modalType</th>
+                        <td>'video' | null</td>
+                        <td>-</td>
+                        <td>
+                            <p>
+                                이 옵션은 영상 모달을 적용할 때 사용합니다.<br />
+                                'modalTarget'옵션에 영상 모달로 사용할 이름을 넣으면 자동으로 모달이 생성됩니다.<br />
+                                * 모달이 자동으로 생성되기 때문에 따로 추가하지 않아도 됩니다.
+                            </p>
+<pre><code class="language-js">$('.modal').cnModal({
+    modalType:'video',
+    modalTarget: '#cn-movie-modal',
+})
+</code></pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>close</th>
+                        <td>boolean</td>
+                        <td>true</td>
+                        <td>
+                            <p>자동으로 추가되는 닫기 버튼의 표시 여부를 설정합니다.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>closeOutside</th>
+                        <td>boolean</td>
+                        <td>true</td>
+                        <td>
+                            <p>바깥 영역 클릭시 모달의 닫힘 여부를 정합니다.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>head</th>
+                        <td>boolean | string</td>
+                        <td>true</td>
+                        <td>
+                            <p>모달의 타이틀 표시 여부를 설정하거나, 타이틀 텍스트를 설정합니다.</p>
+<pre><code class="language-js">$('.modal').cnModal({
+    head: false,
+})
+</code></pre>
+<pre><code class="language-js">$('.modal').cnModal({
+    head: '모달 타이틀'
+})
+</code></pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>responsive</th>
+                        <td>boolean</td>
+                        <td>-</td>
+                        <td>
+                            <p>반응형 여부를 설정합니다.</p>
+<pre><code class="language-js">$('.modal').cnModal({
+    responsive: true,
+})
+</code></pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>bodyColor</th>
+                        <td>boolean | string</td>
+                        <td>-</td>
+                        <td>
+                            <p>모달의 색상을 설정합니다.</p>
+<pre><code class="language-js">$('.modal').cnModal({
+    bodyColor: 'transparent',
+})
+</code></pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>onBeforeOpen</th>
+                        <td>function</td>
+                        <td>-</td>
+                        <td>
+                            <p>모달이 열리기 전에 이벤트를 추가할 수 있습니다.</p>
+<pre><code class="language-js">$('.modal').cnModal({
+    onBeforeOpen: function(){
+        console.log('모달 열림');
+
+        // false를 리턴하면 모달이 열리지 않습니다.
+        // 이 경우 modal.open() 메소드를 사용하여 모달을 열 수 있습니다.
+        return false; 
+    },
+})
+</code></pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>onOpen</th>
+                        <td>function</td>
+                        <td>-</td>
+                        <td>
+                            <p>모달이 열린 후에 이벤트를 추가할 수 있습니다.</p>
+<pre><code class="language-js">$('.modal').cnModal({
+    onOpen: function(){
+        console.log('모달 열림');
+    },
+})
+</code></pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>onClose</th>
+                        <td>function</td>
+                        <td>-</td>
+                        <td>
+                            <p>모달이 닫혔을 때 이벤트를 추가할 수 있습니다.</p>
+<pre><code class="language-js">$('.modal').cnModal({
+    onClose: function(){
+        console.log('모달 닫힘');
+    },
+})
+</code></pre>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="methods">
+            <h3>Methods & Properties</h3>
+            <table>
+                <colgroup>
+                    <col width="16.6666%" />
+                    <col width="16.6666%" />
+                    <col width="16.6666%" />
+                    <col width="50%" />
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th colspan="4">Properties</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th colspan="2">modal.open(<span>true | false</span>)</th>
+                        <td colspan="2">
+                            <p>
+                                외부에서 모달을 오픈할 수 있습니다.<br>
+                                true를 포함하면 onBeforeOpen 옵션의 내용이 발동합니다.(기본값 false)<br>
+                                onBeforeOpen 옵션에서 Ajax 함께 사용시 true로 사용할 경우 무한 루프가 돌 수 있습니다.<br>
+                                (onBeforeOpen → Ajax 호출 → modal.open() → onBeforeOpen → Ajax 호출 ...)
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th colspan="2">modal.close()</th>
+                        <td colspan="2">
+                            <p>외부에서 모달을 닫습니다.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th colspan="2">modal.modalMode(<span>effect</span>)</th>
+                        <td colspan="2">
+                            <p>모달의 효과를 변경하거나 적용 효과의 이름을 가져옵니다.</p>
+<pre><code class="language-js">const modal = $('#modal').cnModal();
+
+modal.modalMode('fade'); // 효과 변경
+modal.modalMode(); // 'fade'
+</code></pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th colspan="2">modal.modalTitle(<span>title</span>)</th>
+                        <td colspan="2">
+                            <p>모달의 타이틀을 변경합니다.</p>
+<pre><code class="language-js">modal.modalTitle('타이틀 변경');
+</code></pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th colspan="2">modal.html(<span>html</span>)</th>
+                        <td colspan="2">
+                            <p>모달의 내용을 변경합니다.</p>
+<pre><code class="language-js">modal.html('내용 변경');
+</code></pre>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+</div>
+<script>
+    const modal1 = $('.modal_btn2').cnModal();
+    const modal2 = $('.modal_btn4').cnModal({
+        close: false
+    });
+
+    const modal5 = $('.modal_btn5').cnModal({
+        head: '내용 변경하기'
+    })
+
+    $(function(){
+        $('.modal_btn1').cnModal();
+        
+        $('.modal_btn3').cnModal({
+            head: false,
+        })
+        $('.modal_btn4').cnModal({
+            closeOutside: false,
+        })
+        $('.modal_btn6').cnModal({
+            modalType:'video',
+            modalTarget: '#cn-movie-modal',
+        })
+    })
+
+    function onClickModeBtn(mode, title){
+        modal1.modalMode(mode)
+        modal1.modalTitle(title)
+    }
+</script>

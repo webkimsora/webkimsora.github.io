@@ -1,0 +1,36 @@
+<!-- @ CSS -->
+<style>
+.slideup_box .txt{color: #000;font-size: 40px;font-family: 'Pretendard';font-weight: 800;line-height: 140%;}
+.slideup_box .txt > div{display: inline-block;position: relative;color: #005CF3;}
+.slideup_box .txt > div::after{content: '';position: absolute;bottom: -2px;left: 0;right: 0;height: 4px;background: #005CF3;}
+.slideup_box .txt .slideup_slider{width: 150px;height: 56px;display: inline-block;overflow: hidden;vertical-align: bottom;}
+</style>
+
+<section class="slideup_box" style="text-align: center; padding: 50px 0; background: #F8F8F8">
+  <div class="txt">
+    그래서, 이번 개편 시험 공략의 핵심은<br>
+      <div>
+          <ul class="slideup_slider">
+              <li>독해 강화</li>
+              <li>양 줄이기</li>
+              <li>시간 단축</li>
+          </ul>
+          입니다.
+      </div>
+  </div>
+</section>
+
+<script>
+    $('.slideup_slider').cnSlider({
+        swiperOptions: {
+            slidesPerView: 1,
+            loop: true,
+            allowTouchMove: false,
+            speed: 800,
+            autoplay: {
+                delay: 1500
+            },
+            direction: 'vertical'
+        }
+    });
+</script>

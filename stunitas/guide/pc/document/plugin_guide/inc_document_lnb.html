@@ -1,0 +1,60 @@
+<?
+$url_folder = explode('/', strtolower($_SERVER['REQUEST_URI']));
+$url_folder_type = $url_folder[5];
+$lnb_name = $url_folder_type != 'html_guide' ? $url_folder_type : $url_folder[6];
+?>
+
+<aside class="lnb-wrap document-lnb-wrap">
+    <!-- @@@ 페이지명 -->
+    <div class="lnb_tit_box">
+        <h2>커넥츠 코딩 문서</h2>
+    </div>
+    <!-- 
+        @@@ menu list
+        새로운 메뉴 : <i class="ico ico_new"></i> 추가
+        활성화 페이지 : a태그에 active 클래스 추가
+    -->
+    <nav class="lnb_list_box">
+        <ul>
+            <li>
+                <div class="main_menu <?=$url_folder_type == 'html_guide' ? 'active' : ''?>">
+                    <a href="/pub/layout/pc/document/index"><span>HTML/CSS</span></a>
+                </div>
+                <div class="sub_menu">
+                    <ul>
+                        <li><a class="<?=$lnb_name == 'html' ? 'active' : ''?>" title="HTML 가이드 및 컴포넌트" href="/pub/layout/pc/document/html_guide/html"><span>HTML 가이드 및 컴포넌트</span></a></li>
+                        <li><a class="<?=$lnb_name == 'naming' ? 'active' : ''?>" title="네이밍 규칙 가이드" href="/pub/layout/pc/document/html_guide/naming"><span>네이밍 규칙 가이드</span></a></li>
+                        <li><a class="<?=$lnb_name == 'css_var' ? 'active' : ''?>" title="CSS 변수" href="/pub/layout/pc/document/html_guide/css_var"><span>CSS 변수</span></a></li>
+                        <li><a class="<?=$lnb_name == 'event' ? 'active' : ''?>" title="이벤트페이지" href="/pub/layout/pc/document/html_guide/event"><span>이벤트페이지</span></a></li>
+                        <li><a class="<?=$lnb_name == 'sub_basic' ? 'active' : ''?>" title="lnb 없는 서브 기본 레이아웃" target="_blank" href="/pub/layout/pc/document/html_guide/sub_basic?show_lnb=N"><span>lnb 없는 서브 기본 레이아웃</span></a></li>
+                        <li><a class="<?=$lnb_name == 'sub_basic' ? 'active' : ''?>" title="lnb 있는 서브 기본 레이아웃" target="_blank" href="/pub/layout/pc/document/html_guide/sub_basic"><span>lnb 있는 서브 기본 레이아웃</span></a></li>
+                        <li><a class="<?=$lnb_name == 'landing_guide' ? 'active' : ''?>" title="이벤트페이지 기본 레이아웃" target="_blank" href="/pub/layout/pc/document/html_guide/landing_guide?show_lnb=N"><span>이벤트페이지 기본 레이아웃</span></a></li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <div class="main_menu <?=$url_folder_type == 'html_guide' ? '' : 'active'?>">
+                    <a href="/pub/layout/pc/document/index"><span>플러그인</span></a>
+                </div>
+                <div class="sub_menu">
+                    <ul>
+                        <li><a class="<?=$lnb_name == 'quick' ? 'active' : ''?>" href="/pub/layout/pc/document/quick" title="퀵 배너"><span>퀵 배너</span></a></li>
+                        <li><a class="<?=$lnb_name == 'bar' ? 'active' : ''?>" href="/pub/layout/pc/document/bar" title="고정 배너"><span>고정 배너</span></a></li>
+                        <li><a class="<?=$lnb_name == 'tab' ? 'active' : ''?>" href="/pub/layout/pc/document/tab" title="탭"><span>탭</span></a></li>
+                        <li><a class="<?=$lnb_name == 'tab_only' ? 'active' : ''?>" href="/pub/layout/pc/document/tab_only" title="탭_버튼만&기본 탭들"><span>탭_버튼만&기본 탭들</span></a></li>
+                        <li><a class="<?=$lnb_name == 'slider' ? 'active' : ''?>" href="/pub/layout/pc/document/slider" title="슬라이드"><span>슬라이드</span></a></li>
+                        <li><a class="<?=$lnb_name == 'icon' ? 'active' : ''?>" href="/pub/layout/pc/document/icon" title="SVG 아이콘"><span>SVG 아이콘</span></a></li>
+                        <li><a class="<?=$lnb_name == 'modal' ? 'active' : ''?>" href="/pub/layout/pc/document/modal" title="모달(Modal)"><span>모달(Modal)</span></a></li>
+                        <li><a class="<?=$lnb_name == 'dropdown' ? 'active' : ''?>" href="/pub/layout/pc/document/dropdown" title="드롭다운"><span>드롭다운</span></a></li>
+                        <li><a class="<?=$lnb_name == 'scroll' ? 'active' : ''?>" href="/pub/layout/pc/document/scroll" title="스크롤"><span>스크롤</span></a></li>
+                        <li><a class="<?=$lnb_name == 'etc' ? 'active' : ''?>" href="/pub/layout/pc/document/etc" title="기타 함수들"><span>기타 함수들</span></a></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="lnb_bnner">
+        <a href="/pub/layout/pc/document/index">문서 메인으로 이동하기</b></a>
+    </div>
+</aside>

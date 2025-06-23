@@ -1,0 +1,124 @@
+<style>
+    .cont_top{background: linear-gradient(180deg, #FFC3D5 0%, #FFF 100%); padding: 100px 0; text-align: center;}
+    .cont_top strong{color: #FF1C6D; font-size: 20px; font-weight: 700;}
+    .cont_top h3{font-size: 40px; font-weight: 900; line-height: 54px; margin: 15px 0;}
+    .cont_top h4{background: linear-gradient(180deg, #FFD4D4 0%, #FFDDE8 100%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top: 20px; font-size: 326px; line-height: 326px;}
+    .cont_top p{color: #FF1C6D; font-size: 16px;}
+    .cont_top p > span{font-weight: 700;}
+    .cont_event{padding: 50px 0 100px;}
+</style>
+<div class="contents_wrap">
+    <!-- 퀵배너 -->
+    <?php 
+        include('skin/pub/layout/pc/include/inc_event_quick.html');
+    ?>
+    <!-- // 퀵배너 -->
+
+    <!-- 상단 이벤트 영역 -->
+    <div class="cont_top">
+        <strong>EVENT</strong>
+        <h3>2024 영희쌤 올인원 강의 수강하고<br />정성스런 수강 후기를 작성해주세요.</h3>
+        <p><span>기간</span> ~ 2023년 08월 25일(금) | <span>당첨자 발표</span>  2023년 08월 29일(화)  *최영희 교수님 공지사항 게시</p>
+        <h4>EVENT</h4>
+    </div>
+    <!-- 상단 이벤트 영역 -->
+
+    <!-- 스티키 배너 -->
+    <?php 
+        include('skin/pub/layout/pc/include/inc_sticky_bnr.html');
+    ?>
+    <!-- // 스티키 배너 -->
+
+    <!-- 댓글형 이벤트 폼 -->
+    <div class="cont_event" id="event1">
+        <div class="inner-wrap">
+            <h3 style="font-size: 24px; margin-bottom: 20px;">@ 댓글형 이벤트 폼</h3>
+        </div>
+        <div class="inner-wrap">
+            <?php 
+                include('skin/pub/layout/pc/include/inc_event_basic_form.html');
+            ?>
+        </div>
+    </div>
+    <!-- // 기본 댓글형 이벤트 폼 -->
+
+    <!-- 카드형 이벤트 폼 -->
+    <div class="cont_event" id="event2">
+        <div class="inner-wrap">
+            <h3 style="font-size: 24px; margin-bottom: 20px;">@ 카드형 이벤트 폼</h3>
+        </div>
+        <div class="inner-wrap">
+            <?php 
+                include('skin/pub/layout/pc/include/inc_event_card_form.html');
+            ?>
+        </div>
+    </div>
+    <!-- // 카드형 이벤트 폼 -->
+
+    <!-- 좋아요 이벤트 폼 -->
+    <div class="cont_event" id="event3">
+        <div class="inner-wrap">
+            <h3 style="font-size: 24px; margin-bottom: 20px;">@ 좋아요 이벤트 폼</h3>
+        </div>
+        <div class="inner-wrap">
+            <?php 
+                include('skin/pub/layout/pc/include/inc_event_like_form.html');
+            ?>
+        </div>
+    </div>
+    <!-- // 좋아요 이벤트 폼 -->
+
+    <!-- 댓글 답글형 이벤트 폼 -->
+    <div class="cont_event" id="event3">
+        <div class="inner-wrap">
+            <h3 style="font-size: 24px; margin-bottom: 20px;">@ 댓글 리플형 이벤트 폼 (MKTSOBANG-833)</h3>
+        </div>
+        <div class="inner-wrap">
+            <?php 
+                include('skin/pub/layout/pc/include/inc_event_reply_form.html');
+            ?>
+        </div>
+    </div>
+    <!-- // 댓글 답글형 이벤트 폼 -->
+
+    <!-- 배포 이벤트 -->
+    <div class="cont_event">
+        <div class="inner-wrap">
+            <h3 style="font-size: 24px; margin-bottom: 20px;">@ 배포 이벤트 1</h3>
+        </div>
+        <div class="inner-wrap">
+            <?php 
+                include('skin/pub/layout/pc/include/inc_event_distri_form.html');
+            ?>
+        </div>
+    </div>
+    <!-- // 배포 이벤트 -->
+
+    <!-- 팝업 -->
+    <div class="cont_event">
+        <div class="inner-wrap">
+            <h3 style="font-size: 24px; margin-bottom: 20px;">@ 인증 팝업</h3>
+        </div>
+        <div class="inner-wrap">
+            <?php 
+            include('skin/pub/layout/pc/include/inc_event_popup.html');
+        ?>
+        </div>
+    </div>
+    <!-- // 팝업 -->
+
+    <!-- 마감된 이벤트 -->
+    <div class="cont_top event-end"> <!--이벤트 마감시 'event-end' class 추가-->
+        <strong>EVENT</strong>
+        <h3>2024 영희쌤 올인원 강의 수강하고<br />정성스런 수강 후기를 작성해주세요.</h3>
+        <p><span>기간</span> ~ 2023년 08월 25일(금) | <span>당첨자 발표</span>  2023년 08월 29일(화)  *최영희 교수님 공지사항 게시</p>
+        <h4>EVENT</h4>
+    </div>
+    <!-- // 마감된 이벤트 -->
+
+    <!-- 유의사항 -->
+    <?php 
+        include('skin/pub/layout/pc/include/inc_notice.html');
+    ?>
+    <!-- //유의사항 -->
+</div>

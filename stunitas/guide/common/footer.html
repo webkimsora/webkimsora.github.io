@@ -1,0 +1,139 @@
+<?
+// gnb타입 (N:티져)
+$gnbType = $this->input->get_post("gnbType");
+if ($gnbType == '') {
+    $gnbType = 'Y';
+}
+// //gnb타입 (N:티져)
+
+// GNB타입
+if ($gnbType == 'N') {
+	?>
+		</div>
+	<?
+	} else {
+	if(strpos(URL_FOLDER_NAME[count(URL_FOLDER_NAME)-1], 'popup_') === false ){  // popup
+
+		// left메뉴 : S
+		// 레프트 강제로 지정
+		if ($lnb_menu_open_folder_fix == 'N') {
+			$lnb_menu_open_folder_fix = 'N';
+		} else {
+			if ($lnb_menu_open_folder_fix != '') {
+				$lnb_menu_open_folder_fix = $lnb_menu_open_folder_fix;
+			} else {
+				// 첫번째 폴더명을 가져와서 레프트에 들어가는 것인지 확인
+				$lnb_menu_open_folder_fix = URL_FOLDER_NAME[4];
+			};
+		};
+		// E : left메뉴
+		?>
+		<?
+		// lnb폴더별 메뉴 리스트
+			// lnb.html 에서 open 된 부분 close
+		$lnb_menu_open_folder_fix = strtolower($lnb_menu_open_folder_fix);
+		if(strtolower($show_lnb) == 'n'){
+				?>
+							</div>
+							<!-- //E: inner-wrap -->
+						</div>
+						<!-- //E: union-contents -->
+				<?
+		} else{
+			switch ($lnb_menu_open_folder_fix) {
+				case "teacher": // 선생님
+				case "lecture": // 수강신청
+				case "lab": // 기출문제
+				case "exam_info": // 수험정보
+				case "event": // 이벤트 리스트
+				case "books": // 교재
+				case "freepass": // 프리패스
+				case "customer": // 학습지원센터
+				case "board": // 게시판유형 ?>
+							</div>
+							<!-- //E: inner-wrap -->
+						</div>
+						<!-- //E: union-contents -->
+				<? break;
+				default : // 기본은 레프트 메뉴가 없음 ?>
+					<? if(strtolower($show_lnb) == 'y'){ ?>
+						</div>
+						<!-- //E: inner-wrap -->
+					</div>
+					<!-- //E: union-contents -->
+					<? } else { ?>
+					</div><!-- //E: union-contents -->
+					<? } ?>
+		<? 		break; 
+			} 
+		}
+		?>
+		</div>
+		<!-- // E: #container -->
+
+		<!-- S: #footer -->
+		<footer id="union-footer">
+			<div class="inner-wrap">
+				<div class="link_box">
+					<ul class="footer_menu">
+						<li><a href="//www.stunitas.com/" target="_blank">회사소개</a></li>
+						<li><a href="//member.dangi.co.kr/common/terms/use_terms" target="_blank">이용약관</a></li>
+						<li><a href="//www.stunitas.com/front/recruit_teacher" target="_blank"><b>개인정보처리방침</b></a></li>
+						<li><a href="//member.dangi.co.kr/member/popup_info/private_agree" target="_blank">강사모집</a></li>
+					</ul>
+					<div class="footer_family">
+						<select class="sel-box">
+							<option value="">패밀리 사이트</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="footer_conts">
+					<p class="site_name">(주)에스티유니타스</p>
+
+					<ul class="cont_box">
+						<li>전화번호 : 02-501-8604</li>
+						<li>이메일주소 : STunitas_cs@stunitas.com</li>
+						<li>주소 : 서울특별시 구로구 경인로 662, 타워동 30층/31층 (신도림동, 디큐브시티)</li>
+					</ul>
+					<ul class="cont_box">
+						<li>대표이사 : 김정택</li>
+						<li>사업자 등록번호 : 119-86-27573</li>
+						<li>
+							통신판매업신고 : 2022-서울구로-2373
+							<a href="//www.ftc.go.kr/bizCommPop.do?wrkr_no=1198627573&apv_perm_no=" target="_blank">사용자 정보확인</a>
+						</li>
+						<li>호스팅제공자 : © 2022, Amazon Web Services, Inc</li>
+					</ul>
+				</div>
+			</div>
+		</footer>
+		<!-- // E: #footer -->
+	</div>
+	<!-- // E: #container_all -->
+	<? } else { ?>
+	</div>
+	<!-- // E: #container_normal -->
+	<? } ?>
+<? } // //GNB타입 ?>
+
+<?php 
+    $common = $this->common_meta->getConfig(); 
+    $now_time = $common['now_time'];           
+
+    // 랜딩에서 전달하는 js
+    if(is_array($common['footer']['js'])) :
+        foreach ($common['footer']['js'] as $script): 
+            if(strpos($script,".js") !== false):
+                ?><script type="text/javascript" src="<?=JS_DIR?>/<?=$script?>"></script><?php
+            else:
+                ?><script type="text/javascript" src="<?=JS_DIR?>/<?=$script?>.js"></script><?php
+            endif;
+        endforeach; 
+    endif;
+
+    // 공통스크립트
+    include(SKIN_PATH.'common/script.html'); 
+?>
+</body>
+</html>
