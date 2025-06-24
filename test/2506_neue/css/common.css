@@ -1,0 +1,117 @@
+@charset "utf-8";
+
+/* Reset */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,form,fieldset,p,button{margin:0;padding:0}
+h1,h2,h3,h4,h5 {font-weight: normal; text-transform: none;}
+body{text-align:left; word-break:break-word;}
+img,fieldset,iframe{border:0 none}
+li{list-style:none}
+input,select,button{vertical-align:middle}
+img{vertical-align:top}
+i,em,address{font-style:normal}
+label,button{cursor:pointer}
+a{color:#000;text-decoration:none}
+a:hover{color:#000;text-decoration:none}
+hr{display:none}
+legend{width:0}
+table{border-collapse:collapse;border-spacing:0}
+caption{font-size:0; line-height:0; height:0}
+* {box-sizing:border-box;}
+*:focus {outline: none;}
+
+
+button {border:none; appearance:none; -webkit-appearance:none; background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;}
+button, button:focus,button:active{padding: 0;}
+
+
+/* common */
+* {word-break: keep-all; }
+
+body {font-family:'Pretendard-Regular', sans-serif; letter-spacing: -0.5px; background: #000;}
+.inner:after {content:""; display: block; clear: both;}
+img {max-width: 100%;}
+
+.mVisible {display: none;}
+body.mobilebody .mVisible {display: block;}
+body.mobilebody .mNone {display: none;}
+
+.page {width: 100%; height: 100vh; position: relative;}
+
+.ani{ z-index:1;opacity: 0;opacity:1 \0/IE9;}
+.ani.on {opacity: 1;}
+
+.floatDouble:after {content:""; display: block; clear: both;}
+.floatDouble > .left {float: left;}
+.floatDouble > .right {float: right;}
+ul.floatDouble > li {float: left;}
+
+.eng {font-family: 'ClashDisplay-Variable', sans-serif; font-weight: 300;}
+.eng_sub {font-family: 'neue-haas-grotesk-text', sans-serif; font-weight: 400;}
+
+
+/* 공통 ani css */
+.arrowAni {animation: scrollLeft .8s both infinite alternate;}
+
+@keyframes scrollLeft {
+    0% { opacity: 1; transform: translateX(10px); }
+    100% { opacity: 1; transform: translateX(0px); }
+}
+
+.clickAni {
+    position: relative;
+    overflow: hidden;
+}
+    
+
+.clickAni:after {
+    content:"";
+    width: 0; 
+    height: 5px;
+    background: #000;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    transition: all .3s;
+    border: 1px solid transparent;
+}
+
+a:hover .clickAni:after {
+    width: 100%; 
+    border: 1px solid #fff;
+}
+
+.borderAni {position: relative;  }
+.borderAni:after {content:""; transition: .8s all; background: #fff; position: absolute; top: 0; left: 0;}
+.borderAni.doubleLine:before {content:""; transition: .8s all; background: #fff; position: absolute; bottom: 0; left: 0;}
+.bk.borderAni:after {background: #000;}
+
+.borderAni.rowLine:after {width: 0; height: 1px;}
+.borderAni.doubleLine:after {width: 0; height: 1px;}
+.borderAni.doubleLine:before {width: 0; height: 1px;}
+.borderAni.colLine:after {width: 1px; height: 0;}
+
+.on .borderAni.rowLine:after {width: 100%;}
+.on .borderAni.doubleLine:after {width: 100%;}
+.on .borderAni.doubleLine:before {width: 100%;}
+.on .borderAni.colLine:after {height: 100%;}
+
+
+/* CSS 단축어 */
+.font-kr {font-family:'Noto Sans KR',Sans-serif; }
+.font-en {font-family: 'neue-haas-grotesk-display',Arial, Helvetica, sans-serif; font-weight: 500;}
+.font-en-cl-V{font-family: 'ClashDisplay-Variable';}
+.font-en-cl-EL{font-family: 'ClashDisplay-Extralight';}
+.font-en-cl-L{font-family: 'ClashDisplay-Light';}
+.font-en-cl-R{font-family: 'ClashDisplay-Regular';}
+.font-en-cl-M{font-family: 'ClashDisplay-Medium';}
+.font-en-cl-SB{font-family: 'ClashDisplay-Semibold';}
+.font-en-cl-B{font-family: 'ClashDisplay-Bold';}
+
+.font-en-num {font-family:'Roboto',Arial, Helvetica, sans-serif;}
+.w300 {font-weight:300}
+.w400 {font-weight:400}
+.w500 {font-weight:500}
+.w700 {font-weight:700}
+.w900 {font-weight:900}
+
+.trans {transition: .1s ease-in-out;}

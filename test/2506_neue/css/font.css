@@ -1,0 +1,31 @@
+@charset "utf-8";
+
+@import url("https://use.typekit.net/cdu2lqr.css");
+@import url('clash-display.css');
+
+
+@font-face {
+    font-family: 'neue-haas-grotesk-text', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'neue-haas-grotesk-text', sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* @font-face {
+    font-family: 'Lateef Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Lateef Regular'), url('../font/LateefRegOT.woff') format('woff');
+} */

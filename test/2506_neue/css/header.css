@@ -1,0 +1,231 @@
+@charset "utf-8";
+
+/* header CSS */
+
+.header{
+    width: 100%; 
+}
+
+.header .navi * {
+    color: #fff;
+}
+
+.header .navi{
+    position: relative;
+    z-index: 80;
+    width: 96vw;
+    margin: 0 auto;
+}
+
+.header .navi:after {
+    content:""; display: block; clear: both;
+}
+
+.header .logo{
+    font-size: 14vw;
+    text-align: center;
+    color: #fff;
+    vertical-align: middle;
+}
+
+.header .menuWrap {
+    display: flex;
+    padding-left: 0.6vw;
+    margin-top: 39px;
+}
+
+.header .menuWrap a {
+    font-size: 20px;
+}
+
+.header .menuWrap .menu {
+    margin-left: auto;
+    margin-right: 74px;
+    display: inline-flex;
+    gap: 64px;
+}
+
+.header .explain {
+    display: flex;
+    position: relative;
+    padding-left: 0.6vw;
+    line-height: 1.25;
+    letter-spacing: normal;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.header .explain .copyright {
+    padding-right: 19vw;
+    white-space: nowrap;
+}
+
+.header .explain .txt span {display: block;}
+
+.header.menuOpen .navi {
+    display: none;
+}
+
+/* HAMBURGET MENU CSS */
+
+.hamburger {
+    position: fixed;
+    top: 36px;
+    right: 2.35vw;
+    transition: .3s ease-in-out;
+    vertical-align: middle;
+    z-index: 100;
+    cursor: pointer;
+}
+
+.hamburger .hamline{
+    width: 28px;
+    height: 2px;
+    border-radius: 4px;
+    background-color: #ecf0f1;
+    display: block;
+    margin: 6px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+  
+.hamburger:hover{
+    cursor: pointer;
+}
+
+.hamburger.is-active .hamline:nth-child(2){
+    opacity: 0;
+}
+  
+.hamburger.is-active .hamline:nth-child(1){
+    -webkit-transform: translateY(7px) rotate(45deg);
+    -ms-transform: translateY(7px) rotate(45deg);
+    -o-transform: translateY(7px) rotate(45deg);
+    transform: translateY(7px) rotate(45deg);
+}
+  
+.hamburger.is-active .hamline:nth-child(3){
+    -webkit-transform: translateY(-9px) rotate(-45deg);
+    -ms-transform: translateY(-9px) rotate(-45deg);
+    -o-transform: translateY(-9px) rotate(-45deg);
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+.header .overlay{
+    position: fixed;
+    background: #000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    transition: .3s;
+    z-index: 90;
+}
+.header nav {
+    width: 100%;
+    position: absolute;
+    top: 50vh;
+    transform: translateY(-50%);   
+}
+.header nav ul{
+    color: #fff;
+    font-size: 7vw;
+    font-weight: 300;
+    color: #fff;
+}
+.header nav ul li{
+    opacity: 0;
+    border-top: 1px solid #fff;
+}
+.header nav ul li:last-child{
+    border-bottom: solid 1px #fff;
+}
+
+.header nav .menu-info{
+    font-size: 0.2em;
+    margin-left: 10px;
+}
+
+.header nav ul li a{
+    color: #fff;
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
+    padding-left: 3vw;
+}
+.header nav ul li a:hover{
+    opacity: 1;
+}
+@keyframes fadeInLeft{
+    0%{opacity: 0; transform: translateX(-25%);}
+    100%{opacity: 1; transform: translateX(0);}
+}
+.header .overlay.visible{
+    height: 100%;
+    opacity: 1;
+    visibility: visible;
+}
+.header .overlay.visible nav ul li{
+    animation:fadeInLeft 0.3s ease forwards;
+}
+.header .overlay.visible nav ul li:nth-child(1){animation-delay:0.15s;}
+.header .overlay.visible nav ul li:nth-child(2){animation-delay:0.2s;}
+.header .overlay.visible nav ul li:nth-child(3){animation-delay:0.25s;}
+.header .overlay.visible nav ul li:nth-child(4){animation-delay:0.3s;}
+
+
+.header.scroll {
+    position: fixed;
+}
+
+.header.scroll .logo {display: none;}
+.header.scroll.menuOpen .logo {display: block !important;}
+
+
+
+/* 랩탑(노트북) 해상도 사이즈 : 1440 */
+@media (max-width: 1440px) {
+    /* 스크린의 넓이가 1440px 이하인 경우에 적용되는 영역입니다. */
+}
+
+/* 태블릿 가로버전 & 노트북 해상도 작은 사이즈: 1024 */
+@media (max-width: 1024px) {
+    /* 스크린의 넓이가 1024px 이하인 경우에 적용되는 영역입니다. */
+    .header .menuWrap a {
+        font-size: 12px;
+    }
+    .header .explain {font-size: 16px;}
+    .header nav ul{font-size: 80px;}
+
+
+}
+
+/* 태블릿 & 모바일 해상도 큰 사이즈: 720 */
+@media (max-width: 720px) { 
+    /* 스크린의 넓이가 720px 이하인 경우에 적용되는 영역입니다. */
+}
+
+/* 일반 모바일 해상도 : 480 */
+@media (max-width: 480px) {
+    /* 스크린의 넓이가 480px 이하인 경우에 적용되는 영역입니다. */
+    .header .menuWrap {
+        display: none;
+    }
+
+    .header .explain .copyright {display: none;}
+    .header .explain .txt span {display: inline;}
+
+    .header .logo{
+        font-size: 13.5vw;
+    }
+
+    .header nav ul{font-size: 53px;}
+
+    
+}
