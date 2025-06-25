@@ -2,7 +2,7 @@
 <html lang="ko" dir="ltr">
 	<head>
 		<meta charset="utf-8">
-		<title>AIM investment</title>
+		<title>뉴 브랜딩 스튜디오</title>
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
 		<link rel="shortcut icon" href="./web/images/favicon.png">
@@ -12,40 +12,53 @@
 		<link href="https://fonts.googleapis.com/css2?family=Lateef:wght@300;400&display=swap" rel="stylesheet">
 		<link rel=“stylesheet” href=“https://use.typekit.net/cdu2lqr.css”>
 		
-		<link rel="stylesheet" href="./css/common.css?v=04">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 		<link rel="stylesheet" href="./css/font.css?v=04">
-		<link rel="stylesheet" href="./css/swiper.css">
+		<!--<link rel="stylesheet" href="./css/swiper.css">-->
+		<link rel="stylesheet" href="./css/common.css?v=04">
 		<link rel="stylesheet" href="./css/header.css?v=00">
+		<link rel="stylesheet" href="./css/footer.css?v=00">
 		<link rel="stylesheet" href="./css/main.css?v=00">
 
 		<script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js" ></script>
+		<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 		<!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
+		<!-- <script type="text/javascript" src="./js/swiper.min.js"></script>  -->
 		<script type="text/javascript" src="./js/skrollr.min.js"></script>
-		<script type="text/javascript" src="./js/swiper.min.js"></script>
 		<script type="text/javascript" src="./js/TweenMax.min.js"></script>
 		<script type="text/javascript" src="./js/main.js?v=04"></script>
 	</head>
 
-	<body class="onePage">
+	<body>
 		<main id="viewport">
-			<!-- @ header -->
+			<!-- @ 공통 HEADER -->
 			<header class="header" id="header">
             	<div class="navi font-en">
-					<div class="menuWrap">
-						<a href="/">HOME</a>
-						<ul class="menu">
-							<li><a href="about.html">ABOUT</a></li>
-							<li><a href="works.html">WORKS</a></li>
-							<li><a href="javascript:alert('블로그 링크 추가');">MGZ</a></li>
-							<li><a href="contact.html">CONTACT</a></li>
-						</ul>
+					<div class="menuWrap m-none">
+						<div>
+							<a href="/">HOME</a>
+							<ul class="menu">
+								<li><a href="about.html">ABOUT</a></li>
+								<li><a href="works.html">WORKS</a></li>
+								<li><a href="javascript:alert('블로그 링크 추가');">MGZ</a></li>
+								<li><a href="contact.html">CONTACT</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="menuWrap m-visible">
+						<div>
+							<span>BRANDING</span>
+							<span>STUDIO</span>
+						</div>
 					</div>
                 	<div class="logo font-en-cl-B">NEUE STUDIO</div>
 					<div class="explain trans">
 						<div class="copyright">NEUE branding STUDIO<br>ⓒ 2019</div>
 						<div class="txt">
-							Neue Studio is an independent design studio that visualizes the essence of a brand.
-							<span>We pursue precise and minimal design, considering both user and consumer perspectives.</span>
+							<div>
+								Neue Studio is an independent design studio that visualizes the essence of a brand.
+								<span>We pursue precise and minimal design, considering both user and consumer perspectives.</span>						
+							</div>
 						</div>
 					</div>
 				</div>
@@ -57,23 +70,118 @@
 				</div>
 				<!--MENU PAGE -->
 				<div class="overlay font-en-cl-R">
+					<i class="s_logo  font-en-cl-B trans">NEUE STUDIO</i>
 					<nav>
 						<ul class="trans">
-							<li><a href="about.html">ABOUT</a><span class="menu-info">STORY</span></li>
-							<li><a href="works.html">WORKS</a><span class="menu-info">-2025</span></li>
-							<li><a href="contact.html">MGZ</a><span class="menu-info">BLOG</span></li>
-							<li><a href="contact.html">CONTACT</a><span class="menu-info">INFO</span></li>
+							<li><a href="about.html">ABOUT<span class="menu-info">STORY</span></a></li>
+							<li><a href="works.html">WORKS<span class="menu-info">-2025</span></a></li>
+							<li><a href="javascript:alert('블로그 링크 추가');">MGZ<span class="menu-info">BLOG</span></a></li>
+							<li><a href="contact.html">CONTACT<span class="menu-info">INFO</span></a></li>
 						</ul>
 					</nav>
 				</div> 
 				<!-- //MENU PAGE-->
 			</header>
-			<!-- //@ header -->
+			<!-- //@ 공통 HEADER -->
+		
+			<!-- @@ bg 
+			<div class="mainBgWrap">
+				<div class="mainBgPal"><img src="./web/images/action_bg.svg" alt=""></div>
+				<div class="mainBgPal circle"><img src="./web/images/about_circle.png" alt=""></div>
+			</div>
+			//@@ bg -->
 
 			<!-- @ main -->
 			<section class="main">
+				<!-- @@ 상단 슬라이드 -->
+				<div class="main_slide_wrap font-en">
+					<div class="main_slide swiper-container" id="main_slide">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide">
+								<img src="./image/main/mainimage0.png" alt="">
+								<ul class="main_slide_txt">
+									<li>Branding design1</li>
+									<li>Graphic / print / web / package /space</li>
+								</ul>
+							</div>
+							<div class="swiper-slide">
+								<img src="./image/main/mainimage1.png" alt="">
+								<ul class="main_slide_txt">
+									<li>Branding design2</li>
+									<li>Graphic / print / web / package /space</li>
+								</ul>
+							</div>
+							<div class="swiper-slide">
+								<img src="./image/main/mainimage2.png" alt="">
+								<ul class="main_slide_txt">
+									<li>Branding design3</li>
+									<li>Graphic / print / web / package /space</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<!-- <div class="inner container">
+						<div class="cntWrap">
+							<img class="main_slide_img" src="./image/main/mainimage0.png" alt="">
+							<ul class="main_slide_txt">
+								<li class="on">
+									<span>Branding design1</span>
+									<span>Graphic / print / web / package /space</span>
+								</li>
+								<li>
+									<span>Branding design2</span>
+									<span>Graphic / print / web / package</span>
+								</li>
+								<li>
+									<span>Branding design3</span>
+									<span>Graphic / print / web</span>
+								</li>
+							</ul>
+						</div>
+					</div> -->
+				</div>
+				<!-- // @@ 상단 슬라이드 -->
+
+				<!-- @@ works -->
+				<div class="works">
+
+				</div>
+				<!-- // @@ works -->
+
 			</section>
 			<!-- // @ main -->
+
+			<!-- @ 공통 FOOTER -->
+            <div class="footer scrollAni font-en">
+                <div class="ft-g">
+                    <ul class="ft-if trans">
+                        <li><a href="mailto:info@studio-neue.com" target="_blank">info@studio-neue.com</a></li>
+                        <li><a href="tel:010-5444-0168">+82 10 5444 0168</a></li>
+					</ul>
+                    <div class="ft-sns borderAni rowLine  font-en-M">
+                        <ul>
+                            <li><a href="https://www.instagram.com/neue_branding_studio"  target="_blank">Instagram</a></li>
+                            <li><a href="https://pf.kakao.com/_XUWgs/chat" target="_blank">KAKAO TALK</a></li>
+                        </ul>
+                    </div>
+                    <div class="ft-menu">
+                        <div class="ft-m">
+                            <ul>
+                                <li><a href="about.html">About</a></li>
+                                <li><a href="works.html">Works</a></li>
+                                <li><a href="service.html">Service</a></li>
+                                <li><a href="mgz.html">Mgz</a></li>
+                                <li><a href="contact.html">Contact</a></li>
+                            </ul>
+                            <span>Branding by neuestudio.</span>
+                        </div>
+                        <div class="ft-m">
+                            <p>Copyright©2025 NEUE BRANDING STUDIO All rights reserved.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- //@ 공통 FOOTER -->
 
 		</main>
 	</body>

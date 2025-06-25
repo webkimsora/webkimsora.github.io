@@ -89,39 +89,45 @@
 		BrowserVersionCheck();
 
 		// 상단으로 이동
-		$.fn.scrollEnd = function(callback, timeout) {
-			$(this).scroll(function() {
-				var $this = $(this);
+		// $.fn.scrollEnd = function(callback, timeout) {
+		// 	$(this).scroll(function() {
+		// 		var $this = $(this);
 
-				if ($this.data('scrollTimeout'))
-					clearTimeout($this.data('scrollTimeout'));
+		// 		if ($this.data('scrollTimeout'))
+		// 			clearTimeout($this.data('scrollTimeout'));
 
-				$this.data('scrollTimeout', setTimeout(callback, timeout));
-			});
-		};
+		// 		$this.data('scrollTimeout', setTimeout(callback, timeout));
+		// 	});
+		// };
 
-		$('.fixedRight .btnTop').click(function(e) {
-			e.preventDefault();
-			//var goTop = $('.page').eq(0).attr('data-height');
-			$('html, body').stop().animate({
-				scrollTop: 0
-			}, 500);
-			return false;
+		// $('.fixedRight .btnTop').click(function(e) {
+		// 	e.preventDefault();
+		// 	//var goTop = $('.page').eq(0).attr('data-height');
+		// 	$('html, body').stop().animate({
+		// 		scrollTop: 0
+		// 	}, 500);
+		// 	return false;
+		// });
+
+		// 메인 슬라이드
+		const changeSlider = new Swiper('.main .main_slide', {
+			slidesPerView: 1,
+			spaceBetween: 20,
+			autoplay: {
+				delay: 3000,
+			},
+			speed: 800,
+			loop: true,
+			effect: 'fade',
+			fadeEffect: { crossFade: true },		
+			// on: {
+			// 	slideChange: function(){
+			// 		$('.main .main_slide_img').attr('src','./image/main/mainimage'+ this.realIndex +'.png');
+            //         $('.main .main_slide_txt > li').removeClass('on').eq(this.realIndex).addClass('on');
+			// 	}
+			// }
+
 		});
-
-		// window loading
-		setTimeout(function(){
-			$('body').addClass('loaded');
-		},100);
-
-		setTimeout(function(){
-			$('body').addClass('on');
-		},700);
-
-		setTimeout(function(){
-			$('.typingAni').addClass('on');
-			typingAni($('.typingAni'),800,'1');
-		},200);
 
 
 		// @@@@@ 스크롤애니메이션

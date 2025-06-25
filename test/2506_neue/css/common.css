@@ -10,8 +10,8 @@ input,select,button{vertical-align:middle}
 img{vertical-align:top}
 i,em,address{font-style:normal}
 label,button{cursor:pointer}
-a{color:#000;text-decoration:none}
-a:hover{color:#000;text-decoration:none}
+a{color:#fff;text-decoration:none}
+a:hover{color:#fff;text-decoration:none}
 hr{display:none}
 legend{width:0}
 table{border-collapse:collapse;border-spacing:0}
@@ -27,7 +27,8 @@ button, button:focus,button:active{padding: 0;}
 /* common */
 * {word-break: keep-all; }
 
-body {font-family:'Pretendard-Regular', sans-serif; letter-spacing: -0.5px; background: #000;}
+body {font-family:'Pretendard-Regular', sans-serif; letter-spacing: -0.5px;}
+main {min-height: 100vh; background: #000; color: #fff;}
 .inner:after {content:""; display: block; clear: both;}
 img {max-width: 100%;}
 
@@ -44,10 +45,6 @@ body.mobilebody .mNone {display: none;}
 .floatDouble > .left {float: left;}
 .floatDouble > .right {float: right;}
 ul.floatDouble > li {float: left;}
-
-.eng {font-family: 'ClashDisplay-Variable', sans-serif; font-weight: 300;}
-.eng_sub {font-family: 'neue-haas-grotesk-text', sans-serif; font-weight: 400;}
-
 
 /* 공통 ani css */
 .arrowAni {animation: scrollLeft .8s both infinite alternate;}
@@ -97,8 +94,9 @@ a:hover .clickAni:after {
 
 
 /* CSS 단축어 */
-.font-kr {font-family:'Noto Sans KR',Sans-serif; }
 .font-en {font-family: 'neue-haas-grotesk-display',Arial, Helvetica, sans-serif; font-weight: 500;}
+.font-en-M {font-family: 'neue-haas-grotesk-display',Arial, Helvetica, sans-serif; font-weight: 400;}
+.font-en-R {font-family: 'neue-haas-grotesk-display',Arial, Helvetica, sans-serif; font-weight: 300;}
 .font-en-cl-V{font-family: 'ClashDisplay-Variable';}
 .font-en-cl-EL{font-family: 'ClashDisplay-Extralight';}
 .font-en-cl-L{font-family: 'ClashDisplay-Light';}
@@ -106,6 +104,9 @@ a:hover .clickAni:after {
 .font-en-cl-M{font-family: 'ClashDisplay-Medium';}
 .font-en-cl-SB{font-family: 'ClashDisplay-Semibold';}
 .font-en-cl-B{font-family: 'ClashDisplay-Bold';}
+
+.eng {font-family: 'ClashDisplay-Variable', sans-serif; font-weight: 300;}
+.eng_sub {font-family: 'neue-haas-grotesk-text', sans-serif; font-weight: 400;}
 
 .font-en-num {font-family:'Roboto',Arial, Helvetica, sans-serif;}
 .w300 {font-weight:300}
@@ -115,3 +116,35 @@ a:hover .clickAni:after {
 .w900 {font-weight:900}
 
 .trans {transition: .1s ease-in-out;}
+
+.m-visible {display: none;}
+body.mobilebody .m-visible {display: block;}
+body.mobilebody .m-none {display: none;}
+
+@media (max-width: 768px) {
+    .m-visible {display: block;}
+    .m-none {display: none;}
+}
+@media (pointer: coarse) {
+    .m-visible {display: block;}
+    .m-none {display: none;}
+}
+
+
+/* 랩탑(노트북) 해상도 사이즈 : 1440 */
+@media screen and (min-width: 1440px) {
+}
+
+/* 태블릿 가로버전 & 노트북 해상도 작은 사이즈: 1024 */
+@media screen and (max-width: 1024px) {
+}
+
+/* 태블릿 & 모바일 해상도 큰 사이즈: 768 */
+@media screen and (max-width: 768px) {
+}
+
+/* 일반 모바일 해상도 : 480 */
+@media screen and (max-width: 480px) {
+}
+
+/* @media screen and (max-width: 1024px), (max-height :800px) {} */

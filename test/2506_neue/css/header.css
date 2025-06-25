@@ -3,18 +3,13 @@
 /* header CSS */
 
 .header{
-    width: 100%; 
-}
-
-.header .navi * {
-    color: #fff;
+    width: 96vw;
+    margin: 0 auto;
 }
 
 .header .navi{
     position: relative;
     z-index: 80;
-    width: 96vw;
-    margin: 0 auto;
 }
 
 .header .navi:after {
@@ -24,18 +19,22 @@
 .header .logo{
     font-size: 14vw;
     text-align: center;
-    color: #fff;
     vertical-align: middle;
 }
 
 .header .menuWrap {
-    display: flex;
     padding-left: 0.6vw;
-    margin-top: 39px;
+    padding-top: 39px;
+    font-size: 20px;
+}
+
+.header .menuWrap > div {
+    display: flex;
 }
 
 .header .menuWrap a {
-    font-size: 20px;
+    font-size: inherit;
+    display: contents;
 }
 
 .header .menuWrap .menu {
@@ -45,8 +44,11 @@
     gap: 64px;
 }
 
+.header .menuWrap.m-visible span:last-child {
+    margin-left: auto;    
+}
+
 .header .explain {
-    display: flex;
     position: relative;
     padding-left: 0.6vw;
     line-height: 1.25;
@@ -56,8 +58,15 @@
 }
 
 .header .explain .copyright {
-    padding-right: 19vw;
+    position: absolute;
+    top:0;
+    left: 0;
     white-space: nowrap;
+}
+
+.header .explain .txt {
+    display: flex;
+    justify-content: center;
 }
 
 .header .explain .txt span {display: block;}
@@ -128,6 +137,14 @@
     transition: .3s;
     z-index: 90;
 }
+.header .overlay .s_logo {
+    position: fixed;
+    top: 36px;
+    left: 2.35vw;
+    font-size: 45px;
+    line-height: 1;
+}
+
 .header nav {
     width: 100%;
     position: absolute;
@@ -135,10 +152,8 @@
     transform: translateY(-50%);   
 }
 .header nav ul{
-    color: #fff;
     font-size: 7vw;
     font-weight: 300;
-    color: #fff;
 }
 .header nav ul li{
     opacity: 0;
@@ -154,11 +169,12 @@
 }
 
 .header nav ul li a{
-    color: #fff;
     opacity: 0.8;
     transition: opacity 0.2s ease;
     padding-left: 3vw;
+    display: block;
 }
+
 .header nav ul li a:hover{
     opacity: 1;
 }
@@ -191,41 +207,51 @@
 
 /* 랩탑(노트북) 해상도 사이즈 : 1440 */
 @media (max-width: 1440px) {
-    /* 스크린의 넓이가 1440px 이하인 경우에 적용되는 영역입니다. */
+    .header .explain {display: flex; font-size: 18px;}
+    .header .explain .copyright {
+        position: relative;
+        padding-right: 10vw;
+    }
+    .header .explain .txt {display: block;}
 }
 
 /* 태블릿 가로버전 & 노트북 해상도 작은 사이즈: 1024 */
 @media (max-width: 1024px) {
-    /* 스크린의 넓이가 1024px 이하인 경우에 적용되는 영역입니다. */
-    .header .menuWrap a {
-        font-size: 12px;
-    }
-    .header .explain {font-size: 16px;}
-    .header nav ul{font-size: 80px;}
+    .header .menuWrap {padding-top: 28px; font-size: 16px;}
+    .header .menuWrap .menu {gap: 38px;}
 
+    .header .explain {font-size: 16px;}
+
+    .hamburger {top: 21px;}
+    .header nav ul{font-size: 80px;}
+    .header .overlay .s_logo {font-size: 36px; top: 21px;}
 
 }
 
-/* 태블릿 & 모바일 해상도 큰 사이즈: 720 */
-@media (max-width: 720px) { 
-    /* 스크린의 넓이가 720px 이하인 경우에 적용되는 영역입니다. */
+/* 태블릿 & 모바일 해상도 큰 사이즈: 768 */
+@media (max-width: 768px) { 
+    .header .menuWrap {padding-top: 24px; font-size: 12px;}
+    .hamburger {
+        top: 14px;
+        right: auto;
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+    .header .overlay .s_logo {display: none;}
 }
 
 /* 일반 모바일 해상도 : 480 */
 @media (max-width: 480px) {
-    /* 스크린의 넓이가 480px 이하인 경우에 적용되는 영역입니다. */
-    .header .menuWrap {
-        display: none;
-    }
-
     .header .explain .copyright {display: none;}
     .header .explain .txt span {display: inline;}
 
     .header .logo{
+        margin-top: 16px;
         font-size: 13.5vw;
     }
 
     .header nav ul{font-size: 53px;}
+    .header .overlay .s_logo {top: 38px; font-size: 26px;}
 
     
 }
