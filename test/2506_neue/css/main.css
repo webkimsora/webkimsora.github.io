@@ -1,6 +1,11 @@
 @charset "utf-8";
 
 /* main */
+.main {
+    position: relative;
+    z-index: 1;
+}
+
 .main_slide_wrap {
     width: 80.72vw; 
     margin: 143px auto 0;
@@ -13,9 +18,11 @@
 }
 .main_slide_txt li:last-child {margin-left: auto; text-align: right;}
 
+.main .works {margin-top: 300px;}
+
 
 /* 랩탑(노트북) 해상도 사이즈 : 1440 */
-@media screen and (min-width: 1440px) {
+@media screen and (max-width: 1440px) {
 }
 
 /* 태블릿 가로버전 & 노트북 해상도 작은 사이즈: 1024 */
@@ -26,6 +33,9 @@
         margin-top: 12px;
         font-size: 16px;
     }
+
+    .main .works {margin-top: 120px;}
+
 }
 
 /* 태블릿 & 모바일 해상도 큰 사이즈: 768 */

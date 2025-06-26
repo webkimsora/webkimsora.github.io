@@ -129,6 +129,24 @@
 
 		});
 
+		if(!$('body').hasClass('mobilebody')) {
+			$("#viewport").mousemove(function(e) {
+			  parallaxIt(e, ".mainBgPal.no1", -100);
+			  parallaxIt(e, ".mainBgPal.no2", 200);
+			});
+
+			function parallaxIt(e, target, movement) {
+			  var $this = $("#viewport");
+			  var relX = e.pageX - $this.offset().left;
+			  var relY = e.pageY - $this.offset().top;
+
+			  TweenMax.to(target, 1, {
+			    x: (relX - $this.width() / 2) / $this.width() * movement,
+			    y: (relY - $this.height() / 2) / $this.height() * movement
+			  });
+			}
+		}
+
 
 		// @@@@@ 스크롤애니메이션
 		var sections = $('.target'),
