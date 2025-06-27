@@ -1,11 +1,6 @@
 @charset "utf-8";
 
 /* main */
-.main {
-    position: relative;
-    z-index: 1;
-}
-
 .main_slide_wrap {
     width: 80.72vw; 
     margin: 143px auto 0;
@@ -18,7 +13,8 @@
 }
 .main_slide_txt li:last-child {margin-left: auto; text-align: right;}
 
-.main .works {margin-top: 300px;}
+.main .works {padding: 300px 0;}
+.main .about_service {padding: 200px 0;}
 
 
 /* 랩탑(노트북) 해상도 사이즈 : 1440 */
@@ -34,7 +30,8 @@
         font-size: 16px;
     }
 
-    .main .works {margin-top: 120px;}
+    .main .works,
+    .main .about_service {padding: 120px 0;}
 
 }
 

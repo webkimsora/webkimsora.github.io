@@ -1,8 +1,8 @@
 
 .footer{
-    width: 96vw;
-    margin: 0 auto;
+    position: relative;
     padding-top: 20vh;
+    z-index: 1;
 }
 
 .ft-g .ft-if{
@@ -64,15 +64,11 @@
         flex-direction: column;
         font-size: 14px;
     }
-
 }
 
 /* 일반 모바일 해상도 : 480 */
 @media (max-width: 480px) {
     .footer{
-        width: 90vw;
-        margin: 0 auto;
-        margin-top: 15vh;
         padding-top: 15vh;
     }
     .ft-g .ft-if{

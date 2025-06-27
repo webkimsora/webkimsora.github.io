@@ -26,10 +26,20 @@ button, button:focus,button:active{padding: 0;}
 
 /* common */
 * {word-break: keep-all; }
+body {background: #000;}
+#viewport {
+    position: relative; 
+    overflow-x: hidden; 
+    animation: fadein 1s forwards; /* 애니메이션 실행 */
+}
+@keyframes fadein {
+  0%, 15% {opacity: 0;}
+  100% {opacity: 1;}
+}
 
-#viewport {position: relative; overflow-x: hidden;}
 body {font-family:'Pretendard-Regular', sans-serif; letter-spacing: -0.5px;}
 main {min-height: 100vh; background: #000; color: #fff;}
+.inner {width: 96vw; margin: 0 auto;}
 .inner:after {content:""; display: block; clear: both;}
 img {max-width: 100%;}
 
@@ -37,7 +47,10 @@ img {max-width: 100%;}
 body.mobilebody .mVisible {display: block;}
 body.mobilebody .mNone {display: none;}
 
-.page {width: 100%; height: 100vh; position: relative;}
+.contents {
+    position: relative;
+    z-index: 1;
+}
 
 .ani{ z-index:1;opacity: 0;opacity:1 \0/IE9;}
 .ani.on {opacity: 1;}
@@ -49,10 +62,28 @@ ul.floatDouble > li {float: left;}
 
 /* 공통 ani css */
 .arrowAni {animation: scrollLeft .8s both infinite alternate;}
+.arrowAni.vtc {animation: scrollTop .8s both infinite alternate;}
 
 @keyframes scrollLeft {
     0% { opacity: 1; transform: translateX(10px); }
     100% { opacity: 1; transform: translateX(0px); }
+}
+@keyframes scrollTop {
+    0% { opacity: 1; transform: translateY(10px); }
+    100% { opacity: 1; transform: translateY(0px); }
+}
+
+.slideUp {opacity: 0; transform: translateY(30%);}
+.on.slideUp {animation: slideInUp 1s linear both;}
+
+@keyframes slideInUp {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
 }
 
 .borderAni {position: relative;  }
@@ -113,26 +144,15 @@ body.mobilebody .m-none {display: none;}
 .mainBgWrap .mainBgPal {opacity: 1;}
 .mainBgWrap .mainBgPal.no1 {margin: -12vh 0 0 3vw;  width: 44.8vw;}
 .mainBgWrap .mainBgPal.no2 {position: absolute; top: 75vh; right: 0;}
-@media screen and (max-width: 768px) {
-    .mainBgWrap .mainBgPal.no1 {
-        width: 66vw;
-        margin: -4vh 0 0 -5vw;
-    }
-    .mainBgWrap .mainBgPal.no2 {
-        width: 48vw;
-        top: 37vh;
-        right: -15vw;
-    }
-}
 
 /* title */
-.bd_w {
+.page_tit {font-size: 80px; text-align: center;}
+.page_tit .bd_w {
     width: fit-content;
     margin: 0 auto;
     position: relative;
 }
-
-.bd_w:after {
+.page_tit .bd_w:after {
     content:"";
     width: 0; 
     height: 5px;
@@ -142,34 +162,76 @@ body.mobilebody .m-none {display: none;}
     left: 0;
     transition: all .3s;
     border: 0px solid #fff;
+    box-sizing: border-box;
 }
-
-.bd_w.on:after {
+.page_tit .bd_w.on:after {
     width: 100%; 
     background: #fff;
     border-width: 1px;
 }
+.page_tit p {padding-top: 24px; font-size: 20px;}
 
-.page_tit {font-size: 80px;}
+/* more btn */
+.more_btn {
+    padding-top: 100px;
+    text-align: center;
+    font-size: 38px;
+}
+.more_btn a {
+    display: inline-flex;
+    justify-content: center;
+    gap: 20px;
+}
+.more_btn em {
+    font-style: normal;
+    text-decoration: underline;
+}
+.more_btn span {margin-top: -3px;}
 
 
 /* 랩탑(노트북) 해상도 사이즈 : 1440 */
 @media screen and (max-width: 1440px) {
+    .more_btn {font-size: 30px;}
+    .more_btn a {gap: 10px;}
 }
 
 /* 태블릿 가로버전 & 노트북 해상도 작은 사이즈: 1024 */
 @media screen and (max-width: 1024px) {
     .page_tit {font-size: 55px;}
+    .page_tit p {padding-top: 15px; font-size: 14px;}
+
+    .mainBgWrap .mainBgPal.no2 {
+        width: 48vw;
+        top: 37vh;
+        right: -15vw;
+    }
+
+    .more_btn {font-size: 22px;}
 
 }
 
 /* 태블릿 & 모바일 해상도 큰 사이즈: 768 */
 @media screen and (max-width: 768px) {
+    .inner {width: 92vw;}
+    
     .page_tit {font-size: 38px;}
+    .bd_w:after {height: 3px; bottom: -3px;}
+
+    .mainBgWrap .mainBgPal.no1 {
+        width: 66vw;
+        margin: -4vh 0 0 -5vw;
+    }
+
+    .more_btn {padding-top: 80px; font-size: 16px;}
 }
 
 /* 일반 모바일 해상도 : 480 */
 @media screen and (max-width: 480px) {
+    .inner {width: 100%; padding: 0 12px;}
+
+    .page_tit p {font-size: 12px;}
+
+
 }
 
 /* @media screen and (max-width: 1024px), (max-height :800px) {} */

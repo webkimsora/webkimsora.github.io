@@ -2,11 +2,6 @@
 
 /* header CSS */
 
-.header{
-    width: 96vw;
-    margin: 0 auto;
-}
-
 .header .navi{
     position: relative;
     z-index: 80;
@@ -20,12 +15,16 @@
     font-size: 14vw;
     text-align: center;
     vertical-align: middle;
+    white-space: nowrap;
+    line-height: 1;
 }
 
 .header .menuWrap {
+    position: relative;
     padding-left: 0.6vw;
     padding-top: 39px;
     font-size: 20px;
+    z-index: 1;
 }
 
 .header .menuWrap > div {
@@ -34,7 +33,6 @@
 
 .header .menuWrap a {
     font-size: inherit;
-    display: contents;
 }
 
 .header .menuWrap .menu {
@@ -48,7 +46,7 @@
     margin-left: auto;    
 }
 
-.header .explain {
+.header .introduce {
     position: relative;
     padding-left: 0.6vw;
     line-height: 1.25;
@@ -57,19 +55,19 @@
     font-weight: 300;
 }
 
-.header .explain .copyright {
+.header .introduce .copyright {
     position: absolute;
     top:0;
     left: 0;
     white-space: nowrap;
 }
 
-.header .explain .txt {
+.header .introduce .txt {
     display: flex;
     justify-content: center;
 }
 
-.header .explain .txt span {display: block;}
+.header .introduce .txt span {display: block;}
 
 .header.menuOpen .navi {
     display: none;
@@ -207,12 +205,12 @@
 
 /* 랩탑(노트북) 해상도 사이즈 : 1440 */
 @media (max-width: 1440px) {
-    .header .explain {display: flex; font-size: 18px;}
-    .header .explain .copyright {
+    .header .introduce {display: flex; font-size: 18px;}
+    .header .introduce .copyright {
         position: relative;
         padding-right: 10vw;
     }
-    .header .explain .txt {display: block;}
+    .header .introduce .txt {display: block;}
 }
 
 /* 태블릿 가로버전 & 노트북 해상도 작은 사이즈: 1024 */
@@ -220,7 +218,7 @@
     .header .menuWrap {padding-top: 28px; font-size: 16px;}
     .header .menuWrap .menu {gap: 38px;}
 
-    .header .explain {font-size: 16px;}
+    .header .introduce {font-size: 16px;}
 
     .hamburger {top: 21px;}
     .header nav ul{font-size: 80px;}
@@ -231,6 +229,7 @@
 /* 태블릿 & 모바일 해상도 큰 사이즈: 768 */
 @media (max-width: 768px) { 
     .header .menuWrap {padding-top: 24px; font-size: 12px;}
+    .header .logo {font-size: 13.6vw;}
     .hamburger {
         top: 14px;
         right: auto;
@@ -242,12 +241,12 @@
 
 /* 일반 모바일 해상도 : 480 */
 @media (max-width: 480px) {
-    .header .explain .copyright {display: none;}
-    .header .explain .txt span {display: inline;}
+    .header .introduce .copyright {display: none;}
+    .header .introduce .txt span {display: inline;}
 
     .header .logo{
         margin-top: 16px;
-        font-size: 13.5vw;
+        font-size: 13.2vw;
     }
 
     .header nav ul{font-size: 53px;}

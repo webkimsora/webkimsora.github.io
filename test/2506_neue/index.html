@@ -7,9 +7,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
 		<link rel="shortcut icon" href="./web/images/favicon.png">
 		<link rel="icon" href="./web/images/favicon.png">
-		<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,500,700,900&display=swap&subset=korean" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css2?family=Lateef:wght@300;400&display=swap" rel="stylesheet">
 		<link rel=“stylesheet” href=“https://use.typekit.net/cdu2lqr.css”>
 		
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
@@ -20,6 +17,7 @@
 		<link rel="stylesheet" href="./css/footer.css?v=00">
 		<link rel="stylesheet" href="./css/main.css?v=00">
 		<link rel="stylesheet" href="./css/works.css?v=00">
+		<link rel="stylesheet" href="./css/about.css?v=00">
 
 		<script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js" ></script>
 		<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -34,31 +32,34 @@
 		<main id="viewport">
 			<!-- @ 공통 HEADER -->
 			<header class="header" id="header">
+				<!-- gnb -->
             	<div class="navi font-en">
-					<div class="menuWrap m-none">
-						<div>
-							<a href="/">HOME</a>
-							<ul class="menu">
-								<li><a href="about.html">ABOUT</a></li>
-								<li><a href="works.html">WORKS</a></li>
-								<li><a href="javascript:alert('블로그 링크 추가');">MGZ</a></li>
-								<li><a href="contact.html">CONTACT</a></li>
-							</ul>
-						</div>
-					</div>
-					<div class="menuWrap m-visible">
-						<div>
-							<span>BRANDING</span>
-							<span>STUDIO</span>
-						</div>
-					</div>
-                	<h1 class="logo font-en-cl-B">NEUE STUDIO</h1>
-					<div class="explain trans">
-						<div class="copyright">NEUE branding STUDIO<br>ⓒ 2019</div>
-						<div class="txt">
+					<div class="inner">
+						<div class="menuWrap m-none">
 							<div>
-								Neue Studio is an independent design studio that visualizes the essence of a brand.
-								<span>We pursue precise and minimal design, considering both user and consumer perspectives.</span>						
+								<a href="/">HOME</a>
+								<ul class="menu">
+									<li><a href="about.html">ABOUT</a></li>
+									<li><a href="works.html">WORKS</a></li>
+									<li><a href="javascript:alert('블로그 링크 추가');">MGZ</a></li>
+									<li><a href="contact.html">CONTACT</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="menuWrap m-visible">
+							<div>
+								<span>BRANDING</span>
+								<span>STUDIO</span>
+							</div>
+						</div>
+						<h1 class="logo font-en-cl-B">NEUE STUDIO</h1>
+						<div class="introduce trans">
+							<div class="copyright">NEUE branding STUDIO<br>ⓒ 2019</div>
+							<div class="txt">
+								<div>
+									Neue Studio is an independent design studio that visualizes the essence of a brand.
+									<span>We pursue precise and minimal design, considering both user and consumer perspectives.</span>						
+								</div>
 							</div>
 						</div>
 					</div>
@@ -69,7 +70,7 @@
 					<span class="hamline"></span>
 					<span class="hamline"></span>
 				</div>
-				<!--MENU PAGE -->
+				<!-- hamburger menu -->
 				<div class="overlay font-en-cl-R">
 					<i class="s_logo  font-en-cl-B trans">NEUE STUDIO</i>
 					<nav>
@@ -81,19 +82,18 @@
 						</ul>
 					</nav>
 				</div> 
-				<!-- //MENU PAGE-->
 			</header>
 			<!-- //@ 공통 HEADER -->
 		
-			<!-- @ bg -->
+			<!-- @ BG DECO -->
 			<div class="mainBgWrap">
 				<div class="mainBgPal no1"><img src="./image/main/objet01.svg" alt=""></div>
 				<div class="mainBgPal no2"><img src="./image/main/objet02.svg" alt=""></div>
 			</div>
-			<!-- //@ bg -->
+			<!-- //@ BG DECO -->
 
-			<!-- @ main -->
-			<section class="main">
+			<!-- @ CONTENTS -->
+			<section class="main contents">
 				<!-- @@ 상단 슬라이드 -->
 				<div class="main_slide_wrap font-en">
 					<div class="main_slide swiper-container" id="main_slide">
@@ -143,58 +143,242 @@
 				</div>
 				<!-- // @@ 상단 슬라이드 -->
 
-				<!-- @@ works -->
+				<!-- @@ WORKS -->
 				<div class="works">
-					<h2 class="page_tit bd_w scrollAni font-en-cl-R">works</h2>
-					<!-- 탭 -->
-					<ul class="works_tab font-en">
-						<li class="on"><a href="javascript:void(0);">BRANDING</a></li>
-						<li><a href="javascript:void(0);">Online</a></li>
-						<li><a href="javascript:void(0);">GRAPHIC</a></li>
-						<li><a href="javascript:void(0);">PRINT</a></li>
-						<li><a href="javascript:void(0);">PACKAGE</a></li>
-						<li><a href="javascript:void(0);">SIGNAGE</a></li>
-						<li><a href="javascript:void(0);">ETC</a></li>
-					</ul>
-					<!-- 리스트 -->
-					<ul>
-						<li></li>
-					</ul>
+					<div class="inner">
+						<h2 class="page_tit font-en-cl-R"><div class="bd_w scrollAni">works</div></h2>
+						<!-- 카테고리 필터 -->
+						<ul class="works_tab font-en">
+							<li class="on"><a href="javascript:void(0);">BRANDING</a></li>
+							<li><a href="javascript:void(0);">Online</a></li>
+							<li><a href="javascript:void(0);">GRAPHIC</a></li>
+							<li><a href="javascript:void(0);">PRINT</a></li>
+							<li><a href="javascript:void(0);">PACKAGE</a></li>
+							<li><a href="javascript:void(0);">SIGNAGE</a></li>
+							<li><a href="javascript:void(0);">ETC</a></li>
+						</ul>
+						<!-- 리스트 -->
+						<ul class="works_list">
+							<li>
+								<a href="javascript:void(0);">
+									<div class="thumb"><img src="./image/works/works1.png" alt="이미지설명"></div>
+									<div class="tit trans font-en">
+										<div>
+											<strong>Works Title</strong>
+											<p class="type">Business Hotel  / Signage Design</p>
+										</div>
+										<p class="year">2022</p>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:void(0);">
+									<div class="thumb"><img src="./image/works/works1.png" alt="이미지설명"></div>
+									<div class="tit trans font-en">
+										<div>
+											<strong>Works Title</strong>
+											<p class="type">Business Hotel  / Signage Design</p>
+										</div>
+										<p class="year">2022</p>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:void(0);">
+									<div class="thumb"><img src="./image/works/works1.png" alt="이미지설명"></div>
+									<div class="tit trans font-en">
+										<div>
+											<strong>Works Title</strong>
+											<p class="type">Business Hotel  / Signage Design</p>
+										</div>
+										<p class="year">2022</p>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:void(0);">
+									<div class="thumb"><img src="./image/works/works1.png" alt="이미지설명"></div>
+									<div class="tit trans font-en">
+										<div>
+											<strong>Works Title</strong>
+											<p class="type">Business Hotel  / Signage Design</p>
+										</div>
+										<p class="year">2022</p>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:void(0);">
+									<div class="thumb"><img src="./image/works/works1.png" alt="이미지설명"></div>
+									<div class="tit trans font-en">
+										<div>
+											<strong>Works Title</strong>
+											<p class="type">Business Hotel  / Signage Design</p>
+										</div>
+										<p class="year">2022</p>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:void(0);">
+									<div class="thumb"><img src="./image/works/works1.png" alt="이미지설명"></div>
+									<div class="tit trans font-en">
+										<div>
+											<strong>Works Title</strong>
+											<p class="type">Business Hotel  / Signage Design</p>
+										</div>
+										<p class="year">2022</p>
+									</div>
+								</a>
+							</li>
+						</ul>
+						<!-- more btn -->
+						<div class="more_btn font-en">
+							<a href="works.html">
+								<em>WORKS</em>
+								<span class="arrowAni">→</span>
+							</a>
+						</div>
+					</div>
 				</div>
-				<!-- // @@ works -->
+				<!-- // @@ WORKS -->
+
+				<!-- @@ SERVICE -->
+				<div class="about_service">
+					<div class="inner">
+						<h2 class="page_tit font-en-cl-R">
+							<div class="bd_w scrollAni">SERVICE</div>
+							<p>서비스 소개</p>
+						</h2>
+						<!-- 리스트 -->
+						<ul class="list">
+							<li class="scrollAni slideUp">
+								<dl>
+									<dt>Total Branding</dt>
+									<dd>토탈 브랜딩</dd>
+								</dl>
+								<div class="thumb"><img src="./image/about/service01.png" alt="이미지설명"></div>
+								<div class="explain">
+									브랜드를 만드는 토탈 서비스<br>
+									브랜드의 시작부터 끝까지 전 과정을 함께합니다. 브랜드 네이밍, 로고, 아이덴티티 디자인부터 온라인/오프라인에 이르기까지, 브랜드 전체를 하나의 철학과 방향성 아래 일관성 있게 설계해드립니다.
+								</div>
+							</li>
+							<li class="scrollAni slideUp">
+								<dl>
+									<dt>Visual Branding</dt>
+									<dd>비주얼 브랜딩</dd>
+								</dl>
+								<div class="thumb"><img src="./image/about/service02.png" alt="이미지설명"></div>
+								<div class="explain">
+									브랜드의 아이덴티티를 제외한 로고, 디자인시스템등 겉으로 보이는 비주얼 위주의 브랜딩을 합니다. 브랜드의 얼굴이 되는 로고, 색상, 폰트, 이미지 스타일 등 시각적인 요소들을 체계적으로 정리해 브랜드의 개성을 명확히 드러내는 디자인을 제작합니다.
+								</div>
+							</li>
+							<li class="scrollAni slideUp">
+								<dl>
+									<dt>Design Management</dt>
+									<dd>디자인 운영 및 관리</dd>
+								</dl>
+								<div class="thumb"><img src="./image/about/service03.png" alt="이미지설명"></div>
+								<div class="explain">
+									매월 또는 정기적으로 필요한 디자인을 안정적으로 제공합니다. 오프라인에서 필요한 디자인물(사이니지, 메뉴판, 명함 등)부터 온라인에서 필요한 배너, 월별로 변경해야하거나 필요한 디자인건들을 대행하여 운영 및 관리 하여 줍니다. 이벤트, SNS 이미지, 배너, 전단지 등 브랜드 운영에 필요한 디자인을 빠르고 효율적으로 관리해드립니다.
+								</div>
+							</li>
+							<li class="scrollAni slideUp">
+								<dl>
+									<dt>Visual Consulting</dt>
+									<dd>비주얼(디자인) 컨설팅 (시각적 전략 큐레이팅 서비스)</dd>
+								</dl>
+								<div class="thumb"><img src="./image/about/service04.png" alt="이미지설명"></div>
+								<div class="explain">
+									브랜드를 운영하면서 나아가야할 디자인 방향성에 대해 함께 고민하고 컨설팅 해드립니다. 브랜드를 운영하며 필요한 디자인물들을 일관적으로 표현할 수 있도록 디자인 시스템을 개발하거나 지금 브랜드가 시각적으로 어떤 방향으로 가야 할지, 어떤 톤앤무드를 유지해야 하는지를 분석하고 정리해드립니다.
+								</div>
+							</li>
+							<li class="scrollAni slideUp">
+								<dl>
+									<dt>Digital Branding</dt>
+									<dd>디지털 브랜딩</dd>
+								</dl>
+								<div class="thumb"><img src="./image/about/service05.png" alt="이미지설명"></div>
+								<div class="explain">
+									온라인 쇼핑몰 / 회사소개 홈페이지 / 포트폴리오 사이트 / 온라인 플랫폼 / 프로모션 페이지 / 상세페이지 등 온라인에서 소모되는 모든것들을 브랜딩하며 제작합니다. 간단한 쇼핑몰플랫폼 제작부터 자체개발까지, 예산과 일정에 맞춘 플랫폼을 추천하여 협의를 통해 제작되어집니다.
+								</div>
+							</li>
+							<li class="scrollAni slideUp">
+								<dl>
+									<dt>Print Branding</dt>
+									<dd>인쇄물/오프라인 홍보물/행사,인테리어 포스터등</dd>
+								</dl>
+								<div class="thumb"><img src="./image/about/service06.png" alt="이미지설명"></div>
+								<div class="explain">
+									브로슈어, 전단지, 리플렛, 오프라인 행사나 매장에서 활용되는 인쇄물 등을 브랜드에 맞춰 디자인합니다. 종이의 질감과 인쇄 방식까지 고려한 완성도 있는 결과물을 제공합니다.
+								</div>
+							</li>
+							<li class="scrollAni slideUp">
+								<dl>
+									<dt>Package Branding</dt>
+									<dd>패키지 브랜딩</dd>
+								</dl>
+								<div class="thumb"><img src="./image/about/service07.png" alt="이미지설명"></div>
+								<div class="explain">
+									상품을 담는 박스, 쇼핑백, 비닐백 등의 포장 디자인을 브랜드 아이덴티티에 맞춰 제작합니다. 포장은 곧 브랜드의 첫인상으로, 실용성과 미감을 모두 갖춘 디자인을 지향합니다.
+								</div>
+							</li>
+							<li class="scrollAni slideUp">
+								<dl>
+									<dt>Signage / DP / Offline</dt>
+									<dd>사인물 / 디스플레이 / 오프라인 매장</dd>
+								</dl>
+								<div class="thumb"><img src="./image/about/service08.png" alt="이미지설명"></div>
+								<div class="explain">
+									오프라인 공간에서 브랜드가 어떻게 보일지를 설계합니다. 매장 내 사인물, 디스플레이, 인테리어 포스터 등 공간에 맞는 시각 요소를 디자인해 브랜드 경험을 더욱 풍부하게 만듭니다.
+								</div>
+							</li>
+						</ul>
+						<!-- more btn -->
+						<div class="more_btn font-en">
+							<a href="service.html">
+								<em>SERVICE</em>
+								<span class="arrowAni">→</span>
+							</a>
+						</div>
+					</div>
+				</div>
+				<!-- //@@ SERVICE -->
 
 			</section>
-			<!-- // @ main -->
+			<!-- // @ CONTENTS -->
 
 			<!-- @ 공통 FOOTER -->
             <div class="footer scrollAni font-en">
-                <div class="ft-g">
-                    <ul class="ft-if trans">
-                        <li><a href="mailto:info@studio-neue.com" target="_blank">info@studio-neue.com</a></li>
-                        <li><a href="tel:010-5444-0168">+82 10 5444 0168</a></li>
-					</ul>
-                    <div class="ft-sns borderAni rowLine  font-en-M">
-                        <ul>
-                            <li><a href="https://www.instagram.com/neue_branding_studio"  target="_blank">Instagram</a></li>
-                            <li><a href="https://pf.kakao.com/_XUWgs/chat" target="_blank">KAKAO TALK</a></li>
-                        </ul>
-                    </div>
-                    <div class="ft-menu">
-                        <div class="ft-m">
-                            <ul>
-                                <li><a href="about.html">About</a></li>
-                                <li><a href="works.html">Works</a></li>
-                                <li><a href="service.html">Service</a></li>
-                                <li><a href="mgz.html">Mgz</a></li>
-                                <li><a href="contact.html">Contact</a></li>
-                            </ul>
-                            <span>Branding by neuestudio.</span>
-                        </div>
-                        <div class="ft-m">
-                            <p>Copyright©2025 NEUE BRANDING STUDIO All rights reserved.</p>
-                        </div>
-                    </div>
-                </div>
+				<div class="inner">
+					<div class="ft-g">
+						<ul class="ft-if trans">
+							<li><a href="mailto:info@studio-neue.com" target="_blank">info@studio-neue.com</a></li>
+							<li><a href="tel:010-5444-0168">+82 10 5444 0168</a></li>
+						</ul>
+						<div class="ft-sns borderAni rowLine  font-en-M">
+							<ul>
+								<li><a href="https://www.instagram.com/neue_branding_studio"  target="_blank">Instagram</a></li>
+								<li><a href="https://pf.kakao.com/_XUWgs/chat" target="_blank">KAKAO TALK</a></li>
+							</ul>
+						</div>
+						<div class="ft-menu">
+							<div class="ft-m">
+								<ul>
+									<li><a href="about.html">About</a></li>
+									<li><a href="works.html">Works</a></li>
+									<li><a href="service.html">Service</a></li>
+									<li><a href="mgz.html">Mgz</a></li>
+									<li><a href="contact.html">Contact</a></li>
+								</ul>
+								<span>Branding by neuestudio.</span>
+							</div>
+							<div class="ft-m">
+								<p>Copyright©2025 NEUE BRANDING STUDIO All rights reserved.</p>
+							</div>
+						</div>
+					</div>
+				</div>
             </div>
             <!-- //@ 공통 FOOTER -->
 
