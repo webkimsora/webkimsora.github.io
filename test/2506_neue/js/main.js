@@ -28,45 +28,6 @@
 			}
 		};
 
-		// @ gnb
-		
-        // @ header :: hamberger menu click 
-        $('.hamburger').on('click', function(event){
-            event.preventDefault();
-            
-            $(this).toggleClass("is-active");
-            $('#header .overlay').toggleClass('visible');
-            $('#header').toggleClass('menuOpen');
-
-        });
-
-        // 상단 line 자동 on
-        setTimeout(function(){
-            $('.scrollAniTop').addClass('on');
-        }, 300);
-
-        /*resize 반복실행 방지 : smartResize js 해석*/
-		var smartresize = {
-            init : function(){
-                var self = this;
-                $(window).on("resize", function(){
-                    self.handler(); // 윈도우의 사이즈가 변하면 handler() 함수를 실행
-                });
-            },
-            timeOut : '',
-            handler : function(){
-                var self = this;
-                if(self.timeOut) clearTimeout(self.timeOut)
-                    //setTimeOut 이 걸려있다면 클리어
-                self.timeOut = setTimeout(self.action, 150);
-                    // 150ms 동안 이벤트가 반복 실행 되지 않으면 action() 함수를 실행
-            },
-            action : function(){
-                console.log("Smart Resize Event");
-                $('body').height('auto');
-            }
-        };
-
 		//IE 브라우저 체크
 		function BrowserVersionCheck() {
 			var word;
@@ -88,6 +49,111 @@
 		};
 		BrowserVersionCheck();
 
+        /* resize 반복실행 방지 : smartResize js 해석*/
+		var smartresize = {
+            init : function(){
+                var self = this;
+                $(window).on("resize", function(){
+                    self.handler(); // 윈도우의 사이즈가 변하면 handler() 함수를 실행
+                });
+            },
+            timeOut : '',
+            handler : function(){
+                var self = this;
+                if(self.timeOut) clearTimeout(self.timeOut)
+                    //setTimeOut 이 걸려있다면 클리어
+                self.timeOut = setTimeout(self.action, 150);
+                    // 150ms 동안 이벤트가 반복 실행 되지 않으면 action() 함수를 실행
+            },
+            action : function(){
+                console.log("Smart Resize Event");
+                $('body').height('auto');
+            }
+        };
+
+        // @ header :: hamberger menu click 
+        $('.hamburger').on('click', function(event){
+            event.preventDefault();
+            
+            $(this).toggleClass("is-active");
+            $('#header .overlay').toggleClass('visible');
+            $('#header').toggleClass('menuOpen');
+        });
+
+		// @@@@@ 메인 슬라이드
+		const changeSlider = new Swiper('.main .main_slide', {
+			slidesPerView: 1,
+			spaceBetween: 20,
+			autoplay: {
+				delay: 3000,
+			},
+			speed: 800,
+			loop: true,
+			effect: 'fade',
+			fadeEffect: { crossFade: true },		
+			// on: {
+			// 	slideChange: function(){
+			// 		$('.main .main_slide_img').attr('src','./image/main/mainimage'+ this.realIndex +'.png');
+            //         $('.main .main_slide_txt > li').removeClass('on').eq(this.realIndex).addClass('on');
+			// 	}
+			// }
+
+		});
+
+		// @@@@@ 배경
+		if(!$('body').hasClass('mobilebody')) {
+			$("#viewport").mousemove(function(e) {
+			  parallaxIt(e, ".mainBgPal.no1", -100);
+			  parallaxIt(e, ".mainBgPal.no2", 200);
+			});
+
+			function parallaxIt(e, target, movement) {
+			  var $this = $("#viewport");
+			  var relX = e.pageX - $this.offset().left;
+			  var relY = e.pageY - $this.offset().top;
+
+			  TweenMax.to(target, 1, {
+			    x: (relX - $this.width() / 2) / $this.width() * movement,
+			    y: (relY - $this.height() / 2) / $this.height() * movement
+			  });
+			}
+		}
+
+		// @@@@@ 스크롤애니메이션
+		var sections = $('.target'),
+			nav = $('.rightNavi'),
+			nav_height = $('#header').outerHeight();
+			countChk = true;
+
+		$(window).on('scroll', function() {
+			var nowScroll = $(window).scrollTop() + $(window).height();
+			var nowScroll2 = $(window).scrollTop();
+
+			$('.scrollAni').each( function(i){
+				if(!$('body').hasClass('mobilebody')) {
+					var elScroll = $(this).offset().top + 300;
+				} else {
+					var elScroll = $(this).offset().top + 100;
+				}
+
+	            if( nowScroll > elScroll ){ 
+	                $(this).addClass('on');
+
+	            } else if (nowScroll +600 < elScroll){
+					$(this).removeClass('on');
+				}
+	        });
+
+			// 스크롤 header
+			if ($(this).scrollTop() > 200) {
+				$('.hamburger').addClass('scroll');
+				//$('.fixedRight').fadeIn();
+			} else {
+				$('.hamburger').removeClass('scroll');
+				//$('.fixedRight').fadeOut();
+			}
+		});
+
 		// 상단으로 이동
 		// $.fn.scrollEnd = function(callback, timeout) {
 		// 	$(this).scroll(function() {
@@ -108,161 +174,6 @@
 		// 	}, 500);
 		// 	return false;
 		// });
-
-		// 메인 슬라이드
-		const changeSlider = new Swiper('.main .main_slide', {
-			slidesPerView: 1,
-			spaceBetween: 20,
-			autoplay: {
-				delay: 3000,
-			},
-			speed: 800,
-			loop: true,
-			effect: 'fade',
-			fadeEffect: { crossFade: true },		
-			// on: {
-			// 	slideChange: function(){
-			// 		$('.main .main_slide_img').attr('src','./image/main/mainimage'+ this.realIndex +'.png');
-            //         $('.main .main_slide_txt > li').removeClass('on').eq(this.realIndex).addClass('on');
-			// 	}
-			// }
-
-		});
-
-		if(!$('body').hasClass('mobilebody')) {
-			$("#viewport").mousemove(function(e) {
-			  parallaxIt(e, ".mainBgPal.no1", -100);
-			  parallaxIt(e, ".mainBgPal.no2", 200);
-			});
-
-			function parallaxIt(e, target, movement) {
-			  var $this = $("#viewport");
-			  var relX = e.pageX - $this.offset().left;
-			  var relY = e.pageY - $this.offset().top;
-
-			  TweenMax.to(target, 1, {
-			    x: (relX - $this.width() / 2) / $this.width() * movement,
-			    y: (relY - $this.height() / 2) / $this.height() * movement
-			  });
-			}
-		}
-
-
-		// @@@@@ 스크롤애니메이션
-		var sections = $('.target'),
-			nav = $('.rightNavi'),
-			nav_height = $('#header').outerHeight();
-			countChk = true;
-		$(window).on('scroll', function() {
-			var nowScroll = $(window).scrollTop() + $(window).height();
-			var nowScroll2 = $(window).scrollTop();
-
-			$('.scrollAni').each( function(i){
-				if(!$('body').hasClass('mobilebody')) {
-					var elScroll = $(this).offset().top + 300;
-				} else {
-					var elScroll = $(this).offset().top + 100;
-				}
-
-	            if( nowScroll > elScroll ){ 
-	                $(this).addClass('on');
-					typingAni($(this),400,'1'); // subpage 타이틀 타이핑애니메이션
-
-	            } else if (nowScroll +600 < elScroll){
-					$(this).removeClass('on');
-					typingAni($(this),400,'0');
-				}
-	        });
-
-            // count animation
-			if ($('#about')[0]) {
-				if(countChk == true) {
-					if (nowScroll > $('#about .profileWrap').offset().top) {
-						$('.count').each(function () {
-							var count_val = $(this).data('count');
-							countAni($(this),count_val);
-						});
-						countChk = false;
-					}
-				}
-			}
-
-			// subpage HEADER
-			if (nowScroll2 > $('.subPage .all_contents').offset().top) {
-				//console.log('왔다');
-				$('.header').addClass('black');
-				if($('#about')[0]) {
-					$('.rightNavi').fadeIn();
-				}
-			} else {
-				//console.log('위로감')
-				$('.header').removeClass('black');
-				if($('#about')[0]) {
-					$('.rightNavi').fadeOut();
-				}
-			}
-
-			// 스크롤 header
-			if ($(this).scrollTop() > 200) {
-				$('.header').addClass('scrollOn');
-				$('.fixedRight').fadeIn();
-			} else {
-				$('.header').removeClass('scrollOn');
-				$('.fixedRight').fadeOut();
-			}
-
-			// about navi
-			sections.each(function() {
-				var top = $(this).offset().top ,
-					bottom = top + $(this).outerHeight();
-	
-				if (nowScroll2 >= top && nowScroll2 <= bottom) {
-					nav.find('a').parent().removeClass('on');
-					sections.removeClass('active');
-	
-					$(this).parent().addClass('on');
-					nav.find('a[href="#' + $(this).attr('id') + '"]').parent().addClass('on');
-				}
-			});
-		});
-		// @@@@@ 스크롤애니메이션 end
-
-		nav.find('a').on('click', function() {
-			var $el = $(this),
-				id = $el.attr('href');
-	
-			$('html, body').animate({
-				scrollTop: $(id).offset().top + 5
-			}, 500);
-	
-			return false;
-		});
-
-
-		// subpage 타이틀 타이핑애니메이션
-		function typingAni(el,timeCount,opacity){
-			var txt = el.find('.typewriter-effect').find('.text');
-
-			txt.each(function (index) {
-				TweenMax.to(this, 0.2, {
-					opacity: opacity,
-					delay: .04 * index
-				});
-			});
-		}
-		
-		// ABOUT : count animation
-		function countAni(el, num) {
-			$({ val : 0 }).animate({ val : num }, {
-				duration: 2000,
-				step: function() {
-					$(el).text(Math.ceil(this.val));
-				},
-				complete: function() {
-					$(el).text(Math.ceil(this.val));
-				}
-			});
-		}
 
 	});
 

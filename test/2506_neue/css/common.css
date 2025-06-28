@@ -39,7 +39,7 @@ body {background: #000;}
 
 body {font-family:'Pretendard-Regular', sans-serif; letter-spacing: -0.5px;}
 main {min-height: 100vh; background: #000; color: #fff;}
-.inner {width: 96vw; margin: 0 auto;}
+.inner {width: 96vw; margin: 0 auto; position: relative;}
 .inner:after {content:""; display: block; clear: both;}
 img {max-width: 100%;}
 
@@ -173,14 +173,16 @@ body.mobilebody .m-none {display: none;}
 
 /* more btn */
 .more_btn {
-    padding-top: 100px;
+    padding-top: 120px;
     text-align: center;
     font-size: 38px;
+
 }
 .more_btn a {
     display: inline-flex;
     justify-content: center;
     gap: 20px;
+    text-transform: uppercase;
 }
 .more_btn em {
     font-style: normal;

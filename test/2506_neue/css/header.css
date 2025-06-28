@@ -78,11 +78,18 @@
 .hamburger {
     position: fixed;
     top: 36px;
-    right: 2.35vw;
+    right: 2.2vw;
     transition: .3s ease-in-out;
     vertical-align: middle;
     z-index: 100;
     cursor: pointer;
+}
+
+.hamburger.scroll {
+    padding: 10px 15px;
+    background: #000;
+    top: 26px;
+    right:calc(2.35vw - 15px);
 }
 
 .hamburger .hamline{
@@ -221,6 +228,8 @@
     .header .introduce {font-size: 16px;}
 
     .hamburger {top: 21px;}
+    .hamburger.scroll {top: 11px;}
+
     .header nav ul{font-size: 80px;}
     .header .overlay .s_logo {font-size: 36px; top: 21px;}
 
@@ -236,6 +245,10 @@
         left: 50%;
         transform: translate(-50%, 0);
     }
+    .hamburger.scroll {
+        top: 0;
+        width: fit-content;
+    }
     .header .overlay .s_logo {display: none;}
 }
 
@@ -246,7 +259,6 @@
 
     .header .logo{
         margin-top: 16px;
-        font-size: 13.2vw;
     }
 
     .header nav ul{font-size: 53px;}

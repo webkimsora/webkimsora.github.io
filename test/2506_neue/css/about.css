@@ -1,6 +1,65 @@
+/* info text */
+.about_info {
+    padding: 120px 0 300px;
+    text-align: center;
+    line-height: 1.5;
+}
+.about_info__tit {
+  font-size: 50px;
+  line-height: 1.2;
+  margin-bottom: 32px;
+}
+
+.about_info__txt {
+  font-size: 23px;
+}
+
+.about_info__img {
+  margin: 50px 0;
+}
+
+.about_info__img img {
+  max-width: 480px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.about_info__explain {
+  font-size: 20px;
+}
+
+.about_info__explain .font-en-R {
+  width: 50.72vw;
+  margin: 90px auto 0;
+}
+
+/* price 가격 */
+.about_price {
+    padding-bottom: 310px;
+    text-align: center;
+}
+
+.about_price__tit strong {font-size: 80px;}
+
+.about_price__tit p {
+    padding: 15px 0 80px;
+    font-size: 23px;
+}
+
+.about_price__explain {
+    font-size: 20px;
+     line-height: 1.6;
+}
+
 /* service 리스트 */
-.about_service {background: #AA100F;}
-.about_service .list {margin: 0 8vw 0 4vw;}
+.about_service {
+    padding: 200px 0; 
+    background: #AA100F;
+}
+.about_service .list {
+    margin: 0 8vw 0 4vw;
+}
 .about_service .list:after {
     content:""; 
     display: block; 
@@ -40,10 +99,19 @@
 /* 랩탑(노트북) 해상도 사이즈 : 1440 */
 @media (max-width: 1440px) {
     .about_service .list {margin: 0 6vw 0 4vw;}
+
+    .about_info__tit {font-size: 45px;}
+    .about_info__img img {max-width: 400x;}
+    .about_info__explain {font-size: 17px;}
+
+    .about_price__tit strong {font-size: 65px;}
+    .about_price__explain {font-size: 18px;}
+    .about_info__explain .font-en-R {width: 80%;}
 }
 
 /* 태블릿 가로버전 & 노트북 해상도 작은 사이즈: 1024 */
 @media (max-width: 1024px) {
+    .about_service {padding: 120px 0;}
     .about_service .list dt {font-size: 26px;}
     .about_service .list dd, 
     .about_service .list > li {font-size: 15px;}
@@ -53,6 +121,18 @@
 
     .about_service .list .thumb {margin: 15px 0;}
 
+    .about_info {padding: 90px 0 120px;}
+    .about_info__tit {font-size: 38px;}
+    .about_info__txt {font-size: 20px;}
+    .about_info__img {margin: 35px 0;}
+    .about_info__img img {max-width: 336px;}
+    .about_info__explain {font-size: 14px;}
+    .about_info__explain .font-en-R {margin-top: 50px; font-size: 16px;}
+
+    .about_price {padding-bottom: 120px;}
+    .about_price__tit strong {font-size: 45px;}
+    .about_price__explain {font-size: 16px;}
+    .about_price .more_btn {padding-top: 75px;}
 }
 
 /* 태블릿 & 모바일 해상도 큰 사이즈: 768 */
@@ -68,6 +148,15 @@
     .about_service .list > li:nth-child(7) {margin-top: 0;}
     .about_service .list > li:last-child {margin-top: -200px;}
 
+    .about_info__tit {font-size: 30px;}
+    .about_info__txt {font-size: 16px;}
+    .about_info__explain {width: 90%; margin: 0 auto;}
+    .about_info__explain .font-en-R {width: 100%;}
+
+    .about_price__tit strong {font-size: 34px;}
+    .about_price__explain {font-size: 14px;}
+}
+
 }
 
 /* 일반 모바일 해상도 : 480 */
@@ -78,4 +167,15 @@
         max-width: 100%; 
         margin: 70px 0 0 !important;
     }
+
+    .about_info {padding: 45px 18px 100px;}
+    .about_info__tit {font-size: 21px;}
+    .about_info__txt {font-size: 13px;}
+    .about_info__img {margin: 30px 0 45px;}
+    .about_info__img img {max-width: 268px;}
+    .about_info__explain {font-size: 12px; width: 100%;}
+    .about_info__explain .font-en-R {width: 100%; margin-top: 40px; font-size: 13px;}
+
+    .about_price__tit strong {font-size: 23px;}
+    .about_price__explain {font-size: 12px;}
 }
