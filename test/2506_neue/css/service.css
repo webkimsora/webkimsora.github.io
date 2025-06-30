@@ -1,0 +1,155 @@
+@charset "utf-8";
+
+/* service */
+.service {padding-top: 215px;}
+.service .page_tit p {padding-top: 0; padding-bottom: 55px;}
+
+.service_infor_wrap {margin-top: 185px;}
+.service_infor_wrap .inner {max-width: 1400px; width: 78vw;}
+.service_infor_wrap .service_infor:not(:first-child) {margin-top: 118px;}
+
+.service_infor__tit {
+    margin-bottom: 38px;
+    font-size: 18px;
+}
+
+.service_infor__tit dt {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    padding-bottom: 30px;
+    margin-bottom: 18px;
+    border-bottom: 1px solid #fff;
+    font-size: 20px;
+}
+
+.service_infor__tit dt strong {
+    font-size: 50px;
+}
+
+.service_infor__price {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.service_infor__price > li {
+    width: calc((100% - 60px) / 3);
+    border: 1px solid #fff;
+}
+
+.service_price__image img {
+  width: 100%;
+  display: block;
+}
+
+.service_price__content {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  gap: 50px;
+}
+
+.service_price__header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.service_price__header .font-en-cl-R {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.service_price__tit {
+  font-size: 35px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.service_price__subtit {
+  font-size: 18px;
+}
+
+.service_price__num {
+  font-size: 18px;
+}
+
+.service_price__desc {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.service_price__bt {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+
+.service_price__price {
+  font-size: 26px;
+  font-weight: 600;
+}
+
+.service_price__link {
+  font-size: 16px;
+  text-decoration: none;
+  padding-bottom: 1px;
+  transition: 0.2s ease;
+}
+
+
+/* 랩탑(노트북) 해상도 사이즈 : 1440 */
+@media screen and (max-width: 1440px) {
+    .service {padding-top: 160px;}
+    .service_infor_wrap {margin-top: 135px;}
+
+    .service_infor__tit dt strong {font-size: 38px;}
+    /* .service_infor__tit dd {font-size: 12px;} */
+    .service_price__tit {font-size: 24px;}
+    .service_price__subtit {font-size: 16px;}
+    .service_price__price {font-size: 20px;}
+    .service_price__link {font-size: 14px;}
+
+}
+
+/* 태블릿 가로버전 & 노트북 해상도 작은 사이즈: 1024 */
+@media screen and (max-width: 1024px) {
+    .service .page_tit p {padding-bottom: 25px;}
+    .service .common_tab {margin-top: 13px;}
+    .service_infor_wrap {margin-top: 95px;}
+
+    .service_infor__tit {font-size: 14px;}
+    .service_infor__tit dt {padding-bottom: 12px; margin-bottom: 12px;}
+    .service_infor__tit dt strong {font-size: 24px;}
+    .service_infor__tit dd {font-size: 12px;}
+    .service_infor__price {gap: 12px;}
+    .service_infor__price > li {width: calc((100% - 24px) / 3)}
+    .service_price__content {padding: 12px;}
+    .service_price__tit {font-size: 16px;}
+    .service_price__subtit {font-size: 14px;}
+    .service_price__num {font-size: 10px;}
+    .service_price__desc {font-size: 12px;}
+    .service_price__price {font-size: 14px;}
+    .service_price__link {font-size: 12px;}
+}
+
+/* 태블릿 & 모바일 해상도 큰 사이즈: 768 */
+@media screen and (max-width: 768px) {
+    .service_infor_wrap .inner {width: 85vw;}
+}
+
+/* 일반 모바일 해상도 : 480 */
+@media screen and (max-width: 480px) {
+    .service {padding-top: 70px;}
+    .service_infor_wrap .inner {width: 100%;}
+    .service_infor__price {flex-direction: column; gap: 30px; padding: 0 18px;}
+    .service_infor__price > li {width: 100%;}
+    .service_price__tit {font-size: 20px;}
+    .service_price__price {font-size: 20px;}
+    .service_price__num {font-size: 12px;}
+}
+
+/* @media screen and (max-width: 1024px), (max-height :800px) {} */

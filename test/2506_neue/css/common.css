@@ -26,7 +26,7 @@ button, button:focus,button:active{padding: 0;}
 
 /* common */
 * {word-break: keep-all; }
-body {background: #000;}
+body {background: #000; font-family:'Pretendard-Regular', sans-serif;}
 #viewport {
     position: relative; 
     overflow-x: hidden; 
@@ -36,8 +36,6 @@ body {background: #000;}
   0%, 15% {opacity: 0;}
   100% {opacity: 1;}
 }
-
-body {font-family:'Pretendard-Regular', sans-serif; letter-spacing: -0.5px;}
 main {min-height: 100vh; background: #000; color: #fff;}
 .inner {width: 96vw; margin: 0 auto; position: relative;}
 .inner:after {content:""; display: block; clear: both;}
@@ -190,9 +188,38 @@ body.mobilebody .m-none {display: none;}
 }
 .more_btn span {margin-top: -3px;}
 
+/* tab */
+.common_tab {
+    display: flex; 
+    justify-content: center; 
+    margin: 40px auto 0;
+}
+.common_tab > li {
+    padding: 0 13px;
+    position: relative;
+    color: #9b9b9b;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+.common_tab > li:not(:first-child):after {
+    content: "";
+    display: block;
+    vertical-align: middle;
+    height: 90%;
+    width: 1px;
+    background: #9b9b9b;
+    position: absolute;
+    left: 0;
+    top: 1px;
+}
+.common_tab > li a {color: inherit;}
+.common_tab > li.on a {color: #fff;}
 
 /* 랩탑(노트북) 해상도 사이즈 : 1440 */
 @media screen and (max-width: 1440px) {
+    .page_tit {font-size: 65px;}
+    .page_tit p {font-size: 20px;}
+
     .more_btn {font-size: 30px;}
     .more_btn a {gap: 10px;}
 }
@@ -210,6 +237,8 @@ body.mobilebody .m-none {display: none;}
 
     .more_btn {font-size: 22px;}
 
+    .common_tab > li {font-size: 16px;}
+
 }
 
 /* 태블릿 & 모바일 해상도 큰 사이즈: 768 */
@@ -225,6 +254,11 @@ body.mobilebody .m-none {display: none;}
     }
 
     .more_btn {padding-top: 80px; font-size: 16px;}
+
+    .common_tab > li {
+        padding: 0 8px;
+        font-size: 14px;
+    }
 }
 
 /* 일반 모바일 해상도 : 480 */
@@ -233,6 +267,12 @@ body.mobilebody .m-none {display: none;}
 
     .page_tit p {font-size: 12px;}
 
+    .common_tab {
+        display: block;
+        width: 70%;
+        text-align: center;
+    }
+    .common_tab > li {display: inline-block;}
 
 }
 
