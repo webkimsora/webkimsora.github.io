@@ -269,7 +269,7 @@ body.mobilebody .m-none {display: none;}
 
     .common_tab {
         display: block;
-        width: 70%;
+        width: 85%;
         text-align: center;
     }
     .common_tab > li {display: inline-block;}

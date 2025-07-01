@@ -7,7 +7,8 @@
     width: calc(100%/2 - 10px);
     margin-top: 100px;
 }
-.works_list > li.big {
+.works_list > li.big,
+.works_list > li.big img {
     width: 100%;
 }
 .works_list .tit {
