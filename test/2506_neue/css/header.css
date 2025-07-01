@@ -248,6 +248,7 @@
     .hamburger.scroll {
         top: 0;
         width: fit-content;
+        right: auto;
     }
     .header .overlay .s_logo {display: none;}
 }
