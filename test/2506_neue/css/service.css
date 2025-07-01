@@ -85,7 +85,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: auto;
+  margin-top: 50px;
 }
 
 .service_price__price {
@@ -127,13 +127,14 @@
     .service_infor__tit dd {font-size: 12px;}
     .service_infor__price {gap: 12px;}
     .service_infor__price > li {width: calc((100% - 24px) / 3)}
-    .service_price__content {padding: 12px;}
+    .service_price__content {padding: 12px; gap: 25px;}
     .service_price__tit {font-size: 16px;}
     .service_price__subtit {font-size: 14px;}
     .service_price__num {font-size: 10px;}
     .service_price__desc {font-size: 12px;}
     .service_price__price {font-size: 14px;}
     .service_price__link {font-size: 12px;}
+    .service_price__bt {margin-top: 35px;}
 }
 
 /* 태블릿 & 모바일 해상도 큰 사이즈: 768 */
@@ -150,6 +151,7 @@
     .service_price__tit {font-size: 20px;}
     .service_price__price {font-size: 20px;}
     .service_price__num {font-size: 12px;}
+    .service_price__content {padding: 15px;}
 }
 
 @supports (-webkit-touch-callout: none) and (not (translate: none)) {
