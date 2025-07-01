@@ -158,7 +158,7 @@
     .service_infor__price {gap: 0;}
     .service_infor__price > li:not(:first-child) {margin-left: 30px;}
     @media screen and (max-width: 1024px) {
-      .service_infor__price > li {margin-left: 12px;}
+      .service_infor__price > li:not(:first-child) {margin-left: 12px;}
     }
     @media screen and (max-width: 480px) {
       .service_infor__price > li:not(:first-child) {margin-left: 0; margin-top: 30px;}
