@@ -152,4 +152,16 @@
     .service_price__num {font-size: 12px;}
 }
 
+@supports (-webkit-touch-callout: none) and (not (translate: none)) {
+    .service_infor__price {gap: 0;}
+    .service_infor__price > li:not(:first-child) {margin-left: 30px;}
+    @media screen and (max-width: 1024px) {
+      .service_infor__price > li {margin-left: 12px;}
+    }
+    @media screen and (max-width: 480px) {
+      .service_infor__price > li:not(:first-child) {margin-left: 0; margin-top: 30px;}
+    }
+
+}
+
 /* @media screen and (max-width: 1024px), (max-height :800px) {} */
