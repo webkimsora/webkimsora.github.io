@@ -81,14 +81,14 @@
         });
 
 		// @@@@@ 메인 슬라이드
-		const changeSlider = new Swiper('.main .main_slide', {
+		var swiper = new Swiper('.main .main_slide', {
 			slidesPerView: 1,
 			spaceBetween: 20,
 			autoplay: {
 				delay: 3000,
 			},
 			speed: 800,
-			loop: true,
+			//loop: true,
 			effect: 'fade',
 			fadeEffect: { crossFade: true },		
 			// on: {

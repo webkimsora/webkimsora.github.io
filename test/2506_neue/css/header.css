@@ -250,7 +250,8 @@
         width: fit-content;
         right: auto;
     }
-    .header .overlay .s_logo {display: none;}
+    .header .overlay .s_logo {font-size: 21px; top: 19px;}
+
 }
 
 /* 일반 모바일 해상도 : 480 */
@@ -263,7 +264,6 @@
     }
 
     .header nav ul{font-size: 53px;}
-    .header .overlay .s_logo {top: 38px; font-size: 26px;}
 
     
 }

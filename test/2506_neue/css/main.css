@@ -5,11 +5,12 @@
     width: 80.72vw; 
     margin: 143px auto 0;
 }
-.main_slide .swiper-slide {}
+.main_slide .swiper-slide img {width: 100%;}
 .main_slide_txt {
     display: flex; 
     margin-top: 20px; 
     font-size: 20px;
+    text-transform: uppercase;
 }
 .main_slide_txt li:last-child {margin-left: auto; text-align: right;}
 
