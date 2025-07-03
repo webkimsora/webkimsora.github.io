@@ -101,9 +101,9 @@ ul.floatDouble > li {float: left;}
 
 
 /* CSS 단축어 */
-.font-en {font-family: 'neue-haas-grotesk-display',Arial, Helvetica, sans-serif; font-weight: 500;}
-.font-en-M {font-family: 'neue-haas-grotesk-display',Arial, Helvetica, sans-serif; font-weight: 400;}
+.font-en {font-family: 'neue-haas-grotesk-display',Arial, Helvetica, sans-serif; font-weight: 400;}
 .font-en-R {font-family: 'neue-haas-grotesk-display',Arial, Helvetica, sans-serif; font-weight: 300;}
+.font-en-M {font-family: 'neue-haas-grotesk-display',Arial, Helvetica, sans-serif; font-weight: 500;}
 .font-en-cl-V{font-family: 'ClashDisplay-Variable';}
 .font-en-cl-EL{font-family: 'ClashDisplay-Extralight';}
 .font-en-cl-L{font-family: 'ClashDisplay-Light';}
@@ -263,7 +263,7 @@ body.mobilebody .m-none {display: none;}
 
 /* 일반 모바일 해상도 : 480 */
 @media screen and (max-width: 480px) {
-    .inner {width: 100%; padding: 0 12px;}
+    .inner {width: 100%; padding: 0 20px;}
 
     .page_tit p {font-size: 12px;}
 

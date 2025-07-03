@@ -21,9 +21,6 @@
 
 		<script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js" ></script>
 		<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-		<!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
-		<!-- <script type="text/javascript" src="./js/swiper.min.js"></script>  -->
-		<script type="text/javascript" src="./js/skrollr.min.js"></script>
 		<script type="text/javascript" src="./js/TweenMax.min.js"></script>
 		<script type="text/javascript" src="./js/main.js?v=04"></script>
 	</head>
@@ -52,7 +49,10 @@
 								<span>STUDIO</span>
 							</div>
 						</div>
-						<h1 class="logo font-en-cl-B">NEUE STUDIO</h1>
+						<h1 class="logo font-en-cl-B">
+							<img class="black" src="./image/main/logo.svg" alt="NEUE STUDIO">
+							<img class="white" src="./image/main/logo.svg" alt="NEUE STUDIO">
+						</h1>
 						<div class="introduce trans">
 							<div class="copyright">NEUE branding STUDIO<br>ⓒ 2019</div>
 							<div class="txt">
@@ -72,7 +72,7 @@
 				</div>
 				<!-- hamburger menu -->
 				<div class="overlay font-en-cl-R">
-					<a class="s_logo font-en-cl-B trans" href="index.html">NEUE STUDIO</a>
+					<a class="s_logo font-en-cl-B trans" href="index.html"><img src="./image/main/logo.svg" alt="NEUE STUDIO"></a>
 					<nav>
 						<ul class="trans">
 							<li><a href="about.html">ABOUT<span class="menu-info">STORY</span></a></li>
@@ -95,25 +95,34 @@
 			<!-- @ CONTENTS -->
 			<section class="main contents">
 				<!-- @@ 상단 슬라이드 -->
-				<div class="main_slide_wrap font-en-M">
+				<div class="main_slide_wrap font-en">
 					<div class="main_slide swiper-container" id="main_slide">
 						<div class="swiper-wrapper">
 							<div class="swiper-slide">
-								<img src="./image/main/main_img1.png" alt="메인슬라이드1" />
+								<div class="main_slide_img">
+									<img class="m-none" src="./image/main/main_img1.png" alt="메인슬라이드1" />
+									<img class="m-visible" src="./image/main/main_img1_mo.png" alt="메인슬라이드1" />
+								</div>
 								<ul class="main_slide_txt">
 									<li>Branding design1</li>
 									<li>Graphic / print / web / package /space</li>
 								</ul>
 							</div>
 							<div class="swiper-slide">
-								<img src="./image/main/main_img2.png" alt="메인슬라이드2" />
+								<div class="main_slide_img">
+									<img class="m-none" src="./image/main/main_img2.png" alt="메인슬라이드2" />
+									<img class="m-visible" src="./image/main/main_img1_mo.png" alt="메인슬라이드2" />
+								</div>
 								<ul class="main_slide_txt">
 									<li>Branding design2</li>
 									<li>Graphic / print / web / package /space</li>
 								</ul>
 							</div>
 							<div class="swiper-slide">
-								<img src="./image/main/main_img3.png" alt="메인슬라이드3" />
+								<div class="main_slide_img">
+									<img class="m-none" src="./image/main/main_img3.png" alt="메인슬라이드3" />
+									<img class="m-visible" src="./image/main/main_img1_mo.png" alt="메인슬라이드3" />
+								</div>
 								<ul class="main_slide_txt">
 									<li>Branding design3</li>
 									<li>Graphic / print / web / package /space</li>
@@ -337,10 +346,10 @@
 							<li><a href="mailto:info@studio-neue.com" target="_blank">info@studio-neue.com</a></li>
 							<li><a href="tel:010-5444-0168">+82 10 5444 0168</a></li>
 						</ul>
-						<div class="ft-sns borderAni rowLine  font-en-M">
+						<div class="ft-sns borderAni rowLine  font-en">
 							<ul>
 								<li><a href="https://www.instagram.com/neue_branding_studio"  target="_blank">Instagram</a></li>
-								<li><a href="https://pf.kakao.com/_XUWgs/chat" target="_blank">KAKAO TALK</a></li>
+								<li><a href="https://pf.kakao.com/_XUWgs/chat" target="_blank">Kakao Talk</a></li>
 							</ul>
 						</div>
 						<div class="ft-menu">

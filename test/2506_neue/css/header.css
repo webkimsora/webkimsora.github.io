@@ -12,12 +12,16 @@
 }
 
 .header .logo{
-    font-size: 14vw;
+    margin: 20px 0 25px;
     text-align: center;
     vertical-align: middle;
     white-space: nowrap;
     line-height: 1;
 }
+
+.header .logo .white {display: none;}
+body.white .header .logo .black {display: none;}
+body.white .header .logo .white {display: block;}
 
 .header .menuWrap {
     position: relative;
@@ -56,7 +60,6 @@
     line-height: 1.25;
     letter-spacing: normal;
     font-size: 20px;
-    font-weight: 400;
 }
 
 .header .introduce .copyright {
@@ -150,7 +153,7 @@
     position: fixed;
     top: 36px;
     left: 2.35vw;
-    font-size: 45px;
+    max-width: 255px;
     line-height: 1;
 }
 
@@ -161,7 +164,7 @@
     transform: translateY(-50%);   
 }
 .header nav ul{
-    font-size: 7vw;
+    font-size: 5.2vw;
     font-weight: 300;
 }
 .header nav ul li{
@@ -231,18 +234,21 @@
 
     .header .introduce {font-size: 16px;}
 
+    .header .logo{
+        margin: 15px 0;
+    }
+
     .hamburger {top: 21px;}
     .hamburger.scroll {top: 11px;}
 
     .header nav ul{font-size: 80px;}
-    .header .overlay .s_logo {font-size: 36px; top: 21px;}
+    .header .overlay .s_logo {max-width: 155px; top: 30px;}
 
 }
 
 /* 태블릿 & 모바일 해상도 큰 사이즈: 768 */
 @media (max-width: 768px) { 
     .header .menuWrap {padding-top: 24px; font-size: 12px;}
-    .header .logo {font-size: 13.6vw;}
     .hamburger {
         top: 14px;
         right: auto;
@@ -262,10 +268,6 @@
 @media (max-width: 480px) {
     .header .introduce .copyright {display: none;}
     .header .introduce .txt span {display: inline;}
-
-    .header .logo{
-        margin-top: 16px;
-    }
 
     .header nav ul{font-size: 53px;}
 

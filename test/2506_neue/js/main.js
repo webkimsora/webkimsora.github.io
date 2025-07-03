@@ -90,13 +90,7 @@
 			speed: 800,
 			//loop: true,
 			effect: 'fade',
-			fadeEffect: { crossFade: true },		
-			// on: {
-			// 	slideChange: function(){
-			// 		$('.main .main_slide_img').attr('src','./image/main/mainimage'+ this.realIndex +'.png');
-            //         $('.main .main_slide_txt > li').removeClass('on').eq(this.realIndex).addClass('on');
-			// 	}
-			// }
+			fadeEffect: { crossFade: true }
 
 		});
 

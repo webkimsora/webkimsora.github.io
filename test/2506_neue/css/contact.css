@@ -3,7 +3,12 @@
 /* contact */
 .contact .page_tit {
     padding: 210px 0 150px; 
-    font-size: 3.95vw;
+    font-size: 3.4vw;
+}
+
+.contact .page_tit > div:not(.borderAni) {
+    max-width: 1500px;
+    margin: 0 auto;
 }
 
 .contact .page_tit .borderAni {
@@ -12,16 +17,21 @@
 }
 
 .contact .page_tit p {
-    width: 60vw;
+    width: 50vw;
     margin: 0 auto;
     line-height: 1.74;
     font-size: 23px;
 }
 
 .contact_form {
-    width: 50%;
+    max-width: 1800px;
+    margin: 0 auto;
+}
+
+.contact_form form {
+    width: calc(50% + 2vw);
     margin-left: auto;
-    margin-right: 2vw;
+    padding-right: 2vw;
 }
 
 .contact_form .line {
@@ -127,10 +137,14 @@
     text-align: right;
 }
 
+@media screen and (min-width: 1921px) {
+    .contact .page_tit {font-size: 80px;}
+}
+
 /* 랩탑(노트북) 해상도 사이즈 : 1440 */
 @media screen and (max-width: 1440px) {
     .contact .page_tit {padding: 160px 0 120px;}
-    .contact .page_tit p {font-size: 19px;}
+    .contact .page_tit p {font-size: 19px; width: 65vw;}
     .contact_form h3 {margin-bottom: 70px; font-size: 40px;}
     .contact_form__group label, .contact_form__group p.tit {font-size: 24px;}
     .contact_form__group.policy textarea {font-size: 14px;}
@@ -139,7 +153,7 @@
 
 /* 태블릿 가로버전 & 노트북 해상도 작은 사이즈: 1024 */
 @media screen and (max-width: 1024px) {
-    .contact .page_tit {padding: 120px 0 90px;}
+    .contact .page_tit {padding: 120px 0 90px; font-size: 40px;}
     .contact .page_tit .borderAni {margin-top: 40px; padding-bottom: 40px;}
     .contact .page_tit p {font-size: 16px;}
     .contact_form h3 {margin-bottom: 70px; font-size: 28px;}
@@ -158,7 +172,7 @@
 
 /* 태블릿 & 모바일 해상도 큰 사이즈: 768 */
 @media screen and (max-width: 768px) {
-    .contact_form {width: 65%;}
+    .contact_form form {width: calc(65% + 2vw);}
     .contact .page_tit {font-size: 28px;}
     .contact .page_tit p {width: 80vw;}
 }
@@ -166,9 +180,9 @@
 /* 일반 모바일 해상도 : 480 */
 @media screen and (max-width: 480px) {
     .contact .page_tit {padding: 65px 0;}
-    .contact_form {width: 100%; padding: 0 12px;}
-    .contact .page_tit > div:first-child {padding: 0 30px;}
-    .contact .page_tit p {width: 100%; padding: 0 12px; font-size: 14px;}
+    .contact_form form {width: 100%; padding: 0 20px;}
+    .contact .page_tit > div:first-child {padding: 0 30px; max-width: calc(73% + 60px);}
+    .contact .page_tit p {width: 100%; padding: 0 20px; font-size: 14px;}
     .contact .submit_btn {text-align: center;}
 
 }

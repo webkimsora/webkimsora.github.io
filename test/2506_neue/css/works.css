@@ -1,3 +1,5 @@
+.works .inner {max-width: 1800px;}
+
 .works_list {
     display: flex;
     justify-content: space-between; 
@@ -39,7 +41,6 @@
     position: absolute;
     top: -50px;
     right: 0;
-    font-size: 26px;
     overflow: hidden;
 }
 .works_detail__desc {
@@ -81,44 +82,26 @@
 }
 .works_detail__nav a {
     position: relative;
-    font-size: 30px;
     overflow: hidden;
-    padding-bottom: 2px;
+    padding-bottom: 1px;
     text-transform: uppercase;
+}
+
+.works_detail__btn,
+.works_detail__nav a {
+    font-size: 26px;
 }
 .works_detail__btn:after,
 .works_detail__nav a:after {
     content:"";
     width: 100%; 
-    height: 2px;
+    height: 1px;
     background: #fff;
     position: absolute;
     bottom: 0;
     left: 0;
     transition: all .3s;
 
-}
-.works_detail__btn:before,
-.works_detail__nav a:before {
-    content:"";
-    width: 0; 
-    height: 1px;
-    background: #000;
-    position: absolute;
-    bottom: 0;
-    left: -10px;
-    transition: all .3s;
-    border: 1px solid #fff;
-}
-
-.works_detail__btn:hover:after,
-.works_detail__nav a:hover:after {
-    transform: translateX(110%);
-}
-.works_detail__btn:hover:before,
-.works_detail__nav a:hover:before {
-    width: 100%;
-    left:0
 }
 
 /* white 버전 */
@@ -131,6 +114,10 @@ body.white .works_detail__nav a:after,
 body.white .borderAni:after,
 body.white .hamburger .hamline {background-color: #000;}
 body.white .hamburger.scroll {background: #fff;}
+
+body.white .hamburger.scroll.is-active {background: #000;}
+body.white .hamburger.is-active .hamline {background-color: #fff !important;}
+body.white .header nav ul li a {color: #fff !important;}
 
 /* 랩탑(노트북) 해상도 사이즈 : 1440 */
 @media screen and (max-width: 1440px) {
@@ -148,7 +135,8 @@ body.white .hamburger.scroll {background: #fff;}
     .works_list .tit {font-size: 22px;}
 
     .works.subpage {padding: 120px 0;}
-    .works_detail__btn {top: -30px; font-size: 18px;}
+    .works_detail__btn {top: -30px;}
+    .works_detail__btn,
     .works_detail__nav a {font-size: 18px;}
     .works_detail__desc {margin-bottom: 60px;}
     .works_detail__desc .info {margin-top: 30px; font-size: 14px;}
@@ -179,8 +167,9 @@ body.white .hamburger.scroll {background: #fff;}
 
     .works.subpage {padding: 55px 0;}
     .works_detail {margin-top: 0;}
-    .works_detail__btn {top: -25px; right: 12px; font-size: 14px;}
-    .works_detail__nav a {font-size: 12px;}
+    .works_detail__btn {top: -25px; right: 20px;}
+    .works_detail__btn,
+    .works_detail__nav a {font-size: 14px;}
     .works_detail__desc {margin-bottom: 50px;}
     .works_detail__desc .info {
         flex-direction: column;
