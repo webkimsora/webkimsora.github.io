@@ -90,7 +90,7 @@
 			speed: 800,
 			//loop: true,
 			effect: 'fade',
-			fadeEffect: { crossFade: true }
+			fadeEffect: { crossFade: true },
 
 		});
 
@@ -141,10 +141,8 @@
 			// 스크롤 header
 			if ($(this).scrollTop() > 200) {
 				$('.hamburger').addClass('scroll');
-				//$('.fixedRight').fadeIn();
 			} else {
 				$('.hamburger').removeClass('scroll');
-				//$('.fixedRight').fadeOut();
 			}
 		});
 
